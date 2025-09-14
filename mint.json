@@ -55,12 +55,7 @@
       "group": "Getting Started",
       "pages": [
         "getting-started/welcome",
-        "getting-started/initial-setup-checklist"
-      ]
-    },
-    {
-      "group": "",
-      "pages": [
+        "getting-started/initial-setup-checklist",
         "getting-started/initial-setup-checklist/connect-stripe-account",
         "getting-started/initial-setup-checklist/create-your-first-product",
         "getting-started/initial-setup-checklist/set-up-your-scheduler",
