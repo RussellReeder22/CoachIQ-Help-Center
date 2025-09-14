@@ -27,13 +27,13 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
+      "name": "Athlete Portal",
       "url": "api-reference"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
+      "name": "Admin View",
       "icon": "book-open-cover",
       "url": "https://mintlify.com/docs"
     },
