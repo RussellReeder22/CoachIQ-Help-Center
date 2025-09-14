@@ -54,7 +54,18 @@
     {
       "group": "Getting Started",
       "pages": [
-        "getting-started/index"
+        "getting-started/welcome",
+        "getting-started/initial-setup-checklist",
+        {
+          "group": "",
+          "pages": [
+            "getting-started/initial-setup-checklist/connect-stripe-account",
+            "getting-started/initial-setup-checklist/create-your-first-product",
+            "getting-started/initial-setup-checklist/set-up-your-scheduler",
+            "getting-started/initial-setup-checklist/website-launch-and-basics",
+            "getting-started/initial-setup-checklist/configure-your-athlete-app"
+          ]
+        }
       ]
     },
     {
