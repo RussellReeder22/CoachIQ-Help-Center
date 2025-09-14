@@ -5,65 +5,92 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#F5A623",
+    "light": "#FDB94E",
+    "dark": "#F5A623",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#F5A623",
+      "to": "#FDB94E"
     }
   },
   "topbarLinks": [
     {
-      "name": "CoachIQ Login",
-      "url": "https://dashboard.coachiq.com"
+      "name": "Dashboard",
+      "url": "https://app.coachiq.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.coachiq.com"
+    "name": "Login",
+    "url": "https://app.coachiq.com/login"
   },
-  "tabs": [
-    {
-      "name": "Help Center",
-      "url": "getting-started"
-    },
-    {
-      "name": "Troubleshooting",
-      "url": "troubleshooting"
-    },
-    {
-      "name": "Power-Ups",
-      "url": "power-ups"
-    },
-    {
-      "name": "Workflows",
-      "url": "workflows"
-    }
-  ],
   "navigation": [
     {
       "group": "Getting Started",
       "pages": [
-        "getting-started/index",
-        "getting-started/welcome",
-        {
-          "group": "Initial Setup",
-          "pages": [
-            "getting-started/connect-stripe-payments",
-            "getting-started/create-first-product",
-            "getting-started/setup-session-scheduler",
-            "getting-started/launch-coaching-website",
-            "getting-started/configure-athlete-portal"
-          ]
-        }
+        "introduction",
+        "getting-started/index"
+      ]
+    },
+    {
+      "group": "Website & App",
+      "pages": [
+        "website/index",
+        "athlete-portal/index"
+      ]
+    },
+    {
+      "group": "Inbox",
+      "pages": [
+        "inbox/index"
+      ]
+    },
+    {
+      "group": "Schedule",
+      "pages": [
+        "scheduling/index"
+      ]
+    },
+    {
+      "group": "Payments",
+      "pages": [
+        "payments/index"
+      ]
+    },
+    {
+      "group": "People",
+      "pages": [
+        "people/index"
+      ]
+    },
+    {
+      "group": "Content",
+      "pages": [
+        "content/index"
+      ]
+    },
+    {
+      "group": "Tools",
+      "pages": [
+        "tools/index"
+      ]
+    },
+    {
+      "group": "Settings",
+      "pages": [
+        "settings/index"
+      ]
+    },
+    {
+      "group": "Troubleshooting",
+      "pages": [
+        "troubleshooting/index"
       ]
     }
   ],
   "footerSocials": {
     "x": "https://x.com/coachiq",
-    "linkedin": "https://www.linkedin.com/company/coachiq"
+    "linkedin": "https://linkedin.com/company/coachiq"
   }
 }
