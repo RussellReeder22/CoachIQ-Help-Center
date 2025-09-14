@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "CoachIQ Help Center",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
@@ -17,58 +17,53 @@
   },
   "topbarLinks": [
     {
-      "name": "CoachIQ Office Hours",
-      "url": "mailto:hi@mintlify.com"
+      "name": "CoachIQ Login",
+      "url": "https://dashboard.coachiq.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "CoachIQ Login",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Dashboard",
+    "url": "https://dashboard.coachiq.com"
   },
   "tabs": [
     {
-      "name": "Athlete Portal",
-      "url": "api-reference"
+      "name": "Help Center",
+      "url": "getting-started"
+    },
+    {
+      "name": "Troubleshooting",
+      "url": "troubleshooting"
+    },
+    {
+      "name": "Power-Ups",
+      "url": "power-ups"
+    },
+    {
+      "name": "Workflows",
+      "url": "workflows"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Getting Started",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
-      ]
-    },
-    {
-      "group": "Essentials",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "getting-started/index",
+        "getting-started/welcome",
+        {
+          "group": "Initial Setup",
+          "pages": [
+            "getting-started/connect-stripe-payments",
+            "getting-started/create-first-product",
+            "getting-started/setup-session-scheduler",
+            "getting-started/launch-coaching-website",
+            "getting-started/configure-athlete-portal"
+          ]
+        }
       ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "x": "https://x.com/coachiq",
+    "linkedin": "https://www.linkedin.com/company/coachiq"
   }
 }
