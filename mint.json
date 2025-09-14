@@ -21,17 +21,13 @@
   },
   "topbarLinks": [
     {
-      "name": "Dashboard",
-      "url": "https://app.coachiq.com"
-    },
-    {
-      "name": "Support",
-      "url": "https://support.coachiq.com"
+      "name": "CoachIQ Office Hours",
+      "url": "https://coachiq.com/office-hours"
     }
   ],
   "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "https://app.coachiq.com/signup",
+    "name": "Login",
+    "url": "https://admin.coachiq.io",
     "style": "roundedRectangle"
   },
   "tabs": [
@@ -46,70 +42,126 @@
   ],
   "navigation": [
     {
-      "group": "Welcome",
-      "pages": [
-        "introduction"
-      ]
-    },
-    {
       "group": "Getting Started",
       "pages": [
         "getting-started/welcome",
-        "getting-started/initial-setup-checklist",
-        "getting-started/initial-setup-checklist/connect-stripe-account",
-        "getting-started/initial-setup-checklist/create-your-first-product",
-        "getting-started/initial-setup-checklist/set-up-your-scheduler",
-        "getting-started/initial-setup-checklist/website-launch-and-basics",
-        "getting-started/initial-setup-checklist/configure-your-athlete-app"
+        {
+          "group": "Initial Setup Checklist",
+          "pages": [
+            "getting-started/initial-setup-checklist/connect-stripe-account",
+            "getting-started/initial-setup-checklist/create-your-first-product",
+            "getting-started/initial-setup-checklist/set-up-your-scheduler",
+            "getting-started/initial-setup-checklist/website-launch-and-basics",
+            "getting-started/initial-setup-checklist/configure-your-athlete-app"
+          ]
+        }
       ]
     },
     {
       "group": "Website & App",
       "pages": [
-        "website/index",
-        "athlete-portal/index"
+        {
+          "group": "Website Builder",
+          "pages": [
+            "website/overview",
+            "website/pages-navigation",
+            "website/sections",
+            "website/domain-setup",
+            "website/analytics-tracking",
+            "website/seo-marketing"
+          ]
+        },
+        {
+          "group": "Athlete Portal",
+          "pages": [
+            "athlete-portal/overview",
+            "athlete-portal/setup-design",
+            "athlete-portal/channels",
+            "athlete-portal/scheduling",
+            "athlete-portal/programs",
+            "athlete-portal/products-payments",
+            "athlete-portal/access-control",
+            "athlete-portal/mobile-app"
+          ]
+        }
       ]
     },
     {
       "group": "Communication",
       "pages": [
-        "inbox/index"
+        "inbox/overview",
+        "inbox/sending-messages",
+        "inbox/conversations",
+        "inbox/group-messaging",
+        "inbox/notifications"
       ]
     },
     {
       "group": "Schedule",
       "pages": [
-        "scheduling/index"
+        "schedule/overview",
+        "schedule/calendar",
+        "schedule/schedulers",
+        "schedule/credit-system",
+        "schedule/availability",
+        "schedule/bookings",
+        "schedule/common-questions"
       ]
     },
     {
       "group": "Payments",
       "pages": [
-        "payments/index"
+        "payments/overview",
+        "payments/stripe-setup",
+        "payments/products",
+        "payments/credits",
+        "payments/subscriptions",
+        "payments/transactions",
+        "payments/coupons",
+        "payments/faq"
       ]
     },
     {
       "group": "People",
       "pages": [
-        "people/index"
+        "people/overview",
+        "people/clients",
+        "people/staff",
+        "people/tags-organization",
+        "people/activity-tracking"
       ]
     },
     {
       "group": "Content",
       "pages": [
-        "content/index"
+        "content/overview",
+        "content/media-hub",
+        "content/programs",
+        "content/lessons",
+        "content/video-analysis",
+        "content/sharing-access"
       ]
     },
     {
       "group": "Tools",
       "pages": [
-        "tools/index"
+        "tools/overview",
+        "tools/forms",
+        "tools/automations",
+        "tools/automation-examples"
       ]
     },
     {
       "group": "Settings",
       "pages": [
-        "settings/index"
+        "settings/overview",
+        "settings/my-account",
+        "settings/business-info",
+        "settings/team-permissions",
+        "settings/integrations-api",
+        "settings/import-export",
+        "settings/billing",
+        "settings/technical"
       ]
     }
   ],
