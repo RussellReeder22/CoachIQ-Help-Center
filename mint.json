@@ -2,34 +2,58 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "CoachIQ Help Center",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/CIQwrittendarkmode.png",
+    "light": "/logo/CIQwrittenlightmode.png"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/logo/CoachIQlogo.svg",
   "colors": {
-    "primary": "#F5A623",
-    "light": "#FDB94E",
-    "dark": "#F5A623",
+    "primary": "#D4A017",
+    "light": "#E6B422",
+    "dark": "#C19511",
+    "background": {
+      "dark": "#1A1A1A",
+      "light": "#FFFFFF"
+    },
     "anchors": {
-      "from": "#F5A623",
-      "to": "#FDB94E"
+      "from": "#D4A017",
+      "to": "#E6B422"
     }
   },
   "topbarLinks": [
     {
       "name": "Dashboard",
       "url": "https://app.coachiq.com"
+    },
+    {
+      "name": "Support",
+      "url": "https://support.coachiq.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Login",
-    "url": "https://app.coachiq.com/login"
+    "name": "Get Started",
+    "url": "https://app.coachiq.com/signup",
+    "style": "roundedRectangle"
   },
+  "tabs": [
+    {
+      "name": "Help Center",
+      "url": "/"
+    },
+    {
+      "name": "Troubleshooting",
+      "url": "troubleshooting"
+    }
+  ],
   "navigation": [
+    {
+      "group": "Welcome",
+      "pages": [
+        "introduction"
+      ]
+    },
     {
       "group": "Getting Started",
       "pages": [
-        "introduction",
         "getting-started/index"
       ]
     },
@@ -41,7 +65,7 @@
       ]
     },
     {
-      "group": "Inbox",
+      "group": "Communication",
       "pages": [
         "inbox/index"
       ]
@@ -81,16 +105,33 @@
       "pages": [
         "settings/index"
       ]
-    },
-    {
-      "group": "Troubleshooting",
-      "pages": [
-        "troubleshooting/index"
-      ]
     }
   ],
   "footerSocials": {
     "x": "https://x.com/coachiq",
-    "linkedin": "https://linkedin.com/company/coachiq"
+    "instagram": "https://instagram.com/coachiq",
+    "linkedin": "https://linkedin.com/company/coachiq",
+    "youtube": "https://youtube.com/@coachiq"
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true,
+    "raiseIssue": false
+  },
+  "search": {
+    "prompt": "Search CoachIQ Help..."
+  },
+  "modeToggle": {
+    "default": "light",
+    "isHidden": false
+  },
+  "primaryTab": {
+    "name": "Documentation"
+  },
+  "metadata": {
+    "og:title": "CoachIQ Help Center",
+    "og:description": "Everything you need to run and grow your sports coaching business",
+    "og:image": "/images/og-image.png",
+    "twitter:card": "summary_large_image"
   }
 }
