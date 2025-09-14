@@ -17,12 +17,12 @@
   },
   "topbarLinks": [
     {
-      "name": "Support",
+      "name": "CoachIQ Office Hours",
       "url": "mailto:hi@mintlify.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Coaches Platform",
+    "name": "CoachIQ Login",
     "url": "https://dashboard.mintlify.com"
   },
   "tabs": [
