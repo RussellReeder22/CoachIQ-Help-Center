@@ -58,105 +58,87 @@
       ]
     },
     {
-      "group": "Website Builder",
+      "group": "Website & App",
       "pages": [
         {
-          "group": "Website Overview",
-          "icon": "globe",
+          "group": "Website Builder",
           "pages": [
             "website/overview",
-            "website/overview/how-we-build",
-            "website/overview/review-process",
-            "website/overview/going-live"
+            {
+              "group": "Pages & Navigation",
+              "pages": [
+                "website/pages-navigation/page-templates",
+                "website/pages-navigation/url-slugs-management",
+                "website/pages-navigation/legal-pages"
+              ]
+            },
+            {
+              "group": "Sections",
+              "pages": [
+                "website/sections/working-with-sections",
+                "website/sections/backgrounds-styling",
+                "website/sections/buttons-ctas",
+                "website/sections/custom-font-setup",
+                "website/sections/troubleshooting-text-display"
+              ]
+            },
+            {
+              "group": "Section Types",
+              "pages": [
+                "website/section-types/hero-banner",
+                "website/section-types/content-media",
+                "website/section-types/scheduling",
+                "website/section-types/pricing",
+                "website/section-types/testimonials",
+                "website/section-types/gallery",
+                "website/section-types/forms",
+                "website/section-types/credibility-logos",
+                "website/section-types/numbered-steps",
+                "website/section-types/faq"
+              ]
+            },
+            {
+              "group": "Domain Setup",
+              "pages": [
+                "website/domain-setup/purchasing-domain",
+                "website/domain-setup/connecting-wix",
+                "website/domain-setup/connecting-godaddy",
+                "website/domain-setup/connecting-squarespace",
+                "website/domain-setup/connecting-namecheap",
+                "website/domain-setup/dns-permissions"
+              ]
+            },
+            {
+              "group": "Analytics & Tracking",
+              "pages": [
+                "website/analytics-tracking/google-analytics",
+                "website/analytics-tracking/facebook-pixel",
+                "website/analytics-tracking/clarity-microsoft"
+              ]
+            },
+            {
+              "group": "SEO & Marketing",
+              "pages": [
+                "website/seo-marketing/google-my-business",
+                "website/seo-marketing/apple-maps",
+                "website/seo-marketing/keyword-strategy"
+              ]
+            }
           ]
         },
         {
-          "group": "Pages & Navigation",
-          "icon": "sitemap",
+          "group": "Athlete Portal",
           "pages": [
-            "website/pages-navigation",
-            "website/pages-navigation/header-footer-setup",
-            "website/pages-navigation/managing-pages",
-            "website/pages-navigation/page-templates"
-          ]
-        },
-        {
-          "group": "Page Sections",
-          "icon": "layer-group",
-          "pages": [
-            "website/sections",
-            "website/sections/working-with-sections",
-            "website/sections/backgrounds-styling",
-            "website/sections/buttons-ctas",
-            "website/sections/duplicating-sections"
-          ]
-        },
-        {
-          "group": "Section Types",
-          "icon": "shapes",
-          "pages": [
-            "website/section-types",
-            "website/section-types/hero-banner",
-            "website/section-types/content-media",
-            "website/section-types/scheduling",
-            "website/section-types/pricing",
-            "website/section-types/features",
-            "website/section-types/testimonials",
-            "website/section-types/gallery",
-            "website/section-types/forms",
-            "website/section-types/credibility-logos",
-            "website/section-types/numbered-steps",
-            "website/section-types/faq"
-          ]
-        },
-        {
-          "group": "Domain Setup",
-          "icon": "globe-pointer",
-          "pages": [
-            "website/domain-setup",
-            "website/domain-setup/purchasing-domain",
-            "website/domain-setup/connecting-wix",
-            "website/domain-setup/connecting-godaddy",
-            "website/domain-setup/connecting-squarespace",
-            "website/domain-setup/connecting-namecheap",
-            "website/domain-setup/dns-permissions"
-          ]
-        },
-        {
-          "group": "Analytics & Tracking",
-          "icon": "chart-line",
-          "pages": [
-            "website/analytics-tracking",
-            "website/analytics-tracking/google-analytics",
-            "website/analytics-tracking/facebook-pixel",
-            "website/analytics-tracking/conversion-tracking"
-          ]
-        },
-        {
-          "group": "SEO & Marketing",
-          "icon": "magnifying-glass-chart",
-          "pages": [
-            "website/seo-marketing",
-            "website/seo-marketing/google-my-business",
-            "website/seo-marketing/apple-maps",
-            "website/seo-marketing/keyword-strategy",
-            "website/seo-marketing/meta-tags",
-            "website/seo-marketing/site-speed"
+            "athlete-portal/overview",
+            "athlete-portal/setup-design",
+            "athlete-portal/channels",
+            "athlete-portal/scheduling",
+            "athlete-portal/programs",
+            "athlete-portal/products-payments",
+            "athlete-portal/access-control",
+            "athlete-portal/mobile-app"
           ]
         }
-      ]
-    },
-    {
-      "group": "Athlete Portal",
-      "pages": [
-        "athlete-portal/overview",
-        "athlete-portal/setup-design",
-        "athlete-portal/channels",
-        "athlete-portal/scheduling",
-        "athlete-portal/programs",
-        "athlete-portal/products-payments",
-        "athlete-portal/access-control",
-        "athlete-portal/mobile-app"
       ]
     },
     {
