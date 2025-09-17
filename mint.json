@@ -36,8 +36,28 @@
       "url": "/"
     },
     {
+      "name": "Power-Ups",
+      "url": "power-ups"
+    },
+    {
       "name": "Troubleshooting",
       "url": "troubleshooting"
+    },
+    {
+      "name": "Flows",
+      "url": "flows"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Get Support",
+      "icon": "life-ring",
+      "url": "https://coachiq.com/support"
+    },
+    {
+      "name": "Office Hours",
+      "icon": "calendar",
+      "url": "https://coachiq.com/office-hours"
     }
   ],
   "navigation": [
@@ -49,174 +69,119 @@
           "group": "Initial Setup Checklist",
           "pages": [
             "getting-started/initial-setup-checklist/connect-stripe-account",
+            "getting-started/initial-setup-checklist/configure-your-athlete-app",
             "getting-started/initial-setup-checklist/create-your-first-product",
             "getting-started/initial-setup-checklist/set-up-your-scheduler",
-            "getting-started/initial-setup-checklist/website-launch-and-basics",
-            "getting-started/initial-setup-checklist/configure-your-athlete-app"
+            "getting-started/initial-setup-checklist/website-launch-and-basics"
           ]
         }
       ]
     },
     {
-      "group": "Website & App",
+      "group": "Website & Apps",
       "pages": [
+        "website/overview",
         {
-          "group": "Website Builder",
+          "group": "Pages & Navigation",
           "pages": [
-            "website/overview",
-            {
-              "group": "Pages & Navigation",
-              "pages": [
-                "website/pages-navigation/page-templates",
-                "website/pages-navigation/url-slugs-management",
-                "website/pages-navigation/legal-pages"
-              ]
-            },
-            {
-              "group": "Sections",
-              "pages": [
-                "website/sections/working-with-sections",
-                "website/sections/backgrounds-styling",
-                "website/sections/buttons-ctas",
-                "website/sections/custom-font-setup",
-                "website/sections/troubleshooting-text-display"
-              ]
-            },
-            {
-              "group": "Section Types",
-              "pages": [
-                "website/section-types/hero-banner",
-                "website/section-types/content-media",
-                "website/section-types/scheduling",
-                "website/section-types/pricing",
-                "website/section-types/testimonials",
-                "website/section-types/gallery",
-                "website/section-types/forms",
-                "website/section-types/credibility-logos",
-                "website/section-types/numbered-steps",
-                "website/section-types/faq"
-              ]
-            },
-            {
-              "group": "Domain Setup",
-              "pages": [
-                "website/domain-setup/purchasing-domain",
-                "website/domain-setup/connecting-wix",
-                "website/domain-setup/connecting-godaddy",
-                "website/domain-setup/connecting-squarespace",
-                "website/domain-setup/connecting-namecheap",
-                "website/domain-setup/dns-permissions"
-              ]
-            },
-            {
-              "group": "Analytics & Tracking",
-              "pages": [
-                "website/analytics-tracking/google-analytics",
-                "website/analytics-tracking/facebook-pixel",
-                "website/analytics-tracking/clarity-microsoft"
-              ]
-            },
-            {
-              "group": "SEO & Marketing",
-              "pages": [
-                "website/seo-marketing/google-my-business",
-                "website/seo-marketing/apple-maps",
-                "website/seo-marketing/keyword-strategy"
-              ]
-            }
+            "website/pages-navigation/legal-pages",
+            "website/pages-navigation/page-templates",
+            "website/pages-navigation/url-slugs-page-management"
           ]
         },
         {
-          "group": "Athlete Portal",
+          "group": "Sections",
           "pages": [
-            "athlete-portal/overview",
-            "athlete-portal/setup-design",
-            "athlete-portal/channels",
-            "athlete-portal/scheduling",
-            "athlete-portal/programs",
-            "athlete-portal/products-payments",
-            "athlete-portal/access-control",
-            "athlete-portal/mobile-app"
+            "website/sections",
+            "website/sections/backgrounds-styling",
+            "website/sections/buttons-ctas",
+            "website/sections/working-with-sections"
           ]
-        }
+        },
+        {
+          "group": "Section Types",
+          "pages": [
+            "website/section-types/content-media",
+            "website/section-types/credibility-logos",
+            "website/section-types/faq",
+            "website/section-types/forms",
+            "website/section-types/gallery",
+            "website/section-types/hero-banner",
+            "website/section-types/numbered-steps",
+            "website/section-types/pricing",
+            "website/section-types/scheduling",
+            "website/section-types/testimonials"
+          ]
+        },
+        {
+          "group": "Domain Setup",
+          "pages": [
+            "website/domain-setup/connecting-godaddy",
+            "website/domain-setup/connecting-squarespace",
+            "website/domain-setup/connecting-wix",
+            "website/domain-setup/dns-permissions",
+            "website/domain-setup/purchasing-domain"
+          ]
+        },
+        {
+          "group": "Analytics & Tracking",
+          "pages": [
+            "website/analytics-tracking/clarity-microsoft",
+            "website/analytics-tracking/facebook-pixel",
+            "website/analytics-tracking/google-analytics"
+          ]
+        },
+        {
+          "group": "SEO & Marketing",
+          "pages": [
+            "website/seo-marketing/apple-maps",
+            "website/seo-marketing/google-my-business",
+            "website/seo-marketing/keyword-strategy"
+          ]
+        },
+        "athlete-portal"
       ]
     },
     {
       "group": "Communication",
       "pages": [
-        "inbox/overview",
-        "inbox/sending-messages",
-        "inbox/conversations",
-        "inbox/group-messaging",
-        "inbox/notifications"
+        "inbox"
       ]
     },
     {
-      "group": "Schedule",
+      "group": "Sessions & Scheduling",
       "pages": [
-        "schedule/overview",
-        "schedule/calendar",
-        "schedule/schedulers",
-        "schedule/credit-system",
-        "schedule/availability",
-        "schedule/bookings",
-        "schedule/common-questions"
+        "scheduling"
       ]
     },
     {
       "group": "Payments",
       "pages": [
-        "payments/overview",
-        "payments/stripe-setup",
-        "payments/products",
-        "payments/credits",
-        "payments/subscriptions",
-        "payments/transactions",
-        "payments/coupons",
-        "payments/faq"
+        "payments"
       ]
     },
     {
-      "group": "People",
+      "group": "People & Clients",
       "pages": [
-        "people/overview",
-        "people/clients",
-        "people/staff",
-        "people/tags-organization",
-        "people/activity-tracking"
+        "people"
       ]
     },
     {
-      "group": "Content",
+      "group": "Content & Programs",
       "pages": [
-        "content/overview",
-        "content/media-hub",
-        "content/programs",
-        "content/lessons",
-        "content/video-analysis",
-        "content/sharing-access"
+        "content"
       ]
     },
     {
-      "group": "Tools",
+      "group": "Tools & Automation",
       "pages": [
-        "tools/overview",
-        "tools/forms",
-        "tools/automations",
-        "tools/automation-examples"
+        "tools"
       ]
     },
     {
-      "group": "Settings",
+      "group": "Settings & Configuration",
       "pages": [
-        "settings/overview",
-        "settings/my-account",
-        "settings/business-info",
-        "settings/team-permissions",
-        "settings/integrations-api",
-        "settings/import-export",
-        "settings/billing",
-        "settings/technical"
+        "settings"
       ]
     }
   ],
@@ -237,9 +202,6 @@
   "modeToggle": {
     "default": "light",
     "isHidden": false
-  },
-  "primaryTab": {
-    "name": "Documentation"
   },
   "metadata": {
     "og:title": "CoachIQ Help Center",
