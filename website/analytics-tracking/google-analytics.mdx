@@ -1,5 +1,167 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Add Google Analytics to Your Coaching Website"
+description: "Set up Google Analytics 4 (GA4) on your CoachIQ website in 5 minutes. Track visitors, measure conversions, and grow your coaching business with data."
+sidebarTitle: "Google Analytics"
+icon: "google"
+keywords: "Google Analytics setup, GA4 CoachIQ, coaching website analytics, track website visitors, Google Analytics ID"
 ---
 
+<Info>
+**Setup time**: 5 minutes  
+**Cost**: Free  
+**What you'll track**: Visitors, traffic sources, conversions, and user behavior
+</Info>
+
+## What is Google Analytics?
+
+Google Analytics is a free tool that shows you how people find and use your coaching website. Track how many visitors you get, which pages they view, and whether they book sessions or sign up for programs.
+
+## Get your Google Analytics ID
+
+<Steps>
+<Step title="Create a Google Analytics account">
+1. Go to [analytics.google.com](https://analytics.google.com)
+2. Click **Start measuring**
+3. Enter your coaching business name as the account name
+4. Click **Next**
+</Step>
+
+<Step title="Set up your property">
+1. Enter your website name as the property name
+2. Select your time zone and currency
+3. Choose **Sports & Fitness** as your industry
+4. Select your business size
+5. Click **Create**
+</Step>
+
+<Step title="Create a web data stream">
+1. Choose **Web** as your platform
+2. Enter your website URL (e.g., `yourcoaching.coachiq.io`)
+3. Name your stream (e.g., "CoachIQ Website")
+4. Click **Create stream**
+</Step>
+
+<Step title="Copy your Measurement ID">
+Your Google Analytics 4 Measurement ID will appear at the top of the page.
+It looks like: **G-XXXXXXXXXX**
+
+<Warning>
+Make sure you copy the ID that starts with "G-" (this is GA4). Don't use IDs starting with "UA-" (old Universal Analytics).
+</Warning>
+</Step>
+</Steps>
+
+## Add Google Analytics to CoachIQ
+
+<Steps>
+<Step title="Open Scripts & Analytics">
+1. Go to **Dashboard → Website Builder**
+2. Click **Scripts & Analytics** in the left sidebar
+
+![Scripts Screen](/images/scriptsscreen.png)
+</Step>
+
+<Step title="Paste your Analytics ID">
+1. In the **Google Analytics** field, paste your Measurement ID (G-XXXXXXXXXX)
+2. The field will show your ID once entered correctly
+</Step>
+
+<Step title="Publish your changes">
+Click the blue **Publish Scripts & Analytics** button at the bottom of the modal.
+
+<Check>
+**Success!** Google Analytics is now tracking your website. Data will start appearing in 24-48 hours.
+</Check>
+</Step>
+</Steps>
+
+## Verify it's working
+
+<Tabs>
+<Tab title="Quick Check">
+1. Open your website in a new browser tab
+2. Go back to Google Analytics
+3. Click **Reports** → **Realtime**
+4. You should see yourself as an active user
+</Tab>
+
+<Tab title="Use GA Debugger">
+1. Install [Google Analytics Debugger](https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna) Chrome extension
+2. Visit your website
+3. Open Chrome DevTools (F12)
+4. Check the Console for GA tracking messages
+</Tab>
+</Tabs>
+
+## What to track for coaching businesses
+
+### Essential metrics to monitor:
+- **Users**: How many people visit your site
+- **Acquisition**: Where visitors come from (Google, Facebook, direct)
+- **Engagement**: Which pages get the most views
+- **Conversions**: Track bookings and signups
+
+### Set up conversion events:
+1. Track "Book Session" button clicks
+2. Monitor form submissions
+3. Measure program signups
+4. Track phone number clicks
+
+<Tip>
+**Pro tip**: Set up a weekly email report in Google Analytics to stay informed without logging in daily.
+</Tip>
+
+## Common questions
+
+<AccordionGroup>
+<Accordion title="Why isn't my data showing?">
+New Google Analytics accounts can take 24-48 hours to start displaying data. If you just added the code, check back tomorrow.
+</Accordion>
+
+<Accordion title="What's the difference between GA4 and Universal Analytics?">
+GA4 is Google's newest analytics platform (IDs start with G-). Universal Analytics (IDs start with UA-) was discontinued in July 2023. Always use GA4 for new setups.
+</Accordion>
+
+<Accordion title="Can I track multiple websites?">
+Yes, but each website needs its own unique Google Analytics ID. Create separate properties in your GA account for each coaching website.
+</Accordion>
+
+<Accordion title="Is Google Analytics GDPR compliant?">
+Yes, but you should update your privacy policy to mention you use Google Analytics and consider adding a cookie consent banner to your website.
+</Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| ID not saving | Make sure you're using GA4 format (G-XXXXXXXXXX) |
+| No data after 48 hours | Verify the ID is correct and try clearing your website cache |
+| Can't find Measurement ID | Look for "G-" format in Admin → Data Streams → Web |
+| Old UA code | Create a new GA4 property - Universal Analytics is retired |
+
+## Next steps
+
+<CardGroup cols={2}>
+<Card title="Set conversion goals" icon="target">
+Learn to track bookings and signups as conversions in GA4
+</Card>
+
+<Card title="Add Facebook Pixel" icon="facebook" href="/website/analytics-tracking/facebook-pixel">
+Track your Facebook ad performance
+</Card>
+
+<Card title="Install Microsoft Clarity" icon="microsoft" href="/website/analytics-tracking/clarity-microsoft">
+See heatmaps and session recordings
+</Card>
+
+<Card title="View your analytics" icon="chart-line">
+[Access your GA4 dashboard →](https://analytics.google.com)
+</Card>
+</CardGroup>
+
+---
+
+<Note>
+**Need help?** Join our [Office Hours](https://coachiq.com/office-hours) for live Google Analytics setup assistance.
+</Note>
