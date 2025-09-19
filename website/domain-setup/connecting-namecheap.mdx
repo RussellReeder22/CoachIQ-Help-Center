@@ -1,201 +1,214 @@
 ---
-title: "Connect Your Squarespace Domain - CoachIQ Help"
-description: "Share domain access with CoachIQ to connect your Squarespace domain. Simple permission setup lets our team handle the technical configuration."
-sidebarTitle: "Connect Squarespace Domain"
-keywords: "Squarespace domain, connect domain, domain permissions, domain manager, CoachIQ Squarespace"
+title: "Connect Your Namecheap Domain - CoachIQ Help"
+description: "Connect your Namecheap domain to CoachIQ with account sharing or manual DNS setup. Step-by-step guide for both methods with complete instructions."
+sidebarTitle: "Connect Namecheap Domain"
+keywords: "Namecheap domain, connect domain, DNS settings, account sharing, CoachIQ Namecheap"
 ---
 
 ## Overview
 
-Connecting your Squarespace domain to CoachIQ is straightforward - you'll add our team as a domain manager, and we'll handle all the technical DNS configuration. This process takes about 5 minutes on your end, and your domain will be fully connected within 24-48 hours.
+Connecting your Namecheap domain to CoachIQ gives you two options: grant our team access to handle everything for you (recommended), or update the DNS records yourself. Both methods take about 5 minutes to set up, with your domain fully connected within 24-48 hours.
 
 <Info>
-**What is a domain manager?** 
-A domain manager can configure your domain settings and DNS records but cannot access your billing information or delete your domain. You maintain full ownership and can revoke access anytime.
+**Choose your comfort level**: 
+- **Account sharing** (recommended) - We handle all technical setup for you
+- **Manual DNS** - You control the changes directly
 </Info>
 
 ## Before you begin
 
 <Note>
 **You'll need:**
-- Your Squarespace login credentials
-- A Squarespace domain (not attached to a Squarespace website)
+- Your Namecheap login credentials
+- The domain you want to connect
 - Your CoachIQ website published and ready
 </Note>
 
-## Connect your domain
+## Option 1: Share access with CoachIQ (Recommended)
+
+Let our team handle the technical configuration while you focus on your coaching business.
 
 <Steps>
-<Step title="Log in to Squarespace">
-Visit your [Squarespace domains dashboard](https://account.squarespace.com/domains) and sign in with your email and password.
+<Step title="Log in to Namecheap">
+Visit [Namecheap.com](https://www.namecheap.com) and sign in to your account.
 
 <Tip>
-Make sure you're logging into the account that owns your domain, not a Squarespace website account.
+Make sure you're logging in as the account owner, not a sub-account, as only owners can share access.
 </Tip>
 </Step>
 
-<Step title="Select your domain">
-From your domains dashboard, click on the domain you want to connect to CoachIQ.
+<Step title="Access your profile">
+Click on your profile icon in the top-right corner of the dashboard and select **Manage Profile**.
 
-If you have multiple domains, choose the one you want to use for your coaching website.
-</Step>
-
-<Step title="Navigate to Permissions">
-Once in your domain settings, click on **Permissions** in the left menu.
-
-</Step>
-
-<Step title="Invite domain manager">
-Click the **Invite domain manager** button.
+<Step title="Navigate to Account Sharing">
+In your profile settings, click on the **Account Sharing** tab.
 
 <Warning>
-**No "Invite domain manager" button?**
-If this option isn't available, your domain is likely attached to a Squarespace website. You'll need to either:
-- Detach the domain from your Squarespace site first, or
-- Follow our [manual DNS setup guide](/website/domain-setup/dns-permissions)
+**Can't see Account Sharing?**
+This feature is only available for account owners. If you're using a sub-account, you'll need to either:
+- Log in as the main account owner, or
+- Use the manual DNS method below
 </Warning>
 </Step>
 
-<Step title="Add CoachIQ team">
-Enter the following information exactly as shown:
-- **Name**: CoachIQ Support
+<Step title="Add CoachIQ as a manager">
+Click **Add Manager** and enter the following information:
 - **Email**: `liz@coachiq.io`
+- **Permissions**: Select options that allow DNS management
 
-Click **Send Invitation** to grant access to our team.
-</Step>
-
-<Step title="Confirmation">
-You'll see a confirmation that the invitation has been sent. Our team will receive an email notification immediately.
+<Step title="Save and confirm">
+Click **Save** to grant access to our team. You'll see a confirmation that the manager has been added.
 
 <Check>
-**Invitation sent!** CoachIQ will accept the invitation and begin configuring your domain.
+**Access granted!** CoachIQ will receive notification and begin configuring your domain.
 </Check>
 </Step>
 
 <Step title="Notify CoachIQ support">
 Send a quick message to our support team letting us know:
 - Your domain name
-- That you've granted domain manager access
+- That you've granted manager access
 
-We'll handle the technical configuration and notify you once your domain is connected.
+We'll handle the DNS configuration and notify you once your domain is connected.
+</Step>
+</Steps>
+
+## Option 2: Manual DNS setup
+
+Prefer to handle it yourself? Follow these steps to update your DNS records directly.
+
+<Steps>
+<Step title="Log in to Namecheap">
+Visit [Namecheap.com](https://www.namecheap.com) and sign in to your account.
+</Step>
+
+<Step title="Access your domain">
+From your dashboard, find your domain and click **Manage**.
+
+</Step>
+
+<Step title="Navigate to Advanced DNS">
+Click on the **Advanced DNS** tab in your domain settings.
+
+<Step title="Add the A Record">
+In the **Host Records** section, click **Add New Record** and enter:
+- **Type**: A Record
+- **Host**: @
+- **Value**: `76.76.21.21`
+- **TTL**: Automatic
+
+<Step title="Add the CNAME Record">
+Click **Add New Record** again and enter:
+- **Type**: CNAME Record
+- **Host**: www
+- **Value**: `website-v1.coachiq.io`
+- **TTL**: Automatic
+
+<Warning>
+Make sure to enter the CNAME value exactly as shown: `website-v1.coachiq.io` (all lowercase)
+</Warning>
+</Step>
+
+<Step title="Save your changes">
+Click the checkmark or **Save All Changes** button to apply your DNS updates.
+
+<Check>
+**DNS records updated!** Your domain will connect to CoachIQ within 24-48 hours as the changes propagate.
+</Check>
 </Step>
 </Steps>
 
 ## What happens next?
 
 <Info>
-**Our team will:**
-1. Accept your invitation (within 2-4 hours during business hours)
-2. Configure your domain's DNS settings
-3. Set up SSL security certificates
-4. Test the connection
-5. Notify you when everything is complete
+**Timeline for both methods:**
+- **Immediate**: Settings are saved in Namecheap
+- **2-4 hours**: DNS changes begin propagating
+- **24-48 hours**: Domain fully connected worldwide
+- **SSL Certificate**: Automatically configured within 24 hours
 
-**Timeline:** Most domains are fully connected within 24-48 hours.
+Most domains start working within 2-4 hours, though full global propagation can take up to 48 hours.
 </Info>
-
-## Domain permission levels explained
-
-Squarespace has two permission levels:
-
-<CardGroup cols={2}>
-<Card title="Domain Owner" icon="crown">
-  **You keep this role:**
-  - Full control over domain
-  - Billing access
-  - Can delete domain
-  - Can manage all permissions
-</Card>
-
-<Card title="Domain Manager" icon="user-gear">
-  **CoachIQ gets this role:**
-  - Configure DNS settings
-  - Connect domain to sites
-  - Manage technical settings
-  - No billing or deletion access
-</Card>
-</CardGroup>
 
 ## Common questions
 
 <AccordionGroup>
-<Accordion title="Is sharing access safe?">
-Yes! Domain manager access is Squarespace's secure way to let professionals help with your domain. We can only access DNS settings - never your billing information or ability to delete your domain.
+<Accordion title="Which method should I choose?">
+**Account sharing** is recommended if you want us to handle everything - it's faster and eliminates potential errors. Choose **manual DNS** if you prefer to maintain full control or are comfortable with technical settings.
 </Accordion>
 
-<Accordion title="How long do you need access?">
-We typically complete the setup within 24-48 hours. You can keep us as a domain manager for future support needs, or remove access once your domain is connected and working.
+<Accordion title="Is account sharing safe?">
+Yes! Namecheap's manager access allows us to configure DNS settings without accessing your billing information or ability to transfer domains. You maintain full ownership and can revoke access anytime.
 </Accordion>
 
-<Accordion title="How do I remove access later?">
+<Accordion title="How do I remove manager access later?">
 To remove CoachIQ's access:
-1. Go to your [domains dashboard](https://account.squarespace.com/domains)
-2. Click your domain
-3. Go to **Permissions**
-4. Click the three dots (...) next to "CoachIQ Support"
-5. Select **Remove domain manager**
+1. Go to your profile settings
+2. Click **Account Sharing**
+3. Find "liz@coachiq.io" in your managers list
+4. Click **Remove** next to our email
 
 Your domain will continue working normally after removing access.
 </Accordion>
 
-<Accordion title="My domain is attached to a Squarespace website. What do I do?">
-If your domain is connected to an existing Squarespace website, you have two options:
-1. **Disconnect from Squarespace site**: Move the domain to standalone management, then follow our guide
-2. **Manual setup**: Keep your current setup and follow our [DNS configuration guide](/website/domain-setup/dns-permissions)
-
-Most coaches choose option 2 to avoid disrupting their existing setup.
-</Accordion>
-
 <Accordion title="Will my email still work?">
-Yes! We only modify website-related DNS records. Your email settings (MX records) remain untouched, so your email will continue working exactly as before.
+Yes! We only modify website-related DNS records (A and CNAME). Your email settings (MX records) remain untouched, so your email continues working exactly as before.
 </Accordion>
 
-<Accordion title="What if I have Google Workspace through Squarespace?">
-Your Google Workspace (Gmail, Drive, Calendar) will continue working normally. We don't touch email-related settings - only the records that point your domain to your CoachIQ website.
+<Accordion title="What if I already have DNS records?">
+If you have existing A or CNAME records for @ or www, you'll need to update or replace them with our values. Other records (MX, TXT, etc.) should remain unchanged.
+</Accordion>
+
+<Accordion title="Can I use a subdomain instead?">
+Yes! Instead of @ and www, you can use a subdomain like "coaching.yourdomain.com". Just replace @ with your subdomain name when adding the A record.
 </Accordion>
 </AccordionGroup>
 
 ## Troubleshooting
 
 <Warning>
-**Can't find the Permissions option?**
-
-This usually means your domain is attached to a Squarespace website. You can either:
-1. Contact Squarespace support to detach the domain
-2. Use our [manual DNS setup guide](/website/domain-setup/dns-permissions)
-</Warning>
-
-<Warning>
 **Domain not connecting after 48 hours?**
 
-Check that:
-- The invitation was sent to `liz@coachiq.io` (exactly as shown)
+For **account sharing**, verify:
+- Manager email is exactly `liz@coachiq.io`
+- You granted DNS management permissions
 - Your domain is active and not expired
-- The domain isn't attached to a Squarespace website
 
-If everything looks correct, contact our support team with your domain name.
+For **manual DNS**, check:
+- A record points to `76.76.21.21`
+- CNAME record points to `website-v1.coachiq.io`
+- No conflicting records exist
+- Records are saved and active
+
+Still having issues? Contact our support team with your domain name.
 </Warning>
 
-## Alternative: Manual DNS setup
+## Additional resources
 
-Prefer to handle the technical setup yourself? Check our [DNS & Permissions guide](/website/domain-setup/dns-permissions) for the specific DNS records you'll need to add.
+<Card title="DNS & Permissions Guide" icon="server" href="/website/domain-setup/dns-permissions">
+Need more detailed DNS information or using a different setup? Check our comprehensive DNS guide.
+</Card>
+
+<Card title="Namecheap Help Docs" icon="external-link" href="https://www.namecheap.com/support/knowledgebase/article.aspx/192/46/how-do-i-share-access-to-my-domain-with-other-users/">
+Namecheap's official documentation on account sharing and domain management.
+</Card>
+
+## Pro tips
 
 <Tip>
-**Pro tip**: If you're comfortable with DNS settings or your domain is attached to a Squarespace website, manual setup might be faster. However, letting our team handle it ensures everything is configured correctly.
+**Best practices:**
+- **Clear your browser cache** after DNS changes to see updates faster
+- **Use incognito mode** to test if your domain is working (avoids cached results)
+- **Keep manager access** even after setup for easy future support
+- **Screenshot your DNS settings** before making changes as a backup
 </Tip>
-
-## Special note for Google Workspace users
-
-<Info>
-**Using Squarespace with Google Workspace?**
-If you purchased Google Workspace through Squarespace when buying your domain, all your Google services (Gmail, Drive, Calendar) will continue working normally. We only modify the records that control where your website displays, not your email or other services.
-</Info>
 
 ## Need help?
 
-If you run into any issues or have questions about connecting your Squarespace domain:
+If you encounter any issues or have questions:
 - Contact our support team with your domain name
+- Specify whether you chose account sharing or manual DNS
 - We typically respond within 2-4 business hours
-- Include "Squarespace Domain Connection" in your message for fastest routing
+- Include "Namecheap Domain Connection" in your message for fastest routing
 
-Once connected, your professional domain will display your CoachIQ website, giving your coaching business the polished online presence it deserves!
+Once connected, your custom domain will display your CoachIQ website, instantly elevating your coaching business's professional image!
