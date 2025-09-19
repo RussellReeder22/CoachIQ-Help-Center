@@ -1,5 +1,291 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Connect Your Wix Domain - CoachIQ Help"
+description: "Connect your Wix domain to CoachIQ by adding our team as a collaborator. We handle all technical setup while you focus on coaching."
+sidebarTitle: "Connect Wix Domain"
+keywords: "Wix domain, connect domain, Wix collaborator, transfer domain from Wix, CoachIQ Wix"
 ---
 
+## Overview
+
+To connect your Wix domain to CoachIQ, you'll add our team as a collaborator and we'll handle all the technical DNS configuration for you. This process takes about 5 minutes on your end, and your domain will be fully connected within 24-48 hours.
+
+<Info>
+**Why we handle it for you**: DNS settings can be tricky, and one wrong entry can cause issues. Our team has connected hundreds of Wix domains and knows exactly what to configure. Let us handle the technical work while you focus on your coaching business.
+</Info>
+
+## Before you begin
+
+<Note>
+**You'll need:**
+- Access to your Wix account that owns the domain
+- Your domain name (e.g., yourcoaching.com)
+- Your CoachIQ website published and ready
+- About 5 minutes to add us as a collaborator
+</Note>
+
+## Connect your domain (Recommended method)
+
+<Steps>
+<Step title="Prepare your CoachIQ website">
+First, let's tell CoachIQ which domain you want to use:
+
+1. Log into your CoachIQ dashboard
+2. Navigate to **Website Builder** → **Settings**
+3. Select **Custom Domain**
+4. Enter your domain with `www.` in front (e.g., `www.yourcoaching.com`)
+5. Click **Request Custom Domain**
+
+<Check>
+**Domain requested!** You'll see a confirmation popup. Now let's give our team access to configure it.
+</Check>
+</Step>
+
+<Step title="Log in to Wix">
+Visit [Wix.com](https://www.wix.com) and sign in to the account that manages your domain.
+
+<Tip>
+Make sure you're logging into the account that owns the domain, not just a site editor account.
+</Tip>
+</Step>
+
+<Step title="Access Roles & Permissions">
+In your Wix dashboard, navigate to **Settings** → **Roles & Permissions**.
+
+If you're in the site editor, look for the settings menu in the left sidebar.
+</Step>
+
+<Step title="Click Invite Collaborators">
+Select the **Invite Collaborators** button.
+
+![Role&permissionswix Pn](/images/role&permissionswix.png)
+
+</Step>
+
+<Step title="Add CoachIQ support">
+Enter the following information:
+- **Email**: `liz@coachiq.io`
+- **Role**: Check the box for **Co-owner** (this gives us the access needed for DNS configuration)
+
+![Wixinvitesitecollaborators Pn](/images/wixinvitesitecollaborators.png)
+
+<Note>
+**About collaborator seats**: Wix includes 1 free collaborator seat. If you already have a collaborator, you may need to upgrade your Wix plan or temporarily remove the other collaborator.
+</Note>
+</Step>
+
+<Step title="Send the invitation">
+Click **Send Invite** to grant access to our team.
+
+<Check>
+**Invitation sent!** Our team will receive notification immediately.
+</Check>
+</Step>
+
+<Step title="Notify CoachIQ support">
+Send a quick message to our support team letting us know:
+- Your domain name
+- That you've added `liz@coachiq.io` as a collaborator
+- Any specific timeline needs
+
+We'll handle all the DNS configuration and notify you once your domain is connected.
+</Step>
+</Steps>
+
+## What happens next?
+
+<Info>
+**Our team will:**
+1. Accept your collaborator invitation (within 2-4 hours during business hours)
+2. Configure your DNS records properly
+3. Set up SSL security certificates
+4. Test the connection thoroughly
+5. Notify you when everything is complete
+6. Remove our collaborator access if requested
+
+**Timeline:** Most domains are fully connected within 24-48 hours.
+</Info>
+
+## Alternative: Configure DNS yourself
+
+While we strongly recommend letting our team handle the technical setup, if you prefer to do it yourself, here's how:
+
+<Accordion title="Manual DNS configuration steps">
+<Warning>
+**Not recommended unless you're comfortable with DNS**: These settings must be exact, and errors can cause connection issues.
+</Warning>
+
+<Steps>
+<Step title="Access your Wix domains">
+Log into Wix and navigate to your domain management area.
+</Step>
+
+<Step title="Find DNS settings">
+Click on your domain, then look for **Manage DNS Records** or **Advanced** → **Edit DNS**.
+</Step>
+
+<Step title="Remove old records">
+Delete these existing records:
+- Any **A record** with host `@` or your domain name
+- Any **CNAME record** with host `www`
+
+Leave all other records (MX, TXT) unchanged.
+</Step>
+
+<Step title="Add new A record">
+Create a new record:
+- **Type**: A
+- **Host**: `@` (or your domain if @ isn't accepted)
+- **Value**: `76.76.21.21`
+- **TTL**: 1 hour or default
+</Step>
+
+<Step title="Add new CNAME record">
+Create another record:
+- **Type**: CNAME  
+- **Host**: `www`
+- **Value**: `website-v1.coachiq.io`
+- **TTL**: 1 hour or default
+</Step>
+
+<Step title="Save all changes">
+Save your DNS changes and wait 24-48 hours for propagation.
+</Step>
+</Steps>
+
+If you go this route and encounter issues, you can always add us as a collaborator to fix any problems.
+</Accordion>
+
+## Managing collaborator access
+
+<AccordionGroup>
+<Accordion title="How to check invitation status">
+To see if our team has accepted the invitation:
+1. Go to **Roles & Permissions** in Wix
+2. Look for `liz@coachiq.io` in your collaborators list
+3. Check for "PENDING" label (means not yet accepted)
+4. See "Joined on" column for acceptance date
+
+Invitations are valid for 30 days.
+</Accordion>
+
+<Accordion title="How to resend an invitation">
+If needed, you can resend:
+1. Go to **Roles & Permissions**
+2. Hover over `liz@coachiq.io`
+3. Click **More Actions** (three dots)
+4. Choose **Resend Invite** or **Get Invite Link**
+</Accordion>
+
+<Accordion title="How to remove access after setup">
+Once your domain is connected and working:
+1. Go to **Roles & Permissions**
+2. Find `liz@coachiq.io` in the list
+3. Click **Remove** to revoke access
+
+Your domain will continue working normally. You can always re-add us if you need future help.
+</Accordion>
+</AccordionGroup>
+
+## Common questions
+
+<AccordionGroup>
+<Accordion title="Why should I let CoachIQ handle this?">
+Our team has connected hundreds of Wix domains and knows the exact settings needed. We handle tricky issues like:
+- Proper DNS record configuration
+- SSL certificate setup
+- Avoiding email disruption
+- Testing and verification
+
+This saves you time and prevents potential errors that could take your site offline.
+</Accordion>
+
+<Accordion title="Is giving collaborator access safe?">
+Yes! The Co-owner role only gives us access to your site settings and DNS. We cannot:
+- Access your payment methods
+- Delete your Wix account
+- View personal information
+- Transfer your domain
+
+You maintain full ownership and can revoke access anytime.
+</Accordion>
+
+<Accordion title="Will my Wix website still work?">
+No - once we point your domain to CoachIQ, it will display your CoachIQ website instead of your Wix site. Make sure your CoachIQ site is ready before we make the switch. Your Wix site content remains in your account for reference.
+</Accordion>
+
+<Accordion title="What about my email through Wix?">
+Your email will continue working normally! If you have Google Workspace or other email through Wix, we only change website records, not email (MX) records.
+</Accordion>
+
+<Accordion title="How long does connection take?">
+We configure settings within 2-4 hours of receiving access. DNS propagation then takes 24-48 hours to complete worldwide. Most users see their site live within 24 hours.
+</Accordion>
+
+<Accordion title="What if I have multiple domains?">
+The collaborator access covers your entire Wix account. Just let us know all the domains you want to connect when you contact support.
+</Accordion>
+</AccordionGroup>
+
+## Verify your connection
+
+After we notify you that setup is complete:
+
+1. Go to CoachIQ **Settings** → **Active Domains**
+2. Look for your domain in the list
+3. Click on it to test the connection
+
+<Tip>
+**Quick test**: Visit your domain in an incognito/private browser window to avoid cached results. You should see your CoachIQ website.
+</Tip>
+
+## Troubleshooting
+
+<Warning>
+**Still seeing your Wix site after 48 hours?**
+
+Try these steps:
+1. Clear your browser cache completely
+2. Try a different browser or device
+3. Check incognito/private mode
+
+If the issue persists, contact our support team.
+</Warning>
+
+<Warning>
+**Can't add collaborators?**
+
+Common issues:
+- **No available seats**: Wix provides 1 free collaborator. You may need to upgrade or remove existing collaborators
+- **Permission issues**: Make sure you're the site owner, not just an editor
+- **Account type**: Some Wix account types have restrictions
+
+Contact Wix support if you can't resolve collaborator issues.
+</Warning>
+
+## Video tutorial
+
+Watch this step-by-step video guide for inviting collaborators in Wix:
+
+<video controls className="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/wRoUnZI-okw" />
+
+## Pro tips
+
+<Tip>
+**Best practices:**
+- **Complete your CoachIQ site first** before connecting your domain
+- **Notify your clients** about the website change if you have an active Wix site
+- **Download any Wix content** you want to keep before switching
+- **Keep collaborator access** even after setup for easy future support
+- **Screenshot your confirmation** when you add us as a collaborator
+</Tip>
+
+## Need help?
+
+If you encounter any issues:
+- Contact our support team immediately after adding us as a collaborator
+- Include your domain name in your message
+- Let us know any specific timeline requirements
+- We typically respond within 2-4 business hours
+- Include "Wix Domain Connection" in your message for fastest routing
+
+Once connected, your professional domain will display your CoachIQ website, giving your coaching business the powerful, integrated platform it deserves!
