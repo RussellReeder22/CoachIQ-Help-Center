@@ -40,6 +40,8 @@ Make sure you're logging in as the account owner, not a sub-account, as only own
 <Step title="Access your profile">
 Click on your profile icon in the top-right corner of the dashboard and select **Manage Profile**.
 
+</Step>
+
 <Step title="Navigate to Account Sharing">
 In your profile settings, click on the **Account Sharing** tab.
 
@@ -55,6 +57,8 @@ This feature is only available for account owners. If you're using a sub-account
 Click **Add Manager** and enter the following information:
 - **Email**: `liz@coachiq.io`
 - **Permissions**: Select options that allow DNS management
+
+</Step>
 
 <Step title="Save and confirm">
 Click **Save** to grant access to our team. You'll see a confirmation that the manager has been added.
@@ -90,6 +94,8 @@ From your dashboard, find your domain and click **Manage**.
 <Step title="Navigate to Advanced DNS">
 Click on the **Advanced DNS** tab in your domain settings.
 
+</Step>
+
 <Step title="Add the A Record">
 In the **Host Records** section, click **Add New Record** and enter:
 - **Type**: A Record
@@ -97,12 +103,15 @@ In the **Host Records** section, click **Add New Record** and enter:
 - **Value**: `76.76.21.21`
 - **TTL**: Automatic
 
+</Step>
+
 <Step title="Add the CNAME Record">
 Click **Add New Record** again and enter:
 - **Type**: CNAME Record
 - **Host**: www
 - **Value**: `website-v1.coachiq.io`
 - **TTL**: Automatic
+
 
 <Warning>
 Make sure to enter the CNAME value exactly as shown: `website-v1.coachiq.io` (all lowercase)
