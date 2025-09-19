@@ -1,5 +1,249 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "DNS & Permissions - Other Domain Providers"
+description: "Connect your domain from any provider to CoachIQ. Universal guide for Bluehost, HostGator, Domain.com, and all other registrars."
+sidebarTitle: "DNS & Permissions"
+keywords: "DNS settings, domain permissions, universal domain guide, connect any domain, CoachIQ DNS"
 ---
+
+## Overview
+
+If your domain provider isn't GoDaddy, Squarespace, Namecheap, or Wix, don't worry - we can still connect your domain to CoachIQ. Simply grant our team access to your domain account, and we'll handle all the technical DNS configuration for you.
+
+<Info>
+**Works with any provider**: This guide covers Bluehost, HostGator, Domain.com, Network Solutions, Google Domains, Cloudflare, and any other domain registrar.
+</Info>
+
+## How to connect your domain
+
+Most domain providers offer a way to share account access or add team members. Here's the universal process:
+
+<Steps>
+<Step title="Find your provider's access sharing feature">
+Log into your domain provider and look for one of these options:
+- **Account Sharing**
+- **Team Members**
+- **Delegate Access**
+- **User Management**
+- **Collaborators**
+- **Account Permissions**
+
+These are typically found in Account Settings, Security, or Domain Management sections.
+</Step>
+
+<Step title="Add CoachIQ support">
+Add our team member with these details:
+- **Email**: `liz@coachiq.io`
+- **Name**: CoachIQ Support
+- **Permission Level**: DNS Management, Domain Management, or similar
+
+<Warning>
+Make sure the permission level allows DNS editing but doesn't include billing access.
+</Warning>
+</Step>
+
+<Step title="Send the invitation">
+Complete the invitation process. Our team will receive notification immediately.
+
+<Check>
+**Access granted!** Now notify our support team.
+</Check>
+</Step>
+
+<Step title="Contact CoachIQ support">
+Send us a message with:
+- Your domain name
+- Your domain provider name
+- Confirmation that you've added `liz@coachiq.io`
+
+We'll handle all the technical configuration and notify you once complete.
+</Step>
+</Steps>
+
+## Can't find access sharing?
+
+Some providers make this feature hard to find. Here are common locations by provider:
+
+<AccordionGroup>
+<Accordion title="Bluehost">
+1. Log into your Bluehost account
+2. Go to **Domains** → **Manage Domains**
+3. Look for **Sharing** or **Permissions**
+4. If not available, contact Bluehost support to add a technical contact
+</Accordion>
+
+<Accordion title="HostGator">
+1. Access your Customer Portal
+2. Navigate to **Domains**
+3. Look for **Domain Privacy + Protection**
+4. Check for delegation or sharing options
+5. If unavailable, use their support ticket system to request adding our team
+</Accordion>
+
+<Accordion title="Domain.com">
+1. Sign into your account
+2. Click **Manage** next to your domain
+3. Look for **Domain Sharing** or **Access Control**
+4. Add `liz@coachiq.io` as a user
+</Accordion>
+
+<Accordion title="Network Solutions">
+1. Log into Account Manager
+2. Click **My Domain Names**
+3. Select your domain
+4. Look for **User Permissions** or **Manage Users**
+</Accordion>
+
+<Accordion title="Google Domains (now Squarespace)">
+If your domain was with Google Domains, it's now managed by Squarespace. Follow our [Squarespace guide](/website/domain-setup/connecting-squarespace).
+</Accordion>
+
+<Accordion title="Other providers">
+Can't find the option? Contact your provider's support and ask:
+*"How can I give a web developer temporary access to manage DNS settings for my domain?"*
+
+They'll guide you to the right feature.
+</Accordion>
+</AccordionGroup>
+
+## Alternative: Manual DNS setup
+
+If your provider doesn't offer access sharing, you can configure the DNS records yourself:
+
+<Accordion title="Manual DNS configuration (if access sharing isn't available)">
+<Steps>
+<Step title="Access DNS settings">
+Find your domain's DNS or nameserver settings in your provider's dashboard.
+</Step>
+
+<Step title="Add A record">
+Create a new A record:
+- **Name/Host**: `@` (or leave blank)
+- **Value/Points to**: `76.76.21.21`
+- **TTL**: 3600 or default
+</Step>
+
+<Step title="Add CNAME record">
+Create a CNAME record:
+- **Name/Host**: `www`
+- **Value/Points to**: `website-v1.coachiq.io`
+- **TTL**: 3600 or default
+</Step>
+
+<Step title="Save changes">
+Save all DNS changes. Your domain will connect within 24-48 hours.
+</Step>
+</Steps>
+
+<Warning>
+**Important**: If you go the manual route and encounter issues, contact support and we'll help troubleshoot.
+</Warning>
+</Accordion>
+
+## What our team does for you
+
+<Info>
+**Once we have access, we'll:**
+1. Configure your A and CNAME records correctly
+2. Ensure email services aren't disrupted
+3. Set up SSL certificates
+4. Test everything thoroughly
+5. Notify you when complete
+
+This typically takes 2-4 hours after receiving access, with full propagation in 24-48 hours.
+</Info>
+
+## Common questions
+
+<AccordionGroup>
+<Accordion title="Is it safe to grant access?">
+Yes! We only need DNS management permissions. We cannot:
+- Access your payment information
+- Transfer or delete your domain
+- View personal account details
+- Change your account password
+
+You maintain full ownership and can revoke access anytime.
+</Accordion>
+
+<Accordion title="What if my provider has no sharing option?">
+Some smaller providers don't offer access sharing. In these cases:
+1. Try the manual DNS setup above
+2. Contact their support for assistance
+3. Consider transferring to a provider like GoDaddy or Namecheap for easier management
+</Accordion>
+
+<Accordion title="How do I revoke access later?">
+Once your domain is connected:
+1. Return to your provider's access sharing settings
+2. Find `liz@coachiq.io` in the list
+3. Remove or revoke access
+
+Your domain continues working after removing access.
+</Accordion>
+
+<Accordion title="Will my email still work?">
+Yes! We only modify website records (A and CNAME). Your email records (MX) remain untouched, so email continues working normally.
+</Accordion>
+
+<Accordion title="What's the timeline?">
+- **2-4 hours**: We configure your DNS after receiving access
+- **2-24 hours**: Most domains start working
+- **24-48 hours**: Full worldwide propagation completes
+</Accordion>
+</AccordionGroup>
+
+## Need provider-specific help?
+
+<Tip>
+**Can't find your provider's sharing feature?**
+1. Contact your provider's support
+2. Ask: "How do I give someone access to manage DNS for my domain?"
+3. They'll direct you to the right place
+4. Then add `liz@coachiq.io` following their instructions
+</Tip>
+
+## Troubleshooting
+
+<Warning>
+**Domain not connecting after 48 hours?**
+
+Common issues:
+- DNS records not saved properly
+- Old records still present
+- Domain locked or expired
+- Incorrect values entered
+
+Contact our support with:
+- Your domain name
+- Your provider name
+- What steps you've completed
+</Warning>
+
+## Pro tips
+
+<Tip>
+**Best practices for any provider:**
+- **Screenshot everything** before making changes
+- **Check domain status** - ensure it's active, not expired
+- **Clear browser cache** after DNS changes to see updates
+- **Be patient** - DNS propagation takes time
+- **Keep access active** for future support needs
+</Tip>
+
+## Ready to connect?
+
+1. Try to find your provider's access sharing feature
+2. Add `liz@coachiq.io` with DNS management permissions
+3. Contact our support team with your domain details
+
+If you can't find access sharing, use the manual DNS setup above or contact your provider's support for help.
+
+<Card title="Need immediate help?" icon="life-ring">
+Contact our support team with:
+- Your domain name
+- Your domain provider
+- Any error messages you're seeing
+
+We typically respond within 2-4 business hours and will guide you through the process.
+</Card>
 
