@@ -1,9 +1,9 @@
 ---
-title: "Website Settings & Design"
-description: "Configure your website's global settings including design theme, fonts, blog setup, domains, caching, and advanced options in CoachIQ's Website Builder."
+title: "Website Settings, Design & Text Display"
+description: "Configure your website's global settings including design theme, fonts, text colors, blog setup, domains, and troubleshoot display issues in CoachIQ's Website Builder."
 sidebarTitle: "Settings & Design"
 icon: "gear"
-keywords: "website settings, custom fonts, blog setup, domain management, site cache, CoachIQ design"
+keywords: "website settings, custom fonts, text display issues, transparent text fix, blog setup, domain management, site cache, CoachIQ design"
 ---
 
 <Info>
@@ -14,7 +14,7 @@ keywords: "website settings, custom fonts, blog setup, domain management, site c
 
 ## What you'll accomplish
 
-Learn how to configure your website's global settings including custom fonts, blog pages, domain management, and site performance options to create a professional coaching website.
+Learn how to configure your website's global settings including custom fonts, text colors, blog pages, domain management, and troubleshoot common text display issues to create a professional coaching website.
 
 ## Design settings
 
@@ -33,6 +33,9 @@ Select between Light and Dark themes using the theme selector.
 
 ![Gloabldesignsettings Pn](/images/gloabldesignsettings.png)
 
+<Warning>
+**Important**: Your theme choice affects default text colors. Dark themes use white text by default, which can become invisible on white section backgrounds.
+</Warning>
 </Step>
 
 <Step title="Set custom fonts">
@@ -58,6 +61,89 @@ Your design changes save automatically and apply site-wide.
 </Check>
 </Step>
 </Steps>
+
+## Troubleshooting text display issues
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://share.coachiq.io/rYkgFltF"
+  title="Fixing Text Display Issues"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+### Common text visibility problems
+
+If your published site has missing or invisible text that appears in the editor, you likely have one of these issues:
+
+<Warning>
+**Most common causes**:
+1. White text on white background
+2. Text color set to transparent
+3. Theme/section color conflicts
+</Warning>
+
+### How to fix invisible text
+
+<Steps>
+<Step title="Identify the problem">
+Check if your text is visible in the editor but not on the published site. This indicates a color conflict.
+</Step>
+
+<Step title="Fix white text on white background">
+This commonly happens when:
+- You're using dark mode (which defaults to white text)
+- Your section background is set to white
+
+**To fix**:
+1. Copy your heading text
+2. Paste it back in place
+3. Highlight the text
+4. Click the text color tool
+5. Select black or another dark color (not white)
+6. Repeat for all affected text
+
+<Frame>
+<img src="/images/text-color-selection.png" alt="Selecting text color to fix visibility" />
+</Frame>
+</Step>
+
+<Step title="Fix transparent text">
+If your text color shows "transparent" in the hex code field:
+
+1. Highlight the affected text
+2. Click the color picker
+3. Choose any visible color (black, dark gray, etc.)
+4. Ensure the hex code field does NOT say "transparent"
+5. Apply to all affected text elements
+
+<Note>
+**Quick check**: Look for "transparent" in the hex code field - this means your text has no color and won't be visible.
+</Note>
+</Step>
+
+<Step title="Verify and publish">
+After fixing text colors:
+1. Click **Publish**
+2. Check your live site
+3. Text should now appear as it does in the editor
+
+<Check>
+**Success**: Your text is now visible on both the editor and live site!
+</Check>
+</Step>
+</Steps>
+
+### Best practices for text visibility
+
+<Tip>
+**Color contrast rules**:
+- Light backgrounds → Dark text (black, dark gray)
+- Dark backgrounds → Light text (white, light gray)
+- Avoid transparent text unless intentionally hiding content
+- Test all sections after theme changes
+</Tip>
 
 ## Site configuration
 
@@ -144,6 +230,7 @@ Manage your website's cache for optimal performance:
 Use **Purge Cache** button when:
 - Design changes aren't showing
 - Content updates aren't visible
+- Text color fixes aren't appearing
 - After major site updates
 </Step>
 
@@ -157,6 +244,13 @@ Use **Purge Cache** button when:
 ## Troubleshooting
 
 <AccordionGroup>
+<Accordion title="Text not visible on published site">
+- Check if text is white on white background
+- Look for "transparent" in hex code field
+- Switch themes may require text color updates
+- Always test after theme changes
+</Accordion>
+
 <Accordion title="Custom font not displaying">
 - Verify exact font name from Google Fonts
 - Check for typos in font name
@@ -167,6 +261,7 @@ Use **Purge Cache** button when:
 <Accordion title="Colors not updating">
 - Ensure you're using valid hex codes (#000000 format)
 - Some sections may override global colors
+- Check that text isn't set to transparent
 - Purge site cache if changes don't appear
 </Accordion>
 
@@ -178,6 +273,10 @@ Use **Purge Cache** button when:
 </AccordionGroup>
 
 ## Pro tips
+
+<Tip>
+**Prevent text issues**: When switching themes, always review all sections for text visibility before publishing.
+</Tip>
 
 <Tip>
 **Design consistency**: Choose fonts and colors that match your existing brand materials for a cohesive professional appearance.
@@ -193,7 +292,7 @@ Use **Purge Cache** button when:
 
 ## Related articles
 
+- [Troubleshooting Text Display Issues](/website/sections/troubleshooting-text-display)
 - [Domain Setup Guide](/website/domain-setup/purchasing-domain)
 - [Google Analytics Setup](/website/analytics-tracking/google-analytics)
-- [SEO & Marketing Best Practices](/website/seo-marketing/keyword-strategy)
 - [Working with Sections](/website/sections/working-with-sections)
