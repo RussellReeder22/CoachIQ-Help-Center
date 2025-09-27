@@ -1,0 +1,402 @@
+---
+title: "Display Products & Payments in Your Athlete Portal"
+description: "Learn how to add products and payment options to your Athlete Portal. Understand platform restrictions and optimize your sales strategy across web and mobile."
+sidebarTitle: "Products & Payments"
+icon: "credit-card"
+keywords: "CoachIQ products, athlete portal payments, iOS restrictions, Android restrictions, membership sales, product sections"
+---
+
+<Info>
+  **Where to find this**: Dashboard → App Builder → Content → Products
+</Info>
+
+<Warning>
+  **Critical Platform Restriction**: The Products page is **NOT visible** on iOS and Android mobile apps due to Apple App Store and Google Play Store policies. Athletes can only purchase products through your web portal or mobile browser.
+</Warning>
+
+## What you'll accomplish
+
+Set up your products page to display memberships, packages, and services for purchase through your web portal. You'll learn how to organize products into sections, manage visibility settings, and understand critical platform limitations that affect how athletes access your payment options.
+
+## Platform restrictions you must know
+
+<Tabs>
+  <Tab title="⚠️ Mobile Apps">
+    **iOS & Android Apps - Products NOT Available**
+
+    Due to App Store policies:
+
+    - Products page is completely hidden
+    - No in-app purchases allowed
+    - Athletes cannot see or buy products
+    - This is NOT a bug - it's a platform requirement
+
+    **Alternative**: Direct athletes to your web portal for purchases
+  </Tab>
+  <Tab title="✅ Web Portal">
+    **Web Browser - Full Access**
+
+    Products fully available when athletes access via:
+
+    - Desktop computers
+    - Mobile web browsers (Safari, Chrome)
+    - Tablet browsers
+    - Any web-based access
+
+    **All features work**: Purchase buttons, payment processing, subscriptions
+  </Tab>
+</Tabs>
+
+## Understanding the Products page
+
+The Products page displays your payment options, memberships, and packages that athletes can purchase to access your services. It functions identically to the Programs page in terms of organization, but focuses on payment products rather than content.
+
+### Key differences from Programs
+
+- **Purpose**: Payment collection vs. content delivery
+- **Access**: Purchase required vs. content access rules
+- **Platform availability**: Web-only vs. all platforms
+- **Primary action**: Buy button vs. view content
+
+## Before you begin
+
+<Note>
+  **Required**:
+
+  - At least one product must exist in Payments → Products
+  - Stripe account must be connected for payment processing
+</Note>
+
+## Accessing product settings
+
+<Steps>
+  <Step title="Navigate to App Builder">
+    From your dashboard, select **App** in the left sidebar.
+  </Step>
+  <Step title="Select Content tab">
+    Click on the **Content** tab in the main navigation.
+  </Step>
+  <Step title="Choose Products">
+    Select **Products** from the content options to access your product configuration page.
+
+    <Frame>
+      ![Products page navigation in App Builder](/images/products-page-navigation.png)
+    </Frame>
+  </Step>
+</Steps>
+
+## Activating the Products page
+
+<Steps>
+  <Step title="Locate the Active toggle">
+    Find the **Active** toggle in the top right corner of the Products page.
+
+    <Frame>
+      ![Active toggle for Products page](/images/products-active-toggle.png)
+    </Frame>
+  </Step>
+  <Step title="Toggle visibility">
+    - **ON**: Products visible in web portal only
+    - **OFF**: Products hidden everywhere
+
+    <Info>
+      Remember: Even when Active is ON, products remain hidden on iOS/Android apps due to platform restrictions.
+    </Info>
+  </Step>
+  <Step title="Save your changes">
+    Click **Update Page** to save the active status.
+  </Step>
+</Steps>
+
+## Adding products to sections
+
+<Steps>
+  <Step title="Click Add Products">
+    Within any section, click the **\+ Add Products** button.
+
+    <Frame>
+      ![Add Products button in section](/images/add-products-button.png)
+    </Frame>
+  </Step>
+  <Step title="Select products to display">
+    Choose from your available products:
+
+    - Memberships (recurring subscriptions)
+    - One-time packages
+    - Session bundles
+    - Credit packages
+
+    Each product shows:
+
+    - Product name
+    - Price
+    - Billing frequency (if subscription)
+    - Description preview
+  </Step>
+  <Step title="Confirm selection">
+    Click **Save** to add selected products to the section.
+
+    <Check>
+      Products appear immediately with pricing and purchase buttons visible (web portal only).
+    </Check>
+  </Step>
+</Steps>
+
+## Creating and organizing sections
+
+Sections help organize your products into logical categories for easier shopping.
+
+### Adding new sections
+
+<Steps>
+  <Step title="Click Add Section">
+    Click **\+ Add Section** at the bottom of your product list.
+
+    <Frame>
+      ![Add Section button for products](/images/add-section-products.png)
+    </Frame>
+  </Step>
+  <Step title="Name your section">
+    Use clear, descriptive names:
+
+    - "Memberships"
+    - "Single Group Class"
+    - "Training Packages"
+    - "Elite Programs"
+    - "Beginner Packages"
+  </Step>
+  <Step title="Add products to section">
+    Use **\+ Add Products** to populate the new section.
+  </Step>
+</Steps>
+
+### Section organization best practices
+
+- Place most popular products at the top
+- Group by commitment level (monthly, yearly, one-time)
+- Separate memberships from individual purchases
+- Consider price-point organization (budget to premium)
+
+## Configuring page settings
+
+<Steps>
+  <Step title="Access settings">
+    Click **Update Settings** from the action menu.
+
+    <Frame>
+      ![Settings menu for Products page](/images/products-settings-menu.png)
+    </Frame>
+  </Step>
+  <Step title="Customize page details">
+    **URL Slug**: Set your page path (e.g., `/products`, `/memberships`, `/pricing`)
+
+    **Page Name**: Display name in navigation
+
+    **Description**: SEO description explaining your offerings
+  </Step>
+  <Step title="Save configuration">
+    Click **Save** to apply settings.
+  </Step>
+</Steps>
+
+## Working around platform restrictions
+
+Since products don't appear on mobile apps, you need alternative strategies to drive sales.
+
+### Recommended workarounds
+
+<Tabs>
+  <Tab title="Direct Link Strategy">
+    **Send athletes to web portal**
+
+    1. Share your portal link via SMS/email
+    2. Include link in app announcements
+    3. Add "Purchase on Website" message in app
+    4. Use QR codes at facility
+  </Tab>
+  <Tab title="Communication Strategy">
+    **Educate your athletes**
+
+    - Explain during onboarding
+    - Send purchase instructions via Inbox
+    - Create a "How to Buy" program
+    - Include web links in session confirmations
+  </Tab>
+  <Tab title="Alternative Sales">
+    **Other purchase methods**
+
+    - In-person payments at facility
+    - Phone/text orders
+    - Email invoicing
+    - Direct Stripe payment links
+  </Tab>
+</Tabs>
+
+## Preview and testing
+
+<Steps>
+  <Step title="Click Preview Page">
+    Select **Preview Page** to see the athlete view.
+  </Step>
+  <Step title="Test on web browser">
+    Verify display and functionality:
+
+    - Product cards show correctly
+    - Prices display accurately
+    - Purchase buttons work
+    - Sections organized properly
+  </Step>
+  <Step title="Confirm mobile app behavior">
+    Check iOS/Android apps to verify products are properly hidden (expected behavior).
+  </Step>
+</Steps>
+
+## Publishing changes
+
+<Steps>
+  <Step title="Review all settings">
+    Double-check sections, products, and pricing.
+  </Step>
+  <Step title="Click Update Page">
+    Click **Update Page** to publish changes.
+
+    <Check>
+      Changes apply immediately to web portal. Mobile apps continue to hide products page as required.
+    </Check>
+  </Step>
+</Steps>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Why can't my athletes see products on the mobile app?">
+    **This is not a bug.** Apple App Store and Google Play Store policies prohibit in-app purchases that bypass their payment systems. CoachIQ must hide the Products page on mobile apps to comply with these requirements.
+
+    **Solution**: Direct athletes to purchase through:
+
+    - Web browser on their phone
+    - Desktop computer
+    - Tablet browser
+    - Any web-based access
+  </Accordion>
+  <Accordion title="How do I sell to athletes who only use the app?">
+    Best practices:
+
+    1. **Send purchase links** via SMS or email
+    2. **Add announcements** in the app directing to web portal
+    3. **Include instructions** in your welcome message
+    4. **Process payments** in person or over the phone
+    5. **Share QR codes** that link to your web products page
+  </Accordion>
+  <Accordion title="Can I accept payments through the app at all?">
+    No direct payment processing is possible within iOS/Android apps. However, you can:
+
+    - Use credits (pre-purchased on web)
+    - Book sessions that require payment later
+    - Send payment links through in-app messaging
+  </Accordion>
+  <Accordion title="Will this restriction ever change?">
+    This is an App Store/Play Store policy, not a CoachIQ limitation. Unless Apple and Google change their policies, this restriction will remain in place.
+  </Accordion>
+  <Accordion title="How do I explain this to frustrated athletes?">
+    Sample message:
+    "To keep our app free and avoid Apple/Google's 30% fees, purchases must be made through our web portal. Visit [your-portal-url] on any browser to buy memberships and packages. This helps us keep prices lower for you!"
+  </Accordion>
+  <Accordion title="Do credits purchased on web work in the app?">
+    Yes! Once athletes purchase credits through the web portal, they can use them to book sessions within the mobile app. The restriction only applies to the purchase process, not credit usage.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+### Products not appearing in selection
+
+- Verify products exist in Payments → Products
+- Check products are active and published
+- Confirm Stripe is properly connected
+- Refresh the App Builder page
+
+### Athletes report they can't find products
+
+1. **First question**: Are they using the mobile app?
+   - If yes → Direct them to web browser
+   - If no → Continue troubleshooting
+2. Check Products page Active toggle is ON
+3. Verify their account has access
+4. Test the web portal link yourself
+
+### Purchase buttons not working (web)
+
+- Verify Stripe integration is active
+- Check product configuration in Payments
+- Ensure product has valid pricing
+- Test in incognito/private browser
+
+## Pro tips
+
+<Tip>
+  **Mobile purchase funnel**:
+  Create a dedicated "How to Purchase" program in your app that includes:
+
+  1. Step-by-step instructions with screenshots
+  2. Direct link to web portal
+  3. Video walkthrough
+  4. FAQ about why app purchases aren't available
+</Tip>
+
+<Tip>
+  **Pricing page on website**:
+  Since products aren't visible in apps, make your website pricing page comprehensive:
+
+  - Detailed product descriptions
+  - Comparison tables
+  - Clear CTAs to purchase
+  - Mobile-optimized design
+</Tip>
+
+<Tip>
+  **Communication strategy**:
+
+  - Add web portal link to email signature
+  - Include in SMS appointment reminders
+  - Share during trial session sign-ups
+  - Post QR codes at your facility
+</Tip>
+
+<Tip>
+  **Section naming for web**:
+  Since only web users see this, optimize for conversion:
+
+  - "🔥 Most Popular"
+  - "Best Value - Save 20%"
+  - "New Member Special"
+  - "Limited Time Offer"
+</Tip>
+
+<Tip>
+  **Track your funnel**:
+  Monitor where athletes drop off:
+
+  1. App users who don't know about web purchasing
+  2. Web visitors who don't complete purchase
+  3. Create targeted messages for each group
+</Tip>
+
+## Critical reminders
+
+<Warning>
+  **Never promise** in-app purchases are "coming soon" - this is a permanent platform restriction, not a temporary limitation.
+</Warning>
+
+<Info>
+  **Best practice**: Add a permanent message to your app onboarding flow explaining that purchases happen on the web for the best prices and to avoid app store fees.
+</Info>
+
+## Related articles
+
+- [Creating Products in Payments](/payments/products/creating-products)
+- [Setting Up Stripe](/payments/stripe-setup)
+- [Understanding Platform Restrictions](/athlete-portal/platform-restrictions)
+- [Web Portal vs Mobile App Features](/athlete-portal/web-vs-app)
+- [Alternative Payment Methods](/payments/alternative-methods)
+- [Communicating with Athletes](/inbox/sending-messages)
