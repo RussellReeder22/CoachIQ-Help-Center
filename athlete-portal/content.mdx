@@ -7,7 +7,7 @@ keywords: "CoachIQ programs, athlete portal content, training programs, certific
 ---
 
 <Info>
-  **Where to find this**: Dashboard → Athlete Portal → Content
+  **Where to find this**: Dashboard → App Builder → Content 
 </Info>
 
 ## What you'll accomplish
@@ -17,67 +17,92 @@ Set up and organize your training programs, certifications, and resources so ath
 ## Before you begin
 
 <Note>
-  You'll need at least one program created in your CoachIQ admin before you can display it in the Athlete Portal.
-
-  To create programs, go to **Content → Programs** in your main admin dashboard.
+  **Required**: At least one program must exist in Content → Programs before you can display it in the Athlete Portal.
 </Note>
+
+![Coachiq Programs Grid View All Pn](/images/coachiq-programs-grid-view-all.png)
 
 ## Understanding the Programs page
 
-The Programs page in your Athlete Portal is where athletes discover and access all your training content, certifications, and educational resources.
+The Programs page displays training content, certifications, and educational resources that athletes access at their own pace.
 
-### Key differences from sessions
+![Athletesideprograms Pn](/images/athletesideprograms.png)
 
-- **Programs are content**: Videos, lessons, and certifications that athletes complete at their own pace
-- **Sessions are bookings**: Scheduled training times that athletes reserve
-- **Programs show progress**: Athletes see completion percentages as they work through materials
-- **Sessions show availability**: Athletes see when they can book time with you
+### Programs vs Sessions distinction
 
-### What athletes see
+<Tabs>
+  <Tab title="Quick Reference">
+    | Feature | Programs                 | Sessions               |
+    | ------- | ------------------------ | ---------------------- |
+    | Type    | Self-paced content       | Scheduled bookings     |
+    | Shows   | Progress percentage      | Available time slots   |
+    | Payment | One-time or subscription | Per session or credits |
+    | Access  | Immediate after purchase | At scheduled time      |
+  </Tab>
+  <Tab title="When to Use">
+    **Use Programs for:**
 
-When athletes open the Programs page, they'll see:
+    - Self-paced training content
+    - Video tutorials and lessons
+    - Certification courses
+    - Educational resources
+
+    **Use Sessions for:**
+
+    - Scheduled training times
+    - Live coaching sessions
+    - Bookable appointments
+    - Group classes
+  </Tab>
+</Tabs>
+
+### Athlete view components
 
 - Program thumbnails with visual previews
-- Lesson and media counts (e.g., "2 lessons • 1 media")
-- Their completion progress for started programs
-- Clear organization by sections you create
-
-![Programs view in Athlete Portal](/images/athlete-portal-programs-overview.png)
+- Lesson and media counts (format: "X lessons • Y media")
+- Completion progress for started programs
+- Section-based organization
 
 ## Accessing program settings
 
 <Steps>
   <Step title="Navigate to App Builder">
     From your dashboard, select **App** in the left sidebar.
+
+    ![Athelteportal Pn](/images/athelteportal.png)
   </Step>
   <Step title="Select Content tab">
     Click on the **Content** tab in the main navigation.
+
+    ![Coachiq App Builder Content Page Sections Pn](/images/coachiq-app-builder-content-page-sections.png)
   </Step>
   <Step title="Choose Programs">
     Select **Programs** from the content options to access your program configuration page.
 
-    ![Content navigation with Programs selected](/images/app-builder-content-programs.png)
+    ![Coachiq App Builder Add Content Program Pn](/images/coachiq-app-builder-add-content-program.png)
   </Step>
 </Steps>
 
 ## Activating the Programs page
 
-Control whether athletes can see the Programs section in their portal.
+Control athlete visibility of the Programs section through the Active toggle.
 
 <Steps>
   <Step title="Locate the Active toggle">
     Find the **Active** toggle in the top right corner of the Programs page.
+
+    ![Coachiq App Builder Page Actions Menu Pn](/images/coachiq-app-builder-page-actions-menu.png)
   </Step>
   <Step title="Toggle visibility">
-    - **ON**: Programs appear in the athlete portal
-    - **OFF**: Programs section is hidden from athletes
+    - **ON**: Programs visible to all athletes in their portal
+    - **OFF**: Programs completely hidden from athlete view
 
     <Warning>
-      Deactivating the Programs page will immediately hide all programs from athletes, even if they're in the middle of a course. Only deactivate if you're sure you want to remove all program access.
+      Deactivating hides all programs immediately, including those athletes are currently completing. Verify this is your intended action before proceeding.
     </Warning>
   </Step>
   <Step title="Update the page">
-    Click **Update Page** to save your changes. The toggle state saves automatically, but updating ensures all settings are applied.
+    Click **Update Page** to save your changes.
   </Step>
 </Steps>
 
@@ -86,66 +111,71 @@ Control whether athletes can see the Programs section in their portal.
 <Steps>
   <Step title="Click Add Content">
     In any section, click the **\+ Add Content** button.
-
-    ![Add Content button in section](/images/programs-add-content-button.png)
   </Step>
   <Step title="Select programs">
-    A modal will appear showing all available programs from your content library. Programs display with:
+    The selection modal displays:
 
     - Thumbnail image
     - Program title
     - Lesson and media count
 
-    Select the programs you want to add to this section.
+    Select programs to add to this section. You can select multiple programs at once.
   </Step>
   <Step title="Confirm selection">
-    Click **Save** to add the selected programs to your section.
+    Click **Save** to add selected programs.
 
     <Check>
-      Programs appear immediately in the section with their thumbnails and details visible.
+      Programs appear immediately with thumbnails and details visible.
     </Check>
   </Step>
 </Steps>
 
 ## Creating and managing sections
 
-Sections help you organize programs into logical categories like "Fundamentals," "Advanced Training," or "Certifications."
+Sections organize programs into logical categories for easier navigation.
 
 ### Adding a new section
 
+![Coachiq App Builder Add Section Button Pn](/images/coachiq-app-builder-add-section-button.png)
+
 <Steps>
   <Step title="Click Add Section">
-    Click the **\+ Add Section** button at the bottom of your program list.
-
-    ![Add Section button](/images/programs-add-section.png)
+    Click **\+ Add Section** at the bottom of your program list.
   </Step>
   <Step title="Name your section">
-    Enter a descriptive name for your section (e.g., "Education", "Triple Threat", "Follow Along Workouts").
+    Enter a descriptive name. Examples:
+
+    - "Education"
+    - "Triple Threat"
+    - "Follow Along Workouts"
+    - "Beginner Fundamentals"
+    - "Elite Training"
   </Step>
   <Step title="Start adding programs">
-    Once created, you can immediately start adding programs to your new section using the **\+ Add Content** button.
+    Use **\+ Add Content** within the new section to add programs.
   </Step>
 </Steps>
 
 ### Setting up a Welcome Section
 
-The Welcome Section highlights a featured program at the top of your Programs page with special formatting.
+The Welcome Section prominently displays one featured program at the top of your Programs page.
 
 <Steps>
   <Step title="Locate Welcome Section">
-    Find the **Welcome Section** field at the top of your Programs configuration.
+    Find the **Welcome Section** field at the top of Programs configuration.
 
-    ![Welcome Section configuration](/images/programs-welcome-section.png)
+    ![Coachiq App Builder Welcome Section Dropdown Pn](/images/coachiq-app-builder-welcome-section-dropdown.png)
   </Step>
-  <Step title="Select featured program">
-    Choose which section you want to feature as your welcome section. The first program in this section will be prominently displayed.
+  <Step title="Select featured section">
+    Choose which section becomes the welcome section. The first program in this section receives featured treatment.
 
     <Tip>
-      Use your Welcome Section to highlight:
+      **Effective Welcome Section uses:**
 
-      - A getting-started program for new athletes
-      - Your signature certification course
-      - A limited-time training series
+      - Getting-started program for new athletes
+      - Signature certification course
+      - Limited-time training series
+      - Most popular program
     </Tip>
   </Step>
 </Steps>
@@ -154,109 +184,117 @@ The Welcome Section highlights a featured program at the top of your Programs pa
 
 ### Reordering sections
 
-You can drag and drop sections to change their display order:
-
-1. Hover over the section you want to move
-2. Click and hold the drag handle (⋮⋮) next to the section name
-3. Drag the section to its new position
-4. Release to drop the section in place
+1. Hover over the section to move
+2. Click and hold the drag handle (⋮⋮)
+3. Drag to new position
+4. Release to place
 
 <Note>
-  Section order matters! Place your most important or foundational content at the top where athletes will see it first.
+  Position your foundational content at the top for immediate visibility.
 </Note>
 
 ### Deleting sections
 
-To remove a section:
-
-1. Click the trash icon (🗑️) next to the section name
-2. Confirm the deletion when prompted
+1. Click the trash icon (🗑️) next to section name
+2. Confirm deletion
 
 <Warning>
-  Deleting a section removes it from the athlete view but doesn't delete the actual programs. The programs remain in your content library and can be added to other sections.
+  Section deletion removes display only. Programs remain in your content library for reuse.
 </Warning>
 
 ## Program access and sharing settings
 
-Control how athletes can access each program through sharing settings.
-
 <Steps>
   <Step title="Open program settings">
-    Click the **Share** button on any program to open its sharing settings.
+    Click **Share** on any program.
 
-    ![Program share settings button](/images/program-share-button.png)
+    ![Coachiq Program Builder Share Button Pn](/images/coachiq-program-builder-share-button.png)
   </Step>
   <Step title="Choose access type">
-    Select how this program should be shared:
+    <Tabs>
+      <Tab title="Free">
+        **Free Access**
 
-    - **Free**: Any athlete can access this program at no cost
-    - **Paywalled**: Athletes must purchase access or have an active membership
-    - **Private program**: Only specifically assigned athletes can access
+        - Open to all athletes
+        - No payment required
+        - Great for introductory content
+        - Builds trust and engagement
+      </Tab>
+      <Tab title="Paywalled">
+        **Paywalled Access**
 
-    ![Program access options](/images/program-access-types.png)
+        - Requires purchase or membership
+        - Generates revenue
+        - Premium content protection
+        - Supports subscriptions
+      </Tab>
+      <Tab title="Private">
+        **Private Access**
+
+        - Manual assignment only
+        - Exclusive content
+        - Personalized programs
+        - Beta testing new content
+      </Tab>
+    </Tabs>
   </Step>
   <Step title="Configure private access">
-    If you selected **Private program**, toggle it ON and the program will only be visible to athletes you specifically assign.
+    For Private programs, toggle ON to restrict visibility to assigned athletes only.
 
-    <Tip>
-      Private programs are perfect for:
+    ![Coachiq Program Paywall Private Settings Pn](/images/coachiq-program-paywall-private-settings.png)
 
-      - Exclusive content for elite athletes
-      - Beta testing new programs
-      - Custom training for specific clients
-    </Tip>
+    **Use cases for private programs:**
+
+    - Elite athlete exclusive content
+    - Beta testing new programs
+    - Personalized training plans
+    - Team-specific content
   </Step>
   <Step title="Save settings">
-    Click **Save** to apply your access settings.
+    Click **Save** to apply access configuration.
   </Step>
 </Steps>
 
 ## Setting up page settings
 
-Configure how your Programs page appears and functions for athletes.
-
 <Steps>
   <Step title="Access page settings">
-    Click **Page Settings** in the action menu (top right of the Programs page).
+    Click **Page Settings** in the action menu (top right).
 
-    ![Page Settings button](/images/programs-page-settings.png)
+    ![Coachiq App Builder Seo Settings Modal Pn](/images/coachiq-app-builder-seo-settings-modal.png)
   </Step>
   <Step title="Configure page details">
-    - **Slug**: Customize the URL path (e.g., `/programs` or `/training`)
-    - **Page Name**: Set how the page appears in navigation
-    - **Description**: Add context that helps with SEO and user understanding
-
-    ![Programs page configuration](/images/programs-settings-modal.png)
+    - **URL Slug**: Path for the page (e.g., `/programs` or `/training`)
+    - **Page Name**: Display name in navigation
+    - **Description**: SEO and context description
   </Step>
   <Step title="Save changes">
-    Click **Save** to apply your page settings.
+    Click **Save** to apply settings.
   </Step>
 </Steps>
 
 ## Previewing the athlete experience
 
-Before publishing, always preview how your programs will appear to athletes.
-
 <Steps>
   <Step title="Click Preview Page">
     Select **Preview Page** from the action menu.
 
-    ![Preview Page button](/images/programs-preview-button.png)
+    ![Coachiq App Builder Page Actions Menu Pn](/images/coachiq-app-builder-page-actions-menu.png)
   </Step>
   <Step title="Review the layout">
-    Check that:
+    Verification checklist:
 
-    - All sections appear in the correct order
-    - Program thumbnails display properly
-    - Titles and descriptions are clear
-    - The welcome section (if used) stands out appropriately
+    - Section order correctness
+    - Thumbnail display quality
+    - Title and description clarity
+    - Welcome section prominence
   </Step>
   <Step title="Test different devices">
-    Use the device toggle to preview how programs appear on:
+    Preview on:
 
-    - Desktop/laptop screens
-    - Tablet devices
-    - Mobile phones
+    - Desktop/laptop
+    - Tablet
+    - Mobile phone
   </Step>
 </Steps>
 
@@ -264,13 +302,13 @@ Before publishing, always preview how your programs will appear to athletes.
 
 <Steps>
   <Step title="Review all settings">
-    Double-check your sections, programs, and access levels.
+    Verify sections, programs, and access levels.
   </Step>
   <Step title="Click Update Page">
-    Click the **Update Page** button to publish your changes.
+    Click **Update Page** to publish.
 
     <Check>
-      Changes appear immediately in the Athlete Portal. Athletes who are currently logged in will see updates when they refresh or navigate back to the Programs page.
+      Changes apply immediately. Currently logged-in athletes see updates upon refresh or navigation.
     </Check>
   </Step>
 </Steps>
@@ -279,27 +317,29 @@ Before publishing, always preview how your programs will appear to athletes.
 
 <AccordionGroup>
   <Accordion title="Where do I create new programs?">
-    Programs are created in **Content → Programs** in your main admin dashboard, not in the App Builder. The App Builder only controls which existing programs are displayed to athletes.
+    Programs are created in **Content → Programs** in your main admin dashboard. The App Builder only controls display configuration.
   </Accordion>
   <Accordion title="Why can't athletes see certain programs?">
-    Check these common issues:
+    Diagnostic steps:
 
-    1. The Programs page might be deactivated (check the Active toggle)
-    2. The program might be set to Private without athlete assignment
-    3. The program might be paywalled and the athlete hasn't purchased access
-    4. The athlete might be viewing on iOS/Android where purchase restrictions apply
+    1. **Programs page Active toggle** → Must be ON
+    2. **Program access setting** → Check if Private or Paywalled
+    3. **Athlete status** → Verify purchase or assignment
+    4. **Platform** → iOS/Android have purchase restrictions
   </Accordion>
   <Accordion title="Can athletes search or filter programs?">
-    No, athletes cannot currently search within programs. They see all programs organized in the sections you create. Plan your section structure carefully to help athletes find content easily.
+    No search/filter capability currently exists. Structure your sections thoughtfully for easy navigation.
   </Accordion>
   <Accordion title="How does progress tracking work?">
-    Athletes see a completion percentage based on the lessons and media they've viewed. Each completed lesson or media file counts toward the total. For example, if a program has 10 items and an athlete completes 5, they'll see "50% complete."
+    Progress percentage = (completed items ÷ total items) × 100
+
+    Each lesson or media file completed counts toward the total.
   </Accordion>
   <Accordion title="Can I assign different programs to different athletes?">
-    Yes! Use the Private program setting to make programs visible only to specific athletes you assign. This is perfect for personalized training plans or exclusive content.
+    Yes. Private program setting enables athlete-specific assignment for personalized content delivery.
   </Accordion>
   <Accordion title="Do sections collapse or expand?">
-    No, sections are always expanded and visible. Athletes see all programs within each section immediately, which makes browsing easier on mobile devices.
+    Sections remain expanded for immediate content visibility on all devices.
   </Accordion>
 </AccordionGroup>
 
@@ -307,73 +347,75 @@ Before publishing, always preview how your programs will appear to athletes.
 
 ### Programs not appearing in selection modal
 
-- **Check creation**: Ensure programs exist in Content → Programs
-- **Verify status**: Confirm programs are published, not draft
-- **Refresh page**: Try refreshing the App Builder page
+- **Verify**: Programs exist in Content → Programs
+- **Confirm**: Programs are published (not draft)
+- **Action**: Refresh App Builder page
 
 ### Athletes report missing programs
 
-- **Verify activation**: Check that the Programs page Active toggle is ON
-- **Review access**: Confirm the program isn't set to Private
-- **Check payments**: For paywalled programs, verify athlete has purchased access
-- **iOS/Android limits**: Remember that app stores restrict in-app purchases
+1. **Check**: Programs page Active toggle → Must be ON
+2. **Check**: Program access type → Not Private without assignment
+3. **Check**: Payment status → Purchase complete for paywalled
+4. **Check**: Platform restrictions → iOS/Android restrict in-app purchases
 
 ### Thumbnails not displaying correctly
 
-- **Image requirements**: Thumbnails are set in the Program Builder
-- **Cannot override**: Thumbnails cannot be changed in the App Builder
-- **Aspect ratio**: Ensure images are properly sized in the original program
+- Thumbnails configured in Program Builder only
+- Cannot override in App Builder
+- Verify proper aspect ratio in source
 
 ### Section organization issues
 
-- **Drag and drop**: Ensure you're clicking and holding the drag handle
-- **Browser compatibility**: Try a different browser if reordering isn't working
-- **Save changes**: Always click Update Page after reorganizing
+- Confirm drag handle engagement
+- Test in different browser if needed
+- Always Update Page after reorganizing
 
 ## Pro tips
 
 <Tip>
-  **Organization strategy**: Structure your sections by learning path:
+  **Organization hierarchy**:
+  Structure sections by progression:
 
-  1. Fundamentals (beginners start here)
-  2. Skill Development (intermediate content)
-  3. Advanced Training (expert level)
-  4. Certifications (achievement-based)
+  1. Fundamentals
+  2. Skill Development
+  3. Advanced Training
+  4. Certifications
 </Tip>
 
 <Tip>
-  **Welcome Section power**: Use your Welcome Section to guide new athletes. Feature an orientation program that explains how to use your training system and what to expect.
+  **Welcome Section optimization**:
+  Feature an orientation program explaining your training system and setting expectations.
 </Tip>
 
 <Tip>
-  **Naming conventions**: Use clear, consistent naming:
+  **Naming clarity**:
 
-  - Include skill level: "Beginner: Ball Handling Basics"
-  - Add duration estimates: "30-Day Shooting Program"
-  - Specify outcomes: "Master the Triple Threat"
+  - Include skill level: "Beginner: Ball Handling"
+  - Add duration: "30-Day Program"
+  - Specify outcome: "Master the Triple Threat"
 </Tip>
 
 <Tip>
-  **Private program strategy**: Create exclusive programs for different athlete tiers:
+  **Access tier strategy**:
 
-  - Elite athletes get advanced tactical training
-  - Youth athletes get age-appropriate fundamentals
-  - Competition teams get game-prep content
+  - **Elite**: Advanced tactical content (Private)
+  - **Youth**: Age-appropriate basics (Free/Paywalled)
+  - **Teams**: Competition prep (Private)
 </Tip>
 
 <Tip>
-  **Regular audits**: Monthly, review your programs to:
+  **Monthly maintenance**:
 
   - Archive outdated content
-  - Update section organization based on athlete feedback
-  - Check completion rates to identify popular programs
-  - Ensure free/paid balance aligns with your business model
+  - Adjust sections based on usage data
+  - Review completion rates
+  - Validate free/paid balance
 </Tip>
 
 ## Related articles
 
-- [Creating Your First Program](/content/programs/creating-first-program) - Build engaging training content
-- [Program Builder Guide](/content/programs/program-builder) - Advanced program configuration
-- [Setting Up Paywalls](/athlete-portal/access-control) - Monetize your premium content
-- [Private Program Assignment](/people/assigning-private-programs) - Give specific athletes exclusive access
-- [Understanding the Athlete Portal](/athlete-portal/overview) - Complete guide to portal configuration
+- [Creating Your First Program](/content/programs/creating-first-program)
+- [Program Builder Guide](/content/programs/program-builder)
+- [Setting Up Paywalls](/athlete-portal/access-control)
+- [Private Program Assignment](/people/assigning-private-programs)
+- [Understanding the Athlete Portal](/athlete-portal/overview)
