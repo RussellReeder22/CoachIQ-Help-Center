@@ -1,0 +1,909 @@
+---
+title: "Managing Availability for Multiple Coaches"
+description: "Set up and manage availability for multiple coaches to prevent conflicts and optimize team scheduling"
+sidebarTitle: "Team Availability"
+icon: "users"
+---
+
+## When you need multi-coach availability
+
+If you answered "yes" to any of these, this guide is for you:
+
+- ✅ You employ or work with other coaches/trainers
+- ✅ Athletes can book sessions with different coaches
+- ✅ You run a facility with multiple trainers on staff
+- ✅ You co-coach with partners or assistants
+- ✅ You need to prevent double-booking across your team
+
+Multi-coach scheduling requires strategic thinking about availability, assignments, and conflict prevention.
+
+<Info>
+  **Solo coach?** If you're the only coach, you can skip this article. Head to [Creating Your Availability Schedule](/scheduling/creating-availability-schedule) instead.
+</Info>
+
+## The multi-coach scheduling challenge
+
+With multiple coaches, you face coordination challenges that solo coaches don't:
+
+**Scheduling conflicts**:
+
+- Coach A and Coach B both available Monday 3-5 PM
+- Athlete books with Coach A at 3:00 PM
+- Different athlete tries to book Coach A at 3:00 PM → Should be blocked
+- But Coach B at 3:00 PM should still be available
+
+**Facility capacity**:
+
+- Gym has 3 training areas
+- 5 coaches on staff
+- Maximum 3 coaches can work simultaneously (space limitation)
+- Need to track facility capacity, not just individual coach availability
+
+**Team coordination**:
+
+- Some coaches work specific days only
+- Some coaches share availability (either can take the session)
+- Some sessions require specific coaches
+- Substitution rules when primary coach is unavailable
+
+<Check>
+  **Goal**: Athletes can book with the right coach at the right time, while preventing conflicts and respecting both coach availability and facility capacity.
+</Check>
+
+## Multi-coach setup approaches
+
+Choose the approach that matches your business model:
+
+<Tabs>
+  <Tab title="Approach 1: Coach-Specific Schedulers">
+    **How it works**: Each coach has their own separate schedulers
+
+    **Example**:
+
+    - "Private Training with Coach Mike"
+    - "Private Training with Coach Sarah"
+    - "Private Training with Coach David"
+
+    **Best for**:
+
+    - Coaches with distinct specialties or styles
+    - Athletes who prefer specific coaches
+    - Different pricing per coach (experience levels)
+    - Clear separation of bookings
+
+    **Pros**:
+
+    - Simple to set up and understand
+    - Clear attribution (each booking tied to specific coach)
+    - Easy individual coach management
+    - Natural pricing differentiation
+
+    **Cons**:
+
+    - Creates many schedulers (can clutter athlete booking view)
+    - Less flexibility for substitution
+    - Requires athletes to choose coach upfront
+
+    <Frame>
+      ![Multiple schedulers each assigned to specific coach](/images/coach-specific-schedulers.png)
+    </Frame>
+  </Tab>
+  <Tab title="Approach 2: Shared Schedulers with Multi-Coach Assignment">
+    **How it works**: One scheduler, multiple coaches assigned to it
+
+    **Example**:
+
+    - "Private Training Session" (any available coach)
+      - Assigned coaches: Mike, Sarah, David
+
+    **Best for**:
+
+    - Athletes don't care which coach
+    - Interchangeable coaching (standardized approach)
+    - Maximizing availability across team
+    - Facility-style booking
+
+    **Pros**:
+
+    - Cleaner athlete booking experience (fewer scheduler choices)
+    - Maximum flexibility for scheduling
+    - Easy substitution
+    - Better utilization of coach time
+
+    **Cons**:
+
+    - Less coach differentiation
+    - May require manual assignment after booking
+    - Harder to track individual coach metrics
+    - Same pricing for all coaches
+
+    <Frame>
+      ![Single scheduler with multiple coach assignments](/images/shared-scheduler-multiple-coaches.png)
+    </Frame>
+  </Tab>
+  <Tab title="Approach 3: Hybrid (Coach-Specific + Shared)">
+    **How it works**: Some schedulers are coach-specific, others are shared
+
+    **Example**:
+
+    - "Elite Training with Coach Mike" (Mike only, premium pricing)
+    - "Elite Training with Coach Sarah" (Sarah only, premium pricing)
+    - "Standard Training Session" (Any available coach)
+    - "Youth Development Session" (Coach David or Coach Emma)
+
+    **Best for**:
+
+    - Tiered coaching levels (lead coaches vs assistants)
+    - Specialty services requiring specific coaches
+    - Flexibility where possible, specificity where needed
+    - Growing facilities transitioning approaches
+
+    **Pros**:
+
+    - Best of both worlds
+    - Pricing flexibility
+    - Coach specialization respected
+    - Availability maximized
+
+    **Cons**:
+
+    - More complex to set up
+    - Requires careful planning
+    - Athletes need to understand the system
+    - More schedulers to manage
+
+    <Tip>
+      **Pro tip**: Most successful multi-coach operations use this hybrid approach. Premium services with specific coaches, standard services with any available coach.
+    </Tip>
+  </Tab>
+</Tabs>
+
+## Setting up coach-specific availability
+
+Each coach needs their own availability template based on when they work.
+
+<Steps>
+  <Step title="Plan your coach availability structure">
+    Before configuring, map out each coach's schedule:
+
+    **Example planning doc**:
+
+    - **Coach Mike**: Monday/Wednesday/Friday 3-8 PM
+    - **Coach Sarah**: Tuesday/Thursday 4-9 PM, Saturday 9 AM-2 PM
+    - **Coach David**: Monday-Friday 5-9 PM (evening specialist)
+    - **Coach Emma**: Tuesday/Thursday/Saturday 10 AM-3 PM (youth specialist)
+
+    <Frame>
+      ![Spreadsheet of coach availability](/images/coach-availability-planning-doc.png)
+    </Frame>
+    <Note>
+      **Overlap is okay**: Multiple coaches can have overlapping availability. This is actually beneficial—it provides flexibility and prevents single points of failure.
+    </Note>
+  </Step>
+  <Step title="Create first coach's scheduler with availability">
+    For Coach Mike:
+
+    1. Create scheduler: "Private Training with Coach Mike"
+    2. Set availability: M/W/F 3-8 PM
+    3. Set pricing, duration, capacity as normal
+    4. In scheduler settings, assign/tag this scheduler to Coach Mike
+    5. Save scheduler
+
+    <Frame>
+      ![Creating scheduler for specific coach](/images/create-coach-mike-scheduler.png)
+    </Frame>
+    <Tip>
+      **Naming convention**: Use consistent naming: "[Session Type] with Coach [Name]" makes it easy for athletes to understand and for you to manage.
+    </Tip>
+  </Step>
+  <Step title="Create schedulers for remaining coaches">
+    Repeat for each coach:
+
+    **Coach Sarah's scheduler**:
+
+    - Name: "Private Training with Coach Sarah"
+    - Availability: T/Th 4-9 PM, Sat 9 AM-2 PM
+    - Assign to Coach Sarah
+
+    **Coach David's scheduler**:
+
+    - Name: "Evening Sessions with Coach David"
+    - Availability: M-F 5-9 PM
+    - Assign to Coach David
+
+    **Coach Emma's scheduler**:
+
+    - Name: "Youth Training with Coach Emma"
+    - Availability: T/Th/Sat 10 AM-3 PM
+    - Assign to Coach Emma
+
+    <Check>
+      **Result**: Each coach now has their own scheduler with appropriate availability. Athletes can choose which coach to book with.
+    </Check>
+  </Step>
+  <Step title="Test booking experience">
+    View the athlete-facing booking page:
+
+    - ✅ All coaches' schedulers appear
+    - ✅ Each shows appropriate available times
+    - ✅ Coach names are clear
+    - ✅ Pricing is displayed
+    - ✅ Athletes can distinguish between coaches
+
+    <Frame>
+      ![Athlete booking view showing multiple coach options](/images/athlete-view-multiple-coaches.png)
+    </Frame>
+  </Step>
+  <Step title="Verify calendar separation">
+    Check your calendar:
+
+    - Use **Filter by Coach** to see each coach's bookings separately
+    - Verify bookings are correctly attributed to right coach
+    - Confirm no double-booking within same coach
+    - Test that different coaches CAN have overlapping bookings
+
+    <Frame>
+      ![Calendar filtered to show specific coach's bookings](/images/calendar-filter-by-coach.png)
+    </Frame>
+  </Step>
+</Steps>
+
+## Setting up shared schedulers (any available coach)
+
+For schedulers where any coach can take the session:
+
+<Steps>
+  <Step title="Create the shared scheduler">
+    Create one scheduler for the session type:
+
+    - Name: "Standard Private Training" (no coach name)
+    - Set availability combining all coaches' hours (or standard facility hours)
+    - Set pricing and settings as normal
+
+    <Frame>
+      ![Creating scheduler without specific coach assignment](/images/create-shared-scheduler.png)
+    </Frame>
+  </Step>
+  <Step title="Assign multiple coaches to the scheduler">
+    In the scheduler settings, look for:
+
+    - **Assigned Coaches**
+    - **Connected Coaches**
+    - **Available Coaches**
+    - Or similar option
+
+    Select all coaches who can deliver this session:
+
+    - ☑️ Coach Mike
+    - ☑️ Coach Sarah
+    - ☑️ Coach David
+    - ☑️ Coach Emma
+
+    <Frame>
+      ![Assigning multiple coaches to shared scheduler](/images/assign-multiple-coaches.png)
+    </Frame>
+    <Note>
+      **Important**: How multi-coach assignment works varies by system. Some automatically prevent double-booking, others require manual coach assignment after booking.
+    </Note>
+  </Step>
+  <Step title="Configure conflict prevention">
+    If your system supports it, set rules for:
+
+    - **Prevent coach double-booking**: System blocks coach if already booked
+    - **Allow overbooking**: Multiple sessions can be assigned to same coach at same time (useful for group sessions)
+    - **Manual assignment required**: Admin assigns coach after athlete books
+
+    <Tip>
+      **Recommended setting**: "Prevent coach double-booking" ensures coaches aren't scheduled for two places simultaneously.
+    </Tip>
+  </Step>
+  <Step title="Test the booking and assignment flow">
+    As a test athlete:
+
+    1. Book a session from the shared scheduler
+    2. Check if coach is auto-assigned or requires manual assignment
+    3. Book a second session at the same time
+    4. Verify first coach is blocked but others remain available
+
+    <Check>
+      **Success**: System properly manages which coaches are available for each time slot based on existing bookings.
+    </Check>
+  </Step>
+</Steps>
+
+## Preventing double-booking across coaches
+
+Double-booking prevention is critical in multi-coach environments.
+
+### What needs to be prevented
+
+**Individual coach double-booking** ✅
+
+- Coach Mike can't be booked for two sessions at 3:00 PM simultaneously
+- System must track each coach's bookings independently
+
+**Facility capacity limits** ✅
+
+- If gym only has 3 training areas, max 3 concurrent sessions
+- Even if 5 coaches are available, facility capacity limits total bookings
+
+**Equipment conflicts** ⚠️
+
+- If you have 2 squat racks, max 2 squat-focused sessions simultaneously
+- This is harder to enforce in most systems
+
+### CoachIQ's conflict prevention
+
+<AccordionGroup>
+  <Accordion title="Coach-Specific Schedulers: Natural Prevention">
+    When each coach has their own scheduler, double-booking prevention happens automatically:
+
+    **How it works**:
+
+    - Athlete books "Private Training with Coach Mike" at 3:00 PM
+    - That 3:00 PM slot on Coach Mike's scheduler becomes unavailable
+    - Other athletes can't book Coach Mike at 3:00 PM
+    - Coach Sarah's 3:00 PM slot remains available (different scheduler)
+
+    **No additional configuration needed** ✅
+  </Accordion>
+  <Accordion title="Shared Schedulers: Requires Configuration">
+    When multiple coaches share one scheduler, you need explicit conflict settings:
+
+    **Option 1: Auto-assign first available coach**
+
+    - System assigns whichever coach is available
+    - Once assigned, that coach becomes unavailable for that time
+    - Remaining coaches still available
+
+    **Option 2: Manual coach assignment after booking**
+
+    - Athlete books the session
+    - Admin later assigns which coach will take it
+    - Risk: Accidentally assigning coach who's already booked
+
+    **Option 3: Allow overlapping bookings**
+
+    - System permits multiple sessions with same coach simultaneously
+    - Used for group sessions or team practice
+
+    <Warning>
+      **Critical**: Understand which option your system uses. If manual assignment is required, you MUST monitor new bookings and assign coaches to prevent accidental double-booking.
+    </Warning>
+  </Accordion>
+  <Accordion title="Facility Capacity Limits">
+    Some advanced systems allow setting facility-wide capacity limits:
+
+    **Example setup**:
+
+    - Gym has 3 training areas
+    - Set capacity: Maximum 3 concurrent sessions
+    - Once 3 sessions are booked for 3:00 PM (across all coaches), no more 3:00 PM slots available
+
+    **Most systems DON'T have this feature** ⚠️
+
+    **Workaround**: Use scheduler capacity settings
+
+    - Instead of unlimited capacity per coach
+    - Set max capacity = facility capacity
+    - Limits total bookings regardless of coach
+  </Accordion>
+</AccordionGroup>
+
+## Managing coach schedules and time off
+
+With multiple coaches, blackout days and schedule changes become more complex.
+
+### Individual coach time off
+
+<Steps>
+  <Step title="Coach notifies you of time off">
+    Coach Sarah is taking vacation July 10-20.
+  </Step>
+  <Step title="Add blackout days to that coach's schedulers">
+    For all schedulers assigned to Coach Sarah:
+
+    1. Edit each scheduler
+    2. Add blackout days: July 10-20
+    3. Save
+
+    <Frame>
+      ![Adding blackout days to one coach's scheduler](/images/coach-specific-blackout.png)
+    </Frame>
+  </Step>
+  <Step title="Cancel existing bookings with that coach">
+    Check calendar for Coach Sarah's bookings during July 10-20:
+
+    1. Cancel each booking
+    2. Offer to reschedule with Coach Sarah after vacation
+    3. OR offer to transfer to different coach if urgent
+
+    <Tip>
+      **Communication tip**: "Coach Sarah will be on vacation July 10-20. Your session can be rescheduled with her after July 21, or we can arrange a session with Coach Mike or Coach David during that time. Your preference?"
+    </Tip>
+  </Step>
+  <Step title="Verify other coaches remain available">
+    Check that:
+
+    - ✅ Other coaches' schedulers still show availability July 10-20
+    - ✅ Only Coach Sarah's availability is blocked
+    - ✅ Athletes can still book with other coaches
+
+    <Check>
+      **Result**: One coach's time off doesn't shut down entire operation. Other coaches continue serving athletes.
+    </Check>
+  </Step>
+</Steps>
+
+### Facility closure (all coaches affected)
+
+<Steps>
+  <Step title="Add blackout days to ALL schedulers">
+    If gym is closed for maintenance July 15-17:
+
+    1. Go through each coach's scheduler
+    2. Add blackout days July 15-17 to all
+    3. Save all schedulers
+
+    <Note>
+      **Tedious alert**: If you have many schedulers, this is time-consuming. See Schedulers Management Dashboard for bulk management tools.
+    </Note>
+  </Step>
+  <Step title="Cancel all bookings during closure">
+    Review calendar and cancel all bookings (regardless of coach) during July 15-17.
+  </Step>
+  <Step title="Communicate facility closure">
+    Send announcement to all athletes:
+
+    - Facility closed July 15-17 for maintenance
+    - All sessions canceled, credits refunded
+    - Booking reopens July 18
+
+    <Frame>
+      ![Announcement about facility closure](/images/facility-closure-announcement.png)
+    </Frame>
+  </Step>
+</Steps>
+
+## Organizing schedulers for multi-coach operations
+
+As you add coaches and session types, organization becomes critical.
+
+### Naming conventions that scale
+
+**Good naming patterns**:
+
+**By Coach + Session Type**:
+
+- "Private Training - Coach Mike"
+- "Private Training - Coach Sarah"
+- "Group Class - Coach David"
+- "Youth Training - Coach Emma"
+
+**By Service Level + Coach**:
+
+- "Premium Training - Coach Mike" (\$100)
+- "Standard Training - Any Coach" (\$75)
+- "Intro Session - Any Coach" (\$50)
+
+**By Specialty + Coach**:
+
+- "Strength Training - Coach Mike"
+- "Speed Development - Coach Sarah"
+- "Youth Skills - Coach Emma"
+- "Team Training - Coach David"
+
+**Bad naming patterns** ❌:
+
+- "Session 1", "Session 2", "Session 3"
+- Just coach names without context
+- Inconsistent formats mixing patterns
+
+### Using program groupings
+
+Group schedulers into logical categories for athletes:
+
+**Example groupings**:
+
+**"Private Training" group**:
+
+- Private with Coach Mike
+- Private with Coach Sarah
+- Private with Coach David
+- Private with any available coach
+
+**"Group Sessions" group**:
+
+- Small Group Training
+- Team Practice
+- Weekend Bootcamp
+
+**"Specialized Training" group**:
+
+- Speed & Agility (Coach Sarah)
+- Strength & Conditioning (Coach Mike)
+- Youth Development (Coach Emma)
+
+<Tip>
+  **Pro tip**: Well-organized program groupings dramatically improve the athlete booking experience when you have 10+ schedulers.
+</Tip>
+
+## Calendar management for multiple coaches
+
+Effective calendar use is essential for multi-coach coordination.
+
+### Using calendar filters
+
+<Steps>
+  <Step title="Filter by individual coach">
+    **When to use**: Checking specific coach's schedule, managing their bookings
+
+    **How**:
+
+    1. Go to Schedule → Calendar
+    2. Use **Filter by Coach** dropdown
+    3. Select individual coach
+
+    <Frame>
+      ![Calendar filtered to show only one coach](/images/filter-calendar-by-coach.png)
+    </Frame>
+    **Result**: See only that coach's bookings, making it easy to spot conflicts or gaps.
+  </Step>
+  <Step title="View all coaches simultaneously">
+    **When to use**: Facility-wide overview, capacity planning, conflict detection
+
+    **How**:
+
+    1. Go to Calendar
+    2. Select "All Coaches" in filter
+    3. Switch to Week or Month view for best overview
+
+    <Frame>
+      ![Calendar showing all coaches' bookings](/images/calendar-all-coaches-view.png)
+    </Frame>
+    **Result**: Color-coded by coach, see entire operation's schedule at once.
+  </Step>
+  <Step title="View facility capacity">
+    **When to use**: Checking if facility is at capacity for specific times
+
+    **How**:
+
+    1. Calendar view (all coaches)
+    2. Look at specific time slot
+    3. Count concurrent sessions
+
+    **Example**:
+
+    - Monday 3:00 PM: 3 coaches booked
+    - If facility max = 3 areas, you're at capacity
+    - Can't book 4th session at 3:00 PM
+
+    <Note>
+      **Manual management**: Most systems don't automatically enforce facility capacity limits, so you'll need to monitor this yourself.
+    </Note>
+  </Step>
+</Steps>
+
+### Color coding and visual organization
+
+Make calendar management easier with visual systems:
+
+**Color by coach**:
+
+- Coach Mike = Blue
+- Coach Sarah = Purple
+- Coach David = Green
+- Coach Emma = Orange
+
+**Result**: Quickly identify which coach has which booking at a glance.
+
+**Color by session type** (alternative):
+
+- Private = Blue
+- Group = Green
+- Youth = Yellow
+- Team = Red
+
+**Result**: Quickly see distribution of session types.
+
+<Tip>
+  **Pro tip**: If your system allows it, use color coding. It transforms a cluttered calendar into an easily scannable management tool.
+</Tip>
+
+## Advanced multi-coach scenarios
+
+<AccordionGroup>
+  <Accordion title="Scenario 1: Lead Coach + Assistant Coach Structure">
+    **Your situation**: Some sessions require lead coach (expensive), others can use assistant (less expensive).
+
+    **Solution**:
+
+    - **Premium Schedulers**: "Elite Training - Coach Mike (Lead)" at \$100
+    - **Standard Schedulers**: "Training Session - Coach Sarah (Assistant)" at \$65
+    - **Group Schedulers**: "Group Class - Any Coach" at \$40 (either can lead)
+
+    **Assignment rules**:
+
+    - Lead coach must handle premium 1-on-1s
+    - Assistant can handle standard sessions
+    - Either can handle group classes
+    - Assistant can shadow lead coach (both assigned to same session)
+
+    <Frame>
+      ![Schedulers organized by coach seniority](/images/lead-assistant-structure.png)
+    </Frame>
+  </Accordion>
+  <Accordion title="Scenario 2: Specialty-Based Assignment">
+    **Your situation**: Coaches have different specializations, athletes book based on need.
+
+    **Solution**:
+
+    - "Strength Training" → Coach Mike only
+    - "Speed & Agility" → Coach Sarah only
+    - "Youth Development" → Coach Emma only
+    - "General Training" → Any coach
+
+    **Athlete decision tree**:
+
+    1. What do you need help with?
+    2. Select corresponding specialist scheduler
+    3. Book available time
+
+    **Benefit**: Right coach for right need, no mismatch risk.
+  </Accordion>
+  <Accordion title="Scenario 3: Location-Based Multi-Coach Scheduling">
+    **Your situation**: Multiple facilities, different coaches at each location.
+
+    **Solution**:
+
+    - **Downtown Gym**: Coach Mike (M/W/F), Coach Sarah (T/Th)
+    - **West Side Location**: Coach David (M-F), Coach Emma (Sat)
+
+    **Scheduler structure**:
+
+    - "Downtown Private Training"
+      - Availability: Combines Mike's M/W/F + Sarah's T/Th
+      - Connected coaches: Mike, Sarah
+    - "West Side Private Training"
+      - Availability: David's M-F + Emma's Sat
+      - Connected coaches: David, Emma
+
+    **Result**: Location-based booking with automatic coach assignment based on availability.
+  </Accordion>
+  <Accordion title="Scenario 4: Seasonal or Part-Time Coach Management">
+    **Your situation**: Some coaches work year-round, others are seasonal or part-time.
+
+    **Solution**:
+
+    - **Year-round coaches**: Always active schedulers
+    - **Seasonal coaches**: Schedulers with date range limits
+      - "Summer Training - Coach Alex" (June 1 - August 31 only)
+      - Automatically becomes unavailable September 1
+    - **Part-time coaches**: Limited availability patterns
+      - "Weekend Sessions - Coach Jordan" (Sat/Sun only)
+
+    **Management**:
+
+    - Activate seasonal schedulers when coach starts
+    - Deactivate when season ends
+    - No need to delete schedulers, just toggle availability
+
+    <Tip>
+      **College athlete coaches**: Perfect for this model. Active during summer/winter breaks, inactive during academic year.
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting multi-coach issues
+
+<AccordionGroup>
+  <Accordion title="Coach is double-booked at the same time">
+    **Possible causes**:
+
+    1. Manual assignment error (if using shared schedulers)
+    2. Coach assigned to multiple schedulers with overlapping availability
+    3. System conflict prevention not working
+
+    **How to fix**:
+
+    - Cancel one of the bookings
+    - Reassign to different coach or time
+    - Review scheduler settings to enable conflict prevention
+    - If using coach-specific schedulers, verify availability windows don't overlap inappropriately
+
+    <Warning>
+      **Prevention**: If using manual coach assignment, create a workflow where one person assigns coaches and checks for conflicts before confirming.
+    </Warning>
+  </Accordion>
+  <Accordion title="Wrong coach assigned to booking">
+    **Issue**: Booking went to Coach A but should have gone to Coach B
+
+    **Causes**:
+
+    - Auto-assignment chose wrong coach
+    - Manual assignment error
+    - Athlete selected wrong scheduler
+
+    **How to fix**:
+
+    1. Check if booking can be reassigned (some systems support this)
+    2. If not, cancel existing booking and rebook with correct coach
+    3. Communicate with both coaches and athlete about the change
+    4. Credit refund if needed
+
+    **Prevention**: Clear scheduler naming and athlete-facing descriptions help athletes choose correct coach initially.
+  </Accordion>
+  <Accordion title="Athlete can't find the coach they want">
+    **Issue**: Too many scheduler options, athlete confused
+
+    **Causes**:
+
+    - Poor organization of schedulers
+    - No program groupings
+    - Unclear naming conventions
+
+    **How to fix**:
+
+    - Implement program groupings (Group by coach or session type)
+    - Add clear descriptions to each scheduler
+    - Consider adding photos of each coach to schedulers
+    - Create a "Choose Your Coach" guide on your website
+
+    <Tip>
+      **Simplification opportunity**: If athletes frequently book the wrong coach, consider moving to "any available coach" model for standard sessions.
+    </Tip>
+  </Accordion>
+  <Accordion title="Coach's availability not showing correctly">
+    **Issue**: Coach is available but no slots showing
+
+    **Causes**:
+
+    - Blackout days incorrectly added
+    - Availability not saved properly
+    - Buffer time consuming all availability
+    - Scheduler accidentally deactivated
+
+    **How to fix**:
+
+    - Edit coach's scheduler and verify availability settings
+    - Remove inappropriate blackout days
+    - Check buffer time calculations
+    - Verify scheduler is active/published
+    - Test booking flow to confirm slots appear
+
+    **Debug method**: Filter calendar to only that coach and verify availability windows show properly.
+  </Accordion>
+  <Accordion title="Facility capacity exceeded">
+    **Issue**: More sessions booked than facility can handle
+
+    **Causes**:
+
+    - No capacity limits set on schedulers
+    - Manual booking bypassed limits
+    - Multiple schedulers each allowing bookings without facility-wide tracking
+
+    **How to fix**:
+
+    - Review calendar and identify over-capacity time slots
+    - Contact affected athletes to reschedule
+    - Implement capacity limits on schedulers if available
+    - Create manual monitoring process for future
+
+    **Prevention**: Set max capacity on shared schedulers to match facility limits, or implement manual approval for bookings during high-demand times.
+  </Accordion>
+</AccordionGroup>
+
+## Multi-coach scheduling checklist
+
+Before going live with multi-coach scheduling:
+
+### Planning Phase
+
+- Mapped out each coach's availability
+- Decided on coach-specific vs shared scheduler approach
+- Established naming conventions
+- Determined pricing for each coach/tier
+- Planned program groupings
+
+### Setup Phase
+
+- Created schedulers for each coach or service level
+- Set appropriate availability for each
+- Assigned coaches to schedulers correctly
+- Configured conflict prevention settings
+- Added buffer time appropriate for coach transitions
+
+### Testing Phase
+
+- Tested booking with each coach
+- Verified coach double-booking is prevented
+- Checked calendar filtering by coach
+- Confirmed athlete can distinguish between coaches
+- Tested rescheduling and cancellation flows
+
+### Operational Phase
+
+- Trained coaches on checking their schedules
+- Established process for time-off requests
+- Created blackout day management workflow
+- Set up regular calendar review schedule
+- Documented which admin manages assignments
+
+<Check>
+  **Ready to launch**: Multi-coach scheduling is configured and tested. Your team can now efficiently serve athletes without conflicts.
+</Check>
+
+## Best practices for multi-coach operations
+
+<CardGroup cols={2}>
+  <Card title="Single Availability Manager" icon="user-cog">
+    Designate one person to manage all coach availability and blackout days. Prevents inconsistencies and missed updates.
+  </Card>
+  <Card title="Weekly Schedule Review" icon="calendar-week">
+    Every Monday, review the upcoming week's schedule across all coaches. Catch conflicts early.
+  </Card>
+  <Card title="Clear Communication Channels" icon="comments">
+    Create a team communication system (Slack, group text) for schedule changes, last-minute conflicts, or substitution needs.
+  </Card>
+  <Card title="Standardize Buffer Times" icon="clock">
+    Use consistent buffer times across all coaches (e.g., all coaches use 15 min buffer) to simplify schedule management.
+  </Card>
+  <Card title="Emergency Substitution Protocol" icon="exchange-alt">
+    Document process for when a coach can't make a session: Who covers? How is athlete notified? Credit policy?
+  </Card>
+  <Card title="Coach Performance Tracking" icon="chart-line">
+    Use calendar filters to review each coach's booking volume, popular times, and no-show rates. Data-driven decisions.
+  </Card>
+  <Card title="Consistent Athlete Experience" icon="star">
+    Ensure all coaches deliver similar quality/approach if using "any coach" model. Regular training and calibration.
+  </Card>
+  <Card title="Capacity Monitoring" icon="warehouse">
+    If facility capacity is limited, manually monitor concurrent bookings to prevent over-scheduling.
+  </Card>
+</CardGroup>
+
+## What's next
+
+Now that you understand multi-coach availability, explore related features:
+
+<CardGroup cols={2}>
+  <Card title="Multi-Coach Sessions" icon="users" href="/scheduling/multi-coach-session-management">
+    Assign multiple coaches to single sessions for co-coaching or team training
+  </Card>
+  <Card title="Schedulers Dashboard" icon="th-large" href="/scheduling/schedulers-management-dashboard">
+    Bulk management tools for complex multi-coach operations
+  </Card>
+  <Card title="Creating Availability" icon="calendar-check" href="/scheduling/creating-availability-schedule">
+    Master availability templates for your coaching team
+  </Card>
+  <Card title="Blackout Days" icon="calendar-times" href="/scheduling/blackout-days-time-off">
+    Manage individual coach time off and facility closures
+  </Card>
+</CardGroup>
+
+## Related articles
+
+<CardGroup cols={3}>
+  <Card title="Scheduling Overview" icon="book-open" href="/scheduling/scheduling-overview">
+    Complete overview of scheduling system
+  </Card>
+  <Card title="Creating First Scheduler" icon="plus-circle" href="/scheduling/creating-first-scheduler">
+    Set up your first bookable scheduler
+  </Card>
+  <Card title="Calendar Overview" icon="calendar-alt" href="/scheduling/calendar-overview">
+    Navigate and filter multi-coach calendars
+  </Card>
+  <Card title="Organizing Schedulers" icon="folder" href="/scheduling/organizing-schedulers-programs">
+    Use program groupings for better organization
+  </Card>
+  <Card title="Calendar Conflicts" icon="exclamation-triangle" href="/scheduling/calendar-conflicts">
+    Identify and resolve scheduling conflicts
+  </Card>
+  <Card title="Manual Booking" icon="user-plus" href="/scheduling/manually-booking-athletes">
+    Book athletes into sessions across coaches
+  </Card>
+</CardGroup>
+
+<Info>
+  **Need help designing your multi-coach system?** Our support team can help you set up the optimal structure for your facility or team. [Contact Support](https://coachiq.com/support)
+</Info>
