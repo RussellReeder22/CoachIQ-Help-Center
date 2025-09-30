@@ -1,0 +1,1327 @@
+---
+title: "Setting Up Credit-Based Scheduling"
+description: "Step-by-step guide to creating credit-issuing products and configuring schedulers to accept credits for bookings"
+sidebarTitle: "Credit-Based Setup"
+icon: "gear"
+---
+
+<Info>
+  **Prerequisites**: Read [Credit System Explained](/scheduling/credit-system-explained) first to understand credit concepts and types (Master Credits vs Scheduler-Specific Credits) before implementing.
+</Info>
+
+## Overview: Two-step setup process
+
+Setting up credit-based scheduling requires **two separate configurations** that link together:
+
+<Steps>
+  <Step title="Create credit-issuing products (Payment side)">
+    **Where**: Payments → Products → Product Builder
+
+    **What**: Configure products that issue credits when purchased
+
+    **Two options**:
+
+    - **One-Time Payment**: Issues all credits immediately upon purchase
+    - **Subscription**: Issues credits per billing cycle (monthly/weekly/yearly)
+
+    **Result**: Athletes can buy credits and receive them in their account balance
+  </Step>
+  <Step title="Configure schedulers to accept credits (Schedule side)">
+    **Where**: Schedule → Schedulers → Scheduler Settings
+
+    **What**: Enable credit payment option on schedulers
+
+    **Options**:
+
+    - Credit-Only (must use credits)
+    - Hybrid (credit OR direct payment)
+    - Payment-Only (no credits accepted)
+
+    **Result**: Athletes can redeem their credits when booking sessions
+  </Step>
+</Steps>
+
+<Warning>
+  **Critical linkage**: Products and schedulers must be linked! Configure **"Redeemable Schedulers"** in the product to specify which sessions accept those credits. If not linked, athletes can buy credits but can't use them.
+</Warning>
+
+---
+
+## Part 1: Creating credit-issuing products
+
+Credit issuance happens in the **Product Builder** under Payments.
+
+### Creating a One-Time Credit Package
+
+<Steps>
+  <Step title="Navigate to Product Builder">
+    Go to **Payments → Products** in your admin dashboard.
+
+    Click **Create Product** (or **\+ Add Product**).
+
+    The Product Builder opens.
+  </Step>
+  <Step title="Choose product type: One-Time Payment">
+    **Product type options:**
+
+    - ✅ **One-Time Payment** ← Select this for credit packages
+    - Subscription (for recurring credit issuance)
+    - Access Code (for restricted purchases)
+
+    **Why One-Time**: Issues all credits immediately upon purchase, athlete uses credits until depleted, then purchases another package.
+
+    **Example use**: "10-Credit Package", "5-Credit Trial Pack", "20-Credit Premium Bundle"
+  </Step>
+  <Step title="Configure product details">
+    Fill out essential product information:
+
+    **Product Name**: _Required_
+
+    - ✅ Good: "10-Credit Standard Package"
+    - ✅ Good: "20-Credit Premium Bundle"
+    - ❌ Avoid: "Training Credits" (no quantity specified)
+
+    **Description**: _Optional but recommended_
+
+    ```
+    Get 10 training sessions for $450 - save $50!
+    
+    • Use for any 60-min private training session
+    • Credits never expire
+    • Best value for regular athletes
+    • Flexible scheduling
+    
+    Save $5 per session vs pay-per-session pricing.
+    ```
+
+    **Price**: `$450.00`
+
+    **Features**: _Optional - add bullet points_
+
+    - "10 training sessions included"
+    - "Use anytime within 6 months"
+    - "Flexible scheduling"
+
+    <Tip>
+      **Naming best practice**: Always include credit quantity in product name so athletes know exactly what they're purchasing.
+    </Tip>
+  </Step>
+  <Step title="Enable credit issuance">
+    Navigate to the **Credits** section in Product Builder.
+
+    **Toggle ON**: "Add credits once purchased"
+
+    **Number of credits**: `10` (how many credits this product grants)
+
+    **Result**: When athlete purchases this product, they immediately receive 10 credits in their account.
+
+    <Frame>
+      ![Credits configuration in Product Builder](/images/product-builder-credits-section.png)
+    </Frame>
+  </Step>
+  <Step title="Configure credit expiration (optional)">
+    Still in the **Credits** section:
+
+    **Credit expiration options:**
+
+    <Tabs>
+      <Tab title="Never Expire (Recommended)">
+        **Setting**: Leave expiration fields empty OR select "Don't expire"
+
+        **Behavior**: Credits remain in athlete's account indefinitely
+
+        **Best for**: Most coaches—builds goodwill, simple to manage, no refund disputes
+
+        **Communication**: "Your credits never expire—use them whenever you're ready!"
+      </Tab>
+      <Tab title="Days Since Purchase">
+        **Setting**: "Expire after X days from purchase"
+
+        **Example**: `180` days (6 months)
+
+        **Behavior**: Credits expire 180 days after purchase date, regardless of usage
+
+        **Best for**: Encouraging consistent training, aligning with program lengths
+
+        **Communication**: "Credits expire 6 months after purchase—use them regularly!"
+      </Tab>
+      <Tab title="Specific Date">
+        **Setting**: "Expire on [date]"
+
+        **Example**: "Expire on 12/31/2025"
+
+        **Behavior**: All credits from this product expire on specific date
+
+        **Best for**: Seasonal programs, year-end promotions
+
+        **Communication**: "All credits expire December 31st—book before year-end!"
+      </Tab>
+    </Tabs>
+    <Warning>
+      **Legal compliance**: Some jurisdictions have laws about stored value expiration. Check local regulations before setting expiration policies.
+    </Warning>
+  </Step>
+  <Step title="Configure redeemable schedulers (CRITICAL)">
+    This step determines **which schedulers accept these credits**.
+
+    Navigate to **Usage Limits** section in Product Builder.
+
+    **"Credits can be redeemed for these sessions"**: Select schedulers
+
+    <Tabs>
+      <Tab title="All Schedulers (Master Credits)">
+        **Configuration**: Leave scheduler selection BLANK or select all
+
+        **Result**: Creates **Master Credits**—can be used for ANY credit-enabled scheduler
+
+        **Athlete sees**:
+
+        - "Master Credits: 10"
+        - "These credits can be used for any session and have no restrictions"
+
+        **Best for**:
+
+        - Simple credit systems
+        - General-purpose packages
+        - Maximum flexibility for athletes
+
+        **Example**: "10-Credit Universal Package - Use for any session"
+      </Tab>
+      <Tab title="Specific Schedulers Only">
+        **Configuration**: Select ONLY specific schedulers
+
+        **Example**: Select "Rising Stars Class", "Rising Stars Shooting Lab", "Rising Stars Open Gym"
+
+        **Result**: Creates **Scheduler-Specific Credits**—ONLY usable for selected schedulers
+
+        **Athlete sees**:
+
+        - "Rising Stars 10-Credit Membership"
+        - "Redeemable Sessions: Rising Stars Class (0/∞), Rising Stars Shooting Lab (0/∞)"
+
+        **Best for**:
+
+        - Tiered membership models
+        - Program-specific packages
+        - Revenue sharing with other coaches
+        - Restricting premium credits to premium sessions
+
+        **Example**: "Elite Program Membership - 10 credits for Elite Class only"
+
+        <Tip>
+          **Strategic use**: Sell both types—general packages (master credits) for flexibility and premium memberships (scheduler-specific) for higher tiers.
+        </Tip>
+      </Tab>
+    </Tabs>
+    **Usage Limits (optional)**: Set maximum credits per scheduler
+
+    - Example: "3 of 10 credits can be used for Premium Class"
+    - Limits reset based on billing frequency
+    - Advanced feature for complex membership models
+
+    <Check>
+      **Critical**: If you don't select schedulers here, create Master Credits. If you select specific schedulers, those are the ONLY sessions this product's credits can book.
+    </Check>
+  </Step>
+  <Step title="Configure advanced settings (optional)">
+    Additional product configuration options:
+
+    **Processing Fees**:
+
+    - Toggle: "Add processing fee"
+    - Pass Stripe fees to customer (you receive full listed price)
+
+    **Access Codes**:
+
+    - Toggle: "Enable access codes"
+    - Require special code to purchase (private memberships, partner programs)
+
+    **Guest Checkout**:
+
+    - Toggle: "Allow users to checkout as guest"
+    - Purchase without creating account (limited scheduling features)
+
+    **Purchase Limits**:
+
+    - "Add a purchase limit for this product"
+    - Restrict how many athletes can buy (capacity-limited programs)
+
+    **Revenue Sharing**:
+
+    - "Share revenue with another Stripe Account"
+    - Split revenue with partner organization or facility
+
+    **Terms Requirement**:
+
+    - "Require Agreement to Terms"
+    - Force athletes to accept terms before purchase (waivers, policies)
+
+    **Confirmation Page**:
+
+    - Direct users to athlete portal (default)
+    - Direct users to thank you page
+    - Direct users to custom URL
+
+    <Note>
+      **Start simple**: Only configure advanced settings if you have specific business needs. Basic setup works for 90% of coaches.
+    </Note>
+  </Step>
+  <Step title="Save and publish product">
+    Click **Save** or **Create Product** (usually top-right).
+
+    Your credit-issuing product is now live!
+
+    <Check>
+      **Success**: Athletes can now purchase this product and receive 10 credits in their account. Next step: configure schedulers to accept these credits.
+    </Check>
+  </Step>
+</Steps>
+
+---
+
+### Creating a Subscription with Recurring Credits
+
+For monthly/weekly recurring revenue with automatic credit issuance:
+
+<Steps>
+  <Step title="Choose product type: Subscription">
+    In Product Builder, select:
+
+    - **Product Type**: Subscription ✅
+    - (Not One-Time Payment)
+
+    **Why Subscription**: Issues credits per billing cycle, auto-renews as long as subscription active, creates predictable recurring revenue.
+
+    **Example use**: "Monthly Unlimited Membership", "Weekly Training Pass", "Quarterly Elite Program"
+  </Step>
+  <Step title="Set subscription frequency">
+    **Billing Frequency options**:
+
+    - **Month** (most common)
+    - **Week**
+    - **Year**
+
+    **Example**: Select "Month" for monthly membership
+
+    **Price**: `$250.00/month`
+
+    **Result**: Athlete charged \$250 every month, receives credits every month
+  </Step>
+  <Step title="Configure recurring credit issuance">
+    Navigate to **Credits** section:
+
+    **Toggle ON**: "Add credits once purchased"
+
+    **Number of credits**: `5` (credits issued PER BILLING CYCLE)
+
+    **IMPORTANT**: This is credits **per month** (or week/year based on frequency), not total
+
+    **Example**:
+
+    - Frequency: Month
+    - Credits: 5
+    - Result: Athlete receives 5 fresh credits every month on renewal
+
+    <Tabs>
+      <Tab title="Finite Credits Per Period">
+        **Configuration**: Set specific number (e.g., `5`)
+
+        **Display to athlete**: "Credit Balance: 5"
+
+        **Behavior**: Athlete receives 5 credits per month, uses them, gets 5 more next month
+
+        **Best for**: Controlled usage, specific session limits, traditional membership models
+
+        **Example**: "\$250/month - 5 Credits/month (up to 1-2x per week)"
+      </Tab>
+      <Tab title="Unlimited Credits Per Period">
+        **Configuration**: Toggle "Unlimited credits" checkbox
+
+        **Display to athlete**: "Credit Balance: ∞" (infinity symbol)
+
+        **Behavior**: Athlete can book unlimited sessions during billing period
+
+        **IMPORTANT**: `∞` means unlimited WITHIN current month—resets at next renewal, NOT unlimited forever
+
+        **Best for**: High-frequency athletes, premium memberships, maximizing engagement
+
+        **Example**: "\$400/month - Unlimited Training (book as many sessions as you want this month)"
+
+        <Warning>
+          **Common confusion**: ∞ is NOT unlimited forever. It's unlimited WITHIN the current billing period. Credits reset at renewal.
+        </Warning>
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Configure unused credit behavior">
+    **"Unused credits expire" setting**:
+
+    <Tabs>
+      <Tab title="Credits Expire (Don't Carry Over)">
+        **Configuration**: Toggle "Unused credits expire" to ON
+
+        **Behavior**: Unused credits disappear at end of billing cycle
+
+        **Example**:
+
+        - Month 1: Athlete receives 5 credits, uses 3 → 2 unused
+        - Month 2: Athlete receives 5 fresh credits (2 from Month 1 expired)
+        - New balance: 5 credits
+
+        **Best for**: Encouraging consistent usage, preventing credit accumulation, simplified accounting
+
+        **Communication**: "Use your 5 monthly credits or lose them—credits don't roll over!"
+      </Tab>
+      <Tab title="Credits Carry Over (Don't Expire)">
+        **Configuration**: Toggle "Unused credits expire" to OFF
+
+        **Behavior**: Unused credits accumulate indefinitely
+
+        **Example**:
+
+        - Month 1: Athlete receives 5 credits, uses 3 → 2 unused
+        - Month 2: Athlete receives 5 fresh credits + 2 carried over
+        - New balance: 7 credits
+
+        **Best for**: Flexible usage, athlete-friendly, accounts for vacations/breaks
+
+        **Communication**: "Unused credits roll over—take a break and they'll be waiting!"
+
+        <Tip>
+          **Most popular**: Carry over policy is athlete-friendly and reduces refund requests. Slight risk of credit accumulation but builds goodwill.
+        </Tip>
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Configure redeemable schedulers">
+    Same as One-Time products:
+
+    Navigate to **Usage Limits** section.
+
+    **Select schedulers** that accept these subscription credits:
+
+    - Leave blank = Master Credits (any credit-enabled scheduler)
+    - Select specific = Scheduler-Specific Credits (only those sessions)
+
+    **Example for tiered membership**:
+
+    - Basic Membership (\$150/month, 3 credits) → Can book "Group Classes" only
+    - Premium Membership (\$300/month, 5 credits) → Can book "Group Classes" + "Private Sessions"
+    - Elite Membership (\$500/month, unlimited ∞) → Can book ALL schedulers
+
+    **Athlete sees**:
+
+    - "Redeemable Sessions: Rising Stars Class (0/∞), Elite Class (0/∞)"
+    - Per-scheduler usage tracking if usage limits set
+  </Step>
+  <Step title="Save subscription product">
+    Click **Save** or **Create Product**.
+
+    Subscription is now live!
+
+    **Auto-renewal**: Athlete charged monthly via Stripe, credits auto-issued each billing cycle
+
+    **What happens**:
+
+    - Athlete subscribes → Receives credits immediately
+    - Month 2 → Charged again, receives fresh credits (unused expire or carry over per your settings)
+    - Athlete cancels → Subscription stops, remaining credits may become unusable (check your settings)
+
+    <Check>
+      **Success**: You now have a recurring revenue subscription that automatically issues credits each billing period.
+    </Check>
+  </Step>
+</Steps>
+
+---
+
+## Part 2: Configuring schedulers to accept credits
+
+Now that products issue credits, configure **which schedulers accept them** for booking.
+
+<Steps>
+  <Step title="Navigate to Schedulers">
+    Go to **Schedule → Schedulers** in your admin dashboard.
+
+    You'll see your list of existing schedulers.
+  </Step>
+  <Step title="Select scheduler to configure">
+    Click on the scheduler you want to make credit-enabled.
+
+    **Example**: "60-Min Private Training"
+
+    The scheduler settings page opens.
+  </Step>
+  <Step title="Navigate to Payment/Pricing section">
+    Look for section labeled:
+
+    - **"Payment"**
+    - **"Pricing"**
+    - **"Cost"**
+    - **"Booking Payment"**
+
+    This section controls how athletes pay for this session type.
+  </Step>
+  <Step title="Enable credit payment">
+    You'll see payment model options. Choose the model that fits your business:
+
+    <Tabs>
+      <Tab title="Credit-Only (Enforce Credits)">
+        **Configuration:**
+
+        - Set pricing model to **"Credits"** or **"Credit-Based"**
+        - Enter credit amount: `1` (or 2, 0.5, etc.)
+        - Do NOT enable direct payment option
+
+        **Athlete requirement**: Must have credits to book—no other payment method accepted
+
+        **System behavior**:
+
+        - Athlete with 0 credits CANNOT book this scheduler
+        - Booking page shows: "1 Credit Required"
+        - If insufficient credits: "You need 1 credit to book. Purchase credits to continue."
+
+        **When to use**:
+
+        - Package-only business model
+        - Want to enforce credit purchases
+        - Simplify booking flow (no payment decisions)
+
+        **Example**: "60-Min Private Training - 1 Credit (Required)"
+
+        **Result**: Forces athletes into credit system, maximizes package sales
+      </Tab>
+      <Tab title="Hybrid (Credit OR Direct Payment)">
+        **Configuration:**
+
+        - Set pricing model to **"Hybrid"** or **"Credits + Payment"** or enable both
+        - Enter credit amount: `1`
+        - Enter direct payment amount: `$50.00`
+
+        **Athlete choice**: Can use 1 credit OR pay \$50 direct—their choice at booking
+
+        **System behavior**:
+
+        - Athlete with credits sees: "Use 1 Credit OR Pay \$50"
+        - Athlete with 0 credits sees: "Pay \$50" only
+        - Booking page shows both options (if athlete has credits)
+
+        **When to use**:
+
+        - Offer flexibility to new athletes
+        - Allow drop-ins without forcing package purchase
+        - Maximize booking opportunities (don't block anyone)
+
+        **Pricing strategy**: ✅ Set direct payment HIGHER than credit equivalent
+
+        - 1 credit = \$45 value (in 10-pack)
+        - Direct payment = \$50
+        - \$5 premium incentivizes package purchase
+
+        **Example**: "60-Min Private Training - 1 Credit OR \$50"
+
+        **Result**: Flexibility + revenue optimization
+
+        <Tip>
+          **Recommended for most coaches**: Hybrid model maximizes bookings while still incentivizing packages through pricing psychology.
+        </Tip>
+      </Tab>
+      <Tab title="Payment-Only (No Credits)">
+        **Configuration:**
+
+        - Set pricing model to **"Direct Payment"** or **"Pay Per Session"**
+        - Enter price: `$75.00`
+        - Do NOT enable credit payment option
+
+        **Athlete requirement**: Must pay per session—credits cannot be used
+
+        **When to use**:
+
+        - Trial/assessment sessions (save credits for regular training)
+        - Specialty services separate from packages
+        - Premium one-off offerings
+        - Events and workshops
+
+        **Example**: "Initial Consultation - \$75 (No Credits Accepted)"
+
+        **Result**: Keeps certain sessions premium/special, preserves credit value for regular training
+      </Tab>
+      <Tab title="Free">
+        **Configuration:**
+
+        - Set pricing model to **"Free"**
+        - No payment or credits required
+
+        **When to use**:
+
+        - Lead magnets
+        - Courtesy makeup sessions
+        - Community events
+        - Intro offers
+
+        **Example**: "Free 30-Min Assessment"
+
+        **Result**: No barrier to entry, acquisition tool
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Set credit amount (if using credits)">
+    **How many credits does this session cost?**
+
+    Most common: `1` credit = 1 session
+
+    **Multi-credit scenarios**:
+
+    | Session Type       | Duration | Credit Cost      | Rationale                             |
+    | ------------------ | -------- | ---------------- | ------------------------------------- |
+    | Standard Session   | 60 min   | 1 credit         | Baseline                              |
+    | Quick Check-In     | 30 min   | 0.5 credits      | Half time = half cost                 |
+    | Intensive Training | 90 min   | 1.5 or 2 credits | Longer session                        |
+    | Premium Service    | 60 min   | 2 credits        | Higher value (video analysis, etc.)   |
+    | Small Group Class  | 60 min   | 1 credit         | Same as private (or 0.5 for discount) |
+
+    <Tip>
+      **Simplicity rule**: Stick to whole numbers (1, 2, 3) unless you have clear reason for fractional credits (0.5, 1.5). Whole numbers are less confusing for athletes.
+    </Tip>
+  </Step>
+  <Step title="Save scheduler configuration">
+    Click **Save** or **Update Scheduler**.
+
+    Your scheduler now accepts credits!
+
+    <Check>
+      **Success**: Athletes with credits can now book this scheduler using their credit balance. Credits will be automatically deducted at booking.
+    </Check>
+  </Step>
+  <Step title="Configure additional schedulers">
+    Repeat steps 2-6 for each scheduler you want to make credit-enabled.
+
+    **Recommended configuration strategy**:
+
+    **For simple credit system** (all schedulers same cost):
+
+    - All schedulers: 1 credit each
+    - Consistency = clarity for athletes
+
+    **For tiered credit system** (different values):
+
+    - Standard sessions: 1 credit
+    - Premium services: 2 credits
+    - Quick sessions: 0.5 credits
+    - Assessment: Payment-only (no credits)
+
+    **For membership models** (scheduler restrictions):
+
+    - Basic Member schedulers: 1 credit each
+    - Premium Member schedulers: 1 credit each (different scheduler list)
+    - Configure via product's "Redeemable Schedulers" setting
+  </Step>
+</Steps>
+
+---
+
+## Verifying the product-scheduler linkage
+
+The two-way connection must be properly configured:
+
+### Verification Checklist
+
+<Steps>
+  <Step title="Check product configuration">
+    Open your credit-issuing product in Product Builder.
+
+    **Verify**:
+
+    - ✅ "Add credits once purchased" is enabled
+    - ✅ Credit amount is set (e.g., 10 credits)
+    - ✅ "Redeemable Schedulers" shows correct scheduler list
+      - Blank = Master Credits (any scheduler)
+      - Specific list = Only those schedulers
+
+    **If missing**: Athletes can buy credits but won't see them as usable for intended schedulers
+  </Step>
+  <Step title="Check scheduler configuration">
+    Open your scheduler in Scheduler Settings.
+
+    **Verify**:
+
+    - ✅ Payment section includes "Credits" as payment option
+    - ✅ Credit amount is set (e.g., 1 credit)
+    - ✅ If hybrid: Both credit and payment amounts configured
+
+    **If missing**: Athletes with credits won't be able to use them for this scheduler
+  </Step>
+  <Step title="Test the connection">
+    **Quick test**:
+
+    1. Create test athlete
+    2. Manually grant them credits (from your product)
+    3. Have test athlete attempt to book scheduler
+    4. Verify credit option appears in booking flow
+
+    **What you should see**:
+
+    - If Master Credits: "Use 1 Credit" option on ANY credit-enabled scheduler
+    - If Scheduler-Specific: "Use 1 Credit" option ONLY on linked schedulers
+
+    **Red flag**: If credit option doesn't appear, linkage is broken—review both product and scheduler settings
+  </Step>
+</Steps>
+
+---
+
+## Testing your complete credit setup
+
+Before launching to real athletes, thoroughly test the entire flow:
+
+<Steps>
+  <Step title="Create test athlete account">
+    Set up dummy athlete for testing:
+
+    - **Name**: Test Athlete
+    - **Email**: Your personal email (receive all notifications)
+    - **Tag**: "TEST" for easy filtering
+    - **Note**: Document this is a test account
+  </Step>
+  <Step title="Grant credits to test athlete">
+    **Option A: Manual credit grant** (faster for testing)
+
+    1. Open Test Athlete's profile in People → Clients
+    2. Navigate to **Credits** tab
+    3. Look for product-specific credit tabs OR master credits
+    4. Click **"Set Credits"** or **"Add Credits"**
+    5. Enter `10` credits
+    6. Save
+
+    **Result**: Test Athlete now has 10 credits from your product
+
+    **Option B: Complete purchase flow** (comprehensive test)
+
+    1. Get product purchase link from Products page
+    2. Open link in incognito window (simulate athlete)
+    3. Complete purchase using Stripe test mode
+    4. Verify credits appear in Test Athlete's account
+    5. Check credit transaction logged
+
+    <Tip>
+      **Stripe test mode**: Use test credit cards to avoid real charges. Test card: `4242 4242 4242 4242`
+    </Tip>
+  </Step>
+  <Step title="Verify credit display in athlete view">
+    Log in as Test Athlete (or access their athlete portal).
+
+    Navigate to **Settings → Billing** (or wherever credit balance displays).
+
+    **Verify athlete sees**:
+
+    - ✅ "Available Credits" section
+    - ✅ Correct credit balance (10 credits)
+    - ✅ Product name listed (e.g., "10-Credit Package")
+    - ✅ "Redeemable Sessions" list (if scheduler-specific credits)
+      - Shows which schedulers accept these credits
+      - Shows usage notation (0/∞ or numeric)
+    - ✅ Credit Renewals date (if subscription)
+    - ✅ Credit Expirations tracking (if expiration set)
+
+    **Red flag**: If athlete can't see credits or product name, configuration issue exists
+  </Step>
+  <Step title="Test booking with credits">
+    As Test Athlete, navigate to booking flow:
+
+    1. Go to **Schedule → Available** (or equivalent)
+    2. Select your credit-enabled scheduler
+    3. Choose date & time
+    4. Proceed to payment step
+
+    **Verify booking flow shows**:
+
+    - ✅ "Use 1 Credit" option (or configured amount)
+    - ✅ Current credit balance displayed ("You have 10 credits")
+    - ✅ If hybrid: Both credit and payment options visible
+    - ✅ Clear indication which payment method will be used
+
+    5. Select **credit payment method**
+    6. Confirm booking
+
+    **Verify after booking**:
+
+    - ✅ Session appears on calendar
+    - ✅ Credit deducted (balance now 9 credits)
+    - ✅ Credit transaction logged in athlete's credit history
+    - ✅ Confirmation notification sent (email/SMS)
+
+    <Check>
+      **Success indicator**: Smooth booking flow, credit deducted automatically, athlete sees updated balance immediately.
+    </Check>
+  </Step>
+  <Step title="Test hybrid payment option">
+    If you configured hybrid (credit OR payment):
+
+    **Test scenario 1: Athlete with credits**
+
+    1. Book session as Test Athlete
+    2. **Verify**: Both options appear
+       - "Use 1 Credit"
+       - "Pay \$50"
+    3. Test selecting CREDIT option → verify deduction
+    4. Book another session
+    5. Test selecting PAYMENT option → verify charge
+
+    **Test scenario 2: Athlete with 0 credits**
+
+    1. Use all Test Athlete's credits (book multiple sessions)
+    2. Attempt to book another session
+    3. **Verify**: Only payment option appears (credit option hidden)
+    4. **Verify**: Can still book via direct payment
+
+    **What this tests**: System correctly shows/hides payment options based on credit availability
+  </Step>
+  <Step title="Test insufficient credits scenario">
+    Deplete Test Athlete's credits completely:
+
+    1. Book sessions until balance = 0
+    2. Attempt to book one more credit-only session
+    3. **Verify system prevents booking**
+    4. **Verify error message**: "You need 1 credit to book. Purchase credits to continue."
+    5. **Verify**: Link to purchase more credits provided
+    6. If hybrid scheduler: **Verify** can still book via payment
+
+    **What this tests**: System properly enforces credit requirements and guides athlete to purchase
+  </Step>
+  <Step title="Test scheduler-specific restrictions">
+    If you configured scheduler-specific credits:
+
+    **Setup**:
+
+    - Product A: 5 credits for "Rising Stars Class" only
+    - Product B: 5 Master Credits (any scheduler)
+    - Test Athlete has credits from Product A
+
+    **Test**:
+
+    1. Attempt to book "Rising Stars Class" → **Should work** (uses Product A credits)
+    2. Attempt to book "Elite Class" → **Should fail** OR use Master Credits if available
+    3. Verify athlete sees clear messaging about which credits work for which schedulers
+
+    **Verify in Billing settings**:
+
+    - "Redeemable Sessions" list shows correct schedulers for Product A
+    - Master Credits tab shows universal usability
+
+    **What this tests**: Scheduler restrictions working correctly, credit priority system functioning (scheduler-specific used first)
+  </Step>
+  <Step title="Test credit refund on cancellation">
+    Book a session as Test Athlete, then cancel it:
+
+    1. Book session (1 credit deducted, balance = 9)
+    2. Cancel session (within allowed cancellation window)
+    3. **Verify**: Credit refunded back to balance immediately (balance = 10)
+    4. **Verify**: Credit transaction logged as "Refunded for [Session Name]"
+    5. **Verify**: Athlete sees updated balance
+
+    **Test outside cancellation window** (if configured):
+
+    1. Book session
+    2. Wait until past cancellation deadline
+    3. Attempt cancel
+    4. **Verify**: System prevents cancellation OR credit not refunded (per your policy)
+
+    **What this tests**: Credit refund automation working, cancellation policies enforced
+  </Step>
+  <Step title="Test subscription renewal (if using subscriptions)">
+    For subscription products:
+
+    **Test scenario 1: Active subscription**
+
+    1. Test Athlete has active monthly subscription (5 credits/month)
+    2. Use all 5 credits this month
+    3. Wait for renewal date OR manually trigger renewal (Stripe dashboard)
+    4. **Verify**: Athlete receives fresh 5 credits
+    5. **Verify**: Unused credits expired OR carried over (per your settings)
+    6. **Verify**: "Credit Renewals" date updates to next month
+
+    **Test scenario 2: Cancelled subscription**
+
+    1. Cancel Test Athlete's subscription in Stripe
+    2. **Verify**: Existing credits may become unusable OR remain (depends on configuration)
+    3. **Verify**: Athlete cannot book using subscription credits after cancellation
+    4. **Verify**: "Redeemable Sessions" may no longer display or show as inactive
+
+    **What this tests**: Subscription lifecycle, credit issuance automation, Stripe integration
+  </Step>
+  <Step title="Test unlimited credits display (∞)">
+    If you configured subscription with unlimited credits:
+
+    1. Test Athlete has "Unlimited Monthly Membership"
+    2. Navigate to Billing settings
+    3. **Verify athlete sees**:
+       - "Credit Balance: ∞" (infinity symbol)
+       - "Redeemable Sessions: [Schedulers] (0/∞)" notation
+    4. Book multiple sessions
+    5. **Verify**: Balance still shows ∞
+    6. **Verify**: Usage tracking shows "3/∞" (used 3, unlimited remaining)
+
+    **At renewal**:
+
+    1. Trigger next month's billing
+    2. **Verify**: Usage resets to 0/∞ (fresh unlimited period)
+    3. **Verify**: Previous month's bookings don't affect new month's availability
+
+    **What this tests**: Infinity notation displays correctly, usage resets per billing period
+  </Step>
+</Steps>
+
+<Check>
+  **All tests passed?** Your credit system is production-ready! Document any issues and retest after fixes before launching to real athletes.
+</Check>
+
+---
+
+## Package pricing strategy
+
+Design your credit packages to maximize revenue and athlete commitment.
+
+### The discount ladder approach
+
+**Principle**: Larger packages = larger discounts = incentive to commit
+
+**Example structure:**
+
+| Package Size       | Price   | Per-Credit Cost | Discount vs \$50/session |
+| ------------------ | ------- | --------------- | ------------------------ |
+| Single Session     | \$50    | \$50.00         | 0% (baseline)            |
+| 5-Credit Starter   | \$240   | \$48.00         | 4% off (\$10 savings)    |
+| 10-Credit Standard | \$450   | \$45.00         | 10% off (\$50 savings)   |
+| 20-Credit Premium  | \$850   | \$42.50         | 15% off (\$150 savings)  |
+| 50-Credit Elite    | \$2,000 | \$40.00         | 20% off (\$500 savings)  |
+
+**Psychology behind it:**
+
+- Small package = small discount = low barrier to try
+- Medium package = meaningful savings = most popular (**anchor pricing here**)
+- Large package = substantial savings = appeals to committed athletes
+
+<Tip>
+  **10-credit package is your workhorse**: Price this aggressively (10-12% discount). Most coaches sell 60-70% of credits in 10-packs. Make it obviously better value than 5-pack.
+</Tip>
+
+---
+
+### Calculating your package prices
+
+**Step-by-step formula:**
+
+<Steps>
+  <Step title="Determine baseline per-session price">
+    **Your current pay-per-session rate**: \$50
+
+    This is your "expensive" option—the price that makes packages look attractive.
+  </Step>
+  <Step title="Choose discount percentages per tier">
+    **Conservative approach:**
+
+    - 5-credit: 5% off
+    - 10-credit: 10% off
+    - 20-credit: 15% off
+
+    **Aggressive approach** (higher cash flow):
+
+    - 5-credit: 8% off
+    - 10-credit: 12% off
+    - 20-credit: 18% off
+
+    <Tip>
+      **Finding your sweet spot**: Start conservative, then test deeper discounts on 10-pack if not selling well. Monitor conversion rates.
+    </Tip>
+  </Step>
+  <Step title="Calculate package prices">
+    **Formula**: (Baseline price × Credits) × (1 - Discount%)
+
+    **Examples:**
+
+    - **5-credit at 5% off**: ($50 × 5) × 0.95 = $237.50 → Round to **\$240**
+    - **10-credit at 10% off**: ($50 × 10) × 0.90 = **$450\*\*
+    - **20-credit at 15% off**: ($50 × 20) × 0.85 = **$850\*\*
+  </Step>
+  <Step title="Calculate athlete savings (for marketing)">
+    **Total savings** to use in package descriptions:
+
+    - 5-credit: $250 - $240 = **\$10 saved**
+    - 10-credit: $500 - $450 = **\$50 saved** ← Use this in marketing
+    - 20-credit: $1,000 - $850 = **\$150 saved**
+
+    **Marketing copy**: "Save $50 with the 10-Credit Package—only $45 per session!"
+  </Step>
+</Steps>
+
+---
+
+### Advanced pricing strategies
+
+<AccordionGroup>
+  <Accordion title="Anchoring: Make 10-pack the obvious choice">
+    **Strategy**: Price 5-pack just barely cheaper than 10-pack per-credit
+
+    **Example:**
+
+    - 5-credit: $240 ($48/credit) - only 4% off
+    - 10-credit: $450 ($45/credit) - full 10% off
+
+    **Athlete thinking**: "Why would I buy 5 credits for $48 each when 10 credits are only $45 each? I'll just get 10."
+
+    **Result**: Most athletes "upgrade" themselves to 10-pack without you asking. 10-pack becomes default choice.
+  </Accordion>
+  <Accordion title="Decoy pricing: Make 20-pack look amazing">
+    **Strategy**: Position 20-pack as "best value" by comparing to baseline
+
+    **Marketing message:**
+
+    - Pay-per-session: $50/session = **$1,000 for 20 sessions\*\*
+    - 20-Credit Premium: **\$850 for 20 sessions**
+    - **Save \$150!** (15% off)
+
+    **Visual**: Show crossed-out $1,000 with $850 next to it, highlight savings
+
+    **Result**: Committed athletes jump to 20-pack, feeling like they're getting a huge "deal"
+  </Accordion>
+  <Accordion title="Bundle upsells: Add bonus credits">
+    **Strategy**: Limited-time bonuses to incentivize larger packages
+
+    **Examples:**
+
+    - "Buy 10, Get 1 Free" (11 credits for price of 10)
+    - "20-Credit Package + 2 Bonus Credits = 22 total"
+    - "First-time package buyers: Extra credit on us!"
+
+    **When to use:**
+
+    - New athlete promotions
+    - Holiday sales (Black Friday, New Year)
+    - Slow season discounts
+    - Re-engagement campaigns
+
+    **Result**: Increases perceived value without reducing price—bonus feels like gift
+  </Accordion>
+  <Accordion title="Family/duo packages: Shared credits">
+    **Strategy**: Larger packages designed for couples or families
+
+    **Example**: "40-Credit Family Pack - \$1,600"
+
+    - 2 people training 1x/week each = 40 weeks of training
+    - \$40/credit (20% off)
+    - Shareable between 2 athlete accounts
+
+    **Setup**:
+
+    - Create product with 40 credits
+    - Manually grant 20 credits to Athlete A profile
+    - Manually grant 20 credits to Athlete B profile
+    - Both use same package purchase
+
+    **Result**: Higher average transaction value, appeals to household buyers, strengthens commitment
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Communicating credits to athletes
+
+### At initial package purchase
+
+**When athlete first buys credits**, set clear expectations:
+
+**Welcome email template:**
+
+```
+Subject: Your 10 Credits Are Ready! 🎟️
+
+Hi [Name],
+
+Welcome to [Your Business]! Your 10-Credit Package is now active.
+
+What you can do now:
+✅ Book any 60-min private training session (1 credit each)
+✅ Schedule at your convenience—credits never expire
+✅ View your balance anytime in Settings → Billing
+
+How to book your first session:
+1. Visit [booking link]
+2. Choose your session time
+3. Select "Use 1 Credit" at checkout
+4. You're booked!
+
+Current Balance: 10 credits
+
+Questions? Reply to this email anytime.
+
+Let's get started!
+[Your Name]
+```
+
+**What to include:**
+
+- ✅ Booking instructions (direct link)
+- ✅ Current balance
+- ✅ Usage rules (which schedulers, expiration if any)
+- ✅ How to view balance
+- ✅ Savings reminder ("You're saving \$5/session!")
+
+---
+
+### During booking flow
+
+**Athlete experience** (CoachIQ handles automatically):
+
+**Before booking:**
+
+- "You have 10 credits available"
+- Credit balance prominently displayed
+
+**At payment step:**
+
+- "Use 1 Credit" button/option
+- If hybrid: "Use 1 Credit OR Pay \$50" choice
+
+**After booking:**
+
+- "Booking confirmed! 9 credits remaining"
+- Updated balance shown immediately
+
+**Coach's job**: Ensure this flow is properly configured during setup. System handles the rest.
+
+---
+
+### Low balance alerts
+
+**Set up automated notifications** when athlete runs low:
+
+**3 credits remaining:**
+
+```
+Subject: Running low on training credits
+
+Hi [Name],
+
+Heads up—you have 3 credits remaining.
+
+To keep your training momentum going, grab another package:
+[Link to purchase]
+
+Current balance: 3 credits
+Most popular: 10-Credit Package - $450 (save $50!)
+
+See you at your next session!
+[Your Name]
+```
+
+**1 credit remaining:**
+
+```
+Subject: Last credit! Time to reload 🔄
+
+Hi [Name],
+
+You're down to your last credit!
+
+Don't let your training momentum stop—reload now:
+[Link to purchase]
+
+Buy now and you're all set for your next sessions.
+
+[Your Name]
+```
+
+**0 credits (out of stock):**
+
+```
+Subject: Credit balance empty - Let's reload!
+
+Hi [Name],
+
+Your credit balance is at zero. To book your next session, you'll need to purchase more credits.
+
+Popular options:
+• 10-Credit Package - $450 (Best value! Save $50)
+• 5-Credit Starter - $240 (Get started again)
+
+[Purchase Now]
+
+Questions? Let me know!
+[Your Name]
+```
+
+<Note>
+  **Automation tip**: Configure these in your email platform (Mailchimp, Klaviyo) triggered by CoachIQ credit balance webhooks. Or manually send when you notice low balances.
+</Note>
+
+---
+
+## Troubleshooting credit setup
+
+<AccordionGroup>
+  <Accordion title="Athlete purchased credits but they didn't appear">
+    **Possible causes:**
+
+    1. Payment didn't complete (declined card, Stripe error)
+    2. Product not configured with "Add credits once purchased" enabled
+    3. Credit granting system error
+
+    **How to fix:**
+
+    1. Check payment transaction status: Payments → Transactions
+    2. Verify product configuration: Product Builder → Credits section → "Add credits once purchased" toggled ON
+    3. Check credit amount field is set (not blank)
+    4. Manually grant credits to athlete if payment succeeded: People → Athlete → Credits tab → Add Credits
+    5. If system error: Contact CoachIQ support with transaction ID
+  </Accordion>
+  <Accordion title="Athlete has credits but can't use them to book">
+    **Possible causes:**
+
+    1. Scheduler not configured to accept credits (payment-only)
+    2. Scheduler-specific credits don't match this scheduler (wrong product/scheduler linkage)
+    3. Athlete has 0 credits (all used)
+    4. Product's "Redeemable Schedulers" doesn't include this scheduler
+
+    **How to fix:**
+
+    1. Verify scheduler has credit payment enabled: Scheduler Settings → Payment → Credits option ON
+    2. Check athlete's credit balance: Should show in their profile Credits tab
+    3. Verify product configuration: Product Builder → Usage Limits → "Redeemable Schedulers" includes this scheduler
+    4. Check credit type: If scheduler-specific, athlete needs credits from correct product
+    5. Test booking yourself to replicate issue
+  </Accordion>
+  <Accordion title="Credit balance showing incorrect number">
+    **Possible causes:**
+
+    1. Recent booking/cancellation still processing
+    2. Manual credit adjustment not saved properly
+    3. Multiple packages purchased close together (timing)
+    4. Subscription renewal timing issue
+
+    **How to fix:**
+
+    1. Review athlete's credit transaction history: Credits tab → Credit Logs
+    2. Check for pending bookings that haven't deducted yet
+    3. Look for recent cancellations that should have refunded credits
+    4. If system error confirmed: Manually adjust balance with note
+    5. Document issue and report to CoachIQ support if recurring
+  </Accordion>
+  <Accordion title="Hybrid scheduler not showing both payment options">
+    **Possible causes:**
+
+    1. Scheduler set to "Credit-Only" instead of "Hybrid"
+    2. Athlete viewing has 0 credits (only payment option shows)
+    3. Credit payment not enabled on scheduler
+    4. Browser cache issue
+
+    **How to fix:**
+
+    1. Verify scheduler payment settings: Should show BOTH credit amount AND direct payment amount
+    2. Test as athlete with credits: Both options should appear
+    3. Test as athlete with 0 credits: Only payment option should appear
+    4. Clear browser cache and retry
+    5. Check scheduler "Pricing Model" dropdown is set to correct option
+  </Accordion>
+  <Accordion title="Athletes asking 'Why should I buy credits vs pay per session?'">
+    **Communication problem**: Value proposition not clear enough
+
+    **How to fix:**
+
+    1. **Clearly state savings**: "Save \$50 with 10-Credit Package!" (use actual dollar amount)
+    2. **Highlight convenience**: "No payment hassle at each booking—use credits instantly"
+    3. **Emphasize commitment**: "Lock in your training schedule and stay consistent"
+    4. **Use social proof**: "Our most popular option—90% of athletes choose packages"
+
+    **On booking page**: Display comparison
+
+    - Pay per session: $50 each = $500 for 10 sessions
+    - 10-Credit Package: \$450 for 10 sessions
+    - **You save: \$50** (bold this)
+
+    **Visual**: Show side-by-side comparison with savings highlighted
+  </Accordion>
+  <Accordion title="Subscription credits not renewing automatically">
+    **Possible causes:**
+
+    1. Subscription inactive in Stripe (payment failed, cancelled)
+    2. Product configuration error
+    3. "Add credits once purchased" not enabled for recurring
+    4. Stripe webhook issues
+
+    **How to fix:**
+
+    1. Check subscription status in Stripe dashboard: Should be "Active"
+    2. Verify product is subscription type (not one-time)
+    3. Check Product Builder → Credits → "Add credits once purchased" is ON
+    4. Test: Manually trigger renewal in Stripe → Verify credits issued
+    5. Check webhook connectivity: Payments → Settings → Webhooks
+    6. If webhooks failing: Contact CoachIQ support
+  </Accordion>
+  <Accordion title="Unlimited credits (∞) not displaying correctly">
+    **Possible causes:**
+
+    1. Product "Unlimited credits" checkbox not enabled
+    2. Display formatting issue
+    3. Browser rendering problem
+
+    **How to fix:**
+
+    1. Verify product configuration: Product Builder → Credits → "Unlimited credits" checkbox ON
+    2. Check athlete's view in Billing settings: Should show ∞ symbol
+    3. Verify per-scheduler display: "0/∞" notation under Redeemable Sessions
+    4. Test with different browser if rendering issue suspected
+    5. Educate athlete: ∞ means unlimited THIS PERIOD, not forever
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Next steps: Advanced credit features
+
+<CardGroup cols={2}>
+  <Card title="Managing Athlete Credits" icon="user-circle" href="/scheduling/managing-athlete-credits">
+    **Article #25**: View balances, manually grant/adjust credits, track usage, handle refunds
+  </Card>
+  <Card title="Credit Usage Limits" icon="lock" href="/scheduling/credit-usage-limits">
+    **Article #26**: Daily/weekly limits, scheduler restrictions, preventing abuse
+  </Card>
+  <Card title="Subscription Scheduling Deep Dive" icon="sync" href="/scheduling/subscription-scheduling">
+    **Article #27**: Advanced subscription configuration, unlimited credits, tiered memberships
+  </Card>
+  <Card title="Athlete Credit Experience" icon="mobile" href="/athlete-experience/credit-management">
+    What athletes see in their portal and mobile app when managing credits
+  </Card>
+</CardGroup>
+
+## Related articles
+
+<CardGroup cols={3}>
+  <Card title="Credit System Explained" icon="coins" href="/scheduling/credit-system-explained">
+    Understand credit concepts, types, and business benefits (prerequisite reading)
+  </Card>
+  <Card title="Scheduler Payment Options" icon="credit-card" href="/scheduling/scheduler-payment-options">
+    Complete guide to all scheduler pricing models (free, paid, credits, hybrid)
+  </Card>
+  <Card title="Products Overview" icon="shopping-cart" href="/payments/products-overview">
+    Master CoachIQ's product system and payment configuration
+  </Card>
+  <Card title="Creating Schedulers" icon="sliders" href="/scheduling/creating-first-scheduler">
+    Set up bookable sessions before adding credit functionality
+  </Card>
+  <Card title="Manual Booking" icon="user-plus" href="/scheduling/manually-booking-athletes">
+    How coaches manually book athletes and deduct credits
+  </Card>
+  <Card title="Cancellation Policies" icon="times-circle" href="/scheduling/canceling-bookings">
+    Credit refund rules and cancellation policy configuration
+  </Card>
+</CardGroup>
+
+---
+
+<Check>
+  **You now have**: A fully functional credit-based scheduling system with products issuing credits and schedulers accepting them. Athletes can purchase packages and seamlessly book sessions using their credit balance.
+</Check>
+
+<Info>
+  **Need personalized setup help?** Our support team can review your credit configuration, test your setup, and optimize your package pricing strategy. [Contact Support](https://support.coachiq.com)
+</Info>
