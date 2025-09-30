@@ -1,0 +1,1741 @@
+---
+title: "Scheduler Settings: Limits and Permissions"
+description: "Configure booking limits, capacity, cancellation policies, and athlete permissions to protect your business and ensure fair access to sessions."
+sidebarTitle: "Limits & Permissions"
+icon: "cog"
+---
+
+<Info>
+  **Where to find this**: Schedule → Schedulers → [Select Scheduler] → Settings or Edit
+</Info>
+
+## What you'll accomplish
+
+Master the advanced configuration settings that protect your time, prevent over-booking, manage cancellations, and ensure fair athlete access to your sessions. These settings transform a basic scheduler into a business-optimized booking system.
+
+<Check>
+  **Success criteria**: Your scheduler has capacity limits that prevent overbooking, booking rules that ensure fair access, cancellation policies that protect your revenue, and buffer times that prevent burnout.
+</Check>
+
+## Before you begin
+
+<Note>
+  **Required**: You must have at least one scheduler already created. This article covers settings you configure AFTER scheduler creation. If you haven't created a scheduler yet, see [Creating Your First Scheduler](/scheduling/creating-first-scheduler).
+</Note>
+
+**Recommended preparation**:
+
+- Think about your ideal booking policies
+- Consider past booking problems you've experienced
+- Have examples of athlete behavior you want to encourage/prevent
+- Know your capacity limits and time constraints
+
+## Why scheduler settings matter
+
+These aren't just technical configurations—they're business protection mechanisms:
+
+<CardGroup cols={2}>
+  <Card title="Revenue Protection" icon="dollar-sign">
+    **Without proper settings**: Athletes book then cancel last-minute, leaving empty slots you can't fill
+
+    **With proper settings**: 24-hour cancellation policy gives you time to rebook, protecting revenue
+  </Card>
+  <Card title="Fair Access" icon="users">
+    **Without proper settings**: One athlete books 5 sessions/week, others can't get appointments
+
+    **With proper settings**: 2-session weekly limit ensures more athletes can train with you
+  </Card>
+  <Card title="Burnout Prevention" icon="heart-pulse">
+    **Without proper settings**: Back-to-back sessions all day with no breaks
+
+    **With proper settings**: 10-minute buffer time between sessions for prep and recovery
+  </Card>
+  <Card title="Business Control" icon="shield-check">
+    **Without proper settings**: Athletes book 3 months out then forget, you can't plan
+
+    **With proper settings**: 30-day booking window keeps schedule manageable
+  </Card>
+</CardGroup>
+
+**Bottom line**: These settings are the difference between a chaotic schedule that drains you and an organized system that protects your business.
+
+---
+
+## Setting 1: Session capacity
+
+Control how many athletes can book the same time slot.
+
+### What it does
+
+**Session capacity** sets the maximum number of athletes who can book a single time slot from this scheduler. This is a scheduler-level setting that applies to ALL sessions generated from this scheduler.
+
+**Critical limitation**: You CANNOT set different capacities for individual time slots. If you need different capacities, you must create separate schedulers.
+
+### Configuration options
+
+<Tabs>
+  <Tab title="Private Sessions">
+    **Setting**: Max 1 athlete per slot
+
+    **When to use**:
+
+    - 1-on-1 personal training
+    - Private coaching sessions
+    - Individual assessments
+    - High-touch services requiring full attention
+
+    **Example**:
+
+    - "60-Min Private Training" scheduler
+    - Capacity: 1 athlete
+    - Result: Only one athlete can book 3:00 PM slot
+
+    <Tip>
+      **Pro tip**: Even if you occasionally train 2 athletes together, keep this at 1 athlete for private schedulers. Manually book the second athlete when needed rather than allowing double-booking.
+    </Tip>
+  </Tab>
+  <Tab title="Small Group">
+    **Setting**: Max 2-6 athletes per slot
+
+    **When to use**:
+
+    - Semi-private training
+    - Small group classes
+    - Partner sessions
+    - Limited accountability groups
+
+    **Example**:
+
+    - "Small Group Strength Class" scheduler
+    - Capacity: 6 athletes
+    - Result: Up to 6 athletes can book the same 5:00 PM class
+
+    **Decision framework**:
+
+    - 2 athletes = Truly semi-private, high attention
+    - 4 athletes = Small group, moderate attention
+    - 6 athletes = Larger group, less individual focus
+
+    <Note>
+      **Quality consideration**: More athletes = less individual attention. Choose capacity based on service quality you can maintain, not just space available.
+    </Note>
+  </Tab>
+  <Tab title="Large Group">
+    **Setting**: Max 10-20+ athletes per slot
+
+    **When to use**:
+
+    - Group fitness classes
+    - Team training sessions
+    - Workshops and clinics
+    - Community events
+
+    **Example**:
+
+    - "Sunday Bootcamp Class" scheduler
+    - Capacity: 20 athletes
+    - Result: Up to 20 athletes can book the same Sunday 9:00 AM slot
+
+    **Facility owner considerations**:
+
+    - Set capacity based on SAFE numbers, not just space
+    - Consider equipment availability
+    - Account for coach-to-athlete ratio
+    - Leave buffer for walk-ins if applicable
+
+    <Warning>
+      **Safety first**: Never exceed capacity your insurance covers or facility regulations allow. Set scheduler capacity BELOW your true maximum to account for unexpected attendance.
+    </Warning>
+  </Tab>
+</Tabs>
+
+### Common capacity mistakes
+
+<AccordionGroup>
+  <Accordion title="Setting capacity too high for service quality">
+    **Mistake**: "Small group training" with 10-athlete capacity
+
+    **Problem**: Can't give adequate attention to 10 athletes, service quality suffers
+
+    **Fix**:
+
+    - True small group = 4-6 athletes max
+    - If you want 10 athletes, call it "Group Class" and adjust pricing
+    - Create separate "Small Group - 6 max" and "Large Group - 10 max" schedulers
+
+    **Rule of thumb**: If you can't remember everyone's name mid-session, capacity is too high for "small group."
+  </Accordion>
+  <Accordion title="One capacity for multiple service types">
+    **Mistake**: One "Training Session" scheduler with 6-athlete capacity used for both private and group
+
+    **Problem**:
+
+    - Athletes book thinking it's private
+    - 5 other athletes show up
+    - Confusion and disappointment
+
+    **Fix**: Create separate schedulers:
+
+    - "Private Training - 1 athlete max"
+    - "Group Training - 6 athletes max"
+
+    **Why this matters**: Clear expectations = happy athletes = better retention
+  </Accordion>
+  <Accordion title="Not accounting for no-shows">
+    **Mistake**: Facility has room for 25, set capacity to 25
+
+    **Problem**:
+
+    - If 25 book and 5 no-show, only 20 attend (you're counting on this)
+    - But one week all 25 show up, facility is over capacity
+
+    **Fix**:
+
+    - If facility safely holds 25, set capacity to 20-22
+    - Build in buffer for unexpected full attendance
+    - Never rely on no-shows to manage capacity
+
+    <Warning>
+      **Legal liability**: Over-capacity situations can violate insurance, fire codes, and regulations. Always err on the side of fewer athletes.
+    </Warning>
+  </Accordion>
+</AccordionGroup>
+
+### Capacity decision framework
+
+Use this guide to set appropriate capacity:
+
+| Service Type      | Recommended Capacity | Reasoning                             |
+| ----------------- | -------------------- | ------------------------------------- |
+| Private 1-on-1    | 1 athlete            | Full attention, personalized coaching |
+| Semi-private      | 2 athletes           | Partnership dynamic, shared cost      |
+| Small group       | 4-6 athletes         | Group energy, individual attention    |
+| Large group       | 10-15 athletes       | Class format, general instruction     |
+| Team training     | 15-25 athletes       | Team dynamics, multiple coaches       |
+| Workshops/clinics | 20-50+ athletes      | Educational format, demo-based        |
+
+---
+
+## Setting 2: Booking limits per athlete
+
+Prevent individual athletes from monopolizing your schedule.
+
+### What it does
+
+**Booking limits** control how many sessions a single athlete can book within a timeframe (per day or per week). This ensures fair access when slots are limited and demand is high.
+
+**Use case**: You have limited availability. Without limits, one enthusiastic athlete books 5 sessions per week, preventing others from training with you.
+
+### Configuration options
+
+<Steps>
+  <Step title="Max bookings per day">
+    **Setting**: Maximum times one athlete can book in a single day
+
+    **Common options**:
+
+    - **1 booking** = Most common for private training
+    - **2 bookings** = Allows morning + evening for dedicated athletes
+    - **Unlimited** = No restrictions
+
+    **When to use**:
+
+    - Private training: Set to 1 (one session per day max)
+    - Group classes: Set to 2 (allows athlete to attend multiple classes per day)
+    - Open gym: Unlimited (athletes can book multiple time blocks)
+
+    **Example scenario**:
+
+    - Scheduler: "60-Min Private Training"
+    - Limit: 1 booking per day
+    - Result: Athlete can only book one private session per day, even if multiple slots available
+
+    <Tip>
+      **Why this matters**: Prevents athlete from booking morning session, then booking evening session, taking two slots from other athletes who might want one.
+    </Tip>
+  </Step>
+  <Step title="Max bookings per week">
+    **Setting**: Maximum times one athlete can book in a 7-day rolling period
+
+    **Common options**:
+
+    - **1 booking** = Once-per-week programs
+    - **2-3 bookings** = Standard training frequency
+    - **5 bookings** = Intensive programs
+    - **Unlimited** = No restrictions
+
+    **When to use different limits**:
+
+    <Tabs>
+      <Tab title="Starter Coaches (Jake)">
+        **Recommended**: 2-3 bookings per week
+
+        **Reasoning**:
+
+        - You have limited slots (maybe 20-30 per week)
+        - 10 athletes × 2 sessions = 20 slots filled
+        - Leaves room for new athlete acquisition
+        - Prevents dependence on one athlete
+
+        **Example**:
+
+        - "Private Training" scheduler
+        - Limit: 2 bookings per week
+        - Result: Athlete can book Monday + Wednesday, but not Friday (would be 3rd)
+      </Tab>
+      <Tab title="Scaling Coaches (Chris)">
+        **Recommended**: 3-5 bookings per week OR tiered system
+
+        **Reasoning**:
+
+        - More capacity available (40-60 slots/week)
+        - Can offer intensive programs
+        - May have VIP tier with unlimited access
+
+        **Tiered approach**:
+
+        - "Standard Training" scheduler = 2 bookings/week
+        - "Premium Training" scheduler = 5 bookings/week
+        - "Elite Unlimited" scheduler = No limits
+
+        **Result**: Monetize higher-frequency training while protecting availability
+      </Tab>
+      <Tab title="Facility Owners (Mike)">
+        **Recommended**: Vary by scheduler type
+
+        **Configuration example**:
+
+        - Drop-in classes = No weekly limit (encourage frequent attendance)
+        - Private training = 3 bookings/week (fair access to limited coaches)
+        - Specialty programs = 5 bookings/week (intensive program structure)
+
+        **Reasoning**: Different services have different capacity constraints and business goals
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="No limits (unlimited bookings)">
+    **When to use unlimited**:
+
+    - Open gym time (want athletes to book as much as they want)
+    - Group classes with large capacity (24+ athletes)
+    - Workshops/events (first-come-first-served)
+    - You have excess capacity and want to maximize bookings
+
+    **When NOT to use unlimited**:
+
+    - Private training with limited slots
+    - High-demand schedulers
+    - When you're already at capacity
+    - Small group sessions (6 or fewer athletes)
+
+    <Warning>
+      **Unlimited risk**: One athlete could theoretically book your entire week. Only use unlimited when you have high capacity or want to maximize that athlete's engagement.
+    </Warning>
+  </Step>
+</Steps>
+
+### Booking limits decision tree
+
+```
+Do you have limited availability (under 30 slots/week)?
+├─ Yes → Set weekly limits (2-3 bookings/week)
+└─ No → Continue
+
+Is this high-demand training (waitlist common)?
+├─ Yes → Set weekly limits (2-3 bookings/week)
+└─ No → Continue
+
+Is this private 1-on-1 training?
+├─ Yes → Set daily limit (1 booking/day) + weekly limit (2-3/week)
+└─ No → Continue
+
+Is this large group class (15+ capacity)?
+├─ Yes → Consider unlimited (encourage frequent attendance)
+└─ No → Set moderate limits (3-5 bookings/week)
+```
+
+### Real-world booking limit examples
+
+<AccordionGroup>
+  <Accordion title="Example 1: Solo trainer with limited slots">
+    **Context**: Jake has 25 available slots per week, 15 active athletes
+
+    **Problem without limits**: 3 athletes book 5 sessions each = 15 slots filled, other 12 athletes can't train
+
+    **Solution**:
+
+    - Set limit: 2 bookings per week
+    - Result: 15 athletes × 2 sessions = up to 30 bookings possible
+    - Fair distribution, room for new athletes
+
+    **Settings**:
+
+    - Max per day: 1 booking
+    - Max per week: 2 bookings
+  </Accordion>
+  <Accordion title="Example 2: Facility with tiered memberships">
+    **Context**: Mike's facility has 3 membership levels
+
+    **Configuration**:
+
+    - **Basic Membership** scheduler = 2 bookings/week
+    - **Standard Membership** scheduler = 4 bookings/week
+    - **Unlimited Membership** scheduler = No limits
+
+    **Result**: Monetizes frequency, athletes self-select based on training goals
+
+    **Key insight**: Use separate schedulers for different membership tiers rather than one scheduler with complex rules
+  </Accordion>
+  <Accordion title="Example 3: High-demand group class">
+    **Context**: Chris runs a popular small group class (6 athlete max), always full
+
+    **Problem without limits**: Same 6 athletes book every class, new athletes can't join
+
+    **Solution**:
+
+    - Set limit: 3 bookings per week
+    - Result: Regular athletes get 3 classes, but must leave spots for others
+
+    **Alternative**: Create VIP unlimited scheduler at higher price
+
+    - "Small Group Class - Standard" = 3/week limit, \$40/session
+    - "Small Group Class - Unlimited VIP" = No limits, \$50/session
+
+    **Result**: Fair access + premium tier for dedicated athletes
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Setting 3: Cancellation policies
+
+Control when and how athletes can cancel bookings.
+
+### What it does
+
+**Cancellation policies** determine:
+
+1. **CAN** athletes cancel? (Yes/no)
+2. **WHEN** can they cancel? (Anytime, 24-hour notice, 48-hour notice, never)
+3. **WHAT HAPPENS** to credits? (Refund or forfeit)
+
+### Policy options explained
+
+<Tabs>
+  <Tab title="Allow Anytime Cancellation">
+    **Setting**: Athletes can cancel up until session start time
+
+    **Pros**:
+
+    - Maximum athlete flexibility
+    - Reduces no-shows (better to cancel than not show up)
+    - Lower friction for new athletes hesitant to commit
+
+    **Cons**:
+
+    - Last-minute cancellations hard to fill
+    - Revenue loss if you can't rebook
+    - May enable flaky behavior
+
+    **When to use**:
+
+    - Free sessions or trials
+    - New athlete onboarding
+    - Low-demand schedulers with easy rebooking
+    - Community events
+
+    **Example**: "Free Assessment Session" - allow anytime cancellation to reduce barriers to trying you out
+  </Tab>
+  <Tab title="24-Hour Cancellation Notice">
+    **Setting**: Athletes must cancel 24+ hours before session
+
+    **Pros**:
+
+    - Gives you time to rebook the slot
+    - Balances athlete flexibility with business protection
+    - Industry standard for personal training
+    - Reduces frivolous bookings
+
+    **Cons**:
+
+    - Some athletes forget about 24-hour window
+    - Emergency situations still happen
+
+    **When to use**:
+
+    - Private training (most common)
+    - Small group sessions
+    - Standard paid services
+    - When you have waitlists or high demand
+
+    **Example**: "60-Min Private Training" - 24-hour notice allows you to contact waitlist or offer slot to another athlete
+
+    <Tip>
+      **Best practice**: 24-hour notice is the sweet spot for most coaching businesses. It protects your revenue while being fair to athletes with legitimate schedule changes.
+    </Tip>
+  </Tab>
+  <Tab title="48-Hour Cancellation Notice">
+    **Setting**: Athletes must cancel 48+ hours (2 days) before session
+
+    **Pros**:
+
+    - More time to rebook
+    - Stronger commitment from athletes
+    - Better for weekend sessions (requires Wednesday cancellation)
+
+    **Cons**:
+
+    - Less flexible for athletes
+    - May discourage bookings
+    - Can feel strict for new athletes
+
+    **When to use**:
+
+    - High-demand sessions with long waitlists
+    - Weekend or evening prime slots
+    - Specialty services requiring prep
+    - VIP/premium tier services
+
+    **Example**: "Saturday Morning Elite Class" - 48-hour notice required because weekend slots are hardest to fill last-minute
+  </Tab>
+  <Tab title="No Cancellations Allowed">
+    **Setting**: Once booked, athlete cannot cancel (booking is final)
+
+    **Pros**:
+
+    - Guarantees revenue
+    - Maximum schedule protection
+    - Reduces no-shows (athlete knows credit/payment is lost)
+
+    **Cons**:
+
+    - Very inflexible
+    - May prevent bookings
+    - Poor athlete experience
+    - Emergency situations still require you to make exceptions
+
+    **When to use**:
+
+    - Special events or workshops
+    - Limited capacity specialty sessions
+    - Sessions requiring significant prep/materials
+    - One-time intensive programs
+
+    **Example**: "Competition Prep Workshop" - No cancellations due to catering order, materials prep, and venue commitment
+
+    <Warning>
+      **Use sparingly**: No-cancellation policies should be rare and clearly communicated. Most athletes will find this too restrictive for regular training.
+    </Warning>
+  </Tab>
+</Tabs>
+
+### Credit refund settings
+
+When using credit-based schedulers, decide what happens to credits on cancellation:
+
+<AccordionGroup>
+  <Accordion title="Refund credits on cancellation (Recommended)">
+    **How it works**: When athlete cancels within policy window, credit returns to their balance
+
+    **Example**:
+
+    - Policy: 24-hour cancellation with credit refund
+    - Athlete books Friday 3pm session (costs 1 credit)
+    - Thursday 2pm: Athlete cancels (more than 24 hours notice)
+    - Result: 1 credit returns to athlete's balance, can rebook later
+
+    **When to use**:
+
+    - Standard training relationships
+    - Monthly subscription credits
+    - To encourage bookings without fear of wasting credits
+    - When you want flexibility for loyal athletes
+
+    **Business impact**: More bookings (athletes less afraid to try), but requires managing rebooking
+  </Accordion>
+  <Accordion title="No credit refund (Credits forfeited)">
+    **How it works**: If athlete cancels, credit is consumed regardless (no refund)
+
+    **Example**:
+
+    - Policy: 24-hour cancellation, no credit refund
+    - Athlete books Friday 3pm session (costs 1 credit)
+    - Thursday 2pm: Athlete cancels
+    - Result: 1 credit is GONE (forfeited), athlete must use another credit to rebook
+
+    **When to use**:
+
+    - Last-minute cancellation situations (under 24 hours)
+    - To discourage flaky behavior
+    - Premium or limited-capacity sessions
+    - When no-shows are a significant problem
+
+    **Business impact**: Fewer cancellations (athletes committed), but may discourage initial bookings
+
+    <Warning>
+      **Be careful**: Forfeiting credits on legitimate cancellations damages athlete relationships. Reserve this for late cancellations or chronic offenders.
+    </Warning>
+  </Accordion>
+  <Accordion title="Hybrid approach (Best practice)">
+    **Configuration**:
+
+    - **Cancellations WITH proper notice** (24+ hours) = Credit refunded
+    - **Late cancellations** (under 24 hours) = Credit forfeited
+    - **No-shows** = Credit forfeited + possible penalty
+
+    **Why this works**:
+
+    - Fair to athletes who plan ahead
+    - Protects your business from last-minute changes
+    - Industry standard
+
+    **Implementation**: Most platforms enforce this automatically based on your policy settings
+  </Accordion>
+</AccordionGroup>
+
+### Cancellation policy decision framework
+
+Choose your policy based on these factors:
+
+| Factor              | Lenient Policy                     | Strict Policy                    |
+| ------------------- | ---------------------------------- | -------------------------------- |
+| **Demand**          | Low demand, easy to rebook         | High demand, waitlist common     |
+| **Business stage**  | New business, building clientele   | Established, protecting capacity |
+| **Service type**    | Free/trial sessions                | Premium paid sessions            |
+| **Relationship**    | New athletes                       | Long-term committed athletes     |
+| **Competition**     | High competition, need flexibility | Unique service, high value       |
+| **No-show history** | Rare no-shows                      | Frequent no-show problems        |
+
+**Recommended starting point**: 24-hour cancellation with credit refund, adjust based on athlete behavior
+
+---
+
+## Setting 4: Buffer time
+
+Create breathing room between back-to-back sessions.
+
+### What it does
+
+**Buffer time** adds automatic padding before and/or after each session to prevent back-to-back scheduling. This gives you time for:
+
+- Setup and cleanup
+- Notes and documentation
+- Bio breaks and hydration
+- Mental reset between athletes
+- Travel time (if mobile training)
+
+**Critical insight**: Buffer time is invisible to athletes. They only see their session time. The buffer blocks booking slots adjacent to their session.
+
+### Configuration options
+
+<Steps>
+  <Step title="Buffer BEFORE session">
+    **Setting**: Minutes blocked before session start
+
+    **Use cases**:
+
+    - Setup time for equipment
+    - Review athlete notes/goals
+    - Mental preparation
+    - Travel time from previous location
+
+    **Common durations**:
+
+    - 5 minutes = Quick review and setup
+    - 10 minutes = Standard preparation
+    - 15 minutes = Travel time between locations
+
+    **Example**:
+
+    - Session: 3:00 PM - 4:00 PM (60 min)
+    - Buffer before: 10 minutes
+    - Result: 2:50 PM - 3:00 PM is blocked, can't be booked
+  </Step>
+  <Step title="Buffer AFTER session">
+    **Setting**: Minutes blocked after session end
+
+    **Use cases**:
+
+    - Cleanup and equipment reset
+    - Session notes and athlete updates
+    - Cool-down and recovery
+    - Running-over buffer (sessions that might go long)
+
+    **Common durations**:
+
+    - 5 minutes = Minimal cleanup
+    - 10 minutes = Standard reset time
+    - 15 minutes = Thorough cleanup + notes
+
+    **Example**:
+
+    - Session: 3:00 PM - 4:00 PM (60 min)
+    - Buffer after: 15 minutes
+    - Result: 4:00 PM - 4:15 PM is blocked, next session can start at 4:15 PM earliest
+  </Step>
+  <Step title="Buffer BOTH before and after">
+    **Setting**: Combine both buffers for maximum protection
+
+    **When to use**:
+
+    - High-intensity sessions requiring full reset
+    - Mobile training (travel time both ways)
+    - Complex setup/cleanup requirements
+    - Maximum burnout prevention
+
+    **Example configuration**:
+
+    - Session: 3:00 PM - 4:00 PM (60 min)
+    - Buffer before: 10 min
+    - Buffer after: 10 min
+    - Result: 2:50 PM - 4:10 PM blocked (80 minutes total)
+
+    **Effective session length**: 60-min session + 20-min buffer = 80 minutes per athlete
+
+    <Tip>
+      **Pricing consideration**: If your effective time is 80 minutes, price accordingly even though athlete only sees "60-minute session"
+    </Tip>
+  </Step>
+</Steps>
+
+### Buffer time strategy by coaching style
+
+<Tabs>
+  <Tab title="Studio-Based Training">
+    **Typical setup**: Athletes come to your facility
+
+    **Recommended buffer**:
+
+    - Before: 5 minutes (quick review and setup)
+    - After: 10 minutes (cleanup, notes, reset)
+    - Total: 15-minute buffer
+
+    **Reasoning**: Minimal travel, controlled environment, efficient turnaround
+
+    **Schedule example**:
+
+    - 6:00 AM - 7:00 AM: Athlete 1 (with 5 min before, 10 min after)
+    - 7:15 AM - 8:15 AM: Athlete 2 (with 5 min before, 10 min after)
+    - Effective: 4 sessions in 4.5 hours
+  </Tab>
+  <Tab title="Mobile Training">
+    **Typical setup**: You travel to athlete locations
+
+    **Recommended buffer**:
+
+    - Before: 15-20 minutes (travel time)
+    - After: 10 minutes (pack up, notes)
+    - Total: 25-30 minute buffer
+
+    **Reasoning**: Must account for travel between locations
+
+    **Schedule example**:
+
+    - 6:00 AM - 7:00 AM: Athlete 1 (at Location A)
+    - 7:35 AM - 8:35 AM: Athlete 2 (at Location B) - 35 min for travel + setup
+    - Effective: 2 sessions in 3 hours
+
+    <Note>
+      **Pro tip**: Group athletes by geographic area to minimize buffer time. Schedule all north-side athletes Monday, south-side Tuesday, etc.
+    </Note>
+  </Tab>
+  <Tab title="Online/Virtual Training">
+    **Typical setup**: Video call sessions
+
+    **Recommended buffer**:
+
+    - Before: 5 minutes (tech check, review notes)
+    - After: 5-10 minutes (session notes, reset)
+    - Total: 10-15 minute buffer
+
+    **Reasoning**: No travel, but need mental reset between calls
+
+    **Schedule example**:
+
+    - 6:00 AM - 6:45 AM: Athlete 1 (45-min virtual)
+    - 7:00 AM - 7:45 AM: Athlete 2 (15-min buffer = time for notes + coffee)
+    - Effective: 2 sessions in 2 hours
+
+    **Zoom fatigue prevention**: Consider 15-minute buffers for back-to-back virtual sessions to prevent burnout
+  </Tab>
+  <Tab title="High-Intensity/Specialty">
+    **Typical setup**: Demanding sessions requiring full recovery
+
+    **Recommended buffer**:
+
+    - Before: 10 minutes (mental prep, specific setup)
+    - After: 20 minutes (thorough cleanup, detailed notes, recover)
+    - Total: 30-minute buffer
+
+    **When to use**:
+
+    - Competition prep sessions
+    - Assessment/evaluation sessions
+    - One-on-one skill development requiring focus
+    - When you need mental reset between athletes
+
+    **Schedule example**:
+
+    - 6:00 AM - 7:30 AM: Athlete 1 (60-min session + 30-min buffer)
+    - 8:00 AM - 9:30 AM: Athlete 2
+    - Effective: 2 sessions in 3.5 hours
+
+    **Why worth it**: Quality over quantity, prevent burnout, maintain high coaching standards
+  </Tab>
+</Tabs>
+
+### Common buffer time mistakes
+
+<AccordionGroup>
+  <Accordion title="No buffer time at all">
+    **Mistake**: Back-to-back sessions with zero buffer
+
+    **Problems**:
+
+    - Constant rushing between athletes
+    - No time for notes or documentation
+    - Burnout and exhaustion
+    - Can't handle sessions that run over
+    - No time for emergencies or bio breaks
+
+    **Fix**: Minimum 5-10 minute buffer after every session
+
+    **Long-term impact**: Preventing burnout is worth the slight reduction in daily capacity
+  </Accordion>
+  <Accordion title="Buffer time too short for reality">
+    **Mistake**: 5-minute buffer for mobile training requiring 15-minute drive
+
+    **Problem**: Constantly running late, stressed, unprofessional
+
+    **Fix**: Time yourself for one week, add 5-minute cushion to that average
+
+    **Example**:
+
+    - Average drive: 12 minutes
+    - Buffer needed: 12 min + 5 min cushion = 17 minutes
+    - Set before-session buffer to 20 minutes
+  </Accordion>
+  <Accordion title="Inconsistent buffer across schedulers">
+    **Mistake**:
+
+    - "Morning Sessions" = 10-min buffer
+    - "Evening Sessions" = 5-min buffer
+    - Causes scheduling chaos and confusion
+
+    **Fix**: Standardize buffer time across all schedulers of same type
+
+    - All private sessions = 10-min after buffer
+    - All group classes = 15-min after buffer (more cleanup)
+    - All assessments = 20-min after buffer (detailed notes)
+
+    **Why**: Consistency = predictable schedule = less stress
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Setting 5: Scheduling windows
+
+Control WHEN athletes can book (how far in advance).
+
+### What it does
+
+**Scheduling windows** set two time boundaries:
+
+1. **Minimum notice**: Earliest athletes can book before session (prevents last-minute bookings)
+2. **Maximum future booking**: Latest athletes can book in advance (controls booking horizon)
+
+### Minimum booking notice
+
+**Purpose**: Prevent last-minute bookings that disrupt your schedule
+
+<Tabs>
+  <Tab title="No minimum notice">
+    **Setting**: Athletes can book up until session starts
+
+    **When to use**:
+
+    - Drop-in classes or open gym
+    - Flexible schedule with real-time availability
+    - Low-demand times you want to fill
+    - When you WANT last-minute bookings
+
+    **Pros**: Maximizes bookings, fills last-minute cancellations **Cons**: Difficult to plan your day, may not see booking in time
+
+    **Example**: "Open Gym Access" - Athletes can book a time slot 10 minutes from now
+  </Tab>
+  <Tab title="Same-day booking (6-12 hours)">
+    **Setting**: Athletes must book at least 6-12 hours before session
+
+    **When to use**:
+
+    - You check schedule morning and evening
+    - Want some advance notice but allow same-day
+    - Balancing flexibility with planning
+
+    **Example**:
+
+    - 12-hour notice = If athlete wants 6pm session, must book by 6am that day
+    - Gives you time to see booking and prepare
+
+    **Sweet spot**: 6-hour minimum for flexible same-day bookings
+  </Tab>
+  <Tab title="24-hour minimum notice">
+    **Setting**: Athletes must book at least 24 hours before session
+
+    **When to use**:
+
+    - Standard personal training
+    - You want day-ahead planning
+    - Need time to review athlete info and prepare
+    - Most common setting
+
+    **Example**: Athlete wants Tuesday 5pm session, must book by Monday 5pm
+
+    **Pros**:
+
+    - Clear day-ahead schedule visibility
+    - Time to prepare and review athlete goals
+    - Professional standard
+
+    **Cons**:
+
+    - Can't accommodate true last-minute requests
+    - May lose some spontaneous bookings
+
+    <Tip>
+      **Recommended**: 24-hour minimum is the industry standard for personal training and most coaching services.
+    </Tip>
+  </Tab>
+  <Tab title="48-72 hour minimum notice">
+    **Setting**: Athletes must book 2-3 days in advance
+
+    **When to use**:
+
+    - High-demand services with waitlists
+    - Sessions requiring special prep or materials
+    - When you need planning time
+    - Specialty assessment or evaluation sessions
+
+    **Example**: "Competition Readiness Assessment" - 72-hour minimum notice allows you to review athlete history and prepare custom evaluation
+
+    **Pros**: Maximum planning time, serious athlete commitment **Cons**: Very restrictive, may limit bookings
+  </Tab>
+</Tabs>
+
+### Maximum future booking window
+
+**Purpose**: Prevent athletes from booking too far in advance
+
+<AccordionGroup>
+  <Accordion title="Why limit future bookings?">
+    **Problems with unlimited future booking**:
+
+    1. Athlete books 3 months out, forgets, cancels last-minute
+    2. Your availability changes but slots are locked
+    3. Can't adjust pricing or offerings
+    4. Hard to forecast actual attendance
+
+    **Benefits of limiting future bookings**:
+
+    1. More accurate short-term schedule
+    2. Flexibility to adjust availability
+    3. Reduces forgotten bookings
+    4. Athletes book closer to session = higher commitment
+
+    **Business insight**: Bookings made 30 days out have 2x cancellation rate vs bookings made 7 days out
+  </Accordion>
+  <Accordion title="30-day booking window (Recommended)">
+    **Setting**: Athletes can book up to 30 days in advance
+
+    **When to use**: Most coaching businesses (default setting)
+
+    **Pros**:
+
+    - Enough advance booking for planners
+    - Not so far that athletes forget
+    - Allows monthly planning
+    - Balance of flexibility and commitment
+
+    **Example**:
+
+    - Today: September 30
+    - Athletes can book any session through October 30
+    - October 31 sessions won't appear until October 1
+
+    **Recommended for**: Private training, group classes, standard coaching services
+  </Accordion>
+  <Accordion title="60-90 day booking window">
+    **Setting**: Athletes can book 2-3 months in advance
+
+    **When to use**:
+
+    - Seasonal programming (summer camps)
+    - Long-term committed athletes
+    - Subscription-based programs
+    - When you have stable long-term schedule
+
+    **Pros**: Long-term planning for dedicated athletes **Cons**: Higher cancellation rates, less schedule flexibility
+
+    **Example**: "12-Week Transformation Program" - Allow 90-day booking for athletes to secure entire program schedule
+  </Accordion>
+  <Accordion title="Rolling weekly window">
+    **Setting**: Athletes can only book the current week + next week
+
+    **When to use**:
+
+    - High-variability schedule
+    - Short-term commitments
+    - Testing new services
+    - Prefer last-minute booking optimization
+
+    **Pros**: Maximum flexibility for you, recent bookings = lower cancellations **Cons**: Frustrates planners, may lose organized athletes
+
+    **Example**: On Monday, athletes can book through next Sunday (up to 13 days out)
+  </Accordion>
+  <Accordion title="Unlimited future booking">
+    **Setting**: Athletes can book as far out as you have availability
+
+    **When to use**:
+
+    - Rare scenarios only
+    - Specialty one-time events
+    - When you have 100% stable schedule
+    - VIP athletes with priority access
+
+    **Pros**: Ultimate athlete flexibility **Cons**: Reduces your flexibility, high forget-rate
+
+    <Warning>
+      **Not recommended**: Unlimited booking creates more problems than it solves for most coaching businesses.
+    </Warning>
+  </Accordion>
+</AccordionGroup>
+
+### Scheduling windows decision guide
+
+**For most coaches**:
+
+- Minimum notice: 24 hours
+- Maximum future: 30 days
+- Result: Athletes must book 24+ hours ahead, can book up to 30 days out
+
+**Adjust based on your reality**:
+
+| Your Situation             | Min Notice | Max Future |
+| -------------------------- | ---------- | ---------- |
+| Very flexible schedule     | 6 hours    | 14 days    |
+| Standard personal training | 24 hours   | 30 days    |
+| High-demand specialist     | 48 hours   | 30 days    |
+| Seasonal programming       | 24 hours   | 90 days    |
+| Events/workshops           | 7 days     | 90 days    |
+
+---
+
+## Setting 6: Multiple booking permissions
+
+Allow or prevent athletes from booking multiple future sessions at once.
+
+### What it does
+
+**Multiple booking permission** controls whether athletes can:
+
+- ✅ Book several sessions in one action (Book Mon, Wed, Fri all at once)
+- ❌ Only book one session at a time (Must book Mon, then separately book Wed, then separately book Fri)
+
+### Decision framework
+
+<Tabs>
+  <Tab title="Allow Multiple Bookings (Recommended)">
+    **Setting**: Athletes CAN book multiple future sessions at once
+
+    **When to use**: Most situations (default)
+
+    **Pros**:
+
+    - Better athlete experience (book whole week in one go)
+    - Encourages regular training schedules
+    - Saves athlete time
+    - Reduces booking friction
+    - Athletes can plan ahead
+
+    **Cons**:
+
+    - Athlete might over-book then cancel
+    - Could monopolize schedule if no weekly limits
+
+    **Example use case**:
+
+    - Athlete wants regular Monday/Wednesday/Friday training
+    - Books all 3 sessions at once
+    - Shows up consistently
+
+    **Mitigation**: Combine with weekly booking limits to prevent over-booking
+
+    - Allow multiple bookings: YES
+    - Max per week: 3 bookings
+    - Result: Athlete can book 3 sessions at once, but not 5
+
+    <Tip>
+      **Best practice**: Allow multiple bookings WITH weekly limits = athlete convenience + business protection
+    </Tip>
+  </Tab>
+  <Tab title="Restrict to Single Bookings">
+    **Setting**: Athletes can ONLY book one session at a time
+
+    **When to use**: Rare situations only
+
+    **Scenarios**:
+
+    1. **Trial/intro sessions**: Want athlete to complete first session before booking more
+    2. **Assessment-required**: Must evaluate athlete before allowing regular booking
+    3. **High-demand schedule**: Force athletes to commit session-by-session
+
+    **Pros**:
+
+    - Ensures athlete commitment per session
+    - Can assess fit before ongoing relationship
+    - Reduces bulk cancellations
+
+    **Cons**:
+
+    - Poor athlete experience (tedious to book each session separately)
+    - Discourages regular training schedules
+    - More friction = fewer bookings
+
+    **Example**:
+
+    - "First Assessment Session" scheduler = Single booking only
+    - After assessment, unlock "Regular Training" scheduler = Multiple bookings allowed
+
+    <Warning>
+      **UX impact**: Single-booking restriction frustrates athletes. Only use when absolutely necessary for business reasons.
+    </Warning>
+  </Tab>
+</Tabs>
+
+### Implementation strategy
+
+**Recommended configuration for most coaches**:
+
+```
+✅ Allow multiple bookings: YES
+✅ Max bookings per week: 2-3 sessions
+✅ Max bookings per day: 1 session
+```
+
+**Result**:
+
+- Athlete CAN book multiple sessions at once (convenient)
+- But CANNOT exceed 3 per week (fair access)
+- And CANNOT book 2 sessions same day (prevents monopolization)
+
+**Example scenario**:
+
+- Monday: Athlete attempts to book Mon, Wed, Fri, and next Monday (4 sessions)
+- System allows: Mon, Wed, Fri (within 3/week limit)
+- System blocks: Next Monday (would exceed 3/week in current rolling week)
+- Athlete books those 3, then books next Monday the following week
+
+---
+
+## Putting it all together: Complete configuration examples
+
+Real-world scheduler configurations from different coaching businesses:
+
+### Example 1: Starter Coach (Jake) - Private Training
+
+**Business context**:
+
+- Solo trainer with 25 slots per week
+- 15 active athletes
+- Building clientele, needs flexibility but protection
+
+**Scheduler settings**:
+
+```
+Name: "60-Minute Private Training"
+Capacity: 1 athlete
+Booking limits:
+  - Max per day: 1 session
+  - Max per week: 2 sessions
+Cancellation policy: 24-hour notice, refund credits
+Buffer time:
+  - Before: 5 minutes
+  - After: 10 minutes
+Scheduling windows:
+  - Minimum notice: 24 hours
+  - Maximum future: 30 days
+Multiple bookings: Yes (allowed)
+```
+
+**Why this works**:
+
+- 1 athlete per slot = true private training
+- 2 sessions/week = fair distribution across 15 athletes
+- 24-hour policy = business protection with athlete flexibility
+- 15-min buffer = sustainable schedule, prevent burnout
+- 30-day window = planning for committed athletes, not too far to forget
+- Multiple bookings allowed = athlete convenience with weekly limit protection
+
+**Expected outcomes**:
+
+- 15 athletes × 2 sessions = 30 potential bookings (you have 25 slots, slight over-capacity allows for cancellations)
+- Fair access for all athletes
+- Sustainable coaching schedule with built-in breaks
+
+---
+
+### Example 2: Scaling Coach (Chris) - Tiered Group Classes
+
+**Business context**:
+
+- 3 group class offerings at different intensity levels
+- 40 total class slots per week
+- 60 active athletes across all levels
+
+**Scheduler configuration**:
+
+**"Rising Stars Class" (Beginner)**
+
+```
+Capacity: 12 athletes
+Booking limits:
+  - Max per day: 2 classes (morning + evening)
+  - Max per week: 3 classes
+Cancellation: 24-hour notice, refund credits
+Buffer: 20 minutes after (larger cleanup for group)
+Windows: 24-hour min, 30-day max
+Multiple bookings: Yes
+```
+
+**"Elite Performance Class" (Advanced)**
+
+```
+Capacity: 8 athletes (smaller for quality)
+Booking limits:
+  - Max per day: 1 class (high-intensity)
+  - Max per week: 4 classes
+Cancellation: 24-hour notice, refund credits
+Buffer: 20 minutes after
+Windows: 24-hour min, 30-day max
+Multiple bookings: Yes
+```
+
+**"Open Gym Access" (Drop-in)**
+
+```
+Capacity: 20 athletes
+Booking limits: No limits (unlimited)
+Cancellation: Anytime cancellation allowed
+Buffer: 5 minutes after
+Windows: Same-day booking allowed (6-hour min), 14-day max
+Multiple bookings: Yes
+```
+
+**Why this works**:
+
+- Different capacities match service intensity
+- Booking limits ensure fair access to most popular classes
+- Open gym has no limits to encourage frequent attendance
+- Tiered system allows Chris to serve 60 athletes across 40 slots
+- Buffer times account for group class cleanup requirements
+
+---
+
+### Example 3: Facility Owner (Mike) - Multi-Service Facility
+
+**Business context**:
+
+- 3 coaches on staff
+- Private training + group classes + assessments
+- 100+ athletes across all services
+
+**Configuration approach**: Different schedulers for different services
+
+**"Private Training Sessions"**
+
+```
+Capacity: 1 athlete
+Limits: 3 sessions/week, 1/day
+Cancellation: 48-hour notice (premium service), refund credits
+Buffer: 10 min before, 15 min after
+Windows: 48-hour min, 30-day max
+Multiple bookings: Yes
+```
+
+**"Group Fitness Classes"**
+
+```
+Capacity: 25 athletes
+Limits: No weekly limit (encourage frequent attendance)
+Cancellation: 6-hour notice, refund credits
+Buffer: 30 min after (full room reset)
+Windows: Same-day allowed (6-hour min), 14-day max
+Multiple bookings: Yes
+```
+
+**"Performance Assessments"**
+
+```
+Capacity: 1 athlete
+Limits: 1 assessment per athlete per month
+Cancellation: 72-hour notice, no refund (extensive prep required)
+Buffer: 30 min before, 30 min after (detailed prep/debrief)
+Windows: 7-day min, 60-day max
+Multiple bookings: No (must complete assessment first)
+```
+
+**Why this works**:
+
+- Each service has appropriate rules for its context
+- Premium services have stricter policies
+- High-volume classes encourage frequent attendance
+- Assessment scheduler reflects specialized nature and prep requirements
+- Scaled appropriately for 100+ athlete facility
+
+---
+
+## Common configuration mistakes and fixes
+
+<AccordionGroup>
+  <Accordion title="Mistake 1: Settings don't match service reality">
+    **Problem**: "Small Group Training" with 15-athlete capacity and no booking limits
+
+    **Why it's wrong**:
+
+    - 15 athletes isn't "small group"
+    - No limits means same 15 book every session
+    - Others can never access the class
+
+    **Fix**:
+
+    ```
+    Option A: Change capacity to match promise
+    - Rename to "Large Group Training"
+    - Keep 15-athlete capacity
+    - Add 2 sessions/week limit for fair access
+    
+    Option B: Change name to match capacity
+    - Capacity: 6 athletes (truly small)
+    - Name: "Small Group Training"
+    - Keep 3 sessions/week limit
+    ```
+
+    **Lesson**: Settings must align with service promise
+  </Accordion>
+  <Accordion title="Mistake 2: Too lenient = revenue loss">
+    **Problem**:
+
+    - Anytime cancellation
+    - No booking notice
+    - Unlimited bookings
+
+    **Result**:
+
+    - 40% cancellation rate
+    - Last-minute cancellations can't be filled
+    - Revenue significantly impacted
+
+    **Fix**:
+
+    ```
+    Implement minimum standards:
+    - 24-hour cancellation policy (refund credits within window)
+    - 24-hour minimum booking notice
+    - 2-3 sessions per week limit
+    
+    Expected result:
+    - Cancellation rate drops to 15-20%
+    - More rebook opportunities
+    - Improved revenue stability
+    ```
+
+    **Lesson**: Protecting your business isn't mean, it's professional
+  </Accordion>
+  <Accordion title="Mistake 3: Too strict = athlete frustration">
+    **Problem**:
+
+    - No cancellations allowed
+    - 72-hour booking notice
+    - Single booking only
+
+    **Result**:
+
+    - Athletes afraid to book (too restrictive)
+    - Bookings drop 50%
+    - Negative reviews about inflexibility
+
+    **Fix**:
+
+    ```
+    Find middle ground:
+    - 24-48 hour cancellation with credit refund
+    - 24-hour booking notice
+    - Allow multiple bookings with weekly limits
+    
+    Expected result:
+    - Booking volume recovers
+    - Athlete satisfaction improves
+    - Still have business protection
+    ```
+
+    **Lesson**: Balance protection with athlete-friendly policies
+  </Accordion>
+  <Accordion title="Mistake 4: No buffer time strategy">
+    **Problem**:
+
+    - Zero buffer between sessions
+    - Constantly running late
+    - Exhausted and burned out
+
+    **Impact**:
+
+    - Poor athlete experience (you're always rushed)
+    - Documentation suffers (no time for notes)
+    - Health declines from no breaks
+
+    **Fix**:
+
+    ```
+    Implement staged approach:
+    Week 1: Add 5-min buffer after sessions
+    Week 2: Increase to 10-min buffer
+    Week 3: Add 5-min before buffer if needed
+    
+    Monitor: How do you feel? Less rushed?
+    Adjust: Find YOUR optimal buffer time
+    ```
+
+    **Lesson**: Your well-being enables athlete results - protect it
+  </Accordion>
+  <Accordion title="Mistake 5: One-size-fits-all configuration">
+    **Problem**: Same settings for private training, group classes, and events
+
+    **Why it fails**:
+
+    - Private training needs 1 capacity, group classes need 12
+    - Events need 72-hour notice, regular training needs 24-hour
+    - Different services have different requirements
+
+    **Fix**:
+
+    ```
+    Create service-specific schedulers:
+    
+    "Private Training"
+    - 1 capacity, 24-hour policy, 10-min buffer
+    
+    "Group Class"
+    - 12 capacity, 24-hour policy, 20-min buffer
+    
+    "Workshop Event"
+    - 30 capacity, 7-day notice required, 60-min buffer
+    ```
+
+    **Lesson**: Different services need different configurations
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting scheduler settings
+
+### Athletes can't book even though slots are available
+
+**Possible causes**:
+
+<Steps>
+  <Step title="Check booking limits">
+    Has athlete already reached max bookings for day or week?
+
+    **How to check**:
+
+    1. Go to athlete's profile
+    2. View their booking history
+    3. Count bookings in current week
+
+    **Fix**: If limit is too restrictive, increase weekly limit or explain policy to athlete
+  </Step>
+  <Step title="Check minimum notice">
+    Is athlete trying to book within minimum notice window?
+
+    **Example**:
+
+    - Settings: 24-hour minimum notice
+    - Athlete tries to book session 12 hours from now
+    - System blocks booking
+
+    **Fix**: Reduce minimum notice OR manually book athlete for this one time
+  </Step>
+  <Step title="Check maximum future window">
+    Is athlete trying to book beyond future booking window?
+
+    **Example**:
+
+    - Settings: 30-day maximum
+    - Athlete tries to book 45 days out
+    - Sessions don't appear
+
+    **Fix**: Increase future window OR ask athlete to book closer to date
+  </Step>
+  <Step title="Check capacity">
+    Is session already at capacity?
+
+    **How to check**: View the specific time slot - is it full?
+
+    **Fix**: If truly full, offer different time OR increase capacity if appropriate
+  </Step>
+</Steps>
+
+---
+
+### Cancellation policy isn't working as expected
+
+<AccordionGroup>
+  <Accordion title="Athletes canceling within window but credits not refunded">
+    **Check**:
+
+    1. Settings → Cancellation policy
+    2. Verify "Refund credits on cancellation" is enabled
+    3. Check if cancellation was within allowed window
+
+    **Possible issue**: Policy says 24-hour notice but athlete canceled 20 hours before
+
+    **Fix**: Manually refund credit this time, explain policy clearly for future
+  </Accordion>
+  <Accordion title="Athletes canceling late but still getting refunds">
+    **Check**:
+
+    - Is cancellation policy set to "Anytime" instead of "24-hour notice"?
+    - System might be configured differently than you think
+
+    **Fix**:
+
+    1. Edit scheduler settings
+    2. Change from "Anytime cancellation" to "24-hour notice required"
+    3. Update athlete communications about policy change
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Buffer time not preventing bookings
+
+**Problem**: Athletes booking back-to-back even though you set buffer time
+
+**Troubleshooting**:
+
+1. **Check buffer settings**: Go to scheduler → Settings → Buffer time
+   - Is buffer actually configured? (Should see "Before: X min, After: X min")
+   - Try test booking to verify buffer blocks adjacent slots
+2. **Multiple schedulers issue**:
+   - Scheduler A has 10-min buffer
+   - Scheduler B has no buffer
+   - Athletes can book Scheduler A at 3:00 PM and Scheduler B at 4:00 PM (appears back-to-back on your calendar)
+   - **Fix**: Add consistent buffer to ALL schedulers
+3. **Manual bookings bypass buffer**:
+   - If YOU manually book athletes, system may allow override of buffer
+   - **Fix**: Manually respect buffer when booking athletes yourself
+
+---
+
+## Optimizing settings over time
+
+Your initial settings won't be perfect. Use this optimization process:
+
+### Month 1: Baseline data collection
+
+**Track**:
+
+- How many bookings per week?
+- Cancellation rate?
+- No-show rate?
+- Athlete feedback on booking experience?
+- Your personal exhaustion level?
+
+**Don't change yet**: Collect data first
+
+---
+
+### Month 2: First adjustments
+
+**Based on data, adjust**:
+
+<Tabs>
+  <Tab title="High Cancellation Rate (>25%)">
+    **Possible fix**:
+
+    - Tighten cancellation policy (24-hour → 48-hour)
+    - Remove credit refunds for late cancellations
+    - Add booking limits to reduce frivolous bookings
+
+    **Monitor**: Does cancellation rate improve?
+  </Tab>
+  <Tab title="Low Booking Volume">
+    **Possible fix**:
+
+    - Reduce minimum notice (24-hour → 12-hour)
+    - Increase future booking window (30 days → 60 days)
+    - Allow more bookings per week
+    - Reduce cancellation strictness
+
+    **Monitor**: Does booking volume increase?
+  </Tab>
+  <Tab title="Burnout/Exhaustion">
+    **Possible fix**:
+
+    - Increase buffer time (10 min → 15 min)
+    - Add buffer before sessions (if only had after-buffer)
+    - Reduce max bookings you allow per week
+    - Add specific time blocks with no bookings
+
+    **Monitor**: Do you feel more sustainable?
+  </Tab>
+  <Tab title="Unfair Access">
+    **Possible fix**:
+
+    - Add weekly booking limits (currently unlimited → 3/week)
+    - Add daily limits if one athlete booking multiple same-day
+    - Consider tiered schedulers for different athlete levels
+
+    **Monitor**: Are more athletes able to book?
+  </Tab>
+</Tabs>
+
+---
+
+### Month 3+: Ongoing refinement
+
+**Quarterly review questions**:
+
+1. Are settings achieving desired athlete behavior?
+2. Is revenue stable/growing?
+3. Are you sustainable/not burned out?
+4. Are athletes happy with booking experience?
+5. Do settings match your current business stage?
+
+**Adjust as you scale**:
+
+- Starter coach → Scaling coach: Tighten policies (more demand)
+- Scaling coach → Facility owner: Service-specific settings
+- Low demand → High demand: Add limits and stricter windows
+
+---
+
+## Quick reference: Recommended settings by coaching stage
+
+### Starter Coach (Jake) - Building Clientele
+
+```yaml
+Capacity: 1 athlete (private training)
+Booking Limits:
+  Per Day: 1 session
+  Per Week: 2 sessions
+Cancellation: 24-hour notice, refund credits
+Buffer Time: 5 min before, 10 min after
+Scheduling Windows:
+  Minimum Notice: 24 hours
+  Maximum Future: 30 days
+Multiple Bookings: Yes (allowed)
+```
+
+**Philosophy**: Balance athlete flexibility with basic business protection
+
+---
+
+### Scaling Coach (Chris) - Optimizing Operations
+
+```yaml
+Private Training:
+  Capacity: 1 athlete
+  Limits: 1/day, 3/week
+  Cancellation: 24-48 hour, refund within window
+  Buffer: 10 min before, 10 min after
+  Windows: 24-hour min, 30-day max
+
+Group Classes:
+  Capacity: 8-12 athletes
+  Limits: 2/day, 4/week
+  Cancellation: 24-hour, refund credits
+  Buffer: 20 min after (cleanup)
+  Windows: 12-hour min, 14-day max
+```
+
+**Philosophy**: Service-specific settings optimized for different offerings
+
+---
+
+### Facility Owner (Mike) - Scale & Systematize
+
+```yaml
+Premium Private:
+  Capacity: 1 athlete
+  Limits: 3/week, 1/day
+  Cancellation: 48-hour, refund within window
+  Buffer: 15 min before, 15 min after
+  Windows: 48-hour min, 30-day max
+
+Standard Group:
+  Capacity: 20 athletes
+  Limits: No weekly limit
+  Cancellation: 24-hour, refund
+  Buffer: 30 min after
+  Windows: 6-hour min, 14-day max
+
+Assessments:
+  Capacity: 1 athlete
+  Limits: 1 per month
+  Cancellation: 72-hour, no refund
+  Buffer: 30 min both sides
+  Windows: 7-day min, 60-day max
+```
+
+**Philosophy**: Tiered policies reflecting service premium levels and prep requirements
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Buffer Time Deep Dive" icon="clock" href="/scheduling/buffer-time-scheduling-windows">
+    Advanced strategies for buffer time and scheduling windows
+  </Card>
+  <Card title="Organizing Schedulers" icon="folder-open" href="/scheduling/organizing-schedulers-programs">
+    Group multiple schedulers into logical programs
+  </Card>
+  <Card title="Credit Usage Limits" icon="coins" href="/scheduling/credit-usage-limits">
+    Configure credit-specific restrictions and expiration
+  </Card>
+  <Card title="Cancellation Management" icon="ban" href="/scheduling/managing-cancellations-no-shows">
+    Handle cancellations, no-shows, and refund scenarios
+  </Card>
+</CardGroup>
+
+## Related articles
+
+<CardGroup cols={3}>
+  <Card title="Creating First Scheduler" icon="plus-circle" href="/scheduling/creating-first-scheduler">
+    Basic scheduler creation before configuring settings
+  </Card>
+  <Card title="Payment Options" icon="credit-card" href="/scheduling/scheduler-payment-options">
+    Configure free, paid, and credit-based payments
+  </Card>
+  <Card title="Availability Setup" icon="calendar-check" href="/scheduling/creating-availability-schedule">
+    Set availability before creating schedulers
+  </Card>
+  <Card title="Calendar Management" icon="calendar-alt" href="/scheduling/calendar-overview">
+    View and manage your booked sessions
+  </Card>
+  <Card title="Manually Booking Athletes" icon="user-plus" href="/scheduling/manually-booking-athletes">
+    Override limits when manually booking
+  </Card>
+  <Card title="Troubleshooting Bookings" icon="tools" href="/scheduling/troubleshooting-booking-errors">
+    Fix common booking and settings issues
+  </Card>
+</CardGroup>
+
+---
+
+<Info>
+  **Need help configuring optimal settings?** Our support team can review your business model and recommend scheduler configurations. [Contact Support](https://support.coachiq.com)
+</Info>
