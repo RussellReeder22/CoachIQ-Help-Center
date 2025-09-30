@@ -1,0 +1,694 @@
+---
+title: "How Availability Works in CoachIQ"
+description: "Understand availability templates, how they work, and why they're the foundation of your scheduling system"
+sidebarTitle: "Availability Basics"
+icon: "calendar-check"
+---
+
+## What availability actually means
+
+In CoachIQ, **availability** is the foundation of your entire scheduling system. It answers one simple question: **"When CAN you coach?"**
+
+Not "when are you booked," not "what sessions you're offering"—just the raw time windows when you're potentially available to work with athletes.
+
+<Info>
+  **Think of it like this**: Availability is your work schedule. Schedulers are the services you offer during those work hours. Sessions are the actual bookings.
+</Info>
+
+## The availability template concept
+
+Here's what makes CoachIQ's availability system powerful: **availability templates are reusable**.
+
+You don't set availability separately for every session type. Instead, you create availability templates once, then pull from them across multiple schedulers.
+
+### Real-world example
+
+**Jake's Schedule**:
+
+- Available Monday/Wednesday/Friday 3:00 PM - 8:00 PM
+- This is ONE availability template: "Weekday Afternoons"
+
+**Jake's Session Types**:
+
+- 30-Minute Quick Sessions → Uses "Weekday Afternoons" availability
+- 60-Minute Full Training → Uses "Weekday Afternoons" availability
+- Free Assessment Sessions → Uses "Weekday Afternoons" availability
+
+**The magic**: Jake manages his schedule in ONE place (the availability template), but it powers THREE different session types. If Jake wants to add Thursdays, he updates one template and all three schedulers automatically get Thursday availability.
+
+<Check>
+  **Key insight**: One availability template can power unlimited schedulers. This saves enormous time and prevents scheduling conflicts.
+</Check>
+
+## How availability differs from schedulers
+
+This is the most common confusion for new users, so let's make it crystal clear:
+
+<Tabs>
+  <Tab title="Availability">
+    **Purpose**: Defines WHEN you can work
+
+    **Controls**:
+
+    - Days of the week
+    - Hours per day
+    - Specific dates
+    - Blackout days (time off)
+
+    **What it DOESN'T control**:
+
+    - Pricing
+    - Session duration
+    - Capacity
+    - Who can book
+    - What you're teaching
+
+    **Example**: "I'm available Monday-Friday 2-8 PM"
+
+    **Visibility**: Coaches only (athletes never see raw availability)
+  </Tab>
+  <Tab title="Schedulers">
+    **Purpose**: Defines WHAT athletes can book
+
+    **Controls**:
+
+    - Session name and description
+    - Duration (30, 45, 60 min)
+    - Pricing or credits
+    - Capacity (1-on-1 or group)
+    - Booking rules and limits
+    - Buffer time between sessions
+
+    **What it DOESN'T control directly**:
+
+    - Which days you work (pulls from availability)
+    - Specific time windows (pulls from availability)
+
+    **Example**: "60-Minute Hitting Lesson - \$75 - Max 1 athlete"
+
+    **Visibility**: This is what athletes see and book
+  </Tab>
+  <Tab title="How They Connect">
+    **The Relationship**:
+
+    1. You create availability: "Monday/Wednesday/Friday 3-8 PM"
+    2. You create a scheduler: "60-Min Private Training - \$75"
+    3. You connect the scheduler to your availability template
+    4. CoachIQ generates bookable slots: "Monday 3:00, 4:00, 5:00, 6:00, 7:00 PM..."
+
+    **Visual Flow**:
+
+    ```
+    Availability Template
+            ↓
+       (pulls from)
+            ↓
+        Scheduler
+            ↓
+      (generates)
+            ↓
+    Bookable Time Slots
+    ```
+
+    Athletes only see the final bookable slots—they never interact with your raw availability.
+  </Tab>
+</Tabs>
+
+## Why availability templates are reusable
+
+The reusability of availability templates is what makes CoachIQ scheduling scalable. Here's why this matters:
+
+### Scenario 1: Multiple Session Types, Same Schedule
+
+**Your situation**: You offer 30-min, 45-min, and 60-min sessions, all during the same work hours.
+
+**Without templates** (how other systems work):
+
+- Set availability for 30-min sessions
+- Set availability again for 45-min sessions
+- Set availability again for 60-min sessions
+- When you want to add Thursday, update all three separately
+- High risk of conflicts and errors
+
+**With templates** (how CoachIQ works):
+
+- Create one "Regular Hours" template (M/W/F 3-8 PM)
+- Point all three schedulers to this template
+- Add Thursday once, all three schedulers get it automatically
+- Zero conflicts, one source of truth
+
+<Tip>
+  **Time savings**: Most coaches save 2-3 hours per month by not duplicating availability across schedulers.
+</Tip>
+
+### Scenario 2: Different Coaching Contexts
+
+**Your situation**: You coach at two locations with different available days.
+
+**Solution**: Create multiple availability templates:
+
+- "Downtown Gym" template → Tuesday/Thursday 5-9 PM
+- "Community Center" template → Monday/Wednesday/Saturday 10 AM - 2 PM
+
+Then create location-specific schedulers:
+
+- "Downtown Private Training" → Uses "Downtown Gym" availability
+- "Community Center Group Classes" → Uses "Community Center" availability
+
+**Result**: Clear separation of locations, no overlap conflicts, easy to manage.
+
+### Scenario 3: Different Availability by Session Type
+
+**Your situation**: You only offer group classes on weekends, but private training during weekdays.
+
+**Solution**: Create specialized availability templates:
+
+- "Weekday Hours" → Monday-Friday 3-8 PM
+- "Weekend Group Sessions" → Saturday/Sunday 9 AM - 1 PM
+
+Then match schedulers appropriately:
+
+- "Private 1-on-1 Training" → Uses "Weekday Hours"
+- "Saturday Group Bootcamp" → Uses "Weekend Group Sessions"
+
+**Result**: Different session types can have completely different availability without managing complex rules.
+
+## Types of availability you can create
+
+CoachIQ supports two main approaches to setting availability:
+
+<CardGroup cols={2}>
+  <Card title="Weekly Recurring" icon="redo">
+    **What it is**: Same pattern every week
+
+    **Example**: "Every Monday/Wednesday/Friday from 3-8 PM"
+
+    **Best for**:
+
+    - Regular coaching schedules
+    - Consistent work hours
+    - Ongoing availability
+    - Most common use case
+
+    **Pros**:
+
+    - Set once, applies forever
+    - Predictable for athletes
+    - Easy to manage
+    - Matches most work schedules
+
+    **Cons**:
+
+    - Less flexibility
+    - Need to add blackout days for exceptions
+  </Card>
+  <Card title="Specific Dates" icon="calendar-day">
+    **What it is**: Individual dates you manually select
+
+    **Example**: "Only July 15, 17, 22, and 29"
+
+    **Best for**:
+
+    - Irregular schedules
+    - Seasonal coaching
+    - Special clinics or camps
+    - Testing new time slots
+
+    **Pros**:
+
+    - Complete control over exact dates
+    - No unexpected availability
+    - Good for limited engagements
+
+    **Cons**:
+
+    - Must add each date manually
+    - Time-consuming for regular schedules
+    - Need to continuously add future dates
+  </Card>
+</CardGroup>
+
+<Note>
+  **Most coaches use weekly recurring** for 80-90% of their availability, then block out specific dates with blackout days when needed (vacations, holidays, etc.).
+</Note>
+
+## Availability and blackout days
+
+Blackout days are how you handle exceptions to your regular availability.
+
+### How blackout days work
+
+**Your regular availability**: Monday/Wednesday/Friday 3-8 PM (every week)
+
+**You're taking vacation**: July 10-20
+
+**Solution**: Add blackout days for July 10-20
+
+**Result**: Your regular M/W/F availability continues before and after vacation, but July 10-20 is blocked out with no available slots.
+
+<Tip>
+  **Pro tip**: Add blackout days for known holidays, vacations, and time off when you first set up availability. This prevents athletes from booking sessions you can't honor.
+</Tip>
+
+### Common blackout day uses
+
+- **Vacations**: Multi-day or multi-week blocks
+- **Holidays**: Thanksgiving, Christmas, New Year's, etc.
+- **Personal days**: Doctor appointments, family commitments
+- **Facility closures**: Gym closed for maintenance
+- **Emergency blocks**: Unexpected schedule conflicts
+
+<Warning>
+  **Important**: Blackout days don't automatically cancel existing bookings. They only prevent NEW bookings from being made during those dates. If you already have bookings during blackout dates, you'll need to cancel them manually.
+</Warning>
+
+## Multiple availability templates: When and why
+
+Most coaches start with one availability template and add more as their business grows. Here's when to create multiple:
+
+<AccordionGroup>
+  <Accordion title="Different Locations">
+    **When**: You coach at multiple facilities with different schedules
+
+    **Example**:
+
+    - "Main Gym" availability: M/W/F 4-9 PM
+    - "Community Center" availability: T/Th 5-8 PM, Sat 9 AM - 1 PM
+    - "Virtual Sessions" availability: Any day, 7-9 AM (before facility hours)
+
+    **Why it works**: Location-specific schedulers pull from location-specific availability, preventing booking conflicts.
+  </Accordion>
+  <Accordion title="Different Coaching Roles">
+    **When**: You have distinct coaching contexts (team vs private, youth vs adult)
+
+    **Example**:
+
+    - "Private Training" availability: M-F 3-8 PM
+    - "Team Practice" availability: M/W 6-7:30 PM only
+    - "Adult Sessions" availability: T/Th evenings after 8 PM
+
+    **Why it works**: Different roles often have different time constraints and commitments.
+  </Accordion>
+  <Accordion title="Different Session Types Genuinely Need Different Times">
+    **When**: Certain services are only available during specific windows
+
+    **Example**:
+
+    - "Regular Sessions" availability: M-F 3-8 PM
+    - "Early Morning" availability: Any day 6-8 AM (premium pricing)
+    - "Weekend Intensives" availability: Sat/Sun 9 AM - 5 PM (3-hour blocks)
+
+    **Why it works**: Premium or specialized sessions may warrant separate availability to maintain exclusivity or manage capacity.
+  </Accordion>
+  <Accordion title="You're Testing New Time Slots">
+    **When**: Experimenting with availability before committing
+
+    **Example**:
+
+    - "Established Hours" availability: M/W/F 3-8 PM (your regular schedule)
+    - "Trial Saturday Hours" availability: Sat 9 AM - 12 PM (testing demand)
+
+    **Why it works**: You can test new availability without disrupting your core schedule, and easily remove if it doesn't work out.
+  </Accordion>
+</AccordionGroup>
+
+<Info>
+  **Most common pattern**: 70% of coaches use 1-2 availability templates. 25% use 3-4. Only 5% need more than 4 templates. Start with one and add more only when you have a clear reason.
+</Info>
+
+## The scheduler-to-availability relationship
+
+Understanding how schedulers pull from availability is key to mastering the system.
+
+### One Scheduler → One or More Availability Templates
+
+A single scheduler can pull from **multiple** availability templates. This is powerful for complex setups.
+
+**Example: Traveling Coach**
+
+You offer private training at three locations:
+
+- Downtown Gym (M/W)
+- West Side Facility (T/Th)
+- North Location (F)
+
+**Setup**:
+
+- Create 3 availability templates (one per location)
+- Create 1 scheduler: "Private 1-on-1 Training"
+- Connect scheduler to all 3 availability templates
+
+**Result**: Athletes booking "Private 1-on-1 Training" see available times across all three locations (M/W/T/Th/F), and you specify the location for each booking.
+
+### Many Schedulers → One Availability Template
+
+Multiple schedulers can all pull from the **same** availability template. This is the most common pattern.
+
+**Example: Different Durations**
+
+You offer sessions in multiple lengths during the same work hours:
+
+- 30-Min Quick Session
+- 45-Min Standard Session
+- 60-Min Deep Dive Session
+
+**Setup**:
+
+- Create 1 availability template: "Regular Hours" (M/W/F 3-8 PM)
+- Create 3 schedulers (one for each duration)
+- All 3 schedulers pull from "Regular Hours" template
+
+**Result**: Athletes can choose session length, all pulling from your same work schedule.
+
+<Tip>
+  **Pro tip**: This setup means you only manage availability in ONE place. Adding Thursday to "Regular Hours" automatically gives all three session types Thursday availability.
+</Tip>
+
+## What athletes see vs what you manage
+
+It's important to understand the disconnect between what you configure and what athletes experience:
+
+<Tabs>
+  <Tab title="What You Configure">
+    **In Availability**:
+
+    - Monday/Wednesday/Friday
+    - 3:00 PM - 8:00 PM
+    - Blackout: Dec 23-31
+
+    **In Scheduler**:
+
+    - "60-Minute Private Training"
+    - \$75 per session
+    - Buffer time: 15 minutes
+    - Max capacity: 1 athlete
+  </Tab>
+  <Tab title="What Athletes See">
+    **Available Time Slots**:
+
+    - Monday, Oct 2 at 3:00 PM
+    - Monday, Oct 2 at 4:15 PM
+    - Monday, Oct 2 at 5:30 PM
+    - Monday, Oct 2 at 6:45 PM
+    - Wednesday, Oct 4 at 3:00 PM
+    - Wednesday, Oct 4 at 4:15 PM
+    - (and so on...)
+
+    **They see**:
+
+    - Bookable time slots (not your raw availability)
+    - Session name and price
+    - Duration (60 minutes)
+    - Booking button
+
+    **They DON'T see**:
+
+    - Your availability template
+    - Buffer time (invisible to them)
+    - Blackout days (slots just don't appear)
+    - Capacity settings (until slots fill up)
+  </Tab>
+  <Tab title="How It Connects">
+    **The Transformation**:
+
+    1. Your availability: 3-8 PM (5 hours)
+    2. Session duration: 60 minutes
+    3. Buffer time: 15 minutes
+    4. Math: (5 hours ÷ 75 min per slot) = 4 bookable slots per day
+
+    **Generated Slots**:
+
+    - 3:00 PM - 4:00 PM (session) + 15 min buffer
+    - 4:15 PM - 5:15 PM (session) + 15 min buffer
+    - 5:30 PM - 6:30 PM (session) + 15 min buffer
+    - 6:45 PM - 7:45 PM (session) + 15 min buffer
+
+    Athletes see these 4 specific time slots, not your 5-hour availability window.
+  </Tab>
+</Tabs>
+
+<Check>
+  **Key understanding**: CoachIQ automatically converts your availability windows into bookable time slots based on session duration and buffer time. You don't manually create each slot.
+</Check>
+
+## Availability best practices
+
+### Start Simple, Add Complexity Later
+
+**Phase 1** (Week 1): One availability template, regular weekly hours
+
+- Example: "M/W/F 3-8 PM"
+
+**Phase 2** (Month 1-2): Add blackout days for known time off
+
+- Add vacation days, holidays, planned absences
+
+**Phase 3** (Month 3-6): Create second template if needed
+
+- Only add when you have genuinely different availability needs
+
+**Phase 4** (Month 6+): Optimize based on booking patterns
+
+- Adjust hours based on popular times
+- Add time slots if demand exceeds capacity
+
+<Tip>
+  **Resist complexity**: Many coaches create 5-6 availability templates when they only need 1-2. Start minimal and add only when you have a clear problem to solve.
+</Tip>
+
+### Use Descriptive Template Names
+
+**Good template names**:
+
+- "Weekday Afternoons"
+- "Weekend Morning Classes"
+- "Downtown Gym Schedule"
+- "Virtual-Only Hours"
+
+**Poor template names**:
+
+- "Availability 1"
+- "Schedule A"
+- "Template 2"
+
+**Why it matters**: When creating or editing schedulers, you'll need to select which availability template to use. Clear names make this easy.
+
+### Think in Terms of Your Week
+
+Base availability on your actual work schedule, not on when you THINK athletes want to book.
+
+**Example mistake**: "I'll be available every day 6 AM - 10 PM because athletes might want early morning or late evening sessions."
+
+**Problem**: You end up with availability you can't honor, leading to cancellations and frustration.
+
+**Better approach**: Start with times you're genuinely available and willing to coach. Expand only based on actual demand.
+
+### Buffer Time Is Part of Your Availability
+
+When setting availability hours, remember that buffer time consumes some of that window.
+
+**Example**:
+
+- Availability: 3:00 PM - 5:00 PM (2 hours)
+- Session duration: 60 minutes
+- Buffer time: 15 minutes
+
+**Available slots**: Only ONE slot at 3:00 PM
+
+- 3:00-4:00 PM (session) + 15 min buffer ends at 4:15 PM
+- Next slot would start at 4:15 PM but session ends at 5:15 PM (outside your availability)
+
+**Solution**: Either extend availability to 6:00 PM or reduce buffer time.
+
+## Common availability mistakes
+
+<Warning>
+  **Avoid these common pitfalls:**
+</Warning>
+
+<AccordionGroup>
+  <Accordion title="Setting availability too far out">
+    **Mistake**: Making availability extend 6-12 months into the future
+
+    **Problem**: Your schedule WILL change. You'll add vacations, change hours, or adjust your coaching schedule.
+
+    **Better approach**: Set availability 1-3 months out, extend as needed. Use weekly recurring patterns that continue forward automatically.
+  </Accordion>
+  <Accordion title="Creating separate availability for every scheduler">
+    **Mistake**: Creating a new availability template for each session type
+
+    **Problem**: Managing 5-10 identical availability templates that all say "M/W/F 3-8 PM"
+
+    **Better approach**: Create ONE template, use it across all schedulers with the same hours.
+  </Accordion>
+  <Accordion title="Forgetting to add blackout days">
+    **Mistake**: Not blocking out holidays, vacations, or planned time off
+
+    **Problem**: Athletes book sessions during times you're unavailable, forcing cancellations
+
+    **Better approach**: Add known blackout days immediately when setting up availability.
+  </Accordion>
+  <Accordion title="Not accounting for buffer time">
+    **Mistake**: Setting availability = your exact work hours without considering buffer between sessions
+
+    **Problem**: Last session extends beyond your availability window, or you end up with fewer slots than expected
+
+    **Better approach**: Add 15-30 minutes to your availability end time to accommodate buffer.
+  </Accordion>
+  <Accordion title="Using specific dates for regular schedules">
+    **Mistake**: Manually adding individual dates for ongoing weekly schedules
+
+    **Problem**: Tedious to maintain, easy to forget dates, doesn't scale
+
+    **Better approach**: Use weekly recurring patterns for regular schedules, save specific dates for irregular situations.
+  </Accordion>
+</AccordionGroup>
+
+## Availability + Copilot AI
+
+CoachIQ's Copilot can help generate availability patterns for you.
+
+**How it works**:
+
+1. Tell Copilot your coaching schedule in plain language
+2. Copilot generates an availability template
+3. Review and adjust if needed
+4. Save and use across schedulers
+
+**Example prompts**:
+
+- "I coach Monday through Friday afternoons, 2-8 PM"
+- "I'm available weekdays 3-7 PM but want to block out Thanksgiving week"
+- "Set up Saturday morning availability from 9 AM to 1 PM"
+
+<Tip>
+  **Pro tip**: Copilot is especially helpful when setting up complex availability patterns or when you're first learning the system.
+</Tip>
+
+## Quick decision guide
+
+<Tabs>
+  <Tab title="I should create ONE availability template when...">
+    - ✅ I have consistent work hours across all session types
+    - ✅ I'm just getting started with CoachIQ scheduling
+    - ✅ I coach at one location with regular hours
+    - ✅ All my sessions are available during the same time windows
+
+    **Example**: Solo personal trainer with M/W/F 3-8 PM availability for all services
+  </Tab>
+  <Tab title="I should create MULTIPLE availability templates when...">
+    - ✅ I coach at multiple locations with different schedules
+    - ✅ Different session types are genuinely available at different times
+    - ✅ I have distinct coaching roles (team vs private) with separate schedules
+    - ✅ I want to test new time slots without affecting core availability
+
+    **Example**: Facility owner with different availability per location and different hours for group vs private sessions
+  </Tab>
+  <Tab title="I should use weekly recurring availability when...">
+    - ✅ I have a regular, predictable schedule
+    - ✅ Same days and times every week (or most weeks)
+    - ✅ Ongoing coaching (not seasonal or limited engagement)
+    - ✅ I want to minimize management time
+
+    **This is 90% of coaches**
+  </Tab>
+  <Tab title="I should use specific dates when...">
+    - ✅ Running a short-term camp or clinic
+    - ✅ Testing new time slots for a limited period
+    - ✅ Seasonal coaching (only certain months)
+    - ✅ Irregular schedule that changes weekly
+
+    **This is 10% of coaches**
+  </Tab>
+</Tabs>
+
+## What's next
+
+Now that you understand how availability works conceptually, you're ready to create your actual availability templates.
+
+<CardGroup cols={2}>
+  <Card title="Create Your Availability" icon="calendar-plus" href="/scheduling/creating-availability-schedule">
+    Step-by-step guide to setting up availability templates with weekly patterns or specific dates
+  </Card>
+  <Card title="Understanding Schedulers" icon="sliders-h" href="/scheduling/what-are-schedulers">
+    Learn how schedulers pull from availability to create bookable sessions
+  </Card>
+  <Card title="Managing Blackout Days" icon="calendar-times" href="/scheduling/blackout-days-time-off">
+    Block out vacations, holidays, and time off from your availability
+  </Card>
+  <Card title="Schedulers Management Dashboard" icon="th-large" href="/scheduling/schedulers-management-dashboard">
+    Advanced availability management across multiple schedulers
+  </Card>
+</CardGroup>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I change availability after creating schedulers?">
+    **Yes!** Availability templates can be edited anytime. Changes affect future bookable slots but don't automatically cancel existing bookings.
+
+    **Example**: If you add Thursday to your availability, future weeks will have Thursday slots available, but existing bookings remain unchanged.
+  </Accordion>
+  <Accordion title="What happens if I delete an availability template?">
+    **Careful**: Schedulers using that template will lose their availability and stop generating bookable slots.
+
+    **Better approach**: Edit the template rather than deleting, or reassign schedulers to a different template first.
+  </Accordion>
+  <Accordion title="Can one scheduler pull from multiple availability templates?">
+    **Yes!** This is useful for coaches who work multiple locations or have complex schedules.
+
+    **Example**: "Private Training" scheduler pulls from "Downtown Gym" AND "West Side Facility" availability templates.
+  </Accordion>
+  <Accordion title="How far in advance should I set availability?">
+    **Recommendation**:
+
+    - Use weekly recurring patterns (automatically extends forward)
+    - Check and extend 1-2 months ahead as needed
+    - Add blackout days for known time off
+
+    **Avoid**: Setting specific date ranges that end soon, forcing you to constantly extend availability.
+  </Accordion>
+  <Accordion title="Does availability affect my existing bookings?">
+    **No**: Existing bookings remain on your calendar even if you change availability.
+
+    **What changes**: Future available slots will reflect your new availability settings.
+
+    **To cancel existing bookings**: You must do this manually from your calendar—availability changes don't auto-cancel.
+  </Accordion>
+  <Accordion title="Can athletes see my availability template?">
+    **No**: Athletes only see the final bookable time slots generated by your scheduler.
+
+    **What they see**: "Available: Monday 3:00 PM, Monday 4:15 PM, Wednesday 3:00 PM..."
+
+    **What they don't see**: Your underlying availability template or settings.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Related articles
+
+<CardGroup cols={3}>
+  <Card title="Scheduling Overview" icon="book-open" href="/scheduling/scheduling-overview">
+    Complete overview of the three-layer scheduling system
+  </Card>
+  <Card title="Create Availability" icon="calendar-plus" href="/scheduling/creating-availability-schedule">
+    Step-by-step availability setup guide
+  </Card>
+  <Card title="What Are Schedulers?" icon="question-circle" href="/scheduling/what-are-schedulers">
+    How schedulers use availability to create bookable sessions
+  </Card>
+  <Card title="Your First Session" icon="rocket" href="/scheduling/first-bookable-session">
+    10-minute guide to creating your first bookable session
+  </Card>
+  <Card title="Blackout Days" icon="calendar-times" href="/scheduling/blackout-days-time-off">
+    Block out vacations and time off
+  </Card>
+  <Card title="Multi-Coach Availability" icon="users" href="/scheduling/multi-coach-availability">
+    Managing availability for multiple coaches
+  </Card>
+</CardGroup>
+
+<Info>
+  **Need help planning your availability?** Our support team can help you design the optimal availability structure for your coaching business. [Contact Support](https://coachiq.com/support)
+</Info>
