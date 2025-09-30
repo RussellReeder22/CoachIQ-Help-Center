@@ -1,0 +1,1453 @@
+---
+title: "Subscription-Based Scheduling: Recurring Credit Memberships"
+description: "Master recurring subscriptions—create unlimited monthly memberships, understand ∞ credit notation, manage renewals, and optimize subscription revenue"
+sidebarTitle: "Subscriptions"
+icon: "sync"
+---
+
+<Info>
+  **Where to find this**: Dashboard → Payments → Products → Create → Subscription type
+</Info>
+
+## What you'll accomplish
+
+Learn how to create and manage subscription-based credit products that generate recurring revenue—configure unlimited (∞) credit subscriptions, understand renewal behavior, handle inactive subscriptions, transition athletes from packages to subscriptions, and optimize your subscription business model.
+
+<Note>
+  **Prerequisites**:
+
+  - Stripe account connected to CoachIQ ([Stripe Setup Guide](/payments/stripe-setup))
+  - Understanding of credit system basics ([Article #23](/scheduling/credit-system-explained))
+  - Credit-issuing products experience ([Article #24](/scheduling/setting-up-credit-packages))
+</Note>
+
+---
+
+## Subscriptions vs packages: Understanding the difference
+
+Before diving into subscription setup, understand how subscriptions differ from one-time credit packages.
+
+### Core differences
+
+<Tabs>
+  <Tab title="One-Time Credit Packages">
+    **Payment structure**: Single payment upfront
+
+    **Credit issuance**: All credits issued immediately upon purchase
+
+    **Credit behavior**:
+
+    - Finite quantity (e.g., 10 credits)
+    - Do not renew automatically
+    - Athlete must manually purchase again when depleted
+
+    **Revenue pattern**: Sporadic (depends on when athletes buy)
+
+    **Example**:
+
+    ```
+    Product: "10-Credit Training Package"
+    Price: $450 (one-time payment)
+    Credits issued: 10 (all at once)
+    Renewal: None (must repurchase)
+    Expiration: 90 days (if configured)
+    ```
+
+    **Best for**:
+
+    - New athletes testing your services
+    - Athletes who prefer flexibility
+    - Drop-in/casual training relationships
+    - Gift purchases
+  </Tab>
+  <Tab title="Subscription Credit Products">
+    **Payment structure**: Recurring billing (monthly/weekly/yearly)
+
+    **Credit issuance**: Credits issued each billing cycle
+
+    **Credit behavior**:
+
+    - Can be finite (e.g., 12 credits/month) OR unlimited (∞)
+    - Renews automatically each cycle
+    - Active only while subscription active on Stripe
+
+    **Revenue pattern**: Predictable recurring revenue (MRR)
+
+    **Example**:
+
+    ```
+    Product: "Monthly Unlimited Training"
+    Price: $400/month (recurring)
+    Credits issued: Unlimited (∞) per month
+    Renewal: Automatic monthly via Stripe
+    Expiration: Credits reset each month (not expire, but renew)
+    ```
+
+    **Best for**:
+
+    - Committed long-term athletes
+    - Predictable business revenue
+    - Athletes training 2+ times per week
+    - Premium membership offerings
+  </Tab>
+</Tabs>
+
+### Why subscriptions transform your business
+
+<CardGroup cols={2}>
+  <Card title="Predictable Revenue (MRR)" icon="chart-line">
+    **One-time packages**: Sporadic \$450 payments
+
+    **Subscriptions**: Recurring $400/month = $4,800/year per athlete
+
+    **Compounding effect**:
+
+    - Month 1: 10 subscribers = \$4,000 MRR
+    - Month 6: 25 subscribers = \$10,000 MRR (with growth + retention)
+    - Month 12: 50 subscribers = \$20,000 MRR
+
+    **Business planning**: Predictable revenue enables hiring, facility expansion, equipment investments
+  </Card>
+  <Card title="Higher Lifetime Value (LTV)" icon="coins">
+    **Package athlete**:
+
+    - Buys 10-pack for \$450
+    - Uses 8 credits, stops
+    - LTV: \$450
+
+    **Subscription athlete**:
+
+    - Subscribes at \$400/month
+    - Stays 8 months average
+    - LTV: \$3,200 (7x higher!)
+
+    **Why**: Recurring billing = passive renewal (friction-free)
+  </Card>
+  <Card title="Better Athlete Retention" icon="heart">
+    **Package psychology**: "I have 2 credits left, then I'm done"
+
+    **Subscription psychology**: "I pay monthly, might as well use it"
+
+    **Data shows**:
+
+    - Package athletes: 50-60% repurchase rate
+    - Subscription athletes: 80-90% renewal rate (when managed well)
+
+    **Reason**: Subscription = ongoing commitment mindset
+  </Card>
+  <Card title="Reduced Admin Burden" icon="clock">
+    **Package model**:
+
+    - Athletes run out of credits
+    - You chase renewals
+    - Manual sales conversations
+    - Inconsistent cash flow
+
+    **Subscription model**:
+
+    - Automatic billing via Stripe
+    - Credits renew automatically
+    - Athletes self-renew (passive)
+    - Consistent cash flow
+
+    **Time saved**: 10-15 hours/month not chasing renewals
+  </Card>
+</CardGroup>
+
+---
+
+## Understanding unlimited credits (∞ notation)
+
+The infinity symbol (∞) in CoachIQ has a specific meaning that's critical to understand.
+
+### What ∞ really means
+
+<Warning>
+  **Critical clarification**: ∞ does NOT mean unlimited forever. It means unlimited WITHIN the current billing cycle.
+</Warning>
+
+**Accurate interpretation**:
+
+- **∞** = Unlimited credits this month/week/year (depending on subscription frequency)
+- **At renewal**: Credits reset to ∞ for the new cycle
+- **If subscription ends**: ∞ becomes 0 (credits disappear)
+
+**Example timeline**:
+
+```
+Jan 15: Athlete subscribes to "Unlimited Monthly" 
+Credits: ∞ (can book unlimited sessions until Feb 15)
+
+Jan 16-Feb 14: Athlete books 12 sessions
+Credits still show: ∞ (not decreasing)
+
+Feb 15: Subscription renews, payment processes
+Credits: ∞ (reset for February cycle)
+
+Feb 16-Mar 14: Athlete books 10 sessions  
+Credits: ∞ (unlimited continues)
+
+Mar 15: Subscription payment FAILS (expired card)
+Subscription becomes inactive on Stripe
+Credits: 0 (unlimited credits now unusable)
+```
+
+### The ∞ display variations
+
+<AccordionGroup>
+  <Accordion title="Simple ∞ (Unlimited Master Credits)">
+    **Display**: "Credit Balance: ∞"
+
+    **Location**: Master Credits tab
+
+    **Meaning**: Unlimited credits with no restrictions, no expiration, for ANY scheduler
+
+    **Use case**: Rare—typically given to staff, VIPs, or lifetime memberships
+
+    **Coach granted**: You manually set Master Credits to ∞ (not common)
+  </Accordion>
+  <Accordion title="∞ with Usage Tracking (Subscription Credits)">
+    **Display**: Under "Redeemable Schedulers" section
+
+    ```
+    Rising Stars Class (3/∞)
+    Rising Stars Shooting Lab (0/∞)
+    Rising Stars Open Gym (5/∞)
+    ```
+
+    **Meaning**:
+
+    - Athlete has unlimited credits for these schedulers this cycle
+    - Numbers show: (Credits used this cycle / Unlimited remaining)
+    - **3/∞** = Used 3 times this cycle, unlimited still available
+
+    **Resets**: At subscription renewal, all counters reset to 0/∞
+
+    **Why track usage if unlimited?**:
+
+    1. Coach monitoring (which sessions most popular?)
+    2. Usage limit enforcement (if "max 3/week" limit exists)
+    3. Athlete self-awareness (used 15 times this month—great engagement!)
+  </Accordion>
+  <Accordion title="Finite Credits That Display Differently">
+    **Not ∞ but similar concept**:
+
+    Some subscriptions issue finite credits monthly:
+
+    ```
+    Monthly 12-Credit Membership
+    Credit Balance: 12 (not ∞)
+    Renewal: Gets 12 fresh credits each month
+    ```
+
+    **Difference from ∞**:
+
+    - Athlete sees decreasing count (12 → 11 → 10...)
+    - When depleted to 0, must wait for renewal
+    - ∞ never shows decreasing count
+
+    **Same as ∞**:
+
+    - Resets at renewal
+    - Active only while subscription live
+    - Tied to billing cycle
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Creating a subscription product
+
+Step-by-step: Setting up recurring credit memberships.
+
+<Steps>
+  <Step title="Navigate to product creation">
+    Dashboard → **Payments** → **Products** → Click **\+ New Product**
+
+    You'll see product type options
+  </Step>
+  <Step title="Select subscription type">
+    **Choose**: "Subscription" or "Recurring Payment" (naming varies by platform)
+
+    **NOT**: "One-Time Payment" (that's for credit packages)
+
+    <Frame>
+      ![Selecting subscription product type](/images/product-type-selection.png)
+    </Frame>
+    <Note>
+      **Important**: This choice defines whether billing is recurring. Cannot change after creation—if you pick wrong type, must delete and recreate product.
+    </Note>
+  </Step>
+  <Step title="Configure basic product info">
+    **Required fields**:
+
+    **Product name**: Clear, descriptive name
+
+    - ✅ "Unlimited Monthly Training Membership"
+    - ✅ "3x/Week Youth Program Subscription"
+    - ❌ "Training" (too vague)
+    - ❌ "Option 1" (meaningless to athletes)
+
+    **Price**: Recurring amount (e.g., \$400)
+
+    **Billing frequency**: How often to charge
+
+    - **Monthly** (most common)
+    - **Weekly** (less common, for frequent trainers)
+    - **Yearly** (annual pre-pay, large discount)
+    - **Custom** (every 2 weeks, quarterly, etc.)
+
+    **Description**: Explain what subscription includes
+
+    ```
+    Example: "Train unlimited times per month at our group classes. 
+    Includes access to all Rising Stars schedulers. Book up to 4 
+    sessions per week. Cancel anytime with 30-day notice."
+    ```
+
+    <Tip>
+      **Pricing psychology**: $399 feels significantly cheaper than $400. Use $X97 or $X99 pricing for better conversion.
+    </Tip>
+  </Step>
+  <Step title="Configure credit issuance">
+    Scroll to **Credits** section
+
+    **Decision point**: Unlimited (∞) OR finite credits per cycle?
+
+    <Tabs>
+      <Tab title="Unlimited Credits (∞)">
+        **Setting**: Enable "Unlimited Credits" toggle or checkbox
+
+        **Result**: Athlete gets ∞ credits each billing cycle
+
+        **Use when**:
+
+        - Offering "all-you-can-train" membership
+        - Want maximum simplicity (no credit counting)
+        - Trust athletes not to abuse (or have usage limits configured)
+
+        **Example configuration**:
+
+        ```
+        Monthly Unlimited Membership - $400/month
+        Credits: Unlimited (∞)
+        Usage limits: 4 bookings per week
+        Redeemable schedulers: All group classes
+        ```
+      </Tab>
+      <Tab title="Finite Credits Per Cycle">
+        **Setting**: Enter number (e.g., "12 credits")
+
+        **Result**: Athlete gets 12 fresh credits each billing cycle
+
+        **Use when**:
+
+        - Want defined usage expectations (12 = 3x/week)
+        - More comfortable with finite limits
+        - Easier to understand for athletes ("12 sessions/month")
+
+        **Example configuration**:
+
+        ```
+        Monthly 12-Credit Membership - $350/month
+        Credits: 12 per month
+        Expiration: Unused credits expire at renewal
+        Redeemable schedulers: All sessions
+        ```
+
+        <Note>
+          **Expiration option**: Unused credits can either:
+
+          1. **Expire** (athlete loses them at renewal)
+          2. **Carry over** (athlete accumulates unused credits)
+
+          Most subscriptions use **expire** to prevent credit hoarding.
+        </Note>
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Set credit restrictions">
+    **Redeemable Schedulers** section: Select which schedulers accept these credits
+
+    **Example restriction strategy**:
+
+    ```
+    Basic Subscription ($250/month):
+      ✓ Group Classes only
+    
+    Standard Subscription ($400/month):
+      ✓ Group Classes
+      ✓ Open Gym
+      ✓ Clinics
+    
+    Premium Subscription ($600/month):
+      ✓ All of the above
+      ✓ Semi-Private Sessions (normally $75 each)
+    ```
+
+    <Tip>
+      **Product tiering**: Use scheduler restrictions to differentiate subscription levels (Basic \< Standard \< Premium)
+    </Tip>
+    For detailed scheduler restriction setup, see [Article #26: Credit Usage Limits](/scheduling/credit-usage-limits).
+  </Step>
+  <Step title="Configure usage limits (optional but recommended)">
+    **Usage Limits** section: Set daily/weekly/monthly booking caps
+
+    **For unlimited (∞) subscriptions**:
+
+    - **Recommended**: Weekly limit (e.g., "4 bookings per week")
+    - **Prevents abuse**: Athlete can't book 30 sessions in Week 1
+    - **Encourages consistency**: Spreads usage across month
+
+    **For finite credit subscriptions**:
+
+    - Often unnecessary (credit count is the limit)
+    - Consider if: Enforcing program structure (e.g., max 2/week for 8-week program)
+
+    **Example unlimited subscription limits**:
+
+    ```
+    Unlimited Monthly Membership:
+    Weekly limit: 4 bookings (max 16/month)
+    Daily limit: 1 booking (encourages recovery)
+    Per-scheduler limit: None
+    ```
+
+    See [Article #26](/scheduling/credit-usage-limits) for complete limit configuration guide.
+  </Step>
+  <Step title="Set renewal and cancellation policy">
+    **Renewal settings**:
+
+    - **Auto-renew**: Enabled by default (this is how subscriptions work)
+    - **Trial period**: Optional first-month discount or free trial
+    - **Renewal reminder**: Auto-email 3 days before renewal (if available)
+
+    **Cancellation policy**:
+
+    ```
+    Example policy:
+    "Cancel anytime. Cancellations take effect at end of current 
+    billing period (you keep access until paid-for period ends). 
+    No refunds for partial months."
+    ```
+
+    **Important**: Document policy in:
+
+    - Product description
+    - Website terms of service
+    - Confirmation email after purchase
+    - Athlete portal
+
+    <Warning>
+      **Legal requirement**: Clear cancellation terms required in most jurisdictions. Work with attorney if unsure.
+    </Warning>
+  </Step>
+  <Step title="Save and activate">
+    Click **Save** or **Create Product**
+
+    **Verification checklist**:
+
+    - ✅ Product appears in Payments → Products list
+    - ✅ Product type shows "Subscription"
+    - ✅ Price displays as "\$/month" (or chosen frequency)
+    - ✅ Credit configuration correct (∞ or finite number)
+    - ✅ Redeemable schedulers listed
+    - ✅ Usage limits configured (if applicable)
+
+    **Test**:
+
+    1. Assign product to test athlete account
+    2. Process test payment via Stripe
+    3. Verify credits appear in athlete profile
+    4. Test booking with subscription credits
+    5. Verify Stripe shows active subscription
+
+    <Check>
+      **Success!** Your subscription product is live and ready for athletes to purchase.
+    </Check>
+  </Step>
+</Steps>
+
+---
+
+## Subscription credit renewal behavior
+
+Understanding how credits refresh each billing cycle.
+
+### How automatic renewal works
+
+<Steps>
+  <Step title="Subscription renewal date arrives">
+    **Example**: Athlete subscribed Jan 15, monthly frequency
+
+    **Renewal date**: Feb 15 (one month later)
+
+    **What happens**:
+
+    1. Stripe attempts to charge athlete's saved payment method
+    2. If payment succeeds: Subscription stays active
+    3. If payment fails: Subscription becomes inactive (more on this below)
+  </Step>
+  <Step title="Credits reset (if payment succeeds)">
+    **For unlimited (∞) subscriptions**:
+
+    - Credit balance: Still shows ∞
+    - Usage tracking: Resets to 0/∞ for all schedulers
+    - Weekly/monthly usage limits: Reset to 0
+
+    **For finite credit subscriptions**:
+
+    - Credit balance: Resets to original amount (e.g., 12)
+    - Unused credits: Expire OR carry over (per configuration)
+    - Usage limits: Reset to 0
+
+    **Athlete sees**: Fresh credits available, can book again
+
+    <Note>
+      **Seamless transition**: Athletes typically don't notice renewal if payment auto-succeeds. Credits just "keep working."
+    </Note>
+  </Step>
+  <Step title="Credit logs update">
+    New entry in athlete's credit logs:
+
+    ```
+    Feb 15, 9:00 AM | +∞ Credits | Subscription Renewed - Monthly Unlimited Membership
+    ```
+
+    Or for finite:
+
+    ```
+    Feb 15, 9:00 AM | +12 Credits | Subscription Renewed - Monthly 12-Credit Membership
+    ```
+
+    **Purpose**: Tracks renewal history, helps with dispute resolution
+  </Step>
+  <Step title="Stripe subscription status">
+    In your Stripe dashboard:
+
+    **Status**: "Active" **Current period**: Feb 15 - Mar 14 **Next billing date**: Mar 15 **Total charged to date**: Updated
+
+    **Athlete's payment history**: Shows successful renewal charge
+  </Step>
+</Steps>
+
+### Unused credit behavior at renewal
+
+**Critical decision**: What happens to unused credits when subscription renews?
+
+<Tabs>
+  <Tab title="Expire at Renewal (Recommended)">
+    **Configuration**: "Unused credits expire at renewal"
+
+    **What happens**:
+
+    - Athlete had 12 credits, used 8, has 4 remaining
+    - At renewal: Remaining 4 credits disappear
+    - Athlete gets fresh 12 credits
+
+    **Pros**:
+
+    - ✅ Prevents credit hoarding (athletes can't accumulate hundreds of unused credits)
+    - ✅ Encourages consistent usage ("use it or lose it")
+    - ✅ Predictable liability for coach (max 12 credits/athlete outstanding)
+    - ✅ Aligns with "monthly membership" concept
+
+    **Cons**:
+
+    - ❌ Athlete loses value if they don't use all credits
+    - ❌ Can feel punitive (especially if illness/vacation caused underuse)
+
+    **Best for**: Most subscription models, especially unlimited or high-credit counts
+  </Tab>
+  <Tab title="Carry Over (Accumulate)">
+    **Configuration**: "Unused credits carry over to next billing cycle"
+
+    **What happens**:
+
+    - Athlete had 12 credits, used 8, has 4 remaining
+    - At renewal: Athlete keeps 4 + gets fresh 12 = 16 total
+    - Next month: If uses 10, has 6 remaining + gets 12 more = 18 total
+
+    **Pros**:
+
+    - ✅ Athlete-friendly (no lost value)
+    - ✅ Flexibility for irregular training schedules
+    - ✅ Rewards loyal subscribers (long-term athletes accumulate buffer)
+
+    **Cons**:
+
+    - ❌ Credit liability grows over time (athlete might accumulate 50+ credits)
+    - ❌ Athlete might cancel after accumulating credits, use them all, then leave
+    - ❌ Undermines monthly structure (athlete could go 3 months without training, use 36 credits in Month 4)
+
+    **Best for**: Low-frequency subscriptions (e.g., 4 credits/month) or premium client relationships
+
+    <Warning>
+      **Financial risk**: Carry-over can create large outstanding credit liability. Monitor carefully.
+    </Warning>
+  </Tab>
+  <Tab title="Hybrid: Cap Carry-Over">
+    **Configuration**: "Carry over up to [X] unused credits"
+
+    **What happens**:
+
+    - Athlete gets 12 credits/month
+    - Maximum carry-over: 6 credits
+    - Month 1: Uses 8, has 4 remaining (all carry over)
+    - Month 2: Gets 12 + 4 carried = 16 total
+    - Month 2: Uses 9, has 7 remaining (only 6 carry over, 1 expires)
+    - Month 3: Gets 12 + 6 carried = 18 total
+
+    **Pros**:
+
+    - ✅ Balances athlete flexibility with business protection
+    - ✅ Limited liability (max 18 credits/athlete with 6-credit cap)
+    - ✅ Rewards consistent users while preventing hoarding
+
+    **Cons**:
+
+    - ❌ More complex to explain to athletes
+    - ❌ Requires platform support (not all systems offer capped carry-over)
+
+    **Best for**: Premium subscriptions where you want to add extra value without unlimited risk
+  </Tab>
+</Tabs>
+
+---
+
+## Managing subscription lifecycles
+
+What happens at each stage of a subscription's life.
+
+### Active subscription stage
+
+**Status**: Subscription active on Stripe, payments processing successfully
+
+**Athlete experience**:
+
+- Credits available (∞ or finite amount showing)
+- Can book sessions using subscription credits
+- Automatic renewals happening seamlessly
+
+**Coach actions**:
+
+- Monitor usage (are athletes actually using subscriptions?)
+- Engagement outreach if low usage (prevent voluntary cancellation)
+- Upsell opportunities if high usage (upgrade to premium tier)
+
+**Health metrics to track**:
+
+- **Usage rate**: What % of credits/bookings are athletes using?
+  - Healthy: 70-90% usage
+  - Concerning: 50% usage (risk of cancellation)
+  - Over: \>95% usage (opportunity to upsell)
+- **Payment success rate**: What % of renewals process successfully?
+  - Healthy: \>90% success rate
+  - Concerning: 85% success rate (many failed payments)
+
+---
+
+### Payment failure (Involuntary churn)
+
+**What triggers it**: Athlete's payment method fails at renewal (expired card, insufficient funds)
+
+**What happens automatically**:
+
+<Steps>
+  <Step title="Stripe attempts charge">
+    Renewal date arrives, Stripe tries to charge saved payment method
+
+    **Result**: Payment declined/failed
+  </Step>
+  <Step title="Stripe retry logic">
+    Stripe automatically retries failed payments on schedule:
+
+    - Smart retries over 2-3 weeks
+    - Varies by Stripe settings (customize in Stripe dashboard)
+
+    **Athlete notified**: Stripe sends email "Your payment failed, please update"
+  </Step>
+  <Step title="Subscription status changes">
+    After retries exhausted with no successful payment:
+
+    **Stripe status**: Changes from "Active" to "Incomplete" or "Past Due"
+
+    **CoachIQ impact**:
+
+    - Subscription becomes inactive in CoachIQ
+    - Credits become unusable (even if balance shows ∞ or number)
+    - Athlete CANNOT book using these credits
+    - Athlete CAN still log in, CAN still book using Master Credits or direct payment
+  </Step>
+  <Step title="Athlete sees error">
+    When trying to book with subscription credits:
+
+    **Message**: "Subscription inactive. Update payment method to continue."
+
+    Or similar error indicating payment issue
+
+    **Solution required**: Athlete must update payment method in Athlete Portal or Stripe
+  </Step>
+</Steps>
+
+**Coach actions when payment fails**:
+
+<AccordionGroup>
+  <Accordion title="Week 1: Automated reminder">
+    **Day 1-3 after failure**: Stripe sends automated payment failure email
+
+    **Your action**: None yet (let Stripe's retry system work)
+
+    **Monitoring**: Check Stripe dashboard for retry schedule
+  </Accordion>
+  <Accordion title="Week 2: Personal outreach">
+    **Day 7-10 after failure**: If still not resolved, send personal message
+
+    **Example message**:
+
+    ```
+    "Hey [Name], I noticed your membership payment didn't go through 
+    this month. Just wanted to reach out personally—your subscription 
+    is currently on hold. 
+    
+    You can update your payment method here: [link to Athlete Portal]
+    
+    Let me know if you need any help, or if you'd like to discuss 
+    your membership. I want to make sure you can keep training with us!"
+    ```
+
+    **Tone**: Helpful, not accusatory (athletes appreciate personal touch)
+  </Accordion>
+  <Accordion title="Week 3: Offer alternative">
+    **Day 14-21 after failure**: If still unresolved, offer options
+
+    **Example message**:
+
+    ```
+    "Hi [Name], I haven't heard back about your membership payment. 
+    I want to help you continue training! Here are some options:
+    
+    1. Update payment method: [link]
+    2. Switch to pay-per-session temporarily (no commitment)
+    3. Pause membership for 30 days (keeps your rate when you return)
+    4. Or if you need to cancel, I understand—just let me know
+    
+    What works best for you?"
+    ```
+
+    **Goal**: Understand if this is:
+
+    - Temporary issue (expired card) → Help resolve
+    - Financial hardship → Offer payment plan or pause
+    - Voluntary cancellation → Exit gracefully
+  </Accordion>
+  <Accordion title="Week 4: Final notice">
+    **Day 21-30 after failure**: Last attempt before cancellation
+
+    **Example message**:
+
+    ```
+    "[Name], your membership has been on hold for 3 weeks due to 
+    payment issue. I'll need to cancel the subscription by [date] 
+    if we can't resolve this.
+    
+    I'd hate to see you go! If you want to continue, please update 
+    your payment method ASAP: [link]
+    
+    Otherwise, let's connect to discuss next steps."
+    ```
+
+    **After 30 days**: Cancel subscription in Stripe (releases athlete from failed payment attempts)
+
+    **Document**: Note in athlete profile why subscription ended (involuntary churn due to payment failure)
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Voluntary cancellation (Athlete initiated)
+
+**What triggers it**: Athlete cancels subscription themselves
+
+**How athletes cancel**:
+
+1. Athlete Portal → Settings → Billing → Subscriptions → Cancel
+2. Or: Contact you requesting cancellation
+3. Or: Dispute charge with credit card company (worst case)
+
+**What happens**:
+
+<Tabs>
+  <Tab title="Immediate Cancellation">
+    **Stripe setting**: "Cancel immediately"
+
+    **Effect**:
+
+    - Subscription status: Changes to "Canceled" in Stripe
+    - Credits: Become unusable immediately
+    - Access: Lost immediately
+    - Refund: Partial month refund (if you offer—not required)
+
+    **Athlete experience**: "Your subscription has been cancelled. You no longer have access."
+
+    **Pros**: Clean break, no ongoing obligations
+
+    **Cons**: Athletes lose remaining paid days (may feel unfair), discourages cancellations (might dispute charge instead)
+
+    <Warning>
+      **Legal risk**: Some jurisdictions require pro-rated refunds if immediate cancellation. Consult attorney.
+    </Warning>
+  </Tab>
+  <Tab title="End-of-Period Cancellation (Recommended)">
+    **Stripe setting**: "Cancel at period end"
+
+    **Effect**:
+
+    - Subscription status: "Active (cancels [date])" in Stripe
+    - Credits: Remain usable until period ends
+    - Access: Maintained through paid period
+    - Refund: None (athlete received full month value)
+
+    **Example**:
+
+    - Athlete subscribed Jan 15 (monthly)
+    - Cancels Feb 3
+    - Status: Active until Feb 14 (original renewal date)
+    - Feb 15: Subscription becomes "Canceled," credits disappear
+
+    **Athlete experience**: "Your cancellation will take effect on [date]. You have access until then."
+
+    **Pros**: Fair to athlete (gets full paid period), reduces refund disputes, clean accounting
+
+    **Cons**: Athlete has several days/weeks to change mind and reactivate (good or bad depending on perspective)
+
+    <Check>
+      **Best practice**: End-of-period cancellation is industry standard and most fair to athletes.
+    </Check>
+  </Tab>
+</Tabs>
+
+**Coach response to cancellation**:
+
+<Steps>
+  <Step title="Acknowledge promptly">
+    Send confirmation within 24 hours:
+
+    ```
+    "Hi [Name], I've received your cancellation request. Your 
+    subscription will remain active through [end date], and you 
+    can continue training until then.
+    
+    I'm sorry to see you go! If you're open to it, I'd love to 
+    hear what led to this decision. Your feedback helps me improve.
+    
+    Thanks for training with me, and the door is always open if 
+    you want to return in the future!"
+    ```
+
+    **Tone**: Gracious, non-defensive, door open for return
+  </Step>
+  <Step title="Request feedback (optional survey)">
+    **Option 1: Simple question**
+
+    - "What was the main reason for canceling?" (open-ended)
+
+    **Option 2: Multiple choice**
+
+    - Financial reasons
+    - Moving/relocating
+    - Schedule doesn't fit anymore
+    - Not seeing results I wanted
+    - Prefer different training style
+    - Other (please specify)
+
+    **Use feedback**: Identify patterns, improve offerings
+  </Step>
+  <Step title="Offer win-back opportunity">
+    If cancellation reason is resolvable:
+
+    **Financial**: "Would a lower-tier membership work better for your budget?"
+
+    **Scheduling**: "We just added morning sessions—would those fit better?"
+
+    **Results**: "I'd love to discuss your goals—let's optimize your training plan"
+
+    **Don't pressure**: One offer, then respect decision
+  </Step>
+  <Step title="Document and tag">
+    **In athlete profile**:
+
+    - Tag: "Former Subscriber"
+    - Note: Cancellation date and reason
+    - Flag: "Win-back candidate" (if reason was resolvable)
+
+    **Use later**: Targeted re-engagement campaigns (e.g., "We miss you!" email 3 months later)
+  </Step>
+</Steps>
+
+---
+
+### Pausing subscriptions (If platform supports)
+
+**Use case**: Athlete needs temporary break (vacation, injury, season off)
+
+**Better than cancellation**: Preserves relationship, makes return easy
+
+**How pausing works** (if available):
+
+<Steps>
+  <Step title="Athlete or coach initiates pause">
+    **Athlete Portal**: Settings → Billing → Pause Subscription (if available)
+
+    **Or coach-initiated**: Payments → Subscriptions → [Athlete] → Pause
+
+    **Set duration**:
+
+    - Specific dates ("Pause from June 1 - Aug 31")
+    - Or indefinite ("Pause until I reactivate")
+  </Step>
+  <Step title="During pause period">
+    **Billing**: No charges processed while paused
+
+    **Credits**: Unusable during pause (but not lost forever)
+
+    **Athlete access**: May be limited (depends on platform)
+
+    **Stripe status**: "Paused" or "On Hold"
+  </Step>
+  <Step title="Reactivation">
+    **Automatic** (if end date set): Billing resumes on specified date
+
+    **Manual**: Athlete or coach clicks "Resume Subscription"
+
+    **Result**:
+
+    - Billing restarts
+    - Credits become active again
+    - Subscription continues as if never paused
+
+    <Tip>
+      **Pro tip**: Offer free 30-day pause as retention tool. "Don't cancel—pause for a month, then decide!"
+    </Tip>
+  </Step>
+</Steps>
+
+<Note>
+  **Platform limitation**: Not all systems support pausing. If unavailable, workaround:
+
+  1. Athlete cancels at period end
+  2. You offer manual reactivation at same rate when ready
+  3. Track paused athletes in spreadsheet/CRM
+</Note>
+
+---
+
+## Transitioning athletes from packages to subscriptions
+
+Converting one-time buyers to recurring subscribers.
+
+### When to offer subscription upgrade
+
+<AccordionGroup>
+  <Accordion title="After 3rd package purchase">
+    **Trigger**: Athlete has purchased 3× credit packages
+
+    **Why now**: Proven commitment, established routine
+
+    **Your approach**:
+
+    ```
+    "Hey [Name]! I noticed you've been consistently purchasing 
+    10-credit packages every month. Have you considered our Monthly 
+    Unlimited Membership?
+    
+    You're currently paying $450/month for 10 sessions. 
+    Our unlimited membership is $400/month for up to 16 sessions 
+    (4x/week max).
+    
+    You'd save $600/year AND get more flexibility. Want me to 
+    switch you over for next month?"
+    ```
+
+    **Value prop**: Save money + train more = obvious upgrade
+  </Accordion>
+  <Accordion title="When athlete hits 3x/week training">
+    **Trigger**: Athlete consistently books 3+ times per week
+
+    **Why now**: Usage pattern fits subscription model
+
+    **Your approach**:
+
+    ```
+    "[Name], you've been crushing it—training 3-4x/week consistently! 
+    That's exactly who our Monthly Membership is designed for.
+    
+    Right now you're buying packages and tracking credits. With a 
+    membership, you'd pay one fixed price ($400/month), never worry 
+    about running out of credits, and save about $50/month.
+    
+    It's basically autopilot for your training. Make sense to switch?"
+    ```
+
+    **Value prop**: Convenience + savings + aligned usage
+  </Accordion>
+  <Accordion title="When package credits run low">
+    **Trigger**: Athlete has 1-2 credits remaining
+
+    **Why now**: Decision point—they're about to buy again anyway
+
+    **Your approach**:
+
+    ```
+    "Quick heads up—you have 2 credits left! Instead of buying 
+    another package, have you thought about switching to a 
+    subscription?
+    
+    Benefits:
+    - Never run out of credits again (automatic renewal)
+    - Better value ($350/month for 12 sessions vs $450 for 10-pack)
+    - Cancel anytime (no long-term commitment)
+    
+    Want me to set it up for you?"
+    ```
+
+    **Value prop**: Timely offer when they're already thinking about purchasing
+  </Accordion>
+</AccordionGroup>
+
+### How to migrate athlete
+
+<Steps>
+  <Step title="Confirm athlete interest">
+    **Don't auto-switch**: Get explicit permission
+
+    **Ask**: "Are you good with me switching you to the monthly subscription starting [date]?"
+
+    **Clarify**:
+
+    - New price
+    - When first charge occurs
+    - What happens to remaining package credits
+    - Cancellation policy
+  </Step>
+  <Step title="Time the transition">
+    **Best timing**: When athlete's package credits are nearly depleted
+
+    **Example**:
+
+    - Athlete has 1 credit remaining
+    - Switch to subscription on Feb 1
+    - First subscription charge: Feb 1
+    - Remaining 1 package credit: Athlete keeps (use anytime)
+
+    **Avoid**: Switching mid-package (athlete loses value, feels bad)
+  </Step>
+  <Step title="Process subscription enrollment">
+    **Two methods**:
+
+    <Tabs>
+      <Tab title="Athlete self-enrolls">
+        **Steps**:
+
+        1. Send athlete link to subscription product purchase
+        2. Athlete enters payment details, subscribes
+        3. Stripe creates subscription, processes first payment
+        4. Credits appear in athlete profile automatically
+
+        **Pros**: Athlete controls payment method, clean Stripe history
+
+        **Cons**: Requires athlete action (might forget/delay)
+      </Tab>
+      <Tab title="Coach manually enrolls">
+        **Steps**:
+
+        1. Navigate to athlete profile → Products
+        2. Click "Add Product" or "Assign Subscription"
+        3. Select subscription product
+        4. Choose: Charge now OR add without charging (if transitioning)
+        5. Save
+
+        **Pros**: Immediate activation, you control timing
+
+        **Cons**: If charging, need athlete's payment method on file already
+
+        <Note>
+          **Payment method requirement**: To charge for subscription, athlete must have saved payment method in Stripe. If not, they'll need to add it first.
+        </Note>
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Confirm transition">
+    Send confirmation message:
+
+    ```
+    "You're all set! Your Monthly Unlimited Membership starts today.
+    
+    Here's what changed:
+    - You'll be charged $400/month starting today (monthly renewals)
+    - You have unlimited bookings (up to 4x/week)
+    - Your 1 remaining package credit is still available to use anytime
+    
+    Your next billing date: [Date]
+    
+    Questions? Let me know! And thanks for your continued commitment!"
+    ```
+
+    <Check>
+      **Transition complete!** Athlete is now a subscription member.
+    </Check>
+  </Step>
+</Steps>
+
+---
+
+## Optimizing subscription revenue
+
+Strategies to grow and retain subscription base.
+
+### Subscription pricing strategies
+
+<Tabs>
+  <Tab title="Anchor High, Discount Down">
+    **Structure**:
+
+    - List price: \$500/month "Unlimited Premium"
+    - Promotional rate: \$400/month "Introductory rate" (first 3 months)
+    - After promo: $450/month (not full $500)
+
+    **Psychology**: \$450 feels like continued discount even though promo ended
+
+    **Communication**: "Your intro rate ends [date], then $450/month (still $50 off regular price)"
+
+    **Result**: Lower churn at end of promo period (not going from $400 to $500)
+  </Tab>
+  <Tab title="Tiered Subscription Ladder">
+    **Structure**:
+
+    ```
+    Basic: $250/month (2x/week, group only)
+    Standard: $400/month (3x/week, all classes)
+    Premium: $600/month (5x/week, includes semi-private)
+    ```
+
+    **Pricing rule**: Each tier adds 1.5-1.75x value for 1.5-1.75x price
+
+    **Upsell path**:
+
+    - Start athletes on Basic
+    - After 3 months: "You're using it 3x/week now—Standard would give you more access for only \$150 more"
+
+    **Result**: Gradual revenue expansion per athlete
+  </Tab>
+  <Tab title="Annual Pre-Pay Discount">
+    **Structure**:
+
+    - Monthly: $400/month ($4,800/year)
+    - Annual pre-pay: $4,000/year (saves $800, 17% discount)
+
+    **Cash flow**: $4,000 upfront vs $400 monthly = better business cash flow
+
+    **Retention**: Annual subscribers have 0% churn during year (locked in)
+
+    **Offer to**: Long-term committed athletes (12+ months with you)
+
+    <Tip>
+      **Implementation**: Create separate annual subscription product, offer to stable subscribers 2x/year (January, September)
+    </Tip>
+  </Tab>
+  <Tab title="Freemium → Premium">
+    **Structure**:
+
+    - Free tier: Access to app, content, community (no live training)
+    - Paid subscription: \$400/month (adds live training bookings)
+
+    **Use case**: Large online communities, hybrid models
+
+    **Conversion**: Free users see value, upgrade for live access
+
+    **Example**:
+
+    ```
+    Free Membership:
+    - Access to video library
+    - Community forum
+    - Monthly group webinar
+    
+    Premium Membership ($300/month):
+    - Everything in Free
+    - 8 live training sessions/month
+    - 1:1 coaching check-ins
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+### Retention strategies
+
+<CardGroup cols={2}>
+  <Card title="Usage Monitoring" icon="chart-line">
+    **Track weekly**: Which subscribers used credits this week?
+
+    **Red flag**: Subscriber hasn't booked in 14+ days
+
+    **Action**: Proactive outreach
+
+    ```
+    "Hey [Name], I noticed you haven't booked lately—everything 
+    okay? Let me know if I can help with scheduling or anything else!"
+    ```
+
+    **Goal**: Catch voluntary churn before it happens
+  </Card>
+  <Card title="Engagement Campaigns" icon="comments">
+    **Monthly**: Send member-exclusive content/perks
+
+    **Examples**:
+
+    - Members-only training tips newsletter
+    - Early access to new programs
+    - Free nutrition guide download
+    - Member spotlight features
+
+    **Goal**: Increase perceived value beyond just credits
+  </Card>
+  <Card title="Milestone Celebrations" icon="trophy">
+    **Auto-trigger**: When athlete hits milestones
+
+    **Examples**:
+
+    - 3-month anniversary: "Happy 3 months! You've completed 36 sessions!"
+    - 1-year anniversary: "One year of training! Gift: 2 free guest passes"
+    - 100th session: "100 sessions! You're incredible—here's a free private session"
+
+    **Goal**: Emotional connection + perceived extra value
+  </Card>
+  <Card title="Save Offers" icon="life-ring">
+    **When**: Athlete cancels subscription
+
+    **Offer**: One-time attempt to retain
+
+    **Examples**:
+
+    - "Stay for 50% off next month"
+    - "Switch to Basic tier (cheaper)"
+    - "Pause for 30 days instead of cancel"
+
+    **Success rate**: 15-25% of cancellations can be saved with right offer
+
+    <Warning>
+      **One attempt only**: Don't chase excessively or offer deepening discounts (devalues membership)
+    </Warning>
+  </Card>
+</CardGroup>
+
+---
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can athlete have multiple subscriptions at once?">
+    **Short answer**: Technically yes, but generally not recommended
+
+    **How it works**:
+
+    - Athlete purchases "Basic Subscription" (\$250/month)
+    - Later purchases "Premium Subscription" (\$600/month)
+    - Now paying \$850/month total for both
+
+    **Platform behavior**: Athlete has 2 separate credit tabs, 2 separate subscriptions in Stripe
+
+    **Why avoid**:
+
+    - Confusing for athlete (which credits to use?)
+    - Double billing (athlete likely didn't intend this)
+    - Billing management nightmare
+
+    **Better solution**:
+
+    1. Cancel old subscription
+    2. Switch to new subscription
+    3. Single active subscription at a time
+
+    **Exception**: Athlete wants base subscription + add-on
+
+    - "Unlimited Classes" ($400/month) + "Private Session Add-On" ($150/month for 2 private sessions)
+    - This is intentional stacking, clearly communicated
+  </Accordion>
+  <Accordion title="What if athlete wants to downgrade subscription?">
+    **Scenario**: Athlete on Premium ($600/month) wants to switch to Basic ($250/month)
+
+    **Process**:
+
+    1. **Athlete requests downgrade**: Via message, email, or portal
+    2. **Confirm timing**:
+       - Immediate: Lose premium benefits immediately, get partial refund (if you offer)
+       - End of period: Keep premium through paid period, then downgrade
+    3. **Cancel current subscription**: In Stripe, cancel Premium subscription
+    4. **Enroll in new tier**: Add Basic subscription to athlete profile
+    5. **Process pricing difference** (if mid-period):
+       - Pro-rate: Refund unused portion of Premium, charge for Basic
+       - Or: Wait until current Premium period ends, then start Basic
+
+    **Communication**:
+
+    ```
+    "I've switched you to the Basic Membership starting [date]. 
+    You'll be charged $250/month going forward (saves you $350/month!).
+    
+    Your access will change to Basic tier features as of [date].
+    
+    You can always upgrade back to Premium anytime!"
+    ```
+
+    <Tip>
+      **Make it easy**: Frictionless downgrades = lower churn. Athlete who downgrades is still a paying subscriber (vs full cancellation).
+    </Tip>
+  </Accordion>
+  <Accordion title="How do I give subscriber a bonus credit/session?">
+    **Scenario**: Subscriber has unlimited (∞) credits but you want to give them "extra" (e.g., bring a friend)
+
+    **Options**:
+
+    **Option 1: Guest pass system**
+
+    - Create \$0 product: "Guest Pass" (issues 1 Master Credit)
+    - Assign to subscriber
+    - They can gift/share that credit
+
+    **Option 2: Manual master credit grant**
+
+    - Add 1-2 Master Credits to athlete profile
+    - Communicate: "I've added 2 guest credits—bring friends!"
+
+    **Option 3: Separate guest product**
+
+    - Create \$0 "Guest Session" product (not a credit)
+    - Track separately from main subscription
+
+    **Why needed**: ∞ doesn't "add more"—it's already unlimited. Master Credits provide the extra/bonus mechanism.
+  </Accordion>
+  <Accordion title="Should I offer refunds on subscriptions?">
+    **Legal landscape**: Varies by jurisdiction
+
+    **General guidelines**:
+
+    **Pro-rated refunds**:
+
+    - Not typically required if athlete has access through paid period
+    - Example: Athlete pays \$400 for February, cancels Feb 10, has access through Feb 28 = no refund owed
+
+    **When refunds make sense**:
+
+    - Service issue (your fault): Full refund appropriate
+    - Payment processing error: Issue refund + fix
+    - Athlete charged accidentally (didn't mean to subscribe): Refund within 24-48 hours
+
+    **When refunds DON'T make sense**:
+
+    - Athlete simply changed mind after using service
+    - "I didn't train this month" (athlete's choice, not your fault)
+    - Buyer's remorse after 7+ days
+
+    **Your refund policy** (example):
+
+    ```
+    "Subscription refunds available within 48 hours of first charge 
+    if no credits used. After 48 hours or if credits used, no 
+    refunds—cancel anytime to stop future charges."
+    ```
+
+    <Warning>
+      **Document clearly**: Refund policy must be visible at purchase, in terms of service, and in confirmation email.
+    </Warning>
+  </Accordion>
+  <Accordion title="Can I change subscription price for existing subscribers?">
+    **Short answer**: Yes, but handle carefully
+
+    **Process**:
+
+    **1. Grandfather vs Universal Change**:
+
+    - **Grandfather**: Keep existing subscribers at old price, new subscribers pay new price
+    - **Universal**: All subscribers pay new price after X date
+
+    **2. Communicate in advance** (30-60 days notice):
+
+    ```
+    "Heads up: Starting March 1, the Monthly Unlimited Membership 
+    will increase from $400 to $450/month due to rising costs.
+    
+    As a current member, you have 2 options:
+    1. Lock in current $400 rate by switching to annual pre-pay ($4,800/year)
+    2. Continue monthly at new $450 rate starting March 1
+    
+    You're a valued member—I wanted to give you advance notice and options. 
+    Questions? Reply anytime!"
+    ```
+
+    **3. Update Stripe**:
+
+    - Stripe → Products → [Subscription] → Edit pricing
+    - Set effective date for new price
+    - Existing subscriptions: Update via Stripe dashboard
+
+    **Best practice**: Grandfather existing subscribers for 6-12 months (goodwill gesture), then migrate all to new price
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## What's next
+
+You've now completed the full credits section! Explore related features:
+
+<CardGroup cols={2}>
+  <Card title="Managing Athlete Credits" icon="hand-holding-usd" href="/scheduling/managing-athlete-credits">
+    **Article #25**: View balances, grant credits, read logs, handle athlete requests
+  </Card>
+  <Card title="Credit Usage Limits" icon="shield-alt" href="/scheduling/credit-usage-limits">
+    **Article #26**: Set restrictions, daily/weekly limits, multi-credit sessions
+  </Card>
+  <Card title="Setting Up Credit Packages" icon="box" href="/scheduling/setting-up-credit-packages">
+    **Article #24**: Create credit-issuing products and configure schedulers
+  </Card>
+  <Card title="Credit System Explained" icon="info-circle" href="/scheduling/credit-system-explained">
+    **Article #23**: Understand core credit concepts and business benefits
+  </Card>
+</CardGroup>
+
+---
+
+## Related articles
+
+<CardGroup cols={3}>
+  <Card title="Products Overview" icon="shopping-cart" href="/payments/products-overview">
+    Complete guide to CoachIQ products system
+  </Card>
+  <Card title="Stripe Setup" icon="stripe" href="/payments/stripe-setup">
+    Connect Stripe for payment processing
+  </Card>
+  <Card title="Pricing Strategy" icon="tag" href="/business/pricing-strategy">
+    Strategic pricing for coaching services
+  </Card>
+  <Card title="Manual Booking" icon="user-plus" href="/scheduling/manually-booking-athletes">
+    Book athletes using subscription credits
+  </Card>
+  <Card title="Scheduler Payment Options" icon="credit-card" href="/scheduling/scheduler-payment-options">
+    Configure subscription-compatible schedulers
+  </Card>
+  <Card title="Automations" icon="bolt" href="/tools/automations-overview">
+    Automate subscription workflows
+  </Card>
+</CardGroup>
+
+---
+
+<Check>
+  **You now know how to**: Create subscription products, configure unlimited (∞) credits, set up recurring billing, understand renewal behavior, manage subscription lifecycles, transition athletes from packages to subscriptions, optimize subscription revenue, and build a predictable recurring revenue business model.
+</Check>
+
+<Info>
+  **Need help designing your subscription model?** Our support team can review your business goals and help structure the right subscription offerings. [Contact Support](https://support.coachiq.com)
+</Info>
