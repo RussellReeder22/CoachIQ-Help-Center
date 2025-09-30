@@ -7,17 +7,20 @@
   },
   "favicon": "/logo/CoachIQlogo.svg",
   "colors": {
-    "primary": "#D4A017",
-    "light": "#E6B422",
+    "primary": "#0D6A01",
+    "light": "#E68422",
     "dark": "#C19511",
     "background": {
       "dark": "#1A1A1A",
       "light": "#FFFFFF"
     },
     "anchors": {
-      "from": "#D4A017",
-      "to": "#E6B422"
+      "from": "#0D6A01",
+      "to": "#E68422"
     }
+  },
+  "topbar": {
+    "style": "default"
   },
   "topbarLinks": [
     {
@@ -33,7 +36,7 @@
   "tabs": [
     {
       "name": "Help Center",
-      "url": "/"
+      "url": "help-center"
     },
     {
       "name": "Power-Ups",
@@ -48,7 +51,35 @@
       "url": "flows"
     }
   ],
+  "anchors": [
+    {
+      "name": "Help Center",
+      "icon": "book-open",
+      "url": "help-center"
+    },
+    {
+      "name": "Power-Ups",
+      "icon": "bolt",
+      "url": "power-ups"
+    },
+    {
+      "name": "Troubleshooting",
+      "icon": "wrench",
+      "url": "troubleshooting"
+    },
+    {
+      "name": "Flows",
+      "icon": "workflow",
+      "url": "flows"
+    }
+  ],
   "navigation": [
+    {
+      "group": "Welcome",
+      "pages": [
+        "introduction"
+      ]
+    },
     {
       "group": "Getting Started",
       "pages": [
@@ -56,8 +87,8 @@
         {
           "group": "Initial Setup Checklist",
           "pages": [
-            "getting-started/initial-setup-checklist/connect-stripe-account",
             "getting-started/initial-setup-checklist/configure-your-athlete-app",
+            "getting-started/initial-setup-checklist/connect-stripe-account",
             "getting-started/initial-setup-checklist/create-your-first-product",
             "getting-started/initial-setup-checklist/set-up-your-scheduler",
             "getting-started/initial-setup-checklist/website-launch-and-basics"
@@ -66,135 +97,217 @@
       ]
     },
     {
-      "group": "Website & Apps",
+      "group": "Scheduling",
       "pages": [
-        "website/overview",
+        "scheduling/overview",
+        "scheduling/quick-setup",
         {
-          "group": "Pages & Navigation",
+          "group": "Getting Started with Scheduling",
           "pages": [
-            "website/pages-navigation/legal-pages",
-            "website/pages-navigation/page-templates",
-            "website/pages-navigation/url-slugs-page-management"
+            "scheduling/what-are-schedulers",
+            "scheduling/creating-your-first-scheduler",
+            "scheduling/book-your-first-session",
+            "scheduling/understanding-booking-types"
           ]
         },
         {
-          "group": "Sections",
+          "group": "Calendar & Availability",
           "pages": [
-            "website/sections",
-            "website/sections/backgrounds-styling",
-            "website/sections/buttons-ctas",
-            "website/sections/working-with-sections"
+            "scheduling/calendar-overview-and-navigation",
+            "scheduling/create-your-availability",
+            "scheduling/how-availability-works",
+            "scheduling/managing-availability-for-multiple-coaches",
+            "scheduling/setting-black-out-dates"
           ]
         },
         {
-          "group": "Section Types",
+          "group": "Booking Management",
           "pages": [
-            "website/section-types/content-media",
-            "website/section-types/credibility-logos",
-            "website/section-types/faq",
-            "website/section-types/forms",
-            "website/section-types/gallery",
-            "website/section-types/hero-banner",
-            "website/section-types/numbered-steps",
-            "website/section-types/pricing",
-            "website/section-types/scheduling",
-            "website/section-types/testimonials"
+            "scheduling/manually-booking-athletes",
+            "scheduling/recurring-bookings",
+            "scheduling/canceling-bookings",
+            "scheduling/sharing-schedulers"
           ]
         },
         {
-          "group": "Domain Setup",
+          "group": "Credits & Memberships",
           "pages": [
-            "website/domain-setup/connecting-godaddy",
-            "website/domain-setup/connecting-squarespace",
-            "website/domain-setup/connecting-wix",
-            "website/domain-setup/dns-permissions",
-            "website/domain-setup/purchasing-domain"
+            "scheduling/credit-system-overview",
+            "scheduling/credit-based-scheduling",
+            "scheduling/managing-athlete-credits",
+            "scheduling/credit-usage-limits-restrictions",
+            "scheduling/recurring-credit-memberships"
           ]
         },
         {
-          "group": "Analytics & Tracking",
+          "group": "Advanced Settings",
           "pages": [
-            "website/analytics-tracking/clarity-microsoft",
-            "website/analytics-tracking/facebook-pixel",
-            "website/analytics-tracking/google-analytics"
+            "scheduling/advanced-scheduler-settings",
+            "scheduling/scheduler-settings-limits-and-permissions",
+            "scheduling/setting-up-payment-options"
           ]
-        },
-        {
-          "group": "SEO & Marketing",
-          "pages": [
-            "website/seo-marketing/apple-maps",
-            "website/seo-marketing/google-my-business",
-            "website/seo-marketing/keyword-strategy"
-          ]
-        },
-        "athlete-portal"
+        }
       ]
     },
     {
-      "group": "Communication",
+      "group": "Inbox & Communication",
       "pages": [
-        "inbox"
+        "inbox/inbox-overview",
+        "inbox/in-app-messages",
+        "inbox/sms-messages",
+        "inbox/announcements",
+        "inbox/attaching-forms-schedulers-and-products",
+        "inbox/using-tags-for-group-messages"
       ]
     },
     {
-      "group": "Sessions & Scheduling",
+      "group": "People & Client Management",
       "pages": [
-        "scheduling"
+        "people/index"
       ]
     },
     {
       "group": "Payments",
       "pages": [
-        "payments"
+        "payments/index"
       ]
     },
     {
-      "group": "People & Clients",
+      "group": "Athlete Portal",
       "pages": [
-        "people"
+        "athlete-portal/understanding-your-athlete-portal",
+        "athlete-portal/app-builder-navigation-and-interface",
+        "athlete-portal/design-settings",
+        "athlete-portal/content",
+        "athlete-portal/schedule",
+        "athlete-portal/products",
+        "athlete-portal/channels",
+        "athlete-portal/paywall-settings"
       ]
     },
     {
-      "group": "Content & Programs",
+      "group": "Website",
       "pages": [
-        "content"
+        "website/overview",
+        "website/settings-and-design",
+        {
+          "group": "Domain Setup",
+          "pages": [
+            "website/domain-setup/domain-setup",
+            "website/domain-setup/purchasing-domain",
+            "website/domain-setup/dns-permissions",
+            "website/domain-setup/connecting-godaddy",
+            "website/domain-setup/connecting-namecheap",
+            "website/domain-setup/connecting-squarespace",
+            "website/domain-setup/connecting-wix"
+          ]
+        },
+        {
+          "group": "Pages & Navigation",
+          "pages": [
+            "website/pages-navigation/pages-navigation",
+            "website/pages-navigation/page-templates",
+            "website/pages-navigation/url-slugs-page-management",
+            "website/pages-navigation/legal-pages"
+          ]
+        },
+        {
+          "group": "Sections",
+          "pages": [
+            "website/sections/sections",
+            "website/sections/working-with-sections",
+            "website/sections/backgrounds-styling",
+            "website/sections/buttons-ctas",
+            "website/sections/custom-font-setup",
+            "website/sections/troubleshooting-text-display"
+          ]
+        },
+        {
+          "group": "Section Types",
+          "pages": [
+            "website/section-types/section-types",
+            "website/section-types/hero-banner",
+            "website/section-types/content-media",
+            "website/section-types/forms",
+            "website/section-types/gallery",
+            "website/section-types/pricing",
+            "website/section-types/scheduling",
+            "website/section-types/testimonials",
+            "website/section-types/credibility-logos",
+            "website/section-types/faq",
+            "website/section-types/numbered-steps"
+          ]
+        },
+        {
+          "group": "Analytics & Tracking",
+          "pages": [
+            "website/analytics-tracking/analytics-tracking",
+            "website/analytics-tracking/google-analytics",
+            "website/analytics-tracking/facebook-pixel",
+            "website/analytics-tracking/clarity-microsoft"
+          ]
+        },
+        {
+          "group": "SEO & Marketing",
+          "pages": [
+            "website/seo-marketing/seo-marketing",
+            "website/seo-marketing/website-seo-basics",
+            "website/seo-marketing/google-my-business",
+            "website/seo-marketing/additional-business-listings"
+          ]
+        }
       ]
     },
     {
-      "group": "Tools & Automation",
+      "group": "Settings",
       "pages": [
-        "tools"
+        "settings/index"
       ]
     },
     {
-      "group": "Settings & Configuration",
+      "group": "Content",
       "pages": [
-        "settings"
+        "content/index"
+      ]
+    },
+    {
+      "group": "Power-Ups",
+      "pages": [
+        "power-ups/index"
+      ]
+    },
+    {
+      "group": "Tools",
+      "pages": [
+        "tools/index"
       ]
     }
   ],
   "footerSocials": {
+    "website": "https://coachiq.com",
     "x": "https://x.com/coachiq",
-    "instagram": "https://instagram.com/coachiq",
-    "linkedin": "https://linkedin.com/company/coachiq",
-    "youtube": "https://youtube.com/@coachiq"
+    "linkedin": "https://www.linkedin.com/company/coachiq"
   },
   "feedback": {
     "thumbsRating": true,
     "suggestEdit": true,
-    "raiseIssue": false
+    "raiseIssue": true
   },
   "search": {
-    "prompt": "Search CoachIQ Help..."
+    "prompt": "Search CoachIQ help docs..."
   },
-  "modeToggle": {
-    "default": "light",
-    "isHidden": false
+  "analytics": {
+    "ga4": {
+      "measurementId": "G-XXXXXXXXXX"
+    }
   },
-  "metadata": {
-    "og:title": "CoachIQ Help Center",
-    "og:description": "Everything you need to run and grow your sports coaching business",
-    "og:image": "/images/og-image.png",
-    "twitter:card": "summary_large_image"
+  "seo": {
+    "indexHiddenPages": false
+  },
+  "api": {
+    "baseUrl": "https://api.coachiq.io",
+    "auth": {
+      "method": "bearer"
+    }
   }
 }
