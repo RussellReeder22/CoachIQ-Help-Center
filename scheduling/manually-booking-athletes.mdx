@@ -4,3 +4,502 @@ description: "Step-by-step guide to using the Booking Builder for direct athlete
 sidebarTitle: "Manual Booking"
 icon: "user-plus"
 ---
+
+## What you'll accomplish
+
+Learn how to book athletes directly into sessions using CoachIQ's Booking Builder—perfect for VIP clients, makeup sessions, and special scheduling situations that require your direct involvement.
+
+<Info>
+  **Where to find this**: Schedule → Calendar → "Book Session" button, or direct URL: `/schedule/booking/builder/new`
+</Info>
+
+---
+
+## When to use manual booking
+
+Manual booking is your tool for handling scheduling situations that don't fit the standard athlete self-booking flow:
+
+<CardGroup cols={2}>
+  <Card title="VIP & High-Touch Clients" icon="star">
+    Private clients who prefer you handle their scheduling rather than booking themselves
+  </Card>
+  <Card title="Makeup Sessions" icon="redo">
+    Rescheduling after cancellations, no-shows, or special circumstances requiring accommodation
+  </Card>
+  <Card title="Special Requests" icon="calendar-plus">
+    Booking outside your normal availability for one-off exceptions or emergency sessions
+  </Card>
+  <Card title="Walk-Ins & Phone Calls" icon="phone">
+    Athletes who contact you directly instead of using the booking page
+  </Card>
+  <Card title="Complimentary Sessions" icon="gift">
+    Free or comp sessions for referrals, trials, or special promotions
+  </Card>
+  <Card title="Administrative Corrections" icon="tools">
+    Fixing booking errors or handling technical issues on athlete's behalf
+  </Card>
+</CardGroup>
+
+<Tip>
+  **Remember**: Manual booking uses the same payment/credit logic as athlete self-booking. The only difference is who initiates the process.
+</Tip>
+
+---
+
+## Opening the Booking Builder
+
+There are three ways to access the manual booking interface:
+
+<Tabs>
+  <Tab title="From Calendar">
+    **Best for**: Booking at a specific time you can see on calendar
+
+    1. Go to **Schedule → Calendar**
+    2. Click the **"Book Session"** button (top right)
+    3. Booking Builder opens
+
+    This is the most common entry point for manual booking.
+  </Tab>
+  <Tab title="From Schedulers Page">
+    **Best for**: Booking into a specific scheduler
+
+    1. Go to **Schedule → Schedulers**
+    2. Find the scheduler you want to use
+    3. Click the three-dot menu (⋮) next to the scheduler
+    4. Select **"Manually Book an Athlete"**
+    5. Booking Builder opens with that scheduler pre-selected
+
+    Saves a step if you know which scheduler you need.
+  </Tab>
+  <Tab title='From "Create" Modal'>
+    **Best for**: Quick access from schedulers dashboard
+
+    1. Go to **Schedule → Schedulers**
+    2. Click the **"Create"** button (top right)
+    3. Select **"Manually Book an Athlete"**
+    4. Booking Builder opens
+
+    <Frame>
+      ![Create modal showing manual booking option](/images/create-modal-manual-booking.png)
+    </Frame>
+  </Tab>
+</Tabs>
+
+---
+
+## Step-by-step: Creating a manual booking
+
+The Booking Builder has four main sections you'll complete in order:
+
+<Steps>
+  <Step title="Select the athlete (Client)">
+    Search for and select the athlete you're booking for.
+
+    **How to find athletes**:
+
+    - **Search by name**: Start typing athlete's name
+    - **Search by email**: Type their email address
+    - **Filter by tags**: Click filter icon and select tags
+    - **Filter by role**: Filter by Admin, User, Customer, or "Downloaded App"
+
+    <Frame>
+      ![Client search interface in Booking Builder](/images/booking-builder-client-search.png)
+    </Frame>
+    **What you'll see**:
+
+    - Athlete name
+    - Email address
+    - Associated tags
+    - Profile picture (if set)
+
+    **Select the athlete** by clicking on their name.
+
+    <Note>
+      Can't find the athlete? They may not be in your system yet. Go to **People → Clients → Add Client** to create their profile first.
+    </Note>
+  </Step>
+  <Step title="Choose the scheduler">
+    Select which type of session you're booking.
+
+    The dropdown shows all your active schedulers with:
+
+    - Scheduler name
+    - Duration (e.g., "60 min")
+    - Pricing (e.g., "\$75.00" or "1 Credit")
+
+    <Frame>
+      ![Scheduler selection dropdown](/images/booking-builder-scheduler-select.png)
+    </Frame>
+    **Two important checkboxes appear after selecting a scheduler**:
+
+    ### Allow custom date selection
+
+    <Accordion title="What this does">
+      When **checked**: You can book the athlete at ANY date/time, even outside your normal availability.
+
+      When **unchecked**: You can only book within your published availability windows.
+
+      **Use case**:
+
+      - Checked → Special accommodation outside normal hours
+      - Unchecked → Standard booking within your schedule
+    </Accordion>
+    ### Redeem credits
+
+    <Accordion title="What this does">
+      When **checked**: Booking will consume athlete's credits (if scheduler is credit-based).
+
+      When **unchecked**: Booking won't consume credits—useful for comp sessions or when you want to manually handle credit deduction later.
+
+      **Important**: Only appears if the selected scheduler accepts credits.
+
+      **Default**: Usually checked (credits will be consumed as normal).
+    </Accordion>
+    <Warning>
+      **Credit availability**: If athlete doesn't have enough credits and "Redeem credits" is checked, the booking will fail. Either uncheck the box (comp session) or add credits to athlete's account first.
+    </Warning>
+  </Step>
+  <Step title="Select date and time">
+    Choose when this session will occur.
+
+    **What you'll see depends on the checkboxes**:
+
+    <Tabs>
+      <Tab title="Booking Within Availability">
+        **When "Allow custom date selection" is unchecked**:
+
+        - Calendar shows only available dates (dates with open slots appear clickable)
+        - Select a date
+        - Choose from available time slots
+        - Duration options: 15 min, 30 min, 60 min, or custom
+
+        This ensures you're booking within your normal schedule and availability rules.
+
+        <Frame>
+          ![Standard availability calendar view](/images/booking-builder-standard-availability.png)
+        </Frame>
+      </Tab>
+      <Tab title="Booking Outside Availability">
+        **When "Allow custom date selection" is checked**:
+
+        - Calendar shows ALL dates (not just available ones)
+        - Select any date
+        - Manually enter ANY time (not restricted to availability windows)
+        - Set custom duration
+
+        **Use case example**: Athlete needs Tuesday 2pm session, but you're normally only available Monday/Wednesday. Check the box, select Tuesday, enter 2:00 PM.
+
+        <Warning>
+          **Conflict risk**: Booking outside availability bypasses all scheduling rules. Check your calendar to ensure you're not double-booking yourself.
+        </Warning>
+        <Frame>
+          ![Custom date selection interface](/images/booking-builder-custom-date.png)
+        </Frame>
+      </Tab>
+    </Tabs>
+    **Duration presets**:
+
+    - Click **15**, **30**, or **60** for quick duration selection
+    - Or set **custom duration** for non-standard session lengths
+
+    <Tip>
+      **Pro tip**: If booking a makeup session, match the duration to the original session they missed.
+    </Tip>
+  </Step>
+  <Step title="Review and create booking">
+    Before finalizing, review all details:
+
+    **Booking summary shows**:
+
+    - Athlete name
+    - Scheduler name
+    - Date and time
+    - Duration
+    - Credit consumption status (if applicable)
+    - Any warnings or conflicts
+
+    <Frame>
+      ![Booking review summary](/images/booking-builder-review.png)
+    </Frame>
+    **If everything looks correct**, click **"Create"** or **"Book Session"**.
+
+    <Check>
+      **Success!** The booking is created instantly. Both you and the athlete receive confirmation notifications.
+    </Check>
+  </Step>
+</Steps>
+
+---
+
+## What happens after booking
+
+### Immediate actions
+
+1. **Calendar updated**: Booking appears on your calendar immediately
+2. **Athlete notification**: Athlete receives confirmation via:
+   - In-app notification
+   - Email (if enabled)
+   - SMS (if reminder settings configured)
+3. **Credit deduction**: If "Redeem credits" was checked, credits are deducted from athlete's balance
+4. **Availability blocked**: That time slot is now unavailable for other bookings (unless double-booking is enabled)
+
+### Athlete receives
+
+The athlete gets a booking confirmation that includes:
+
+- Session date and time
+- Session type (scheduler name)
+- Duration
+- Location (if set on scheduler)
+- Your contact information
+- Cancellation policy (if applicable)
+- "Add to Calendar" option
+
+<Note>
+  The notification looks identical to a self-booked session—athletes can't tell if you booked them manually vs. they booked themselves.
+</Note>
+
+---
+
+## Using Copilot for faster booking
+
+CoachIQ Copilot can speed up the booking process by interpreting natural language:
+
+<Steps>
+  <Step title="Access Copilot">
+    In the Booking Builder, look for the **"CoachIQ Copilot"** panel on the right side.
+
+    <Frame>
+      ![Copilot panel in Booking Builder](/images/copilot-booking-panel.png)
+    </Frame>
+  </Step>
+  <Step title="Describe the booking">
+    Type a natural language description:
+
+    **Examples**:
+
+    - "Every Tuesday at 5pm"
+    - "Next Monday at 3pm"
+    - "Fridays at 10am for 4 weeks"
+
+    <Note>
+      Copilot works best for recurring patterns, but can also handle single bookings.
+    </Note>
+  </Step>
+  <Step title="Generate and review">
+    Click **"Generate Availability"** and Copilot will:
+
+    - Interpret your description
+    - Auto-fill date/time fields
+    - Suggest booking pattern
+
+    Review the auto-filled fields to ensure accuracy, then proceed with booking.
+  </Step>
+</Steps>
+
+<Tip>
+  **Copilot tip**: Be specific with times. "5pm" is better than "evening." "Next Tuesday" is better than "soon."
+</Tip>
+
+---
+
+## Common manual booking scenarios
+
+<AccordionGroup>
+  <Accordion title="Makeup session after athlete cancels">
+    **Situation**: Athlete canceled last-minute due to illness. You want to give them a free makeup session.
+
+    **Process**:
+
+    1. Open Booking Builder
+    2. Select athlete
+    3. Choose same scheduler as original session
+    4. **Uncheck "Redeem credits"** (so they're not charged twice)
+    5. Select new date/time
+    6. Create booking
+
+    **Result**: Athlete gets makeup session without double credit deduction.
+  </Accordion>
+  <Accordion title="VIP client who wants you to schedule">
+    **Situation**: High-value client prefers you schedule their weekly sessions rather than them self-booking.
+
+    **Process**:
+
+    1. Open Booking Builder
+    2. Select VIP athlete
+    3. Choose their preferred scheduler
+    4. Leave "Redeem credits" **checked** (normal credit consumption)
+    5. Select their preferred day/time
+    6. Create booking
+
+    **Pro tip**: For weekly standing appointments, use recurring booking instead (covered in Article #19).
+  </Accordion>
+  <Accordion title="Walk-in or phone booking">
+    **Situation**: Athlete calls asking if you have availability today at 4pm.
+
+    **Process**:
+
+    1. Check calendar for conflicts at 4pm
+    2. If available, open Booking Builder
+    3. Search for athlete by phone number or email
+    4. Select appropriate scheduler
+    5. Choose today's date, 4pm time
+    6. Create booking
+
+    **Result**: Instant booking, athlete gets confirmation notification before they hang up.
+  </Accordion>
+  <Accordion title="Special request outside normal hours">
+    **Situation**: Regular athlete needs session Tuesday 7am, but you're normally only available 9am-5pm.
+
+    **Process**:
+
+    1. Open Booking Builder
+    2. Select athlete
+    3. Choose scheduler
+    4. **Check "Allow custom date selection"**
+    5. Select Tuesday, manually enter 7:00 AM
+    6. Verify no conflicts on calendar
+    7. Create booking
+
+    **Result**: One-time exception without changing your normal availability for all athletes.
+  </Accordion>
+  <Accordion title="Complimentary or free session">
+    **Situation**: You want to give new athlete a free trial session, but your scheduler normally charges 1 credit.
+
+    **Process**:
+
+    1. Open Booking Builder
+    2. Select athlete
+    3. Choose the credit-based scheduler
+    4. **Uncheck "Redeem credits"**
+    5. Select date/time
+    6. Create booking
+
+    **Result**: Athlete gets booked but doesn't lose any credits. Session appears as normal booking on calendar.
+  </Accordion>
+  <Accordion title="Fixing athlete's booking error">
+    **Situation**: Athlete accidentally booked wrong scheduler. You need to correct it.
+
+    **Process**:
+
+    1. Cancel the incorrect booking (Article #21)
+    2. Open Booking Builder
+    3. Select athlete
+    4. Choose correct scheduler
+    5. **Check "Redeem credits"** if the original booking refunded credits
+    6. Book at the same or corrected time
+    7. Communicate the fix to athlete
+
+    **Result**: Athlete is now in correct session type without credit loss.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting manual booking issues
+
+<AccordionGroup>
+  <Accordion title="Booking button greyed out or won't save">
+    **Possible causes**:
+
+    - Missing required field (client, scheduler, or date/time)
+    - Athlete doesn't have sufficient credits (if "Redeem credits" checked)
+    - Selected time conflicts with another booking (if double-booking disabled)
+    - Selected scheduler is inactive
+
+    **How to fix**:
+
+    1. Verify all fields are completed
+    2. Check athlete's credit balance (People → Client profile)
+    3. Verify no calendar conflicts at selected time
+    4. Confirm scheduler is Active status
+    5. Try unchecking "Redeem credits" to isolate credit issue
+  </Accordion>
+  <Accordion title="Athlete says they didn't receive confirmation">
+    **Possible causes**:
+
+    - Athlete's notification settings disabled
+    - Email in spam folder
+    - Incorrect contact information in athlete profile
+    - System notification delay
+
+    **How to fix**:
+
+    1. Verify booking appears on YOUR calendar
+    2. Check athlete's profile has correct email/phone
+    3. Ask athlete to check spam/junk folder
+    4. Manually send them confirmation (screenshot or message)
+    5. Have athlete check notification settings in their account
+  </Accordion>
+  <Accordion title="Credits weren't deducted when they should have been">
+    **Possible causes**:
+
+    - "Redeem credits" checkbox was unchecked
+    - Athlete credit balance wasn't refreshed after booking
+
+    **How to fix**:
+
+    1. Check booking details to verify credit redemption setting
+    2. View athlete's credit transaction history
+    3. If credits weren't deducted but should have been:
+       - Go to athlete's profile
+       - Manually deduct appropriate credits
+       - Add note explaining the manual adjustment
+  </Accordion>
+  <Accordion title="Can't find athlete in search">
+    **Possible causes**:
+
+    - Athlete hasn't been added to system yet
+    - Typing name/email incorrectly
+    - Athlete account is deactivated
+
+    **How to fix**:
+
+    1. Try searching by email instead of name
+    2. Go to **People → Clients** and search there
+    3. If athlete doesn't exist: **Add Client** to create their profile first
+    4. If athlete exists but still not showing: Clear search and try again
+    5. Check if athlete has "Customer" role assigned
+  </Accordion>
+  <Accordion title="Booked outside availability but shouldn't have">
+    **Situation**: Accidentally checked "Allow custom date selection" and created booking at impossible time.
+
+    **How to fix**:
+
+    1. Delete the incorrect booking
+    2. Create new booking WITHOUT "Allow custom date selection" checked
+    3. Notify athlete of time change
+    4. Double-check calendar for actual availability
+
+    **Prevention**: Only check "Allow custom date selection" when intentionally making an exception.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Manual booking best practices
+
+<CardGroup cols={2}>
+  <Card title="Verify Before Booking" icon="check-circle">
+    Always check your calendar for conflicts before manually booking, especially when using custom date selection. Double-booking yourself causes major problems.
+  </Card>
+  <Card title="Communicate Clearly" icon="comments">
+    If manually booking for someone else, confirm the date/time with them before creating the booking. Prevents confusion and reschedules.
+  </Card>
+  <Card title="Document Special Cases" icon="file-alt">
+    For comp sessions or exceptions, add a note in the booking details or athlete profile explaining why normal rules were bypassed.
+  </Card>
+  <Card title="Consistent Credit Handling" icon="coins">
+    Decide on your policy: Do makeup sessions consume credits? Are trials always free? Be consistent so athletes know what to expect.
+  </Card>
+</CardGroup>
+
+---
+
+## Related articles
+
+- [**Setting Up Your First Scheduler**](#) - Learn about scheduler configuration and settings
+- [**Managing Athlete Credits**](#) - Understanding credit balances, transactions, and manual adjustments
+- [**Calendar Management**](#) - Tips for avoiding conflicts and managing your schedule
+- [**Cancellation & Rescheduling Policies**](#) - Setting up and enforcing cancellation rules
+- [**Creating Recurring Bookings**](#) - Automate standing appointments for regular athletes
