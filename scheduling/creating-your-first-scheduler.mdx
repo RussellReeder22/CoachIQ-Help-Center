@@ -56,45 +56,19 @@ Before diving in, understand what you'll configure:
   <Step title="Access the Schedule section">
     From your CoachIQ dashboard:
 
-    1. Click **Schedule** in the main left navigation menu
-    2. You'll see options like Calendar, Schedulers, Sessions
-
-    <Frame>
-      ![Schedule menu in navigation](/images/navigate-to-schedule.png)
-    </Frame>
-  </Step>
-  <Step title="Go to Schedulers">
-    Click **Schedulers** from the Schedule submenu or dashboard.
-
-    This takes you to the Schedulers management page where you'll see:
-
-    - List of existing schedulers (empty if this is your first)
-    - **Create** button (usually top-right)
-    - Filter and search options
-
-    <Frame>
-      ![Schedulers list view](/images/schedulers-management-page.png)
-    </Frame>
+    1. Click **Schedule**, then **Schedulers** in the main left navigation menu
   </Step>
   <Step title="Start creating new scheduler">
-    Click the **Create** button (or **\+ New Scheduler** or similar).
-
-    You may see options:
-
-    - Create Scheduler
-    - Create from Template
-    - Duplicate Existing Scheduler
-
-    Select **Create Scheduler** (or **Create from Scratch**).
+    Click the **Create** \*\*New Scheduler \*\*button
 
     <Frame>
-      ![Create button options](/images/create-scheduler-button.png)
+      <img
+        src="/create-new-scheduler.png"
+        alt="Create button options"
+        title=""
+        style={{ width:"100%" }}
+      />
     </Frame>
-    This opens the Scheduler Builder interface.
-
-    <Check>
-      **You're now in the scheduler builder!** You'll see various sections to configure. Let's work through them systematically.
-    </Check>
   </Step>
 </Steps>
 
@@ -117,18 +91,18 @@ Start with the fundamentals that define what athletes are booking.
 
     **Include in name**:
 
-    - ✅ Duration (if not obvious)
-    - ✅ Format (private, group, semi-private)
-    - ✅ Key differentiator (free, specialty, level)
+    - ✅ Format (ex: Private, Group, Semi-Private)
+    - ✅ Key differentiator (ex: Skill Level)
+    - ✅ Location
 
     **Avoid in name**:
 
     - ❌ Internal codes (PT-60-A)
-    - ❌ Overly generic ("Session 1")
+    - ❌ Overly generic ("Training Session")
     - ❌ Too long (save details for description)
 
     <Frame>
-      ![Scheduler name input field](/images/scheduler-name-field.png)
+      ![Scheduler name input field](/scheduler-name.png)
     </Frame>
     <Tip>
       **Name testing**: If you showed just the name to a stranger, would they understand what they're booking? If not, make it clearer.
@@ -151,9 +125,6 @@ Start with the fundamentals that define what athletes are booking.
 
     > "One-on-one personalized training focused on your specific goals. We'll work on technique, strength, conditioning, and sport-specific skills. Perfect for athletes of all levels looking to improve performance. Bring athletic shoes, water bottle, and workout clothes. Each session includes video analysis and personalized homework."
 
-    <Frame>
-      ![Scheduler description text area](/images/scheduler-description-field.png)
-    </Frame>
     <Note>
       **Length guideline**: 2-4 sentences is ideal. Enough to inform without overwhelming. Save very detailed information for your website or session materials.
     </Note>
@@ -163,19 +134,13 @@ Start with the fundamentals that define what athletes are booking.
 
     **Options typically**:
 
-    - 15 minutes (quick check-ins)
-    - 30 minutes (short sessions, consultations)
-    - 45 minutes (moderate sessions)
     - 60 minutes (standard training, most common)
     - 90 minutes (extended training)
-    - 120+ minutes (intensive, camps)
+    - 120+ minutes (one day clinics)
     - Custom (enter any duration)
 
     **For your first scheduler**: 60 minutes is the safe default choice for most private training.
 
-    <Frame>
-      ![Duration selection dropdown](/images/scheduler-duration-selector.png)
-    </Frame>
     <Tip>
       **Duration impacts availability**: A 60-minute session in a 5-hour availability window = ~5 bookable slots (accounting for buffer). Shorter sessions = more slots per day.
     </Tip>
@@ -205,91 +170,38 @@ This is where you define WHEN this scheduler can be booked.
     - Or similar section heading
 
     <Frame>
-      ![Availability section in scheduler builder](/images/scheduler-availability-section.png)
+      ![Availability section in scheduler builder](/set-scheduler-availablity.png)
     </Frame>
   </Step>
-  <Step title="Choose availability approach">
-    You'll have options for how to set availability:
-
-    **Option A: Create new availability pattern**
-
-    - Set days and times directly in this scheduler
-    - Start from scratch
-
-    **Option B: Use existing availability template**
-
-    - If you've already created availability, select it
-    - Reuse across multiple schedulers
-
-    **Option C: Use Copilot to generate**
-
-    - Describe your schedule in plain language
-    - AI generates availability pattern
-
-    **For first scheduler**: Option A (create new) is most common. You'll set it now and can reuse it later.
+  <Step title="Choose availability">
+    Select the drop menu and choose the corresponding availablity to attach to your scheduler
 
     <Tip>
       **Reusability reminder**: The availability you set here can power multiple schedulers. Think about it as your general coaching hours, not specific to this one service.
     </Tip>
   </Step>
-  <Step title="Set your available days">
-    Check the boxes for days you're available for this service:
+  <Step title="Set Start and End Dates (optional)">
+    You can also customize start and end dates when clients can book with you
 
-    **Example: Weekday Coach**
+    **Good to use if you're:**
 
-    - ☑️ Monday
-    - ☑️ Wednesday
-    - ☑️ Friday
-
-    **Example: Weekend Specialist**
-
-    - ☑️ Saturday
-    - ☑️ Sunday
-
-    **Example: Full Week**
-
-    - ☑️ Monday through Friday
+    - Launching a new program
+    - Switching to a new schedule after a certain date
 
     <Frame>
-      ![Day selection checkboxes](/images/select-available-days-scheduler.png)
+      ![Current Avaliabilty Pn](/images/current-avaliabilty.png)
     </Frame>
   </Step>
-  <Step title="Set time ranges for each day">
-    For each selected day, set your available hours:
+  <Step title="Add an Additional Availablity (optional)">
+    If you need to attach another availability to your scheduler, you can select one from the Addtional Availability tab.
 
-    **Same hours all days**:
+    **Good to use if you're:**
 
-    - All selected days: 3:00 PM - 8:00 PM
-
-    **Different hours per day**:
-
-    - Monday: 4:00 PM - 8:00 PM
-    - Wednesday: 3:00 PM - 9:00 PM
-    - Friday: 4:00 PM - 8:00 PM
+    - Switching to a new schedule at a later date
 
     <Frame>
-      ![Time range inputs for each day](/images/set-time-ranges-scheduler.png)
+      ![Time range inputs for each day](/additional-availability.png)
     </Frame>
-    <Warning>
-      **Buffer time consideration**: If you plan to add 15-minute buffer between sessions, extend your end time by 15-30 minutes beyond when you want your last session to end. Example: Want to finish by 8:00 PM? Set availability to 8:15 PM or 8:30 PM.
-    </Warning>
-  </Step>
-  <Step title="Add blackout days (optional but recommended)">
-    If you know of dates you'll be unavailable:
-
-    - Click **Add Blackout Days** or similar option
-    - Select vacation dates, holidays, known time off
-    - These dates won't show available slots to athletes
-
-    **Recommended blackout days to add now**:
-
-    - Major holidays (Thanksgiving, Christmas, New Year's)
-    - Any planned vacation in next 3-6 months
-    - Facility closures you're aware of
-
-    <Tip>
-      **Pro tip**: Adding blackout days now prevents having to cancel bookings later when athletes book time you can't honor.
-    </Tip>
   </Step>
 </Steps>
 
