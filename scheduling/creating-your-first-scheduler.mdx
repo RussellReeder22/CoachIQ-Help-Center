@@ -311,8 +311,14 @@ Decide how athletes will pay for this scheduler.
        - Enable credits with cost set
     2. Athletes choose at booking time whether to pay or use credit
 
+    <Frame>
+      ![Credit And Payment Options Pn](/images/credit-and-payment-options.png)
+    </Frame>
     **Result**: Athletes can either pay the direct price or redeem a credit—their choice.
 
+    <Frame>
+      ![Session Payment Flexibility Pn](/images/session-payment-flexibility.png)
+    </Frame>
     <Note>
       **Most flexible option**: Hybrid is great for established businesses but may be confusing for your very first scheduler. Start simpler, add flexibility later.
     </Note>
@@ -338,7 +344,7 @@ Control how many athletes can book.
 - **15-20+ athletes** = Large group classes or team training
 
 <Tip>
-  **Capacity impacts pricing**: If setting capacity \>1, consider per-athlete pricing. 40 per athlete × 6 athletes = 40 _per athlete _×6 _athletes _= 240 per session (much more valuable than 1-on-1 at \$75).
+  **Capacity impacts pricing**: If setting capacity \>1, consider per-athlete pricing. 40 per athlete × 6 athletes = 40 \_per athlete \_×6 \_athletes \_= 240 per session (much more valuable than 1-on-1 at \$75).
 </Tip>
 
 ## Step 6: Configure booking rules (optional but recommended)
@@ -426,13 +432,10 @@ Buffer time creates breathing room between back-to-back sessions.
   <Step title="Locate buffer time settings">
     Look for:
 
-    - **Buffer Time**
-    - **Break Between Sessions**
-    - **Transition Time**
-    - **Padding**
+    - **Buffer**
 
     <Frame>
-      ![Buffer time configuration](/images/buffer-time-section.png)
+      ![Buffer Pn](/images/buffer.png)
     </Frame>
   </Step>
   <Step title="Set buffer before session (optional)">
@@ -463,9 +466,6 @@ Buffer time creates breathing room between back-to-back sessions.
 
     **Recommended for first scheduler**: **15 minutes**
 
-    <Frame>
-      ![Post-session buffer time input](/images/set-post-session-buffer.png)
-    </Frame>
     <Tip>
       **Buffer is invisible to athletes**: They only see available booking times. The buffer time happens automatically between sessions but doesn't appear on their booking screen.
     </Tip>
@@ -561,16 +561,10 @@ Set up automated notifications before sessions to reduce no-shows.
 
 <Steps>
   <Step title="Enable reminders">
-    Look for:
-
-    - **Reminders**
-    - **Automated Notifications**
-    - **Session Alerts**
-
-    Toggle **Enable Reminders** to ON.
+    Look for **Reminders **toward the bottom of the scheduler settings
 
     <Frame>
-      ![Enable reminders toggle](/images/enable-reminders-toggle.png)
+      ![Enable reminders toggle](/Reminders-UI.png)
     </Frame>
   </Step>
   <Step title="Set reminder timing">
@@ -594,12 +588,11 @@ Set up automated notifications before sessions to reduce no-shows.
   <Step title="Choose delivery method">
     How athletes receive the reminder:
 
-    - **In-App Notification** - Notification in CoachIQ app/portal
-    - **Email** - Sent to athlete's email
-    - **SMS** - Text message to athlete's phone (may require credits)
-    - **Announcement** - Posted in athlete's announcement feed
+    - **In-App** - Notification in CoachIQ app/portal and inbox
+    - **Announcement/Email** - Sent to athlete's email and in-app announcement feed
+    - **SMS** - Text message to athlete's phone (SMS rates apply)
 
-    **Recommended for first scheduler**: **In-App Notification** + **Email**
+    **Recommended for first scheduler**: **Announcement/Email**
 
     **Why**: Maximum reach without SMS costs, covers both app users and email checkers.
   </Step>
@@ -626,14 +619,15 @@ Specify where this session takes place.
 
 <Steps>
   <Step title="Locate location section">
-    Find:
-
-    - **Location**
-    - **Where**
-    - **Session Location**
+    Find **Location:**
 
     <Frame>
-      ![Location configuration section](/images/location-section-scheduler.png)
+      <img
+        src="/location-scheduler-ui.png"
+        alt="Location configuration section"
+        title=""
+        style={{ width:"100%" }}
+      />
     </Frame>
   </Step>
   <Step title="Select or create location">
@@ -644,9 +638,9 @@ Specify where this session takes place.
     **If creating new location**:
 
     1. Click **Add New Location**
-    2. Enter location name: "Main Training Facility"
+    2. Enter location name (ex: "Main Training Facility")
     3. Enter address (optional but helpful for athletes)
-    4. Add notes: "Use side entrance, check in at front desk"
+    4. Add notes (ex: "Use side entrance, check in at front desk")
     5. Save location
 
     <Tip>
@@ -670,14 +664,10 @@ Specify which coach(es) deliver this scheduler.
 
 <Steps>
   <Step title="Find connected coaches section">
-    Look for:
-
-    - **Assigned Coaches**
-    - **Connected Coaches**
-    - **Who Delivers This Session**
+    Look for **Connected Coaches**
 
     <Frame>
-      ![Coach assignment section](/images/assigned-coaches-section.png)
+      ![Coach assignment section](/connected-coaches-ui.png)
     </Frame>
   </Step>
   <Step title="Select coach(es)">
@@ -687,7 +677,6 @@ Specify which coach(es) deliver this scheduler.
 
     - Select specific coach if this scheduler is coach-specific
     - Select multiple coaches if any can deliver this session
-    - Select "Auto-assign" if system supports it
 
     <Note>
       **If you're solo**: You can skip this section or select yourself. Most solo coaches leave this at default.
