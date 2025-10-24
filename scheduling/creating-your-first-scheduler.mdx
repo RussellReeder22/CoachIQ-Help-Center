@@ -221,8 +221,7 @@ Decide how athletes will pay for this scheduler.
     **How to set up**:
 
     1. Find payment section
-    2. Select **Free** or **No Payment Required**
-    3. No additional configuration needed
+    2. Select **Free**
 
     <Check>
       **Result**: Athletes can book without any payment or credits.
@@ -242,34 +241,16 @@ Decide how athletes will pay for this scheduler.
 
     <Steps>
       <Step title="Select payment type">
-        Find payment options and select:
-
-        - **Paywall**
-        - **Direct Payment**
-        - **Requires Purchase**
+        Find payment options and select **Paywall**
       </Step>
       <Step title="Connect or create product">
         You need a payment product:
 
-        **If product exists**:
-
         - Click **Select Product**
         - Choose your session product from list
 
-        **If product doesn't exist**:
-
-        - Click **Create New Product**
-        - Set product name: "60-Min Private Training"
-        - Set price: \$75 (or your rate)
-        - Set as one-time purchase
-        - Save product
-        - Return to scheduler builder
-      </Step>
-      <Step title="Verify product connection">
-        Confirm the correct product is linked to your scheduler.
-
         <Frame>
-          ![Product linked to scheduler](/images/scheduler-product-connection.png)
+          ![Select Payment Scheduler Pn](/images/select-payment-scheduler.png)
         </Frame>
       </Step>
     </Steps>
@@ -290,17 +271,16 @@ Decide how athletes will pay for this scheduler.
 
     <Steps>
       <Step title="Enable credit payment">
-        Find credit settings and toggle **Enable Credit Payment** to ON.
+        Find payment settings and select **Credit Charge**
       </Step>
       <Step title="Set credit cost">
         Enter how many credits this session costs:
 
         - 1 credit (most common)
         - 2 credits (premium/longer sessions)
-        - 0.5 credits (short check-ins)
 
         <Frame>
-          ![Credit cost input field](/images/set-credit-cost.png)
+          ![Credit cost input field](/credit-payment-scheduler.png)
         </Frame>
       </Step>
       <Step title="Athletes must have credits">
@@ -311,7 +291,7 @@ Decide how athletes will pay for this scheduler.
         - You'll need to set up credit-issuing products separately
 
         <Tip>
-          **Credit setup complexity**: Credit-based scheduling requires additional setup (creating credit products, understanding credit system). If this is your first scheduler, consider starting with free or direct payment.
+          **Credit setup complexity**: Credit-based scheduling requires additional setup (creating products that award credits, understanding credit system). If this is your first scheduler, consider starting with free or direct payment.
         </Tip>
       </Step>
     </Steps>
@@ -341,47 +321,25 @@ Decide how athletes will pay for this scheduler.
 
 ## Step 5: Set capacity and participant limits
 
-Control how many athletes can book each time slot.
+Control how many athletes can book.
 
-<Steps>
-  <Step title="Set maximum athletes per session">
-    **Field**: Max Participants, Capacity, or Athletes Per Session
+**Options:**
 
-    **Common settings**:
+- Max booking per day: limit on the number of bookings in a day
+- Max bookings per week: limit on the number of bookings in a week
+- Max athletes per session (most common): limit on the number of athletes in a session
 
-    - **1 athlete** = Private 1-on-1 sessions (most common for first scheduler)
-    - **2 athletes** = Semi-private training
-    - **3-6 athletes** = Small group sessions
-    - **8-12 athletes** = Medium group classes
-    - **15-20+ athletes** = Large group classes or team training
+**Common settings for max athletes per session**:
 
-    **For your first scheduler**: Set to **1** for straightforward private training.
+- **1 athlete** = Private 1-on-1 sessions (most common for first scheduler)
+- **2 athletes** = Semi-private training
+- **3-6 athletes** = Small group sessions
+- **8-12 athletes** = Medium group classes
+- **15-20+ athletes** = Large group classes or team training
 
-    <Frame>
-      ![Capacity setting input](/images/set-capacity-scheduler.png)
-    </Frame>
-    <Tip>
-      **Capacity impacts pricing**: If setting capacity \>1, consider per-athlete pricing. $40 per athlete × 6 athletes = $240 per session (much more valuable than 1-on-1 at \$75).
-    </Tip>
-  </Step>
-  <Step title="Understand capacity behavior">
-    **When capacity = 1**:
-
-    - Only one athlete can book each time slot
-    - After booking, that slot becomes unavailable to everyone else
-    - This is standard private training
-
-    **When capacity \> 1**:
-
-    - Multiple athletes can book same time slot
-    - Slot shows "3/6 spots filled" to athletes
-    - When full (6/6), slot becomes unavailable
-
-    <Check>
-      **Verify**: Your capacity setting matches your intended session format (private vs group).
-    </Check>
-  </Step>
-</Steps>
+<Tip>
+  **Capacity impacts pricing**: If setting capacity \>1, consider per-athlete pricing. 40 per athlete × 6 athletes = 40 _per athlete _×6 _athletes _= 240 per session (much more valuable than 1-on-1 at \$75).
+</Tip>
 
 ## Step 6: Configure booking rules (optional but recommended)
 
@@ -460,7 +418,7 @@ These settings control how athletes can book and cancel.
   </Accordion>
 </AccordionGroup>
 
-## Step 7: Add buffer time (recommended)
+## Step 7: Add buffer time
 
 Buffer time creates breathing room between back-to-back sessions.
 
