@@ -40,11 +40,10 @@ icon: "times-circle"
 
 <Steps>
   <Step title="Find the booking">
-    **Three ways to access:**
+    **Two ways to access:**
 
     1. **From Calendar**: Schedule → Calendar → Click the booking
     2. **From Athlete Profile**: People → Clients → Select athlete → Upcoming Bookings
-    3. **From Bookings List**: Schedule → Schedulers → Click booking
 
     Choose whichever is most convenient.
   </Step>
@@ -56,7 +55,6 @@ icon: "times-circle"
     - Athlete name
     - Session time/date
     - Scheduler type
-    - Current status
   </Step>
   <Step title="Click 'Cancel'">
     Look for the **Cancel** button (usually red or in actions menu).
@@ -66,7 +64,12 @@ icon: "times-circle"
   <Step title="Confirm cancellation">
     System asks for confirmation to prevent accidental cancellations.
 
-    **Confirm** to complete the cancellation.
+    Note: If a client booked with a credit the system will prompt you to refund the credit to their account or not.
+
+    <Frame>
+      ![Credit Refund Pn](/images/credit-refund.png)
+    </Frame>
+    **Cancel** to complete the cancellation.
 
     <Check>
       **Booking canceled!** Session removed from calendar, athlete notified, credits handled per policy.
@@ -188,8 +191,9 @@ icon: "times-circle"
     - **Strict enforcement**: No refund, credits lost
     - **One-time courtesy**: Manually refund credits, warn about future
     - **Consider circumstances**: Legit emergency? Offer flexibility
+    - **Edit Scheduler:** Adjust your minimum cancellation notice to your policy to avoid cancellation through the system
 
-    **Example strict message**: "Hi Sarah, I see you canceled today's session. Per our 24-hour policy, the credit has been forfeited. Let's make sure to cancel earlier next time!"
+    **Example strict message**: "Hi Sarah, I see you canceled today's session. Per our 24-hour policy, the credit has been forfeited. Please make sure to cancel earlier next time!"
 
     **Example flexible message**: "Hi Sarah, I see you canceled today's session last-minute. I'll refund the credit this time as a courtesy, but please note our 24-hour cancellation policy for future sessions."
   </Accordion>
@@ -205,24 +209,18 @@ icon: "times-circle"
 
     **Coach action required**:
 
-    1. Mark session as "no-show" or canceled
-    2. Message athlete to check in
+    2. Message athlete/parent to check in
     3. Enforce no-show policy
     4. Consider pattern (multiple no-shows = conversation needed)
 
-    **Example message**: "Hey Chris, I noticed you didn't make it to today's 5pm session. Everything okay? Per our policy, the credit has been used. Let me know if you want to reschedule!"
-
-    <Warning>
-      **Chronic no-shows**: After 2-3 no-shows, consider requiring prepayment or deposits for future bookings.
-    </Warning>
+    **Example message**: "Hey Chris, I noticed you didn't make it to today's 5pm session. Everything okay? Per our policy, the credit has been used."
   </Accordion>
   <Accordion title="Canceling group session with participants">
     **Scenario**: You need to cancel a group class with 8 athletes booked
 
     **What happens:**
 
-    - ✅ All 8 bookings canceled simultaneously
-    - ✅ All athletes notified at once
+    - ✅ All athletes can be notified at once
     - ✅ Credits refunded to all participants
     - ✅ Full capacity opens up
 
@@ -239,7 +237,7 @@ icon: "times-circle"
 
     **What happens:**
 
-    - ✅ Oct 15 session removed
+    - ✅ Single session removed
     - ✅ All other Tuesdays remain scheduled
     - ✅ Credits refunded (if applicable)
     - ✅ Recurring pattern continues
