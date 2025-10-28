@@ -1,0 +1,379 @@
+---
+title: "Guest Checkout"
+description: "Allow clients to purchase products without creating a CoachIQ account"
+sidebarTitle: "Guest Checkout"
+icon: "user-clock"
+---
+
+<Info>
+  **Where to find this**: Product Builder → Section 6 (Advanced Settings) → Guest Checkout
+</Info>
+
+## What guest checkout is
+
+Guest checkout lets people buy products with just email and payment info - no account creation required.
+
+**With guest checkout enabled:**
+
+- Client enters email
+- Client enters payment details
+- Purchase completes
+- No password or profile created
+
+**With guest checkout disabled (default):**
+
+- Client must create CoachIQ account
+- Account required before checkout
+- Client gets Athlete Portal access
+
+## When to enable guest checkout
+
+<Tabs>
+  <Tab title="Enable for">
+    **Products that don't require ongoing access:**
+
+    ✅ **Merchandise or equipment sales**
+
+    - T-shirts, gear, supplements
+    - One-time physical products
+    - No need for portal access
+
+    ✅ **One-time workshops or events**
+
+    - Single-session clinics
+    - Drop-in classes
+    - Public seminars
+
+    ✅ **Non-client purchases**
+
+    - Community members
+    - One-time visitors
+    - People who won't book again
+
+    ✅ **Gift purchases**
+
+    - Someone buying for another person
+    - No need for buyer to have account
+
+    <Tip>
+      Enable guest checkout when you're selling to general public, not just your established client base.
+    </Tip>
+  </Tab>
+  <Tab title="Keep disabled for">
+    **Products requiring account access:**
+
+    ❌ **Session bookings**
+
+    - Clients need account to view calendar
+    - Must schedule specific time slots
+    - Requires Athlete Portal access
+
+    ❌ **Subscriptions or memberships**
+
+    - Ongoing access to portal
+    - Credit tracking over time
+    - Recurring billing management
+
+    ❌ **Program access**
+
+    - Need account to view content
+    - Videos, documents, workouts
+    - Progress tracking
+
+    ❌ **Multi-session packages**
+
+    - Credits require account
+    - Must book sessions over time
+    - Need to track usage
+
+    <Warning>
+      If product issues credits or grants program access, guest checkout won't work properly. Guests can't use credits or access portal content.
+    </Warning>
+  </Tab>
+</Tabs>
+
+## Enable guest checkout
+
+<Steps>
+  <Step title="Open Product Builder">
+    Go to **Payments → Products** and either:
+
+    - Click **\+ Create Product** for new product
+    - Click existing product to edit
+  </Step>
+  <Step title="Navigate to Advanced Settings">
+    Scroll to **Section 6: Advanced Settings**
+
+    <Frame>
+      ![Advanced Settings section location](/images/payments/advanced-settings-section.png)
+    </Frame>
+  </Step>
+  <Step title="Toggle guest checkout ON">
+    Find **Guest Checkout** toggle and switch to ON.
+
+    <Frame>
+      ![Guest checkout toggle switch](/images/payments/guest-checkout-toggle.png)
+    </Frame>
+  </Step>
+  <Step title="Save product">
+    Click **Save** or **Publish**.
+
+    <Check>
+      **Guest checkout enabled.** Clients can purchase without creating account.
+    </Check>
+  </Step>
+</Steps>
+
+## What guests provide at checkout
+
+**Required information:**
+
+- Email address
+- Payment method (credit card)
+
+**Optional information (if you collect it):**
+
+- Name
+- Phone number
+- Custom form fields
+
+**NOT required:**
+
+- Password
+- Account creation
+- Profile setup
+
+<Info>
+  Minimal friction checkout. Faster for one-time buyers who don't need ongoing access.
+</Info>
+
+## What guests receive
+
+**After purchase:**
+
+✅ **Email receipt**
+
+- Payment confirmation
+- Purchase details
+- Transaction amount
+
+✅ **Product or access (if applicable)**
+
+- Physical products ship to provided address
+- Event confirmation if workshop/clinic
+
+❌ **No Athlete Portal access**
+
+- Can't log into CoachIQ
+- Can't view purchase history
+- Can't manage account
+
+❌ **No credits**
+
+- Even if product issues credits
+- Credits require account to track and use
+
+❌ **No session booking**
+
+- Can't schedule appointments
+- Can't view calendar
+
+## What you see
+
+**In your Transactions:**
+
+- Guest purchases appear normally
+- Transaction recorded with email
+- Payment processed successfully
+
+**In your client list:**
+
+- Guest does NOT appear as client
+- No profile created
+- Email captured but not as full client record
+
+<Note>
+  Guest transactions tracked for your records, but guest doesn't become full client in your system.
+</Note>
+
+## Converting guests to clients
+
+**If guest wants to book sessions later:**
+
+They must create account separately:
+
+1. Guest visits your booking page
+2. Clicks "Sign Up" or "Create Account"
+3. Creates account with email (same email as guest purchase)
+4. Now can book sessions and access portal
+
+<Info>
+  Creating account after guest purchase doesn't automatically link past guest transactions. They're separate.
+</Info>
+
+## Guest checkout flow
+
+<Steps>
+  <Step title="Guest selects product">
+    Guest finds product on your booking page or website.
+
+    Clicks purchase or buy button.
+  </Step>
+  <Step title="Guest enters email">
+    Checkout form asks for email address.
+
+    No "create password" field appears.
+  </Step>
+  <Step title="Guest enters payment">
+    Guest provides credit card details.
+
+    Standard Stripe payment form.
+  </Step>
+  <Step title="Purchase completes">
+    Transaction processes immediately.
+
+    Guest receives email receipt.
+
+    <Check>
+      **Purchase complete.** Guest paid, you received money, no account created.
+    </Check>
+  </Step>
+</Steps>
+
+## Limitations of guest checkout
+
+**Guests cannot:**
+
+- View purchase history
+- Book sessions requiring portal access
+- Redeem credits
+- Access program content
+- Manage subscriptions
+- Update payment methods
+- View past receipts (must save email)
+
+**You cannot:**
+
+- Track guest as full client
+- Send portal notifications
+- Grant portal access
+- Issue credits to guest
+- See guest in client management
+
+<Warning>
+  Guest checkout is one-way transaction only. For any ongoing relationship, clients need full accounts.
+</Warning>
+
+## Best practices
+
+**Use guest checkout for:**
+
+- Products sold to general public
+- One-time purchases with no follow-up
+- Merchandise or physical goods
+- Events open to non-clients
+
+**Don't use guest checkout for:**
+
+- Core coaching services
+- Anything requiring credits
+- Subscriptions or memberships
+- Session bookings
+
+**Consider hybrid approach:**
+
+- Enable guest checkout on merchandise products
+- Disable guest checkout on session products
+- Let clients choose which products allow guests
+
+<Tip>
+  Most coaches disable guest checkout on primary coaching products. Enable only for specific public-facing offerings.
+</Tip>
+
+## Guest vs. account checkout comparison
+
+| Feature              | Guest Checkout           | Account Checkout        |
+| -------------------- | ------------------------ | ----------------------- |
+| **Speed**            | Faster (email + payment) | Slower (create account) |
+| **Portal access**    | No                       | Yes                     |
+| **Purchase history** | No                       | Yes                     |
+| **Session booking**  | No                       | Yes                     |
+| **Credits**          | No                       | Yes                     |
+| **Subscriptions**    | No                       | Yes                     |
+| **Programs**         | No                       | Yes                     |
+| **Best for**         | One-time sales           | Ongoing services        |
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Guest checkout enabled but clients still must create account">
+    **Check:**
+
+    - Product has guest checkout toggled ON
+    - Product is published (not draft)
+    - Browser cache cleared
+
+    If still requiring account, contact support.
+  </Accordion>
+  <Accordion title="Guest purchased but can't access program content">
+    **This is expected behavior.**
+
+    Guest checkout doesn't grant portal access. Guests can't access programs even if they purchased.
+
+    **Solutions:**
+
+    - Disable guest checkout for program products
+    - Require account creation for program access
+    - Guest must create account separately to access content
+  </Accordion>
+  <Accordion title="Want to find guest's purchase">
+    **Check Transactions page:**
+
+    - Search by email address
+    - Look for transaction date
+    - Guest purchases labeled with email, not client name
+
+    Guest won't appear in client list - only in transactions.
+  </Accordion>
+  <Accordion title="Guest wants to book session but didn't create account">
+    **Guest must create account to book:**
+
+    Direct them to:
+
+    1. Your booking page
+    2. "Sign Up" or "Create Account"
+    3. Use same email from guest purchase
+    4. Now can book sessions
+
+    Previous guest purchase won't automatically link to new account.
+  </Accordion>
+</AccordionGroup>
+
+## Refunds for guest purchases
+
+**Process same as regular refunds:**
+
+1. Find transaction in Transactions page
+2. Click transaction
+3. Issue refund
+
+**Guest notification:**
+
+- Refund confirmation sent to email
+- Money returns to original payment method
+- Guest doesn't need account to receive refund
+
+[Learn about issuing refunds →](/payments/issuing-refunds)
+
+## Next steps
+
+1. [Product Builder reference](/payments/product-builder-reference) - Complete Product Builder guide
+2. [Processing fees](/payments/processing-fees) - Configure who pays Stripe fees
+3. [Creating products](/payments/creating-first-product) - Build your first product
+
+## Related articles
+
+- [Product Builder: Complete Reference](/payments/product-builder-reference)
+- [Creating Your First Product](/payments/creating-first-product)
+- [Processing Fees Configuration](/payments/processing-fees)
+- [Revenue Sharing](/payments/revenue-sharing)
