@@ -1,0 +1,437 @@
+---
+title: "Using Products in Your Business"
+description: "Attach products to session schedulers, programs, and forms to start accepting payments from clients"
+sidebarTitle: "Attach Products"
+icon: "link"
+---
+
+<Info>
+**Three places to use products**: Session schedulers, programs, and forms
+</Info>
+
+## Where products attach
+
+Products don't generate revenue until attached to something clients interact with:
+
+**Session Schedulers** → Clients book time slots and pay
+**Programs** → Clients purchase access to locked content
+**Forms** → Clients submit forms with payment
+
+One product can attach to multiple places. Reuse products across your offerings.
+
+## Attach products to session schedulers
+
+<Steps>
+<Step title="Navigate to scheduler payment settings">
+1. Go to **Schedule** in left sidebar
+2. Click **Schedulers**
+3. Select the scheduler you want to add payment to
+4. Scroll to **Payment Settings** section
+
+<Frame>
+<img src="/images/payments/scheduler-payment-settings.png" alt="Payment settings in scheduler" />
+</Frame>
+</Step>
+
+<Step title="Choose payment method">
+Select one of four options:
+
+**Free** - No payment required, clients book without charge
+
+**Product** - Client must purchase a product to book
+
+**Credits** - Client must have credits to book (no direct payment)
+
+**Product OR Credits** - Client can either buy product or use existing credits
+
+<Tip>
+**Most common:** Product OR Credits. Gives clients flexibility to pay directly or use credits from packages.
+</Tip>
+</Step>
+
+<Step title="Select product(s)">
+If you selected Product or Product OR Credits:
+
+1. Click **Add Product**
+2. Select product from dropdown
+3. Add multiple products if offering different pricing options
+
+Clients see all attached products as payment choices during booking.
+
+<Frame>
+<img src="/images/payments/scheduler-product-selection.png" alt="Selecting products for scheduler" />
+</Frame>
+</Step>
+
+<Step title="Save scheduler">
+Click **Save** at the top or bottom of the scheduler.
+
+<Check>
+**Connected.** Clients can now book this scheduler with payment.
+</Check>
+</Step>
+</Steps>
+
+### How clients book paid sessions
+
+<Steps>
+<Step title="Client selects session">
+Client goes to your booking page and chooses the scheduler.
+
+<Frame>
+<img src="/images/payments/client-select-session.png" alt="Client selecting session type" />
+</Frame>
+</Step>
+
+<Step title="Client picks time slot">
+Client selects date and available time.
+</Step>
+
+<Step title="Payment screen appears">
+Client sees payment options:
+- Product(s) you attached
+- Use Credits (if Product OR Credits is configured and they have credits)
+
+<Frame>
+<img src="/images/payments/client-payment-options.png" alt="Client payment screen with options" />
+</Frame>
+</Step>
+
+<Step title="Client completes purchase">
+Client enters payment info and confirms.
+</Step>
+
+<Step title="Booking confirmed">
+Session appears on both your calendar and client's calendar.
+
+Client receives confirmation email with session details.
+</Step>
+</Steps>
+
+## Attach products to programs
+
+<Steps>
+<Step title="Navigate to program paywall settings">
+1. Go to **Content** in left sidebar
+2. Click **Programs**
+3. Select the program you want to paywall
+4. Click **Paywall** tab
+
+<Frame>
+<img src="/images/payments/program-paywall-tab.png" alt="Program paywall settings tab" />
+</Frame>
+</Step>
+
+<Step title="Enable paywall">
+Toggle **Paywall** to ON.
+
+<Info>
+Paywall locks all program content behind a purchase requirement.
+</Info>
+</Step>
+
+<Step title="Select product">
+Choose which product grants access to this program.
+
+Clients must purchase this product to unlock program content.
+
+<Tip>
+Use One-Time products for lifetime access or Subscription products for access while subscribed.
+</Tip>
+</Step>
+
+<Step title="Save program">
+Click **Save**.
+
+<Check>
+**Paywalled.** Program content is now locked until purchase.
+</Check>
+</Step>
+</Steps>
+
+### How clients access paid programs
+
+<Steps>
+<Step title="Client views program">
+Client navigates to program in their Athlete Portal.
+</Step>
+
+<Step title="Locked content appears">
+Program shows as locked with purchase requirement.
+
+<Frame>
+<img src="/images/payments/program-locked-view.png" alt="Locked program requiring purchase" />
+</Frame>
+</Step>
+
+<Step title="Client clicks unlock/purchase">
+Client clicks button to purchase access.
+</Step>
+
+<Step title="Payment screen appears">
+Client completes purchase of the required product.
+</Step>
+
+<Step title="Program unlocks">
+All program content becomes immediately accessible.
+
+Client can view videos, documents, workouts, and all program materials.
+</Step>
+</Steps>
+
+## Attach products to forms
+
+<Steps>
+<Step title="Open form builder">
+1. Go to **Tools** in left sidebar
+2. Click **Forms**
+3. Select existing form or create new form
+4. Click **Edit** to open Form Builder
+
+<Frame>
+<img src="/images/payments/forms-list-view.png" alt="Forms page with edit button" />
+</Frame>
+</Step>
+
+<Step title="Add payment field">
+1. Click **+ Add Field**
+2. Select **Payment** field type
+3. Drag payment field to desired position in form
+
+<Tip>
+Place payment field near the end of form, after collecting all necessary information.
+</Tip>
+</Step>
+
+<Step title="Configure payment field">
+**Select product:** Choose which product to charge
+
+**Required or optional:**
+- **Required** - Form can't submit without payment
+- **Optional** - Payment is voluntary (donations, tips)
+
+<Frame>
+<img src="/images/payments/form-payment-field-config.png" alt="Configuring payment field in form" />
+</Frame>
+</Step>
+
+<Step title="Save and publish form">
+Click **Save** then **Publish** to make form live.
+
+<Check>
+**Form ready.** Clients now pay when submitting this form.
+</Check>
+</Step>
+</Steps>
+
+### How clients submit forms with payment
+
+<Steps>
+<Step title="Client fills out form">
+Client enters all required information (name, contact, questions, etc.).
+</Step>
+
+<Step title="Payment field appears">
+Client reaches payment section showing:
+- Product name and price
+- Payment field for card details
+
+<Frame>
+<img src="/images/payments/form-client-payment-view.png" alt="Client view of payment field in form" />
+</Frame>
+</Step>
+
+<Step title="Client enters payment">
+Client provides credit card information.
+
+<Info>
+Payment processes through Stripe. Card details never touch CoachIQ servers.
+</Info>
+</Step>
+
+<Step title="Client submits form">
+Form submits and payment processes simultaneously.
+</Step>
+
+<Step title="Confirmation">
+Client receives:
+- Form submission confirmation
+- Payment receipt
+- Any credits (if product issues them)
+</Step>
+</Steps>
+
+## Multiple products on one offering
+
+You can attach multiple products to schedulers and forms (but not programs).
+
+**Example: Scheduler with three pricing options**
+- $75 Single Session
+- $650 for 10-Session Package
+- $200/month Unlimited Membership
+
+Client chooses which option works best for them during booking.
+
+<Tip>
+Offering multiple price points increases conversions. Some clients prefer packages, others prefer subscriptions.
+</Tip>
+
+## Common attachment scenarios
+
+<Tabs>
+<Tab title="Session booking with packages">
+**Scheduler setup:**
+- Payment method: Product OR Credits
+- Attached products:
+  - Single Session ($75)
+  - 10-Session Package ($650 with 10 credits)
+
+**Client experience:**
+- New clients buy single session or package
+- Package buyers receive 10 credits
+- They use credits to book 10 sessions over time
+</Tab>
+
+<Tab title="Membership with unlimited sessions">
+**Product setup:**
+- Type: Subscription
+- Price: $200/month
+- Credits: 999 per month
+
+**Scheduler setup:**
+- Payment method: Product OR Credits
+- Attached products: Monthly Membership
+
+**Client experience:**
+- Client subscribes to membership
+- Receives 999 credits each month
+- Books unlimited sessions using credits
+- Subscription renews automatically
+</Tab>
+
+<Tab title="Paid program access">
+**Product setup:**
+- Type: One-Time
+- Price: $299
+- Credits: None
+
+**Program setup:**
+- Paywall: ON
+- Required product: Program Access
+
+**Client experience:**
+- Client sees locked program
+- Purchases one-time access
+- Program content unlocks permanently
+</Tab>
+
+<Tab title="Registration form with payment">
+**Product setup:**
+- Type: One-Time
+- Price: $150
+- Credits: None
+
+**Form setup:**
+- Payment field: Required
+- Product: Camp Registration Fee
+
+**Client experience:**
+- Client fills out camp registration form
+- Pays $150 registration fee
+- Submits form
+- Receives confirmation email
+</Tab>
+</Tabs>
+
+## Detaching or changing products
+
+**To remove a product from scheduler:**
+1. Open scheduler payment settings
+2. Click X next to product name
+3. Save scheduler
+
+**To swap products:**
+1. Remove old product
+2. Add new product
+3. Save scheduler
+
+<Warning>
+Detaching a product doesn't affect existing bookings or purchases. It only prevents new purchases.
+</Warning>
+
+## Products vs. credits vs. free
+
+Understanding when to use each payment method:
+
+**Free** - No payment required
+- Use for: Complimentary sessions, internal team use, evaluation sessions
+
+**Product** - Direct purchase required, no credits accepted
+- Use for: When you don't want to manage credit system, single-purchase offerings
+
+**Credits** - Must have credits, no direct purchase option
+- Use for: When you only want existing clients/members to book (no new purchases)
+
+**Product OR Credits** - Client chooses payment method or uses credits
+- Use for: Maximum flexibility, most common setup
+
+<Tip>
+**Recommended:** Use Product OR Credits for most schedulers. Gives clients choice while allowing new purchases.
+</Tip>
+
+## Troubleshooting
+
+<AccordionGroup>
+<Accordion title="Product doesn't appear in dropdown">
+**Check these:**
+- Product is published (not draft)
+- Product isn't archived
+- You're looking in correct section (schedulers vs programs vs forms)
+- Refresh the page
+
+If still missing, go to Payments → Products and verify product status.
+</Accordion>
+
+<Accordion title="Client says they can't book">
+**Verify:**
+- Product is attached to scheduler
+- Product price is correct (not accidentally $0 or $10,000)
+- Stripe is connected and in Live Mode
+- Client has valid payment method
+
+Test the booking flow yourself to identify where it breaks.
+</Accordion>
+
+<Accordion title="Credits aren't working">
+Credits require configuration in both Products AND Schedule sections.
+
+**Check:**
+- Product has credits enabled
+- Number of credits is specified
+- Scheduler payment method includes "Credits" option
+- Scheduler is in the product's allowed usage list
+
+[Learn more about credits →](/payments/credits-and-products)
+</Accordion>
+
+<Accordion title="Want to require membership before booking">
+Set scheduler payment method to **Credits** only.
+
+Then only clients with active membership subscriptions (which issue credits) can book.
+
+This prevents one-off purchases and ensures only members access these sessions.
+</Accordion>
+</AccordionGroup>
+
+## Next steps
+
+1. [Test your payment flow](/payments/testing-products) - Verify everything works before going live
+2. [Understand credits](/payments/credits-and-products) - Learn the credit system
+3. [View transactions](/payments/transactions-dashboard) - Monitor incoming payments
+
+## Related articles
+
+- [Products Overview](/payments/products-overview)
+- [Creating Your First Product](/payments/creating-first-product)
+- [Product Types Explained](/payments/product-types)
+- [Credits & Products](/payments/credits-and-products)
