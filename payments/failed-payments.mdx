@@ -1,0 +1,410 @@
+---
+title: "Failed Payments"
+description: "Recover failed subscription and one-time payments to prevent revenue loss and maintain client access"
+sidebarTitle: "Failed Payments"
+icon: "circle-exclamation"
+---
+
+<Info>
+  **Where to find this**: Payments → Transactions or Subscriptions → Filter by Past Due
+</Info>
+
+## Why payments fail
+
+Common reasons for payment failures:
+
+**Card issues:**
+
+- Expired card
+- Insufficient funds
+- Card declined by issuer
+- Incorrect card details
+- Card reported lost or stolen
+
+**Bank issues:**
+
+- Fraud prevention triggered
+- Daily spending limit exceeded
+- International transaction blocked
+- Bank requires authentication
+
+**Technical issues:**
+
+- Network timeout
+- Processing error
+- Stripe API issue
+
+<Note>
+  Most failures are card-related and resolve when client updates payment method.
+</Note>
+
+## How failed payments appear
+
+<Tabs>
+  <Tab title="Subscription payments">
+    **Subscriptions page shows Past Due status**
+
+    When subscription payment fails:
+
+    - Status changes to "Past Due" (yellow/orange)
+    - Last attempted payment shows as failed
+    - Next retry date displayed
+    - Client may retain access during retry period
+
+    <Frame>
+      ![Subscription with Past Due status](/images/payments/subscription-past-due-status.png)
+    </Frame>
+  </Tab>
+  <Tab title="One-time payments">
+    **Transactions page shows Failed status**
+
+    When one-time payment fails:
+
+    - Transaction appears with "Failed" status
+    - No automatic retries for one-time payments
+    - Client didn't receive product or credits
+    - No access granted
+
+    <Frame>
+      ![Failed transaction in transaction list](/images/payments/failed-transaction-status.png)
+    </Frame>
+  </Tab>
+</Tabs>
+
+## Stripe's automatic retry schedule
+
+**Subscription payments only** - Stripe retries automatically:
+
+1. **3 days** after initial failure
+2. **5 days** after first retry
+3. **7 days** after second retry
+4. **10 days** after third retry
+
+**Total retry window:** Approximately 25 days
+
+**If all retries fail:** Subscription automatically cancels
+
+<Warning>
+  Don't wait for automatic retries. Contact client immediately when payment fails to speed recovery.
+</Warning>
+
+## Recovering failed subscription payments
+
+<Steps>
+  <Step title="Identify Past Due subscriptions">
+    Go to **Payments → Subscriptions** and filter by **Past Due** status.
+
+    <Frame>
+      ![Filter subscriptions by Past Due](/images/payments/filter-past-due-subscriptions.png)
+    </Frame>
+  </Step>
+  <Step title="Review failure reason">
+    Click subscription to view details.
+
+    Check Payment History for failure reason:
+
+    - Card declined
+    - Insufficient funds
+    - Expired card
+    - Requires authentication
+
+    Understanding why helps you communicate with client.
+  </Step>
+  <Step title="Contact client immediately">
+    Send message through Inbox or email:
+
+    **Message template:** "Hi [Name], your recent payment for [subscription] was declined. To avoid service interruption, please update your payment method here: [payment update link]"
+
+    <Tip>
+      Act fast. The sooner client updates payment, the sooner Stripe retries successfully.
+    </Tip>
+  </Step>
+  <Step title="Send payment method update link">
+    From subscription details:
+
+    1. Click **Update Payment Method** in Actions section
+    2. Copy generated secure link
+    3. Send link to client
+
+    Link expires in 24 hours.
+
+    <Frame>
+      ![Update payment method button](/images/payments/update-payment-method-button.png)
+    </Frame>
+  </Step>
+  <Step title="Client updates card">
+    Client clicks link and enters new payment details.
+
+    Stripe automatically retries payment with new card on next scheduled attempt.
+  </Step>
+  <Step title="Monitor retry success">
+    Check subscription status:
+
+    - **Active** = Retry succeeded, subscription recovered
+    - **Past Due** = Still failing, follow up again
+    - **Canceled** = All retries failed, subscription lost
+
+    <Check>
+      **Payment recovered.** Subscription returns to Active status. Credits renew. Service continues.
+    </Check>
+  </Step>
+</Steps>
+
+## Recovering failed one-time payments
+
+One-time payments don't retry automatically. You must manually recover them.
+
+<Steps>
+  <Step title="Find failed transaction">
+    Go to **Payments → Transactions** and filter by **Failed** status.
+  </Step>
+  <Step title="Contact client">
+    **Message template:** "Hi [Name], your payment for [product] didn't process successfully. You can complete your purchase here: [new payment link]"
+  </Step>
+  <Step title="Provide new payment link">
+    **Option 1: Resend product link**
+
+    - If client has product URL, they can try purchasing again
+    - Client re-enters payment details
+
+    **Option 2: Send invoice (if available)**
+
+    - Create manual invoice through Stripe
+    - Send invoice link to client
+    - Client pays invoice directly
+
+    **Option 3: Manual payment**
+
+    - Client pays via alternative method (Venmo, check, etc.)
+    - You manually record transaction
+    - Manually grant access/credits
+
+    <Tip>
+      Option 1 is simplest. Just send the original booking or product purchase link again.
+    </Tip>
+  </Step>
+  <Step title="Verify payment success">
+    After client attempts payment again, check Transactions page for successful charge.
+
+    If successful: Grant access, issue credits, confirm with client.
+  </Step>
+</Steps>
+
+## What clients see when payment fails
+
+**Subscription failure:**
+
+- May receive email from Stripe about failed payment
+- May receive notification from you
+- Usually retain access during retry period
+- Risk losing access if not resolved
+
+**One-time payment failure:**
+
+- Transaction doesn't complete
+- No confirmation email
+- No access to product/credits
+- Must attempt payment again
+
+<Info>
+  Client experience varies based on your notification settings. Configure Stripe email notifications in Stripe Dashboard.
+</Info>
+
+## Communication best practices
+
+**When payment fails:**
+
+✅ **Do:**
+
+- Contact immediately (within 24 hours)
+- Be helpful and non-judgmental
+- Provide clear next steps
+- Include payment update link
+- Offer assistance if needed
+
+❌ **Don't:**
+
+- Wait for automatic retries
+- Shame or blame client
+- Threaten immediate cancellation
+- Use aggressive language
+- Send multiple messages in one day
+
+**Sample messages:**
+
+**Professional and helpful:** "Hi [Name]! Just a heads up - your payment for [subscription] didn't go through. This happens sometimes with expired cards or fraud protection. You can update your payment method here: [link]. Let me know if you need any help!"
+
+**Too aggressive:** "Your payment FAILED. Update your card immediately or your account will be canceled."
+
+<Tip>
+  Most payment failures are accidental, not intentional. Keep tone friendly and assume client wants to resolve it.
+</Tip>
+
+## Preventing payment failures
+
+**Proactive strategies:**
+
+<AccordionGroup>
+  <Accordion title="Monitor card expirations">
+    Check upcoming expirations in Stripe Dashboard.
+
+    **Action:** Contact clients 30 days before card expires with payment update link.
+
+    Result: Prevent failures before they happen.
+  </Accordion>
+  <Accordion title="Send payment reminders">
+    **For subscriptions:** Remind clients 3-5 days before billing date.
+
+    **Message:** "Your [subscription] renews on [date] for \$[amount]. Your card ending in [last 4] will be charged. Need to update payment info? [link]"
+
+    Result: Gives clients heads-up and chance to update card if needed.
+  </Accordion>
+  <Accordion title="Require backup payment method">
+    **Advanced:** Some coaches require two cards on file.
+
+    If primary fails, Stripe automatically tries backup card.
+
+    **Setup:** Configure in Stripe Dashboard (requires technical setup).
+  </Accordion>
+  <Accordion title="Use payment authentication">
+    Enable 3D Secure/SCA for additional card verification.
+
+    **Pros:** Reduces fraud, increases legitimate card acceptance
+
+    **Cons:** Adds friction to checkout process
+
+    **Configure:** In Stripe Dashboard payment settings
+  </Accordion>
+</AccordionGroup>
+
+## When payment recovery fails
+
+If client doesn't respond or can't/won't update payment:
+
+**Subscriptions:**
+
+- Stripe exhausts retries (25 days)
+- Subscription automatically cancels
+- Client loses access and credits
+- Must resubscribe to resume service
+
+**One-time payments:**
+
+- Transaction remains failed
+- No product or credits issued
+- Client must attempt purchase again
+- Can write off as lost sale
+
+<Note>
+  Document failed recovery attempts for your records. Some coaches have policies about re-allowing clients who frequently fail payments.
+</Note>
+
+## Alternative payment recovery methods
+
+If standard retry doesn't work:
+
+**Manual invoice:**
+
+- Create invoice in Stripe Dashboard
+- Send to client via email
+- Client pays invoice directly
+- More formal payment request
+
+**Accept alternative payment:**
+
+- Venmo, Zelle, check, cash
+- Manually record transaction in CoachIQ
+- Manually grant access/credits
+
+**Payment plan:**
+
+- Break amount into installments
+- Create custom subscription for installments
+- More work but recovers revenue
+
+<Warning>
+  Alternative payment methods require manual tracking. Use sparingly and document everything.
+</Warning>
+
+## Failed payment analytics
+
+**Track these metrics:**
+
+**Recovery rate:** Successful recoveries / Total failures
+
+**Time to recovery:** Average days from failure to successful payment
+
+**Failure reasons:** Most common decline reasons
+
+**Lost revenue:** Failed payments not recovered
+
+Use this data to:
+
+- Identify patterns (same clients failing repeatedly?)
+- Improve communication timing
+- Adjust retry strategies
+- Forecast revenue risk
+
+## Troubleshooting specific failure reasons
+
+<AccordionGroup>
+  <Accordion title="Card declined - Generic">
+    **Reason:** Bank declined without specific reason
+
+    **Solution:**
+
+    - Ask client to contact their bank
+    - Bank can provide specific reason
+    - Client may need to authorize charge
+    - Try different card
+  </Accordion>
+  <Accordion title="Insufficient funds">
+    **Reason:** Not enough money in account
+
+    **Solution:**
+
+    - Wait for client to add funds
+    - Offer payment plan if appropriate
+    - Next retry may succeed when funds available
+  </Accordion>
+  <Accordion title="Expired card">
+    **Reason:** Card past expiration date
+
+    **Solution:**
+
+    - Send payment update link
+    - Client enters new card with current expiration
+    - Usually quick resolution
+  </Accordion>
+  <Accordion title="Card requires authentication">
+    **Reason:** 3D Secure or SCA required
+
+    **Solution:**
+
+    - Client must complete authentication in email from Stripe
+    - Check spam folder for authentication email
+    - May need to retry payment on different device
+  </Accordion>
+  <Accordion title="Card reported lost or stolen">
+    **Reason:** Card flagged by issuer
+
+    **Solution:**
+
+    - Client must use completely different card
+    - Old card won't work even after "update"
+    - Client needs to contact bank for replacement
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+1. [Issue refunds](/payments/issuing-refunds) - Process refunds for recovered payments if needed
+2. [Manage subscriptions](/payments/managing-subscriptions) - Handle subscription modifications
+3. [View transactions](/payments/transactions-dashboard) - Monitor all payment activity
+
+## Related articles
+
+- [Managing Subscriptions](/payments/managing-subscriptions)
+- [Subscriptions Dashboard](/payments/subscriptions-dashboard)
+- [Issuing Refunds](/payments/issuing-refunds)
+- [Transactions Dashboard](/payments/transactions-dashboard)
