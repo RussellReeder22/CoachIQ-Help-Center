@@ -1,0 +1,183 @@
+---
+title: "Understanding CoachIQ Payments"
+description: "Learn how CoachIQ Payments works and how money flows from your clients to your bank account"
+sidebarTitle: "Payments Overview"
+icon: "circle-dollar"
+---
+
+<Info>
+**Where to find this**: Payments section in the left sidebar
+</Info>
+
+## What CoachIQ Payments does
+
+CoachIQ Payments handles all revenue operations for your coaching business:
+
+- Accept one-time and recurring payments
+- Manage subscription billing automatically
+- Issue and track session credits
+- Apply discounts with coupons
+- Track all transactions in one place
+- Send payment receipts to clients
+
+All payment processing runs through Stripe, which deposits funds directly into your bank account.
+
+## How money flows
+
+<Steps>
+<Step title="Connect Stripe">
+Link your Stripe account to CoachIQ to enable payment processing.
+
+<Frame>
+<img src="/images/payments/stripe-connection-flow.png" alt="Stripe connection in settings" />
+</Frame>
+</Step>
+
+<Step title="Create products">
+Build products for sessions, memberships, programs, or access codes.
+</Step>
+
+<Step title="Attach to offerings">
+Connect products to:
+- Session schedulers (for bookings)
+- Programs (for content access)
+- Forms (for registrations)
+</Step>
+
+<Step title="Customer pays">
+Client selects offering → Payment screen → Completes purchase
+</Step>
+
+<Step title="Money deposited">
+Stripe processes payment → Deposits to your bank account (typically 2 business days)
+
+<Check>
+You receive funds automatically. CoachIQ tracks everything in the Transactions dashboard.
+</Check>
+</Step>
+</Steps>
+
+## Key concepts
+
+<CardGroup cols={2}>
+<Card title="Products" icon="box" href="/payments/products-overview">
+One-time purchases, recurring subscriptions, or access code redemptions
+</Card>
+
+<Card title="Transactions" icon="receipt" href="/payments/transactions-dashboard">
+Complete record of all payments, refunds, and failed charges
+</Card>
+
+<Card title="Subscriptions" icon="rotate" href="/payments/subscriptions-dashboard">
+Recurring billing that renews automatically on schedule
+</Card>
+
+<Card title="Credits" icon="ticket" href="/payments/credits-and-products">
+Pre-purchased session credits clients can redeem for bookings
+</Card>
+
+<Card title="Coupons" icon="tag" href="/payments/coupons-overview">
+Discount codes for promotions, partnerships, and special offers
+</Card>
+
+<Card title="Products Usage" icon="link" href="/payments/products-integration">
+How to attach products to sessions, programs, and forms
+</Card>
+</CardGroup>
+
+## Three ways clients pay
+
+**Direct purchase**
+Client books session → Selects time → Pays with card → Confirmed
+
+**Subscription billing**
+Client subscribes → Card charged monthly → Receives credits/access automatically
+
+**Access code**
+Client enters code → Discount applied (or free) → Access granted
+
+## Your first three steps
+
+<Steps>
+<Step title="Connect Stripe">
+Enable payment processing by linking your Stripe account.
+
+[Connect Stripe →](/payments/connecting-stripe)
+</Step>
+
+<Step title="Create a product">
+Build your first product for a session, membership, or program.
+
+[Create Product →](/payments/creating-first-product)
+</Step>
+
+<Step title="Attach to sessions">
+Link your product to a session scheduler so clients can book and pay.
+
+[Attach Products →](/payments/products-integration)
+</Step>
+</Steps>
+
+## Where everything lives
+
+Navigate the Payments section from your left sidebar:
+
+- **Products**: Create and manage all payment offerings
+- **Transactions**: View all payment activity and history
+- **Subscriptions**: Monitor recurring billing and active memberships
+- **Coupons**: Create and track discount codes
+
+<Frame>
+<img src="/images/payments/payments-navigation.png" alt="Payments section navigation" />
+</Frame>
+
+## Payment processing fees
+
+Stripe charges 2.9% + $0.30 per successful transaction (US rates). You can configure products to either:
+- Absorb the fee (you receive less)
+- Pass to customer (they pay slightly more)
+
+<Note>
+Fees are set by Stripe, not CoachIQ. International rates and currency conversions may differ.
+</Note>
+
+## What you need to know
+
+**Stripe handles everything**: CoachIQ doesn't store card numbers or process payments directly. Stripe manages all payment security, PCI compliance, and fraud prevention.
+
+**Automatic reconciliation**: Every transaction in CoachIQ syncs with Stripe in real-time. Your records always match.
+
+**Bank deposits**: Stripe deposits funds to your bank account on a rolling basis. First payout takes 7-10 days; subsequent payouts are typically daily or weekly based on your Stripe settings.
+
+**Refunds**: Issue full or partial refunds directly from CoachIQ. Money returns to client's original payment method.
+
+## Common questions
+
+<AccordionGroup>
+<Accordion title="Do I need a business bank account?">
+No. You can connect Stripe to any bank account—personal or business. However, a business account is recommended for accounting and tax purposes.
+</Accordion>
+
+<Accordion title="Can I accept payments without Stripe?">
+No. Stripe is the payment processor for CoachIQ. You must have a Stripe account to accept payments through the platform.
+</Accordion>
+
+<Accordion title="What currencies are supported?">
+CoachIQ supports all currencies that Stripe supports. Set your currency in Stripe, and it applies to all CoachIQ transactions.
+</Accordion>
+
+<Accordion title="How do taxes work?">
+CoachIQ doesn't calculate or collect sales tax automatically. You're responsible for:
+- Determining if you need to collect sales tax
+- Setting prices that include tax
+- Reporting and remitting taxes to appropriate authorities
+
+Consider consulting a tax professional for your specific situation.
+</Accordion>
+</AccordionGroup>
+
+## Ready to start?
+
+Begin by connecting your Stripe account to enable payment processing.
+
+[Connect Stripe →](/payments/connecting-stripe)
