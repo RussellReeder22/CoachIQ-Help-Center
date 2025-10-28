@@ -205,14 +205,13 @@ CoachIQ has two distinct credit types that work together:
     - Flexibility for athlete to book any service
     - Simple credit system without restrictions
 
+    <Tip>
+      Note: Master credits are only added manually by admins. All other credits purchased by users will have a product specific credit bank on their account.
+    </Tip>
     **Athlete sees**:
 
     - "Master Credits: 10"
     - "These credits can be used for any session and have no restrictions"
-
-    <Check>
-      **Most common**: If you're starting with credits, use Master Credits for simplicity.
-    </Check>
   </Tab>
   <Tab title="Scheduler-Specific Credits">
     **What they are**: Credits restricted to designated schedulers only
@@ -244,10 +243,6 @@ CoachIQ has two distinct credit types that work together:
 
 1. **First**: Scheduler-specific credits for that particular scheduler
 2. **Last**: Master credits (if scheduler-specific exhausted or don't exist)
-
-<Tip>
-  **Strategic use**: Combine both types—sell general packages (master credits) and premium memberships (scheduler-specific credits) to create tiered offerings.
-</Tip>
 
 ---
 
@@ -285,7 +280,7 @@ Once athletes have credits, they need schedulers configured to accept them.
     **Example**: "60-Min Private Training - 1 Credit OR \$50"
 
     <Tip>
-      **Best practice**: Price direct payment higher than credit-equivalent to incentivize package purchases. (1 credit = $45 value, but direct payment = $50)
+      **Best practice**: Price direct payment higher than credit-equivalent to incentivize package purchases. (1 credit = \$45 value, but direct payment =  \$50)
     </Tip>
   </Tab>
   <Tab title="Direct Payment Only">
@@ -320,13 +315,17 @@ Once athletes have credits, they need schedulers configured to accept them.
 
 ### Credit balance and tracking
 
-**Where athletes see their balance:**
+Athletes can see their credit balance within the **Billing** section of the athlete portal
 
-- **Athlete Portal dashboard**: Prominent credit display on homepage
-- **Mobile app home screen**: Current balance at top
-- **Billing settings page**: Complete credit management hub
-- **Booking flow**: Balance shown before confirming session
-- **Email notifications**: Low balance alerts
+**How to navigate as an athlete:**
+
+1. Log into your respective athlete portal
+2. Click or press the profile icon at the top right hand corner of the page
+3. Visit **Billing **to view your credit balance
+
+<Frame>
+  ![Billing Credits Pn](/images/billing-credits.png)
+</Frame>
 
 **Athlete's Billing Settings Page includes:**
 
@@ -356,7 +355,7 @@ Once athletes have credits, they need schedulers configured to accept them.
 
     - "Rising Stars Class: 0/∞" (unlimited available for this scheduler)
     - "Elite Class: 0/∞" (unlimited available for this scheduler)
-    - "Private Sessions: 6" (6 finite credits available)
+    - "Private Sessions: 6" (6 credits available for redemption during the current billing cycle)
 
     **Per-scheduler tracking**: Each scheduler shows individual usage if restricted credits
   </Accordion>
@@ -366,17 +365,9 @@ Once athletes have credits, they need schedulers configured to accept them.
     - "Monthly Rising Stars Membership - \$250/month"
     - Next renewal date and status
   </Accordion>
-  <Accordion title="Credit Logs">
-    Complete transaction history:
-
-    - Date | Amount | Source
-    - "04 Aug, 7:46 AM | -1 Credits | Redeemed for Rising Stars Class"
-    - "22 May, 10:07 AM | +10 Credits | Purchased 10-Credit Package"
-    - "08 Jul, 5:53 PM | +13 Credits | Set by [Coach Name]" (manual grant)
-  </Accordion>
 </AccordionGroup>
 
-**What coaches see:**
+**What coaches can see:**
 
 - Individual athlete credit balances (in athlete profile → Credits tab)
 - Separate tabs for each credit source (Master Credits tab, product-specific tabs)
@@ -384,7 +375,9 @@ Once athletes have credits, they need schedulers configured to accept them.
 - Credit usage trends and analytics
 - Low-balance athletes (proactive outreach opportunity)
 
----
+<Frame>
+  ![Credits Page Pn](/images/credits-page.png)
+</Frame>
 
 ### Understanding credit display notation
 
@@ -428,10 +421,8 @@ Athletes will see specific symbols and formats in their credit balance:
 - Athlete has "Rising Stars Membership"
 - Display under Redeemable Sessions:
   - "Rising Stars Class: 0/∞"
-  - "Rising Stars Shooting Lab: 0/∞"
-- Meaning: Unlimited bookings for these specific classes this month
-
----
+  - "Rising Stars Shooting Lab: 0/4"
+- Meaning: Unlimited bookings for Rising Stars Class and only 4 more bookings available for Rising Stars Shooting Lab this month
 
 ## Credit package strategy
 
@@ -541,8 +532,8 @@ Calculate your per-session price, then offer tiered discounts based on package s
 
     **Best for**: Building goodwill, long-term athlete relationships
   </Tab>
-  <Tab title="6-Month Expiration">
-    **Policy**: Credits expire 6 months after purchase
+  <Tab title="Day/Month After Purchase Expiration">
+    **Policy**: Credits expire days or months after pruchase
 
     **Benefits**:
 
@@ -553,17 +544,6 @@ Calculate your per-session price, then offer tiered discounts based on package s
     **Communication required**: Clear expiration warnings at purchase and via email
 
     **Best for**: High-frequency training businesses, regular weekly schedules
-  </Tab>
-  <Tab title="Rolling Expiration">
-    **Policy**: Credits expire 90 days from LAST USE (not purchase)
-
-    **Benefits**:
-
-    - Rewards active athletes (credits stay fresh with use)
-    - Gently discourages inactive athletes
-    - Fair compromise
-
-    **Best for**: Coaches who want to encourage consistency without being harsh
   </Tab>
 </Tabs>
 
