@@ -1,0 +1,369 @@
+---
+title: "Coupons Overview"
+description: "Create and manage discount codes for promotions, partnerships, and special offers"
+sidebarTitle: "Coupons Overview"
+icon: "tag"
+---
+
+<Info>
+  **Where to find this**: Payments → Coupons
+</Info>
+
+## What coupons are
+
+Coupons are discount codes that reduce product prices at checkout:
+
+- Percentage discounts (10%, 25%, 50% off)
+- Fixed amount discounts ($10, $25 off)
+- Free access (100% off)
+
+Clients enter coupon codes during checkout to apply discounts automatically.
+
+## The Coupons page
+
+Navigate to **Payments → Coupons** to view all discount codes.
+
+<Frame>
+  ![Coupons page showing list of all coupons](/images/payments/coupons-page-overview.png)
+</Frame>
+
+**Page displays:**
+
+- Coupon code
+- Discount type (Free, Percentage, Amount)
+- Value off
+- Redemption count
+- Date created
+- Active/Inactive status
+
+**Available actions:**
+
+- Create new coupon
+- Edit existing coupon
+- Delete/archive coupon
+- View redemption details
+
+## Three coupon types
+
+<Tabs>
+  <Tab title="Free">
+    **100% off - No payment required**
+
+    Product becomes free when coupon applied.
+
+    **When to use:**
+
+    - Promotional giveaways
+    - Scholarship access
+    - Sponsor/donor complimentary sessions
+    - Contest prizes
+
+    **Example:** FREESESSION code makes \$75 session free
+
+    <Info>
+      Free coupons still require checkout process to capture client info and issue credits.
+    </Info>
+  </Tab>
+  <Tab title="Percentage Off">
+    **Discount by percentage**
+
+    Reduces price by specified percentage.
+
+    **When to use:**
+
+    - Promotional campaigns (25% off sale)
+    - Referral rewards (20% off for referrals)
+    - Seasonal discounts
+    - Member benefits (10% member discount)
+
+    **Examples:**
+
+    - 10OFF = 10% discount
+    - SPRING25 = 25% off
+    - HALF = 50% discount
+
+    <Tip>
+      Percentage discounts scale with product price. $100 product with 25% off = $25 discount. $200 product with 25% off = $50 discount.
+    </Tip>
+  </Tab>
+  <Tab title="Amount Off">
+    **Fixed dollar discount**
+
+    Reduces price by specific dollar amount.
+
+    **When to use:**
+
+    - Fixed-value promotions (\$10 off any purchase)
+    - Bundle discounts (\$50 off packages)
+    - Retention offers (\$25 off return visit)
+
+    **Examples:**
+
+    - SAVE10 = \$10 off
+    - BUNDLE50 = \$50 off
+    - TWENTYFIVE = \$25 off
+
+    <Warning>
+      Amount-off coupons can't reduce price below $0. $10 off a $5 product results in $0 charge, not negative.
+    </Warning>
+  </Tab>
+</Tabs>
+
+## Common use cases
+
+<CardGroup cols={2}>
+  <Card title="Promotions" icon="megaphone">
+    Limited-time sales, seasonal offers, launch discounts
+  </Card>
+  <Card title="Referrals" icon="user-plus">
+    Reward clients who refer friends with discount codes
+  </Card>
+  <Card title="Partnerships" icon="handshake">
+    Corporate codes, sponsor access, organization discounts
+  </Card>
+  <Card title="Retention" icon="arrow-rotate-left">
+    Win-back offers, loyalty rewards, comeback incentives
+  </Card>
+  <Card title="Influencer" icon="star">
+    Unique codes for social media promoters and affiliates
+  </Card>
+  <Card title="Apology" icon="face-frown">
+    Service recovery, issue compensation, goodwill gestures
+  </Card>
+</CardGroup>
+
+## Coupon vs. Access Code product
+
+**Two ways to offer special access:**
+
+<Tabs>
+  <Tab title="Coupon">
+    **Discount applied to existing product**
+
+    - Create one coupon
+    - Works with any product
+    - Client selects product, then applies coupon
+    - More flexible - one coupon for multiple products
+
+    **Example:** SUMMER25 code gives 25% off any product
+  </Tab>
+  <Tab title="Access Code Product">
+    **Separate product requiring code**
+
+    - Create Access Code product type
+    - Works only for that specific product
+    - Client enters code to see/purchase product
+    - More controlled - specific product with specific code
+
+    **Example:** CORPORATE2025 unlocks "Corporate Partner Sessions" product
+
+    [Learn about Access Code products →](/payments/product-types)
+  </Tab>
+</Tabs>
+
+<Tip>
+  **General promotions:** Use coupons (one code for many products)
+
+  **Specific partnerships:** Use Access Code products (controlled access to dedicated product)
+</Tip>
+
+## How clients use coupons
+
+<Steps>
+  <Step title="Client selects product">
+    Client goes to booking page or product purchase and selects what they want.
+  </Step>
+  <Step title="Client enters coupon code">
+    At checkout, client finds "Coupon Code" or "Promo Code" field and enters code.
+
+    <Frame>
+      ![Coupon code entry field at checkout](/images/payments/coupon-entry-field.png)
+    </Frame>
+  </Step>
+  <Step title="Discount applies">
+    Price updates immediately to reflect discount.
+
+    Client sees:
+
+    - Original price (strikethrough)
+    - Discount amount
+    - New total
+
+    <Frame>
+      ![Checkout showing applied discount](/images/payments/coupon-applied-checkout.png)
+    </Frame>
+  </Step>
+  <Step title="Client completes purchase">
+    Client pays discounted amount and receives product/credits.
+  </Step>
+</Steps>
+
+## Coupon list columns explained
+
+**Code**: Exact text client must enter
+
+- Case sensitive by default
+- No spaces allowed
+- Letters, numbers, and hyphens OK
+
+**Type**: Free, Percentage Off, or Amount Off
+
+**Value Off**:
+
+- Free: 100%
+- Percentage: 10%, 25%, 50%, etc.
+- Amount: $10, $25, \$50, etc.
+
+**Redemptions**: Number of times coupon has been used
+
+- Tracks usage count
+- Compares against limit (if set)
+- Example: 15/100 = 15 uses out of 100 limit
+
+**Date Created**: When you created the coupon
+
+**Status**: Active (clients can use) or Inactive (disabled)
+
+## Filter and search coupons
+
+**Filter by type:**
+
+- All coupons
+- Free only
+- Percentage off only
+- Amount off only
+
+**Filter by status:**
+
+- Active coupons
+- Inactive coupons
+
+**Search:** Type code name to find specific coupon
+
+<Frame>
+  ![Filter and search options for coupons](/images/payments/coupons-filter-search.png)
+</Frame>
+
+## Active vs. Inactive coupons
+
+**Active coupons:**
+
+- Clients can redeem at checkout
+- Appear in search/reports
+- Count toward active coupon limit
+
+**Inactive coupons:**
+
+- Clients cannot redeem
+- Historical record remains
+- Don't count toward limit
+- Useful for expired or ended promotions
+
+<Tip>
+  Deactivate instead of deleting. Preserves redemption history and lets you reactivate later if needed.
+</Tip>
+
+## Coupon limitations and controls
+
+**Redemption limits:**
+
+- Unlimited uses (default)
+- Limited total uses (50, 100, 500, etc.)
+- One use per customer (coming soon)
+
+**Expiration dates:**
+
+- No expiration (default)
+- Specific end date
+- End after X redemptions
+
+**Product restrictions:**
+
+- Apply to all products (default)
+- Apply to specific products only
+- Minimum purchase amount (coming soon)
+
+<Note>
+  Available controls depend on your CoachIQ plan. Check current feature availability in your account.
+</Note>
+
+## Creating your first coupon
+
+Ready to create a discount code?
+
+[Follow the step-by-step guide →](/payments/creating-coupons)
+
+Quick preview of the process:
+
+1. Go to Payments → Coupons
+2. Click + Create Coupon
+3. Choose coupon type (Free, Percentage, Amount)
+4. Set code name (what clients enter)
+5. Configure discount value
+6. Set redemption limits (optional)
+7. Save coupon
+
+## Tracking coupon performance
+
+**Metrics to monitor:**
+
+**Redemption count:** How many times used
+
+**Revenue impact:** Total discount given away
+
+**Conversion rate:** Coupon uses / Coupon impressions
+
+**Most popular codes:** Which coupons clients use most
+
+**Least used codes:** Which promotions aren't working
+
+Use redemption data to:
+
+- Measure campaign success
+- Adjust discount amounts
+- Identify effective channels
+- Plan future promotions
+
+[Learn about coupon tracking →](/payments/coupon-tracking)
+
+## Best practices
+
+**Code naming:**
+
+- Make codes memorable (SPRING25, not XJ7H2K9)
+- Include discount in name when possible (25OFF)
+- Match campaign (REFER20 for referral program)
+- Keep them short (under 15 characters)
+
+**Discount sizing:**
+
+- Test different amounts to find sweet spot
+- Too small: Doesn't motivate action
+- Too large: Erodes margins unnecessarily
+- Common sweet spot: 20-30% for percentage, $25-$50 for amount
+
+**Promotion timing:**
+
+- Limited time creates urgency (48-hour sale)
+- Seasonal alignment (SUMMER, NEWYEAR)
+- Event-based (GRANDOPENING, ANNIVERSARY)
+
+**Communication:**
+
+- Clearly state terms (expires, limits, restrictions)
+- Make codes easy to find and share
+- Remind clients of expiration dates
+- Celebrate redemptions (thank clients who use codes)
+
+## Next steps
+
+1. [Create a coupon](/payments/creating-coupons) - Step-by-step coupon creation
+2. [Apply coupons](/payments/applying-coupons) - How clients use discount codes
+3. [Track performance](/payments/coupon-tracking) - Monitor coupon effectiveness
+
+## Related articles
+
+- [Creating Coupons](/payments/creating-coupons)
+- [Applying Coupons at Checkout](/payments/applying-coupons)
+- [Tracking Coupon Performance](/payments/coupon-tracking)
+- [Product Types Explained](/payments/product-types)
