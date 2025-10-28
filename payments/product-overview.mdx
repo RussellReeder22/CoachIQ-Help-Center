@@ -6,12 +6,13 @@ icon: "box"
 ---
 
 <Info>
-**Where to find this**: Payments → Products
+  **Where to find this**: Payments → Products
 </Info>
 
 ## What products are
 
 Products are anything you sell through CoachIQ:
+
 - Session bookings
 - Monthly memberships
 - Training programs
@@ -24,51 +25,50 @@ Each product defines what clients buy, how much they pay, and what they receive.
 ## Three product types
 
 <CardGroup cols={3}>
-<Card title="One-Time" icon="credit-card">
-**Single purchase**
+  <Card title="One-Time" icon="credit-card">
+    **Single purchase**
 
-Sessions, workshops, evaluations, camps
+    Sessions, workshops, evaluations, camps
 
-Client pays once → Receives access immediately
-</Card>
+    Client pays once → Receives access immediately
+  </Card>
+  <Card title="Subscription" icon="rotate">
+    **Recurring billing**
 
-<Card title="Subscription" icon="rotate">
-**Recurring billing**
+    Monthly memberships, training packages
 
-Monthly memberships, training packages
+    Client pays monthly → Receives credits or access automatically
+  </Card>
+  <Card title="Access Code" icon="ticket">
+    **Code redemption**
 
-Client pays monthly → Receives credits or access automatically
-</Card>
+    Partner codes, promo codes, team discounts
 
-<Card title="Access Code" icon="ticket">
-**Code redemption**
-
-Partner codes, promo codes, team discounts
-
-Client enters code → Discount applied or free access granted
-</Card>
+    Client enters code → Discount applied or free access granted
+  </Card>
 </CardGroup>
 
 ## Product type comparison
 
-| Feature | One-Time | Subscription | Access Code |
-|---------|----------|--------------|-------------|
-| **Payment** | Single charge | Recurring billing | Single charge (can be $0) |
-| **Use case** | Sessions, camps, workshops | Memberships, monthly training | Partnerships, promos, team discounts |
-| **Credits** | Optional | Optional (renews each period) | Optional |
-| **Trial period** | No | Yes | No |
-| **Code required** | No | No | Yes |
-| **Renewal** | Never | Automatic | Never |
+| Feature           | One-Time                   | Subscription                  | Access Code                          |
+| ----------------- | -------------------------- | ----------------------------- | ------------------------------------ |
+| **Payment**       | Single charge              | Recurring billing             | Single charge (can be \$0)           |
+| **Use case**      | Sessions, camps, workshops | Memberships, monthly training | Partnerships, promos, team discounts |
+| **Credits**       | Optional                   | Optional (renews each period) | Optional                             |
+| **Trial period**  | No                         | Yes                           | No                                   |
+| **Code required** | No                         | No                            | Yes                                  |
+| **Renewal**       | Never                      | Automatic                     | Never                                |
 
 ## The Products page
 
 Navigate to **Payments → Products** to see all your products.
 
 <Frame>
-<img src="/images/payments/products-list-view.png" alt="Products page showing list of all products" />
+  ![Products page showing list of all products](/images/payments/products-list-view.png)
 </Frame>
 
 **What you see:**
+
 - Product name
 - Type (One-Time, Subscription, Access Code)
 - Price
@@ -76,6 +76,7 @@ Navigate to **Payments → Products** to see all your products.
 - Status indicator
 
 **What you can do:**
+
 - Search by product name
 - Filter by type
 - Sort by date or price
@@ -84,59 +85,60 @@ Navigate to **Payments → Products** to see all your products.
 - Create new products
 
 <Tip>
-Click any product name to open the Product Builder and see full details or make changes.
+  Click any product name to open the Product Builder and see full details or make changes.
 </Tip>
 
 ## When to use each type
 
 <Tabs>
-<Tab title="One-Time Products">
-**Best for single purchases**
+  <Tab title="One-Time Products">
+    **Best for single purchases**
 
-Examples:
-- Individual training sessions
-- Skills assessments or evaluations
-- One-time workshops
-- Summer camps
-- Merchandise or equipment
-- Program access (one-time fee)
+    Examples:
 
-Client pays once and receives immediate access to what they purchased.
-</Tab>
+    - Individual training sessions
+    - Skills assessments or evaluations
+    - One-time workshops
+    - Summer camps
+    - Merchandise or equipment
+    - Program access (one-time fee)
 
-<Tab title="Subscription Products">
-**Best for recurring revenue**
+    Client pays once and receives immediate access to what they purchased.
+  </Tab>
+  <Tab title="Subscription Products">
+    **Best for recurring revenue**
 
-Examples:
-- Monthly unlimited training
-- Weekly session packages (4 credits/month)
-- Facility membership
-- Program access (monthly fee)
-- Ongoing coaching packages
+    Examples:
 
-Client's card charges automatically each month. They receive credits or maintain access as long as subscription is active.
+    - Monthly unlimited training
+    - Weekly session packages (4 credits/month)
+    - Facility membership
+    - Program access (monthly fee)
+    - Ongoing coaching packages
 
-<Check>
-Subscriptions create predictable recurring revenue and reduce manual billing work.
-</Check>
-</Tab>
+    Client's card charges automatically each month. They receive credits or maintain access as long as subscription is active.
 
-<Tab title="Access Code Products">
-**Best for special access**
+    <Check>
+      Subscriptions create predictable recurring revenue and reduce manual billing work.
+    </Check>
+  </Tab>
+  <Tab title="Access Code Products">
+    **Best for special access**
 
-Examples:
-- Corporate partnership codes
-- Sponsor/donor free access
-- Team discount codes
-- Referral program offers
-- Promotional campaigns
+    Examples:
 
-Client enters a code during checkout. Discount applies or access is granted for free.
+    - Corporate partnership codes
+    - Sponsor/donor free access
+    - Team discount codes
+    - Referral program offers
+    - Promotional campaigns
 
-<Info>
-Access codes can have redemption limits. Track usage to ensure codes aren't overused.
-</Info>
-</Tab>
+    Client enters a code during checkout. Discount applies or access is granted for free.
+
+    <Info>
+      Access codes can have redemption limits. Track usage to ensure codes aren't overused.
+    </Info>
+  </Tab>
 </Tabs>
 
 ## How products connect to your business
@@ -144,16 +146,19 @@ Access codes can have redemption limits. Track usage to ensure codes aren't over
 Products attach to three places in CoachIQ:
 
 **Session Schedulers** → Clients book time slots and pay with products
+
 - Schedule → Schedulers → [Select Scheduler] → Payment Settings
 
 **Programs** → Clients purchase access to locked content
+
 - Content → Programs → [Select Program] → Paywall Settings
 
 **Forms** → Clients submit forms with payment
+
 - Tools → Forms → Form Builder → Add Payment Field
 
 <Note>
-One product can attach to multiple schedulers, programs, or forms. Reuse products across your offerings.
+  One product can attach to multiple schedulers, programs, or forms. Reuse products across your offerings.
 </Note>
 
 ## Product status
@@ -161,12 +166,14 @@ One product can attach to multiple schedulers, programs, or forms. Reuse product
 Products can be **Active** or **Archived**:
 
 **Active products:**
+
 - Appear in booking flows
 - Available for purchase
 - Show in product selection dropdowns
 - Count toward your product limit
 
 **Archived products:**
+
 - Hidden from clients
 - Can't be purchased
 - Still show in transaction history
@@ -179,25 +186,21 @@ Archive products you no longer offer but want to keep for record-keeping.
 Ready to build a product?
 
 <Steps>
-<Step title="Go to Products page">
-Click **Payments → Products** in left sidebar
-</Step>
-
-<Step title="Click Create Product">
-Blue **+ Create Product** button in top right
-</Step>
-
-<Step title="Choose product type">
-Select One-Time, Subscription, or Access Code
-</Step>
-
-<Step title="Fill out Product Builder">
-Complete required fields (name and price minimum)
-</Step>
-
-<Step title="Save or Publish">
-Save as draft or publish immediately
-</Step>
+  <Step title="Go to Products page">
+    Click **Payments → Products** in left sidebar
+  </Step>
+  <Step title="Click Create Product">
+    Blue **\+ Create Product** button in top right
+  </Step>
+  <Step title="Choose product type">
+    Select One-Time, Subscription, or Access Code
+  </Step>
+  <Step title="Fill out Product Builder">
+    Complete required fields (name and price minimum)
+  </Step>
+  <Step title="Save or Publish">
+    Save as draft or publish immediately
+  </Step>
 </Steps>
 
 [Full product creation guide →](/payments/creating-first-product)
@@ -210,7 +213,7 @@ Save as draft or publish immediately
 
 **Credits are optional**: Not every product needs to issue credits. Many coaches use products for payment only.
 
-**Processing fees**: You choose whether to absorb Stripe fees (2.9% + $0.30) or pass them to clients.
+**Processing fees**: You choose whether to absorb Stripe fees (2.9% + \$0.30) or pass them to clients.
 
 **Changes affect new purchases only**: Editing a product doesn't change existing transactions or active subscriptions.
 
