@@ -1,0 +1,377 @@
+---
+title: "Managing Subscriptions"
+description: "Cancel, pause, or modify active subscriptions and handle subscription changes"
+sidebarTitle: "Manage Subscriptions"
+icon: "sliders"
+---
+
+<Info>
+  **Where to find this**: Payments → Subscriptions → Click subscription → Actions
+</Info>
+
+## Canceling subscriptions
+
+Two ways to cancel a subscription:
+
+<Tabs>
+  <Tab title="Cancel at period end">
+    **Recommended approach**
+
+    Client keeps access through current billing period. Subscription ends on next billing date.
+
+    **What happens:**
+
+    1. Client retains access until period ends
+    2. Credits remain valid until period ends
+    3. No refund issued
+    4. No future charges
+    5. Subscription status changes to "Canceled" on end date
+
+    **When to use:** Default cancellation method. Fair to client who already paid for current period.
+
+    <Frame>
+      ![Cancel at period end option](/images/payments/cancel-at-period-end.png)
+    </Frame>
+  </Tab>
+  <Tab title="Cancel immediately">
+    **Instant termination**
+
+    Client loses access right now. Subscription ends today.
+
+    **What happens:**
+
+    1. Client loses access immediately
+    2. Credits expire immediately
+    3. Partial refund may be issued (optional)
+    4. No future charges
+    5. Subscription status changes to "Canceled" now
+
+    **When to use:** Client requests immediate cancellation, fraudulent account, terms violation.
+
+    <Warning>
+      Immediate cancellation without refund may frustrate clients who prepaid. Use carefully.
+    </Warning>
+  </Tab>
+</Tabs>
+
+## How to cancel a subscription
+
+<Steps>
+  <Step title="Find the subscription">
+    Go to **Payments → Subscriptions** and click the subscription to cancel.
+  </Step>
+  <Step title="Click Cancel">
+    Scroll to Actions section and click **Cancel Subscription** button.
+
+    <Frame>
+      ![Cancel subscription button location](/images/payments/cancel-subscription-button.png)
+    </Frame>
+  </Step>
+  <Step title="Choose cancellation timing">
+    Select:
+
+    - **Cancel at period end** (access continues until paid period expires)
+    - **Cancel immediately** (access ends now)
+  </Step>
+  <Step title="Confirm cancellation">
+    Review cancellation details and click **Confirm**.
+
+    <Check>
+      **Subscription canceled.** Status updates and client notification sent (if configured).
+    </Check>
+  </Step>
+</Steps>
+
+## What happens after cancellation
+
+**Access:**
+
+- Cancel at period end: Access until period expires
+- Cancel immediately: Access ends now
+
+**Credits:**
+
+- Cancel at period end: Valid until period expires
+- Cancel immediately: Expire immediately
+
+**Payments:**
+
+- No future charges
+- Past payments remain (no automatic refund)
+
+**Resubscribing:**
+
+- Client must purchase subscription product again
+- Creates new subscription (not reactivation of old one)
+- New subscription ID and billing schedule
+
+<Note>
+  Canceled subscriptions remain visible in your Subscriptions list filtered by "Canceled" status.
+</Note>
+
+## Refunding subscription payments
+
+Issue full or partial refund for subscription charges.
+
+<Steps>
+  <Step title="Open subscription">
+    Payments → Subscriptions → Click subscription
+  </Step>
+  <Step title="Find payment to refund">
+    Scroll to Payment History section. Locate the charge to refund.
+  </Step>
+  <Step title="Click Refund">
+    Click refund icon or button next to the payment.
+  </Step>
+  <Step title="Choose refund amount">
+    **Full refund:** Return entire payment amount
+
+    **Partial refund:** Enter specific dollar amount to refund
+
+    <Tip>
+      For partial period cancellations, calculate prorated amount. Example: $200/month, cancel on day 15 = refund $100.
+    </Tip>
+  </Step>
+  <Step title="Decide on subscription status">
+    **Continue subscription:** Issue refund but keep subscription active
+
+    **Cancel subscription:** Issue refund and end subscription
+
+    Most common: Refund + Cancel together
+  </Step>
+  <Step title="Confirm refund">
+    Review details and click **Confirm Refund**.
+
+    <Check>
+      **Refund processing.** Money returns to client's original payment method within 5-10 business days.
+    </Check>
+  </Step>
+</Steps>
+
+[Complete refund guide →](/payments/issuing-refunds)
+
+## Updating client payment methods
+
+Client needs to update their card for future charges.
+
+<Tabs>
+  <Tab title="Send update link">
+    **You initiate from CoachIQ**
+
+    <Steps>
+      <Step title="Open subscription">
+        Payments → Subscriptions → Click subscription
+      </Step>
+      <Step title="Click Update Payment Method">
+        Button in Actions section generates secure link.
+      </Step>
+      <Step title="Copy and send link">
+        Send link to client via:
+
+        - Inbox message
+        - Email
+        - Text message
+
+        Link expires in 24 hours for security.
+      </Step>
+      <Step title="Client updates card">
+        Client clicks link, enters new card details, submits.
+
+        Future charges use new card automatically.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Client self-service">
+    **Client updates from their portal**
+
+    Instruct client:
+
+    1. Log into Athlete Portal
+    2. Click profile/settings
+    3. Navigate to Payment Methods
+    4. Add or update card
+    5. Set as default for subscription
+
+    No action needed from you.
+  </Tab>
+</Tabs>
+
+## Handling failed subscription payments
+
+When subscription payment fails, status changes to Past Due.
+
+**Automatic Stripe retries:**
+
+- First retry: 3 days after failure
+- Second retry: 5 days after first retry
+- Third retry: 7 days after second retry
+- Final attempt: 10 days after third retry
+
+**Your actions:**
+
+<Steps>
+  <Step title="Contact client immediately">
+    Don't wait for retries. Send message:
+
+    "Your recent payment for [subscription] failed. Please update your payment method to avoid service interruption: [payment update link]"
+  </Step>
+  <Step title="Send payment update link">
+    Use "Update Payment Method" action to generate secure link.
+  </Step>
+  <Step title="Monitor retry status">
+    Check subscription daily for successful retry or continued failures.
+  </Step>
+  <Step title="If all retries fail">
+    Subscription automatically cancels after final retry fails.
+
+    Client must resubscribe by purchasing product again.
+  </Step>
+</Steps>
+
+[Complete failed payment recovery guide →](/payments/failed-payments)
+
+## Subscription modifications
+
+**What you can do in CoachIQ:**
+
+- Cancel subscription (immediate or end of period)
+- Refund payments
+- Send payment update links
+- View billing history
+
+**What requires Stripe Dashboard:**
+
+- Change subscription price mid-cycle
+- Apply discount to specific billing period
+- Modify billing date
+- Pause subscription
+- Skip upcoming payment
+- Change billing interval
+
+<Info>
+  For advanced modifications, click **View in Stripe** in subscription details. Changes in Stripe sync automatically to CoachIQ.
+</Info>
+
+## Common subscription management scenarios
+
+<AccordionGroup>
+  <Accordion title="Client wants to downgrade from unlimited to limited sessions">
+    **Current approach:**
+
+    1. Cancel current subscription (at period end)
+    2. Client purchases new subscription product after period ends
+    3. New subscription starts with different pricing/credits
+
+    **Future:** Subscription switching without gap coming soon.
+  </Accordion>
+  <Accordion title="Client paid but wants immediate refund and cancellation">
+    **Steps:**
+
+    1. Issue full refund for current period
+    2. Choose "Cancel subscription" when refunding
+    3. Select "Cancel immediately"
+
+    Client gets money back and loses access now.
+  </Accordion>
+  <Accordion title="Client wants to pause subscription for 2 months (injury, travel)">
+    **CoachIQ doesn't support pause directly.**
+
+    **Options:**
+
+    1. Cancel now, client resubscribes when ready (loses pricing if changed)
+    2. Use Stripe Dashboard to pause subscription (requires setup)
+    3. Let subscription continue, client just doesn't book sessions
+
+    Most coaches use option 3 for short pauses.
+  </Accordion>
+  <Accordion title="Client's card expires next month">
+    **Proactive approach:**
+
+    1. Check upcoming card expirations (visible in Stripe)
+    2. Send payment update link before expiration
+    3. Avoid failed payment entirely
+
+    Better than waiting for failure and dealing with Past Due status.
+  </Accordion>
+  <Accordion title="Client disputes subscription charge with bank">
+    **Bank chargeback process:**
+
+    If client disputes with bank (not you), Stripe notifies you of chargeback.
+
+    **Your response:**
+
+    1. Check Stripe Dashboard for chargeback details
+    2. Provide evidence (subscription terms, usage logs, confirmation emails)
+    3. Stripe submits evidence to bank
+    4. Bank makes final decision (can take 60-90 days)
+
+    **If you lose:** Money is returned to client + chargeback fee (\$15)
+
+    **If you win:** You keep the payment
+
+    [Learn about chargebacks →](/payments/disputes-chargebacks)
+  </Accordion>
+</AccordionGroup>
+
+## Preventing cancellations
+
+**Best practices to reduce churn:**
+
+**Before cancellation:**
+
+- Understand why client wants to cancel
+- Offer solutions (schedule flexibility, product downgrade)
+- Provide pause option if temporary issue
+- Remind of progress made and value received
+
+**At risk indicators:**
+
+- Multiple failed payments
+- Declining session bookings
+- No recent activity
+- Support complaints
+
+**Retention strategies:**
+
+- Proactive check-ins with inactive subscribers
+- Usage reports showing progress
+- Exclusive member benefits
+- Loyalty rewards or discounts
+
+<Tip>
+  Retaining existing subscribers costs less than acquiring new ones. Invest in retention.
+</Tip>
+
+## Resubscribing canceled clients
+
+When client wants to restart canceled subscription:
+
+**Process:**
+
+1. Client purchases subscription product again (like new customer)
+2. New subscription created with new ID
+3. New billing schedule starts
+4. Old subscription remains canceled in history
+
+**You cannot:**
+
+- Reactivate old canceled subscription
+- Restore previous subscription ID
+- Resume old billing schedule
+
+<Note>
+  Each subscription is independent. Cancellation is permanent. Resubscribing creates entirely new subscription.
+</Note>
+
+## Next steps
+
+1. [Handle failed payments](/payments/failed-payments) - Recover Past Due subscriptions
+2. [Issue refunds](/payments/issuing-refunds) - Process subscription refunds
+3. [View Subscriptions Dashboard](/payments/subscriptions-dashboard) - Monitor all subscriptions
+
+## Related articles
+
+- [Subscriptions Dashboard](/payments/subscriptions-dashboard)
+- [Failed Payments](/payments/failed-payments)
+- [Issuing Refunds](/payments/issuing-refunds)
+- [Product Types Explained](/payments/product-types)

@@ -1,0 +1,304 @@
+---
+title: "Subscriptions Dashboard"
+description: "Navigate the Subscriptions page to monitor recurring billing, track active memberships, and manage subscription status"
+sidebarTitle: "Subscriptions Dashboard"
+icon: "rotate"
+---
+
+<Info>
+**Where to find this**: Payments → Subscriptions
+</Info>
+
+## What the Subscriptions page shows
+
+The Subscriptions dashboard displays all recurring billing for your coaching business:
+
+- Active memberships and their status
+- Canceled subscriptions
+- Failed payment retries
+- Monthly recurring revenue (MRR)
+- Subscription history and details
+
+Every subscription product purchase creates an entry here that tracks billing until canceled.
+
+<Frame>
+<img src="/images/payments/subscriptions-dashboard-overview.png" alt="Subscriptions dashboard showing list of all subscriptions" />
+</Frame>
+
+## Key metrics at the top
+
+Three metrics display above your subscription list:
+
+**Active Subscriptions**
+- Count of currently active, billing subscriptions
+- Includes trialing and scheduled subscriptions
+- Excludes canceled and past due
+
+**Canceled Subscriptions**
+- Total number of ended subscriptions
+- Tracks churn and cancellation history
+
+**Monthly Recurring Revenue (MRR)**
+- Total monthly revenue from active subscriptions
+- Updates in real-time as subscriptions change
+- Based on monthly equivalent (annual subscriptions divided by 12)
+
+<Tip>
+MRR is your most important subscription metric. Track this to measure subscription business health.
+</Tip>
+
+## Subscription list columns
+
+Each subscription displays:
+
+| Column | What it shows |
+|--------|---------------|
+| **Date** | When subscription started |
+| **Status** | Current billing status (Active, Canceled, Past Due, etc.) |
+| **Client** | Client name linked to profile |
+| **Amount** | Billing amount and frequency ($200/month) |
+| **Product** | Which subscription product |
+| **Type** | Always "Subscription" |
+
+Click any row to view full subscription details.
+
+## Subscription status types
+
+<Tabs>
+<Tab title="Active">
+**Green indicator - Running normally**
+
+Subscription is active and payments are processing successfully.
+
+Client's card charges automatically on schedule. Credits renew (if configured). Everything working as expected.
+</Tab>
+
+<Tab title="Trialing">
+**Blue indicator - In trial period**
+
+Client is in free trial before first charge.
+
+Card on file but not yet charged. Trial ends on specified date, then first payment processes. Client can cancel during trial without charge.
+</Tab>
+
+<Tab title="Scheduled">
+**Purple indicator - Starts in future**
+
+Subscription purchased but doesn't start until future date.
+
+No charges yet. Will activate on start date. Useful for seasonal programs or delayed memberships.
+</Tab>
+
+<Tab title="Past Due">
+**Yellow/Orange indicator - Payment failed**
+
+Last payment attempt failed. Stripe is retrying.
+
+Card declined or expired. Client still has access during retry period. Stripe attempts multiple retries over several days before giving up.
+
+<Warning>
+Past Due subscriptions need attention. Contact client to update payment method.
+</Warning>
+</Tab>
+
+<Tab title="Canceled">
+**Red/Gray indicator - Subscription ended**
+
+Client or you canceled the subscription.
+
+No more charges. Access ends based on cancellation settings (immediate or end of period). Credits expire. Client can resubscribe by purchasing again.
+</Tab>
+
+<Tab title="Incomplete Expired">
+**Gray indicator - Setup failed**
+
+Payment setup never completed or first charge failed.
+
+Client started subscription signup but payment failed and retry period expired. Subscription never became active.
+</Tab>
+</Tabs>
+
+## Filter and search subscriptions
+
+**Filter by status:**
+Click status tabs at top:
+- All
+- Active
+- Canceled
+- Past Due
+- Trialing
+- Scheduled
+
+**Search:**
+Type in search box to find subscriptions by:
+- Client name
+- Product name
+- Email address
+
+**Date range:**
+Select date range to filter by subscription start date.
+
+<Frame>
+<img src="/images/payments/subscriptions-filters.png" alt="Filter options for subscriptions list" />
+</Frame>
+
+## View subscription details
+
+Click any subscription row to open detailed view:
+
+**Billing information:**
+- Current period start and end dates
+- Next billing date
+- Billing frequency
+- Amount charged each period
+
+**Payment history:**
+- All successful charges
+- Failed payment attempts
+- Amount paid to date
+
+**Credits issued:**
+- Credits granted each period
+- Current credit balance
+- Credit expiration settings
+
+**Subscription actions:**
+- Cancel subscription
+- Update billing date
+- Change product/pricing
+- Issue refund for last payment
+
+<Frame>
+<img src="/images/payments/subscription-detail-view.png" alt="Detailed subscription view with billing history" />
+</Frame>
+
+## Understanding subscription lifecycle
+
+<Steps>
+<Step title="Client subscribes">
+Client purchases subscription product. Subscription appears as Active (or Trialing if trial configured).
+</Step>
+
+<Step title="First payment processes">
+If no trial: Immediate charge. If trial: Charge after trial ends.
+
+Credits issued (if configured). Client can book sessions.
+</Step>
+
+<Step title="Automatic renewals">
+Card charges on schedule (monthly, quarterly, annually).
+
+New credits issued each period. Client continues accessing services.
+</Step>
+
+<Step title="Payment failure (optional)">
+If card declines: Status changes to Past Due. Stripe retries automatically over several days.
+
+Client retains access during retry period.
+</Step>
+
+<Step title="Subscription ends">
+Client cancels OR payment retries exhaust.
+
+Status changes to Canceled. Credits expire. Access ends.
+</Step>
+</Steps>
+
+## Common subscription scenarios
+
+<Tabs>
+<Tab title="Healthy subscription">
+**What you see:**
+- Status: Active (green)
+- Regular successful payments in history
+- Credits renewing each period
+
+**What to do:** Nothing. It's working perfectly.
+</Tab>
+
+<Tab title="Past due subscription">
+**What you see:**
+- Status: Past Due (yellow/orange)
+- Recent failed payment attempt
+- Stripe retry in progress
+
+**What to do:**
+1. Contact client about failed payment
+2. Ask them to update payment method
+3. Stripe will retry automatically
+4. [Learn about failed payments →](/payments/failed-payments)
+</Tab>
+
+<Tab title="Canceled subscription">
+**What you see:**
+- Status: Canceled (gray)
+- Cancellation date shown
+- No future billing
+
+**What to do:** 
+If accidental: Client must resubscribe by purchasing product again.
+If intentional: Monitor for resubscription opportunities.
+</Tab>
+
+<Tab title="Trial subscription">
+**What you see:**
+- Status: Trialing (blue)
+- Trial end date displayed
+- No charges yet
+
+**What to do:** Nothing until trial ends. First charge processes automatically on trial end date.
+</Tab>
+</Tabs>
+
+## Subscriptions vs. transactions
+
+**Subscriptions page:** Ongoing billing relationships
+- Shows subscription status
+- Displays next billing date
+- Tracks recurring revenue
+
+**Transactions page:** Individual payment events
+- Shows each charge (including subscription charges)
+- Displays one-time payments too
+- Tracks total revenue
+
+<Info>
+Every subscription charge also appears in Transactions. Subscriptions page focuses on ongoing relationships, Transactions shows individual payments.
+</Info>
+
+## Export subscription data
+
+Export subscription list for reporting or accounting:
+
+1. Apply any desired filters (status, date range)
+2. Click **Export** button (if available)
+3. Download CSV file
+
+Use exported data for:
+- Financial reporting
+- Churn analysis
+- Revenue forecasting
+- Accounting software import
+
+## What you can't do on Subscriptions page
+
+**These actions require Stripe Dashboard:**
+- Change subscription pricing mid-cycle
+- Apply retroactive discounts
+- Modify payment schedule
+- Complex subscription modifications
+
+For advanced subscription management, use Stripe Dashboard. [Learn about Stripe Dashboard →](/payments/stripe-dashboard-basics)
+
+## Next steps
+
+1. [View subscription details](/payments/subscription-details) - Deep dive on individual subscriptions
+2. [Manage subscriptions](/payments/managing-subscriptions) - Cancel, update, or modify subscriptions
+3. [Handle failed payments](/payments/failed-payments) - Recover past due subscriptions
+
+## Related articles
+
+- [Subscription Details](/payments/subscription-details)
+- [Managing Subscriptions](/payments/managing-subscriptions)
+- [Failed Payments](/payments/failed-payments)
+- [Product Types Explained](/payments/product-types)

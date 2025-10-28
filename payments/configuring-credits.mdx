@@ -1,0 +1,334 @@
+---
+title: "Configuring Credits in Products"
+description: "Step-by-step guide to setting up session credits in the Product Builder"
+sidebarTitle: "Configure Credits"
+icon: "sliders"
+---
+
+<Info>
+  **Where to find this**: Payments → Products → [Product] → Section 3 (Credits)
+</Info>
+
+## Access credit settings
+
+<Steps>
+  <Step title="Open Product Builder">
+    Go to **Payments → Products** and either:
+
+    - Click **\+ Create Product** for new product
+    - Click existing product name to edit
+  </Step>
+  <Step title="Navigate to Section 3">
+    Scroll to **Section 3: Credits** in the Product Builder.
+
+    <Frame>
+      ![Credits section in Product Builder](/images/payments/credits-section-location.png)
+    </Frame>
+  </Step>
+</Steps>
+
+## Enable credits
+
+<Steps>
+  <Step title="Toggle credits ON">
+    Find the toggle: **Add credits once purchased**
+
+    **OFF (default):** Product doesn't issue credits. Payment-only product.
+
+    **ON:** Product issues credits to client's account when purchased.
+
+    <Frame>
+      ![Credits toggle switch](/images/payments/credits-toggle.png)
+    </Frame>
+    <Tip>
+      Only enable credits if you want clients to receive session bookings with this purchase. Many products don't need credits.
+    </Tip>
+  </Step>
+  <Step title="Additional fields appear">
+    When you toggle credits ON, two more fields appear:
+
+    - Number of credits
+    - Credit expiration
+  </Step>
+</Steps>
+
+## Set number of credits
+
+**Field: Number of credits**
+
+How many credits this product issues per purchase (or per billing period for subscriptions).
+
+**Examples:**
+
+- `1` = Single session credit
+- `10` = 10-session package
+- `4` = 4 sessions per month (subscriptions)
+- `999` = Effectively unlimited
+
+<Frame>
+  ![Number of credits input field](/images/payments/number-of-credits-field.png)
+</Frame>
+
+<Note>
+  For "unlimited" memberships, set credits to 999. This gives clients more credits than they'll realistically use.
+</Note>
+
+## Configure credit expiration
+
+**Field: Credit expiration**
+
+When credits become unusable and removed from client's account.
+
+<Tabs>
+  <Tab title="Days since purchase">
+    **Credits expire X days after purchase**
+
+    Options: 30, 60, 90, 120 days or custom
+
+    **When to use:**
+
+    - Session packages with time limits
+    - Seasonal training programs
+    - Any offer where you want expiration urgency
+
+    **Example:** 10-session package expires 90 days after purchase
+
+    <Frame>
+      ![Days since purchase expiration options](/images/payments/expiration-days-dropdown.png)
+    </Frame>
+  </Tab>
+  <Tab title="Specific date">
+    **All credits expire on exact date**
+
+    Calendar picker lets you select specific date.
+
+    **When to use:**
+
+    - Season-based programs (expire end of season)
+    - Event packages (expire after event date)
+    - Time-limited promotions
+
+    **Example:** Summer camp credits expire September 1st regardless of purchase date
+
+    <Frame>
+      ![Calendar picker for specific expiration date](/images/payments/expiration-calendar-picker.png)
+    </Frame>
+  </Tab>
+  <Tab title="Don't expire">
+    **Master Credits - never expire**
+
+    Credits remain in client's account indefinitely.
+
+    **When to use:**
+
+    - Premium packages with no time pressure
+    - VIP client credits
+    - Gift certificates
+    - When you want maximum client flexibility
+
+    **Example:** Lifetime access package with non-expiring credits
+
+    <Warning>
+      Use this carefully. Non-expiring credits can be redeemed years later when your pricing may have increased significantly.
+    </Warning>
+  </Tab>
+  <Tab title="Subscription expiration">
+    **Credits expire when subscription ends** (Subscription products only)
+
+    Credits only valid while subscription is active. New credits issued each billing period.
+
+    **When to use:**
+
+    - Monthly memberships
+    - Recurring training packages
+    - Any subscription-based offering
+
+    **Example:** Client gets 4 credits per month. Unused credits disappear at month end. New 4 credits issued with renewal.
+
+    <Info>
+      This is the default and recommended setting for subscription products.
+    </Info>
+  </Tab>
+</Tabs>
+
+## Restrict credit usage (Section 4)
+
+After configuring credits in Section 3, scroll to **Section 4: Usage Limits**.
+
+<Steps>
+  <Step title="Find usage limits section">
+    **Section 4: Usage Limits** controls which schedulers accept these credits.
+
+    <Frame>
+      ![Usage Limits section in Product Builder](/images/payments/usage-limits-section.png)
+    </Frame>
+  </Step>
+  <Step title="Select schedulers">
+    **Field: Which schedulers accept these credits**
+
+    **Leave blank (default):** Master Credits - work for any scheduler
+
+    **Select specific schedulers:** Restricted credits - only work for chosen schedulers
+
+    <Tabs>
+      <Tab title="Master Credits">
+        Don't select any schedulers OR select all schedulers.
+
+        **Result:** Credits can book any session type you offer.
+
+        **Best for:** General packages, flexible memberships, multi-sport training
+      </Tab>
+      <Tab title="Restricted Credits">
+        Select one or more specific schedulers.
+
+        **Result:** Credits only work for selected session types.
+
+        **Best for:** Specialized packages, sport-specific training, age-group restrictions
+
+        **Example use cases:**
+
+        - Youth Training Package → Only youth schedulers
+        - Pitching Lessons → Only pitching scheduler
+        - Group Classes → Only group session schedulers
+      </Tab>
+    </Tabs>
+    <Frame>
+      ![Dropdown to select which schedulers accept credits](/images/payments/scheduler-selection-dropdown.png)
+    </Frame>
+  </Step>
+</Steps>
+
+## Complete credit configuration examples
+
+<Tabs>
+  <Tab title="Simple 10-session package">
+    **Section 3: Credits**
+
+    - Add credits: **ON**
+    - Number: **10**
+    - Expiration: **90 days since purchase**
+
+    **Section 4: Usage Limits**
+
+    - Schedulers: **None selected** (Master Credits)
+
+    **Result:** Client gets 10 credits usable for any session within 90 days.
+  </Tab>
+  <Tab title="Monthly membership">
+    **Product Type:** Subscription
+
+    **Section 3: Credits**
+
+    - Add credits: **ON**
+    - Number: **999**
+    - Expiration: **Subscription period** (credits expire when subscription ends)
+
+    **Section 4: Usage Limits**
+
+    - Schedulers: **None selected** (Master Credits)
+
+    **Result:** Client gets unlimited credits each month while subscribed. Unused credits don't carry over.
+  </Tab>
+  <Tab title="Youth-only package">
+    **Section 3: Credits**
+
+    - Add credits: **ON**
+    - Number: **8**
+    - Expiration: **60 days since purchase**
+
+    **Section 4: Usage Limits**
+
+    - Schedulers: **Youth Training, Youth Group Class** (selected)
+
+    **Result:** Client gets 8 credits but can only book youth-specific sessions within 60 days.
+  </Tab>
+  <Tab title="Seasonal program">
+    **Section 3: Credits**
+
+    - Add credits: **ON**
+    - Number: **15**
+    - Expiration: **Specific date: March 31, 2025**
+
+    **Section 4: Usage Limits**
+
+    - Schedulers: **Winter Training** (selected)
+
+    **Result:** All clients' credits expire March 31st regardless of purchase date. Only works for winter training sessions.
+  </Tab>
+</Tabs>
+
+## Save your credit configuration
+
+After configuring credits:
+
+1. Review all settings in Sections 3 and 4
+2. Click **Save** or **Publish** at top of Product Builder
+
+<Check>
+  **Credits configured.** When clients purchase this product, credits will be issued according to your settings.
+</Check>
+
+## Testing credit configuration
+
+Before going live:
+
+1. Ensure Stripe is in **Test Mode**
+2. Create test product with credits
+3. Make test purchase
+4. Verify credits appear in test client's account
+5. Test booking with credits
+6. Confirm credit count decreases
+
+[Learn more about testing →](/payments/testing-products)
+
+## Where to manage credits after purchase
+
+Credit configuration happens in Products. Credit management happens elsewhere:
+
+**To view client credit balances:** Schedule section → Client profile → Credits tab
+
+**To manually adjust credits:** Schedule section → Credit management tools
+
+**To troubleshoot credit issues:** Schedule section → Credits documentation
+
+<Note>
+  This article covers credit **configuration** in products only. For viewing, managing, and troubleshooting credits, see the Schedule section of the help center.
+</Note>
+
+## Common configuration mistakes
+
+<AccordionGroup>
+  <Accordion title="Credits enabled but schedulers don't accept them">
+    **Problem:** Credits configured in product, but scheduler payment settings don't allow credit usage.
+
+    **Fix:** Go to Schedule → Schedulers → [Scheduler] → Payment Settings and ensure it's set to "Credits" or "Product OR Credits", not just "Product".
+  </Accordion>
+  <Accordion title="Expiration too short">
+    **Problem:** Clients complain credits expire before they can use them.
+
+    **Fix:** Extend expiration period. 90 days is common for packages. Consider client scheduling patterns before setting expiration.
+  </Accordion>
+  <Accordion title="Wrong scheduler selected in usage limits">
+    **Problem:** Client has credits but can't use them for intended sessions.
+
+    **Fix:** Edit product → Section 4 → Add correct scheduler to usage limits list. Or remove all schedulers to make them Master Credits.
+  </Accordion>
+  <Accordion title="Subscription credits carrying over">
+    **Problem:** Want credits to reset monthly, but they're accumulating.
+
+    **Fix:** Edit product → Section 3 → Set expiration to "Subscription period" instead of "Don't expire".
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+1. [Attach product to scheduler](/payments/products-integration) - Enable credit usage for bookings
+2. [View Product Builder reference](/payments/product-builder-reference) - All Product Builder fields explained
+3. Manage credits: See Schedule section for viewing balances and manual adjustments
+
+## Related articles
+
+- [Credits & Products](/payments/credits-and-products)
+- [Product Builder: Complete Reference](/payments/product-builder-reference)
+- [Using Products in Your Business](/payments/products-integration)
+- [Creating Your First Product](/payments/creating-first-product)
