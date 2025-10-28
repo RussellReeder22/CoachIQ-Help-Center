@@ -1,0 +1,518 @@
+---
+title: "Product Builder: Complete Reference"
+description: "Field-by-field guide to every option in the CoachIQ Product Builder"
+sidebarTitle: "Product Builder Reference"
+icon: "book"
+---
+
+<Info>
+  **Where to find this**: Payments → Products → + Create Product (or click existing product to edit)
+</Info>
+
+## Product Builder overview
+
+The Product Builder has 7 sections. Only Section 1 is required. Configure additional sections based on your needs.
+
+**Real-time preview**: The right sidebar shows how your product appears to clients as you build.
+
+<Frame>
+  ![Product Builder interface with 7 sections](/images/payments/product-builder-overview.png)
+</Frame>
+
+## Section 1: Product Details
+
+**Required section** - Every product needs at minimum a name and price.
+
+<AccordionGroup>
+  <Accordion title="Product Name">
+    **Required**
+
+    The name clients see during checkout and in their purchase history.
+
+    **Best practices:**
+
+    - Be specific: "60-Minute Basketball Training" not "Training"
+    - Include duration for sessions: "90-Minute Session"
+    - Add value: "Premium Coaching Package"
+
+    **Character limit:** 100 characters
+
+    **Examples:**
+
+    - "Individual Training Session"
+    - "Monthly Unlimited Membership"
+    - "10-Session Package - Youth Development"
+  </Accordion>
+  <Accordion title="Price">
+    **Required**
+
+    Dollar amount clients pay.
+
+    **Format:** \$XX.XX (US dollars or your Stripe currency)
+
+    **Minimum:** \$0.50 (Stripe requirement)
+
+    **Free products:** Use Access Code type with \$0.00 price
+
+    <Warning>
+      Double-check your price before publishing. $5.00 vs $50.00 mistakes are common.
+    </Warning>
+  </Accordion>
+  <Accordion title="Description">
+    **Optional**
+
+    Explain what's included in the purchase. Appears on checkout page.
+
+    **Supports:**
+
+    - Plain text
+    - Line breaks
+    - Basic formatting
+
+    **Best practices:**
+
+    - Keep it concise (2-4 sentences)
+    - List what's included
+    - Mention any restrictions or expiration
+
+    **Example:** "One 60-minute individual training session with Coach Mike. Includes personalized skill development, video analysis, and post-session workout plan. Must be used within 30 days of purchase."
+  </Accordion>
+  <Accordion title="Features">
+    **Optional**
+
+    Bullet point list highlighting product benefits.
+
+    **Appears:** Below description on checkout page
+
+    **Best practices:**
+
+    - Use 3-5 features
+    - Start with action words
+    - Focus on benefits, not just features
+
+    **Example:**
+
+    - Personalized training plan
+    - Video analysis included
+    - Flexible scheduling
+    - Money-back guarantee
+  </Accordion>
+  <Accordion title="Product Type">
+    **Optional**
+
+    Tags your product for internal organization.
+
+    **Options:** Session, Membership, Program, Merchandise, Other
+
+    **Note:** This is for your reference only. Doesn't affect functionality or what clients see.
+  </Accordion>
+</AccordionGroup>
+
+## Section 2: Payment Options
+
+Configure pricing frequency and processing fees.
+
+<AccordionGroup>
+  <Accordion title="Price">
+    **All product types**
+
+    Set or modify the product price. Same as Section 1 price field.
+  </Accordion>
+  <Accordion title="Payment Frequency">
+    **Subscription products only**
+
+    How often to charge the client's card.
+
+    **Options:**
+
+    - Monthly (most common)
+    - Quarterly (every 3 months)
+    - Semi-annually (every 6 months)
+    - Annually (once per year)
+
+    <Tip>
+      Monthly subscriptions create the most predictable recurring revenue and are easier for clients to commit to.
+    </Tip>
+  </Accordion>
+  <Accordion title="Trial Period">
+    **Subscription products only**
+
+    Number of free days before the first charge.
+
+    **Examples:**
+
+    - 7-day free trial
+    - 14-day free trial
+    - 30-day free trial
+
+    **How it works:**
+
+    1. Client subscribes with card on file
+    2. Trial starts immediately
+    3. First charge occurs after trial period ends
+    4. Client can cancel anytime during trial (no charge)
+
+    <Info>
+      Trials increase subscription conversions by reducing commitment risk.
+    </Info>
+  </Accordion>
+  <Accordion title="Processing Fee">
+    **All product types**
+
+    Configure who pays Stripe's transaction fees (2.9% + \$0.30 in US).
+
+    **Options:**
+
+    **You absorb the fee** (default)
+
+    - Client pays product price
+    - You receive product price minus Stripe fees
+    - Example: $50 product = $48.05 to you
+
+    **Client pays the fee**
+
+    - Stripe fee added as separate line item at checkout
+    - You receive full product price
+    - Example: $50 product + $1.76 fee = \$51.76 charged to client
+
+    **Custom fee structure:**
+
+    - Fixed amount: Add specific dollar amount (e.g., \$2.00)
+    - Percentage: Add percentage on top (e.g., 3%)
+    - Both: Combine fixed + percentage
+
+    <Warning>
+      Some states restrict credit card surcharges. Check local regulations before passing fees to clients.
+    </Warning>
+  </Accordion>
+</AccordionGroup>
+
+## Section 3: Credits
+
+Configure session credits issued with purchase.
+
+<AccordionGroup>
+  <Accordion title="Add credits once purchased">
+    **Toggle ON or OFF**
+
+    Turn this on to issue credits when clients purchase this product.
+
+    **OFF (default):** Product is payment-only. No credits issued.
+
+    **ON:** Product issues specified number of credits to client's account.
+
+    <Note>
+      Credits require additional configuration in Schedule → Schedulers. [Learn about credits →](/payments/credits-and-products)
+    </Note>
+  </Accordion>
+  <Accordion title="Number of credits">
+    **Appears when credits are ON**
+
+    How many credits to issue per purchase or billing period.
+
+    **Examples:**
+
+    - 1 credit for single session products
+    - 10 credits for multi-session packages
+    - 4 credits per month for subscriptions
+    - 999 credits for "unlimited" access
+
+    <Tip>
+      For unlimited monthly memberships, set credits to 999. Functionally unlimited for most coaches.
+    </Tip>
+  </Accordion>
+  <Accordion title="Credit expiration">
+    **Appears when credits are ON**
+
+    When credits expire and become unusable.
+
+    **Options:**
+
+    **Days since purchase**
+
+    - 30 days
+    - 60 days
+    - 90 days
+    - 120 days
+    - Custom number of days
+
+    **Specific date**
+
+    - Calendar picker
+    - Set exact expiration (e.g., end of season)
+
+    **Don't expire**
+
+    - Master Credits (never expire)
+    - Client keeps credits indefinitely
+
+    **Subscription expiration**
+
+    - Credits expire when subscription cancels
+    - New credits issued each billing period
+
+    <Info>
+      **Subscriptions:** Credits typically expire when subscription ends. New credits issued with each renewal.
+    </Info>
+  </Accordion>
+</AccordionGroup>
+
+## Section 4: Usage Limits
+
+Restrict where credits can be redeemed.
+
+<AccordionGroup>
+  <Accordion title="Which schedulers accept these credits">
+    **Appears when credits are ON**
+
+    Select specific schedulers that accept this product's credits.
+
+    **Master Credits (default):** Leave blank or select all. Credits work for any scheduler.
+
+    **Restricted Credits:** Select specific schedulers only.
+
+    **Examples:**
+
+    - "Youth Package" credits → Only youth training schedulers
+    - "Pitching Credits" → Only pitching lesson scheduler
+    - "Group Session Package" → Only group class schedulers
+
+    <Tip>
+      Use restricted credits to create specialized packages that don't accidentally get used for wrong session types.
+    </Tip>
+  </Accordion>
+  <Accordion title="Custom credit cost per session">
+    **Advanced feature**
+
+    Override how many credits specific sessions cost.
+
+    **Default:** 1 credit = 1 session booking
+
+    **Custom examples:**
+
+    - 60-minute session = 1 credit
+    - 90-minute session = 1.5 credits
+    - Premium session = 2 credits
+
+    Most coaches use the default 1:1 ratio.
+  </Accordion>
+</AccordionGroup>
+
+## Section 5: Confirmation Page
+
+Where clients go after successful purchase.
+
+<Tabs>
+  <Tab title="Athlete Portal">
+    **Default option**
+
+    Redirect to client's Athlete Portal after purchase.
+
+    **Client sees:**
+
+    - Purchase confirmation
+    - Credit balance (if applicable)
+    - Booking button to schedule sessions
+
+    **Best for:** Most products, especially session bookings
+  </Tab>
+  <Tab title="Thank You Page">
+    **Custom message option**
+
+    Display a custom thank you message.
+
+    **Configure:**
+
+    - Custom headline
+    - Paragraph text
+    - Optional button with link
+
+    **Best for:** Special promotions, memberships, program access where you want to provide specific next steps
+  </Tab>
+  <Tab title="Custom URL">
+    **External redirect**
+
+    Send clients to any URL after purchase.
+
+    **Enter:** Full URL (https://yourwebsite.com/thank-you)
+
+    **Best for:** Redirecting to your website, external platform, or custom landing page
+
+    <Warning>
+      Ensure the URL is correct. Broken links create poor purchase experience.
+    </Warning>
+  </Tab>
+</Tabs>
+
+## Section 6: Advanced Settings
+
+Special configurations for specific business needs.
+
+<AccordionGroup>
+  <Accordion title="Guest checkout">
+    **Allow purchase without account**
+
+    **OFF (default):** Client must create CoachIQ account to purchase
+
+    **ON:** Client can checkout as guest with just email and payment info
+
+    **When to enable:**
+
+    - Selling merchandise to non-clients
+    - One-time workshop registration
+    - Public events open to anyone
+
+    **When to keep OFF:**
+
+    - Session bookings (need account to schedule)
+    - Memberships (need account to access)
+    - Programs (need account for content)
+
+    <Note>
+      Guest checkouts don't create client profiles. Use for one-off sales to people who won't need ongoing access.
+    </Note>
+  </Accordion>
+  <Accordion title="Revenue sharing">
+    **Split revenue with partners**
+
+    Automatically split product revenue with other coaches or facilities.
+
+    **Configure:**
+
+    - Partner Stripe account ID
+    - Percentage split (e.g., 70/30, 80/20)
+    - Flat fee per transaction
+
+    **Use cases:**
+
+    - Facility rental fees
+    - Contractor coach payments
+    - Referral partnerships
+
+    **How it works:**
+
+    - Client pays full product price
+    - Stripe automatically splits payment
+    - Each party receives funds in their own Stripe account
+
+    <Warning>
+      Revenue sharing requires the partner to have their own Stripe Connect account. Setup is technical—contact support for implementation help.
+    </Warning>
+  </Accordion>
+  <Accordion title="Terms and conditions">
+    **Require terms acceptance**
+
+    **OFF (default):** No terms required at checkout
+
+    **ON:** Checkbox with link to terms appears at checkout
+
+    **Configure:**
+
+    - Terms text (displays inline)
+    - Terms URL (links to external page)
+
+    **Best practices:**
+
+    - Include liability waivers
+    - Cancellation policies
+    - Refund policies
+    - Usage restrictions
+
+    Client must check the box to complete purchase.
+  </Accordion>
+</AccordionGroup>
+
+## Section 7: Access Codes
+
+**Access Code products only** - This section doesn't appear for One-Time or Subscription products.
+
+<AccordionGroup>
+  <Accordion title="Add access codes">
+    Create redemption codes for this product.
+
+    **Code format:** Any combination of letters/numbers (no spaces)
+
+    **Examples:**
+
+    - SPONSOR2025
+    - TEAMDISCOUNT
+    - PARTNERSHIP50
+
+    **Case sensitive:** Codes must match exactly unless configured otherwise
+
+    <Tip>
+      Use descriptive codes so you can identify their purpose (CORP-IBM-2025 vs CODE123).
+    </Tip>
+  </Accordion>
+  <Accordion title="Redemption limits">
+    Set how many times each code can be used.
+
+    **Options:**
+
+    - Unlimited uses
+    - Limited uses (1, 10, 50, 100, custom)
+
+    **Tracking:** View current redemption count for each code
+
+    **Example:** Create PARTNER2025 code with 50 redemption limit for corporate partnership
+  </Accordion>
+  <Accordion title="View usage stats">
+    See how many times each code has been redeemed.
+
+    **Displays:**
+
+    - Code name
+    - Redemptions used / limit
+    - Last redemption date
+
+    Use this to track campaign performance and know when codes reach limits.
+  </Accordion>
+  <Accordion title="Delete codes">
+    Remove codes that are no longer needed.
+
+    **Deleted codes:**
+
+    - Can't be redeemed by new clients
+    - Still show in past transaction history
+    - Can't be recreated with same name
+
+    <Warning>
+      Deleting a code doesn't affect purchases already made with that code. It only prevents future redemptions.
+    </Warning>
+  </Accordion>
+</AccordionGroup>
+
+## Save vs. Publish
+
+**Save as Draft:**
+
+- Product exists but isn't available for purchase
+- Doesn't appear in scheduler/program/form product selection
+- You can continue editing anytime
+- Useful for products you're still configuring
+
+**Publish:**
+
+- Product immediately available for purchase
+- Appears in product selection dropdowns
+- Clients can buy it once attached to scheduler/program/form
+- You can edit published products anytime
+
+<Check>
+  Both options save your work. "Publish" just makes the product active for purchases.
+</Check>
+
+## Next steps
+
+After building your product:
+
+1. [Attach to sessions](/payments/products-integration) - Enable payment for bookings
+2. [Test the purchase flow](/payments/testing-products) - Use Test Mode to verify everything works
+3. [Create more products](/payments/creating-first-product) - Build your full product catalog
+
+## Related articles
+
+- [Creating Your First Product](/payments/creating-first-product)
+- [Product Types Explained](/payments/product-types)
+- [Credits & Products](/payments/credits-and-products)
+- [Using Products in Your Business](/payments/products-integration)
