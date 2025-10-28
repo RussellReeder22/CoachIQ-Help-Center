@@ -42,46 +42,20 @@ Decide on your approach before you start configuring:
 This is the most common and easiest approach. Set your regular weekly schedule once, and it continues forward automatically.
 
 <Steps>
-  <Step title="Navigate to scheduler creation">
+  <Step title="Navigate to scheduler page">
     From your dashboard:
 
     1. Click **Schedule** in the main navigation
     2. Click **Schedulers** from the submenu
-    3. Click **Create** → **Create Scheduler**
-
-    <Note>
-      **Important**: Availability is configured _within_ the scheduler builder, not as a separate standalone feature. When you create or edit a scheduler, you'll set its availability there.
-    </Note>
-    <Frame>
-      ![Navigation to scheduler builder](/images/navigate-to-scheduler-builder.png)
-    </Frame>
   </Step>
-  <Step title="Scroll to the Availability section">
-    In the Scheduler Builder, scroll down to find the **Availability** or **Schedule** section.
-
-    You'll see options for:
-
-    - Adding availability patterns
-    - Selecting days of the week
-    - Setting time ranges
+  <Step title="Create new Availabilty">
+    On the Scheduler page, locate the **Availability** and press the **plus button**
 
     <Frame>
-      ![Availability section in scheduler builder](/images/availability-section-scheduler-builder.png)
+      ![Availability section in scheduler builder](/availability-section.png)
     </Frame>
   </Step>
-  <Step title="Choose 'Weekly Recurring' pattern">
-    Look for an option to select between:
-
-    - **Weekly Recurring** or **Recurring Schedule**
-    - **Specific Dates** or **Custom Dates**
-
-    Select **Weekly Recurring** (or similar option).
-
-    <Tip>
-      **Why weekly recurring?** It's set-and-forget. You define the pattern once (M/W/F 3-8 PM), and CoachIQ automatically generates availability for all future weeks.
-    </Tip>
-  </Step>
-  <Step title="Select your available days">
+  <Step title="Select your available days" stepNumber={3}>
     Check the boxes for the days you're available to coach:
 
     **Example 1: Weekday Coach**
@@ -105,11 +79,8 @@ This is the most common and easiest approach. Set your regular weekly schedule o
     - ✅ Saturday
 
     <Frame>
-      ![Day of week selection checkboxes](/images/select-available-days.png)
+      ![Availability Ex Pn](/images/availability-ex.png)
     </Frame>
-    <Warning>
-      **Double-check your selections**: It's easy to accidentally check or miss a day. Verify your selected days before moving to the next step.
-    </Warning>
   </Step>
   <Step title="Set time ranges for each day">
     For each day you selected, set your available hours.
@@ -125,39 +96,35 @@ This is the most common and easiest approach. Set your regular weekly schedule o
 
     - All selected days: 3:00 PM - 8:00 PM
 
-    <Frame>
-      ![Time range selectors for each day](/images/set-time-ranges-per-day.png)
-    </Frame>
     <Tip>
       **Time selection tip**: Use the dropdown or type times directly. Most systems support 15-minute increments (3:00, 3:15, 3:30, 3:45, etc.).
     </Tip>
   </Step>
-  <Step title="Account for buffer time in your end time">
-    **Important math**: If you want your last session to end by 8:00 PM and you're using 15-minute buffer time, set your availability to end at 8:15 PM or 8:30 PM.
+  <Step title="Account for Time Slots Within Your Availability">
+    **Important math**: Make sure your time available corresponds with the time slots you want to create later so your scheduler populates properly
 
-    **Example calculation**:
+    **Example**:
 
-    - Last session starts: 7:00 PM
-    - Session duration: 60 minutes
-    - Session ends: 8:00 PM
-    - Buffer time: 15 minutes
-    - **Set availability end time**: 8:15 PM
-
-    This ensures your 7:00 PM session has proper buffer time.
+    - Avalability set from 5 - 9 pm
+    - ✅ Sessions are 60 minutes
+      - 5 - 6 pm
+      - 6 - 7 pm
+      - 7 - 8 pm
+      - 8 - 9 pm
+    - ❌ Sessions are 1 hour and 30 minutes
+      - 5 - 6:30 pm
+      - 6:30 - 8 pm
+      - Not enough time with the availabilty set to end at 9 pm
 
     <Note>
-      **Why this matters**: If your availability ends exactly when you want sessions to end, the buffer time will cut into your availability window, potentially preventing the last session from being bookable.
+      **Why this matters**: If your availability doesn't fit with the time slots offered, this will cut into your availability window, potentially preventing the last session from being bookable.
     </Note>
   </Step>
-  <Step title="Name your availability template (if option available)">
-    Some systems let you name your availability template for easy reference later.
-
+  <Step title="Name your availability template">
     **Good template names**:
 
-    - "Regular Weekday Hours"
-    - "Downtown Gym Schedule"
-    - "Weekend Morning Sessions"
-    - "M/W/F Afternoons"
+    - "Private Training Sessions at Location 1"
+    - "Group Training Sessions at Location 2"
 
     **Avoid generic names**:
 
@@ -166,10 +133,6 @@ This is the most common and easiest approach. Set your regular weekly schedule o
     - "Template 1"
 
     If naming isn't available at this stage, don't worry—the availability will still work perfectly.
-
-    <Frame>
-      ![Template naming field](/images/name-availability-template.png)
-    </Frame>
   </Step>
   <Step title="Review and save">
     Before saving, verify:
@@ -193,14 +156,10 @@ Use this when you have irregular schedules, seasonal coaching, or want to test t
 
 <Steps>
   <Step title="Access the Availability section">
-    In the Scheduler Builder, navigate to the **Availability** section (same as Method 1, Steps 1-2).
+    On the Scheduler page, navigate to the **Availability** section (same as Method 1, Steps 1-2).
   </Step>
   <Step title="Choose 'Specific Dates' option">
-    Look for and select:
-
-    - **Specific Dates**
-    - **Custom Dates**
-    - **Select Individual Dates**
+    Look for and select **Specific Dates**
 
     This allows you to manually pick exact dates rather than recurring weekly patterns.
   </Step>
@@ -225,7 +184,7 @@ Use this when you have irregular schedules, seasonal coaching, or want to test t
     - Pick specific dates that fit your variable schedule
 
     <Frame>
-      ![Calendar date picker for specific dates](/images/specific-date-picker.png)
+      ![Specific Dates Pn](/images/specific-dates.png)
     </Frame>
     <Tip>
       **Bulk selection**: Many date pickers allow you to select multiple dates at once or select date ranges. Look for "Select Range" or similar options to avoid clicking individual dates.
@@ -243,10 +202,6 @@ Use this when you have irregular schedules, seasonal coaching, or want to test t
     - July 10: 9:00 AM - 5:00 PM
     - July 11: 10:00 AM - 3:00 PM
     - July 12: 9:00 AM - 5:00 PM
-
-    <Frame>
-      ![Time ranges for specific dates](/images/specific-date-time-ranges.png)
-    </Frame>
   </Step>
   <Step title="Review and save">
     Verify:
@@ -270,9 +225,7 @@ CoachIQ's Copilot AI can generate availability patterns based on plain language 
 
 <Steps>
   <Step title="Access Copilot in scheduler builder">
-    Look for a **Copilot** button, icon, or panel in the Scheduler Builder.
-
-    Copilot is typically available in the Availability section or as a side panel.
+    Look for a **Copilot** panel on the side in the Availability Builder.
 
     <Frame>
       ![Copilot access in scheduler builder](/images/copilot-button-location.png)
@@ -294,10 +247,6 @@ CoachIQ's Copilot AI can generate availability patterns based on plain language 
     **Specific exclusions**:
 
     > "Available every weekday 2-7 PM except Thursdays"
-
-    **Location-based**:
-
-    > "Set up availability for my downtown gym: Tuesday and Thursday evenings 5-9 PM"
 
     <Tip>
       **Pro tip**: Be specific with times and days. The more detail you provide, the better Copilot can generate your availability.
@@ -329,13 +278,7 @@ CoachIQ's Copilot AI can generate availability patterns based on plain language 
     </Note>
   </Step>
   <Step title="Accept and save">
-    Once you're satisfied with the generated availability:
-
-    1. Click **Accept** or **Use This Availability**
-    2. Continue with the rest of your scheduler configuration
-    3. Save your scheduler
-
-    Your Copilot-generated availability is now active and ready to generate bookable slots.
+    Once you're satisfied with the generated availability, click \*\*Create \*\*to save your availability
   </Step>
 </Steps>
 
