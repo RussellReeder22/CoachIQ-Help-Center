@@ -57,20 +57,19 @@ Before launching to real athletes, thoroughly test the entire flow:
 
 <Steps>
   <Step title="Create test athlete account">
-    Set up dummy athlete for testing:
+    Set up dummy athlete for testing by creating an account through your athlete portal:
 
     - **Name**: Test Athlete
-    - **Email**: Your personal email (receive all notifications)
+    - **Email**: A second personal email (different from your admin email)
     - **Tag**: "TEST" for easy filtering
-    - **Note**: Document this is a test account
   </Step>
   <Step title="Grant credits to test athlete">
     **Option A: Manual credit grant** (faster for testing)
 
     1. Open Test Athlete's profile in People → Clients
     2. Navigate to **Credits** tab
-    3. Look for product-specific credit tabs OR master credits
-    4. Click **"Set Credits"** or **"Add Credits"**
+    3. Click **Master Credits ** tab
+    4. Look for **Credit Balance**
     5. Enter `10` credits
     6. Save
 
@@ -78,11 +77,10 @@ Before launching to real athletes, thoroughly test the entire flow:
 
     **Option B: Complete purchase flow** (comprehensive test)
 
-    1. Get product purchase link from Products page
-    2. Open link in incognito window (simulate athlete)
-    3. Complete purchase using Stripe test mode
-    4. Verify credits appear in Test Athlete's account
-    5. Check credit transaction logged
+    1. Get product purchase link from Products page (admin)
+    2. Open link in incognito window and log in as athlete (athlete)
+    3. Complete purchase using Stripe test mode.
+    4. Verify credits appear in Test Athlete's account (admin)
 
     <Tip>
       **Stripe test mode**: Use test credit cards to avoid real charges. Test card: `4242 4242 4242 4242`
@@ -109,7 +107,7 @@ Before launching to real athletes, thoroughly test the entire flow:
   <Step title="Test booking with credits">
     As Test Athlete, navigate to booking flow:
 
-    1. Go to **Schedule → Available** (or equivalent)
+    1. Go to **Scheduler **page on your athlete portal
     2. Select your credit-enabled scheduler
     3. Choose date & time
     4. Proceed to payment step
@@ -117,11 +115,10 @@ Before launching to real athletes, thoroughly test the entire flow:
     **Verify booking flow shows**:
 
     - ✅ "Use 1 Credit" option (or configured amount)
-    - ✅ Current credit balance displayed ("You have 10 credits")
     - ✅ If hybrid: Both credit and payment options visible
     - ✅ Clear indication which payment method will be used
 
-    5. Select **credit payment method**
+    5. Select **Use Credit**
     6. Confirm booking
 
     **Verify after booking**:
@@ -135,36 +132,14 @@ Before launching to real athletes, thoroughly test the entire flow:
       **Success indicator**: Smooth booking flow, credit deducted automatically, athlete sees updated balance immediately.
     </Check>
   </Step>
-  <Step title="Test hybrid payment option">
-    If you configured hybrid (credit OR payment):
-
-    **Test scenario 1: Athlete with credits**
-
-    1. Book session as Test Athlete
-    2. **Verify**: Both options appear
-       - "Use 1 Credit"
-       - "Pay \$50"
-    3. Test selecting CREDIT option → verify deduction
-    4. Book another session
-    5. Test selecting PAYMENT option → verify charge
-
-    **Test scenario 2: Athlete with 0 credits**
-
-    1. Use all Test Athlete's credits (book multiple sessions)
-    2. Attempt to book another session
-    3. **Verify**: Only payment option appears (credit option hidden)
-    4. **Verify**: Can still book via direct payment
-
-    **What this tests**: System correctly shows/hides payment options based on credit availability
-  </Step>
-  <Step title="Test insufficient credits scenario">
+  <Step title="Test insufficient credits scenario" stepNumber={5}>
     Deplete Test Athlete's credits completely:
 
-    1. Book sessions until balance = 0
+    1. Book sessions or change balance = 0
     2. Attempt to book one more credit-only session
     3. **Verify system prevents booking**
-    4. **Verify error message**: "You need 1 credit to book. Purchase credits to continue."
-    5. **Verify**: Link to purchase more credits provided
+    4. **Verify error message**: "Not enough credits"
+    5. **(Optional) Verify**: Link to purchase more credits provided (if credit renew link is enabled)
     6. If hybrid scheduler: **Verify** can still book via payment
 
     **What this tests**: System properly enforces credit requirements and guides athlete to purchase
@@ -174,24 +149,22 @@ Before launching to real athletes, thoroughly test the entire flow:
 
     **Setup**:
 
-    - Product A: 5 credits for "Rising Stars Class" only
-    - Product B: 5 Master Credits (any scheduler)
+    - Product: 5 credits for "Rising Stars Class" only
     - Test Athlete has credits from Product A
 
     **Test**:
 
     1. Attempt to book "Rising Stars Class" → **Should work** (uses Product A credits)
-    2. Attempt to book "Elite Class" → **Should fail** OR use Master Credits if available
-    3. Verify athlete sees clear messaging about which credits work for which schedulers
+    2. Attempt to book "Elite Class" → **Should fail**
+    3. Verify athlete sees clear messaging that they don't have the sufficient credits
 
     **Verify in Billing settings**:
 
     - "Redeemable Sessions" list shows correct schedulers for Product A
-    - Master Credits tab shows universal usability
 
     **What this tests**: Scheduler restrictions working correctly, credit priority system functioning (scheduler-specific used first)
   </Step>
-  <Step title="Test credit refund on cancellation">
+  <Step title="Test credit refund on cancellation (if setting is enabled)">
     Book a session as Test Athlete, then cancel it:
 
     1. Book session (1 credit deducted, balance = 9)
@@ -224,7 +197,7 @@ Before launching to real athletes, thoroughly test the entire flow:
     **Test scenario 2: Cancelled subscription**
 
     1. Cancel Test Athlete's subscription in Stripe
-    2. **Verify**: Existing credits may become unusable OR remain (depends on configuration)
+    2. **Verify**: Existing credits may become unusable
     3. **Verify**: Athlete cannot book using subscription credits after cancellation
     4. **Verify**: "Redeemable Sessions" may no longer display or show as inactive
 
@@ -238,9 +211,9 @@ Before launching to real athletes, thoroughly test the entire flow:
     3. **Verify athlete sees**:
        - "Credit Balance: ∞" (infinity symbol)
        - "Redeemable Sessions: [Schedulers] (0/∞)" notation
-    4. Book multiple sessions
+    4. Book 1-2 sessions
     5. **Verify**: Balance still shows ∞
-    6. **Verify**: Usage tracking shows "3/∞" (used 3, unlimited remaining)
+    6. **Verify**: Usage tracking shows "2/∞" (used 2, unlimited remaining)
 
     **At renewal**:
 
