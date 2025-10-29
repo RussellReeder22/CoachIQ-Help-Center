@@ -321,7 +321,7 @@ Athletes can see their credit balance within the **Billing** section of the athl
 
 1. Log into your respective athlete portal
 2. Click or press the profile icon at the top right hand corner of the page
-3. Visit **Billing **to view your credit balance
+3. Visit \*\*Billing \*\*to view your credit balance
 
 <Frame>
   ![Billing Credits Pn](/images/billing-credits.png)
@@ -460,7 +460,7 @@ Calculate your per-session price, then offer tiered discounts based on package s
   <Accordion title="5-Credit Starter Package">
     **Best for**: New athletes, trial periods, testing your service
 
-    **Typical duration**: 2-3 weeks (2x/week training)
+    **Typical duration**: 2-3 weeks (2x/week training) or 1 month (1-2x/week training)
 
     **Pricing strategy**: Small discount (5-8% off)
 
@@ -518,7 +518,7 @@ Calculate your per-session price, then offer tiered discounts based on package s
 **Should credits expire?** Depends on your business model.
 
 <Tabs>
-  <Tab title="No Expiration (Recommended for Most)">
+  <Tab title="No Expiration ">
     **Policy**: Credits never expire
 
     **Benefits**:
@@ -654,7 +654,7 @@ See [Subscription Scheduling](/scheduling/subscription-scheduling) for full comp
 
     **Psychology**: Athlete should feel "stupid" not buying package if they'll train regularly
 
-    **Example**: $50/session vs $450/10-pack ($45/session) = $50 savings
+    **Example**: 50/session vs 450/10-pack (45/session) = 50 savings
   </Card>
   <Card title="Communicate Value" icon="bullhorn">
     **At every touchpoint**, remind athletes of credit value:
@@ -664,17 +664,6 @@ See [Subscription Scheduling](/scheduling/subscription-scheduling) for full comp
     - "Low balance alert—buy now and save!"
 
     **Result**: Reinforces smart purchase decision, encourages renewals
-  </Card>
-  <Card title="Automate Low-Balance Alerts" icon="bell">
-    **Set up notifications** when athlete hits:
-
-    - 3 credits remaining
-    - 1 credit remaining
-    - 0 credits (out of stock)
-
-    **Include**: Direct link to purchase more credits
-
-    **Result**: Proactive renewals, prevents "I forgot to buy more" booking failures
   </Card>
   <Card title="Track Credit Economics" icon="chart-line">
     **Monitor monthly**:
@@ -706,11 +695,9 @@ See [Subscription Scheduling](/scheduling/subscription-scheduling) for full comp
   <Accordion title="What if athlete books but doesn't have enough credits?">
     **System behavior**: CoachIQ prevents booking if insufficient credits
 
-    **Athlete sees**: "You need 1 credit to book. Purchase credits to continue."
+    **Athlete sees (if credit renewal link is enabled)**: "Add more credits"
 
     **Your action**: None required (system handles automatically)
-
-    **Best practice**: Send low-balance alerts proactively to prevent this
   </Accordion>
   <Accordion title="Can I offer both credits AND direct payment for same session?">
     **Yes!** This is the "hybrid" model.
@@ -722,26 +709,9 @@ See [Subscription Scheduling](/scheduling/subscription-scheduling) for full comp
     **Why do this**: Flexibility for new athletes, while incentivizing packages for regulars
   </Accordion>
   <Accordion title="How do credits work with recurring bookings?">
-    **Important**: Credits are NOT auto-deducted when creating recurring bookings
-
-    **How it works**:
-
-    - Coach creates recurring pattern (12 sessions)
-    - System checks athlete has 12 credits available (validates)
-    - Credits deducted per your configuration (at booking time OR at session time)
-
-    **Scenario to avoid**: Athlete has 12 credits, you book 12 recurring sessions, then athlete uses credits elsewhere—now they're out of credits for the recurring sessions.
+    **Important**: If a client is only on recurring booking then credits are not needed. Simply collect their payment with a one time or monthly product and create their recurring booking.
 
     See [Recurring Bookings](/scheduling/recurring-bookings) for full details.
-  </Accordion>
-  <Accordion title="Should I round credits to whole numbers?">
-    **Recommendation**: Yes, keep it simple
-
-    **Acceptable**: 1 credit, 2 credits, 5 credits
-
-    **Avoid**: 1.5 credits, 0.75 credits (confusing for athletes)
-
-    **Exception**: If you offer 30-min sessions alongside 60-min, consider 0.5 credits for 30-min to maintain proportional pricing
   </Accordion>
   <Accordion title="Can athletes share/split credit packages?">
     **Your policy decision**:
@@ -771,17 +741,17 @@ See [Subscription Scheduling](/scheduling/subscription-scheduling) for full comp
   <Accordion title="What's the difference between Master Credits and Scheduler-Specific Credits?">
     **Master Credits:**
 
+    - Added manually by an admin/coach
     - Universal—can be used for any credit-enabled scheduler
     - Used LAST (after scheduler-specific credits exhausted)
-    - Simple, flexible, great for starting out
 
-    **Scheduler-Specific Credits:**
+    **Product Bank Credits**
 
-    - Restricted to designated schedulers only
+    - Credits that are added when a user makes a product purchase (one time or subscription)
+    - Non Scheduler Specifc: Universal—can be used for any credit-enabled scheduler
+    - Scheduler Specific: Restricted to designated schedulers only
     - Used FIRST (priority over master credits)
     - Great for tiered memberships and program-specific packages
-
-    **Strategic use**: Combine both to create simple packages (master credits) and premium memberships (scheduler-specific credits) in the same business.
   </Accordion>
 </AccordionGroup>
 
@@ -794,6 +764,7 @@ See [Subscription Scheduling](/scheduling/subscription-scheduling) for full comp
     **Your business has these traits:**
 
     ✅ You want upfront cash flow\
+    ✅ You want clients to be able to book their own sessions\
     ✅ You offer packages or programs (not just drop-ins)\
     ✅ Athletes train regularly (2+ times per month)\
     ✅ You want higher commitment from athletes\
@@ -812,9 +783,9 @@ See [Subscription Scheduling](/scheduling/subscription-scheduling) for full comp
   <Tab title="Maybe skip credits">
     **Your business has these traits:**
 
-    ❌ You offer primarily drop-in/casual sessions\
-    ❌ Athletes train inconsistently (monthly or less)\
-    ❌ You prefer simplicity over optimization\
+    ❌ You offer an inconsistent training schedule (no facility, rotating gym schedule)\
+    ❌ Athletes train inconsistently\
+    ❌ Athletes train the same time each week (use recurring booking alongside monthly subscription)\
     ❌ Your athletes are very transient (tourists, travelers)\
     ❌ You're just starting out and want to test demand first
 
@@ -822,7 +793,6 @@ See [Subscription Scheduling](/scheduling/subscription-scheduling) for full comp
 
     - Drop-in athletes
     - Tourists/travelers (won't use credits)
-    - Very casual trainers
     - Those with unpredictable schedules
 
     **Verdict**: Start with direct payment, add credits later if needed
@@ -848,43 +818,23 @@ See [Subscription Scheduling](/scheduling/subscription-scheduling) for full comp
 
 ---
 
-## Next steps: Implementing credits
-
-<CardGroup cols={2}>
-  <Card title="Setting Up Credit Packages" icon="box" href="/scheduling/setting-up-credit-packages">
-    **Article #24**: Step-by-step guide to creating credit products and configuring schedulers
-  </Card>
-  <Card title="Managing Athlete Credits" icon="user-circle" href="/scheduling/managing-athlete-credits">
-    **Article #25**: View balances, grant credits manually, track usage, handle refunds
-  </Card>
-  <Card title="Credit Usage Limits" icon="lock" href="/scheduling/credit-usage-limits">
-    **Article #26**: Advanced restrictions and scheduling limits for credit-based sessions
-  </Card>
-  <Card title="Subscription Scheduling" icon="sync" href="/scheduling/subscription-scheduling">
-    **Article #27**: Recurring monthly credit subscriptions for predictable revenue
-  </Card>
-</CardGroup>
-
 ## Related articles
 
 <CardGroup cols={3}>
-  <Card title="Scheduler Payment Options" icon="credit-card" href="/scheduling/scheduler-payment-options">
-    Configure pricing for schedulers (free, paid, credits, hybrid)
+  <Card title="Setting Up Product Credit Packages" icon="box" href="/payments/credits-products">
+    Step-by-step guide to creating credit products.
+  </Card>
+  <Card title="Managing Athlete Credits" icon="user-circle" href="/scheduling/managing-athlete-credits">
+    View balances, grant credits manually, track usage, handle refunds
+  </Card>
+  <Card title="Credit Usage Limits" icon="lock" href="/scheduling/credit-usage-limits-restrictions">
+    Advanced restrictions and scheduling limits for credit-based sessions
   </Card>
   <Card title="Creating Schedulers" icon="sliders" href="/scheduling/creating-first-scheduler">
     Set up bookable sessions that accept credits
   </Card>
-  <Card title="Products Overview" icon="shopping-cart" href="/payments/products-overview">
-    Understand CoachIQ's product system (where credit packages are created)
-  </Card>
   <Card title="Manual Booking" icon="user-plus" href="/scheduling/manually-booking-athletes">
     How to manually book athletes using their credit balance
-  </Card>
-  <Card title="Athlete Booking Flow" icon="mobile" href="/scheduling/athlete-booking-flow">
-    What athletes see when booking with credits
-  </Card>
-  <Card title="Cancellation Policies" icon="times-circle" href="/scheduling/canceling-bookings">
-    Credit refund rules when sessions are canceled
   </Card>
 </CardGroup>
 
