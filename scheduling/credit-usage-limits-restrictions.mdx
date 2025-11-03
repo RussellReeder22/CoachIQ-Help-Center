@@ -1,6 +1,5 @@
 ---
 title: "Credit Usage Limits & Restrictions: Controlling How Credits Are Used"
-description: "Set scheduler-specific restrictions, daily/weekly booking limits, multi-credit sessions, and prevent credit abuse with strategic usage controls"
 sidebarTitle: "Usage Limits"
 icon: "shield-alt"
 ---
@@ -98,85 +97,6 @@ Redeemable Schedulers:
 
 ---
 
-### Usage frequency limits
-
-**What it does**: Controls how many times per day/week/month athletes can book using credits
-
-**Common configurations:**
-
-<AccordionGroup>
-  <Accordion title="Daily Booking Limit">
-    **Example**: "Maximum 1 booking per day"
-
-    **Use case**: Prevent athletes from booking multiple sessions same day
-
-    **Business reason**:
-
-    - Ensures recovery time between sessions
-    - Prevents capacity hoarding
-    - Spreads demand across days
-
-    **Athlete sees**: "You've reached your daily booking limit for this subscription"
-
-    **Reset**: Midnight each day (coach's timezone)
-  </Accordion>
-  <Accordion title="Weekly Booking Limit">
-    **Example**: "Maximum 3 bookings per week"
-
-    **Use case**: Control subscription usage to match pricing model
-
-    **Business reason**:
-
-    - "3x/week membership" = max 12 sessions/month at 3/week
-    - Prevents binge booking (using all month's value in Week 1)
-    - Predictable capacity planning
-
-    **Athlete sees**: "You've used 3 of 3 weekly bookings for this subscription. Resets on Monday."
-
-    **Reset**: Every Monday (or first day of athlete's subscription cycle)
-
-    <Note>
-      **Pro tip**: Weekly limits are most effective for unlimited subscriptions to prevent abuse while maintaining flexibility.
-    </Note>
-  </Accordion>
-  <Accordion title="Monthly Booking Limit">
-    **Example**: "Maximum 12 bookings per month"
-
-    **Use case**: Cap unlimited subscriptions to defined usage
-
-    **Business reason**:
-
-    - Unlimited subscriptions need reasonable maximums
-    - "12 bookings/month" = 3x/week average (sustainable)
-    - Protects against extreme overuse
-
-    **Athlete sees**: "You've used 12 of 12 monthly bookings. Resets on [renewal date]."
-
-    **Reset**: Athlete's subscription renewal date (varies per athlete)
-  </Accordion>
-  <Accordion title="Per-Scheduler Limits">
-    **Example**: "Maximum 2 bookings per week for Rising Stars Shooting Lab"
-
-    **Use case**: Limit specific high-demand or high-cost schedulers
-
-    **Business reason**:
-
-    - Specialty sessions have higher overhead
-    - Prevents athletes from only booking premium sessions
-    - Encourages diverse training
-
-    **Athlete sees**: "You've reached your limit for Rising Stars Shooting Lab this week (2/2 used)"
-
-    **Reset**: Per scheduler, according to limit type (daily/weekly/monthly)
-
-    <Tip>
-      **Strategic use**: Great for balancing access to premium offerings within broader membership
-    </Tip>
-  </Accordion>
-</AccordionGroup>
-
----
-
 ### Multi-credit sessions
 
 **What it does**: Makes certain schedulers cost MORE than 1 credit per booking
@@ -248,7 +168,7 @@ Redeemable Schedulers:
 
 ---
 
-## Configuring scheduler-specific restrictions
+## Configuring scheduler-specific restrictions within Product
 
 Step-by-step: Limiting credits to specific schedulers.
 
@@ -266,7 +186,7 @@ Step-by-step: Limiting credits to specific schedulers.
     - **Redeemable Schedulers**: 🎯 THIS IS WHERE YOU SET RESTRICTIONS
 
     <Frame>
-      ![Credit Limits configuration in product builder](/images/product-credit-limits-section.png)
+      ![Credit Limits configuration in product builder](/credit-limits-product.png)
     </Frame>
   </Step>
   <Step title="Select Redeemable Schedulers">
@@ -317,83 +237,6 @@ Step-by-step: Limiting credits to specific schedulers.
 
 ---
 
-## Configuring usage frequency limits
-
-Setting daily, weekly, or monthly booking caps.
-
-<Steps>
-  <Step title="Open product credit limits">
-    Dashboard → **Payments** → **Products** → [Product] → **Edit** → **Credit Limits** section
-  </Step>
-  <Step title="Find Usage Limits configuration">
-    Look for section labeled:
-
-    - "Usage Limits"
-    - "Booking Frequency"
-    - "Credit Usage Restrictions"
-    - Or similar naming
-
-    <Note>
-      **Platform variation**: Exact naming and location may vary. If you don't see these options, usage limits may be configured at the scheduler level instead of product level.
-    </Note>
-  </Step>
-  <Step title="Set frequency limit">
-    **Options you might see**:
-
-    <Tabs>
-      <Tab title="Daily Limit">
-        **Setting**: "Maximum bookings per day: [X]"
-
-        **Example**: Set to "1" for "max 1 booking per day"
-
-        **Effect**: Athlete can book once daily using these credits, resets at midnight
-
-        **Best for**: Preventing same-day multi-booking
-      </Tab>
-      <Tab title="Weekly Limit">
-        **Setting**: "Maximum bookings per week: [X]"
-
-        **Example**: Set to "3" for "max 3 bookings per week"
-
-        **Effect**: Athlete can book 3 times weekly using these credits, resets Monday
-
-        **Best for**: Unlimited subscriptions with consistent usage expectations
-
-        <Tip>
-          **Recommended for unlimited subscriptions**: Set weekly limit = (monthly expected usage ÷ 4 weeks). Example: 12 sessions/month target = 3/week limit.
-        </Tip>
-      </Tab>
-      <Tab title="Monthly Limit">
-        **Setting**: "Maximum bookings per month: [X]"
-
-        **Example**: Set to "12" for "max 12 bookings per month"
-
-        **Effect**: Athlete can book 12 times monthly using these credits, resets on renewal date
-
-        **Best for**: Subscription cap that aligns with billing cycle
-      </Tab>
-    </Tabs>
-  </Step>
-  <Step title="Save and test">
-    **Save** product configuration
-
-    **Test scenario**:
-
-    1. Assign product to test athlete
-    2. Have them book sessions up to limit
-    3. Attempt to book one more
-    4. Should see: "You've reached your [daily/weekly/monthly] booking limit for [Product Name]"
-
-    **Verify**: Limit resets at appropriate time (daily, weekly, monthly)
-  </Step>
-</Steps>
-
-<Warning>
-  **Limit stacking**: If you set BOTH weekly (3 bookings) AND daily (1 booking) limits, the more restrictive limit applies. Athlete can't book 3 times in one day even though weekly limit is 3.
-</Warning>
-
----
-
 ## Configuring multi-credit sessions
 
 Making certain schedulers cost multiple credits per booking.
@@ -409,21 +252,20 @@ Making certain schedulers cost multiple credits per booking.
 
     - Free
     - Direct Payment (\$ amount)
-    - Credit Redemption ← THIS IS WHERE YOU CONFIGURE
+    - Credit Charge ← THIS IS WHERE YOU CONFIGURE
 
     <Frame>
-      ![Scheduler payment configuration](/images/scheduler-payment-options.png)
+      ![Scheduler payment configuration](/credit-charge-ui.png)
     </Frame>
   </Step>
   <Step title="Set credit cost">
-    **Look for**: "Credits required" or "Credit cost" field
+    **Look for**: "Credits Price" field
 
     **Configuration options**:
 
     - **1 credit** (default/standard)
     - **2 credits** (common for premium)
     - **3+ credits** (specialty/extended sessions)
-    - **0.5 credits** (half-sessions, if you want to use fractional credits)
 
     **Select**: Number of credits this scheduler requires per booking
 
@@ -515,316 +357,6 @@ When multiple limits exist, this is the order CoachIQ enforces:
 
 ### Example limit interaction scenarios
 
-<AccordionGroup>
-  <Accordion title="Scenario 1: Master Credits bypass scheduler restrictions">
-    **Setup**:
-
-    - Athlete has "Youth Program" subscription (restricted to youth schedulers only)
-    - Athlete also has 2 Master Credits
-
-    **Question**: Can athlete use Master Credits for adult scheduler not in youth subscription?
-
-    **Answer**: YES! Master Credits have no scheduler restrictions
-
-    **System behavior**:
-
-    1. Athlete views adult scheduler
-    2. Youth subscription credits NOT shown as payment option (restricted)
-    3. Master Credits ARE shown as payment option
-    4. Athlete can book using Master Credits
-
-    **Lesson**: Master Credits are ultimate override for scheduler restrictions
-  </Accordion>
-  <Accordion title="Scenario 2: Weekly limit + multi-credit session">
-    **Setup**:
-
-    - Product: "Unlimited Monthly" with 3 bookings/week limit
-    - Scheduler: "Private Training" costs 2 credits/booking
-
-    **Question**: Can athlete book 3 Private Training sessions in one week?
-
-    **Answer**: NO (probably)
-
-    **System behavior**:
-
-    - First booking: Uses 2 credits, counts as 1 booking toward weekly limit (1/3)
-    - Second booking: Uses 2 credits, counts as 1 booking toward weekly limit (2/3)
-    - Third booking: Uses 2 credits, counts as 1 booking toward weekly limit (3/3)
-    - Fourth attempt: BLOCKED (weekly limit reached, even though credits still unlimited)
-
-    **Lesson**: Usage limits count BOOKINGS, not credits consumed
-
-    <Note>
-      **Platform variation**: Confirm how your platform counts multi-credit sessions against usage limits. Some systems count credits consumed, others count booking instances.
-    </Note>
-  </Accordion>
-  <Accordion title="Scenario 3: Daily + weekly limits stacking">
-    **Setup**:
-
-    - Product: "Premium Membership"
-    - Daily limit: 1 booking/day
-    - Weekly limit: 5 bookings/week
-
-    **Question**: What's the maximum weekly bookings?
-
-    **Answer**: 5 bookings maximum (limited by weekly cap), spread across 5+ days
-
-    **System behavior**:
-
-    - Athlete can book once per day (daily limit)
-    - Even if athlete books every day (7 days), weekly limit stops them at 5 bookings
-    - Most restrictive limit always wins
-
-    **Use case**: Daily limit ensures recovery/spacing, weekly limit caps total usage
-
-    **Lesson**: Multiple limits can coexist; most restrictive applies
-  </Accordion>
-  <Accordion title="Scenario 4: Product restriction + scheduler eligibility">
-    **Setup**:
-
-    - Product A: "Basic Package" (restricted to Basic Scheduler A, B, C)
-    - Product B: "Premium Package" (restricted to Premium Scheduler X, Y, Z)
-    - Athlete has BOTH products
-
-    **Question**: What happens when athlete tries to book Premium Scheduler X?
-
-    **Answer**: System offers only Product B credits (Premium Package)
-
-    **System behavior**:
-
-    1. Athlete views Premium Scheduler X
-    2. System checks all athlete's credit sources
-    3. Product A credits: NOT shown (scheduler not in redeemable list)
-    4. Product B credits: SHOWN (scheduler IS in redeemable list)
-    5. Master Credits: SHOWN (if athlete has any)
-
-    **Lesson**: System automatically filters which credit sources work for each scheduler
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Preventing credit abuse
-
-Strategic configurations to protect your business.
-
-### Common abuse patterns and solutions
-
-<Tabs>
-  <Tab title="The Unlimited Hoarder">
-    **Abuse pattern**: Athlete with unlimited monthly subscription books 20+ sessions in Week 1, blocks all capacity
-
-    **Prevention strategies**:
-
-    1. **Weekly booking limits**
-       - Set limit: "4 bookings per week"
-       - Effect: Spreads bookings across month
-       - Athlete still gets full value, but consistently
-    2. **Daily booking limits**
-       - Set limit: "1 booking per day"
-       - Effect: Forces spacing between sessions
-       - Prevents capacity blocking
-    3. **Rolling booking windows**
-       - Set scheduler: "Book maximum 7 days in advance"
-       - Effect: Athlete can't book entire month Day 1
-       - Opens capacity to others throughout month
-
-    **Recommended configuration**:
-
-    ```
-    Product: "Unlimited Monthly Membership"
-    Weekly limit: 3 bookings
-    Daily limit: 1 booking
-    Scheduler setting: 7-day advance booking window
-    Result: Athlete books 3x/week (12/month), can't monopolize schedule
-    ```
-  </Tab>
-  <Tab title="The Account Sharer">
-    **Abuse pattern**: Family shares one unlimited subscription, multiple people book under same account
-
-    **Prevention strategies**:
-
-    1. **Weekly booking limits**
-       - Set limit: "4 bookings per week"
-       - Effect: Even if 2 people share, max 4 sessions/week total
-       - Makes sharing less valuable
-    2. **Photo verification** (operational)
-       - Require profile photo
-       - Coach checks booking vs athlete appearance
-       - Catches most casual sharing
-    3. **Single concurrent booking rule**
-       - Technical: Prevent overlapping bookings on same account
-       - If sharing, they can't both have sessions at same time
-       - Limits sharing utility
-    4. **Terms of service clause**
-       - Legal: "Subscriptions non-transferable"
-       - Right to cancel subscription if sharing detected
-       - Enforcement tool if needed
-
-    <Warning>
-      **Balance enforcement with trust**: Heavy-handed anti-sharing measures can alienate legitimate athletes. Most coaches address on case-by-case basis.
-    </Warning>
-  </Tab>
-  <Tab title="The Cherry Picker">
-    **Abuse pattern**: Athlete with unlimited subscription ONLY books your highest-cost/most popular sessions
-
-    **Prevention strategies**:
-
-    1. **Per-scheduler limits**
-       - Premium Scheduler A: "2 bookings per week max"
-       - Standard Schedulers: Unlimited within weekly cap
-       - Effect: Forces diversity in session types
-    2. **Multi-credit premium sessions**
-       - Make premium sessions cost 2+ credits
-       - Even with unlimited credits, higher cost = psychological deterrent
-       - Athlete reconsiders booking ONLY premium
-    3. **Separate premium from unlimited**
-       - Don't include ultra-premium sessions in unlimited subscription
-       - Require separate add-on or credits
-       - Example: "Unlimited Standard + 2 Premium Sessions/month"
-
-    **Example configuration**:
-
-    ```
-    Product: "Unlimited Training Membership"
-    Redeemable Schedulers:
-      - Group Classes (unlimited, max 4/week)
-      - Semi-Private (max 2/week, costs 1.5 credits)
-      - Private Sessions (NOT INCLUDED)
-    ```
-  </Tab>
-  <Tab title="The Binge Booker">
-    **Abuse pattern**: Athlete uses all 10 credits in first 5 days, then requests refund claiming "not satisfied"
-
-    **Prevention strategies**:
-
-    1. **Usage-based refund policy**
-       - "Refunds available if 3 credits used"
-       - After 3+ credits used, refund denied or pro-rated
-       - Document in product description
-    2. **Credit release schedule** (if available)
-       - Release 2 credits per week over 5 weeks (for 10-credit package)
-       - Athlete can't burn through immediately
-       - Forces sustained engagement
-    3. **Early engagement outreach**
-       - After 1st session: "How was your experience?"
-       - Catch dissatisfaction early
-       - Prevents binge-then-refund pattern
-
-    <Note>
-      **Legal consideration**: Check local consumer protection laws around credit/stored value refunds before implementing restrictive refund policies.
-    </Note>
-  </Tab>
-</Tabs>
-
----
-
-## What athletes see when limits are hit
-
-Understanding athlete experience helps you set appropriate limits and communicate clearly.
-
-### Athlete-facing error messages
-
-<AccordionGroup>
-  <Accordion title="Scheduler not in redeemable list">
-    **What athlete sees**: When viewing scheduler, credit option doesn't appear in payment selection
-
-    **Exact message** (approximate):
-
-    - "Credits not available for this session"
-    - Or: Payment options show only "Direct Payment: \$50" (no credit option)
-
-    **Athlete confusion potential**: HIGH (they have credits but can't use them here)
-
-    **Your prevention**:
-
-    - Clear product descriptions: "Youth Program credits work ONLY for youth schedulers"
-    - FAQ on your website explaining credit restrictions
-    - During onboarding: "These credits are for [specific sessions]"
-  </Accordion>
-  <Accordion title="Daily booking limit reached">
-    **What athlete sees**: Error message when attempting to book second session same day
-
-    **Exact message** (approximate):
-
-    ```
-    "You've reached your daily booking limit for [Product Name]
-    You can book again tomorrow"
-    ```
-
-    **Athlete confusion potential**: MEDIUM
-
-    **Your prevention**:
-
-    - Product description: "Max 1 booking per day"
-    - In-app calendar: Show dates when they can next book
-    - Proactive communication: "Remember, you can book once daily with this membership"
-  </Accordion>
-  <Accordion title="Weekly booking limit reached">
-    **What athlete sees**: Error message when attempting to book 4th session in week (if limit is 3)
-
-    **Exact message** (approximate):
-
-    ```
-    "You've used 3 of 3 weekly bookings for [Product Name]
-    Your weekly limit resets on Monday, [Date]"
-    ```
-
-    **Athlete confusion potential**: LOW (message is clear about reset)
-
-    **Your prevention**:
-
-    - Product description: "Max 3 sessions per week"
-    - Weekly reminder email: "You have 1 booking remaining this week"
-    - Show bookings used: "2/3 weekly bookings used"
-  </Accordion>
-  <Accordion title="Insufficient credits for multi-credit session">
-    **What athlete sees**: Error when trying to book 2-credit session with only 1 credit remaining
-
-    **Exact message** (approximate):
-
-    ```
-    "Insufficient credits
-    This session requires 2 credits, but you only have 1 credit available
-    Purchase more credits or choose a different session"
-    ```
-
-    **Athlete confusion potential**: MEDIUM (might not realize this session costs more)
-
-    **Your prevention**:
-
-    - Scheduler name: "Private Training (2 Credits)" ← show cost in title
-    - Session description: Clearly state credit cost upfront
-    - Booking page: Display credit cost before athlete selects date/time
-  </Accordion>
-  <Accordion title="Monthly booking limit reached">
-    **What athlete sees**: Error when attempting to book 13th session in month (if limit is 12)
-
-    **Exact message** (approximate):
-
-    ```
-    "You've reached your monthly booking limit for [Product Name]
-    Monthly limit: 12 bookings
-    Your limit resets on [Renewal Date]"
-    ```
-
-    **Athlete confusion potential**: MEDIUM-HIGH (might feel cheated if expecting "unlimited")
-
-    **Your prevention**:
-
-    - NEVER call it "unlimited" if there's a monthly cap
-    - Product name: "12-Session Monthly Membership" (not "Unlimited")
-    - Product description: "Book up to 12 sessions per month (resets monthly)"
-    - Marketing: Frame as "3x/week training" not "unlimited"
-
-    <Warning>
-      **Legal risk**: Advertising "unlimited" when a monthly cap exists may violate consumer protection laws in some jurisdictions. Be explicit about limits.
-    </Warning>
-  </Accordion>
-</AccordionGroup>
-
----
-
 ## Viewing athlete usage limits
 
 Where coaches see limit consumption.
@@ -841,22 +373,18 @@ Where coaches see limit consumption.
 
     **Example**: "Month to Month Rising Stars Membership"
   </Step>
-  <Step title="Find Usage Limits Log">
-    Look for "Usage limits log" link or "View limits" button
-
-    **Click** to open usage tracking details
+  <Step title="Find Redeemable Schedulers Log">
+    Look for "Redeemable Schedulers" section
 
     <Frame>
-      ![Usage limits tracking in athlete profile](/images/athlete-credit-usage-limits.png)
+      ![Usage limits tracking in athlete profile](/credit-log-ui.png)
     </Frame>
   </Step>
   <Step title="Review usage data">
     **What you'll see**:
 
-    - **Daily usage**: "1 of 1 bookings today"
-    - **Weekly usage**: "2 of 3 bookings this week" (resets Monday)
-    - **Monthly usage**: "8 of 12 bookings this month" (resets on renewal date)
-    - **Per-scheduler usage**: "Rising Stars Shooting Lab: 1 of 2 weekly bookings"
+    - **Redeemable Schedulers**: List of schedulers credits can be redeemed for
+    - **Limits for each Scheduler: **Number sessions redeemed over the limit that can be redeemed for the billing cycle.
 
     **Use this to**:
 
@@ -870,126 +398,6 @@ Where coaches see limit consumption.
   **Weekly monitoring**: Review top users weekly. If many athletes consistently hit limits, consider adjusting (limits may be too restrictive). If no one hits limits, they may be too generous.
 </Tip>
 
----
-
-## Common limit configuration strategies
-
-Proven approaches by business model.
-
-### For unlimited subscriptions
-
-**The "3x/week" model:**
-
-```
-Product: "Unlimited Monthly Training"
-Price: $400/month
-Weekly limit: 3 bookings
-Daily limit: 1 booking
-Expected usage: 12 sessions/month (3 per week × 4 weeks)
-Per-session cost to you: $33
-Profit margin: 35%+ (if your costs are <$25/session)
-```
-
-**Why it works**:
-
-- "Unlimited" sounds attractive (great marketing)
-- Weekly limit prevents abuse (protects margins)
-- Daily limit encourages consistency (better athlete results)
-- Predictable usage (12 sessions/month average)
-
----
-
-**The "Tiered Unlimited" model:**
-
-```
-Product: "Unlimited Standard Classes"
-Price: $250/month
-Redeemable schedulers: Standard group classes only
-Weekly limit: 4 bookings
-Premium sessions: NOT included
-
-Separate Add-On: "Premium Add-On Pack"
-Price: +$150/month
-Unlocks: 2 premium sessions per month
-```
-
-**Why it works**:
-
-- Base subscription is affordable, mass-market
-- Premium add-on captures high-value athletes
-- Clear product differentiation
-- Upsell path for engaged athletes
-
----
-
-### For credit packages (finite credits)
-
-**The "Flex Package" model:**
-
-```
-Product: "10-Credit Flex Package"
-Price: $450
-Redeemable schedulers: 
-  - Group Classes (1 credit)
-  - Semi-Private (1.5 credits) 
-  - Private Training (2 credits)
-No usage frequency limits (credit count is the limit)
-```
-
-**Why it works**:
-
-- Athlete chooses session types based on needs
-- Multi-credit premium sessions reflect value
-- No weekly limits needed (10 credits is finite)
-- Simple for athletes to understand
-
----
-
-**The "Program Package" model:**
-
-```
-Product: "8-Week Youth Development Package"
-Price: $600
-Redeemable schedulers: Youth program sessions only
-Credits issued: 16 (for 2x/week × 8 weeks)
-Weekly limit: 2 bookings (enforces program structure)
-Expiration: 10 weeks (2-week grace period)
-```
-
-**Why it works**:
-
-- Structured program with defined timeline
-- Weekly limit maintains consistency
-- Scheduler restriction ensures program integrity
-- Expiration creates urgency
-
----
-
-### For facility owners (multi-program)
-
-**The "All-Access Pass" model:**
-
-```
-Product: "Facility All-Access Pass"
-Price: $500/month
-Redeemable schedulers: ALL facility programs
-Weekly limit: 5 bookings total
-Per-program limits:
-  - Open Gym: unlimited (within weekly 5)
-  - Classes: max 3 per week
-  - Clinics: max 1 per week
-Daily limit: 2 bookings
-```
-
-**Why it works**:
-
-- Appeals to multi-sport/cross-training athletes
-- Per-program limits protect high-cost offerings
-- Weekly cap controls overall usage
-- Daily limit prevents same-day hoarding
-
----
-
 ## Troubleshooting limit issues
 
 When limits aren't working as expected.
@@ -1000,15 +408,14 @@ When limits aren't working as expected.
 
 <Steps>
   <Step title="Verify limit status">
-    Athlete Profile → Credits → [Product Tab] → Usage Limits Log
+    Athlete Profile → Credits → [Product Tab] → Redeemable Schedulers Log
 
     **Check**:
 
-    - Daily bookings: X of Y used
-    - Weekly bookings: X of Y used
+    - Corresponding scheduler is listed
     - Per-scheduler bookings: X of Y used
 
-    **If under all limits**: Continue troubleshooting
+    **If no issues found**: Continue troubleshooting
   </Step>
   <Step title="Check scheduler restrictions">
     **Verify**: Is the scheduler athlete is trying to book in product's "Redeemable Schedulers" list?
@@ -1054,125 +461,6 @@ When limits aren't working as expected.
     - Session is full (capacity issue, not limit issue)
     - Athlete has conflicting booking
     - Time slot outside scheduling window
-  </Step>
-</Steps>
-
----
-
-### Issue: Limits resetting at wrong time
-
-**Common problem**: Weekly limit should reset Monday but resets Sunday
-
-**Causes**:
-
-1. **Timezone mismatch**: Coach timezone vs athlete timezone vs server timezone
-2. **Subscription cycle**: Monthly limits reset on subscription renewal date (varies per athlete)
-3. **Configuration error**: Limit set incorrectly during product setup
-
-**Solutions**:
-
-<Tabs>
-  <Tab title="Fix Timezone Settings">
-    **Check coach timezone**:
-
-    1. Dashboard → Settings → Account Settings
-    2. Verify timezone matches your actual location
-    3. Update if incorrect
-
-    **Check athlete timezone** (if individual athlete settings available):
-
-    1. Athlete Profile → Settings
-    2. Verify timezone
-    3. Update if incorrect
-
-    **Result**: Limits should reset at correct time in appropriate timezone
-  </Tab>
-  <Tab title="Understand Subscription Cycles">
-    **Monthly limits work differently**:
-
-    - NOT calendar month (Jan 1 - Jan 31)
-    - Subscription billing cycle (e.g., purchased Jan 15 = resets Feb 15)
-    - Each athlete has different reset date based on purchase date
-
-    **This is correct behavior**: Monthly limits align with billing, not calendar
-
-    **Athlete communication**: "Your 12-session monthly limit resets on [Your Renewal Date]"
-  </Tab>
-  <Tab title="Reconfigure Limits">
-    If limits are genuinely wrong:
-
-    1. Payments → Products → [Product] → Edit
-    2. Review usage limit settings
-    3. Correct values
-    4. Save
-    5. Verify: Check test athlete to confirm correct reset behavior
-
-    <Note>
-      **Retroactive fix**: Changing limits going forward doesn't fix past incorrect resets. May need to manually adjust athlete usage counts if critically wrong.
-    </Note>
-  </Tab>
-</Tabs>
-
----
-
-### Issue: Athletes complaining limits are too restrictive
-
-**Athlete feedback**: "I can only book 3 times per week? That's not enough!"
-
-**Decision framework**:
-
-<Steps>
-  <Step title="Review actual usage data">
-    **Question**: Are athletes ACTUALLY hitting limits regularly?
-
-    **How to check**:
-
-    1. Pull report of athletes on this product
-    2. Count how many hit weekly limit each week
-    3. Calculate percentage
-
-    **If 10% hitting limits**: Limits are fine, athlete is outlier (educate on product design)
-
-    **If \>30% hitting limits**: Limits may be too restrictive (consider adjustment)
-  </Step>
-  <Step title="Compare to pricing model">
-    **Question**: Is limit aligned with what product should deliver?
-
-    **Example**:
-
-    - Product: "\$300/month Unlimited Training"
-    - Weekly limit: 3 bookings = 12 sessions/month
-    - Per-session cost to business: \$25
-    - Total cost: \$300 (break-even pricing)
-
-    **If limit aligned with pricing**: Limits are correct (athlete wants more than product offers)
-
-    **If limit too restrictive for price**: Consider increasing limit or lowering price
-  </Step>
-  <Step title="Offer upsell/alternative">
-    **Response to athlete**:
-
-    "The [Product Name] membership is designed for 3x/week training (12 sessions/month). If you'd like to train more frequently, I have these options:
-
-    1. **Upgrade to [Premium Product]**: 5x/week training (20 sessions/month) for \$450/month
-    2. **Add credits**: Purchase additional credit packages to supplement your membership
-    3. **Hybrid approach**: Use direct payment (\$50/session) for extra sessions beyond your 3/week
-
-    Let me know which works best for your goals!"
-
-    <Tip>
-      **Positioning**: Frame as athlete's growth/commitment deserves premium product, not as limit being wrong
-    </Tip>
-  </Step>
-  <Step title="Adjust limits if necessary">
-    If data shows limits are genuinely too tight:
-
-    1. Increase weekly limit (e.g., 3 → 4 bookings)
-    2. Or: Increase price to match higher usage (e.g., $300 → $350 for 4/week)
-    3. Communicate change to all athletes on product
-    4. Monitor usage for 30 days to verify adjustment worked
-
-    **Grandfather existing athletes**: Consider keeping current price for existing athletes when raising price for new sign-ups
   </Step>
 </Steps>
 
@@ -1290,7 +578,7 @@ Strategic guidance for different scenarios.
     - You change to 4 bookings/week
     - All athletes immediately can book 4/week going forward
 
-    **Athlete notification**: System typically does NOT auto-notify athletes of limit changes
+    **Athlete notification**: System  does NOT auto-notify athletes of limit changes
 
     **Your action required**:
 
@@ -1303,7 +591,7 @@ Strategic guidance for different scenarios.
   <Accordion title="Can athletes see their usage limits?">
     **Yes**: Athletes can view their usage in Athlete Portal
 
-    **Location**: Athlete Portal → Settings → Billing → [Product Name]
+    **Location**: Athlete Portal → Settings → Billing
 
     **What they see**:
 
@@ -1353,37 +641,13 @@ Strategic guidance for different scenarios.
 
 ---
 
-## What's next
-
-Now that you understand usage limits and restrictions, explore the full credits system:
-
-<CardGroup cols={2}>
-  <Card title="Subscription Scheduling" icon="sync" href="/scheduling/subscription-scheduling">
-    **Article #27**: Master recurring credit subscriptions, unlimited credits (∞), and renewal behavior
-  </Card>
-  <Card title="Managing Athlete Credits" icon="hand-holding-usd" href="/scheduling/managing-athlete-credits">
-    **Article #25**: View balances, grant credits, read logs, handle athlete requests
-  </Card>
-  <Card title="Setting Up Credit Packages" icon="box" href="/scheduling/setting-up-credit-packages">
-    **Article #24**: Create credit-issuing products and configure scheduler redemption
-  </Card>
-  <Card title="Credit System Explained" icon="info-circle" href="/scheduling/credit-system-explained">
-    **Article #23**: Understand core credit concepts, types, and business benefits
-  </Card>
-</CardGroup>
-
----
-
 ## Related articles
 
 <CardGroup cols={3}>
-  <Card title="Scheduler Payment Options" icon="credit-card" href="/scheduling/scheduler-payment-options">
-    Configure pricing for schedulers
-  </Card>
   <Card title="Products Overview" icon="shopping-cart" href="/payments/products-overview">
     Where credit packages are created
   </Card>
-  <Card title="Creating Schedulers" icon="sliders" href="/scheduling/creating-first-scheduler">
+  <Card title="Creating Schedulers" icon="sliders" href="/creating-your-first-scheduler">
     Set up bookable sessions
   </Card>
   <Card title="Automations" icon="bolt" href="/tools/automations-overview">
@@ -1391,9 +655,6 @@ Now that you understand usage limits and restrictions, explore the full credits 
   </Card>
   <Card title="Manual Booking" icon="user-plus" href="/scheduling/manually-booking-athletes">
     Book athletes with credit balance
-  </Card>
-  <Card title="Athlete Booking Flow" icon="mobile" href="/scheduling/athlete-booking-flow">
-    What athletes see when booking
   </Card>
 </CardGroup>
 
