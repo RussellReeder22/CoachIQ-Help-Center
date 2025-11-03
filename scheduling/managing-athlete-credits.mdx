@@ -276,24 +276,17 @@ Use Master Credits when you want to give credits that work for ANY scheduler.
 <Steps>
   <Step title="Navigate to athlete profile">
     Dashboard → **People** → **Clients** → Click athlete name
-
-    <Frame>
-      ![Clients list in People section](/images/people-clients-list.png)
-    </Frame>
   </Step>
   <Step title="Open Master Credits tab">
     Click the **Master Credits** tab (first tab in Credits section)
 
     You'll see current master credit balance and a note: "These credits can be used for any session and have no restrictions"
-  </Step>
-  <Step title="Click 'Edit' button">
-    Located near the credit balance display
 
-    <Tip>
-      **Look for**: Edit button or icon next to the credit balance number
-    </Tip>
+    <Frame>
+      ![Master Credits Ui Pn](/images/master-credits-ui.png)
+    </Frame>
   </Step>
-  <Step title="Enter new credit amount">
+  <Step title="Adjust credit amount" stepNumber={3}>
     **Input**: Number of credits to grant (e.g., "5")
 
     **Important**: This SETS the total, it does not ADD to existing balance
@@ -304,8 +297,8 @@ Use Master Credits when you want to give credits that work for ANY scheduler.
       **Critical**: Setting credits to a lower number will REMOVE credits. Always check current balance first!
     </Warning>
   </Step>
-  <Step title="Save and verify">
-    Click **Save** or **Update** button
+  <Step title="Save and verify" stepNumber={4}>
+    Click **Update Redeemable Credits** button
 
     **Verification**: Credit balance updates immediately, new entry appears in Credit Logs:
 
