@@ -41,13 +41,9 @@ When you open an athlete's profile and navigate to the Credits section, you'll s
 
     **Example display:**
 
-    ```
-    Master Credits
-    Note: These credits can be used for any session and have no restrictions
-    Credit Balance: 5
-    Total: 5 Credits Redeemable
-    ```
-
+    <Frame>
+      ![Master Credits Ui Pn](/images/master-credits-ui.png)
+    </Frame>
     **When to use Master Credits:**
 
     - Compensating athletes for issues
@@ -67,20 +63,9 @@ When you open an athlete's profile and navigate to the Credits section, you'll s
 
     **Example display:**
 
-    ```
-    Month to Month Rising Stars Membership
-    Credit Balance: ∞
-    Limits: Usage limits log
-    
-    Redeemable Schedulers:
-    - Rising Stars Class (3/∞)
-    - Rising Stars Shooting Lab (0/∞)
-    - Rising Stars Open Gym (0/∞)
-    
-    Credit Logs:
-    [Transaction history for this product]
-    ```
-
+    <Frame>
+      ![Product Specific Credits Ui Pn](/images/product-specific-credits-ui.png)
+    </Frame>
     **Key indicators:**
 
     - **∞** = Unlimited credits this billing period
@@ -228,41 +213,6 @@ Credit logs provide a complete transaction history for each athlete's credits. E
   </Tab>
 </Tabs>
 
-### Using credit logs for troubleshooting
-
-**Common scenarios where logs help:**
-
-<CardGroup cols={2}>
-  <Card title="Athlete: 'I should have more credits'" icon="question-circle">
-    **Solution**: Check credit logs to show:
-
-    - When credits were purchased
-    - When/where credits were redeemed
-    - Current accurate balance
-  </Card>
-  <Card title="Athlete: 'Can I get a refund?'" icon="undo">
-    **Solution**: Credit logs prove:
-
-    - Purchase date and amount
-    - How many credits used vs unused
-    - Calculate fair refund amount
-  </Card>
-  <Card title="Disputed booking charges" icon="receipt">
-    **Solution**: Credit logs confirm:
-
-    - Whether booking used credits or charged card
-    - Which session the credit was redeemed for
-    - Timeline of credit usage
-  </Card>
-  <Card title="Subscription renewal issues" icon="sync-alt">
-    **Solution**: Credit logs show:
-
-    - Last credit renewal date
-    - Whether credits refreshed after payment
-    - If subscription is still active
-  </Card>
-</CardGroup>
-
 ---
 
 ## Manual credit operations
@@ -377,8 +327,7 @@ For adding credits tied to specific products/subscriptions.
     ✅ **Quick fixes** - One-off compensation or promotional credits\
     ✅ **Flexibility needed** - Athlete should be able to use for ANY scheduler\
     ✅ **Trial credits** - New athletes sampling your services\
-    ✅ **Make-goods** - Compensating for service issues\
-    ✅ **Simple management** - Don't want to track credit sources
+    ✅ **Make-goods** - Compensating for service issues
 
     **Bottom line**: Master Credits are simpler and more flexible for most manual operations
   </Tab>
@@ -412,15 +361,15 @@ For adding credits tied to specific products/subscriptions.
     3. Choose whether to charge athlete or add without payment
 
     <Warning>
-      **Payment consideration**: Adding product manually can optionally charge the athlete via Stripe, or add without charging (credits stay live until you remove product)
+      **Payment consideration**: Adding product manually can give you the ability to 1.) optionally charge the athlete via Stripe, or 2.) add without charging (credits stay live until you remove product)
     </Warning>
   </Step>
   <Step title="Adjust credit balance">
     Follow same process as Master Credits:
 
-    1. Click **Edit** next to credit balance
+    1. Locate the credit balance
     2. Enter new total (remember: this SETS the total)
-    3. Save changes
+    3. Save changes by pressing **Update Redeemable Credits**
 
     **Result**: Credit logs will show: "[Date] | +X Credits | Set by [Coach Name]"
   </Step>
@@ -436,222 +385,9 @@ For adding credits tied to specific products/subscriptions.
 
 ---
 
-## Common credit management scenarios
-
-Real-world situations you'll encounter and how to handle them.
-
-### Scenario 1: Athlete requests refund on unused credits
-
-**Situation**: Athlete bought 10-credit package, used 3, wants refund on remaining 7
-
-**Steps to handle:**
-
-<Steps>
-  <Step title="Check credit logs">
-    Verify purchase date, credits used, credits remaining
-
-    **Navigate**: Athlete Profile → Credits → [Product Tab] → Credit Logs
-
-    **Document**:
-
-    - Purchase date and amount paid
-    - Credits used (3)
-    - Credits remaining (7)
-  </Step>
-  <Step title="Calculate refund amount">
-    **Formula**: (Remaining credits ÷ Total credits) × Purchase price
-
-    **Example**: (7 ÷ 10) × $450 = $315 refund
-
-    <Tip>
-      **Pro tip**: Deduct credit card processing fees (2.9% + \$0.30) from refund if your policy includes that clause
-    </Tip>
-  </Step>
-  <Step title="Process refund via Stripe">
-    Navigate to **Payments** → **Transactions** → Find original purchase → Issue partial refund
-
-    **Amount**: \$315 (or your calculated amount)
-
-    <Note>
-      **Refund policy recommendation**: Clearly state refund terms in your product descriptions and website terms of service
-    </Note>
-  </Step>
-  <Step title="Remove unused credits from athlete account">
-    **Action**: Set credit balance to 0 for that product
-
-    **Why**: Prevents athlete from using refunded credits
-
-    **Credit log entry**: Will show credits were removed by coach
-  </Step>
-</Steps>
-
----
-
-### Scenario 2: Athlete ran out of credits but wants to book
-
-**Situation**: Athlete has 0 credits, wants to book a credit-only scheduler
-
-**Options to offer:**
-
-<Tabs>
-  <Tab title="Option 1: Purchase More Credits">
-    **Best for**: Athlete planning to continue training regularly
-
-    **Your action**:
-
-    1. Send direct link to credit package purchase
-    2. Or: Navigate to athlete's account → Products → Assign product and charge
-
-    **Communication**: "You're out of credits! Purchase another package to continue booking: [link]"
-
-    **Benefit**: Athlete gets best value via package discount
-  </Tab>
-  <Tab title="Option 2: Temporarily Grant Credits">
-    **Best for**: One-time booking need, athlete is loyal/long-term
-
-    **Your action**: Grant 1-2 Master Credits to cover immediate booking
-
-    **Communication**: "I've added 1 credit to your account to book today's session. Let's discuss package options for the future!"
-
-    **Risk**: Sets precedent that they can run out and get free credits
-
-    <Warning>
-      **Use sparingly**: Only for exceptional athletes/situations, or this becomes expected
-    </Warning>
-  </Tab>
-  <Tab title="Option 3: Convert to Direct Payment">
-    **Best for**: Scheduler configured for hybrid payment (credits OR direct payment)
-
-    **Your action**: Manually book the athlete and charge their card directly
-
-    **Communication**: "Since you're out of credits, I can charge your card \$50 for today's session"
-
-    **Benefit**: Athlete can still train while deciding about package purchase
-  </Tab>
-</Tabs>
-
----
-
-### Scenario 3: Subscription credits not renewing
-
-**Situation**: Athlete has monthly subscription, credits show as expired/empty instead of renewing
-
-**Troubleshooting steps:**
-
-<Steps>
-  <Step title="Verify subscription status on Stripe">
-    Navigate to **Payments** → **Subscriptions** → Find athlete's subscription
-
-    **Check**:
-
-    - Is subscription "Active" on Stripe?
-    - Did most recent payment succeed?
-    - Is subscription cancelled but still in active period?
-
-    <Warning>
-      **Common issue**: Subscription inactive on Stripe = credits unusable, even if balance exists
-    </Warning>
-  </Step>
-  <Step title="Check credit renewal date">
-    Athlete Profile → Credits → [Subscription Tab]
-
-    **Look for**: "Credit Renewals: [Date]"
-
-    **Compare**: Is renewal date in the past? Should have renewed by now?
-  </Step>
-  <Step title="Verify payment method">
-    Athlete may have expired credit card causing payment failures
-
-    **Action**: Request athlete update payment method in Athlete Portal → Settings → Billing → Saved Cards
-  </Step>
-  <Step title="Manual renewal if subscription active">
-    If subscription shows active on Stripe but credits didn't renew:
-
-    1. Navigate to athlete's subscription tab in credits
-    2. Manually set credits to the subscription amount (e.g., 12 for monthly 12-credit subscription)
-    3. Contact support if issue persists
-
-    <Note>
-      **Document the issue**: Screenshot subscription status and credit renewal date to share with CoachIQ support if needed
-    </Note>
-  </Step>
-</Steps>
-
----
-
-### Scenario 4: Athlete wants to transfer credits to another athlete
-
-**Situation**: Athlete moving away, wants to gift remaining credits to a teammate
-
-**Policy decision required**: Does your business allow credit transfers?
-
-<Tabs>
-  <Tab title="If You Allow Transfers">
-    **Steps:**
-
-    1. Check original athlete's credit balance
-    2. Note credit source (Master vs product-specific)
-    3. Remove credits from original athlete (set balance to 0)
-    4. Grant same credits to receiving athlete
-    5. Document transaction in both athletes' profiles
-
-    **Communication to both athletes**:
-
-    - "I've transferred 5 credits from [Athlete A] to [Athlete B] as requested"
-    - Include in both athletes' credit logs for transparency
-
-    <Tip>
-      **Best practice**: Require written confirmation from BOTH athletes via email before transferring
-    </Tip>
-  </Tab>
-  <Tab title="If You Don't Allow Transfers">
-    **Alternative solution**: Offer partial refund instead
-
-    **Communication**: "Our policy doesn't allow credit transfers, but I can offer you a [X%] refund on unused credits, or you could gift them by purchasing another package for your teammate"
-
-    **Why this policy**:
-
-    - Prevents abuse (buying packages to resell credits)
-    - Maintains revenue integrity
-    - Simplifies accounting
-
-    <Note>
-      **Legal consideration**: Check local regulations—some jurisdictions require refunds on stored value/unused credits
-    </Note>
-  </Tab>
-</Tabs>
-
----
-
 ## Bulk credit operations
 
 Managing credits for multiple athletes at once.
-
-### Viewing all athlete credit balances
-
-<Steps>
-  <Step title="Navigate to People section">
-    Dashboard → **People** → **Clients**
-
-    You'll see list of all athletes
-  </Step>
-  <Step title="Add Credit Balance column (if available)">
-    Look for column customization options to display credit balances
-
-    <Note>
-      **Platform note**: If credit balance column isn't available in list view, you'll need to check each athlete individually. Consider requesting this feature from CoachIQ support.
-    </Note>
-  </Step>
-  <Step title="Filter by credit balance">
-    **Use cases:**
-
-    - Find athletes with 0 credits (need renewal outreach)
-    - Find athletes with low credits (send purchase reminders)
-    - Identify athletes with high unused credits (engagement issue?)
-
-    **Workaround if no filters**: Export athlete list and manually track in spreadsheet
-  </Step>
-</Steps>
 
 ### Bulk credit grants
 
@@ -671,7 +407,7 @@ Managing credits for multiple athletes at once.
     **Setup**:
 
     1. Dashboard → Tools → Automations → Create New
-    2. Set trigger (tag-based or date-based)
+    2. Set trigger (tag-based)
     3. Set action: Add credits
     4. Activate automation
 
@@ -713,126 +449,6 @@ Managing credits for multiple athletes at once.
     </Tip>
   </Tab>
 </Tabs>
-
----
-
-## Proactive credit management
-
-Preventing issues before they occur.
-
-### Low-balance monitoring
-
-**Goal**: Contact athletes before they run out of credits
-
-**Strategy:**
-
-<CardGroup cols={2}>
-  <Card title="Weekly Credit Review" icon="calendar-week">
-    **Every Monday**:
-
-    1. Check which athletes have ≤2 credits remaining
-    2. Send friendly reminder: "You have 2 credits left—book your next session or grab another package!"
-    3. Include direct purchase link
-
-    **Result**: Proactive renewals, fewer "I'm out of credits" emergency requests
-  </Card>
-  <Card title="Automated Low-Balance Alerts" icon="bell">
-    **Set up automation** (if available):
-
-    **Trigger**: Athlete credit balance ≤ 2\
-    **Action**: Send email/SMS with purchase link
-
-    **Message**: "Hey [Name]! You're running low on credits (only 2 remaining). Stock up now: [link]"
-
-    **Result**: Hands-off renewal prompts
-  </Card>
-  <Card title="Post-Purchase Check-In" icon="comments">
-    **After athlete buys package**:
-
-    1. Send confirmation message
-    2. Remind them of credit balance
-    3. Encourage booking next sessions
-
-    **Example**: "Your 10-credit package is loaded! You now have 10 credits ready to use. Book your next session here: [link]"
-
-    **Result**: Immediate engagement, credits don't sit unused
-  </Card>
-  <Card title="Monthly Credit Reports" icon="chart-bar">
-    **Generate monthly**:
-
-    - Total credits sold (revenue)
-    - Total credits redeemed (sessions delivered)
-    - Outstanding credit liability (credits not yet used)
-
-    **Health metric**: Credits sold ≥ credits redeemed = healthy cash flow
-
-    **Warning sign**: Credits redeemed \> credits sold = burning through old inventory
-
-    **Action**: Adjust sales strategy if credits being consumed faster than purchased
-  </Card>
-</CardGroup>
-
-### Engagement monitoring via credit usage
-
-**Credit logs reveal athlete engagement patterns:**
-
-<AccordionGroup>
-  <Accordion title="Athlete bought credits but never used them">
-    **Red flag**: Purchased package 30+ days ago, 0 credits redeemed
-
-    **Possible reasons**:
-
-    - Intimidated/nervous to book
-    - Changed mind but didn't request refund
-    - Scheduling difficulty
-    - Forgot they purchased
-
-    **Action**:
-
-    1. Reach out personally: "I noticed you haven't booked yet! Any questions or concerns?"
-    2. Offer to manually book first session together
-    3. Provide extra support/encouragement
-
-    **Goal**: Convert purchase into active athlete
-  </Accordion>
-  <Accordion title="Athlete stopped using credits mid-package">
-    **Red flag**: Used 4 of 10 credits, then no activity for 14+ days
-
-    **Possible reasons**:
-
-    - Lost motivation
-    - Injury/illness
-    - Life changes
-    - Dissatisfaction with training
-
-    **Action**:
-
-    1. Check-in message: "Haven't seen you lately—everything okay?"
-    2. Offer flexible scheduling
-    3. Ask for feedback (anonymously if preferred)
-    4. Remind them of remaining credit value
-
-    **Goal**: Re-engage before they consider refund request
-  </Accordion>
-  <Accordion title="Athlete consistently lets credits expire">
-    **Red flag**: Pattern of buying packages, using 50-70%, letting rest expire
-
-    **Possible reasons**:
-
-    - Overcommitting (buying too large a package)
-    - Inconsistent schedule
-    - Wrong package size for their training frequency
-
-    **Action**:
-
-    1. Recommend smaller package size
-    2. Discuss realistic training frequency
-    3. Offer no-expiration policy to reduce pressure
-    4. Switch to pay-per-session if they prefer flexibility
-
-    **Goal**: Right-size their commitment to actual usage
-  </Accordion>
-</AccordionGroup>
 
 ---
 
@@ -897,138 +513,46 @@ Common problems and solutions.
   </Step>
 </Steps>
 
----
+### Using credit logs for troubleshooting
 
-### Issue: Credit logs don't match athlete's memory
+**Common scenarios where logs help:**
 
-**Example**: Athlete insists they had 8 credits, logs show only 5 purchased
+<CardGroup cols={2}>
+  <Card title="Athlete: 'I should have more credits'" icon="question-circle">
+    **Solution**: Check credit logs to show:
 
-**Resolution process:**
+    - When credits were purchased
+    - When/where credits were redeemed
+    - Current accurate balance
+  </Card>
+  <Card title="Athlete: 'Can I get a refund?'" icon="undo">
+    **Solution**: Credit logs prove:
 
-<Steps>
-  <Step title="Review complete credit log history">
-    Show athlete their credit logs with specific dates/amounts
+    - Purchase date and amount
+    - How many credits used vs unused
+    - Calculate fair refund amount
+  </Card>
+  <Card title="Disputed booking charges" icon="receipt">
+    **Solution**: Credit logs confirm:
 
-    **Explain each transaction**:
+    - Whether booking used credits or charged card
+    - Which session the credit was redeemed for
+    - Timeline of credit usage
+  </Card>
+  <Card title="Subscription renewal issues" icon="sync-alt">
+    **Solution**: Credit logs show:
 
-    - "+10 Credits | Purchased [Product Name]" = When they bought
-    - "-1 Credits | Redeemed for [Scheduler]" = When they used
-    - Current balance = Simple math
-
-    <Note>
-      **Transparency builds trust**: Walk through logs together, show it's all tracked
-    </Note>
-  </Step>
-  <Step title="Check for multiple accounts">
-    Athlete may have purchased on different email/account
-
-    **Ask**: "Have you used any other email addresses to sign up or purchase?"
-
-    **Action**: Search for athlete by alternate emails, check if credits exist elsewhere
-  </Step>
-  <Step title="Check Stripe transactions">
-    If athlete insists they paid for credits not showing:
-
-    **Verify**: Payments → Transactions → Search for athlete's purchases
-
-    **Compare**: What Stripe shows vs what credit logs show
-
-    **Mismatch**: If Stripe shows payment but no credits issued, this is a system error—grant credits and contact support
-  </Step>
-  <Step title="Offer benefit of the doubt (once)">
-    If discrepancy is small (1-2 credits) and athlete is loyal/long-term:
-
-    **Action**: Grant the disputed credits as goodwill gesture
-
-    **Communication**: "I don't see it in the logs, but I trust you—I've added 2 credits to your account"
-
-    **Caveat**: Only do this once per athlete. Repeated disputes may indicate:
-
-    - Genuine system issue (report to CoachIQ)
-    - Athlete confusion/misunderstanding
-    - Potential fraud attempt
-
-    <Warning>
-      **Set boundary**: "I've added these credits this time, but please keep track of your bookings going forward. Our system logs are very accurate."
-    </Warning>
-  </Step>
-</Steps>
-
----
-
-### Issue: Athlete wants credits to never expire
-
-**Scenario**: Athlete upset that credits have expiration date, wants indefinite validity
-
-**Resolution strategies:**
-
-<Tabs>
-  <Tab title="Policy Explanation">
-    **Your response**:
-
-    "Our credit packages expire after [X months] to encourage consistent training. Here's why:
-
-    1. **Training effectiveness**: Regular training is more effective than sporadic sessions months apart
-    2. **Business operations**: Expiration dates help us plan capacity and manage inventory
-    3. **Fair pricing**: We can offer package discounts because most credits are used within timeframe
-    4. **Market standard**: Similar to gym memberships, fitness classes, and other package deals
-
-    **Your options**:
-
-    - Use credits within expiration window
-    - We can extend once as courtesy (if you offer this)
-    - Or: Purchase shorter-term packages that fit your actual training frequency"
-
-    <Tip>
-      **Empathy + firmness**: Understand frustration, but maintain policy
-    </Tip>
-  </Tab>
-  <Tab title="One-Time Extension">
-    **If you choose to be flexible**:
-
-    "I understand—I'll extend your credits as a one-time courtesy. Your 5 remaining credits will now expire [X months from now] instead of [original date]."
-
-    **How to do this**:
-
-    1. You CANNOT extend expiration dates directly in CoachIQ
-    2. **Workaround**: Remove expiring credits, grant fresh Master Credits (no expiration)
-
-    **Communication**: "I've converted your expiring credits to Master Credits with no expiration"
-
-    <Warning>
-      **Risk**: Sets precedent that expiration is negotiable. Use sparingly.
-    </Warning>
-  </Tab>
-  <Tab title="Offer No-Expiration Products">
-    **Long-term solution**: Create product tier without expiration
-
-    **Product setup**:
-
-    - "Flexible 10-Credit Package - No Expiration - \$500"
-    - Price slightly higher to offset indefinite liability
-
-    **Communication**: "If you prefer flexibility, I offer no-expiration packages at a slightly higher rate to account for the extended value"
-
-    **Business benefit**: Accommodates flexible athletes while protecting revenue
-  </Tab>
-</Tabs>
+    - Last credit renewal date
+    - Whether credits refreshed after payment
+    - If subscription is still active
+  </Card>
+</CardGroup>
 
 ---
 
 ## Tips for efficient credit management
 
 <CardGroup cols={2}>
-  <Card title="Weekly Credit Audit" icon="clipboard-check">
-    **Every Monday morning**:
-
-    1. Review athletes with ≤2 credits
-    2. Check for expiring credits (next 7 days)
-    3. Identify athletes who purchased but never booked
-    4. Send batch renewal reminders
-
-    **Time**: 15-20 minutes per week\
-    **Impact**: Reduces reactive firefighting, increases renewals
-  </Card>
   <Card title="Document Your Policies" icon="file-text">
     **Create written policies**:
 
@@ -1179,43 +703,16 @@ Common problems and solutions.
 
 ---
 
-## What's next
-
-Now that you understand daily credit management, explore advanced credit features:
-
-<CardGroup cols={2}>
-  <Card title="Credit Usage Limits" icon="shield-alt" href="/scheduling/credit-usage-limits">
-    **Article #26**: Set daily/weekly booking limits and scheduler restrictions to prevent credit abuse
-  </Card>
-  <Card title="Subscription Scheduling" icon="sync" href="/scheduling/subscription-scheduling">
-    **Article #27**: Master recurring credit subscriptions, unlimited credits (∞), and renewal behavior
-  </Card>
-  <Card title="Setting Up Credit Packages" icon="box" href="/scheduling/setting-up-credit-packages">
-    **Article #24**: Review how to create credit-issuing products and configure expiration rules
-  </Card>
-  <Card title="Credit System Explained" icon="info-circle" href="/scheduling/credit-system-explained">
-    **Article #23**: Understand core credit concepts, notation, and business benefits
-  </Card>
-</CardGroup>
-
----
-
 ## Related articles
 
 <CardGroup cols={3}>
   <Card title="Manual Booking" icon="user-plus" href="/scheduling/manually-booking-athletes">
     Book athletes using their credit balance
   </Card>
-  <Card title="Products Overview" icon="shopping-cart" href="/payments/products-overview">
+  <Card title="Products Overview" icon="shopping-cart" href="/payments/product-overview">
     Where credit packages are created
   </Card>
-  <Card title="Canceling Bookings" icon="times-circle" href="/scheduling/canceling-bookings">
-    Credit refund policies when sessions cancelled
-  </Card>
-  <Card title="Athlete Booking Flow" icon="mobile" href="/scheduling/athlete-booking-flow">
-    What athletes see when booking with credits
-  </Card>
-  <Card title="Scheduler Payment Options" icon="credit-card" href="/scheduling/scheduler-payment-options">
+  <Card title="Scheduler Payment Options" icon="credit-card" href="/scheduling/creating-your-first-scheduler">
     Configure credit vs direct payment options
   </Card>
   <Card title="People Management" icon="users" href="/people/people-overview">
