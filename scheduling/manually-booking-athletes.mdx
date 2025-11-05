@@ -61,27 +61,18 @@ There are three ways to access the manual booking interface:
     This is the most common entry point for manual booking.
   </Tab>
   <Tab title="From Schedulers Page">
-    **Best for**: Booking into a specific scheduler
-
-    1. Go to **Schedule → Schedulers**
-    2. Find the scheduler you want to use
-    3. Click the three-dot menu (⋮) next to the scheduler
-    4. Select **"Manually Book an Athlete"**
-    5. Booking Builder opens with that scheduler pre-selected
-
-    Saves a step if you know which scheduler you need.
-  </Tab>
-  <Tab title='From "Create" Modal'>
-    **Best for**: Quick access from schedulers dashboard
-
     1. Go to **Schedule → Schedulers**
     2. Click the **"Create"** button (top right)
-    3. Select **"Manually Book an Athlete"**
-    4. Booking Builder opens
+    4. Select **"Manually Book an Athlete"**
+    5. Booking Builder opens
+  </Tab>
+  <Tab title="From Client Profile">
+    **Best for**: Booking a specific client
 
-    <Frame>
-      ![Create modal showing manual booking option](/images/create-modal-manual-booking.png)
-    </Frame>
+    1. Go to **People → Clients**
+    2. Search for and click on the client you want to book
+    4. Select the \*\*"Book" \*\*button at the top
+    5. Booking Builder opens with that client pre-selected
   </Tab>
 </Tabs>
 
@@ -91,23 +82,22 @@ There are three ways to access the manual booking interface:
 
 The Booking Builder has four main sections you'll complete in order:
 
+<Frame>
+  ![Manual Booking Pn](/images/manual-booking.png)
+</Frame>
+
 <Steps>
-  <Step title="Select the athlete (Client)">
+  <Step title="Select the client">
     Search for and select the athlete you're booking for.
 
-    **How to find athletes**:
+    **How to find clients**:
 
-    - **Search by name**: Start typing athlete's name
+    - **Search by name**: Start typing athlete/parent name
     - **Search by email**: Type their email address
-    - **Filter by tags**: Click filter icon and select tags
-    - **Filter by role**: Filter by Admin, User, Customer, or "Downloaded App"
 
-    <Frame>
-      ![Client search interface in Booking Builder](/images/booking-builder-client-search.png)
-    </Frame>
     **What you'll see**:
 
-    - Athlete name
+    - Client name
     - Email address
     - Associated tags
     - Profile picture (if set)
@@ -115,7 +105,7 @@ The Booking Builder has four main sections you'll complete in order:
     **Select the athlete** by clicking on their name.
 
     <Note>
-      Can't find the athlete? They may not be in your system yet. Go to **People → Clients → Add Client** to create their profile first.
+      Can't find the client? They may not be in your system yet. Go to **People → Clients → Add Client** to create their profile first.
     </Note>
   </Step>
   <Step title="Choose the scheduler">
@@ -127,9 +117,6 @@ The Booking Builder has four main sections you'll complete in order:
     - Duration (e.g., "60 min")
     - Pricing (e.g., "\$75.00" or "1 Credit")
 
-    <Frame>
-      ![Scheduler selection dropdown](/images/booking-builder-scheduler-select.png)
-    </Frame>
     **Two important checkboxes appear after selecting a scheduler**:
 
     ### Allow custom date selection
@@ -174,10 +161,6 @@ The Booking Builder has four main sections you'll complete in order:
         - Duration options: 15 min, 30 min, 60 min, or custom
 
         This ensures you're booking within your normal schedule and availability rules.
-
-        <Frame>
-          ![Standard availability calendar view](/images/booking-builder-standard-availability.png)
-        </Frame>
       </Tab>
       <Tab title="Booking Outside Availability">
         **When "Allow custom date selection" is checked**:
@@ -218,9 +201,6 @@ The Booking Builder has four main sections you'll complete in order:
     - Credit consumption status (if applicable)
     - Any warnings or conflicts
 
-    <Frame>
-      ![Booking review summary](/images/booking-builder-review.png)
-    </Frame>
     **If everything looks correct**, click **"Create"** or **"Book Session"**.
 
     <Check>
@@ -270,7 +250,7 @@ CoachIQ Copilot can speed up the booking process by interpreting natural languag
     In the Booking Builder, look for the **"CoachIQ Copilot"** panel on the right side.
 
     <Frame>
-      ![Copilot panel in Booking Builder](/images/copilot-booking-panel.png)
+      ![Copilot Ui Pn](/images/copilot-ui.png)
     </Frame>
   </Step>
   <Step title="Describe the booking">
@@ -498,8 +478,8 @@ CoachIQ Copilot can speed up the booking process by interpreting natural languag
 
 ## Related articles
 
-- [**Setting Up Your First Scheduler**](#) - Learn about scheduler configuration and settings
-- [**Managing Athlete Credits**](#) - Understanding credit balances, transactions, and manual adjustments
-- [**Calendar Management**](#) - Tips for avoiding conflicts and managing your schedule
-- [**Cancellation & Rescheduling Policies**](#) - Setting up and enforcing cancellation rules
+- [**Setting Up Your First Scheduler**](/scheduling/creating-your-first-scheduler) - Learn about scheduler configuration and settings
+- [**Managing Athlete Credits**](/scheduling/managing-athlete-credits) - Understanding credit balances, transactions, and manual adjustments
+- [**Calendar Management**](/scheduling/calendar-overview-and-navigation) - Tips for avoiding conflicts and managing your schedule
+- [**Cancellation & Rescheduling Policies**](/scheduling/canceling-bookings) - Setting up and enforcing cancellation rules
 - [**Creating Recurring Bookings**](#) - Automate standing appointments for regular athletes
