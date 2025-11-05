@@ -69,7 +69,7 @@ Recurring bookings allow you to schedule multiple sessions for an athlete automa
     3. The Booking Builder modal opens
 
     <Note>
-      **Alternative access**: You can also access Booking Builder from Schedule → Schedulers → "Manually Book an Athlete" option.
+      **Alternative access**: You can also access Booking Builder from Schedule → Schedulers → Create → "Manually Book an Athlete" option.
     </Note>
   </Step>
   <Step title="Select client and scheduler">
@@ -102,7 +102,7 @@ Recurring bookings allow you to schedule multiple sessions for an athlete automa
     - Ending options (ongoing vs specific end date)
 
     <Frame>
-      ![Recurring toggle enabled in Booking Builder](/images/recurring-toggle-enabled.png)
+      ![Recurring toggle enabled in Booking Builder](/recurring-booking-ui.png)
     </Frame>
   </Step>
   <Step title="Configure the repeat pattern">
@@ -134,7 +134,7 @@ Recurring bookings allow you to schedule multiple sessions for an athlete automa
         2. Choose **"Repeat every: 1 day"** (or every 2 days, 3 days, etc.)
         3. **Set time**: Choose session start time
 
-        **Example**: "Every day at 7:00 AM for 2-week training camp"
+        **Example**: "Every day at 7:00 AM for 1-week training camp"
 
         **Use case**: Mike runs a 2-week intensive basketball camp and needs to schedule 30 athletes for daily sessions—recurring bookings save hours of manual work.
       </Tab>
@@ -151,25 +151,6 @@ Recurring bookings allow you to schedule multiple sessions for an athlete automa
         **Example**: "First Monday of every month at 10:00 AM for progress assessment"
 
         **Use case**: Sarah schedules monthly body composition assessments with all her nutrition clients—one recurring pattern per athlete.
-      </Tab>
-      <Tab title="Custom Intervals">
-        **Advanced options**: Every 2 weeks, every 3 days, every 2 months
-
-        **How to set**:
-
-        - Use the **"Repeat every: [number]"** dropdown
-        - Enter custom interval (2, 3, 4, etc.)
-        - Combine with frequency type (weeks, days, months)
-
-        **Example patterns**:
-
-        - Every 2 weeks (biweekly training)
-        - Every 3 days (recovery-based schedule)
-        - Every 10 days (specialized periodization)
-
-        <Tip>
-          **Pro tip**: Custom intervals work great for unique training philosophies or recovery protocols. Experiment with what works for your athletes.
-        </Tip>
       </Tab>
     </Tabs>
   </Step>
@@ -241,7 +222,7 @@ Recurring bookings allow you to schedule multiple sessions for an athlete automa
     - "Daily at 8am for 2 weeks"
 
     <Frame>
-      ![CoachIQ Copilot generating recurring pattern](/images/copilot-recurring-example.png)
+      ![Copilot Ui Pn](/images/copilot-ui.png)
     </Frame>
     **Result**: Copilot translates your text into:
 
@@ -335,7 +316,7 @@ Once recurring bookings are created, you have full control over each individual 
 </Tabs>
 
 <Frame>
-  ![Occurrences calendar with Change and Skip options](/images/occurrences-calendar-view.png)
+  ![Occurrences calendar with Change and Skip options](/occurrences-ui.png)
 </Frame>
 
 ---
@@ -508,180 +489,8 @@ Once recurring bookings are created, you have full control over each individual 
 </Steps>
 
 <Note>
-  **Time commitment**: Deleting and recreating takes 3-5 minutes. Factor this into your process when athletes request pattern changes.
+  **Time commitment**: Deleting and recreating can take 3-5 minutes. Factor this into your process when athletes request pattern changes.
 </Note>
-
----
-
-## Common scenarios and solutions
-
-<AccordionGroup>
-  <Accordion title="Scenario 1: Creating a 12-week training program">
-    **Goal**: Schedule athlete for 12 weeks, 2 sessions per week (Tuesday/Thursday)
-
-    **Process**:
-
-    1. Open Booking Builder
-    2. Select athlete and scheduler
-    3. Enable Recurring toggle
-    4. Configure: Weekly, Every 1 week, Tuesday + Thursday, 6:00 PM
-    5. Set end date: 12 weeks from start date
-    6. Preview shows 24 total sessions
-    7. Create
-
-    **Result**: 24 sessions scheduled, athlete receives confirmation
-
-    **Pro tip**: Build in 1-week buffer at end for flexibility—so set end date to 13 weeks, giving you 26 sessions. Use extras for makeup sessions or bonus work.
-  </Accordion>
-  <Accordion title="Scenario 2: Skipping athlete's 2-week vacation">
-    **Situation**: Jamie has recurring bookings but is traveling Oct 10-24 (misses 4 sessions)
-
-    **Solution**:
-
-    1. Click any session in Jamie's recurring series
-    2. Open Occurrences view
-    3. Click Oct 10 → Skip
-    4. Click Oct 13 → Skip
-    5. Click Oct 17 → Skip
-    6. Click Oct 20 → Skip
-
-    **Result**: 4 sessions removed, recurring pattern continues after Oct 24
-
-    **Alternative approach**: If vacation is known in advance, consider setting end date before vacation, then creating new recurring pattern after they return.
-  </Accordion>
-  <Accordion title="Scenario 3: Changing just one session time">
-    **Situation**: Sam has recurring Tuesdays at 6pm, but Oct 15 needs to be 8pm (one-time conflict)
-
-    **Solution**:
-
-    1. Click Oct 15 session in recurring series
-    2. Open Occurrences view
-    3. Click Oct 15 date → Change
-    4. Select 8:00 PM as new time
-    5. Confirm change
-
-    **Result**: Oct 15 moves to 8pm, all other Tuesdays stay at 6pm
-
-    **When to use**: One-time exceptions without disrupting established pattern
-  </Accordion>
-  <Accordion title="Scenario 4: Ending a recurring pattern early">
-    **Situation**: Alex originally booked 20 weeks but decides to stop after 12 weeks
-
-    **Solution**:
-
-    1. Click any session in Alex's recurring series
-    2. Open Occurrences view
-    3. Delete entire recurring pattern
-    4. If needed, manually book remaining makeup sessions
-
-    **Alternative**: Skip each individual session from week 13 onward (tedious but keeps early sessions intact)
-
-    **Billing consideration**: Ensure you've adjusted any subscription or package billing to reflect early termination
-  </Accordion>
-  <Accordion title="Scenario 5: Athlete wants to extend pattern">
-    **Situation**: Jordan's 12-week recurring pattern ends Nov 1, wants to continue for 12 more weeks
-
-    **Solution**: Since you can't extend an existing pattern, create a new one:
-
-    1. Note when current pattern ends (Nov 1)
-    2. Create NEW recurring pattern starting Nov 5 (day after last session)
-    3. Configure same days/times as original pattern
-    4. Set new end date: 12 weeks from Nov 5
-    5. Create new pattern
-
-    **Result**: Seamless continuation—no gap between patterns
-
-    <Tip>
-      **Proactive approach**: 2 weeks before recurring pattern ends, check with athlete about extending. Create new pattern in advance to prevent booking gaps.
-    </Tip>
-  </Accordion>
-  <Accordion title="Scenario 6: Mistake in pattern setup">
-    **Situation**: You created "Every Monday" but meant "Every Monday and Wednesday"
-
-    **Solution**:
-
-    1. Delete incorrect recurring pattern immediately
-    2. Create new correct pattern
-    3. Double-check Occurrences preview before clicking Create
-
-    **Lesson learned**: Always use Occurrences preview calendar to verify pattern before creation
-
-    **Time cost**: 2-3 minutes to fix, vs potential scheduling chaos if not caught early
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Troubleshooting recurring bookings
-
-<AccordionGroup>
-  <Accordion title="Recurring toggle is grayed out / not visible">
-    **Possible causes**:
-
-    1. Viewing from athlete perspective (athletes can't create recurring)
-    2. Scheduler has restrictions preventing recurring bookings
-    3. Availability constraints prevent recurring patterns
-
-    **How to fix**:
-
-    - Verify you're logged in as coach/admin
-    - Check scheduler settings for recurring booking permissions
-    - Ensure availability exists for chosen days/times
-  </Accordion>
-  <Accordion title="Created recurring bookings but not all sessions appeared">
-    **Possible causes**:
-
-    1. End date set too early (limited number of occurrences)
-    2. Availability gaps prevent some sessions
-    3. Calendar conflicts block some dates
-
-    **How to fix**:
-
-    - Review Occurrences preview—shows exactly which sessions will be created
-    - Check calendar for conflicts on missing dates
-    - Extend end date if needed
-    - Fill availability gaps for recurring pattern days
-  </Accordion>
-  <Accordion title="Can't find the Occurrences view">
-    **Possible causes**:
-
-    1. Clicking wrong session (non-recurring booking)
-    2. Recurring pattern already deleted
-    3. System lag
-
-    **How to fix**:
-
-    - Verify the session is part of a recurring series (check calendar)
-    - Try accessing from athlete profile instead of calendar
-    - Refresh page and try again
-  </Accordion>
-  <Accordion title="Athlete didn't receive recurring booking notifications">
-    **Possible causes**:
-
-    1. Athlete notification settings disabled
-    2. Email/SMS not configured properly
-    3. Athlete unsubscribed from notifications
-
-    **How to fix**:
-
-    - Check athlete's notification preferences in their profile
-    - Verify email/SMS contact info is correct
-    - Manually inform athlete of recurring schedule via inbox message
-  </Accordion>
-  <Accordion title="Occurrences calendar shows dates I don't want">
-    **Possible causes**:
-
-    1. Repeat interval set incorrectly (every 2 weeks instead of every 1 week)
-    2. Wrong days of week selected
-    3. End date extends too far
-
-    **How to fix**:
-
-    - Review pattern configuration before creating
-    - Use Occurrences preview to verify dates
-    - Delete and recreate if already created with errors
-  </Accordion>
-</AccordionGroup>
 
 ---
 
@@ -697,11 +506,6 @@ Once recurring bookings are created, you have full control over each individual 
     **For first-time recurring clients**, always set a specific end date (8-12 weeks). You can extend later.
 
     **Why**: Prevents over-commitment and gives natural check-in points.
-  </Card>
-  <Card title="Build in Buffer Weeks" icon="plus-circle">
-    **Add 1-2 extra weeks** beyond program length. Use extras for makeups, holidays, or flexibility.
-
-    **Example**: 12-week program = set 14-week recurring pattern.
   </Card>
   <Card title="Communicate Schedule Changes" icon="comment">
     **When you Change or Skip** sessions, personally confirm with athlete (don't rely solely on auto-notifications).
@@ -721,16 +525,6 @@ Once recurring bookings are created, you have full control over each individual 
     **Save time** by using natural language in Copilot panel: "Every Tuesday and Thursday at 6pm"
 
     **Result**: 15 seconds vs 2 minutes of manual clicking.
-  </Card>
-  <Card title="Document Athlete Schedules" icon="file-alt">
-    **Keep notes** on each athlete's recurring pattern:
-
-    - Original setup date
-    - Pattern details (days/times)
-    - End date
-    - Any modifications made
-
-    **Why**: Easier to recreate if needed, better client service.
   </Card>
   <Card title="Delete vs Skip Strategy" icon="trash-alt">
     **Skip individual sessions** for one-off exceptions.
@@ -755,16 +549,10 @@ Once recurring bookings are created, you have full control over each individual 
 - Credit deduction happens per your scheduler's credit settings
 - Skipping a session doesn't trigger credit refunds
 
-**Recommendation**: Clarify your credit policy with athletes when setting up recurring schedules.
-
-**Example policies**:
-
-- "Credits deducted when you attend each session"
-- "Credits deducted at booking time"
-- "Credits deducted at start of each week for upcoming sessions"
+**Recommendation**: If a client is only on a recurring booking then credits are not necessary. Instead just collect payment and set up there recurring schedule once.
 
 <Note>
-  **For detailed credit system information**, see [Credit System Explained](/scheduling/credit-system-explained) and [Credit Usage Limits](/scheduling/credit-usage-limits).
+  **For detailed credit system information**, see [Credit System Explained](/scheduling/credit-system-overview) and [Credit Usage Limits](/scheduling/credit-usage-limits-restrictions).
 </Note>
 
 ---
@@ -783,16 +571,16 @@ Once recurring bookings are created, you have full control over each individual 
 
     **Problem with recurring**: Constant Changes and Skips = admin overhead
 
-    **Better approach**: Manual book sessions 2-4 weeks in advance as athlete confirms availability
+    **Better approach**: Client book sessions 2-4 weeks in advance as athlete confirms availability
 
-    **Example**: "Maria's nursing schedule changes monthly. We book her sessions 3 weeks out once her shifts are posted."
+    **Example**: "Maria's nursing schedule changes monthly. She book her sessions 3 weeks out once her shifts are posted."
   </Tab>
   <Tab title="Trial Period">
     **Athlete situation**: New client, trying you out for first month
 
     **Problem with recurring**: Over-commitment pressure, higher dropout risk
 
-    **Better approach**: Manual book first 6-8 sessions, then switch to recurring if they commit
+    **Better approach**: They book first 6-8 sessions, then switch to recurring if they commit
 
     **Example**: "Jake books 4 trial sessions. After session 3, I say 'You're doing great—want to lock in recurring Tuesdays?'"
   </Tab>
@@ -801,7 +589,7 @@ Once recurring bookings are created, you have full control over each individual 
 
     **Problem with recurring**: Setup time exceeds benefit (only 8 sessions total)
 
-    **Better approach**: Manual book all sessions in 5 minutes
+    **Better approach**: Client book all sessions in 5 minutes
 
     **Example**: "Chris wants 3x/week for 3 weeks (9 sessions). Manual booking = faster than recurring setup."
   </Tab>
@@ -810,9 +598,9 @@ Once recurring bookings are created, you have full control over each individual 
 
     **Problem with recurring**: You'll spend more time managing Changes than you saved with automation
 
-    **Better approach**: Manual book 2-3 sessions at a time, adjust as needed
+    **Better approach**: They book 2-3 sessions at a time and can adjust as needed
 
-    **Example**: "Sam reschedules 50% of sessions. I book him 2 weeks out, adjust as he confirms."
+    **Example**: "Sam reschedules 50% of sessions.He books 2 weeks out, adjusts as needed"
   </Tab>
 </Tabs>
 
@@ -827,10 +615,10 @@ Once recurring bookings are created, you have full control over each individual 
   <Card title="Canceling Bookings" icon="times-circle" href="/scheduling/canceling-bookings">
     Understand cancellation policies and how to handle booking cancellations
   </Card>
-  <Card title="Calendar Management" icon="calendar-alt" href="/scheduling/calendar-overview">
+  <Card title="Calendar Management" icon="calendar-alt" href="/scheduling/calendar-overview-and-navigation">
     Master calendar navigation and filtering for managing all your bookings
   </Card>
-  <Card title="Credit System Guide" icon="coins" href="/scheduling/credit-system-explained">
+  <Card title="Credit System Guide" icon="coins" href="/scheduling/credit-system-overview">
     Deep dive into how credits work with bookings and schedulers
   </Card>
 </CardGroup>
@@ -838,23 +626,11 @@ Once recurring bookings are created, you have full control over each individual 
 ## Related articles
 
 <CardGroup cols={3}>
-  <Card title="Booking Types Explained" icon="info-circle" href="/scheduling/booking-types-explained">
-    Understand the 3 booking methods: self-booking, manual, recurring
-  </Card>
-  <Card title="Creating Schedulers" icon="sliders" href="/scheduling/creating-first-scheduler">
+  <Card title="Creating Schedulers" icon="sliders" href="/scheduling/creating-your-first-scheduler">
     Set up bookable session types before creating recurring bookings
   </Card>
-  <Card title="Scheduler Settings" icon="cog" href="/scheduling/scheduler-limits-permissions">
+  <Card title="Scheduler Settings" icon="cog" href="/scheduling/scheduler-settings-limits-and-permissions">
     Configure capacity, limits, and permissions for schedulers
-  </Card>
-  <Card title="Calendar Conflicts" icon="exclamation-triangle" href="/scheduling/calendar-conflicts">
-    Identify and resolve scheduling conflicts
-  </Card>
-  <Card title="Athlete Booking Flow" icon="mobile" href="/scheduling/athlete-booking-flow">
-    Understand what athletes see when they self-book (single sessions only)
-  </Card>
-  <Card title="Managing Waitlists" icon="list" href="/scheduling/managing-waitlists">
-    Handle waitlists when sessions are at capacity
   </Card>
 </CardGroup>
 
