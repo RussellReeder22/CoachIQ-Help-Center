@@ -6,7 +6,7 @@ icon: "cog"
 ---
 
 <Info>
-  **Where to find this**: Schedule → Schedulers → [Select Scheduler] → Settings or Edit
+  **Where to find this**: Schedule → Schedulers → [Select Scheduler]
 </Info>
 
 ## What you'll accomplish
@@ -20,7 +20,7 @@ Master the advanced configuration settings that protect your time, prevent over-
 ## Before you begin
 
 <Note>
-  **Required**: You must have at least one scheduler already created. This article covers settings you configure AFTER scheduler creation. If you haven't created a scheduler yet, see [Creating Your First Scheduler](/scheduling/creating-first-scheduler).
+  **Required**: You must have at least one scheduler already created. This article covers settings you configure AFTER scheduler creation. If you haven't created a scheduler yet, see [Creating Your First Scheduler](/scheduling/creating-your-first-scheduler).
 </Note>
 
 **Recommended preparation**:
@@ -39,11 +39,6 @@ These aren't just technical configurations—they're business protection mechani
     **Without proper settings**: Athletes book then cancel last-minute, leaving empty slots you can't fill
 
     **With proper settings**: 24-hour cancellation policy gives you time to rebook, protecting revenue
-  </Card>
-  <Card title="Fair Access" icon="users">
-    **Without proper settings**: One athlete books 5 sessions/week, others can't get appointments
-
-    **With proper settings**: 2-session weekly limit ensures more athletes can train with you
   </Card>
   <Card title="Burnout Prevention" icon="heart-pulse">
     **Without proper settings**: Back-to-back sessions all day with no breaks
@@ -216,194 +211,35 @@ Use this guide to set appropriate capacity:
 
 ---
 
-## Setting 2: Booking limits per athlete
+## Setting 2: Booking Limits
 
-Prevent individual athletes from monopolizing your schedule.
+Prevent athletes from booking above your capacity
 
 ### What it does
 
-**Booking limits** control how many sessions a single athlete can book within a timeframe (per day or per week). This ensures fair access when slots are limited and demand is high.
-
-**Use case**: You have limited availability. Without limits, one enthusiastic athlete books 5 sessions per week, preventing others from training with you.
+**Booking limits** control how many sessions either can book be booked within a timeframe (per day or per week) or how many athletes can book each time slot.
 
 ### Configuration options
 
 <Steps>
   <Step title="Max bookings per day">
-    **Setting**: Maximum times one athlete can book in a single day
+    **Setting**: Maximum times a scheduler can be booked in a single day across all available time slots
 
-    **Common options**:
+    This **DOES NOT** mean the number of times an athlete can book a day
 
-    - **1 booking** = Most common for private training
-    - **2 bookings** = Allows morning + evening for dedicated athletes
-    - **Unlimited** = No restrictions
-
-    **When to use**:
-
-    - Private training: Set to 1 (one session per day max)
-    - Group classes: Set to 2 (allows athlete to attend multiple classes per day)
-    - Open gym: Unlimited (athletes can book multiple time blocks)
-
-    **Example scenario**:
-
-    - Scheduler: "60-Min Private Training"
-    - Limit: 1 booking per day
-    - Result: Athlete can only book one private session per day, even if multiple slots available
-
-    <Tip>
-      **Why this matters**: Prevents athlete from booking morning session, then booking evening session, taking two slots from other athletes who might want one.
-    </Tip>
+    Consider using if you have very limited availability for a particular scheduler. ex: Only accepting 1 private sesssion a day.
   </Step>
   <Step title="Max bookings per week">
-    **Setting**: Maximum times one athlete can book in a 7-day rolling period
+    **Setting**: Maximum times a scheduler can be booked within a 7-day rolling period across all available time slots.
 
-    **Common options**:
-
-    - **1 booking** = Once-per-week programs
-    - **2-3 bookings** = Standard training frequency
-    - **5 bookings** = Intensive programs
-    - **Unlimited** = No restrictions
-
-    **When to use different limits**:
-
-    <Tabs>
-      <Tab title="Starter Coaches (Jake)">
-        **Recommended**: 2-3 bookings per week
-
-        **Reasoning**:
-
-        - You have limited slots (maybe 20-30 per week)
-        - 10 athletes × 2 sessions = 20 slots filled
-        - Leaves room for new athlete acquisition
-        - Prevents dependence on one athlete
-
-        **Example**:
-
-        - "Private Training" scheduler
-        - Limit: 2 bookings per week
-        - Result: Athlete can book Monday + Wednesday, but not Friday (would be 3rd)
-      </Tab>
-      <Tab title="Scaling Coaches (Chris)">
-        **Recommended**: 3-5 bookings per week OR tiered system
-
-        **Reasoning**:
-
-        - More capacity available (40-60 slots/week)
-        - Can offer intensive programs
-        - May have VIP tier with unlimited access
-
-        **Tiered approach**:
-
-        - "Standard Training" scheduler = 2 bookings/week
-        - "Premium Training" scheduler = 5 bookings/week
-        - "Elite Unlimited" scheduler = No limits
-
-        **Result**: Monetize higher-frequency training while protecting availability
-      </Tab>
-      <Tab title="Facility Owners (Mike)">
-        **Recommended**: Vary by scheduler type
-
-        **Configuration example**:
-
-        - Drop-in classes = No weekly limit (encourage frequent attendance)
-        - Private training = 3 bookings/week (fair access to limited coaches)
-        - Specialty programs = 5 bookings/week (intensive program structure)
-
-        **Reasoning**: Different services have different capacity constraints and business goals
-      </Tab>
-    </Tabs>
+    This **DOES NOT** mean the maximum times one athlete can book in a 7-day rolling period
   </Step>
-  <Step title="No limits (unlimited bookings)">
-    **When to use unlimited**:
+  <Step title="Max athletes per time slot (most common)">
+    **Setting**: Maximum athletes that can book an available time slot
 
-    - Open gym time (want athletes to book as much as they want)
-    - Group classes with large capacity (24+ athletes)
-    - Workshops/events (first-come-first-served)
-    - You have excess capacity and want to maximize bookings
-
-    **When NOT to use unlimited**:
-
-    - Private training with limited slots
-    - High-demand schedulers
-    - When you're already at capacity
-    - Small group sessions (6 or fewer athletes)
-
-    <Warning>
-      **Unlimited risk**: One athlete could theoretically book your entire week. Only use unlimited when you have high capacity or want to maximize that athlete's engagement.
-    </Warning>
+    Most common setting that sets caps on your sessions (ex: private sessions, small group sessions, large group sessions
   </Step>
 </Steps>
-
-### Booking limits decision tree
-
-```
-Do you have limited availability (under 30 slots/week)?
-├─ Yes → Set weekly limits (2-3 bookings/week)
-└─ No → Continue
-
-Is this high-demand training (waitlist common)?
-├─ Yes → Set weekly limits (2-3 bookings/week)
-└─ No → Continue
-
-Is this private 1-on-1 training?
-├─ Yes → Set daily limit (1 booking/day) + weekly limit (2-3/week)
-└─ No → Continue
-
-Is this large group class (15+ capacity)?
-├─ Yes → Consider unlimited (encourage frequent attendance)
-└─ No → Set moderate limits (3-5 bookings/week)
-```
-
-### Real-world booking limit examples
-
-<AccordionGroup>
-  <Accordion title="Example 1: Solo trainer with limited slots">
-    **Context**: Jake has 25 available slots per week, 15 active athletes
-
-    **Problem without limits**: 3 athletes book 5 sessions each = 15 slots filled, other 12 athletes can't train
-
-    **Solution**:
-
-    - Set limit: 2 bookings per week
-    - Result: 15 athletes × 2 sessions = up to 30 bookings possible
-    - Fair distribution, room for new athletes
-
-    **Settings**:
-
-    - Max per day: 1 booking
-    - Max per week: 2 bookings
-  </Accordion>
-  <Accordion title="Example 2: Facility with tiered memberships">
-    **Context**: Mike's facility has 3 membership levels
-
-    **Configuration**:
-
-    - **Basic Membership** scheduler = 2 bookings/week
-    - **Standard Membership** scheduler = 4 bookings/week
-    - **Unlimited Membership** scheduler = No limits
-
-    **Result**: Monetizes frequency, athletes self-select based on training goals
-
-    **Key insight**: Use separate schedulers for different membership tiers rather than one scheduler with complex rules
-  </Accordion>
-  <Accordion title="Example 3: High-demand group class">
-    **Context**: Chris runs a popular small group class (6 athlete max), always full
-
-    **Problem without limits**: Same 6 athletes book every class, new athletes can't join
-
-    **Solution**:
-
-    - Set limit: 3 bookings per week
-    - Result: Regular athletes get 3 classes, but must leave spots for others
-
-    **Alternative**: Create VIP unlimited scheduler at higher price
-
-    - "Small Group Class - Standard" = 3/week limit, \$40/session
-    - "Small Group Class - Unlimited VIP" = No limits, \$50/session
-
-    **Result**: Fair access + premium tier for dedicated athletes
-  </Accordion>
-</AccordionGroup>
 
 ---
 
@@ -1031,187 +867,26 @@ Control WHEN athletes can book (how far in advance).
 
 ---
 
-## Setting 6: Multiple booking permissions
+## Setting 6: Multiple booking per timeslot permissions
 
-Allow or prevent athletes from booking multiple future sessions at once.
+Allow or prevent clients from booking multiple sessions at once.
 
-### What it does
+### What it does and who it's for
 
-**Multiple booking permission** controls whether athletes can:
+**Multiple bookings per timeslot permission** controls whether clients can book the same time slot more than once. 
 
-- ✅ Book several sessions in one action (Book Mon, Wed, Fri all at once)
-- ❌ Only book one session at a time (Must book Mon, then separately book Wed, then separately book Fri)
-
-### Decision framework
-
-<Tabs>
-  <Tab title="Allow Multiple Bookings (Recommended)">
-    **Setting**: Athletes CAN book multiple future sessions at once
-
-    **When to use**: Most situations (default)
-
-    **Pros**:
-
-    - Better athlete experience (book whole week in one go)
-    - Encourages regular training schedules
-    - Saves athlete time
-    - Reduces booking friction
-    - Athletes can plan ahead
-
-    **Cons**:
-
-    - Athlete might over-book then cancel
-    - Could monopolize schedule if no weekly limits
-
-    **Example use case**:
-
-    - Athlete wants regular Monday/Wednesday/Friday training
-    - Books all 3 sessions at once
-    - Shows up consistently
-
-    **Mitigation**: Combine with weekly booking limits to prevent over-booking
-
-    - Allow multiple bookings: YES
-    - Max per week: 3 bookings
-    - Result: Athlete can book 3 sessions at once, but not 5
-
-    <Tip>
-      **Best practice**: Allow multiple bookings WITH weekly limits = athlete convenience + business protection
-    </Tip>
-  </Tab>
-  <Tab title="Restrict to Single Bookings">
-    **Setting**: Athletes can ONLY book one session at a time
-
-    **When to use**: Rare situations only
-
-    **Scenarios**:
-
-    1. **Trial/intro sessions**: Want athlete to complete first session before booking more
-    2. **Assessment-required**: Must evaluate athlete before allowing regular booking
-    3. **High-demand schedule**: Force athletes to commit session-by-session
-
-    **Pros**:
-
-    - Ensures athlete commitment per session
-    - Can assess fit before ongoing relationship
-    - Reduces bulk cancellations
-
-    **Cons**:
-
-    - Poor athlete experience (tedious to book each session separately)
-    - Discourages regular training schedules
-    - More friction = fewer bookings
-
-    **Example**:
-
-    - "First Assessment Session" scheduler = Single booking only
-    - After assessment, unlock "Regular Training" scheduler = Multiple bookings allowed
-
-    <Warning>
-      **UX impact**: Single-booking restriction frustrates athletes. Only use when absolutely necessary for business reasons.
-    </Warning>
-  </Tab>
-</Tabs>
-
-### Implementation strategy
-
-**Recommended configuration for most coaches**:
-
-```
-✅ Allow multiple bookings: YES
-✅ Max bookings per week: 2-3 sessions
-✅ Max bookings per day: 1 session
-```
-
-**Result**:
-
-- Athlete CAN book multiple sessions at once (convenient)
-- But CANNOT exceed 3 per week (fair access)
-- And CANNOT book 2 sessions same day (prevents monopolization)
+Allows parent accounts to book multiple children for the same timeslot if needed.
 
 **Example scenario**:
 
-- Monday: Athlete attempts to book Mon, Wed, Fri, and next Monday (4 sessions)
-- System allows: Mon, Wed, Fri (within 3/week limit)
-- System blocks: Next Monday (would exceed 3/week in current rolling week)
-- Athlete books those 3, then books next Monday the following week
+Family uses one account to book the same Advanced Skills Training timeslot for their 8th and 9th grade children.
 
 ---
-
-## Putting it all together: Complete configuration examples
-
-Real-world scheduler configurations from different coaching businesses:
-
-### Example 1: Coach (Jake) - Private Training
-
-**Business context**:
-
-- Solo trainer with 25 slots per week
-- 15 active athletes
-- Building clientele, needs flexibility but protection
-
-**Scheduler settings**:
-
-```
-Name: "60-Minute Private Training"
-Capacity: 1 athlete
-Booking limits:
-  - Max per day: 1 session
-  - Max per week: 2 sessions
-Cancellation policy: 24-hour notice, refund credits
-Buffer time:
-  - Before: 5 minutes
-  - After: 10 minutes
-Scheduling windows:
-  - Minimum notice: 24 hours
-  - Maximum future: 30 days
-Multiple bookings: Yes (allowed)
-```
-
-**Why this works**:
-
-- 1 athlete per slot = true private training
-- 2 sessions/week = fair distribution across 15 athletes
-- 24-hour policy = business protection with athlete flexibility
-- 15-min buffer = sustainable schedule, prevent burnout
-- 30-day window = planning for committed athletes, not too far to forget
-- Multiple bookings allowed = athlete convenience with weekly limit protection
-
-**Expected outcomes**:
-
-- 15 athletes × 2 sessions = 30 potential bookings (you have 25 slots, slight over-capacity allows for cancellations)
-- Fair access for all athletes
-- Sustainable coaching schedule with built-in breaks
 
 ## Common configuration mistakes and fixes
 
 <AccordionGroup>
-  <Accordion title="Mistake 1: Settings don't match service reality">
-    **Problem**: "Small Group Training" with 15-athlete capacity and no booking limits
-
-    **Why it's wrong**:
-
-    - 15 athletes isn't "small group"
-    - No limits means same 15 book every session
-    - Others can never access the class
-
-    **Fix**:
-
-    ```
-    Option A: Change capacity to match promise
-    - Rename to "Large Group Training"
-    - Keep 15-athlete capacity
-    - Add 2 sessions/week limit for fair access
-    
-    Option B: Change name to match capacity
-    - Capacity: 6 athletes (truly small)
-    - Name: "Small Group Training"
-    - Keep 3 sessions/week limit
-    ```
-
-    **Lesson**: Settings must align with service promise
-  </Accordion>
-  <Accordion title="Mistake 2: Too lenient = revenue loss">
+  <Accordion title="Too lenient = revenue loss">
     **Problem**:
 
     - Anytime cancellation
@@ -1240,7 +915,7 @@ Multiple bookings: Yes (allowed)
 
     **Lesson**: Protecting your business isn't mean, it's professional
   </Accordion>
-  <Accordion title="Mistake 3: Too strict = athlete frustration">
+  <Accordion title="Too strict = athlete frustration">
     **Problem**:
 
     - No cancellations allowed
@@ -1269,7 +944,7 @@ Multiple bookings: Yes (allowed)
 
     **Lesson**: Balance protection with athlete-friendly policies
   </Accordion>
-  <Accordion title="Mistake 4: No buffer time strategy">
+  <Accordion title="No buffer time strategy">
     **Problem**:
 
     - Zero buffer between sessions
@@ -1296,7 +971,7 @@ Multiple bookings: Yes (allowed)
 
     **Lesson**: Your well-being enables athlete results - protect it
   </Accordion>
-  <Accordion title="Mistake 5: One-size-fits-all configuration">
+  <Accordion title="One-size-fits-all configuration">
     **Problem**: Same settings for private training, group classes, and events
 
     **Why it fails**:
@@ -1334,15 +1009,15 @@ Multiple bookings: Yes (allowed)
 
 <Steps>
   <Step title="Check booking limits">
-    Has athlete already reached max bookings for day or week?
+    Has session already reached max capacity?
 
     **How to check**:
 
-    1. Go to athlete's profile
-    2. View their booking history
-    3. Count bookings in current week
+    1. Go to your Calendar
+    2. View the timeslot of concern
+    3. Check to see if timeslot is full
 
-    **Fix**: If limit is too restrictive, increase weekly limit or explain policy to athlete
+    **Fix**: If truly full, offer different time OR increase capacity if appropriate
   </Step>
   <Step title="Check minimum notice">
     Is athlete trying to book within minimum notice window?
@@ -1366,44 +1041,7 @@ Multiple bookings: Yes (allowed)
 
     **Fix**: Increase future window OR ask athlete to book closer to date
   </Step>
-  <Step title="Check capacity">
-    Is session already at capacity?
-
-    **How to check**: View the specific time slot - is it full?
-
-    **Fix**: If truly full, offer different time OR increase capacity if appropriate
-  </Step>
 </Steps>
-
----
-
-### Cancellation policy isn't working as expected
-
-<AccordionGroup>
-  <Accordion title="Athletes canceling within window but credits not refunded">
-    **Check**:
-
-    1. Settings → Cancellation policy
-    2. Verify "Refund credits on cancellation" is enabled
-    3. Check if cancellation was within allowed window
-
-    **Possible issue**: Policy says 24-hour notice but athlete canceled 20 hours before
-
-    **Fix**: Manually refund credit this time, explain policy clearly for future
-  </Accordion>
-  <Accordion title="Athletes canceling late but still getting refunds">
-    **Check**:
-
-    - Is cancellation policy set to "Anytime" instead of "24-hour notice"?
-    - System might be configured differently than you think
-
-    **Fix**:
-
-    1. Edit scheduler settings
-    2. Change from "Anytime cancellation" to "24-hour notice required"
-    3. Update athlete communications about policy change
-  </Accordion>
-</AccordionGroup>
 
 ---
 
@@ -1425,43 +1063,23 @@ Multiple bookings: Yes (allowed)
    - If YOU manually book athletes, system may allow override of buffer
    - **Fix**: Manually respect buffer when booking athletes yourself
 
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="Buffer Time Deep Dive" icon="clock" href="/scheduling/buffer-time-scheduling-windows">
-    Advanced strategies for buffer time and scheduling windows
-  </Card>
-  <Card title="Organizing Schedulers" icon="folder-open" href="/scheduling/organizing-schedulers-programs">
-    Group multiple schedulers into logical programs
-  </Card>
-  <Card title="Credit Usage Limits" icon="coins" href="/scheduling/credit-usage-limits">
-    Configure credit-specific restrictions and expiration
-  </Card>
-  <Card title="Cancellation Management" icon="ban" href="/scheduling/managing-cancellations-no-shows">
-    Handle cancellations, no-shows, and refund scenarios
-  </Card>
-</CardGroup>
-
 ## Related articles
 
 <CardGroup cols={3}>
-  <Card title="Creating First Scheduler" icon="plus-circle" href="/scheduling/creating-first-scheduler">
+  <Card title="Creating First Scheduler" icon="plus-circle" href="/scheduling/creating-your-first-scheduler">
     Basic scheduler creation before configuring settings
   </Card>
-  <Card title="Payment Options" icon="credit-card" href="/scheduling/scheduler-payment-options">
+  <Card title="Payment Options" icon="credit-card" href="/scheduling/setting-up-payment-options">
     Configure free, paid, and credit-based payments
   </Card>
-  <Card title="Availability Setup" icon="calendar-check" href="/scheduling/creating-availability-schedule">
+  <Card title="Availability Setup" icon="calendar-check" href="/scheduling/creating-your-availability">
     Set availability before creating schedulers
   </Card>
-  <Card title="Calendar Management" icon="calendar-alt" href="/scheduling/calendar-overview">
+  <Card title="Calendar Management" icon="calendar-alt" href="/scheduling/calendar-overview-and-navigation">
     View and manage your booked sessions
   </Card>
   <Card title="Manually Booking Athletes" icon="user-plus" href="/scheduling/manually-booking-athletes">
     Override limits when manually booking
-  </Card>
-  <Card title="Troubleshooting Bookings" icon="tools" href="/scheduling/troubleshooting-booking-errors">
-    Fix common booking and settings issues
   </Card>
 </CardGroup>
 
