@@ -54,7 +54,7 @@ CoachIQ offers three distinct ways to create bookings, each designed for differe
 - Any session where athletes choose their own times
 - When you want to reduce administrative work
 
-**Best for**: Starter Coaches (Jake), Scaling Coaches (Chris) managing their calendar efficiently
+**Best for**: Starter and scaling coaches managing their calendar efficiently
 
 <Tip>
   **Time-saver**: Athlete self-booking runs on autopilot. Once your schedulers are set up, bookings happen 24/7 without any effort from you.
@@ -86,7 +86,7 @@ CoachIQ offers three distinct ways to create bookings, each designed for differe
 - Athletes who need scheduling assistance
 - Complimentary or comp sessions
 
-**Best for**: Scaling Coaches (Chris), Facility Owners (Mike) managing high-touch relationships
+**Best for**: Scaling coaches and facility owners managing high-touch relationships
 
 <Note>
   Manual booking consumes credits or processes payment the same way athlete self-booking does—the only difference is who initiates the booking.
@@ -94,7 +94,7 @@ CoachIQ offers three distinct ways to create bookings, each designed for differe
 
 ---
 
-### 3. Recurring bookings (coach-only)
+### 3. Recurring bookings (coach-initiated)
 
 **What it is**: You create multiple bookings at once in a recurring pattern (weekly, bi-weekly, monthly, custom)—perfect for committed athletes with standing appointments.
 
@@ -121,7 +121,7 @@ CoachIQ offers three distinct ways to create bookings, each designed for differe
 - Subscription members with fixed time slots
 - Athletes who've prepaid for multiple sessions
 
-**Best for**: Scaling Coaches (Chris), Facility Owners (Mike) with committed long-term athletes
+**Best for**: Scaling coaches and facility owners with committed long-term athletes
 
 <Warning>
   **Credit consideration**: If booking 10 weekly sessions, athlete needs 10 credits available. Each booking consumes credits individually.
@@ -142,13 +142,13 @@ CoachIQ offers three distinct ways to create bookings, each designed for differe
     \*Coaches can manually self-book using Booking Builder
   </Tab>
   <Tab title="Key Capabilities">
-    | Feature                   | Athlete Self-Booking | Manual Booking        | Recurring Booking            |
-    | ------------------------- | -------------------- | --------------------- | ---------------------------- |
-    | Books within availability | ✅ Yes                | ✅ Yes (default)       | ✅ Yes                        |
-    | Can override availability | ❌ No                 | ✅ Yes (with checkbox) | ✅ Yes (with checkbox)        |
-    | Creates multiple at once  | ❌ No                 | ❌ No                  | ✅ Yes                        |
-    | Credit consumption        | Per booking          | Per booking           | Per booking (each)           |
-    | Shows on calendar         | Individual session   | Individual session    | Multiple individual sessions |
+    | Feature                   | Athlete Self-Booking | Manual Booking         | Recurring Booking            |
+    | ------------------------- | -------------------- | ---------------------- | ---------------------------- |
+    | Books within availability | ✅ Yes                | ✅ Yes (default)        | ✅ Yes                        |
+    | Can override availability | ❌ No                 | ✅ Yes (with checkbox)  | ✅ Yes (with checkbox)        |
+    | Creates multiple at once  | ❌ No                 | ❌ No                   | ✅ Yes                        |
+    | Credit consumption        | Per booking          | Per booking (optional) | ❌ No                         |
+    | Shows on calendar         | Individual session   | Individual session     | Multiple individual sessions |
   </Tab>
   <Tab title="Best Use Cases">
     | Scenario                  | Best Method                  |
@@ -164,37 +164,26 @@ CoachIQ offers three distinct ways to create bookings, each designed for differe
   </Tab>
 </Tabs>
 
-## How each appears on your calendar
-
-Understanding how bookings display helps you identify them quickly:
-
-<CardGroup cols={3}>
-  <Card title="Self-Booked Sessions" icon="calendar-day">
-    Shows athlete name, scheduler name, and time. No special indicator—looks like any regular booking.
-  </Card>
-  <Card title="Manual Bookings" icon="calendar-day">
-    Identical appearance to self-booked. Only you know you created it manually. No visual distinction.
-  </Card>
-  <Card title="Recurring Bookings" icon="calendar-week">
-    Each occurrence appears as an individual session. No "recurring" badge or grouping—they're separate bookings that can be edited independently.
-  </Card>
-</CardGroup>
-
-<Info>
-  **Important**: CoachIQ doesn't visually distinguish between booking types on the calendar. All confirmed bookings look the same regardless of how they were created.
-</Info>
-
 ---
 
 ## Choosing the right method
 
-Use this quick decision guide: 
+Use this quick decision guide:
 
-Does athlete need to book themselves at their convenience? 
+Does athlete need to book themselves at their convenience?
 
-├─ YES → Athlete Self-Booking └─ NO → Continue Is this a one-time special situation? 
+├─ YES → Athlete Self-Booking \
+└─ NO → Continue 
 
-├─ YES → Manual Booking └─ NO → Continue Is this a regular weekly/recurring commitment? ├─ YES → Recurring Booking └─ NO → Manual Booking (or reconsider athlete self-booking)
+Is this a one-time special situation?
+
+├─ YES → Manual Booking \
+└─ NO → Continue 
+
+Is this a regular weekly/recurring commitment? 
+
+├─ YES → Recurring Booking \
+└─ NO → Manual Booking (or reconsider athlete self-booking)
 
 <Tip>
   **General principle**: Default to athlete self-booking for scalability. Use manual/recurring booking only when there's a specific reason that requires coach initiation.
@@ -213,9 +202,9 @@ Does athlete need to book themselves at their convenience?
     **Workaround**: If an athlete wants to book multiple weeks at once, you can create the recurring booking for them.
   </Accordion>
   <Accordion title="Do different booking methods handle credits differently?">
-    **No**—all three methods consume credits (if scheduler is credit-based) or process payment (if scheduler requires payment) identically.
+    **Yes**—only athlete bookings and manual bookings consume credits (if scheduler is credit-based) or process payment (if scheduler requires payment) identically.
 
-    **The only difference**: _Who_ initiates the booking. The credit/payment mechanics remain the same.
+     Recurring bookings do not have the ability to redeem credits.
   </Accordion>
   <Accordion title="Can I manually book into times that aren't in my availability?">
     **Yes**—when using manual booking, you can enable "Allow custom date selection outside of a session's availability" to override your normal schedule.
@@ -225,7 +214,7 @@ Does athlete need to book themselves at their convenience?
     **Athlete self-booking**: Cannot override availability—they can only book from your published available slots.
   </Accordion>
   <Accordion title="What if I want athletes to have standing weekly appointments?">
-    **Best approach**: Create recurring bookings for them using the Booking Builder.
+    **Best approach**: Create recurring bookings for them using the Booking Builder. (no credits needed, just a payment plan)
 
     **Alternative**: Some coaches have athletes self-book the first session, then coach creates recurring pattern for subsequent weeks.
 
@@ -240,37 +229,13 @@ Does athlete need to book themselves at their convenience?
 
 ---
 
-## Next steps: Dive deeper
-
-Now that you understand the three booking types, explore the detailed how-to guides:
-
-<CardGroup cols={2}>
-  <Card title="Manual Booking Guide" icon="user-plus" href="/scheduling/manually-booking-athletes">
-    Step-by-step: Use the Booking Builder to manually book athletes (Article #18)
-  </Card>
-  <Card title="Recurring Bookings" icon="repeat" href="/scheduling/recurring-bookings">
-    Create standing weekly appointments for committed athletes (Article #19)
-  </Card>
-  <Card title="Editing Bookings" icon="edit" href="/scheduling/editing-rescheduling-bookings">
-    Modify or reschedule existing bookings (Article #20)
-  </Card>
-  <Card title="Canceling Bookings" icon="times-circle" href="/scheduling/canceling-bookings">
-    Handle cancellations and understand credit refund policies (Article #21)
-  </Card>
-</CardGroup>
-
----
-
 ## Related articles
 
 <CardGroup cols={3}>
-  <Card title="Creating Schedulers" icon="sliders-h" href="/scheduling/creating-first-scheduler">
+  <Card title="Creating Schedulers" icon="sliders-h" href="/scheduling/creating-your-first-scheduler">
     Set up bookable sessions before athletes can book
   </Card>
-  <Card title="Athlete Booking Flow" icon="mobile-alt" href="/scheduling/athlete-booking-flow">
-    What athletes see and do when self-booking
-  </Card>
-  <Card title="Calendar Overview" icon="calendar-alt" href="/scheduling/calendar-overview">
+  <Card title="Calendar Overview" icon="calendar-alt" href="/scheduling/calendar-overview-and-navigation">
     View and manage all your bookings
   </Card>
 </CardGroup>
