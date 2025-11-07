@@ -103,10 +103,6 @@ The biggest source of confusion in CoachIQ scheduling is understanding these thr
     - Connected to your M/W/F 3-8 PM availability
 
     This is the **template** for a bookable service.
-
-    <Frame>
-      
-    </Frame>
   </Step>
   <Step title="CoachIQ generates sessions">
     Based on your scheduler + availability, CoachIQ automatically creates bookable time slots:
@@ -122,9 +118,6 @@ The biggest source of confusion in CoachIQ scheduling is understanding these thr
 
     These are **available sessions** (not yet booked).
 
-    <Frame>
-      ![Calendar showing available session slots](/images/generated-available-sessions.png)
-    </Frame>
     <Tip>
       **You don't manually create these**: CoachIQ does this math automatically. Your 5-hour availability window + 60-min duration + 15-min buffer = specific number of slots per day.
     </Tip>
@@ -137,7 +130,7 @@ The biggest source of confusion in CoachIQ scheduling is understanding these thr
     - Click a time to book
 
     <Frame>
-      ![Athlete view of available sessions](/images/athlete-booking-view.png)
+      ![Scheduler Athlete View Pn](/images/scheduler-athlete-view.png)
     </Frame>
   </Step>
   <Step title="Athlete books a session">
@@ -150,10 +143,6 @@ The biggest source of confusion in CoachIQ scheduling is understanding these thr
     - 60-Minute Private Training
     - Paid \$75
     - Status: Upcoming
-
-    <Frame>
-      ![Booking appears on calendar](/images/confirmed-booking-calendar.png)
-    </Frame>
   </Step>
   <Step title="That time slot becomes unavailable">
     After Jake's booking:
@@ -170,15 +159,15 @@ The biggest source of confusion in CoachIQ scheduling is understanding these thr
 
 ## Visual comparison: Scheduler vs Session vs Booking
 
-| **Aspect**     | **Scheduler**                           | **Session**                         | **Booking**                 |
-| -------------- | --------------------------------------- | ----------------------------------- | --------------------------- |
-| **What it is** | Template/configuration                  | Time slot (before or after booking) | Confirmed reservation       |
-| **How many**   | 1-20+ per business                      | Hundreds/thousands                  | As many as athletes book    |
-| **Created by** | You (coach)                             | CoachIQ (automatically)             | Athlete or coach            |
-| **Visibility** | Athletes see when choosing what to book | Athletes see as available times     | Only booked athlete sees    |
-| **Example**    | "60-Min Private Training"               | "Monday 4:00 PM"                    | "Jake - Monday 4:00 PM"     |
-| **Contains**   | Rules, pricing, duration                | Date/time, from which scheduler     | Athlete name, payment info  |
-| **You manage** | Configuration, settings                 | Indirectly via availability         | Cancellations, rescheduling |
+| **Aspect**     | **Scheduler**                           | **Session**                                        | **Booking**                 |
+| -------------- | --------------------------------------- | -------------------------------------------------- | --------------------------- |
+| **What it is** | Template/configuration                  | Time slot (before or after booking)                | Confirmed reservation       |
+| **How many**   | 1-20+ per business                      | Hundreds/thousands                                 | As many as athletes book    |
+| **Created by** | You (coach)                             | CoachIQ (automatically)                            | Athlete or coach            |
+| **Visibility** | Athletes see when choosing what to book | Athletes see as available times                    | Only booked athlete sees    |
+| **Example**    | "60-Min Private Training"               | "Monday 4:00 PM"                                   | "Jake - Monday 4:00 PM"     |
+| **Contains**   | Rules, pricing, duration                | Date/time, from which scheduler                    | Athlete name, payment info  |
+| **You manage** | Configuration, settings                 | Indirectly via availability and scheduler settings | Cancellations, rescheduling |
 
 <Note>
   **The relationship**: One scheduler generates many sessions. Some sessions become bookings when athletes book them.
@@ -259,118 +248,6 @@ Here's why schedulers matter:
   **Bottom line**: Schedulers give you the flexibility to offer diverse services with different configurations. One scheduler = one set of rules. Multiple services = multiple schedulers.
 </Check>
 
-## When to create multiple schedulers
-
-Use this decision framework to determine if you need a new scheduler:
-
-<AccordionGroup>
-  <Accordion title="Different Duration → New Scheduler">
-    **Create separate schedulers when**:
-
-    - Offering 30-min, 45-min, AND 60-min sessions
-    - Half-day vs full-day training camps
-    - Quick check-ins vs comprehensive sessions
-
-    **Example**:
-
-    - "30-Min Technique Check - \$45"
-    - "60-Min Complete Training - \$80"
-    - "2-Hour Intensive Session - \$150"
-
-    **Why**: Duration is locked per scheduler, so different durations require different schedulers.
-  </Accordion>
-  <Accordion title="Different Pricing → New Scheduler">
-    **Create separate schedulers when**:
-
-    - Different price points for different value levels
-    - Premium vs standard offerings
-    - Introductory vs regular pricing
-
-    **Example**:
-
-    - "Intro Session - \$50 (First-timers only)"
-    - "Standard Session - \$75"
-    - "Elite Training - \$125 (Advanced athletes)"
-
-    **Why**: Each scheduler has one price, so price variations require separate schedulers.
-  </Accordion>
-  <Accordion title="Different Capacity → New Scheduler">
-    **Create separate schedulers when**:
-
-    - Private (1-on-1) vs group sessions
-    - Small group (2-4) vs large group (10-20)
-    - Semi-private (2 athletes) vs open class
-
-    **Example**:
-
-    - "Private 1-on-1 - Max 1 athlete"
-    - "Semi-Private - Max 2 athletes"
-    - "Group Class - Max 10 athletes"
-
-    **Why**: Capacity setting is per scheduler, so different group sizes need different schedulers.
-  </Accordion>
-  <Accordion title="Different Service Type → New Scheduler">
-    **Create separate schedulers when**:
-
-    - Distinct services with different purposes
-    - Assessment vs ongoing training
-    - Specialty services requiring unique descriptions
-
-    **Example**:
-
-    - "Initial Assessment & Goal Setting"
-    - "Strength & Conditioning Session"
-    - "Speed & Agility Training"
-    - "Video Analysis Session"
-
-    **Why**: Different services deserve different descriptions and branding.
-  </Accordion>
-  <Accordion title="Different Availability → New Scheduler">
-    **Create separate schedulers when**:
-
-    - Some services only offered certain days/times
-    - Location-specific services
-    - Seasonal offerings
-
-    **Example**:
-
-    - "Weekday Private Sessions" (M-F availability)
-    - "Weekend Bootcamp" (Sat/Sun only)
-    - "Summer Camp Sessions" (June-August only)
-
-    **Why**: If availability genuinely differs, separate schedulers let you configure each appropriately.
-  </Accordion>
-  <Accordion title="Different Coach/Trainer → New Scheduler">
-    **Create separate schedulers when**:
-
-    - Athletes choose specific coaches
-    - Coaches have different pricing or specialties
-    - Clear attribution matters
-
-    **Example**:
-
-    - "Training with Coach Mike - \$75"
-    - "Training with Coach Sarah - \$75"
-    - "Youth Training with Coach Emma - \$60"
-
-    **Why**: Coach-specific schedulers provide clarity and enable proper attribution.
-  </Accordion>
-  <Accordion title="Different Booking Rules → New Scheduler">
-    **Create separate schedulers when**:
-
-    - Cancellation policies differ
-    - Booking limits vary
-    - Some services require different minimum notice
-
-    **Example**:
-
-    - "Drop-In Class - Cancel anytime" (flexible)
-    - "Premium Private - 24hr cancellation required" (strict)
-
-    **Why**: Booking rule configuration is per scheduler.
-  </Accordion>
-</AccordionGroup>
-
 ## When NOT to create separate schedulers
 
 Don't create multiple schedulers when:
@@ -403,98 +280,6 @@ Don't create multiple schedulers when:
 <Warning>
   **Scheduler bloat**: Creating too many schedulers confuses athletes and makes your system harder to manage. Only create a new scheduler when there's a functional difference in duration, price, capacity, or rules.
 </Warning>
-
-## Real coaching examples: How many schedulers?
-
-<Tabs>
-  <Tab title="Jake (Solo Trainer) - 3 Schedulers">
-    **Business**: Personal training, early career, building client base
-
-    **Schedulers**:
-
-    1. **"Free 30-Min Assessment"**
-       - Duration: 30 minutes
-       - Price: Free
-       - Purpose: Convert leads to paying clients
-    2. **"60-Minute Private Training - \$75"**
-       - Duration: 60 minutes
-       - Price: \$75 direct payment OR 1 credit
-       - Purpose: Main service offering
-    3. **"45-Minute Follow-Up Session - \$60"**
-       - Duration: 45 minutes
-       - Price: \$60
-       - Purpose: Lower-cost option for check-ins
-
-    **Why this works**: Simple, clear options for athletes. Three distinct value propositions. Easy to manage.
-
-    <Frame>
-      ![Three schedulers for solo trainer](/images/jake-solo-trainer-schedulers.png)
-    </Frame>
-  </Tab>
-  <Tab title="Sarah (Youth Coach) - 5 Schedulers">
-    **Business**: Youth sports development, group and private options
-
-    **Schedulers**:
-
-    1. **"Private Skills Training (Ages 8-12) - \$65"**
-       - Duration: 45 minutes
-       - Capacity: 1 athlete
-       - Purpose: Individualized youth training
-    2. **"Small Group Session (Ages 8-12) - \$35/athlete"**
-       - Duration: 60 minutes
-       - Capacity: 4 athletes max
-       - Purpose: Peer learning environment
-    3. **"Private Advanced Training (Ages 13-18) - \$80"**
-       - Duration: 60 minutes
-       - Capacity: 1 athlete
-       - Purpose: Older athlete development
-    4. **"Team Practice Session (Priced per team)"**
-       - Duration: 90 minutes
-       - Capacity: 15 athletes
-       - Purpose: Team training contracts
-    5. **"Parent Consultation - Free"**
-       - Duration: 30 minutes
-       - Price: Free
-       - Purpose: Parent communication, athlete progress
-
-    **Why this works**: Age-appropriate segmentation, clear group vs private distinction, relationship-building with parents.
-  </Tab>
-  <Tab title="Mike (Facility Owner) - 12+ Schedulers">
-    **Business**: Multi-coach facility, diverse services, 100+ athletes
-
-    **Schedulers organized by categories**:
-
-    **Private Training (3 schedulers)**:
-
-    - "Private with Coach Mike - \$100" (60 min)
-    - "Private with Coach Sarah - \$90" (60 min)
-    - "Private with Any Coach - \$80" (60 min)
-
-    **Small Group (2 schedulers)**:
-
-    - "Semi-Private (2 Athletes) - \$60/each" (60 min)
-    - "Small Group (3-5 Athletes) - \$45/each" (60 min)
-
-    **Group Classes (4 schedulers)**:
-
-    - "Strength & Conditioning Class - \$30" (60 min, max 12)
-    - "Speed & Agility Class - \$30" (45 min, max 10)
-    - "Youth Development Class - \$25" (60 min, max 15)
-    - "Weekend Bootcamp - \$40" (90 min, max 20)
-
-    **Specialty Services (3 schedulers)**:
-
-    - "Video Analysis Session - \$75" (45 min)
-    - "Initial Assessment - \$50" (60 min)
-    - "Nutritional Consultation - \$100" (60 min)
-
-    **Why this works**: Clear service differentiation, coach-based pricing, multiple price points serve different budgets, specialty services highlighted.
-
-    <Tip>
-      **Organization tip**: Mike uses program groupings to organize these 12 schedulers into "Private Training," "Group Classes," and "Specialty Services" so athletes aren't overwhelmed.
-    </Tip>
-  </Tab>
-</Tabs>
 
 ## Scheduler naming best practices
 
@@ -707,40 +492,31 @@ Schedulers don't exist in isolation—they integrate with the broader platform:
 Now that you understand what schedulers are and when to create them, you're ready to build your first scheduler:
 
 <CardGroup cols={2}>
-  <Card title="Create Your First Scheduler" icon="plus-circle" href="/scheduling/creating-first-scheduler">
+  <Card title="Create Your First Scheduler" icon="plus-circle" href="/scheduling/creating-your-first-scheduler">
     Complete step-by-step guide to building your first bookable scheduler
   </Card>
-  <Card title="Payment Options" icon="credit-card" href="/scheduling/scheduler-payment-options">
+  <Card title="Payment Options" icon="credit-card" href="/scheduling/setting-up-payment-options">
     Configure free, paid, or credit-based scheduling
   </Card>
-  <Card title="Scheduler Settings" icon="cog" href="/scheduling/scheduler-limits-permissions">
+  <Card title="Scheduler Settings" icon="cog" href="/scheduling/scheduler-settings-limits-and-permissions">
     Configure limits, permissions, and booking rules
-  </Card>
-  <Card title="Organize with Programs" icon="folder-open" href="/scheduling/organizing-schedulers-programs">
-    Group schedulers into logical categories for athletes
   </Card>
 </CardGroup>
 
 ## Related articles
 
 <CardGroup cols={3}>
-  <Card title="Scheduling Overview" icon="book-open" href="/scheduling/scheduling-overview">
+  <Card title="Scheduling Overview" icon="book-open" href="/scheduling/overview">
     Complete overview of the three-layer system
   </Card>
-  <Card title="How Availability Works" icon="calendar-check" href="/scheduling/how-availability-works">
+  <Card title="How Availability Works" icon="calendar-check" href="/scheduling/create-your-availability">
     Understand the foundation layer
   </Card>
-  <Card title="Your First Session" icon="rocket" href="/scheduling/first-bookable-session">
+  <Card title="Your First Session" icon="rocket" href="/scheduling/book-your-first-session">
     10-minute guide to first bookable session
   </Card>
-  <Card title="Creating Availability" icon="calendar-plus" href="/scheduling/creating-availability-schedule">
-    Set up availability templates
-  </Card>
-  <Card title="Credit System" icon="coins" href="/scheduling/credit-system-explained">
+  <Card title="Credit System" icon="coins" href="/scheduling/credit-system-overview">
     How credits work with schedulers
-  </Card>
-  <Card title="Scheduling FAQs" icon="lightbulb" href="/scheduling/scheduling-frequently-asked-questions">
-    Quick answers to common questions
   </Card>
 </CardGroup>
 
