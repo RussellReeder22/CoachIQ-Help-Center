@@ -88,10 +88,9 @@ Before configuring, understand what each payment type means for your business:
 
     **Athlete experience**:
 
-    - Sees price on booking page ($50, $75, \$100, etc.)
-    - Completes Stripe checkout before booking confirms
+    - Sees price on booking page (\$50, \$75, \$100, etc.)
+    - Completes checkout before booking confirms
     - Receives payment receipt immediately
-    - Can request refunds if you allow
 
     **Coach considerations**:
 
@@ -184,10 +183,6 @@ Free sessions require no special configuration—just don't connect any payment 
 <Steps>
   <Step title="Create or edit your scheduler">
     Navigate to **Schedule → Schedulers** and create a new scheduler or edit an existing one.
-
-    <Frame>
-      ![Schedulers list in CoachIQ](/images/schedulers-list.png)
-    </Frame>
   </Step>
   <Step title="Find the Payment section">
     Scroll to the **Payment** or **Pricing** section in your scheduler configuration.
@@ -209,11 +204,11 @@ Free sessions require no special configuration—just don't connect any payment 
     - Dropdown with "Free" as an option
 
     <Frame>
-      ![Free session payment setting](/images/scheduler-payment-free.png)
+      ![Free session payment setting](/free-payment-option.png)
     </Frame>
   </Step>
   <Step title="Save your scheduler">
-    Click **Save** or **Update Scheduler**.
+    Click **Create** or **Update**.
 
     <Check>
       **Configuration complete**: Athletes can now book this session without any payment. The booking page will show "Free" where price normally appears.
@@ -263,9 +258,9 @@ Direct payment requires connecting a Product that processes payment via Stripe.
 
 Before starting:
 
-1. **Stripe account connected**: Settings → Payments → Connect Stripe
-2. **Product created**: You'll create this during setup (or use existing)
+1. **Stripe account connected**: Settings → Stripe Portal → Connect Stripe
 3. **Bank account connected to Stripe**: For receiving payouts
+2. **Product created**: You'll create this during setup (or use existing)
 
 ### Creating a direct payment session
 
@@ -280,27 +275,18 @@ Before starting:
     - "Pricing configuration"
   </Step>
   <Step title="Select direct payment option">
-    Choose the option for **Direct Payment**, **One-time payment**, or **Charge per session**.
+    Choose the option for **Paywall**.
 
     This tells CoachIQ that athletes will pay at time of booking rather than using credits.
 
     <Frame>
-      ![Direct payment option selected](/images/scheduler-payment-direct.png)
+      ![Direct payment option selected](/paywall-ui.png)
     </Frame>
   </Step>
   <Step title="Connect to a Product (or create new)">
     You'll now need to connect this scheduler to a Product that defines the price.
 
-    **Option A: Create new product**
-
-    1. Click **Create Product** or **\+ New Product**
-    2. Enter product details:
-       - **Name**: Descriptive name (e.g., "60-Minute Private Training")
-       - **Price**: Amount in dollars (e.g., \$75.00)
-       - **Type**: One-time payment
-    3. Click **Save** or **Create**
-
-    **Option B: Select existing product**
+    **Select existing product**
 
     1. Click dropdown to see existing products
     2. Select the product with correct pricing
@@ -309,30 +295,8 @@ Before starting:
     <Note>
       **Product vs Scheduler names**: These can be different. Product is internal (payment processing), Scheduler name is what athletes see when booking.
     </Note>
-    <Frame>
-      ![Connecting product to scheduler](/images/connect-product-to-scheduler.png)
-    </Frame>
   </Step>
-  <Step title="Configure product details (if creating new)">
-    If you created a new product, configure these settings:
-
-    **Required fields**:
-
-    - **Price**: The amount athletes pay per booking
-    - **Currency**: USD (or your currency)
-    - **Type**: One-time payment (not subscription)
-
-    **Optional fields**:
-
-    - **Description**: Internal notes about this product
-    - **Image**: Product thumbnail (optional)
-    - **Processing fees**: Who pays (you absorb or pass to athlete)
-
-    <Tip>
-      **Pricing strategy**: Most coaches price direct payment sessions 10-15% higher than credit-based equivalents to incentivize package purchases.
-    </Tip>
-  </Step>
-  <Step title="Save scheduler with connected product">
+  <Step title="Save scheduler with connected product" stepNumber={4}>
     After connecting or creating the product, save your scheduler.
 
     The scheduler is now configured to:
@@ -342,7 +306,7 @@ Before starting:
     3. Complete booking only after successful payment
     4. Issue receipt automatically
   </Step>
-  <Step title="Test the payment flow">
+  <Step title="Test the payment flow" stepNumber={5}>
     **Critical testing step** - always test before sharing with athletes:
 
     1. Get your scheduler booking link
@@ -376,7 +340,7 @@ Before starting:
 **Transaction fees**:
 
 - Standard Stripe fee: 2.9% + \$0.30 per transaction
-- On $75 session: ~$2.48 fee (you receive \$72.52)
+- On 75 session: ~2.48 fee (you receive \$72.52)
 - Decide if you absorb fees or add them to price
 
 ## Option 3: Setting up CREDIT-BASED sessions
@@ -403,13 +367,9 @@ Before connecting schedulers to credits, you need products that issue credits.
 <Steps>
   <Step title="Navigate to Products">
     Go to **Payments → Products** in the main navigation.
-
-    <Frame>
-      ![Products navigation](/images/navigate-to-products.png)
-    </Frame>
   </Step>
   <Step title="Create new product">
-    Click **\+ Create Product** or **New Product** button.
+    Click \*\*+ Create \*\*button.
   </Step>
   <Step title="Configure product basics">
     Fill out the product information:
@@ -421,16 +381,16 @@ Before connecting schedulers to credits, you need products that issue credits.
 
     **Product type**:
 
-    - Select **Credits** or **Issues credits**
+    - Select **Add Credits once Purchased.**
     - This tells CoachIQ to add credits upon purchase
 
     **Price**:
 
     - Total package price (e.g., \$650 for 10 credits)
-    - Consider bulk discounts (10 sessions = $650, not $750 if individual price is \$75)
+    - Consider bulk discounts (10 sessions = 650, not 750 if individual price is \$75)
 
     <Tip>
-      **Package pricing strategy**: Offer 10-15% discount on larger packages to incentivize commitment. Example: Singles at $75, package of 10 for $650 (\$65/session effective rate).
+      **Package pricing strategy**: Offer 10-15% discount on larger packages to incentivize commitment. Example: Singles at 75, package of 10 for 650 (\$65/session effective rate).
     </Tip>
   </Step>
   <Step title="Configure credit settings">
@@ -457,11 +417,11 @@ Before connecting schedulers to credits, you need products that issue credits.
       **Expiration best practice**: 90 days is standard for most coaches. Too short feels pressuring, too long reduces urgency. Communicate expiration clearly at purchase.
     </Note>
     <Frame>
-      ![Credit configuration in product setup](/images/product-credit-configuration.png)
+      ![Add Credits Once Purchased Pn](/images/add-credits-once-purchased.png)
     </Frame>
   </Step>
   <Step title="Save the product">
-    Click **Save** or **Create Product**.
+    Click **Create One Time** or **Create Subscription**.
 
     Your credit-issuing product is now ready to be connected to schedulers.
   </Step>
@@ -478,11 +438,11 @@ Now configure your scheduler to accept credits as payment:
   <Step title="Select credit-based payment">
     In the **Payment** section:
 
-    1. Choose **Credit-based** or **Requires credits** option
+    1. Choose **Credit Charge** option
     2. This changes the payment model from direct payment to credit redemption
 
     <Frame>
-      ![Credit-based payment selected](/images/scheduler-payment-credits.png)
+      ![Credit Charge Ui Pn](/credit-charge-ui.png)
     </Frame>
   </Step>
   <Step title="Set credit cost">
@@ -493,31 +453,17 @@ Now configure your scheduler to accept credits as payment:
     - Most coaches use **1 credit** per session
     - Advanced: Use 2 credits for longer/premium sessions
 
-    **Example configurations**:
-
-    - 60-minute standard training = 1 credit
-    - 90-minute advanced session = 2 credits
-    - 30-minute quick session = 0.5 credits (if system allows)
-
     <Note>
       **Standard is 1 credit**: Unless you have good reason, keep it simple with 1 credit = 1 session. Athletes understand this easily.
     </Note>
   </Step>
   <Step title="Link to credit-issuing product (optional but recommended)">
-    Some scheduler configurations let you link the specific product that issues compatible credits.
+    You can link a specific product that issues compatible credits for renew.
 
-    If this option exists:
-
-    1. Select the product you created (e.g., "10-Session Package")
-    2. This helps athletes understand which credit package to buy
-
-    If not available:
-
-    - System will deduct from athlete's credit balance regardless of source
-    - Multiple products can issue credits usable for this scheduler
+    Enter the product url in the text box once the \*\*Add a credit renew link \*\*setting is toggled on
   </Step>
   <Step title="Save scheduler">
-    Click **Save** or **Update Scheduler**.
+    Click **Create** or **Update**.
 
     <Check>
       **Configuration complete**: Your scheduler now requires credits instead of direct payment. Athletes must have credits in their account to book.
@@ -539,14 +485,10 @@ Complete end-to-end testing before going live:
     3. Complete purchase using Stripe test card (4242 4242 4242 4242)
     4. Verify credits added to account
     5. Check email receipt mentions credit quantity
-
-    <Frame>
-      ![Athlete purchasing credits](/images/athlete-credit-purchase.png)
-    </Frame>
   </Step>
   <Step title="Book session using credits">
     1. Navigate to scheduler booking page
-    2. Verify it shows "1 Credit" instead of dollar amount
+    2. Verify it shows credit amount instead of dollar amount
     3. Select time slot
     4. Confirm booking flow doesn't request payment
     5. Verify credit deducted from balance after booking
@@ -564,72 +506,8 @@ Complete end-to-end testing before going live:
     3. View **Credits** tab or section
     4. Confirm balance shows correctly (purchased - redeemed)
     5. Verify transaction history logs the booking redemption
-
-    <Frame>
-      ![Athlete credit balance and history](/images/athlete-credit-balance.png)
-    </Frame>
   </Step>
 </Steps>
-
-### Managing credit-based operations
-
-**Daily operations**:
-
-- Monitor credit balances approaching zero (reorder opportunity)
-- Send reminders about expiring credits
-- Track credit redemption rates (are athletes using credits?)
-- Offer credit bonuses or promotions strategically
-
-**Common scenarios**:
-
-<AccordionGroup>
-  <Accordion title="Athlete wants refund of unused credits">
-    **Policy decision required**: Credits are typically non-refundable.
-
-    **Options**:
-
-    1. Transfer credits to another athlete (if allowed in your policy)
-    2. Extend expiration date as goodwill gesture
-    3. Partial refund for exceptional circumstances
-
-    **How to process**:
-
-    - Manual credit adjustment in athlete profile
-    - Stripe refund for original purchase (if applicable)
-    - Document the exception
-  </Accordion>
-  <Accordion title="Athlete runs out of credits mid-package">
-    Athletes should purchase more credits before booking.
-
-    **Prevention**:
-
-    - Set up low-balance notifications
-    - Email when athlete has 2-3 credits remaining
-    - Offer "Add more sessions" link in reminder emails
-
-    **If athlete tries to book without credits**:
-
-    - System prevents booking automatically
-    - Athlete sees message about insufficient credits
-    - Provide link to purchase additional credits
-  </Accordion>
-  <Accordion title="Want to offer complimentary credits">
-    **Use cases**: Referral bonuses, make-up sessions, promotional credits
-
-    **How to issue**:
-
-    1. Go to athlete profile
-    2. Find **Credits** section
-    3. Click **Add Credits** or **Adjust Balance**
-    4. Enter quantity and reason
-    5. Choose whether credits expire
-    6. Save
-
-    <Note>
-      **Track complimentary credits**: Use notes or tags to distinguish purchased vs promotional credits for accurate financial reporting.
-    </Note>
-  </Accordion>
-</AccordionGroup>
 
 ## Option 4: Hybrid payment models
 
@@ -674,15 +552,15 @@ Advanced coaches use multiple schedulers with different payment types for strate
 
 **Setup**:
 
-- Scheduler A: "Standard Training" (1 credit)
-- Scheduler B: "Elite Training" (2 credits)
+- Scheduler A: "Group Training" (1 credit)
+- Scheduler B: "Private Training" (2 credits)
 - Product: "20-Credit Package - \$1,200" (issues 20 credits)
 
 **Flow**:
 
 1. Athletes purchase credit package
-2. Athletes choose scheduler based on intensity
-3. Elite sessions cost more credits
+2. Athletes choose scheduler based on session
+3. Private sessions cost more credits
 
 **Why it works**: Flexible credit use across service tiers with single payment.
 
@@ -742,65 +620,6 @@ Advanced coaches use multiple schedulers with different payment types for strate
 ## Troubleshooting common payment issues
 
 <AccordionGroup>
-  <Accordion title="Payment not processing / Stripe errors">
-    **Symptoms**: Athletes can't complete payment, see Stripe error messages
-
-    **Common causes**:
-
-    1. Stripe not connected properly
-    2. Product configuration incomplete
-    3. Athlete's card declined
-    4. International payments blocked
-
-    **Fixes**:
-
-    1. Verify Stripe connection: **Settings → Payments → Check status**
-    2. Test payment yourself with test card to isolate issue
-    3. Check Stripe dashboard for detailed error messages
-    4. Ensure product has price and type configured
-    5. Verify you're not in Stripe test mode if using real cards
-    6. Check if international payments are enabled in Stripe settings
-
-    <Warning>
-      **Test mode vs Live mode**: CoachIQ can be in test mode or live mode. Verify you're in live mode when accepting real payments. Test cards don't work in live mode.
-    </Warning>
-  </Accordion>
-  <Accordion title="Credits not deducting after booking">
-    **Symptoms**: Athlete books session but credit balance doesn't decrease
-
-    **Common causes**:
-
-    1. Scheduler not configured to require credits
-    2. Manual booking bypassed credit system
-    3. Credit balance calculation error
-
-    **Fixes**:
-
-    1. Edit scheduler → Verify payment type is "Credit-based"
-    2. Check "Credit cost" is set (usually 1 credit)
-    3. Manually adjust athlete's credit balance if needed
-    4. Verify booking shows in athlete's credit transaction history
-    5. Check if booking was created manually (may skip auto-deduction)
-  </Accordion>
-  <Accordion title="Can't connect product to scheduler">
-    **Symptoms**: Product doesn't appear in scheduler's product dropdown
-
-    **Common causes**:
-
-    1. Product type mismatch (trying to use subscription product for one-time)
-    2. Product not saved properly
-    3. Product archived or inactive
-
-    **Fixes**:
-
-    1. Go to **Payments → Products** and verify product exists
-    2. Edit product → Ensure correct type:
-       - Direct payment scheduler needs "One-time payment" product
-       - Credit-based scheduler needs product that "Issues credits"
-    3. Check product status is Active (not archived)
-    4. Save product again if needed
-    5. Refresh scheduler configuration page
-  </Accordion>
   <Accordion title="Athlete says they don't see payment option">
     **Symptoms**: Athlete can't find where to pay or buy credits
 
@@ -814,7 +633,7 @@ Advanced coaches use multiple schedulers with different payment types for strate
 
     1. **For direct payment**: Payment happens during booking (athletes see price and checkout before confirming)
     2. **For credit-based**: Athletes must purchase credits FIRST before booking:
-       - Share direct product link
+       - Share direct product link or to your website or athlete portal
        - Or share general "Buy Credits" page link
        - Or add "Purchase Credits" button to website
     3. Verify product isn't set to "Private" or "Invite only"
@@ -848,7 +667,7 @@ Advanced coaches use multiple schedulers with different payment types for strate
     After any payment configuration change, complete a test booking yourself. Use Stripe test cards (4242...) to verify the flow without real money.
   </Card>
   <Card title="Strategic Pricing Psychology" icon="brain">
-    Price packages to incentivize commitment: $750 for 10 singles vs $650 for 10-pack (13% discount). Make the package obviously better value.
+    Price packages to incentivize commitment: 750 for 10 singles vs 650 for 10-pack (13% discount). Make the package obviously better value.
   </Card>
   <Card title="Monitor Payment Metrics" icon="chart-line">
     Track: total revenue, average package size, conversion rate from free to paid, credit redemption rate, payment failures. Optimize based on data.
@@ -861,111 +680,20 @@ Advanced coaches use multiple schedulers with different payment types for strate
   </Card>
 </CardGroup>
 
-## Real coach examples
-
-<AccordionGroup>
-  <Accordion title="Jake (Solo Trainer): Simple Direct Payment">
-    **Setup**:
-
-    - One scheduler: "60-Min Private Session - \$75"
-    - Payment: Direct via Stripe
-    - No credits, no packages
-
-    **Why it works**:
-
-    - Simple for Jake to manage
-    - Flexible for athletes (book only when they want)
-    - Immediate revenue per booking
-
-    **Limitations**:
-
-    - No cash flow advantage
-    - Higher no-show risk
-    - Missing package sale opportunities
-  </Accordion>
-  <Accordion title="Sarah (Youth Coach): Free Trial + Credit Packages">
-    **Setup**:
-
-    - Scheduler 1: "Free 30-Min Assessment" (free)
-    - Scheduler 2: "60-Min Skills Training" (1 credit)
-    - Product 1: "5-Session Starter - \$275" (5 credits)
-    - Product 2: "10-Session Package - \$500" (10 credits, better value)
-
-    **Why it works**:
-
-    - Free assessment converts leads
-    - Multiple package sizes fit different budgets
-    - Prepayment improves cash flow
-    - Lower no-shows due to prepaid commitment
-
-    **Results**:
-
-    - 70% conversion from free to paid
-    - Average purchase: 10-session package
-    - Significantly reduced no-shows
-  </Accordion>
-  <Accordion title="Mike (Facility Owner): Tiered Membership">
-    **Setup**:
-
-    - Product 1: "Bronze Membership - \$199/month" (8 credits/month recurring)
-    - Product 2: "Silver Membership - \$349/month" (16 credits/month recurring)
-    - Scheduler 1: "Small Group Class" (1 credit)
-    - Scheduler 2: "Private Training" (2 credits)
-
-    **Why it works**:
-
-    - Recurring revenue model
-    - Members allocate credits flexibly
-    - Higher-value private sessions cost more credits
-    - Predictable monthly cash flow
-
-    **Results**:
-
-    - 85% revenue from subscriptions
-    - Lower churn due to unused credits
-    - Easier financial forecasting
-  </Accordion>
-</AccordionGroup>
-
-## What's next
-
-Now that you understand payment configuration, explore related features:
-
-<CardGroup cols={2}>
-  <Card title="Create Your First Scheduler" icon="plus-circle" href="/scheduling/creating-first-scheduler">
-    Put payment configuration into action by building your first bookable scheduler
-  </Card>
-  <Card title="Credit System Deep Dive" icon="coins" href="/scheduling/credit-system-explained">
-    Master advanced credit features: expiration, limits, bulk operations, and tracking
-  </Card>
-  <Card title="Product Management" icon="box" href="/payments/products-overview">
-    Create and manage all your products: sessions, packages, subscriptions, memberships
-  </Card>
-  <Card title="Subscription Scheduling" icon="sync-alt" href="/scheduling/subscription-scheduling">
-    Set up recurring memberships with automatic credit delivery
-  </Card>
-</CardGroup>
-
 ## Related articles
 
 <CardGroup cols={3}>
-  <Card title="First Bookable Session" icon="rocket" href="/scheduling/first-bookable-session">
+  <Card title="First Bookable Session" icon="rocket" href="/scheduling/book-your-first-session">
     Complete guide to your first scheduler setup
   </Card>
   <Card title="What Are Schedulers?" icon="question-circle" href="/scheduling/what-are-schedulers">
     Understand schedulers vs sessions vs bookings
   </Card>
-  <Card title="Stripe Setup Guide" icon="stripe" href="/payments/stripe-setup">
+  <Card title="Stripe Setup Guide" icon="stripe" href="/payments/connecting-stripe">
     Connect Stripe to accept payments in CoachIQ
   </Card>
   <Card title="Manually Booking Athletes" icon="user-plus" href="/scheduling/manually-booking-athletes">
     Book athletes into sessions with payment handling
-  </Card>
-  <Card title="Bulk Credit Operations" icon="coins" href="/scheduling/bulk-credit-operations">
-    Manage credits across multiple athletes efficiently
-  </Card>
-  <Card title="Pricing Your Services" icon="tag" href="/business/pricing-strategy">
-    Strategic pricing for coaching packages
   </Card>
 </CardGroup>
 
