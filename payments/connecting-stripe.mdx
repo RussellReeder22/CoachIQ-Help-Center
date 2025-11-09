@@ -25,12 +25,7 @@ icon: "credit-card"
     From your CoachIQ dashboard:
 
     1. Click **Settings** in the left sidebar
-    2. Select **Billing**
-    3. Click **Stripe** tab
-
-    <Frame>
-      ![Navigate to Stripe settings](/images/payments/stripe-settings-navigation.png)
-    </Frame>
+    2. Select **Stripe Portal**
   </Step>
   <Step title="Click Connect Stripe">
     Click the blue **Connect Stripe** button.
@@ -53,10 +48,6 @@ icon: "credit-card"
     - Sync transaction data
 
     Click **Connect** to authorize.
-
-    <Frame>
-      ![Stripe authorization screen](/images/payments/stripe-oauth-screen.png)
-    </Frame>
   </Step>
   <Step title="Confirm connection">
     After authorization, you'll return to CoachIQ.
@@ -70,9 +61,6 @@ icon: "credit-card"
     <Check>
       **Connected.** You can now accept payments.
     </Check>
-    <Frame>
-      ![Stripe successfully connected](/images/payments/stripe-connected-status.png)
-    </Frame>
   </Step>
 </Steps>
 
@@ -107,88 +95,14 @@ Stripe provides two environments:
   CoachIQ automatically syncs with whichever mode is active in Stripe. Toggle between modes in your Stripe dashboard.
 </Info>
 
-## Disconnect Stripe
-
-To disconnect your Stripe account:
-
-1. Go to **Settings → Billing → Stripe**
-2. Click **Disconnect**
-3. Confirm disconnection
-
-<Warning>
-  Disconnecting Stripe stops all payment processing immediately. Active subscriptions won't renew until you reconnect.
-</Warning>
-
-Your transaction history and customer data remain in CoachIQ. Reconnect anytime to resume payment processing.
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Connection failed or timed out">
-    **Try these fixes:**
-
-    1. Clear your browser cache and cookies
-    2. Disable browser extensions temporarily
-    3. Try a different browser (Chrome recommended)
-    4. Verify you have admin access in both CoachIQ and Stripe
-    5. Check your internet connection
-
-    If the issue persists, contact support with a screenshot of the error.
-  </Accordion>
-  <Accordion title="Connected the wrong Stripe account">
-    **To switch accounts:**
-
-    1. Disconnect current Stripe account (Settings → Billing → Stripe → Disconnect)
-    2. Log out of Stripe in your browser
-    3. Click **Connect Stripe** in CoachIQ
-    4. Log into the correct Stripe account
-    5. Authorize the connection
-
-    <Warning>
-      Payment processing stops during the switch. Plan this during low-activity periods.
-    </Warning>
-  </Accordion>
-  <Accordion title="Permission denied error">
-    **Check these requirements:**
-
-    - You're an admin in CoachIQ
-    - You're an owner/admin in Stripe
-    - Your Stripe account is fully activated
-    - You've completed Stripe's verification process
-
-    If you're not a Stripe account owner, ask the owner to complete the connection.
-  </Accordion>
-  <Accordion title="Stripe says account is restricted">
-    Stripe may restrict accounts for several reasons:
-
-    - Incomplete verification
-    - Missing business information
-    - Suspicious activity flags
-    - Regional restrictions
-
-    Log into your Stripe dashboard to see specific requirements. Complete all verification steps, then reconnect to CoachIQ.
-  </Accordion>
-</AccordionGroup>
-
-## What happens after connection
-
 Once Stripe is connected:
 
 - **Payments section activates**: Create products, view transactions, manage subscriptions
-- **Products sync**: Any existing Stripe products import to CoachIQ
 - **Real-time sync**: All transactions, refunds, and subscription changes sync automatically
 - **Customer data flows**: Payment methods and billing information sync between platforms
 
-## Next steps
-
-Now that Stripe is connected:
-
-1. [Learn Stripe Dashboard basics](/payments/stripe-dashboard-basics) - Navigate your payment processor
-2. [Create your first product](/payments/creating-first-product) - Build a product to sell
-3. [Attach products to sessions](/payments/products-integration) - Enable client bookings with payment
-
 ## Related articles
 
-- [Understanding CoachIQ Payments](/payments/understanding-payments)
-- [Stripe Dashboard Basics](/payments/stripe-dashboard-basics)
-- [Creating Your First Product](/payments/creating-first-product)
+- [Understanding CoachIQ Payments](/payments/getting-started)
+- [Stripe Dashboard Basics](/payments/stripe-dashboard)
+- [Creating Your First Product](/payments/product-builder)
