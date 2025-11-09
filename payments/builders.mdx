@@ -13,10 +13,8 @@ icon: "book"
 
 The Product Builder has 7 sections. Only Section 1 is required. Configure additional sections based on your needs.
 
-**Real-time preview**: The right sidebar shows how your product appears to clients as you build.
-
 <Frame>
-  ![Product Builder interface with 7 sections](/images/payments/product-builder-overview.png)
+  ![Product Builder Pn](/images/product-builder.png)
 </Frame>
 
 ## Section 1: Product Details
@@ -98,13 +96,11 @@ The Product Builder has 7 sections. Only Section 1 is required. Configure additi
     - Money-back guarantee
   </Accordion>
   <Accordion title="Product Type">
-    **Optional**
+    **Subscription or One Time Product**
 
-    Tags your product for internal organization.
+    **Subscription:** Charges client on a recurring basis once product is purchased
 
-    **Options:** Session, Membership, Program, Merchandise, Other
-
-    **Note:** This is for your reference only. Doesn't affect functionality or what clients see.
+    **One Time Product:** Charges client once per purchase
   </Accordion>
 </AccordionGroup>
 
@@ -133,28 +129,6 @@ Configure pricing frequency and processing fees.
     <Tip>
       Monthly subscriptions create the most predictable recurring revenue and are easier for clients to commit to.
     </Tip>
-  </Accordion>
-  <Accordion title="Trial Period">
-    **Subscription products only**
-
-    Number of free days before the first charge.
-
-    **Examples:**
-
-    - 7-day free trial
-    - 14-day free trial
-    - 30-day free trial
-
-    **How it works:**
-
-    1. Client subscribes with card on file
-    2. Trial starts immediately
-    3. First charge occurs after trial period ends
-    4. Client can cancel anytime during trial (no charge)
-
-    <Info>
-      Trials increase subscription conversions by reducing commitment risk.
-    </Info>
   </Accordion>
   <Accordion title="Processing Fee">
     **All product types**
@@ -202,7 +176,7 @@ Configure session credits issued with purchase.
     **ON:** Product issues specified number of credits to client's account.
 
     <Note>
-      Credits require additional configuration in Schedule → Schedulers. [Learn about credits →](/payments/credits-and-products)
+      Credits require additional configuration in Schedule → Schedulers. [Learn about credits →](/scheduling/credit-system-overview)
     </Note>
   </Accordion>
   <Accordion title="Number of credits">
@@ -215,7 +189,7 @@ Configure session credits issued with purchase.
     - 1 credit for single session products
     - 10 credits for multi-session packages
     - 4 credits per month for subscriptions
-    - 999 credits for "unlimited" access
+    - ∞ credits for "unlimited" access
 
     <Tip>
       For unlimited monthly memberships, set credits to 999. Functionally unlimited for most coaches.
@@ -228,7 +202,7 @@ Configure session credits issued with purchase.
 
     **Options:**
 
-    **Days since purchase**
+    **Days since purchase (One Time product only)**
 
     - 30 days
     - 60 days
@@ -236,24 +210,24 @@ Configure session credits issued with purchase.
     - 120 days
     - Custom number of days
 
-    **Specific date**
+    **Specific date (One Time Product Only)**
 
     - Calendar picker
     - Set exact expiration (e.g., end of season)
 
-    **Don't expire**
+    **Don't expire (One Time Product Only)**
 
     - Master Credits (never expire)
     - Client keeps credits indefinitely
 
-    **Subscription expiration**
+    **Carry Over Unsed Credits (Subscription Product Only)**
+
+    - Credits carry over from one billing cycle to the next
+
+    **Subscription expiration (Subscription Product Only)**
 
     - Credits expire when subscription cancels
     - New credits issued each billing period
-
-    <Info>
-      **Subscriptions:** Credits typically expire when subscription ends. New credits issued with each renewal.
-    </Info>
   </Accordion>
 </AccordionGroup>
 
@@ -267,7 +241,7 @@ Restrict where credits can be redeemed.
 
     Select specific schedulers that accept this product's credits.
 
-    **Master Credits (default):** Leave blank or select all. Credits work for any scheduler.
+    **Universal Credits (default):** Leave blank or select all. Credits work for any scheduler.
 
     **Restricted Credits:** Select specific schedulers only.
 
@@ -281,20 +255,16 @@ Restrict where credits can be redeemed.
       Use restricted credits to create specialized packages that don't accidentally get used for wrong session types.
     </Tip>
   </Accordion>
-  <Accordion title="Custom credit cost per session">
+  <Accordion title="Limit credits per scheduler per billing cycle">
     **Advanced feature**
 
-    Override how many credits specific sessions cost.
+    Override how many credits can be used per billing cycle for a partcular scheduler
 
-    **Default:** 1 credit = 1 session booking
+    **Example:**
 
-    **Custom examples:**
-
-    - 60-minute session = 1 credit
-    - 90-minute session = 1.5 credits
-    - Premium session = 2 credits
-
-    Most coaches use the default 1:1 ratio.
+    - Product awards client 8 credits
+      - 4 credits can be used for a "Group Training" Scheduler
+      - 4 credits can be used for a "Private Training" Scheduler
   </Accordion>
 </AccordionGroup>
 
