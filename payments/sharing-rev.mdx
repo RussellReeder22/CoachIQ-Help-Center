@@ -6,11 +6,11 @@ icon: "share-nodes"
 ---
 
 <Info>
-**Where to find this**: Product Builder → Section 6 (Advanced Settings) → Revenue Sharing
+  **Where to find this**: Product Builder → Section 6 (Advanced Settings) → Revenue Sharing
 </Info>
 
 <Warning>
-**Early feature - Setup required**: Revenue sharing is a basic feature that requires CoachIQ support to configure. Contact support to enable.
+  **Early feature - Setup required**: Revenue sharing is a basic feature that requires CoachIQ support to configure. Contact support to enable.
 </Warning>
 
 ## What revenue sharing is
@@ -18,12 +18,14 @@ icon: "share-nodes"
 Route product revenue directly to another CoachIQ organization's Stripe account instead of yours.
 
 **What it does:**
+
 - Client purchases your product
 - Payment goes to partner's Stripe account (not yours)
 - You receive no money from this product
 - Partner receives 100% of revenue
 
 **What it doesn't do:**
+
 - ❌ Split revenue between accounts
 - ❌ Calculate percentages
 - ❌ Send partial amounts
@@ -36,33 +38,35 @@ This is an all-or-nothing redirect, not a revenue split.
 **Common scenarios:**
 
 **White-label programs:**
+
 - You create the program
 - Partner organization delivers it
 - Revenue goes directly to partner
 
 **Referral products:**
+
 - You list partner's product
 - Clients book through your page
 - Partner receives all payment
 
 **Franchise or multi-location:**
+
 - Central organization manages products
 - Individual locations receive revenue
 - Each location has own CoachIQ organization
 
 <Note>
-If you need to split revenue (you get 70%, partner gets 30%), this feature doesn't support that. Revenue sharing sends 100% to the other organization.
+  If you need to split revenue (you get 70%, partner gets 30%), this feature doesn't support that. Revenue sharing sends 100% to the other organization.
 </Note>
 
 ## Requirements
 
 Both parties must have:
 
-✅ Active CoachIQ organization
-✅ Connected Stripe account
-✅ CoachIQ support to configure connection
+✅ Active CoachIQ organization ✅ Connected Stripe account ✅ CoachIQ support to configure connection
 
 **You cannot:**
+
 - Set this up yourself
 - Connect to non-CoachIQ accounts
 - Route to personal Stripe accounts
@@ -71,43 +75,45 @@ Both parties must have:
 ## How to set up revenue sharing
 
 <Steps>
-<Step title="Contact CoachIQ support">
-Email support with:
-- Your organization name
-- Partner's CoachIQ organization name
-- Which product(s) need revenue sharing
-- Confirmation from partner they approve this
+  <Step title="Contact CoachIQ support">
+    Email support with:
 
-<Warning>
-Do NOT configure revenue sharing settings in Product Builder until support completes setup.
-</Warning>
-</Step>
+    - Your organization name
+    - Partner's CoachIQ organization name
+    - Which product(s) need revenue sharing
+    - Confirmation from partner they approve this
 
-<Step title="Support configures connection">
-CoachIQ support will:
-- Verify both organizations
-- Connect the Stripe accounts
-- Enable revenue sharing for specified products
-- Confirm setup complete
+    <Warning>
+      Do NOT configure revenue sharing settings in Product Builder until support completes setup.
+    </Warning>
+  </Step>
+  <Step title="Support configures connection">
+    CoachIQ support will:
 
-This typically takes 1-2 business days.
-</Step>
+    - Verify both organizations
+    - Connect the Stripe accounts
+    - Enable revenue sharing for specified products
+    - Confirm setup complete
 
-<Step title="Test with small transaction">
-After support confirms setup:
-1. Make test purchase (use low-cost product or test mode)
-2. Verify payment appears in partner's Stripe account
-3. Confirm payment does NOT appear in your account
+    This typically takes 1-2 business days.
+  </Step>
+  <Step title="Test with small transaction">
+    After support confirms setup:
 
-<Check>
-**Setup verified.** Revenue now routes to partner organization.
-</Check>
-</Step>
+    1. Make test purchase (use low-cost product or test mode)
+    2. Verify payment appears in partner's Stripe account
+    3. Confirm payment does NOT appear in your account
+
+    <Check>
+      **Setup verified.** Revenue now routes to partner organization.
+    </Check>
+  </Step>
 </Steps>
 
 ## What clients see
 
 **From client perspective:**
+
 - Nothing changes
 - They book through your CoachIQ page
 - Checkout looks normal
@@ -119,18 +125,20 @@ Revenue routing is invisible to clients. They interact with you, money goes to p
 ## What you see
 
 **In your CoachIQ:**
+
 - Product appears in your Products list
 - Transactions show in your Transactions page
 - BUT money deposits to partner's Stripe account
-- Your Stripe account receives $0
+- Your Stripe account receives \$0
 
 <Info>
-Transaction records appear in your CoachIQ for tracking, but funds go to partner's bank account.
+  Transaction records appear in your CoachIQ for tracking, but funds go to partner's bank account.
 </Info>
 
 ## What partner sees
 
 **In partner's CoachIQ:**
+
 - Product doesn't appear in their Products list
 - Transaction appears in their Transactions page
 - Money deposits to their Stripe account
@@ -141,6 +149,7 @@ Transaction records appear in your CoachIQ for tracking, but funds go to partner
 **This feature is very basic:**
 
 **Cannot:**
+
 - Split revenue (only 100% redirect)
 - Route to multiple accounts
 - Calculate percentages
@@ -148,12 +157,13 @@ Transaction records appear in your CoachIQ for tracking, but funds go to partner
 - Route different products to different partners (requires support setup per product)
 
 **Cannot change easily:**
+
 - Requires support to modify
 - Can't toggle on/off yourself
 - Can't change destination account yourself
 
 <Warning>
-Revenue sharing is permanent until you contact support to remove it. Plan carefully before implementing.
+  Revenue sharing is permanent until you contact support to remove it. Plan carefully before implementing.
 </Warning>
 
 ## Managing revenue-shared products
@@ -161,11 +171,13 @@ Revenue sharing is permanent until you contact support to remove it. Plan carefu
 **To modify or remove:**
 
 Contact CoachIQ support with:
+
 - Product name
 - Requested change (remove revenue sharing, change destination, etc.)
 - Effective date for change
 
 **Support will:**
+
 - Update configuration
 - Confirm changes
 - Verify new routing works correctly
@@ -177,16 +189,19 @@ Allow 1-2 business days for modifications.
 **If you need more control:**
 
 **Manual payment forwarding:**
+
 - Receive payment in your account
 - Transfer to partner manually via bank transfer
 - More work but more flexibility
 
 **Separate booking pages:**
+
 - Partner creates their own product
 - You direct clients to their page
 - No revenue sharing needed
 
 **Invoice partner:**
+
 - Partner invoices you for services
 - You pay them separately
 - Keep revenue in your account
@@ -194,73 +209,71 @@ Allow 1-2 business days for modifications.
 ## Before you set up revenue sharing
 
 **Confirm with partner:**
+
 - They have active CoachIQ organization
 - Their Stripe is connected
 - They approve revenue routing
 - Both parties understand this is 100% redirect
 
 **Document agreement:**
+
 - Written agreement on revenue arrangement
 - Tax responsibilities clear
 - Product ownership defined
 - Termination process established
 
 **Plan for taxes:**
+
 - Partner reports all revenue (they received it)
-- You report $0 for these products
+- You report \$0 for these products
 - Consult accountant for proper handling
 
 <Warning>
-Revenue sharing affects tax reporting. The party receiving money must report it as income.
+  Revenue sharing affects tax reporting. The party receiving money must report it as income.
 </Warning>
 
 ## Troubleshooting
 
 <AccordionGroup>
-<Accordion title="Revenue going to my account instead of partner's">
-**Possible causes:**
-- Support hasn't completed setup yet
-- Configuration incomplete
-- Wrong product selected
+  <Accordion title="Revenue going to my account instead of partner's">
+    **Possible causes:**
 
-**Action:** Contact support with transaction details.
-</Accordion>
+    - Support hasn't completed setup yet
+    - Configuration incomplete
+    - Wrong product selected
 
-<Accordion title="Neither account receiving revenue">
-**Check:**
-- Was purchase actually completed?
-- Check both Stripe dashboards thoroughly
-- Look for failed payment
+    **Action:** Contact support with transaction details.
+  </Accordion>
+  <Accordion title="Neither account receiving revenue">
+    **Check:**
 
-**Action:** Contact support with transaction ID.
-</Accordion>
+    - Was purchase actually completed?
+    - Check both Stripe dashboards thoroughly
+    - Look for failed payment
 
-<Accordion title="Want to cancel revenue sharing">
-**Process:**
-Email support requesting removal of revenue sharing from specified product(s).
+    **Action:** Contact support with transaction ID.
+  </Accordion>
+  <Accordion title="Partner doesn't have CoachIQ">
+    **This feature won't work.**
 
-Allow 1-2 business days for support to process.
-</Accordion>
+    Partner must have their own CoachIQ organization with connected Stripe.
 
-<Accordion title="Partner doesn't have CoachIQ">
-**This feature won't work.**
+    **Alternatives:**
 
-Partner must have their own CoachIQ organization with connected Stripe.
-
-**Alternatives:**
-- Partner creates CoachIQ account
-- Use manual payment forwarding
-- Partner invoices you separately
-</Accordion>
+    - Partner creates CoachIQ account
+    - Use manual payment forwarding
+    - Partner invoices you separately
+  </Accordion>
 </AccordionGroup>
 
 ## Getting help
 
 **For revenue sharing setup or issues:**
 
-Contact: support@coachiq.com
+Contact: [support@coachiq.com](mailto:support@coachiq.com)
 
 **Include in your message:**
+
 - Your organization name
 - Partner's organization name
 - Product name
@@ -272,12 +285,5 @@ Support responds within 1 business day.
 ## Next steps
 
 1. [Guest checkout](/payments/guest-checkout) - Allow purchases without account creation
-2. [Processing fees](/payments/processing-fees) - Configure who pays Stripe fees
-3. [Product Builder reference](/payments/product-builder-reference) - Complete Product Builder guide
-
-## Related articles
-
-- [Processing Fees Configuration](/payments/processing-fees)
-- [Product Builder: Complete Reference](/payments/product-builder-reference)
-- [Creating Your First Product](/payments/creating-first-product)
-- [Understanding CoachIQ Payments](/payments/understanding-payments)
+2. [Processing fees](/payments/processing-fee) - Configure who pays Stripe fees
+3. [Product Builder reference](/payments/product-builder) - Complete Product Builder guide
