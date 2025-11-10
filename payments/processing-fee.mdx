@@ -21,7 +21,7 @@ Every successful transaction through Stripe incurs fees:
 **Example:**
 
 - \$100 charge
-- Stripe fee: ($100 × 0.029) + $0.30 = \$3.20
+- Stripe fee: (100 × 0.029) + 0.30 = \$3.20
 - You receive: \$96.80
 
 <Note>
@@ -99,27 +99,18 @@ You decide who covers Stripe's processing fees:
   </Step>
   <Step title="Navigate to Payment Options">
     Scroll to **Section 2: Payment Options**
+  </Step>
+  <Step title="Find Processing Fee toggle">
+    Choose to toggle processing fee on or off
 
     <Frame>
-      ![Payment Options section in Product Builder](/images/payments/payment-options-section.png)
+      ![Processing Fee Pn](/images/processing-fee.png)
     </Frame>
   </Step>
-  <Step title="Find Processing Fee settings">
-    **Field: Processing Fee**
-
-    Two options:
-
-    - **I will absorb the fee** (default)
-    - **Client will pay the fee**
-
-    <Frame>
-      ![Processing fee configuration options](/images/payments/processing-fee-toggle.png)
-    </Frame>
-  </Step>
-  <Step title="Select who pays">
+  <Step title="Decide on fee">
     Choose whether you or client pays Stripe fees.
 
-    If you select "Client will pay the fee", additional fields appear.
+    If you select **Add processing fee**, additional fields appear.
   </Step>
   <Step title="Configure fee structure (if client pays)">
     **Two fields appear:**
@@ -130,15 +121,12 @@ You decide who covers Stripe's processing fees:
 
     These default to Stripe's standard US rates. Adjust if your Stripe rates differ.
 
-    <Frame>
-      ![Processing fee amount fields](/images/payments/processing-fee-fields.png)
-    </Frame>
     <Tip>
       Check your actual Stripe rates in Stripe Dashboard. Rates may differ based on processing volume, country, or negotiated pricing.
     </Tip>
   </Step>
   <Step title="Save product">
-    Click **Save** or **Publish**.
+    Click **Create Product**.
 
     <Check>
       **Fee configuration saved.** Applies to all future purchases of this product.
@@ -255,10 +243,9 @@ Some coaches configure custom fee amounts:
 
     - Target: \$100 profit per session
     - Stripe fee: ~3%
-    - Set price: $103+ to net $100
+    - Set price: \$103 + to net \$100
 
-    Client sees: $103 (clean price)
-You receive: ~$100 after fees
+    Client sees: \$103 (clean price)You receive: ~\$100 after fees
   </Tab>
   <Tab title="Pass fees - Price lower">
     **Price products at target, add fees**
@@ -275,24 +262,6 @@ You receive: $100
 </Tabs>
 
 **Result:** Similar final cost to client either way. Choose based on market expectations and legal compliance.
-
-## Testing fee impact
-
-**A/B test fee approaches:**
-
-**Group A:** $100 product, you absorb $3 fee (you net $97)
-**Group B:** $97 product, client pays $3 fee (client pays $100, you net \$97)
-
-**Measure:**
-
-- Conversion rates
-- Client feedback
-- Completion rates
-- Cart abandonment
-
-<Tip>
-  Most coaches find absorbing fees leads to higher conversions, even with slightly higher base price.
-</Tip>
 
 ## International and special fees
 
@@ -364,13 +333,6 @@ You receive: $100
 
 ## Next steps
 
-1. [Revenue sharing](/payments/revenue-sharing) - Split revenue with partners or contractors
+1. [Revenue sharing](sharing-rev) - Split revenue with partners or contractors
 2. [Guest checkout](/payments/guest-checkout) - Allow purchases without accounts
-3. [Product Builder reference](/payments/product-builder-reference) - Complete Product Builder guide
-
-## Related articles
-
-- [Product Builder: Complete Reference](/payments/product-builder-reference)
-- [Creating Your First Product](/payments/creating-first-product)
-- [Revenue Sharing](/payments/revenue-sharing)
-- [Understanding CoachIQ Payments](/payments/understanding-payments)
+3. [Product Builder reference](/payments/product-builder) - Complete Product Builder guide
