@@ -46,13 +46,13 @@ Common reasons for payment failures:
 
     When subscription payment fails:
 
-    - Status changes to "Past Due" (yellow/orange)
+    - Status changes to "Past Due" (red)
     - Last attempted payment shows as failed
     - Next retry date displayed
     - Client may retain access during retry period
 
     <Frame>
-      ![Subscription with Past Due status](/images/payments/subscription-past-due-status.png)
+      ![Past Due Sub Pn](/images/past-due-sub.png)
     </Frame>
   </Tab>
   <Tab title="One-time payments">
@@ -95,11 +95,11 @@ Common reasons for payment failures:
     Go to **Payments → Subscriptions** and filter by **Past Due** status.
 
     <Frame>
-      ![Filter subscriptions by Past Due](/images/payments/filter-past-due-subscriptions.png)
+      ![Past Due Sub Pn](/images/past-due-sub.png)
     </Frame>
   </Step>
   <Step title="Review failure reason">
-    Click subscription to view details.
+    Click subscription to view details in stripe.
 
     Check Payment History for failure reason:
 
@@ -119,23 +119,24 @@ Common reasons for payment failures:
       Act fast. The sooner client updates payment, the sooner Stripe retries successfully.
     </Tip>
   </Step>
-  <Step title="Send payment method update link">
+  <Step title="Send payment page update link">
     From subscription details:
 
-    1. Click **Update Payment Method** in Actions section
-    2. Copy generated secure link
-    3. Send link to client
-
-    Link expires in 24 hours.
+    1. Click **Open **on the subscription under the **Source **column
+    1. Scroll to the **Invoice** section
+    2. Click the Invoice labeled **Retrying**
+    3. Copy the **Payment Page **link
+    4. Send link to client
 
     <Frame>
-      ![Update payment method button](/images/payments/update-payment-method-button.png)
+      ![Invoice Stripe Pn](/images/invoice-stripe.png)
+    </Frame>
+    <Frame>
+      ![Payment Page Link Pn](/images/payment-page-link.png)
     </Frame>
   </Step>
   <Step title="Client updates card">
-    Client clicks link and enters new payment details.
-
-    Stripe automatically retries payment with new card on next scheduled attempt.
+    Client clicks link, enters new payment details and checks out.
   </Step>
   <Step title="Monitor retry success">
     Check subscription status:
@@ -167,13 +168,7 @@ One-time payments don't retry automatically. You must manually recover them.
     - If client has product URL, they can try purchasing again
     - Client re-enters payment details
 
-    **Option 2: Send invoice (if available)**
-
-    - Create manual invoice through Stripe
-    - Send invoice link to client
-    - Client pays invoice directly
-
-    **Option 3: Manual payment**
+    **Option 2: Manual payment (not recommended)**
 
     - Client pays via alternative method (Venmo, check, etc.)
     - You manually record transaction
@@ -266,15 +261,6 @@ One-time payments don't retry automatically. You must manually recover them.
 
     **Setup:** Configure in Stripe Dashboard (requires technical setup).
   </Accordion>
-  <Accordion title="Use payment authentication">
-    Enable 3D Secure/SCA for additional card verification.
-
-    **Pros:** Reduces fraud, increases legitimate card acceptance
-
-    **Cons:** Adds friction to checkout process
-
-    **Configure:** In Stripe Dashboard payment settings
-  </Accordion>
 </AccordionGroup>
 
 ## When payment recovery fails
@@ -298,52 +284,6 @@ If client doesn't respond or can't/won't update payment:
 <Note>
   Document failed recovery attempts for your records. Some coaches have policies about re-allowing clients who frequently fail payments.
 </Note>
-
-## Alternative payment recovery methods
-
-If standard retry doesn't work:
-
-**Manual invoice:**
-
-- Create invoice in Stripe Dashboard
-- Send to client via email
-- Client pays invoice directly
-- More formal payment request
-
-**Accept alternative payment:**
-
-- Venmo, Zelle, check, cash
-- Manually record transaction in CoachIQ
-- Manually grant access/credits
-
-**Payment plan:**
-
-- Break amount into installments
-- Create custom subscription for installments
-- More work but recovers revenue
-
-<Warning>
-  Alternative payment methods require manual tracking. Use sparingly and document everything.
-</Warning>
-
-## Failed payment analytics
-
-**Track these metrics:**
-
-**Recovery rate:** Successful recoveries / Total failures
-
-**Time to recovery:** Average days from failure to successful payment
-
-**Failure reasons:** Most common decline reasons
-
-**Lost revenue:** Failed payments not recovered
-
-Use this data to:
-
-- Identify patterns (same clients failing repeatedly?)
-- Improve communication timing
-- Adjust retry strategies
-- Forecast revenue risk
 
 ## Troubleshooting specific failure reasons
 
@@ -376,15 +316,6 @@ Use this data to:
     - Client enters new card with current expiration
     - Usually quick resolution
   </Accordion>
-  <Accordion title="Card requires authentication">
-    **Reason:** 3D Secure or SCA required
-
-    **Solution:**
-
-    - Client must complete authentication in email from Stripe
-    - Check spam folder for authentication email
-    - May need to retry payment on different device
-  </Accordion>
   <Accordion title="Card reported lost or stolen">
     **Reason:** Card flagged by issuer
 
@@ -400,7 +331,7 @@ Use this data to:
 
 1. [Issue refunds](/payments/issuing-refunds) - Process refunds for recovered payments if needed
 2. [Manage subscriptions](/payments/managing-subscriptions) - Handle subscription modifications
-3. [View transactions](/payments/transactions-dashboard) - Monitor all payment activity
+3. [View transactions](/payments/transactions) - Monitor all payment activity
 
 ## Related articles
 
