@@ -6,7 +6,7 @@ icon: "rotate-left"
 ---
 
 <Info>
-**Where to find this**: Payments → Transactions → Click transaction → Refund
+  **Where to find this**: Payments → Transactions → Click transaction → Refund
 </Info>
 
 ## When to issue refunds
@@ -14,140 +14,138 @@ icon: "rotate-left"
 Common refund scenarios:
 
 **Client request:**
+
 - Changed their mind
 - Can't attend purchased session
 - Dissatisfied with service
 - Duplicate charge
 
 **Business error:**
+
 - Charged wrong amount
 - Charged wrong client
 - Product misconfigured
 - Technical error
 
 **Goodwill:**
+
 - Service issue compensation
 - Retention gesture
 - Promotional adjustment
 
 <Note>
-Refund policies vary by coach. Define your refund policy clearly in terms and conditions.
+  Refund policies vary by coach. Define your refund policy clearly in terms and conditions.
 </Note>
 
 ## Full vs. partial refunds
 
 <Tabs>
-<Tab title="Full Refund">
-**Return entire payment amount**
+  <Tab title="Full Refund">
+    **Return entire payment amount**
 
-Client receives 100% of what they paid.
+    Client receives 100% of what they paid.
 
-**When to use:**
-- Complete cancellation before service
-- Major service failure
-- Accidental duplicate charge
-- Client never received product/access
+    **When to use:**
 
-**Example:** $75 session → Refund $75
-</Tab>
+    - Complete cancellation before service
+    - Major service failure
+    - Accidental duplicate charge
+    - Client never received product/access
 
-<Tab title="Partial Refund">
-**Return portion of payment**
+    **Example:** \$75 session → Refund \$75
+  </Tab>
+  <Tab title="Partial Refund">
+    **Return portion of payment**
 
-Client receives specific dollar amount, less than full charge.
+    Client receives specific dollar amount, less than full charge.
 
-**When to use:**
-- Prorated cancellation mid-period
-- Partial service failure
-- Processing fee adjustment
-- Custom settlement amount
+    **When to use:**
 
-**Example:** $200 monthly membership, cancel on day 15 → Refund $100 (half month)
+    - Prorated cancellation mid-period
+    - Partial service failure
+    - Processing fee adjustment
+    - Custom settlement amount
 
-<Tip>
-Calculate prorated refunds: (Amount / Days in period) × Days unused
-</Tip>
-</Tab>
+    **Example:** 200 monthly membership, cancel on day 15 → Refund 100 (half month)
+
+    <Tip>
+      Calculate prorated refunds: (Amount / Days in period) × Days unused
+    </Tip>
+  </Tab>
 </Tabs>
 
 ## How to issue a refund
 
 <Steps>
-<Step title="Find the transaction">
-Go to **Payments → Transactions** and locate the transaction to refund.
+  <Step title="Find the transaction">
+    Go to **Payments → Transactions** and locate the transaction to refund.
 
-Search by client name, amount, or date if needed.
+    Search by client name, amount, or date if needed.
+  </Step>
+  <Step title="Click Open under source column">
+    Redirects to transcation on Stripe
+  </Step>
+  <Step title="Click Refund button">
+    Button appears in the top right corner (if transaction eligible for refund).
 
-<Frame>
-<img src="/images/payments/find-transaction-to-refund.png" alt="Locate transaction in transactions list" />
-</Frame>
-</Step>
+    <Frame>
+      ![Refund Stripe Pn](/images/refund-stripe.png)
+    </Frame>
+    <Warning>
+      Refund button only appears for successful, non-refunded transactions. Failed or already-refunded transactions can't be refunded.
+    </Warning>
+  </Step>
+  <Step title="Choose refund amount">
+    **Full refund:** Leave default amount (entire transaction)
 
-<Step title="Click the transaction">
-Open transaction details view.
-</Step>
+    **Partial refund:** Enter specific dollar amount to refund
 
-<Step title="Click Refund button">
-Button appears in Actions section (if transaction eligible for refund).
+    Amount must be less than or equal to original charge.
 
-<Frame>
-<img src="/images/payments/refund-button-location.png" alt="Refund button in transaction details" />
-</Frame>
+    <Frame>
+      ![Refund Details Pn](/images/refund-details.png)
+    </Frame>
+  </Step>
+  <Step title="Add reason (optional)">
+    Note why you're issuing refund:
 
-<Warning>
-Refund button only appears for successful, non-refunded transactions. Failed or already-refunded transactions can't be refunded.
-</Warning>
-</Step>
+    - Client request
+    - Service issue
+    - Duplicate charge
+    - Other
 
-<Step title="Choose refund amount">
-**Full refund:** Leave default amount (entire transaction)
+    Internal note only - client doesn't see this.
+  </Step>
+  <Step title="Confirm refund">
+    Review details and click **Confirm Refund**.
 
-**Partial refund:** Enter specific dollar amount to refund
-
-Amount must be less than or equal to original charge.
-
-<Frame>
-<img src="/images/payments/refund-amount-input.png" alt="Enter refund amount" />
-</Frame>
-</Step>
-
-<Step title="Add reason (optional)">
-Note why you're issuing refund:
-- Client request
-- Service issue
-- Duplicate charge
-- Other
-
-Internal note only - client doesn't see this.
-</Step>
-
-<Step title="Confirm refund">
-Review details and click **Confirm Refund**.
-
-<Check>
-**Refund processing.** Money returns to client's original payment method within 5-10 business days.
-</Check>
-</Step>
+    <Check>
+      **Refund processing.** Money returns to client's original payment method within 5-10 business days.
+    </Check>
+  </Step>
 </Steps>
 
 ## What happens after refund
 
 **Immediate:**
+
 - Refund appears in Transactions list with negative amount
 - Transaction status updates to "Refunded"
 - CoachIQ records refund
 
 **Within 24 hours:**
+
 - Client receives refund confirmation email
 - Stripe processes refund
 - Funds deducted from your Stripe balance
 
 **Within 5-10 business days:**
+
 - Money appears in client's bank account
 - Timeline depends on client's bank
 
 <Info>
-Refund timeline is controlled by banks, not CoachIQ or Stripe. You can't speed it up.
+  Refund timeline is controlled by banks, not CoachIQ or Stripe. You can't speed it up.
 </Info>
 
 ## Refunding subscription payments
@@ -155,82 +153,90 @@ Refund timeline is controlled by banks, not CoachIQ or Stripe. You can't speed i
 When refunding subscription charges, additional options appear:
 
 <Tabs>
-<Tab title="Refund only">
-**Issue refund, keep subscription active**
+  <Tab title="Refund only">
+    **Issue refund, keep subscription active**
 
-Money returned but subscription continues billing.
+    Money returned but subscription continues billing.
 
-**When to use:**
-- Service issue compensation
-- Billing adjustment
-- Goodwill gesture without cancellation
+    **When to use:**
 
-Client retains access, credits don't expire, future charges continue.
-</Tab>
+    - Service issue compensation
+    - Billing adjustment
+    - Goodwill gesture without cancellation
 
-<Tab title="Refund + Cancel">
-**Issue refund and end subscription**
+    Client retains access, credits don't expire, future charges continue.
+  </Tab>
+  <Tab title="Refund + Cancel">
+    **Issue refund and end subscription**
 
-Money returned AND subscription canceled.
+    Money returned AND subscription canceled.
 
-**Options:**
-- Cancel at period end (access until current period expires)
-- Cancel immediately (access ends now)
+    **Options:**
 
-**When to use:**
-- Client canceling due to dissatisfaction
-- Full service cancellation
-- Client no longer wants service
+    - Cancel at period end (access until current period expires)
+    - Cancel immediately (access ends now)
 
-<Tip>
-Most common choice. Refunding usually means client wants to end relationship.
-</Tip>
-</Tab>
+    **When to use:**
+
+    - Client canceling due to dissatisfaction
+    - Full service cancellation
+    - Client no longer wants service
+
+    <Tip>
+      Most common choice. Refunding usually means client wants to end relationship.
+    </Tip>
+  </Tab>
 </Tabs>
 
 ## Refund limitations
 
 **Time limits:**
+
 - Stripe allows refunds up to 180 days after charge
 - After 180 days, contact Stripe support for special handling
 
 **Amount limits:**
+
 - Can't refund more than original charge
 - Can refund less (partial refund)
 - Can issue multiple partial refunds until full amount refunded
 
 **Already refunded:**
+
 - Can't refund same transaction twice
 - Can't reverse a refund once processed
 
 **Failed payments:**
+
 - Can't refund payments that failed
 - No money was collected, so nothing to refund
 
 <Warning>
-Refunds are final. You cannot cancel or reverse a refund once confirmed.
+  Refunds are final. You cannot cancel or reverse a refund once confirmed.
 </Warning>
 
 ## Refund fees
 
 **Stripe processing fees:**
 
-**Original charge:** You paid 2.9% + $0.30
+**Original charge:** You paid 2.9% + \$0.30
 
-**After refund:** 
+**After refund:**
+
 - Transaction fee NOT refunded by Stripe
 - You lose the fee even though client got money back
 
 **Example:**
-- Client pays $100
-- Stripe takes $3.20 in fees
-- You receive $96.80
-- You refund $100 to client
-- Stripe charges you $100
-- Net loss: $103.20 (original $100 + $3.20 fees)
+
+- Client pays \$100
+- Stripe takes \$3.20 in fees
+- You receive \$96.80
+- You refund \$100 to client
+- Stripe charges you \$100
+- Net loss: 103.20 (original 100 + \$3.20 fees)
 
 <Note>
-Factor fees into refund policies. Some coaches deduct Stripe fees from refunds to avoid this loss.
+  Factor fees into refund policies. Some coaches deduct Stripe fees from refunds to avoid this loss.
 </Note>
 
 ## Partial refund calculations
@@ -238,24 +244,27 @@ Factor fees into refund policies. Some coaches deduct Stripe fees from refunds t
 **Common scenarios:**
 
 **Prorated monthly cancellation:**
-- $200/month subscription
+
+- \$200/month subscription
 - Client cancels on day 15 of 30-day month
 - Unused: 15 days
-- Refund: $200 × (15/30) = $100
+- Refund: $200 × (15/30) = $ 100
 
 **Session package partial use:**
-- 10-session package for $650
+
+- 10-session package for \$650
 - Client used 3 sessions
 - Remaining: 7 sessions
-- Refund: $650 × (7/10) = $455
+- Refund: $650 × (7/10) = $ 455
 
 **Processing fee deduction:**
-- $100 charge
-- Stripe fee: $3.20
-- Refund after fee: $96.80
+
+- \$100 charge
+- Stripe fee: \$3.20
+- Refund after fee: \$96.80
 
 <Tip>
-Be consistent with refund calculations. Document your policy and apply it uniformly.
+  Be consistent with refund calculations. Document your policy and apply it uniformly.
 </Tip>
 
 ## Refund policies
@@ -263,31 +272,36 @@ Be consistent with refund calculations. Document your policy and apply it unifor
 **Elements of clear refund policy:**
 
 **Time window:**
+
 - How long after purchase can client request refund?
 - Example: "30-day money-back guarantee" or "No refunds after 48 hours"
 
 **Conditions:**
+
 - What qualifies for refund?
 - What doesn't qualify?
 - Example: "Unused sessions only" or "Cancel 24 hours before session"
 
 **Process:**
+
 - How does client request refund?
 - How long does approval take?
 - Example: "Email requests processed within 2 business days"
 
 **Exceptions:**
+
 - Emergency situations
 - Injury or illness
 - Special circumstances
 
 **Display policy:**
+
 - On checkout page
 - In terms and conditions
 - In confirmation emails
 
 <Warning>
-Clearly communicate refund policy BEFORE purchase. Reduces disputes and chargebacks.
+  Clearly communicate refund policy BEFORE purchase. Reduces disputes and chargebacks.
 </Warning>
 
 ## Handling refund requests
@@ -295,54 +309,53 @@ Clearly communicate refund policy BEFORE purchase. Reduces disputes and chargeba
 **Best practices:**
 
 <Steps>
-<Step title="Listen to client">
-Understand why they want refund. Sometimes issue can be resolved without refund.
-</Step>
+  <Step title="Listen to client">
+    Understand why they want refund. Sometimes issue can be resolved without refund.
+  </Step>
+  <Step title="Review your policy">
+    Does request qualify based on your terms?
+  </Step>
+  <Step title="Offer alternatives">
+    Before refunding, consider:
 
-<Step title="Review your policy">
-Does request qualify based on your terms?
-</Step>
+    - Rescheduling session
+    - Transferring credits to friend/family
+    - Service credit for future use
+    - Discounted makeup session
+  </Step>
+  <Step title="Process refund promptly">
+    If refund warranted, process within 24-48 hours. Delays increase frustration.
+  </Step>
+  <Step title="Communicate clearly">
+    Explain what to expect:
 
-<Step title="Offer alternatives">
-Before refunding, consider:
-- Rescheduling session
-- Transferring credits to friend/family
-- Service credit for future use
-- Discounted makeup session
-</Step>
-
-<Step title="Process refund promptly">
-If refund warranted, process within 24-48 hours. Delays increase frustration.
-</Step>
-
-<Step title="Communicate clearly">
-Explain what to expect:
-- Refund amount
-- Processing timeline (5-10 days)
-- Account changes (credits removed, access ended)
-</Step>
-
-<Step title="Follow up">
-After refund processes, check in to ensure client satisfied with resolution.
-</Step>
+    - Refund amount
+    - Processing timeline (5-10 days)
+    - Account changes (credits removed, access ended)
+  </Step>
+  <Step title="Follow up">
+    After refund processes, check in to ensure client satisfied with resolution.
+  </Step>
 </Steps>
 
 ## Refunds vs. chargebacks
 
 **Refund (you initiate):**
+
 - You control timing and amount
 - No additional fees
 - Maintains client relationship
 - Professional resolution
 
 **Chargeback (client disputes with bank):**
+
 - Bank controls outcome
-- $15 chargeback fee even if you win
+- \$15 chargeback fee even if you win
 - Damages relationship
 - Affects Stripe account health
 
 <Check>
-Always offer to refund if client unhappy. Prevents chargebacks and maintains goodwill.
+  Always offer to refund if client unhappy. Prevents chargebacks and maintains goodwill.
 </Check>
 
 [Learn about chargebacks →](/payments/disputes-chargebacks)
@@ -350,54 +363,55 @@ Always offer to refund if client unhappy. Prevents chargebacks and maintains goo
 ## Common refund scenarios
 
 <AccordionGroup>
-<Accordion title="Client can't attend session they booked">
-**Your options:**
-1. Reschedule session (no refund needed)
-2. Issue credit for future use
-3. Issue full refund if within policy window
+  <Accordion title="Client can't attend session they booked">
+    **Your options:**
 
-**Recommendation:** Reschedule first, refund only if client insists or outside policy.
-</Accordion>
+    1. Reschedule session (no refund needed)
+    2. Issue credit for future use
+    3. Issue full refund if within policy window
 
-<Accordion title="Client bought wrong product">
-**Process:**
-1. Issue full refund for incorrect product
-2. Client purchases correct product
-3. Or manually adjust credits if appropriate
+    **Recommendation:** Reschedule first, refund only if client insists or outside policy.
+  </Accordion>
+  <Accordion title="Client bought wrong product">
+    **Process:**
 
-**Note:** Two separate transactions - refund one, new charge for correct product.
-</Accordion>
+    1. Issue full refund for incorrect product
+    2. Client purchases correct product
+    3. Or manually adjust credits if appropriate
 
-<Accordion title="Duplicate charge - client charged twice">
-**Process:**
-1. Verify duplicate (check transactions)
-2. Issue full refund for one charge
-3. Keep other charge active
-4. Apologize for error
+    **Note:** Two separate transactions - refund one, new charge for correct product.
+  </Accordion>
+  <Accordion title="Duplicate charge - client charged twice">
+    **Process:**
 
-<Warning>
-Act fast on duplicate charges. Client may dispute with bank if you delay.
-</Warning>
-</Accordion>
+    1. Verify duplicate (check transactions)
+    2. Issue full refund for one charge
+    3. Keep other charge active
+    4. Apologize for error
 
-<Accordion title="Client wants prorated refund mid-subscription">
-**Process:**
-1. Calculate unused portion of period
-2. Issue partial refund for prorated amount
-3. Cancel subscription (at period end or immediately)
+    <Warning>
+      Act fast on duplicate charges. Client may dispute with bank if you delay.
+    </Warning>
+  </Accordion>
+  <Accordion title="Client wants prorated refund mid-subscription">
+    **Process:**
 
-**Example:** $300/month, cancel on day 10 of 30 = refund $200 (20 days unused)
-</Accordion>
+    1. Calculate unused portion of period
+    2. Issue partial refund for prorated amount
+    3. Cancel subscription (at period end or immediately)
 
-<Accordion title="Client unhappy with service">
-**Steps:**
-1. Understand specific issue
-2. Offer to remedy (makeup session, different coach, etc.)
-3. If unresolvable, issue refund per policy
-4. Document for quality improvement
+    **Example:** 300/month, cancel on day 10 of 30 = refund 200 (20 days unused)
+  </Accordion>
+  <Accordion title="Client unhappy with service">
+    **Steps:**
 
-Service refunds are judgment calls. Balance policy with customer satisfaction.
-</Accordion>
+    1. Understand specific issue
+    2. Offer to remedy (makeup session, different coach, etc.)
+    3. If unresolvable, issue refund per policy
+    4. Document for quality improvement
+
+    Service refunds are judgment calls. Balance policy with customer satisfaction.
+  </Accordion>
 </AccordionGroup>
 
 ## Tracking refunds
@@ -413,24 +427,18 @@ Service refunds are judgment calls. Balance policy with customer satisfaction.
 **Refund cost:** Total revenue lost to refunds + fees
 
 **Use data to:**
+
 - Identify problem areas (policies, products, services)
 - Improve client satisfaction
 - Reduce refund requests
 - Adjust policies if needed
 
 <Tip>
-Healthy refund rate: Under 5% of total transactions. Higher rates indicate issues needing attention.
+  Healthy refund rate: Under 5% of total transactions. Higher rates indicate issues needing attention.
 </Tip>
-
-## Next steps
-
-1. [Handle disputes](/payments/disputes-chargebacks) - Manage bank disputes and chargebacks
-2. [Failed payments](/payments/failed-payments) - Recover unsuccessful transactions
-3. [View transactions](/payments/transactions-dashboard) - Monitor all payment activity
 
 ## Related articles
 
-- [Transactions Dashboard](/payments/transactions-dashboard)
-- [Managing Subscriptions](/payments/managing-subscriptions)
-- [Disputes & Chargebacks](/payments/disputes-chargebacks)
+- [Transactions Dashboard](/payments/transactions)
+- [Managing Subscriptions](/payments/manage-subscriptions)
 - [Failed Payments](/payments/failed-payments)

@@ -103,20 +103,16 @@ Guest checkout lets people buy products with just email and payment info - no ac
   </Step>
   <Step title="Navigate to Advanced Settings">
     Scroll to **Section 6: Advanced Settings**
-
-    <Frame>
-      ![Advanced Settings section location](/images/payments/advanced-settings-section.png)
-    </Frame>
   </Step>
   <Step title="Toggle guest checkout ON">
     Find **Guest Checkout** toggle and switch to ON.
 
     <Frame>
-      ![Guest checkout toggle switch](/images/payments/guest-checkout-toggle.png)
+      ![Guest Checkout Setting Pn](/images/guest-checkout-setting.png)
     </Frame>
   </Step>
   <Step title="Save product">
-    Click **Save** or **Publish**.
+    Click **Create.**
 
     <Check>
       **Guest checkout enabled.** Clients can purchase without creating account.
@@ -129,17 +125,13 @@ Guest checkout lets people buy products with just email and payment info - no ac
 **Required information:**
 
 - Email address
-- Payment method (credit card)
-
-**Optional information (if you collect it):**
-
 - Name
-- Phone number
-- Custom form fields
+- Payment method (credit card)
 
 **NOT required:**
 
 - Password
+- Phone Number
 - Account creation
 - Profile setup
 
@@ -159,7 +151,6 @@ Guest checkout lets people buy products with just email and payment info - no ac
 
 ✅ **Product or access (if applicable)**
 
-- Physical products ship to provided address
 - Event confirmation if workshop/clinic
 
 ❌ **No Athlete Portal access**
@@ -196,21 +187,6 @@ Guest checkout lets people buy products with just email and payment info - no ac
   Guest transactions tracked for your records, but guest doesn't become full client in your system.
 </Note>
 
-## Converting guests to clients
-
-**If guest wants to book sessions later:**
-
-They must create account separately:
-
-1. Guest visits your booking page
-2. Clicks "Sign Up" or "Create Account"
-3. Creates account with email (same email as guest purchase)
-4. Now can book sessions and access portal
-
-<Info>
-  Creating account after guest purchase doesn't automatically link past guest transactions. They're separate.
-</Info>
-
 ## Guest checkout flow
 
 <Steps>
@@ -219,7 +195,7 @@ They must create account separately:
 
     Clicks purchase or buy button.
   </Step>
-  <Step title="Guest enters email">
+  <Step title="Guest enters name & email">
     Checkout form asks for email address.
 
     No "create password" field appears.
@@ -235,60 +211,10 @@ They must create account separately:
     Guest receives email receipt.
 
     <Check>
-      **Purchase complete.** Guest paid, you received money, no account created.
+      **Purchase complete.** Guest paid, you received money, no account created
     </Check>
   </Step>
 </Steps>
-
-## Limitations of guest checkout
-
-**Guests cannot:**
-
-- View purchase history
-- Book sessions requiring portal access
-- Redeem credits
-- Access program content
-- Manage subscriptions
-- Update payment methods
-- View past receipts (must save email)
-
-**You cannot:**
-
-- Track guest as full client
-- Send portal notifications
-- Grant portal access
-- Issue credits to guest
-- See guest in client management
-
-<Warning>
-  Guest checkout is one-way transaction only. For any ongoing relationship, clients need full accounts.
-</Warning>
-
-## Best practices
-
-**Use guest checkout for:**
-
-- Products sold to general public
-- One-time purchases with no follow-up
-- Merchandise or physical goods
-- Events open to non-clients
-
-**Don't use guest checkout for:**
-
-- Core coaching services
-- Anything requiring credits
-- Subscriptions or memberships
-- Session bookings
-
-**Consider hybrid approach:**
-
-- Enable guest checkout on merchandise products
-- Disable guest checkout on session products
-- Let clients choose which products allow guests
-
-<Tip>
-  Most coaches disable guest checkout on primary coaching products. Enable only for specific public-facing offerings.
-</Tip>
 
 ## Guest vs. account checkout comparison
 
@@ -303,77 +229,13 @@ They must create account separately:
 | **Programs**         | No                       | Yes                     |
 | **Best for**         | One-time sales           | Ongoing services        |
 
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Guest checkout enabled but clients still must create account">
-    **Check:**
-
-    - Product has guest checkout toggled ON
-    - Product is published (not draft)
-    - Browser cache cleared
-
-    If still requiring account, contact support.
-  </Accordion>
-  <Accordion title="Guest purchased but can't access program content">
-    **This is expected behavior.**
-
-    Guest checkout doesn't grant portal access. Guests can't access programs even if they purchased.
-
-    **Solutions:**
-
-    - Disable guest checkout for program products
-    - Require account creation for program access
-    - Guest must create account separately to access content
-  </Accordion>
-  <Accordion title="Want to find guest's purchase">
-    **Check Transactions page:**
-
-    - Search by email address
-    - Look for transaction date
-    - Guest purchases labeled with email, not client name
-
-    Guest won't appear in client list - only in transactions.
-  </Accordion>
-  <Accordion title="Guest wants to book session but didn't create account">
-    **Guest must create account to book:**
-
-    Direct them to:
-
-    1. Your booking page
-    2. "Sign Up" or "Create Account"
-    3. Use same email from guest purchase
-    4. Now can book sessions
-
-    Previous guest purchase won't automatically link to new account.
-  </Accordion>
-</AccordionGroup>
-
-## Refunds for guest purchases
-
-**Process same as regular refunds:**
-
-1. Find transaction in Transactions page
-2. Click transaction
-3. Issue refund
-
-**Guest notification:**
-
-- Refund confirmation sent to email
-- Money returns to original payment method
-- Guest doesn't need account to receive refund
-
-[Learn about issuing refunds →](/payments/issuing-refunds)
-
 ## Next steps
 
-1. [Product Builder reference](/payments/product-builder-reference) - Complete Product Builder guide
-2. [Processing fees](/payments/processing-fees) - Configure who pays Stripe fees
-3. [Creating products](/payments/creating-first-product) - Build your first product
+1. [Product Builder](/payments/product-builder) - Complete Product Builder guide
+2. [Processing fees](/payments/processing-fee) - Configure who pays Stripe fees
 
 ## Related articles
 
-- [Product Builder: Complete Reference](/payments/product-builder-reference)
-- [Creating Your First Product](/payments/creating-first-product)
 - [Processing Fees Configuration](/payments/processing-fees)
 - [Revenue Sharing](/payments/revenue-sharing)
+- [Learn about issuing refunds](/payments/issuing-refunds)
