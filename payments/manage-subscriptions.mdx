@@ -28,10 +28,6 @@ Two ways to cancel a subscription:
     5. Subscription status changes to "Canceled" on end date
 
     **When to use:** Default cancellation method. Fair to client who already paid for current period.
-
-    <Frame>
-      ![Cancel at period end option](/images/payments/cancel-at-period-end.png)
-    </Frame>
   </Tab>
   <Tab title="Cancel immediately">
     **Instant termination**
@@ -58,13 +54,13 @@ Two ways to cancel a subscription:
 
 <Steps>
   <Step title="Find the subscription">
-    Go to **Payments → Subscriptions** and click the subscription to cancel.
+    Go to **Payments → Subscriptions** and click the **Open** under the source column to redirect to Stripe.
   </Step>
   <Step title="Click Cancel">
-    Scroll to Actions section and click **Cancel Subscription** button.
+    Click **Action** button and click **Cancel Subscription** button.
 
     <Frame>
-      ![Cancel subscription button location](/images/payments/cancel-subscription-button.png)
+      ![Cancel Sub Pn](/images/cancel-sub.png)
     </Frame>
   </Step>
   <Step title="Choose cancellation timing">
@@ -115,13 +111,15 @@ Issue full or partial refund for subscription charges.
 
 <Steps>
   <Step title="Open subscription">
-    Payments → Subscriptions → Click subscription
+    Payments → Subscriptions → Click **Open** under Source column
   </Step>
-  <Step title="Find payment to refund">
+  <Step title="Find transaction to refund">
+    Scroll to invoices and click most recent invoice.
+
     Scroll to Payment History section. Locate the charge to refund.
   </Step>
   <Step title="Click Refund">
-    Click refund icon or button next to the payment.
+    Click Refund payment button next to the payment.
   </Step>
   <Step title="Choose refund amount">
     **Full refund:** Return entire payment amount
@@ -129,7 +127,7 @@ Issue full or partial refund for subscription charges.
     **Partial refund:** Enter specific dollar amount to refund
 
     <Tip>
-      For partial period cancellations, calculate prorated amount. Example: $200/month, cancel on day 15 = refund $100.
+      For partial period cancellations, calculate prorated amount. Example: 200/month, cancel on day 15 = refund 100.
     </Tip>
   </Step>
   <Step title="Decide on subscription status">
@@ -154,47 +152,16 @@ Issue full or partial refund for subscription charges.
 
 Client needs to update their card for future charges.
 
-<Tabs>
-  <Tab title="Send update link">
-    **You initiate from CoachIQ**
+**Client updates from their portal**
 
-    <Steps>
-      <Step title="Open subscription">
-        Payments → Subscriptions → Click subscription
-      </Step>
-      <Step title="Click Update Payment Method">
-        Button in Actions section generates secure link.
-      </Step>
-      <Step title="Copy and send link">
-        Send link to client via:
+Instruct client:
 
-        - Inbox message
-        - Email
-        - Text message
+1. Log into Athlete Portal
+2. Click profile picture in top right hand corner
+3. Navigate to **Billing**
+4. Add or update card
 
-        Link expires in 24 hours for security.
-      </Step>
-      <Step title="Client updates card">
-        Client clicks link, enters new card details, submits.
-
-        Future charges use new card automatically.
-      </Step>
-    </Steps>
-  </Tab>
-  <Tab title="Client self-service">
-    **Client updates from their portal**
-
-    Instruct client:
-
-    1. Log into Athlete Portal
-    2. Click profile/settings
-    3. Navigate to Payment Methods
-    4. Add or update card
-    5. Set as default for subscription
-
-    No action needed from you.
-  </Tab>
-</Tabs>
+No action needed from you.
 
 ## Handling failed subscription payments
 
@@ -207,50 +174,7 @@ When subscription payment fails, status changes to Past Due.
 - Third retry: 7 days after second retry
 - Final attempt: 10 days after third retry
 
-**Your actions:**
-
-<Steps>
-  <Step title="Contact client immediately">
-    Don't wait for retries. Send message:
-
-    "Your recent payment for [subscription] failed. Please update your payment method to avoid service interruption: [payment update link]"
-  </Step>
-  <Step title="Send payment update link">
-    Use "Update Payment Method" action to generate secure link.
-  </Step>
-  <Step title="Monitor retry status">
-    Check subscription daily for successful retry or continued failures.
-  </Step>
-  <Step title="If all retries fail">
-    Subscription automatically cancels after final retry fails.
-
-    Client must resubscribe by purchasing product again.
-  </Step>
-</Steps>
-
 [Complete failed payment recovery guide →](/payments/failed-payments)
-
-## Subscription modifications
-
-**What you can do in CoachIQ:**
-
-- Cancel subscription (immediate or end of period)
-- Refund payments
-- Send payment update links
-- View billing history
-
-**What requires Stripe Dashboard:**
-
-- Change subscription price mid-cycle
-- Apply discount to specific billing period
-- Modify billing date
-- Pause subscription
-- Skip upcoming payment
-- Change billing interval
-
-<Info>
-  For advanced modifications, click **View in Stripe** in subscription details. Changes in Stripe sync automatically to CoachIQ.
-</Info>
 
 ## Common subscription management scenarios
 
@@ -368,10 +292,3 @@ When client wants to restart canceled subscription:
 1. [Handle failed payments](/payments/failed-payments) - Recover Past Due subscriptions
 2. [Issue refunds](/payments/issuing-refunds) - Process subscription refunds
 3. [View Subscriptions Dashboard](/payments/subscriptions-dashboard) - Monitor all subscriptions
-
-## Related articles
-
-- [Subscriptions Dashboard](/payments/subscriptions-dashboard)
-- [Failed Payments](/payments/failed-payments)
-- [Issuing Refunds](/payments/issuing-refunds)
-- [Product Types Explained](/payments/product-types)
