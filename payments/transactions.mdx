@@ -22,7 +22,7 @@ The Transactions dashboard displays every payment event in your coaching busines
 Every transaction that touches Stripe appears here with complete details.
 
 <Frame>
-  ![Transactions dashboard showing payment history](/images/payments/transactions-dashboard-overview.png)
+  ![Transaction Page Pn](/images/transaction-page.png)
 </Frame>
 
 ## Transaction list columns
@@ -40,69 +40,6 @@ Each transaction displays:
 
 Click any transaction row to view complete details.
 
-## Transaction types
-
-<Tabs>
-  <Tab title="One-Time">
-    **Single purchase transactions**
-
-    Appears when client:
-
-    - Buys single session product
-    - Purchases session package
-    - Pays for workshop or camp
-    - Completes form with payment
-
-    **Characteristics:**
-
-    - One charge only
-    - No recurring billing
-    - Immediate completion
-
-    <Frame>
-      ![One-time transaction in list](/images/payments/transaction-type-onetime.png)
-    </Frame>
-  </Tab>
-  <Tab title="Subscription">
-    **Recurring billing transactions**
-
-    Appears when:
-
-    - Initial subscription purchase
-    - Automatic renewal charge
-    - Subscription payment retry
-
-    **Characteristics:**
-
-    - Links to subscription ID
-    - Repeats on schedule
-    - Part of larger subscription relationship
-
-    <Tip>
-      Click transaction to see full subscription details and billing history.
-    </Tip>
-  </Tab>
-  <Tab title="Refund">
-    **Money returned to client**
-
-    Appears when you:
-
-    - Issue full refund
-    - Issue partial refund
-    - Process chargeback (shows as refund)
-
-    **Characteristics:**
-
-    - Negative amount (shows as -\$50.00)
-    - References original transaction
-    - Reduces total revenue
-
-    <Frame>
-      ![Refund transaction with negative amount](/images/payments/transaction-type-refund.png)
-    </Frame>
-  </Tab>
-</Tabs>
-
 ## Transaction status types
 
 **Succeeded** (green)
@@ -111,11 +48,15 @@ Click any transaction row to view complete details.
 - Money received in Stripe account
 - Client has access/credits
 
-**Failed** (red)
+**Blocked** (red)
 
 - Payment declined or unsuccessful
 - No money received
 - Client has no access/credits
+
+**Payout** (blue)
+
+- Shows the amount of money being sent from your Stripe ccount to your bank account
 
 **Refunded** (gray)
 
@@ -123,11 +64,14 @@ Click any transaction row to view complete details.
 - Shows as separate refund transaction
 - Original transaction remains visible
 
-**Pending** (yellow)
+**Processing Fee** (gray)
 
-- Payment processing
-- Rare status (most complete immediately)
-- Wait for final status update
+- Amount Stripe takes from your account per transaction
+
+**Requires Payment Method** (red)
+
+- Usually displayed when transaction wasn't completed
+- Ex: User goes through checkout but doesn't complete the process
 
 ## Filter and search transactions
 
@@ -135,31 +79,14 @@ Click any transaction row to view complete details.
 
 - All transactions
 - Succeeded only
-- Failed only
-- Refunded only
+- Past Due only
+- Blocked only
 
-**Filter by type:**
-
-- One-Time purchases
-- Subscription charges
-- Refunds
-
-**Search:** Type in search box to find transactions by:
-
-- Client name
-- Email address
-- Product name
-- Transaction amount
-
-**Date range:** Select start and end dates to view specific time period.
+**Filter by Product:** Click the product(s) from the drop down view
 
 <Frame>
-  ![Filter and search options for transactions](/images/payments/transactions-filters.png)
+  ![Transaction Product Filter Pn](/images/transaction-product-filter.png)
 </Frame>
-
-<Tip>
-  Combine filters for specific reports. Example: "Refunded + Last 30 days" shows all recent refunds.
-</Tip>
 
 ## Revenue metrics
 
@@ -178,18 +105,13 @@ Top of page displays key metrics:
 - This month
 - Custom date range
 
-**Refund total**
-
-- Total refunded in selected period
-- Shows revenue impact of refunds
-
 <Info>
   Revenue metrics reflect selected date range and filters. Adjust filters to see different calculations.
 </Info>
 
 ## View transaction details
 
-Click any transaction to open detailed view:
+Click Open under the Source column of the transaction to view on Stripe::
 
 **Transaction information:**
 
@@ -200,7 +122,7 @@ Click any transaction to open detailed view:
 
 **Client information:**
 
-- Client name and profile link
+- Client name
 - Email address
 - Payment method on file
 
@@ -208,7 +130,6 @@ Click any transaction to open detailed view:
 
 - Product name
 - Price charged
-- Credits issued (if applicable)
 
 **Payment details:**
 
@@ -220,12 +141,9 @@ Click any transaction to open detailed view:
 **Available actions:**
 
 - Issue refund (if not already refunded)
-- View in Stripe Dashboard
-- Resend receipt to client
-- View related subscription (if subscription charge)
 
 <Frame>
-  ![Detailed transaction view with all information](/images/products/transaction-detail-view.png)
+  ![Transcation Stripe Example Pn](/images/transcation-stripe-example.png)
 </Frame>
 
 ## Understanding transaction flow
@@ -256,35 +174,24 @@ Click any transaction to open detailed view:
   <Accordion title="Finding specific client payment">
     **Steps:**
 
-    1. Go to Transactions page
+    1. Go to Client page
     2. Use search box to enter client name or email
-    3. Click transaction to view details
+    3. Click their profile
+    4. Click Transaction Tab
     4. Verify amount, date, and product
 
     Use this to confirm client payments or answer billing questions.
   </Accordion>
-  <Accordion title="Calculating monthly revenue">
+  <Accordion title="Calculating revenue">
     **Steps:**
 
-    1. Filter by date range (first to last day of month)
+    1. Filter by date range (7 days, 30 days, 90 days, All Time)
     2. Note Total Revenue metric at top
-    3. Subtract Refund total if shown separately
-
-    Or export transactions and calculate in spreadsheet.
-  </Accordion>
-  <Accordion title="Viewing all refunds issued">
-    **Steps:**
-
-    1. Filter by Type: Refund
-    2. Select date range
-    3. Review list of all refunds
-
-    Total refunded amount displays at top.
   </Accordion>
   <Accordion title="Tracking failed payments">
     **Steps:**
 
-    1. Filter by Status: Failed
+    1. Filter by Status: Blocked
     2. Review list of unsuccessful charges
     3. Click transactions to see failure reasons
     4. Take recovery action for each
@@ -293,34 +200,12 @@ Click any transaction to open detailed view:
   </Accordion>
 </AccordionGroup>
 
-## Export transaction data
-
-Export transactions for accounting, reporting, or analysis:
-
-1. Apply desired filters (date range, status, type)
-2. Click **Export** button (if available)
-3. Choose format (CSV or Excel)
-4. Download file
-
-**Use exported data for:**
-
-- Accounting software import
-- Tax preparation
-- Revenue analysis
-- Custom reporting
-- Financial forecasting
-
-<Note>
-  Some accounting systems integrate directly with Stripe. Check if direct integration available before manual exports.
-</Note>
-
 ## Transactions vs. Stripe Dashboard
 
 **CoachIQ Transactions page:**
 
 - Shows payments related to CoachIQ products
 - Links to client profiles
-- Shows credits issued
 - Integrated with your business context
 
 **Stripe Dashboard:**
@@ -334,45 +219,6 @@ Export transactions for accounting, reporting, or analysis:
 <Info>
   Both show the same transactions but with different context. Use CoachIQ for day-to-day business, Stripe for detailed financial analysis.
 </Info>
-
-## Transaction timeline
-
-**Typical transaction lifecycle:**
-
-**Immediate (0-5 seconds):**
-
-- Client completes checkout
-- Transaction appears in Transactions list
-- Status updates to Succeeded or Failed
-
-**Within 24 hours:**
-
-- Transaction appears in Stripe Dashboard
-- Client receives receipt email
-- Credits issued (if applicable)
-
-**Within 2-5 business days:**
-
-- Funds become available in Stripe balance
-- Money ready for payout to bank account
-
-**Within 7-10 business days (first payout only):**
-
-- First payout to bank account
-- Subsequent payouts faster (1-2 business days)
-
-## What you can't do on Transactions page
-
-**Requires other tools:**
-
-- Modify completed transactions → Use Stripe Dashboard
-- Change transaction amounts → Issue refund and create new charge
-- Delete transactions → Transactions are permanent records
-- Merge duplicate charges → Contact Stripe support
-
-<Warning>
-  Transactions are immutable records. You can refund them, but you cannot edit or delete them.
-</Warning>
 
 ## Troubleshooting transaction issues
 
@@ -406,27 +252,10 @@ Export transactions for accounting, reporting, or analysis:
 
     Click transaction to see complete fee breakdown.
   </Accordion>
-  <Accordion title="Need to find transaction from months ago">
-    **Steps:**
-
-    1. Use date range filter for specific time period
-    2. Search by client name if known
-    3. Export all transactions and search in spreadsheet
-    4. Check Stripe Dashboard for more detailed history
-
-    Transactions never disappear - just need correct filters to find them.
-  </Accordion>
 </AccordionGroup>
-
-## Next steps
-
-1. [Issue refunds](/payments/issuing-refunds) - Process refunds for transactions
-2. [Handle failed payments](/payments/failed-payments) - Recover unsuccessful transactions
-3. [View revenue reports](/payments/revenue-tracking) - Analyze transaction data
 
 ## Related articles
 
 - [Issuing Refunds](/payments/issuing-refunds)
 - [Failed Payments](/payments/failed-payments)
 - [Subscriptions Dashboard](/payments/subscriptions-dashboard)
-- [Revenue Tracking](/payments/revenue-tracking)
