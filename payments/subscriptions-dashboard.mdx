@@ -135,7 +135,7 @@ Click any row to view full subscription details.
 
 ## View subscription details
 
-Click any subscription row to open detailed view:
+Click Open under the Source column of the subscription to view on Stripe:
 
 **Billing information:**
 
@@ -150,12 +150,6 @@ Click any subscription row to open detailed view:
 - Failed payment attempts
 - Amount paid to date
 
-**Credits issued:**
-
-- Credits granted each period
-- Current credit balance
-- Credit expiration settings
-
 **Subscription actions:**
 
 - Cancel subscription
@@ -164,7 +158,7 @@ Click any subscription row to open detailed view:
 - Issue refund for last payment
 
 <Frame>
-  ![Detailed subscription view with billing history](/images/payments/subscription-detail-view.png)
+  ![Stripe Sub Example Pn](/images/stripe-sub-example.png)
 </Frame>
 
 ## Understanding subscription lifecycle
@@ -174,16 +168,16 @@ Click any subscription row to open detailed view:
     Client purchases subscription product. Subscription appears as Active (or Trialing if trial configured).
   </Step>
   <Step title="First payment processes">
-    If no trial: Immediate charge. If trial: Charge after trial ends.
+    Immediate charge.
 
     Credits issued (if configured). Client can book sessions.
   </Step>
   <Step title="Automatic renewals">
     Card charges on schedule (monthly, quarterly, annually).
 
-    New credits issued each period. Client continues accessing services.
+    New credits issued each period (if configured). Client continues accessing services.
   </Step>
-  <Step title="Payment failure (optional)">
+  <Step title="Payment failure">
     If card declines: Status changes to Past Due. Stripe retries automatically over several days.
 
     Client retains access during retry period.
@@ -210,7 +204,7 @@ Click any subscription row to open detailed view:
   <Tab title="Past due subscription">
     **What you see:**
 
-    - Status: Past Due (yellow/orange)
+    - Status: Past Due (red)
     - Recent failed payment attempt
     - Stripe retry in progress
 
@@ -234,10 +228,14 @@ Click any subscription row to open detailed view:
     **What you see:**
 
     - Status: Trialing (blue)
-    - Trial end date displayed
     - No charges yet
+    - Clients have the same access as an Active subscription
 
     **What to do:** Nothing until trial ends. First charge processes automatically on trial end date.
+
+    <Note>
+      Trialing is currently only set manually as the coach or Admin from Stripe.
+    </Note>
   </Tab>
 </Tabs>
 
@@ -285,15 +283,8 @@ Use exported data for:
 
 For advanced subscription management, use Stripe Dashboard. [Learn about Stripe Dashboard →](/payments/stripe-dashboard-basics)
 
-## Next steps
-
-1. [View subscription details](/payments/subscription-details) - Deep dive on individual subscriptions
-2. [Manage subscriptions](/payments/managing-subscriptions) - Cancel, update, or modify subscriptions
-3. [Handle failed payments](/payments/failed-payments) - Recover past due subscriptions
-
 ## Related articles
 
-- [Subscription Details](/payments/subscription-details)
-- [Managing Subscriptions](/payments/managing-subscriptions)
+- [Managing Subscriptions](/payments/manage-subscriptions)
 - [Failed Payments](/payments/failed-payments)
 - [Product Types Explained](/payments/product-types)
