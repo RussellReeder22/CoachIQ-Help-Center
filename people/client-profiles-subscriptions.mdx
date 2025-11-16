@@ -1,0 +1,206 @@
+---
+title: "Subscriptions: Recurring Billing Status"
+description: "Track active memberships, canceled subscriptions, trial periods, and monthly recurring revenue per client"
+sidebarTitle: "Subscriptions"
+icon: "rotate"
+---
+
+<Info>
+  **Where to find this**: Client Profile → **Subscriptions** tab
+</Info>
+
+## What it shows
+
+All recurring memberships for this client with real-time status:
+
+**Summary metrics** (top of tab):
+
+- **Active** - Number of currently active subscriptions
+- **Canceled** - Number of canceled subscriptions
+- **Monthly Revenue** - Total recurring revenue from this client
+
+**Status filter tabs:**
+
+- All
+- Active
+- Canceled
+- Past Due
+- Trialing
+- Scheduled
+- Select... (dropdown for more statuses)
+
+<Frame>
+  ![Subscriptions tab showing active subscription](/images/subscriptions-tab-active.png)
+</Frame>
+
+---
+
+## Subscription entry details
+
+Each subscription shows:
+
+| Column      | What it shows                                  |
+| ----------- | ---------------------------------------------- |
+| **Date**    | When subscription started                      |
+| **Amount**  | Recurring charge amount (e.g., "\$0.00/month") |
+| **Status**  | Current billing status                         |
+| **Product** | Membership name                                |
+| **Source**  | How they subscribed (Admin = you added it)     |
+
+<Note>
+  **Status colors matter:**
+
+  - **Green "Active"** = Billing normally, everything good
+  - **Yellow "Past Due"** = Payment failed, needs attention
+  - **Gray "Canceled"** = No longer subscribing
+</Note>
+
+---
+
+## Subscription statuses explained
+
+<Tabs>
+  <Tab title="Active">
+    **Meaning**: Subscription is billing successfully every month.
+
+    **What happens**: Client retains access, auto-renews on billing date, credits replenish (if applicable).
+
+    **Your action**: None needed—everything is working.
+  </Tab>
+  <Tab title="Past Due">
+    **Meaning**: Payment failed, subscription at risk of canceling.
+
+    **What happens**: Client may lose access after grace period, needs payment method update.
+
+    **Your action**: Contact client immediately to update payment info.
+  </Tab>
+  <Tab title="Canceled">
+    **Meaning**: Subscription ended (by them or you).
+
+    **What happens**: No more billing, client loses access at end of current billing period.
+
+    **Your action**: None needed unless you want to win them back.
+  </Tab>
+  <Tab title="Trialing">
+    **Meaning**: In trial period before first charge.
+
+    **What happens**: Client has access, will be charged when trial ends (if not canceled).
+
+    **Your action**: Monitor trial end date, follow up to ensure conversion.
+  </Tab>
+  <Tab title="Scheduled">
+    **Meaning**: Subscription set to start in the future.
+
+    **What happens**: Not active yet, will activate on scheduled date.
+
+    **Your action**: Wait for start date or cancel if client changes mind.
+  </Tab>
+</Tabs>
+
+---
+
+## Common uses
+
+<AccordionGroup>
+  <Accordion title="Are they still a paying member?">
+    1. Look at **Active** count in summary (top)
+    2. If **Active = 1** (or more), yes they're subscribed
+    3. If **Active = 0**, check **Canceled** tab to see when they left
+
+    **Takes 2 seconds** to verify membership status.
+  </Accordion>
+  <Accordion title="How much recurring revenue from this client?">
+    Look at **Monthly Revenue** in the summary (top).
+
+    **Example**: "\$0" in the screenshot means no active subscriptions currently (or using different billing).
+
+    **Use case**: If Monthly Revenue = $125, this client contributes $1,500/year to your recurring revenue.
+  </Accordion>
+  <Accordion title="Why did their subscription cancel?">
+    1. Click **Canceled** status filter
+    2. Find the subscription entry
+    3. Check the date it canceled
+
+    **Common reasons** (not shown in tab, but good to know):
+
+    - Client canceled through their Portal
+    - Payment failed too many times (auto-canceled)
+    - You manually canceled it
+
+    **Next step**: Check Messages tab to see if they communicated why, or reach out.
+  </Accordion>
+  <Accordion title="When does their trial end?">
+    1. Click **Trialing** status filter
+    2. Check subscription date
+    3. Look at product details to see trial length
+
+    **Pro tip**: Message them 2 days before trial ends: "Hey! Your trial ends in 2 days. You'll be charged \$125 unless you cancel. Let me know if you have questions!"
+  </Accordion>
+  <Accordion title="Manually canceling their subscription">
+    **You can't do it from this tab.** To cancel:
+
+    1. Go to main **Payments** → **Subscriptions**
+    2. Find this client's subscription
+    3. Click cancel button
+
+    Or navigate to their subscription management in their Portal settings.
+
+    [Learn how to cancel subscriptions →](/payments/managing-subscriptions)
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## What you CAN'T do here
+
+Subscriptions tab is **view-only**. To take action:
+
+| Action Needed                 | Where to Do It                           |
+| ----------------------------- | ---------------------------------------- |
+| **Cancel subscription**       | Payments → Subscriptions → Cancel        |
+| **Change subscription price** | Payments → Products → Edit product       |
+| **Retry failed payment**      | Payments → Subscriptions → Retry billing |
+| **Refund past charges**       | Transactions tab → Refund                |
+
+---
+
+## Empty subscriptions tab?
+
+If you see no subscriptions, this client:
+
+- Has never subscribed to a membership
+- Only makes one-time purchases
+- Uses credit packages instead of recurring billing
+- Is on a free/complimentary plan
+
+**Next step**: Sell them on a subscription if recurring revenue is your goal.
+
+---
+
+## Pro tips
+
+**Watch "Past Due" closely**: These are at-risk members. Reach out within 24 hours of seeing this status. Most failed payments are accidental (expired card, insufficient funds) and easily fixable.
+
+**\$0 Monthly Revenue ≠ Not valuable**: Some clients buy large credit packs upfront instead of subscriptions. Check Transactions tab for their lifetime value.
+
+**Canceled ≠ Gone forever**: Many clients cancel, take a break, then re-subscribe. Keep them on your email list and reach out quarterly with offers.
+
+**Multiple active subscriptions?** Some clients have both a base membership AND add-on subscriptions (e.g., "Monthly Membership" + "Private Training Add-On"). Active count shows total.
+
+**Source = "Admin" means**: You manually added them to the subscription (no checkout). Common for staff, comp memberships, or special arrangements.
+
+---
+
+## Related tabs
+
+<CardGroup cols={3}>
+  <Card title="Transactions" icon="receipt" href="/people/client-profiles-transactions">
+    See payment history for these subscriptions
+  </Card>
+  <Card title="Products" icon="box" href="/people/client-profiles-products">
+    View which subscription products they own
+  </Card>
+  <Card title="Credits" icon="coins" href="/people/client-profiles-credits">
+    Credits renewed from subscriptions
+  </Card>
+</CardGroup>

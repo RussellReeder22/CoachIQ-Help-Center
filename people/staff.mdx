@@ -1,0 +1,372 @@
+---
+title: "Managing Your Coaching Staff"
+description: "Add coaches and admins to your team, control their access to platform features, and manage permissions for multi-coach operations"
+sidebarTitle: "Managing Staff"
+icon: "users-gear"
+---
+
+<Info>
+  **Where to find this**: People → Staff tab (Admin only)
+</Info>
+
+## What you'll accomplish
+
+Build your coaching team by adding staff members, controlling which platform features they can access, and managing their roles as your business grows.
+
+## Understanding staff roles
+
+CoachIQ has two staff roles with different permission levels:
+
+<Tabs>
+  <Tab title="Admin">
+    **Full platform access** - No restrictions
+
+    **What Admins can do:**
+
+    - Access every page and feature
+    - Manage staff (add, remove, change roles)
+    - Configure all settings
+    - View all financial data
+    - Control page blocking for Coaches
+
+    **When to use:**
+
+    - Business owner (you)
+    - Business manager or operations lead
+    - Anyone who needs complete access
+
+    <Tip>
+      **Pro tip**: Only assign Admin role to people you trust completely with financial access and business decisions.
+    </Tip>
+  </Tab>
+  <Tab title="Coach">
+    **Restricted access based on page blocks**
+
+    **What Coaches can do:**
+
+    - Access coaching features (Schedule, People, Content)
+    - Create schedulers and availability
+    - Book and manage sessions
+    - Message clients
+    - View assigned athletes
+    - **Limited by**: Page blocks set by Admin
+
+    **When to use:**
+
+    - Assistant coaches
+    - Part-time trainers
+    - Staff who only need session delivery access
+
+    **Access badge:**
+
+    - "Limited Access" = Coach with blocked pages
+    - Can't see or use blocked features at all
+  </Tab>
+</Tabs>
+
+---
+
+## Adding staff members
+
+<Steps>
+  <Step title="Navigate to Staff tab">
+    From the People section, click the **Staff** tab at the top.
+
+    <Note>
+      The Staff tab is only visible to Admin users.
+    </Note>
+  </Step>
+  <Step title="Click Add Staff">
+    In the top-right corner, click the **\+ Add Staff** button.
+
+    <Frame>
+      ![Add Staff button in Staff tab](/images/staff-add-button.png)
+    </Frame>
+  </Step>
+  <Step title="Enter email address">
+    Type the email address of the person you want to add and press Enter or click **Add Staff**.
+
+    <Frame>
+      ![Add Staff modal with email input](/images/staff-add-modal.png)
+    </Frame>
+    **What happens:**
+
+    - Staff member is immediately added to your organization
+    - They'll appear in both Staff tab AND Clients tab
+    - Default role: **Coach** (with Limited Access)
+    - No email is sent - you'll need to tell them they've been added
+  </Step>
+  <Step title="Tell them to log in">
+    Inform your new staff member:
+
+    "I've added you to our CoachIQ organization. Log in at **app.coachiq.io** with your email address. If you don't have a CoachIQ account, you'll be able to create one during login."
+
+    When they log in, CoachIQ automatically connects them to your organization and gives them access based on their role.
+  </Step>
+</Steps>
+
+---
+
+## Managing staff access (blocking pages)
+
+Control which platform features ALL coaches can access with universal page blocking.
+
+<Warning>
+  **Important**: Page blocks apply to ALL coaches equally, not individual staff members. Admins always have full access regardless of blocks.
+</Warning>
+
+<Steps>
+  <Step title="Open Staff Settings">
+    From the Staff tab, click **⚙️ Manage Staff Access** in the top-right corner.
+
+    <Frame>
+      ![Manage Staff Access button](/images/staff-manage-access-button.png)
+    </Frame>
+  </Step>
+  <Step title="Select pages to block">
+    In the "Block Access" dropdown, select pages you want to hide from all coaches.
+
+    **Available pages to block:**
+
+    - Website & App
+    - Inbox
+    - Schedule - Calendar
+    - Schedule - Schedulers
+    - Payments - Products
+    - Payments - Transactions
+    - Payments - Subscriptions
+    - Payments - Coupons
+    - People - Clients
+    - Content - Media
+    - Content - Programs
+    - Tools - Forms
+    - Tools - Automations
+
+    <Frame>
+      ![Block Access dropdown showing available pages](/images/staff-block-access-dropdown.png)
+    </Frame>
+  </Step>
+  <Step title="Save changes">
+    Click **Update Settings** to apply the blocks.
+
+    **What coaches see:**
+
+    - Blocked pages **completely disappear** from their navigation menu
+    - No grayed-out items, no error messages - just hidden
+    - They can only access pages you haven't blocked
+  </Step>
+</Steps>
+
+### Common blocking scenarios
+
+<Tabs>
+  <Tab title="Starter Coach (Jake) - First Assistant">
+    **Scenario**: Hiring first assistant coach who only delivers sessions
+
+    **Block:**
+
+    - ✅ Payments (all sections)
+    - ✅ Tools - Automations
+    - ✅ Website & App
+    - ✅ Tools - Forms
+
+    **Leave open:**
+
+    - ✅ Schedule (Calendar & Schedulers)
+    - ✅ People - Clients
+    - ✅ Inbox
+    - ✅ Content
+
+    **Why**: Assistant can book sessions, message clients, and access training content, but can't see revenue or change business settings.
+  </Tab>
+  <Tab title="Scaling Coach (Chris) - Multi-Coach Team">
+    **Scenario**: 3 coaches with different specialties, want them focused on delivery
+
+    **Block:**
+
+    - ✅ Payments - Transactions
+    - ✅ Payments - Subscriptions
+    - ✅ Payments - Coupons
+    - ✅ Tools - Automations
+    - ✅ Website & App
+
+    **Leave open:**
+
+    - ✅ Schedule (full access for availability management)
+    - ✅ People - Clients (view athlete details)
+    - ✅ Inbox (client communication)
+    - ✅ Content (program delivery)
+    - ✅ Payments - Products (see pricing, but not revenue)
+
+    **Why**: Coaches manage their own schedules and communicate with athletes, but don't see financial data or configure automations.
+  </Tab>
+  <Tab title="Facility Owner (Mike) - Tiered Staff">
+    **Scenario**: Lead coaches need more access than assistant coaches
+
+    **Option 1 - Make lead coaches Admins:**
+
+    - Lead coaches = Admin role (full access)
+    - Assistant coaches = Coach role with blocks
+
+    **Option 2 - Use minimal blocks:**
+
+    - Block only: Payments - Transactions, Payments - Subscriptions
+    - Leave everything else open
+    - Trust-based system for experienced staff
+
+    **Why**: At scale, having trusted lead coaches with Admin access simplifies operations. Block only sensitive financial data.
+  </Tab>
+</Tabs>
+
+---
+
+## Changing staff roles
+
+Promote coaches to admins or demote admins to coaches as your team evolves.
+
+<Steps>
+  <Step title="Find the staff member">
+    In the Staff tab, locate the person whose role you want to change.
+  </Step>
+  <Step title="Open their profile">
+    Click on their card to open their full profile (same as client profiles).
+
+    <Note>
+      Staff members appear in both the Staff tab and Clients tab with identical profiles.
+    </Note>
+  </Step>
+  <Step title="Change role">
+    In the **User Details** sidebar (right side), find the **Role** dropdown and change between:
+
+    - Admin
+    - Coach
+
+    <Frame>
+      ![Changing staff role in User Details](/images/staff-role-change.png)
+    </Frame>
+    **Effect is immediate:**
+
+    - **Coach → Admin**: Gains full access, bypasses all page blocks, "Limited Access" badge removed
+    - **Admin → Coach**: Subject to page blocks, "Limited Access" badge applied if blocks exist
+  </Step>
+</Steps>
+
+<Warning>
+  **Be careful**: Changing someone to Admin gives them immediate access to all financial data, settings, and the ability to manage other staff.
+</Warning>
+
+---
+
+## Staff profiles
+
+Staff members have the same profile structure as clients with all the same tabs.
+
+**What you can view:**
+
+- **All Activity** - Everything they've done in the platform
+- **Messages** - Conversation history
+- **Bookings** - Sessions they're coaching or attending (if they also train)
+- **Credits** - If they're both staff and a client
+- **Products** - Purchases (if they're also a customer)
+- **Transactions** - Revenue data (if applicable)
+- **Family** - Linked family members
+- **Media** - Content shared with them
+
+<Tip>
+  **Use case**: If a staff member is ALSO a client (e.g., a coach who also trains with you), they appear in both tabs and have activity in both capacities.
+</Tip>
+
+---
+
+## Removing staff members
+
+<Steps>
+  <Step title="Navigate to Clients tab">
+    Go to People → **Clients** (not Staff tab).
+
+    <Note>
+      Staff members appear in both tabs, but deletion only works from Clients tab.
+    </Note>
+  </Step>
+  <Step title="Find the staff member">
+    Locate the person you want to remove using search or filters.
+  </Step>
+  <Step title="Open their profile and delete">
+    Click on their card, then click the **Delete** button (typically in profile header or settings).
+
+    **What happens:**
+
+    - Removed from both Staff and Clients tabs
+    - Loses access to your organization immediately
+    - Cannot log in to your organization anymore
+    - Their created content (schedulers, bookings, messages) remains
+  </Step>
+</Steps>
+
+<Warning>
+  **Permanent action**: Deleting a staff member cannot be undone. If you want them back, you'll need to re-add them.
+</Warning>
+
+---
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I give different coaches different permissions?">
+    No - page blocks apply to ALL coaches universally. If you need different permission levels, promote trusted coaches to Admin or use a trust-based system where everyone has similar access.
+  </Accordion>
+  <Accordion title="What if my coach already has a CoachIQ account?">
+    No problem. When they log in, CoachIQ automatically connects them to your organization. They'll see your org in their account switcher (if they work for multiple orgs).
+  </Accordion>
+  <Accordion title="Do staff members get notified when they're added?">
+    No. CoachIQ doesn't send emails. You need to manually tell them they've been added and should log in at app.coachiq.io.
+  </Accordion>
+  <Accordion title="Can coaches see the Staff tab and other staff members?">
+    Only Admins can see the Staff tab. Coaches cannot view or manage other staff members.
+  </Accordion>
+  <Accordion title="What happens to bookings when I remove a coach?">
+    All past bookings remain intact with the coach's name attached. Future bookings assigned to that coach stay in the calendar. You'll need to manually reassign or cancel them.
+  </Accordion>
+  <Accordion title="Can someone be both staff AND a client?">
+    Yes! If you add a staff member who also trains with you, they appear in both tabs and have activity in both capacities. This is common for assistant coaches who also participate in training.
+  </Accordion>
+  <Accordion title="How many staff members can I add?">
+    This depends on your CoachIQ plan. Check your billing settings or contact support for your specific limit.
+  </Accordion>
+  <Accordion title="Can I temporarily disable a staff member without deleting them?">
+    No - there's no "deactivate" option. You must delete them to remove access. If they need temporary access removal, consider blocking all pages except one, but this affects ALL coaches.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Pro tips
+
+**Start restrictive, then open up**: When hiring your first assistant coach, block most pages initially. As they prove themselves, gradually grant more access rather than taking access away later.
+
+**Document your page blocks**: Keep a note of which pages you've blocked and why. This helps when onboarding new staff or troubleshooting access issues.
+
+**Admin role for partners only**: Only make someone an Admin if they're a true business partner. Assistant coaches rarely need Admin access.
+
+**Use role changes strategically**: Promote a coach to Admin temporarily if they need to handle something while you're away, then demote back to Coach after.
+
+**Test their access**: After adding a new coach, ask them to log in while you're available to help troubleshoot any access questions.
+
+---
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Client Profiles" icon="user" href="/people/client-profiles">
+    Understand how staff profiles work (identical to client profiles)
+  </Card>
+  <Card title="Multi-Coach Scheduling" icon="users" href="/scheduling/multi-coach-availability">
+    Assign multiple coaches to schedulers and manage team availability
+  </Card>
+  <Card title="Tags & Organization" icon="tags" href="/people/tags-filters">
+    Use tags to organize both clients and staff members
+  </Card>
+  <Card title="Settings - Team Permissions" icon="shield" href="/settings/team-permissions">
+    Advanced team management and permission settings
+  </Card>
+</CardGroup>
