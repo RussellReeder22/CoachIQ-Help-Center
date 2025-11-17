@@ -6,7 +6,7 @@ icon: "receipt"
 ---
 
 <Info>
-**Where to find this**: Client Profile → **Transactions** tab
+  **Where to find this**: Client Profile → **Transactions** tab
 </Info>
 
 ## What it shows
@@ -14,18 +14,20 @@ icon: "receipt"
 Complete financial history with this client:
 
 **Summary metrics** (top of tab):
+
 - **Total** - Number of transactions
 - **Revenue** - Total dollar amount collected
 - **Failed** - Number of failed payment attempts
 
 **Time range filters:**
+
 - 7 Days
 - 30 Days
 - 90 Days
 - All Time (default)
 
 <Frame>
-![Transactions tab showing revenue summary and time filters](/images/transactions-tab-summary.png)
+  ![Client Transactions Pn](/images/client-transactions.png)
 </Frame>
 
 ---
@@ -34,18 +36,18 @@ Complete financial history with this client:
 
 Filter by payment status to narrow results:
 
-| Filter | What it shows |
-|--------|---------------|
-| **All** | Every transaction (default) |
-| **Success** | Completed payments only |
-| **Past Due** | Failed payments that need attention |
-| **Blocked** | Payments blocked by fraud prevention |
-| **Payout** | Payments already transferred to your bank |
+| Filter       | What it shows                             |
+| ------------ | ----------------------------------------- |
+| **All**      | Every transaction (default)               |
+| **Success**  | Completed payments only                   |
+| **Past Due** | Failed payments that need attention       |
+| **Blocked**  | Payments blocked by fraud prevention      |
+| **Payout**   | Payments already transferred to your bank |
 
 **Plus a "Select..." dropdown** for additional status types if needed.
 
 <Tip>
-**Quick health check**: If you see failed payments in "Past Due", reach out to the client immediately to update their payment method.
+  **Quick health check**: If you see failed payments in "Past Due", reach out to the client immediately to update their payment method.
 </Tip>
 
 ---
@@ -54,16 +56,16 @@ Filter by payment status to narrow results:
 
 Each transaction row shows:
 
-| Column | What it shows |
-|--------|---------------|
-| **Date** | When payment occurred |
-| **Amount** | Dollar amount charged |
-| **Status** | Success, Past Due, etc. |
-| **Product** | What they paid for |
-| **Source** | How it was charged (Admin, subscription renewal) |
+| Column      | What it shows                                    |
+| ----------- | ------------------------------------------------ |
+| **Date**    | When payment occurred                            |
+| **Amount**  | Dollar amount charged                            |
+| **Status**  | Success, Past Due, etc.                          |
+| **Product** | What they paid for                               |
+| **Source**  | How it was charged (Admin, subscription renewal) |
 
 <Note>
-**Empty transactions list?** This client has never made a payment. They might have free access, manually granted products, or haven't purchased yet.
+  **Empty transactions list?** This client has never made a payment. They might have free access, manually granted products, or haven't purchased yet.
 </Note>
 
 ---
@@ -71,48 +73,36 @@ Each transaction row shows:
 ## Common uses
 
 <AccordionGroup>
-<Accordion title="How much revenue has this client generated?">
-1. Click **All Time** at the top
-2. Look at the **Revenue** number in the summary
+  <Accordion title="Did their payment go through this month?">
+    1. Click **30 Days** filter
+    2. Look for **Success** status transactions
+    3. Check amount matches their subscription price
 
-**Example**: "$397.51" means they've paid you nearly $400 total since joining.
+    **Quick verification** when client asks "Did you charge me?" → "Yes, \$125 on Sep 17."
+  </Accordion>
+  <Accordion title="Why did their payment fail?">
+    1. Click **Past Due** status filter
+    2. Find the failed transaction date
+    3. Check **Source** column (usually says subscription product name)
 
-**Use case**: Identifying your top-paying clients for VIP treatment or special offers.
-</Accordion>
+    **Next step**: Contact client → "Hey, your card was declined for your \$125 membership on Sep 17. Can you update your payment method?"
 
-<Accordion title="Did their payment go through this month?">
-1. Click **30 Days** filter
-2. Look for **Success** status transactions
-3. Check amount matches their subscription price
+    [Learn how to handle failed payments →](/payments/failed-payments)
+  </Accordion>
+  <Accordion title="Did I already refund them?">
+    1. Use **All** filter (show everything)
+    2. Look for negative amounts (refunds show as `-$10.00`)
+    3. Check date to confirm timing
 
-**Quick verification** when client asks "Did you charge me?" → "Yes, $125 on Sep 17."
-</Accordion>
+    **Verify refunds** before processing duplicates.
+  </Accordion>
+  <Accordion title="Track monthly recurring revenue from this client">
+    1. Click **30 Days**
+    2. Count successful subscription charges
+    3. Add up amounts
 
-<Accordion title="Why did their payment fail?">
-1. Click **Past Due** status filter
-2. Find the failed transaction date
-3. Check **Source** column (usually says subscription product name)
-
-**Next step**: Contact client → "Hey, your card was declined for your $125 membership on Sep 17. Can you update your payment method?"
-
-[Learn how to handle failed payments →](/payments/failed-payments)
-</Accordion>
-
-<Accordion title="Did I already refund them?">
-1. Use **All** filter (show everything)
-2. Look for negative amounts (refunds show as `-$10.00`)
-3. Check date to confirm timing
-
-**Verify refunds** before processing duplicates.
-</Accordion>
-
-<Accordion title="Track monthly recurring revenue from this client">
-1. Click **30 Days**
-2. Count successful subscription charges
-3. Add up amounts
-
-**Example**: If you see $125.00 success transaction every month, they're contributing $125/month recurring revenue.
-</Accordion>
+    **Example**: If you see \$125.00 success transaction every month, they're contributing \$125/month recurring revenue.
+  </Accordion>
 </AccordionGroup>
 
 ---
@@ -121,15 +111,15 @@ Each transaction row shows:
 
 Transactions tab is **view-only**. To take action:
 
-| Action Needed | Where to Do It |
-|---------------|----------------|
-| **Refund a payment** | Main Payments → Transactions → Refund button |
-| **Update payment method** | Client must do this in their Portal Settings |
-| **Cancel subscription** | Subscriptions tab → Cancel |
-| **Retry failed payment** | Main Payments → Subscriptions → Retry |
+| Action Needed             | Where to Do It                                |
+| ------------------------- | --------------------------------------------- |
+| **Refund a payment**      | Stripe                                        |
+| **Update payment method** | Client must do this in their Billing Settings |
+| **Cancel subscription**   | Stripe                                        |
+| **Retry failed payment**  | Stripe                                        |
 
 <Warning>
-**You cannot edit transactions** after they occur. Once processed, they're permanent records for accounting purposes.
+  **You cannot edit transactions** after they occur. Once processed, they're permanent records for accounting purposes.
 </Warning>
 
 ---
@@ -137,6 +127,7 @@ Transactions tab is **view-only**. To take action:
 ## Understanding "Source" column
 
 **Common sources you'll see:**
+
 - **Admin** - You manually charged them or added product
 - **Subscription product name** - Auto-charged from recurring billing
 - **Product name** - One-time purchase they made through checkout
@@ -146,30 +137,26 @@ Transactions tab is **view-only**. To take action:
 
 ## Pro tips
 
-**Track lifetime value (LTV)**: Use "All Time" + Revenue to see total client value. If someone has generated $2,000+ in revenue, they're a VIP—treat them accordingly.
-
 **Failed payment patterns**: If you see multiple "Past Due" entries over time, this client has chronic payment issues. Consider switching them to manual billing or requiring payment upfront.
 
 **Export for accounting**: While you can't export from the profile, you CAN export from main Payments → Transactions section and filter by this client's email.
 
 **Time filters are powerful**: Use "7 Days" to see just this week's activity, helpful for weekly revenue reviews.
 
-**Empty isn't bad**: Some of your best clients might have $0 in transactions if you manually granted them free access (staff, family, ambassadors).
+**Empty isn't bad**: Some of your best clients might have \$0 in transactions if you manually granted them free access (staff, family, ambassadors).
 
 ---
 
 ## Related tabs
 
 <CardGroup cols={3}>
-<Card title="Subscriptions" icon="rotate" href="/people/client-profiles-subscriptions">
-See active memberships driving recurring revenue
-</Card>
-
-<Card title="Products" icon="box" href="/people/client-profiles-products">
-What they've purchased (products view)
-</Card>
-
-<Card title="Payment Settings" icon="credit-card" href="/payments/overview">
-Manage payment processing settings
-</Card>
+  <Card title="Subscriptions" icon="rotate" href="/people/client-profiles/client-profiles-subscriptions">
+    See active memberships driving recurring revenue
+  </Card>
+  <Card title="Products" icon="box" href="/people/client-profiles/client-profiles-products">
+    What they've purchased (products view)
+  </Card>
+  <Card title="Payment Settings" icon="credit-card" href="/payments/product-overview">
+    Manage payment processing settings
+  </Card>
 </CardGroup>

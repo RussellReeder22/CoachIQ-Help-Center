@@ -6,7 +6,7 @@ icon: "box"
 ---
 
 <Info>
-**Where to find this**: Client Profile → **Products** tab
+  **Where to find this**: Client Profile → **Products** tab
 </Info>
 
 ## What it shows
@@ -18,14 +18,15 @@ Every product this client has ever purchased:
 - 🔑 **Access Codes** - Digital access products (e.g., program unlock codes)
 
 Each product card displays:
+
 - Product name
 - Product type badge (Subscription / One-Time)
-- Amount (e.g., "$10.00" or "$125.00/month")
+- Amount (e.g., "\$10.00" or "\$125.00/month")
 - Date created (when they purchased)
 - Purchase count indicator (● 1 = one purchase)
 
 <Frame>
-![Products tab showing product cards with filters](/images/products-tab-view.png)
+  ![Client Products Pn](/images/client-products.png)
 </Frame>
 
 ---
@@ -34,12 +35,12 @@ Each product card displays:
 
 Narrow the view to specific product types:
 
-| Filter | What it shows |
-|--------|---------------|
-| **All Products** | Everything (default) |
+| Filter               | What it shows                 |
+| -------------------- | ----------------------------- |
+| **All Products**     | Everything (default)          |
 | **One-Time Payment** | Only single-purchase products |
-| **Subscriptions** | Only recurring memberships |
-| **Access Codes** | Only digital access products |
+| **Subscriptions**    | Only recurring memberships    |
+| **Access Codes**     | Only digital access products  |
 
 **Sort dropdown**: Change from "Recent" to other sorting options (if available)
 
@@ -50,29 +51,27 @@ Narrow the view to specific product types:
 Give a client access to a product without them paying:
 
 <Steps>
-<Step title="Click + Add Product">
-Top-right corner of the Products tab.
-</Step>
-
-<Step title="Search for product">
-Type product name in the search bar.
-</Step>
-
-<Step title="Select product">
-Click the product you want to grant them.
-</Step>
-
-<Step title="Confirm">
-Client now has access to that product (appears in their Products tab).
-</Step>
+  <Step title="Click + Add Product">
+    Top-right corner of the Products tab.
+  </Step>
+  <Step title="Search for product">
+    Type product name in the search bar.
+  </Step>
+  <Step title="Select product">
+    Click the product you want to grant them.
+  </Step>
+  <Step title="Confirm">
+    Client now has access to that product (appears in their Products tab).
+  </Step>
 </Steps>
 
 <Note>
-**No payment collected** when you manually add products. Use this for:
-- Complimentary memberships
-- Staff/family member access
-- Makeup sessions after issues
-- Trial period access
+  **No payment collected** when you manually add products. Use this for:
+
+  - Complimentary memberships
+  - Staff/family member access
+  - Makeup sessions after issues
+  - Trial period access
 </Note>
 
 ---
@@ -80,37 +79,35 @@ Client now has access to that product (appears in their Products tab).
 ## Common uses
 
 <AccordionGroup>
-<Accordion title="What memberships do they have?">
-1. Click **Subscriptions** filter tab
-2. Look for products with "Active" status
-3. Check amount to see monthly billing
+  <Accordion title="What memberships do they have?">
+    1. Click **Subscriptions** filter tab
+    2. Look for products with "Active" status
+    3. Check amount to see monthly billing
 
-**Example**: "Hybrid Rising Stars/Elite 5 Credit Package - $125.00/month" = They're paying $125/month for this membership.
-</Accordion>
+    **Example**: "Hybrid Rising Stars/Elite 5 Credit Package - $125.00/month" = They're paying $125/month for this membership.
+  </Accordion>
+  <Accordion title="Did they buy the trial session?">
+    1. Click **One-Time Payment** filter tab
+    2. Look for trial product name (e.g., "Elite Class Trial Session")
+    3. Check date created to see when
 
-<Accordion title="Did they buy the trial session?">
-1. Click **One-Time Payment** filter tab
-2. Look for trial product name (e.g., "Elite Class Trial Session")
-3. Check date created to see when
+    **Use case**: Converting trials to paid members—see if they bought trial, then check Subscriptions to see if they upgraded.
+  </Accordion>
+  <Accordion title="Giving them free access to a new program">
+    1. Click **\+ Add Product**
+    2. Search for the program product
+    3. Select and confirm
 
-**Use case**: Converting trials to paid members—see if they bought trial, then check Subscriptions to see if they upgraded.
-</Accordion>
+    **They now have access** in their Athlete Portal without paying. Useful for beta testing or VIP perks.
+  </Accordion>
+  <Accordion title="How many times have they purchased this?">
+    Look at the **purchase count indicator** (●):
 
-<Accordion title="Giving them free access to a new program">
-1. Click **+ Add Product**
-2. Search for the program product
-3. Select and confirm
+    - ● 1 = Purchased once
+    - ● 2 = Purchased twice (or resubscribed)
 
-**They now have access** in their Athlete Portal without paying. Useful for beta testing or VIP perks.
-</Accordion>
-
-<Accordion title="How many times have they purchased this?">
-Look at the **purchase count indicator** (●):
-- ● 1 = Purchased once
-- ● 2 = Purchased twice (or resubscribed)
-
-Rare to see more than 1 for subscriptions (they just renew), common for one-time products (repeat buyers).
-</Accordion>
+    Rare to see more than 1 for subscriptions (they just renew), common for one-time products (repeat buyers).
+  </Accordion>
 </AccordionGroup>
 
 ---
@@ -119,15 +116,15 @@ Rare to see more than 1 for subscriptions (they just renew), common for one-time
 
 The Products tab is primarily **view-only**. To take action:
 
-| Action Needed | Where to Do It |
-|---------------|----------------|
-| **Cancel subscription** | Subscriptions tab → Cancel |
-| **Refund purchase** | Transactions tab → Refund |
-| **Change product price** | Payments → Products → Edit product |
-| **See payment history** | Transactions tab (financial details) |
+| Action Needed            | Where to Do It                       |
+| ------------------------ | ------------------------------------ |
+| **Cancel subscription**  | Stripe                               |
+| **Refund purchase**      | Stripe                               |
+| **Change product price** | Payments → Products → Edit product   |
+| **See payment history**  | Transactions tab (financial details) |
 
 <Note>
-Think of Products tab as **"What they own"**, not **"How they paid"**. For payment details, use Transactions tab.
+  Think of Products tab as **"What they own"**, not **"How they paid"**. For payment details, use Transactions tab.
 </Note>
 
 ---
@@ -135,11 +132,13 @@ Think of Products tab as **"What they own"**, not **"How they paid"**. For payme
 ## Empty products tab?
 
 If you see no products, this client has:
+
 - Never purchased anything
 - Only booked free sessions (no paid products)
 - Paid for sessions directly without products
 
 **Next step**: Either:
+
 - Manually add a product to give them access
 - Wait until they purchase something through checkout
 - Check if they're using a different account (Family tab)
@@ -148,11 +147,10 @@ If you see no products, this client has:
 
 ## Pro tips
 
-**"Load More Products" button**: If client has purchased many products over time, click to load older purchases.
-
 **Recent sort default**: Products tab sorts by "Date Created" newest first. If looking for something from a year ago, scroll or use search.
 
 **Product vs Transaction difference**:
+
 - **Products tab** = What they have access to
 - **Transactions tab** = Financial record of payments
 
@@ -165,15 +163,13 @@ A client can have a product (manual grant) without a transaction (no payment).
 ## Related tabs
 
 <CardGroup cols={3}>
-<Card title="Subscriptions" icon="rotate" href="/people/client-profiles-subscriptions">
-Active memberships and billing status
-</Card>
-
-<Card title="Transactions" icon="receipt" href="/people/client-profiles-transactions">
-Payment history and revenue tracking
-</Card>
-
-<Card title="Credits" icon="coins" href="/people/client-profiles-credits">
-Credit balance from products
-</Card>
+  <Card title="Subscriptions" icon="rotate" href="/people/client-profiles-subscriptions">
+    Active memberships and billing status
+  </Card>
+  <Card title="Transactions" icon="receipt" href="/people/client-profiles/client-profiles-transactions">
+    Payment history and revenue tracking
+  </Card>
+  <Card title="Credits" icon="coins" href="/people/client-profiles/client-profiles-credits">
+    Credit balance from products
+  </Card>
 </CardGroup>
