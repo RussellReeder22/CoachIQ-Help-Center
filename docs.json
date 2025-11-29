@@ -316,7 +316,11 @@
           {
             "group": "Power-Ups",
             "pages": [
-              "power-ups/index"
+              "power-ups/index",
+              "power-ups/additional-app-and-site",
+              "power-ups/custom-feature-request",
+              "power-ups/done-for-you-paid-ads",
+              "power-ups/personalized-app"
             ]
           }
         ]
