@@ -340,7 +340,13 @@
           {
             "group": "Guides",
             "pages": [
-              "guides/opening-a-facility"
+              "guides/index",
+              "guides/building-your-training-facility",
+              "guides/waivers-liability-legal-essentials",
+              "guides/onboarding-new-athletes",
+              "guides/pricing-your-services",
+              "guides/hiring-and-managing-coaches",
+              "guides/growing-your-coaching-business"
             ]
           }
         ]
