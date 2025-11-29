@@ -44,32 +44,10 @@
     }
   },
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Get Support",
-          "icon": "life-ring",
-          "href": "https://coachiq.com/support"
-        },
-        {
-          "anchor": "Office Hours",
-          "icon": "calendar",
-          "href": "https://coachiq.com/office-hours"
-        }
-      ]
-    },
     "tabs": [
       {
         "tab": "Help Center",
         "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "introduction",
-              "getting-started/index",
-              "getting-started/athlete-portal"
-            ]
-          },
           {
             "group": "Website Builder",
             "pages": [
@@ -146,6 +124,19 @@
                   "website/seo-marketing/website-seo-basics"
                 ]
               }
+            ]
+          },
+          {
+            "group": "Athlete Portal",
+            "pages": [
+              "athlete-portal/overview",
+              "athlete-portal/setup-design",
+              "athlete-portal/channels",
+              "athlete-portal/scheduling",
+              "athlete-portal/programs",
+              "athlete-portal/products-payments",
+              "athlete-portal/access-control",
+              "athlete-portal/mobile-app"
             ]
           },
           {
@@ -344,6 +335,18 @@
             "group": "Complete Workflows",
             "pages": [
               "flows/index"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Change log",
+        "icon": "clock-rotate-left",
+        "groups": [
+          {
+            "group": "Updates",
+            "pages": [
+              "changelog"
             ]
           }
         ]
