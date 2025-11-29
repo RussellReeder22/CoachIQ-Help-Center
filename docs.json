@@ -328,13 +328,13 @@
           {
             "group": "Complete Workflows",
             "pages": [
-              "complete-flows/index",
-              "complete-flows/camp-ticket-setup-flow",
-              "complete-flows/trial-session-onboarding-flow",
-              "complete-flows/package-purchase-first-booking-flow",
-              "complete-flows/add-scheduler-to-app-website",
-              "complete-flows/adding-another-coach",
-              "complete-flows/waiver-management-setup"
+              "flows/index",
+              "flows/camp-ticket-setup-flow",
+              "flows/trial-session-onboarding-flow",
+              "flows/package-purchase-first-booking-flow",
+              "flows/add-scheduler-to-app-website",
+              "flows/adding-another-coach",
+              "flows/waiver-management-setup"
             ]
           }
         ]
