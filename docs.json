@@ -49,6 +49,12 @@
         "tab": "Help Center",
         "groups": [
           {
+            "group": "CoachIQ Help Center",
+            "pages": [
+              "introduction"
+            ]
+          },
+          {
             "group": "Website Builder",
             "pages": [
               "website/overview",
@@ -129,14 +135,14 @@
           {
             "group": "Athlete Portal",
             "pages": [
-              "athlete-portal/overview",
-              "athlete-portal/setup-design",
+              "athlete-portal/understanding-your-athlete-portal",
+              "athlete-portal/app-builder-navigation-and-interface",
+              "athlete-portal/design-settings",
               "athlete-portal/channels",
-              "athlete-portal/scheduling",
-              "athlete-portal/programs",
-              "athlete-portal/products-payments",
-              "athlete-portal/access-control",
-              "athlete-portal/mobile-app"
+              "athlete-portal/schedule",
+              "athlete-portal/content",
+              "athlete-portal/products",
+              "athlete-portal/paywall-settings"
             ]
           },
           {
@@ -316,25 +322,25 @@
         ]
       },
       {
-        "tab": "Troubleshooting",
-        "icon": "wrench",
-        "groups": [
-          {
-            "group": "Common Issues",
-            "pages": [
-              "troubleshooting/index"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Flows",
+        "tab": "Complete Flows",
         "icon": "route",
         "groups": [
           {
             "group": "Complete Workflows",
             "pages": [
               "flows/index"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Business Guides",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/opening-a-facility"
             ]
           }
         ]
