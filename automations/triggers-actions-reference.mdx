@@ -1,267 +1,427 @@
 ---
-title: "Automation Playbook"
-description: "11 ready-to-use automations for leads, onboarding, retention, credits, and events"
-sidebarTitle: "Automation Playbook"
-icon: "book"
+title: "Triggers & Actions Reference"
+description: "Complete list of all automation triggers, conditions, actions, and dynamic fields"
+sidebarTitle: "Triggers & Actions Reference"
+icon: "list"
 ---
 
-These are the automations CoachIQ coaches use most. Find your goal, copy the setup, customize the message—you'll be up and running in minutes.
+This is your complete reference for building automations in CoachIQ. Use it to look up available options when you're in the automation builder.
 
 <Note>
-Several of these use **Scheduled Automations**, which run on a schedule (daily, weekly, monthly) instead of reacting to an event. If you're new to those, check out [Scheduled Automations](/automations/scheduled-automations) for a deeper explanation.
+**New to automations?** Start with [Build Your First Automation](/automations/build-your-first-automation) for a hands-on walkthrough.
 </Note>
 
 ---
 
-## Converting Leads & Trials
+## All Triggers
 
-Turn website visitors into trial bookers, and trial bookers into paying members.
-
-<AccordionGroup>
-
-<Accordion title="Website Lead → Trial Booking">
-
-**What it does**: When someone fills out your trial request form, automatically send them an email with a link to book their free session.
-
-| Trigger | Condition | Action |
-|---------|-----------|--------|
-| New Form | Is a specific form | Send an Email |
-
-**Setup**:
-
-1. **Trigger**: New Form
-2. **Condition**: Is a specific form → Select your trial request or contact form
-3. **Action**: Send an Email
-   - **To**: User from trigger
-   - **Subject**: `Your trial session at [Your Business Name]`
-   - **Attach Session**: Select your trial session
-
-**Message template**:
-```
-Thanks for your interest! Click below to book your FREE trial session:
-
-[Session link will be automatically included]
-
-See you soon,
-[Your Name]
-```
-
-<Tip>
-**Pro tip**: Add a second action to tag them as "Trial Lead" so you can follow up if they don't book.
-</Tip>
-
-</Accordion>
-
-<Accordion title="Welcome First-Time Trial Bookers">
-
-**What it does**: When someone books their very first session (a trial), send them a personal welcome message to get them excited.
-
-| Trigger | Conditions | Action |
-|---------|------------|--------|
-| New Booking | User's first booking ever = Yes | Send an In-App Message |
-| | Is for a specific session = Trial Session | |
-
-**Setup**:
-
-1. **Trigger**: New Booking
-2. **Conditions**: 
-   - User's first booking ever → Yes
-   - Is for a specific session → Select your trial session
-3. **Action**: Send an In-App Message
-   - **To**: User from trigger
-
-**Message template**:
-```
-Welcome! Excited for your trial session on [date]. See you soon! 🎉
-```
-
-<Tip>
-**Pro tip**: Keep this message short and warm. Save the detailed instructions for after they attend.
-</Tip>
-
-</Accordion>
-
-<Accordion title="Convert Trial Users Who Haven't Joined">
-
-**What it does**: Every week, check for people who attended a trial but haven't booked again in 7+ days—then send them a nudge to come back.
-
-| Trigger | Conditions | Action |
-|---------|------------|--------|
-| Scheduled Check | Has tag "Trial Attendee" | Send an In-App Message |
-| Once a week, Monday 9:00 AM | Days since last booking > 7 | |
-
-**Setup**:
-
-1. **Trigger**: Scheduled Check
-   - **Schedule**: Once a week on Monday at 9:00 AM
-2. **Conditions**:
-   - Has a specific tag → "Trial Attendee"
-   - Days since last booking is → Greater than 7 days
-3. **Action**: Send an In-App Message
-   - **To**: User from trigger
-   - **Attach Session**: Select your main session
-
-**Message template**:
-```
-Miss training with us? Come back this week—here's your schedule:
-
-[Session link will be automatically included]
-```
-
-<Tip>
-**Pro tip**: Make sure to add the "Trial Attendee" tag when someone completes their trial (you can automate this too using the Booking Completed trigger).
-</Tip>
-
-</Accordion>
-
-</AccordionGroup>
-
----
-
-## Welcoming New Members
-
-Make every new member feel like they made the right decision.
+Triggers determine **when** your automation runs. Each trigger has different conditions available to filter who it applies to.
 
 <AccordionGroup>
 
-<Accordion title="New Member Welcome">
+<Accordion title="New User">
 
-**What it does**: When someone purchases a subscription, automatically send a welcome email with booking instructions and tag them as an active member.
+Fires when a new user is added to your account.
 
-| Trigger | Condition | Actions |
-|---------|-----------|---------|
-| New Purchase | Is a subscription = Yes | 1. Send an Email |
-| | | 2. Add tag "Active Member" |
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Email contains | Text input | Filter by email domain or keyword |
+| Has phone number | Boolean | User has a phone number on file |
+| Is missing phone number | Boolean | User doesn't have a phone number |
 
-**Setup**:
+</Accordion>
 
-1. **Trigger**: New Purchase
-2. **Condition**: Is a subscription → Yes
-3. **Action 1**: Send an Email
-   - **To**: User from trigger
-   - **Subject**: `Welcome to the team, @User.FirstName!`
-   - **Attach Session**: Select your intro or main session
-4. **Action 2**: Add a Tag to a User
-   - **Tag**: "Active Member"
+<Accordion title="New Purchase">
 
-**Message template**:
-```
-You're officially part of the [Your Business Name] family! Here's how to book your first session:
+Fires when someone purchases any product.
 
-[Session link will be automatically included]
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Is a specific product | Dropdown | Only this product triggers the automation |
+| Is any product from list | Multi-select | Any of the selected products |
+| Is a subscription | Boolean | Product type is subscription |
+| Is a one-time purchase | Boolean | Product type is one-time |
+| Is an access code | Boolean | Product type is access code |
+| User has a specific tag | Dropdown | User must have this tag |
+| User doesn't have a specific tag | Dropdown | User must not have this tag |
+| User's first purchase ever | Boolean | This is the user's first purchase |
 
-Welcome aboard,
-[Your Name]
-```
+</Accordion>
+
+<Accordion title="New Booking">
+
+Fires when someone books a session.
+
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Is for a specific session | Dropdown | Only bookings for this session/scheduler |
+| User has a specific tag | Dropdown | User must have this tag |
+| User doesn't have a specific tag | Dropdown | User must not have this tag |
+| User's first booking ever | Boolean | This is the user's first booking |
+
+</Accordion>
+
+<Accordion title="New Form">
+
+Fires when someone submits a form.
+
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Is a specific form | Dropdown | Only submissions from this form |
+| User has a specific tag | Dropdown | User must have this tag |
+| User doesn't have a specific tag | Dropdown | User must not have this tag |
+
+</Accordion>
+
+<Accordion title="New User Tag Connection">
+
+Fires when a tag is added to a user.
+
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Tag added is | Dropdown | Only fires for this specific tag |
+
+</Accordion>
+
+<Accordion title="User Tag Connection Removed">
+
+Fires when a tag is removed from a user.
+
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Tag removed is | Dropdown | Only fires for this specific tag |
+
+</Accordion>
+
+<Accordion title="New Booking Cancellation">
+
+Fires when someone cancels a booking.
+
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Was for a specific session | Dropdown | Only cancellations for this session |
+| User has a specific tag | Dropdown | User must have this tag |
+| User doesn't have a specific tag | Dropdown | User must not have this tag |
+
+</Accordion>
+
+<Accordion title="Booking Completed">
+
+Fires when a booked session ends.
+
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Was for a specific session | Dropdown | Only this session/scheduler |
+| User has a specific tag | Dropdown | User must have this tag |
+| User doesn't have a specific tag | Dropdown | User must not have this tag |
+| Attendance status | Dropdown | Attended, No-show, or Late cancellation |
 
 <Tip>
-**Pro tip**: This is the automation from [Build Your First Automation](/automations/build-your-first-automation). If you already set that up, you're covered!
+Use the attendance status condition to send different messages to no-shows vs. attendees.
 </Tip>
 
 </Accordion>
 
-</AccordionGroup>
+<Accordion title="Subscription Cancelled">
 
----
+Fires when someone cancels their subscription.
 
-## Keeping Members Active
-
-Catch disengaged members before they cancel and keep your credit users booking sessions.
-
-<AccordionGroup>
-
-<Accordion title="Weekly Inactive Member Check">
-
-**What it does**: Every week, find members who haven't trained in 14+ days and send them a friendly nudge to book a session.
-
-| Trigger | Conditions | Action |
-|---------|------------|--------|
-| Scheduled Check | Days since last booking > 14 | Send an In-App Message |
-| Once a week, Sunday 6:00 PM | Has active subscription = Yes | |
-
-**Setup**:
-
-1. **Trigger**: Scheduled Check
-   - **Schedule**: Once a week on Sunday at 6:00 PM
-2. **Conditions**:
-   - Days since last booking is → Greater than 14 days
-   - Has active subscription → Yes
-3. **Action**: Send an In-App Message
-   - **To**: User from trigger
-   - **Attach Session**: Select your primary session
-
-**Message template**:
-```
-We miss you! It's been @User.DaysSinceLastBooking days since your last session. Come back this week?
-
-[Session link will be automatically included]
-```
-
-<Tip>
-**Pro tip**: Sunday evening is a great time for this—people are planning their week ahead.
-</Tip>
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Was for a specific product | Dropdown | Only this subscription product |
+| User has a specific tag | Dropdown | User must have this tag |
+| User doesn't have a specific tag | Dropdown | User must not have this tag |
 
 </Accordion>
 
-<Accordion title="Weekly Credit Expiration Reminder">
+<Accordion title="Booking Started">
 
-**What it does**: Every week, find members whose credits expire in less than 7 days and remind them to book before they lose them.
+Fires at the exact start time of a booking.
 
-| Trigger | Condition | Action |
-|---------|-----------|--------|
-| Scheduled Check | Days until credits expire < 7 | Send an In-App Message |
-| Once a week, Monday 9:00 AM | | |
-
-**Setup**:
-
-1. **Trigger**: Scheduled Check
-   - **Schedule**: Once a week on Monday at 9:00 AM
-2. **Condition**: Days until credits expire is → Less than 7 days
-3. **Action**: Send an In-App Message
-   - **To**: User from trigger
-   - **Attach Session**: Select any session
-
-**Message template**:
-```
-You have @User.CreditsExpiring credits expiring in @User.DaysUntilExpiration days! Book your sessions now:
-
-[Session link will be automatically included]
-```
-
-<Tip>
-**Pro tip**: The dynamic fields `@User.CreditsExpiring` and `@User.DaysUntilExpiration` make this message urgent and personal without any manual work.
-</Tip>
-
-</Accordion>
-
-<Accordion title="3-Month Member Milestone">
-
-**What it does**: On the 1st of each month, check for members hitting their 3-month milestone and send them a celebration message.
-
-| Trigger | Conditions | Actions |
-|---------|------------|---------|
-| Scheduled Check | Has tag "3-Month Member" | 1. Send an In-App Message |
-| Once a month, 1st at 10:00 AM | Has active subscription = Yes | 2. Remove tag "3-Month Member" |
-
-**Setup**:
-
-1. **Trigger**: Scheduled Check
-   - **Schedule**: Once a month on 1st at 10:00 AM
-2. **Conditions**:
-   - Has a specific tag → "3-Month Member"
-   - Has active subscription → Yes
-3. **Action 1**: Send an In-App Message
-   - **To**: User from trigger
-4. **Action 2**: Remove a Tag from a User
-   - **Tag**: "3-Month Member"
-
-**Message template**:
-```
-You've been training with us for 3 months! 🎉 How's your experience going? Hit reply and let me know!
-```
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Is for a specific session | Dropdown | Only this session/scheduler |
+| User has a specific tag | Dropdown | User must have this tag |
+| User doesn't have a specific tag | Dropdown | User must not have this tag |
 
 <Note>
-**How milestone tags work**: You'll need a system to add the "3-Month Member" tag when someone hits that milestone. Some coaches do this manually, others create an automation based on subscription duration. The automation then removes the tag so they don't get the message twice.
+This trigger executes at the booking's scheduled start time, not when someone checks in.
+</Note>
+
+</Accordion>
+
+<Accordion title="Scheduled Check">
+
+Runs on a schedule and finds all users matching your conditions. See [Scheduled Automations](/automations/scheduled-automations) for details.
+
+**Schedule Options**:
+
+| Schedule | Format |
+|----------|--------|
+| Every day | Select time (e.g., 9:00 AM) |
+| Once a week | Select day + time (e.g., Monday at 9:00 AM) |
+| Once a month | Select date + time (e.g., 1st at 10:00 AM) |
+
+**Available Conditions** (minimum 1 required):
+
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Has a specific tag | Dropdown | User has this tag |
+| Doesn't have a specific tag | Dropdown | User doesn't have this tag |
+| Has active subscription | Boolean | User is currently subscribed |
+| Does not have an active subscription | Boolean | User has no active subscription |
+| Subscription active for X days | Number | Subscribed for at least X days |
+| Has available credits | Boolean | User has at least 1 credit |
+| Days since last booking is > X | Number | User hasn't booked in X+ days |
+| Days until credits expire < X | Number | Credits expire within X days |
+| Credit count is X | Number | Less than, greater than, or equal to X |
+| Has upcoming booking | Dropdown | Today, this week, or no upcoming bookings |
+
+<Warning>
+At least one condition is required for scheduled automations.
+</Warning>
+
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+## All Actions
+
+Actions determine **what happens** when your automation runs. You can add multiple actions to a single automation.
+
+<AccordionGroup>
+
+<Accordion title="Send an Email">
+
+Sends an email to a user.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| To | Auto/Dropdown | User from trigger or select specific user |
+| Subject | Text | Supports dynamic fields |
+| Message | Rich text | Supports dynamic fields and formatting |
+| Attach Product | Dropdown | Optional - adds purchase link |
+| Attach Session | Dropdown | Optional - adds booking link |
+| Attach Form | Dropdown | Optional - adds form link |
+| Attach Media | Dropdown | Optional - adds file from Media Hub |
+
+</Accordion>
+
+<Accordion title="Send an SMS Message">
+
+Sends a text message to a user's phone.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| To | Auto/Dropdown | User from trigger or select specific user |
+| Message | Text | Supports dynamic fields (160 character limit) |
+| Attach Product | Dropdown | Optional - adds short purchase link |
+| Attach Session | Dropdown | Optional - adds short booking link |
+| Attach Form | Dropdown | Optional - adds short form link |
+
+<Note>
+SMS attachments are text links only—no images or files. A character counter shows remaining space.
+</Note>
+
+</Accordion>
+
+<Accordion title="Send an In-App Message">
+
+Sends a message to the user's inbox within CoachIQ.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| To | Auto/Dropdown | User from trigger or select specific user |
+| Message | Text | Supports dynamic fields |
+| Attach Product | Dropdown | Optional - adds purchase link |
+| Attach Session | Dropdown | Optional - adds booking link |
+| Attach Form | Dropdown | Optional - adds form link |
+
+</Accordion>
+
+<Accordion title="Send an Announcement">
+
+Posts an announcement visible to a group of users.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| To | Dropdown | All users, specific tag, or specific role |
+| Title | Text | Announcement headline |
+| Message | Rich text | Supports dynamic fields |
+| Attach Product | Dropdown | Optional - adds purchase link |
+| Attach Session | Dropdown | Optional - adds booking link |
+| Attach Form | Dropdown | Optional - adds form link |
+
+<Tip>
+Use announcements for broadcast messages (like weekly schedules) instead of individual messages.
+</Tip>
+
+</Accordion>
+
+<Accordion title="Add a Tag to a User">
+
+Adds a tag to the user for organization and targeting.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| User | Auto/Dropdown | User from trigger or select specific user |
+| Tag | Dropdown | Tag to add (select existing or create new) |
+
+</Accordion>
+
+<Accordion title="Remove a Tag from a User">
+
+Removes a tag from the user.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| User | Auto/Dropdown | User from trigger or select specific user |
+| Tag | Dropdown | Tag to remove |
+
+</Accordion>
+
+<Accordion title="Add Credits to a User">
+
+Adds session credits to the user's account.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| User | Auto/Dropdown | User from trigger or select specific user |
+| Number of credits | Number | How many credits to add (minimum 1) |
+| Credit Bank Target | Radio | Master Credits (works for any session) or Specific Product Bank |
+
+<Note>
+If you select a specific product bank and the user doesn't own that product, credits are added to Master Credits instead.
+</Note>
+
+</Accordion>
+
+<Accordion title="Redeem Credits from a User">
+
+Removes session credits from the user's account.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| User | Auto/Dropdown | User from trigger or select specific user |
+| Number of credits | Number | How many credits to redeem (minimum 1) |
+| Credit source | Dropdown | Master Credits or specific product bank |
+
+</Accordion>
+
+<Accordion title="Add a Product Purchase to a User">
+
+Grants a user access to a product without payment.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| User | Auto/Dropdown | User from trigger or select specific user |
+| Product | Dropdown | Product to grant |
+| Send confirmation | Boolean | Whether to send purchase confirmation email |
+
+</Accordion>
+
+<Accordion title="Remove Product Purchase from a User">
+
+Revokes a user's access to a product.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| User | Auto/Dropdown | User from trigger or select specific user |
+| Product | Dropdown | Product to remove |
+| Refund | Boolean | Whether to issue a refund |
+
+</Accordion>
+
+<Accordion title="Grant Program Access to a User">
+
+Gives a user access to a program.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| User | Auto/Dropdown | User from trigger or select specific user |
+| Program | Dropdown | Program to grant access to |
+| Access duration | Dropdown | Permanent, until specific date, or for X days |
+
+</Accordion>
+
+<Accordion title="Revoke Program Access from a User">
+
+Removes a user's access to a program.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| User | Auto/Dropdown | User from trigger or select specific user |
+| Program | Dropdown | Program to revoke |
+| Send notification | Boolean | Whether to notify the user |
+
+</Accordion>
+
+<Accordion title="Book User for Session">
+
+Automatically books a user into a session.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| User | Auto/Dropdown | User from trigger or select specific user |
+| Session | Dropdown | Session/scheduler to book |
+| Date/Time | Date/time picker | When to book the session |
+
+</Accordion>
+
+<Accordion title="Remove User from Session/Booking">
+
+Cancels a user's booking.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| Booking | Auto/Dropdown | Booking from trigger or select specific booking |
+| Refund credits | Boolean | Whether to refund credits used |
+
+</Accordion>
+
+<Accordion title="Wait / Delay">
+
+Pauses the automation before continuing to the next action.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| Duration | Number + Unit | Minutes, hours, days, or weeks |
+| Wait until | Date/time | Alternative: wait until specific date/time |
+
+**Continuation Conditions** (optional):
+
+| Condition | Description |
+|-----------|-------------|
+| Has booked a session | Continue only if user booked since automation started |
+| Hasn't booked a session | Continue only if user hasn't booked |
+| Has made a purchase | Continue only if user purchased since automation started |
+| Hasn't made a purchase | Continue only if user hasn't purchased |
+| Still has a specific tag | Continue only if user still has this tag |
+| No longer has a specific tag | Continue only if user no longer has this tag |
+| User hasn't replied to last message | Continue only if no reply received |
+
+<Note>
+If a continuation condition isn't met, the automation stops for that user.
+</Note>
+
+</Accordion>
+
+<Accordion title="Send to External Webhook">
+
+Sends data to an external URL for integrations.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| Webhook URL | Text | Must be HTTPS |
+| Method | Dropdown | POST or PUT |
+| Headers | Key-value pairs | Optional custom headers |
+| Body | JSON editor | Supports dynamic fields |
+| Retry on failure | Boolean | Whether to retry if request fails |
+
+<Note>
+The webhook payload automatically includes full trigger context (user data, event details, etc.).
 </Note>
 
 </Accordion>
@@ -270,170 +430,69 @@ You've been training with us for 3 months! 🎉 How's your experience going? Hit
 
 ---
 
-## Camps & Events
+## Dynamic Fields
 
-Streamline registration confirmations and pre-event communication.
+Dynamic fields let you personalize messages with real data. Insert them by typing `@` in any text field.
 
-<AccordionGroup>
+### User Fields
 
-<Accordion title="Camp Registration Confirmation">
+Available in **all automations**:
 
-**What it does**: When someone purchases a camp, automatically send a confirmation email and tag them for future camp communications.
+| Field | What It Inserts |
+|-------|-----------------|
+| `@User.FirstName` | User's first name |
+| `@User.LastName` | User's last name |
+| `@User.FullName` | User's full name |
+| `@User.Email` | User's email address |
+| `@User.Phone` | User's phone number |
 
-| Trigger | Condition | Actions |
-|---------|-----------|---------|
-| New Purchase | Is a specific product = [Camp] | 1. Send an Email |
-| | | 2. Add tag "Camp Attendee" |
+### Credit Fields
 
-**Setup**:
+Available in **Scheduled Check automations only**:
 
-1. **Trigger**: New Purchase
-2. **Condition**: Is a specific product → Select your camp product
-3. **Action 1**: Send an Email
-   - **To**: User from trigger
-   - **Subject**: `You're registered for camp!`
-4. **Action 2**: Add a Tag to a User
-   - **Tag**: "Camp Attendee"
+| Field | What It Inserts |
+|-------|-----------------|
+| `@User.CreditCount` | Total available credits |
+| `@User.CreditsExpiring` | Number of credits expiring soon |
+| `@User.CreditExpirationDate` | Date of next credit expiration |
+| `@User.DaysUntilExpiration` | Days until credits expire |
 
-**Message template**:
-```
-Can't wait to see @User.FirstName at camp! Check-in is at 9 AM on Day 1.
+### Booking Fields
 
-Questions? Just reply to this email.
+Available in **Scheduled Check automations only**:
 
-See you there!
-[Your Name]
-```
+| Field | What It Inserts |
+|-------|-----------------|
+| `@User.LastBookingDate` | Date of user's last booking |
+| `@User.DaysSinceLastBooking` | Days since last booking |
+| `@User.NextBookingDate` | Date of next upcoming booking |
+| `@User.BookingCountThisMonth` | Number of bookings this month |
 
-<Tip>
-**Pro tip**: Create a separate tag for each camp (e.g., "Summer Camp 2025") so you can send targeted updates.
-</Tip>
+### Other Fields
 
-</Accordion>
+Available in **all automations**:
 
-<Accordion title="Camp Week Prep Reminder">
-
-**What it does**: One week before camp starts, send registered families a prep email with packing list and schedule.
-
-| Trigger | Condition | Actions |
-|---------|-----------|---------|
-| Scheduled Check | Has tag "Camp Next Week" | 1. Send an Email |
-| Every day at 10:00 AM | | 2. Remove tag "Camp Next Week" |
-
-**Setup**:
-
-1. **Trigger**: Scheduled Check
-   - **Schedule**: Every day at 10:00 AM
-2. **Condition**: Has a specific tag → "Camp Next Week"
-3. **Action 1**: Send an Email
-   - **To**: User from trigger
-   - **Subject**: `Camp starts in 7 days! Here's what to bring 🎒`
-   - **Attach Form**: Select your camp info form (packing list, waiver, etc.)
-4. **Action 2**: Remove a Tag from a User
-   - **Tag**: "Camp Next Week"
-
-**Message template**:
-```
-Getting ready for camp! Here's your packing list and schedule:
-
-[Form link will be automatically included]
-
-See you soon!
-[Your Name]
-```
-
-<Note>
-**How to use this**: Add the "Camp Next Week" tag to all registered campers 7 days before camp starts. The automation will send the reminder and remove the tag so they only get it once.
-</Note>
-
-</Accordion>
-
-</AccordionGroup>
+| Field | What It Inserts |
+|-------|-----------------|
+| `@Today` | Current date |
+| `@CoachName` | Your name (from account settings) |
 
 ---
 
-## Weekly Operations
+## Quick Links
 
-Automate your recurring announcements and stay on top of your schedule.
+<CardGroup cols={3}>
 
-<AccordionGroup>
-
-<Accordion title="Weekly Schedule Release">
-
-**What it does**: Every Monday morning, announce that the weekly schedule is live and prompt members to book their sessions.
-
-| Trigger | Condition | Action |
-|---------|-----------|--------|
-| Scheduled Check | Has active subscription = Yes | Send an Announcement |
-| Once a week, Monday 8:00 AM | | |
-
-**Setup**:
-
-1. **Trigger**: Scheduled Check
-   - **Schedule**: Once a week on Monday at 8:00 AM
-2. **Condition**: Has active subscription → Yes
-3. **Action**: Send an Announcement
-   - **To**: Specific tag → "Active Members"
-   - **Title**: `This Week's Schedule is LIVE! 🗓️`
-   - **Attach Session**: Select your primary training session
-
-**Message template**:
-```
-Hey team! This week's sessions are ready to book. Grab your spots now!
-
-[Session link will be automatically included]
-```
-
-<Tip>
-**Pro tip**: Use an Announcement (not individual messages) so it appears once in your feed rather than spamming everyone's inbox.
-</Tip>
-
-</Accordion>
-
-<Accordion title="Daily Trial Alert for Coaches">
-
-**What it does**: Every morning, get a notification about any trial sessions happening today so you're prepared to convert.
-
-| Trigger | Conditions | Action |
-|---------|------------|--------|
-| Scheduled Check | Has upcoming booking = Has booking today | Send an In-App Message |
-| Every day at 7:00 AM | Has tag "Trial User" | |
-
-**Setup**:
-
-1. **Trigger**: Scheduled Check
-   - **Schedule**: Every day at 7:00 AM
-2. **Conditions**:
-   - Has upcoming booking → Has booking today
-   - Has a specific tag → "Trial User"
-3. **Action**: Send an In-App Message
-   - **To**: Specific user → Select yourself (the coach)
-
-**Message template**:
-```
-📋 Today's Trial Sessions: @User.FullName has a trial today.
-```
-
-<Note>
-**This one's different**: Most automations message your members. This one messages YOU—it's a daily briefing so you never forget about a trial.
-</Note>
-
-</Accordion>
-
-</AccordionGroup>
-
----
-
-## What's Next?
-
-<CardGroup cols={2}>
-
-<Card title="Scheduled Automations" icon="calendar" href="/automations/scheduled-automations">
-  Learn how scheduled automations work—the trigger behind credit reminders, inactive member checks, and weekly operations.
+<Card title="Build Your First Automation" icon="play" href="/automations/build-your-first-automation">
+  Step-by-step beginner guide
 </Card>
 
-<Card title="Triggers & Actions Reference" icon="list" href="/automations/triggers-actions-reference">
-  See every trigger, condition, action, and dynamic field available in CoachIQ automations.
+<Card title="Automation Playbook" icon="book" href="/automations/automation-playbook">
+  Ready-to-copy recipes
+</Card>
+
+<Card title="Scheduled Automations" icon="calendar" href="/automations/scheduled-automations">
+  Time-based automation guide
 </Card>
 
 </CardGroup>
