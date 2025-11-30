@@ -156,8 +156,7 @@
           },
           {
             "group": "Scheduling",
-            "pages": [
-              "scheduling/index",
+            "pages": [       
               "scheduling/overview",
               {
                 "group": "Schedulers",
