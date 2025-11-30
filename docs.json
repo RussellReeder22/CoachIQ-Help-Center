@@ -290,7 +290,11 @@
           {
             "group": "Automations",
             "pages": [
-              "automations/index"
+              "automations/what-are-automations",
+              "automations/build-your-first-automation",
+              "automations/triggers-actions-reference",
+              "automations/scheduled-automations",
+              "automations/automation-playbook"
             ]
           },
           {
