@@ -1,0 +1,165 @@
+---
+title: "Build Your First Automation"
+description: "Create a welcome email that sends automatically when someone joins—in under 5 minutes"
+sidebarTitle: "Build Your First Automation"
+icon: "play"
+---
+
+By the end of this guide, every new member will automatically receive a welcome email with instructions to book their first session. You'll also tag them as an "Active Member" so you can easily find them later.
+
+No templates, no shortcuts—we're building from scratch so you understand how it works.
+
+## What You're Building
+
+| Trigger | Condition | Actions |
+|---------|-----------|---------|
+| New Purchase | Is a subscription | 1. Send welcome email with booking link |
+| | | 2. Add "Active Member" tag |
+
+---
+
+## Step-by-Step Instructions
+
+<Steps>
+
+<Step title="Open the Automation Builder">
+From your dashboard, navigate to **Automations** and click **Create Automation**.
+
+You'll see a blank canvas with a prompt to choose your trigger.
+
+<Frame>
+  <img src="/images/automations/create-new-automation.png" alt="Create new automation screen" />
+</Frame>
+</Step>
+
+<Step title="Choose Your Trigger">
+Click **Select Trigger** and choose **New Purchase**.
+
+This trigger fires whenever someone buys any product—memberships, credit packs, camps, or one-time sessions.
+
+<Frame>
+  <img src="/images/automations/select-trigger.png" alt="Selecting the New Purchase trigger" />
+</Frame>
+</Step>
+
+<Step title="Add a Condition">
+We only want this automation to run for new members, not every purchase. Let's add a filter.
+
+Click **Add Condition** and select **Is a subscription**.
+
+Now this automation will only fire when someone purchases a subscription product—not one-time buys like camps or drop-in sessions.
+
+<Frame>
+  <img src="/images/automations/add-condition.png" alt="Adding the subscription condition" />
+</Frame>
+
+<Tip>
+Conditions are optional, but they help you target the right people. You can add multiple conditions to get more specific.
+</Tip>
+</Step>
+
+<Step title="Add Your First Action — Send Email">
+Click **Add Action** and select **Send an Email**.
+
+Fill in the fields:
+
+| Field | What to Enter |
+|-------|---------------|
+| **To** | User from trigger (this is automatic) |
+| **Subject** | `Welcome to the team, @User.FirstName!` |
+| **Message** | See template below |
+| **Attach Session** | Select your main training session |
+
+Here's a welcome email you can copy and paste:
+
+```
+Hey @User.FirstName,
+
+You're officially part of the team! 🎉
+
+Here's how to get started: book your first session using the link below. 
+If you have any questions, just reply to this email—I'm here to help.
+
+See you soon,
+[Your Name]
+```
+
+<Note>
+**Dynamic fields** like `@User.FirstName` automatically insert each member's actual name. Your email stays personal without extra work.
+</Note>
+
+<Frame>
+  <img src="/images/automations/send-email-action.png" alt="Configuring the send email action" />
+</Frame>
+</Step>
+
+<Step title="Add a Second Action — Add Tag">
+Let's also tag new members so you can target them with future automations.
+
+Click **Add Action** and select **Add a Tag to a User**.
+
+| Field | What to Enter |
+|-------|---------------|
+| **User** | User from trigger |
+| **Tag** | Select "Active Member" (or create a new tag) |
+
+Now every new subscriber automatically gets tagged, making it easy to send announcements or check engagement later.
+
+<Frame>
+  <img src="/images/automations/add-tag-action.png" alt="Adding a tag to the user" />
+</Frame>
+</Step>
+
+<Step title="Name and Activate">
+Give your automation a clear name like **New Member Welcome**.
+
+Click **Save** and toggle the automation **ON**.
+
+<Check>
+**That's it!** Your automation is now live. The next person who purchases a subscription will automatically receive your welcome email and get tagged as an Active Member.
+</Check>
+
+<Frame>
+  <img src="/images/automations/activate-automation.png" alt="Activating the automation" />
+</Frame>
+</Step>
+
+</Steps>
+
+---
+
+## Verify It's Working
+
+A few ways to confirm your automation is running:
+
+- **Check the automation log**: Most automations show a history of recent runs
+- **Make a test purchase**: Use a test account to subscribe and see if the email arrives
+- **Wait for your next signup**: You'll see it appear in the automation history
+
+---
+
+## What You Just Learned
+
+You now understand the three building blocks of every automation:
+
+- **Triggers** start automations when something happens (a purchase, booking, form submission)
+- **Conditions** filter who it applies to (only subscriptions, only first-time buyers)
+- **Actions** are what CoachIQ does automatically (send messages, add tags, manage credits)
+
+Every automation in CoachIQ—no matter how complex—uses this same pattern.
+
+---
+
+## What's Next?
+
+<CardGroup cols={2}>
+
+<Card title="Automation Playbook" icon="book" href="/automations/automation-playbook">
+  Browse ready-to-use automations for trial conversions, member retention, credit reminders, and more.
+</Card>
+
+<Card title="Scheduled Automations" icon="calendar" href="/automations/scheduled-automations">
+  Learn how to run automations on a schedule—like weekly check-ins for inactive members or credit expiration alerts.
+</Card>
+
+</CardGroup>
