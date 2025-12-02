@@ -58,17 +58,17 @@ No templates, no shortcuts—we're building from scratch so you understand how i
 
     Fill in the fields:
 
-    | Field              | What to Enter                           |
-    | ------------------ | --------------------------------------- |
-    | **To**             | User from trigger (this is automatic)   |
-    | **Subject**        | `Welcome to the team, @User.FirstName!` |
-    | **Message**        | See template below                      |
-    | **Attach Session** | Select your main training session       |
+    | Field              | What to Enter                                    |
+    | ------------------ | ------------------------------------------------ |
+    | **To**             | User from trigger (this is automatic)            |
+    | **Subject**        | `Welcome to the team, {{field.user.firstName}}!` |
+    | **Message**        | See template below                               |
+    | **Attach Session** | Select your main training session                |
 
     Here's a welcome email you can copy and paste:
 
     ```
-    Hey @User.FirstName,
+    Hey {{field.user.firstName}},
     
     You're officially part of the team! 🎉
     
