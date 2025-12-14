@@ -1,12 +1,498 @@
 ---
-title: "Settings & Configuration"
-description: "Configure your account, business information, integrations, and platform settings"
-sidebarTitle: "Settings"
+title: "Settings: Complete Guide"
+description: "Configure your account, organization, integrations, billing, and more from the CoachIQ Settings area."
+sidebarTitle: "Settings Overview"
 icon: "gear"
 ---
 
-# Settings & Configuration
+<Info>
+**Where to find this**: Click **Settings** in the bottom-left corner of your dashboard.
+</Info>
 
-This section covers account settings, business configuration, team permissions, API integrations, and technical settings.
+## Overview
 
-Documentation coming soon.
+The Settings area is your central hub for configuring everything about your CoachIQ account. From updating your personal profile to setting up integrations and managing billing, all your configuration options live here.
+
+## Settings sections at a glance
+
+<CardGroup cols={2}>
+  <Card title="Account" icon="user" href="#account">
+    Your personal profile and contact info
+  </Card>
+  <Card title="Organization" icon="building" href="#organization">
+    Business name, logo, currency, and domain
+  </Card>
+  <Card title="Groups" icon="users" href="#groups">
+    View all accounts you belong to
+  </Card>
+  <Card title="API Keys" icon="key" href="#api-keys">
+    Connect CoachIQ to Zapier
+  </Card>
+  <Card title="Webhooks" icon="webhook" href="#webhooks">
+    Set up advanced automations
+  </Card>
+  <Card title="Notifications" icon="bell" href="#notifications">
+    Control email and push alerts
+  </Card>
+  <Card title="SMS Number" icon="message-sms" href="#sms-number">
+    Set up your business texting number
+  </Card>
+  <Card title="Logs" icon="scroll" href="#logs">
+    View all platform activity
+  </Card>
+  <Card title="Billing" icon="credit-card" href="#billing">
+    Manage your payment methods
+  </Card>
+  <Card title="Stripe Portal" icon="stripe" href="#stripe-portal">
+    View products and invoices
+  </Card>
+  <Card title="Import People" icon="upload" href="#import-people">
+    Bulk upload athletes and clients
+  </Card>
+  <Card title="Import Bookings" icon="calendar-plus" href="#import-bookings">
+    Migrate existing appointments
+  </Card>
+</CardGroup>
+
+---
+
+## Account
+
+Your personal profile information that appears across all CoachIQ groups you belong to.
+
+### What you can update
+
+| Field | Description |
+|-------|-------------|
+| **Profile Photo** | Your avatar shown in messages and the dashboard |
+| **First Name** | Your first name |
+| **Last Name** | Your last name |
+| **Email** | Your login email and where notifications are sent |
+| **Phone Number** | Your contact number (with country code) |
+
+<Steps>
+<Step title="Navigate to Account">
+Go to **Settings → Account**.
+</Step>
+
+<Step title="Update your information">
+Click on any field to edit it. To change your photo, click **Upload photo** above your current avatar.
+</Step>
+
+<Step title="Save your changes">
+Click **Save Changes** to apply your updates.
+</Step>
+</Steps>
+
+<Tip>
+Use a professional headshot for your profile photo—it builds trust with athletes and appears in your Inbox conversations.
+</Tip>
+
+---
+
+## Organization
+
+Configure your business identity and branding across the platform.
+
+### Organization settings
+
+| Field | Description |
+|-------|-------------|
+| **Logo** | Your business logo (appears on your website and athlete portal) |
+| **Currency** | Default currency for all products and payments (e.g., USD, EUR, GBP) |
+| **Name** | Your organization's display name |
+| **Domain** | Your CoachIQ subdomain (e.g., `yourname.coachiq.io`) |
+| **Welcome URL** | Where new users are directed after joining |
+
+### Active Group settings
+
+| Field | Description |
+|-------|-------------|
+| **Name** | The name of your currently active group |
+| **URL Slug** | The URL path for this group |
+| **ReplyTo Email** | The email address replies go to when you send messages |
+
+<Steps>
+<Step title="Navigate to Organization">
+Go to **Settings → Organization**.
+</Step>
+
+<Step title="Upload your logo">
+Click **Upload logo** to add your business logo. Use a square image for best results.
+</Step>
+
+<Step title="Configure your settings">
+Fill in your organization name, select your currency, and customize your domain if needed.
+</Step>
+
+<Step title="Save your changes">
+Click **Save Changes** at the bottom of the page.
+</Step>
+</Steps>
+
+<Warning>
+Changing your currency after you've created products may cause display inconsistencies. Set your currency before building your product catalog.
+</Warning>
+
+---
+
+## Groups
+
+View all the CoachIQ accounts you're connected to, whether as an admin (staff) or as an athlete (user).
+
+### Understanding groups
+
+Groups show every CoachIQ account where you have access. You might be:
+
+- **Admin** on accounts you manage (your own coaching business or businesses where you're staff)
+- **User** on accounts where you're an athlete or client
+
+This is helpful if you coach for multiple organizations or if you're also training as an athlete with another coach.
+
+### Switching between groups
+
+Click on any group in the list to switch to that account. Your currently selected group shows **Selected** in green.
+
+<Note>
+The Groups list shows both "Staff Groups" (where you're an Admin) and "Athlete Groups" (where you're a User). This lets you quickly switch between coaching and training modes.
+</Note>
+
+---
+
+## API Keys
+
+Connect CoachIQ to external tools like Zapier to automate your workflows.
+
+### Available identifiers
+
+| Field | Description |
+|-------|-------------|
+| **Org ID** | Your unique organization identifier |
+| **Group ID** | Your unique group identifier |
+| **API Keys** | Generated keys for authentication |
+
+<Steps>
+<Step title="Navigate to API Keys">
+Go to **Settings → API Keys**.
+</Step>
+
+<Step title="Copy your IDs">
+Click **Copy** next to your Org ID or Group ID to copy them to your clipboard.
+</Step>
+
+<Step title="Create an API key">
+Click **+ New API Key** in the top-right corner to generate a new key for integrations.
+</Step>
+</Steps>
+
+<Tip>
+Use API keys to connect CoachIQ with Zapier. This enables automations like adding new CoachIQ users to your email list or syncing bookings with Google Sheets.
+</Tip>
+
+---
+
+## Webhooks
+
+Set up real-time data triggers for advanced automations and custom integrations.
+
+### What webhooks do
+
+Webhooks send data to external URLs whenever specific events happen in CoachIQ. This is useful for connecting to custom applications or services not available through standard integrations.
+
+### Creating a webhook
+
+<Steps>
+<Step title="Navigate to Webhooks">
+Go to **Settings → Webhooks**.
+</Step>
+
+<Step title="Click New Webhook">
+Click **+ New Webhook** in the top-right corner.
+</Step>
+
+<Step title="Configure your webhook">
+Fill in the following:
+
+| Field | Description |
+|-------|-------------|
+| **Webhook Name** | A descriptive name for this webhook |
+| **Method** | HTTP method (typically POST) |
+| **URL** | The endpoint URL that will receive the data |
+| **Headers** | Optional headers (Content-Type is pre-filled) |
+| **Triggers** | Events that fire this webhook |
+</Step>
+
+<Step title="Add triggers">
+Click **+ Add Trigger** and select which events should send data. Options include: New User, and more.
+</Step>
+
+<Step title="Create the webhook">
+Click **+ Create** to save and activate your webhook.
+</Step>
+</Steps>
+
+<Note>
+Webhooks are an advanced feature typically used by developers or when connecting to custom systems. If you're looking for simpler automations, check out the [Automations](/tools/automations) feature instead.
+</Note>
+
+---
+
+## Notifications
+
+Control which alerts you receive via email and push notifications.
+
+### Notification categories
+
+| Category | Triggers |
+|----------|----------|
+| **Bookings** | When a user makes or cancels a booking |
+| **Inbox** | When your group receives a new message |
+| **Payments** | When a user makes a purchase |
+| **People** | When a new user joins your group |
+| **Forms** | When a new form is submitted |
+
+### Notification channels
+
+Each category can be toggled independently for:
+
+- **Email** — Sent to your account email address
+- **Push** — Mobile notifications (if you have the CoachIQ app installed)
+
+<Steps>
+<Step title="Navigate to Notifications">
+Go to **Settings → Notifications**.
+</Step>
+
+<Step title="Toggle your preferences">
+Check or uncheck the boxes under **EMAIL** and **PUSH** for each notification type.
+</Step>
+</Steps>
+
+<Tip>
+We recommend keeping **Payments** and **People** notifications on so you're always aware of new revenue and new athletes joining your platform.
+</Tip>
+
+---
+
+## SMS Number
+
+Set up your dedicated business phone number for texting athletes through CoachIQ.
+
+### 10DLC Compliance
+
+CoachIQ uses Twilio for SMS messaging. To send text messages, you'll need to complete 10DLC (10-digit long code) registration, which is required by mobile carriers to reduce spam.
+
+<Steps>
+<Step title="Navigate to SMS Number">
+Go to **Settings → SMS Number**.
+</Step>
+
+<Step title="Select your business type">
+Choose whether you're registering as a **Sole Proprietor** or a **Business**.
+</Step>
+
+<Step title="Enter your preferred area codes">
+Add your primary area code and optionally a secondary area code. CoachIQ will try to assign you a number matching these codes.
+</Step>
+
+<Step title="Begin registration">
+Click **Begin** to start the 10DLC compliance process.
+</Step>
+</Steps>
+
+<Info>
+The 10DLC registration process typically takes 1-7 business days to complete. Once approved, you'll be able to send SMS messages to your athletes directly from the CoachIQ Inbox.
+</Info>
+
+---
+
+## Logs
+
+Monitor all activity across your CoachIQ account for the last 30 days.
+
+### What's tracked
+
+Logs capture actions across your platform, including:
+
+- User logins and profile changes
+- Admin actions (settings changes, automation edits)
+- Booking activity
+- SMS and notification events
+- Membership changes
+
+### Log details
+
+Each log entry shows:
+
+| Column | Description |
+|--------|-------------|
+| **Action** | What happened |
+| **Category** | Type of activity (Users, Admin, Phone, etc.) |
+| **IP** | IP address of the user |
+| **Time** | When it occurred |
+| **OS, Device, Browser** | Technical details |
+
+### Filtering logs
+
+Use the tabs at the top to filter by role: **All**, **Admin**, **Coach**, **Parent**, or **Athlete**.
+
+<Note>
+Logs are retained for **30 days**. If you need records beyond this period for compliance purposes, export them regularly.
+</Note>
+
+---
+
+## Billing
+
+Manage the payment methods on file for your CoachIQ subscription.
+
+### What you can do
+
+- View saved credit/debit cards
+- Set a default payment method
+- Add new payment methods
+- Remove old cards
+- Request subscription cancellation
+
+<Steps>
+<Step title="Navigate to Billing">
+Go to **Settings → Billing**.
+</Step>
+
+<Step title="Manage your cards">
+Your saved cards are listed with the last 4 digits visible. Click **Set as Default** to change your primary payment method, or click the trash icon to remove a card.
+</Step>
+
+<Step title="Add a new card">
+Click **Add Card** to save a new payment method.
+</Step>
+</Steps>
+
+<Warning>
+If you need to cancel your subscription, click **Let us know** in the Billing section. A team member will assist you with the cancellation process.
+</Warning>
+
+---
+
+## Stripe Portal
+
+View and manage your Stripe-connected products and invoices.
+
+<Note>
+The Stripe Portal is only visible after you've connected your Stripe account. If you haven't set up payments yet, see [Setting Up Stripe](/payments/stripe-setup).
+</Note>
+
+### What you'll see
+
+| Tab | Contents |
+|-----|----------|
+| **Products** | All products you've created in Stripe, with pricing and billing frequency |
+| **Invoices** | Invoice history from your Stripe account |
+
+### Filtering products
+
+Use the filters at the top to sort by:
+
+- **Status** — Active, archived, or all products
+- **Type** — View all product types
+
+Click the link icon next to any product to copy its direct URL for sharing.
+
+---
+
+## Import People
+
+Bulk upload athletes and clients using a CSV file.
+
+<Steps>
+<Step title="Navigate to Import People">
+Go to **Settings → Import People**.
+</Step>
+
+<Step title="Download the template">
+Click **Download our formatted CSV** to get the correct file format with required columns.
+</Step>
+
+<Step title="Fill in your data">
+Open the CSV in Excel or Google Sheets and add your people's information following the template format.
+</Step>
+
+<Step title="Upload your file">
+Drag and drop your completed CSV file into the upload area, or click to browse.
+</Step>
+</Steps>
+
+<Tip>
+Click **Need help?** in the top-right corner of the Import People page for additional guidance on formatting your CSV file.
+</Tip>
+
+---
+
+## Import Bookings
+
+Migrate existing appointments from another platform using a CSV file.
+
+<Steps>
+<Step title="Navigate to Import Bookings">
+Go to **Settings → Import Bookings**.
+</Step>
+
+<Step title="Download the template">
+Click **Download our formatted CSV** to get the correct file format.
+</Step>
+
+<Step title="Format your dates correctly">
+<Warning>
+**Important**: Don't use timezone abbreviations (PST, EST, etc.) in your dates. The system will use the timezone of your target scheduler.
+</Warning>
+</Step>
+
+<Step title="Upload your file">
+Drag and drop your completed CSV file, then click **Import X New Bookings** to process.
+</Step>
+</Steps>
+
+---
+
+## Common questions
+
+<AccordionGroup>
+<Accordion title="How do I change my password?">
+Password changes are handled through your email provider or authentication method. If you signed up with email, use the "Forgot Password" link on the login page.
+</Accordion>
+
+<Accordion title="Can I have multiple organizations?">
+Yes! You can be an Admin on multiple CoachIQ organizations. Switch between them using the **Groups** section in Settings, or use the organization dropdown in the top-left corner of your dashboard.
+</Accordion>
+
+<Accordion title="What's the difference between Org ID and Group ID?">
+Your **Org ID** identifies your overall CoachIQ organization. Your **Group ID** identifies a specific group within that organization. Most integrations need the Group ID.
+</Accordion>
+
+<Accordion title="Why can't I see the Stripe Portal?">
+The Stripe Portal only appears after you've connected a Stripe account. Go to **Payments** in the main navigation to set up your Stripe connection.
+</Accordion>
+
+<Accordion title="How long does SMS setup take?">
+The 10DLC compliance registration typically takes 1-7 business days. You'll receive a notification once your number is ready to use.
+</Accordion>
+</AccordionGroup>
+
+---
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Setting Up Payments" icon="credit-card" href="/payments/stripe-setup">
+    Connect Stripe and start accepting payments
+  </Card>
+  <Card title="Automations" icon="bolt" href="/tools/automations">
+    Create automated workflows without webhooks
+  </Card>
+  <Card title="Managing Your Team" icon="users" href="/people/staff">
+    Add coaches and staff to your organization
+  </Card>
+  <Card title="SMS Messaging" icon="comment-sms" href="/inbox/sms">
+    Send text messages to athletes
+  </Card>
+</CardGroup>
