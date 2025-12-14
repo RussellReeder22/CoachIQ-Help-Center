@@ -156,7 +156,8 @@
           },
           {
             "group": "Scheduling",
-            "pages": [       
+            "pages": [
+              "scheduling/index",
               "scheduling/overview",
               {
                 "group": "Schedulers",
@@ -280,10 +281,11 @@
           {
             "group": "Forms",
             "pages": [
-              "forms/index",
-              "forms/form-overview",
-              "forms/form-builder",
-              "forms/form-responses"
+              "forms/overview",
+              "forms/creating-forms",
+              "forms/collecting-payments-bookings",
+              "forms/sharing-forms",
+              "forms/responses-automations"
             ]
           },
           {
@@ -297,9 +299,15 @@
             ]
           },
           {
-            "group": "Tools",
+            "group": "Content",
             "pages": [
-              "tools/index"
+              "content/content-overview",
+              "content/media-overview",
+              "content/programs-overview",
+              "content/sharing-programs",
+              "content/lesson-overview",
+              "content/lesson-components",
+              "content/video-analysis"
             ]
           },
           {
