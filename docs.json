@@ -157,8 +157,8 @@
           {
             "group": "Scheduling",
             "pages": [
-              "scheduling/index",
               "scheduling/overview",
+              "scheduling/quick-setup",
               {
                 "group": "Schedulers",
                 "icon": "calendar-plus",
@@ -203,8 +203,7 @@
                   "scheduling/recurring-credit-memberships"
                 ]
               },
-              "scheduling/setting-up-payment-options",
-              "scheduling/quick-setup"
+              "scheduling/setting-up-payment-options"
             ]
           },
           {
