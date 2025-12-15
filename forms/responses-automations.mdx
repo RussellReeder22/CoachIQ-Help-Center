@@ -8,7 +8,7 @@ icon: "bolt"
 After athletes submit your forms, you need to see that data and act on it. This guide covers viewing responses, exporting data, and connecting forms to automations.
 
 <Info>
-**Where to find responses**: Open any form in the builder → click **Responses** in the top bar
+  **Where to find responses**: Open any form in the builder → click **Responses** in the top bar
 </Info>
 
 ## Viewing form responses
@@ -16,73 +16,70 @@ After athletes submit your forms, you need to see that data and act on it. This 
 Every submission is captured in your form's Responses tab.
 
 <Steps>
-<Step title="Open your form">
-Go to **Tools → Forms** and click on the form you want to review.
-</Step>
-
-<Step title="Click Responses">
-In the top bar, click **Responses** to see all submissions.
-</Step>
-
-<Step title="Browse submissions">
-You'll see a list of all responses with submission date and respondent info (if login was required).
-</Step>
-
-<Step title="View individual responses">
-Click any submission to see the complete response — every field and answer.
-</Step>
+  <Step title="Open your form">
+    Go to **Tools → Forms** and click on the form you want to review.
+  </Step>
+  <Step title="Click Responses">
+    In the top bar, click **Responses** to see all submissions.
+  </Step>
+  <Step title="Browse submissions">
+    You'll see a list of all responses with submission date and respondent info (if login was required).
+  </Step>
+  <Step title="View individual responses">
+    Click any submission to see the complete response — every field and answer.
+  </Step>
 </Steps>
 
 ### What you see per response
 
-| Data | Description |
-|------|-------------|
-| Submission date | When the form was completed |
-| Respondent | Name/email if login was required, anonymous otherwise |
-| All field answers | Every question and the athlete's response |
-| Connected actions | Payment made, session booked (if applicable) |
+| Data              | Description                                           |
+| ----------------- | ----------------------------------------------------- |
+| Submission date   | When the form was completed                           |
+| Respondent        | Name/email if login was required, anonymous otherwise |
+| All field answers | Every question and the athlete's response             |
+| Connected actions | Payment made, session booked (if applicable)          |
 
 ## Exporting responses
 
 Export your form data to CSV for analysis, reporting, or backup.
 
 <Steps>
-<Step title="Open Responses">
-Navigate to your form's **Responses** tab.
-</Step>
-
-<Step title="Click Export">
-Click the export button to download all responses as a CSV file.
-</Step>
-
-<Step title="Open in spreadsheet">
-Open the CSV in Excel, Google Sheets, or your preferred tool.
-</Step>
+  <Step title="Open Responses">
+    Navigate to your form's **Responses** tab.
+  </Step>
+  <Step title="Click Export">
+    Click the export button to download all responses as a CSV file.
+  </Step>
+  <Step title="Open in spreadsheet">
+    Open the CSV in Excel, Google Sheets, or your preferred tool.
+  </Step>
 </Steps>
 
 <Tip>
-**Export regularly for important forms.** Camp registrations, waivers, and lead lists are worth backing up outside CoachIQ.
+  **Export regularly for important forms.** Camp registrations, waivers, and lead lists are worth backing up outside CoachIQ.
 </Tip>
 
 ## How responses connect to People
 
 When you require Login/Signup on a form, submissions link to athlete profiles.
 
-| Login/Signup OFF | Login/Signup ON |
-|------------------|-----------------|
-| Response stored in form only | Response stored in form AND linked to profile |
-| No profile connection | Appears in athlete's activity on their People record |
-| Can't see who submitted (anonymous) | Know exactly which athlete submitted |
-| Contact Info fields capture data only | Contact Info fields sync to profile |
+| Login/Signup OFF                      | Login/Signup ON                                      |
+| ------------------------------------- | ---------------------------------------------------- |
+| Response stored in form only          | Response stored in form AND linked to profile        |
+| No profile connection                 | Appears in athlete's activity on their People record |
+| Can't see who submitted (anonymous)   | Know exactly which athlete submitted                 |
+| Contact Info fields capture data only | Contact Info fields sync to profile                  |
 
 ### Viewing form activity on a profile
 
 When login is required:
+
 1. Go to **People → Clients**
 2. Click on an athlete
 3. View their activity — form submissions appear in their history
 
 This is useful for:
+
 - Confirming a specific athlete signed a waiver
 - Seeing all forms an athlete has completed
 - Tracking engagement over time
@@ -93,46 +90,42 @@ Forms can trigger automations when submitted — sending messages, adding tags, 
 
 ### What you can do
 
-| Trigger | What happens |
-|---------|--------------|
-| Form submitted | Automation runs when any submission comes in |
-| Send message | Auto-send SMS or in-app message to the respondent |
-| Add tag | Automatically tag the athlete (e.g., "Lead", "Camp 2025", "Waiver Signed") |
-| Remove tag | Remove a tag (e.g., remove "Needs Waiver" after waiver submitted) |
-| Add credits | Assign session credits to the athlete |
+| Trigger        | What happens                                                               |
+| -------------- | -------------------------------------------------------------------------- |
+| Form submitted | Automation runs when any submission comes in                               |
+| Send message   | Auto-send SMS or in-app message to the respondent                          |
+| Add tag        | Automatically tag the athlete (e.g., "Lead", "Camp 2025", "Waiver Signed") |
+| Remove tag     | Remove a tag (e.g., remove "Needs Waiver" after waiver submitted)          |
+| Add credits    | Assign session credits to the athlete                                      |
 
 ### What you can't do
 
 <Warning>
-**Automations can't read specific field answers.** You can trigger an automation when a form is submitted, but you cannot create conditions based on what someone answered.
+  **Automations can't read specific field answers.** You can trigger an automation when a form is submitted, but you cannot create conditions based on what someone answered.
 
-For example, you can't build: "If they selected 'Instagram' for 'How did you hear about us?', then add tag 'Instagram Lead'."
+  For example, you can't build: "If they selected 'Instagram' for 'How did you hear about us?', then add tag 'Instagram Lead'."
 
-The trigger is submission — not field values.
+  The trigger is submission — not field values.
 </Warning>
 
 ## Setting up a form automation
 
 <Steps>
-<Step title="Go to Automations">
-Navigate to **Tools → Automations**.
-</Step>
-
-<Step title="Create new automation">
-Click to create a new automation.
-</Step>
-
-<Step title="Select trigger">
-Choose **Form Submitted** as your trigger, then select which form.
-</Step>
-
-<Step title="Add actions">
-Configure what happens: send message, add tag, remove tag, add credits, etc.
-</Step>
-
-<Step title="Activate">
-Save and activate your automation. It will now run every time that form is submitted.
-</Step>
+  <Step title="Go to Automations">
+    Navigate to **Tools → Automations**.
+  </Step>
+  <Step title="Create new automation">
+    Click to create a new automation.
+  </Step>
+  <Step title="Select trigger">
+    Choose **Form Submitted** as your trigger, then select which form.
+  </Step>
+  <Step title="Add actions">
+    Configure what happens: send message, add tag, remove tag, add credits, etc.
+  </Step>
+  <Step title="Activate">
+    Save and activate your automation. It will now run every time that form is submitted.
+  </Step>
 </Steps>
 
 ## Common form automation recipes
@@ -142,6 +135,7 @@ Save and activate your automation. It will now run every time that form is submi
 **Trigger:** Website lead form submitted
 
 **Actions:**
+
 1. Add tag "New Lead"
 2. Send SMS: "Thanks for your interest in training! Here's how to book your first session: [link]"
 
@@ -150,6 +144,7 @@ Save and activate your automation. It will now run every time that form is submi
 **Trigger:** Waiver form submitted
 
 **Actions:**
+
 1. Add tag "Waiver Signed"
 2. Remove tag "Needs Waiver"
 
@@ -158,6 +153,7 @@ Save and activate your automation. It will now run every time that form is submi
 **Trigger:** Camp registration form submitted
 
 **Actions:**
+
 1. Add tag "Summer Camp 2025"
 2. Send in-app message with camp details, schedule, and what to bring
 
@@ -166,77 +162,71 @@ Save and activate your automation. It will now run every time that form is submi
 **Trigger:** Evaluation feedback form submitted
 
 **Actions:**
+
 1. Add tag "Feedback Received"
 2. Send SMS: "Thanks for your feedback! We'd love a Google review if you have a minute: [link]"
 
 <Note>
-**Automations require Login/Signup on the form.** To send messages or add tags, the system needs to know who submitted. Anonymous submissions can't trigger personalized actions.
+  **Automations require Login/Signup on the form.** To send messages or add tags, the system needs to know who submitted. Anonymous submissions can't trigger personalized actions.
 </Note>
 
 ## Response analytics
 
 CoachIQ provides basic response tracking:
 
-| Available | Not available |
-|-----------|---------------|
-| Total response count | Completion rate |
-| Individual response details | Drop-off analytics |
-| Submission timestamps | Field-by-field analytics |
-| Export to CSV | Visual charts/graphs |
+| Available                   | Not available            |
+| --------------------------- | ------------------------ |
+| Total response count        | Completion rate          |
+| Individual response details | Drop-off analytics       |
+| Submission timestamps       | Field-by-field analytics |
+| Export to CSV               | Visual charts/graphs     |
 
 For deeper analysis, export your data and use external tools (Excel, Google Sheets, etc.).
 
 ## Tips for managing responses
 
 <AccordionGroup>
-<Accordion title="Check responses regularly">
-Don't let leads sit. Check your website form responses daily — those are potential customers waiting to hear from you.
-</Accordion>
-
-<Accordion title="Use automations to respond instantly">
-A same-day response beats a next-week response. Set up auto-messages so leads hear from you immediately, even if you're coaching.
-</Accordion>
-
-<Accordion title="Tag for segmentation">
-Use form automations to tag athletes by source, interest, or status. Later, you can message everyone with a specific tag.
-</Accordion>
-
-<Accordion title="Export before deleting">
-If you need to delete a form, export responses first. Once a form is deleted, responses are gone.
-</Accordion>
-
-<Accordion title="Require login for anything important">
-Waivers, registrations, onboarding — anything you need tied to a specific athlete should require login. Anonymous responses have limited utility.
-</Accordion>
+  <Accordion title="Check responses regularly">
+    Don't let leads sit. Check your website form responses daily — those are potential customers waiting to hear from you.
+  </Accordion>
+  <Accordion title="Use automations to respond instantly">
+    A same-day response beats a next-week response. Set up auto-messages so leads hear from you immediately, even if you're coaching.
+  </Accordion>
+  <Accordion title="Tag for segmentation">
+    Use form automations to tag athletes by source, interest, or status. Later, you can message everyone with a specific tag.
+  </Accordion>
+  <Accordion title="Export before deleting">
+    If you need to delete a form, export responses first. Once a form is deleted, responses are gone.
+  </Accordion>
+  <Accordion title="Require login for anything important">
+    Waivers, registrations, onboarding — anything you need tied to a specific athlete should require login. Anonymous responses have limited utility.
+  </Accordion>
 </AccordionGroup>
 
 ## Summary
 
-| Task | How to do it |
-|------|--------------|
-| View responses | Form → Responses tab |
-| Export data | Responses tab → Export button |
-| See responses on athlete profile | Requires Login/Signup enabled |
-| Trigger automation on submit | Tools → Automations → Form Submitted trigger |
-| Auto-tag new submissions | Automation with "Add Tag" action |
-| Auto-message new submissions | Automation with "Send Message" action |
+| Task                             | How to do it                                 |
+| -------------------------------- | -------------------------------------------- |
+| View responses                   | Form → Responses tab                         |
+| Export data                      | Responses tab → Export button                |
+| See responses on athlete profile | Requires Login/Signup enabled                |
+| Trigger automation on submit     | Tools → Automations → Form Submitted trigger |
+| Auto-tag new submissions         | Automation with "Add Tag" action             |
+| Auto-message new submissions     | Automation with "Send Message" action        |
 
 ## Related articles
 
 <CardGroup cols={2}>
-<Card title="What Are Forms?" icon="clipboard-list" href="/tools/forms/what-are-forms">
-Overview of forms and how they connect to your CoachIQ system
-</Card>
-
-<Card title="Creating & Customizing Forms" icon="hammer" href="/tools/forms/creating-forms">
-Build forms from templates or scratch — complete field reference
-</Card>
-
-<Card title="Collecting Payments & Bookings" icon="credit-card" href="/tools/forms/payments-and-bookings">
-Add products and schedulers to your form flow
-</Card>
-
-<Card title="Sharing Your Forms" icon="share" href="/tools/forms/sharing-forms">
-Get links, embed on websites, configure completion actions
-</Card>
+  <Card title="Forms Overview" icon="clipboard-list" href="/forms/overview">
+    Overview of forms and how they connect to your CoachIQ system
+  </Card>
+  <Card title="Creating & Customizing Forms" icon="hammer" href="/forms/creating-forms">
+    Build forms from templates or scratch — complete field reference
+  </Card>
+  <Card title="Collecting Payments & Bookings" icon="credit-card" href="/forms/payments-and-bookings">
+    Add products and schedulers to your form flow
+  </Card>
+  <Card title="Sharing Your Forms" icon="share" href="/forms/sharing-forms">
+    Get links, embed on websites, configure completion actions
+  </Card>
 </CardGroup>
