@@ -8,7 +8,7 @@ icon: "credit-card"
 Forms become powerful when you connect them to payments and scheduling. Instead of collecting info, then sending a payment link, then asking them to book — do it all in one step.
 
 <Info>
-**Where to find connections**: Open any form in the builder → click **Connections** in the top bar
+  **Where to find connections**: Open any form in the builder → click **Connections** in the top bar
 </Info>
 
 ## How connections work
@@ -22,7 +22,7 @@ Form Fields → Login/Signup → Payment → Booking → Complete
 The athlete fills out your questions first, then proceeds through each connected page before finishing.
 
 <Note>
-You control which connections to add. A simple lead form might have none. A camp registration might have all three.
+  You control which connections to add. A simple lead form might have none. A camp registration might have all three.
 </Note>
 
 ## Adding a product (collect payment)
@@ -30,62 +30,66 @@ You control which connections to add. A simple lead form might have none. A camp
 Use this when you want to collect a fee during form submission — registration fees, deposits, camp payments, or trial session charges.
 
 <Steps>
-<Step title="Open your form">
-Go to **Tools → Forms** and click on the form you want to edit.
-</Step>
+  <Step title="Open your form">
+    Go to **Tools → Forms** and click on the form you want to edit.
+  </Step>
+  <Step title="Click Connections">
+    In the top bar, click **Connections** to open the connections menu.
+  </Step>
+  <Step title="Select a product">
+    Choose the product you want to attach. This must be a product you've already created in **Payments → Products**.
 
-<Step title="Click Connections">
-In the top bar, click **Connections** to open the connections menu.
-</Step>
-
-<Step title="Select a product">
-Choose the product you want to attach. This must be a product you've already created in **Payments → Products**.
-
-The product name, price, and description will display to the athlete during checkout.
-</Step>
-
-<Step title="Save your form">
-Click **Update Form** to save. The payment page is now part of your form flow.
-</Step>
+    The product name, price, and description will display to the athlete during checkout.
+  </Step>
+  <Step title="Save your form">
+    Click **Update Form** to save. The payment page is now part of your form flow.
+  </Step>
 </Steps>
+
+<Frame>
+  ![Connected Products Forms](/images/connected-products-forms.png)
+</Frame>
 
 ### What the athlete sees
 
 After completing your form fields:
+
 1. They're taken to a payment page
 2. They see the product name, description, and price
 3. They enter payment details
 4. After payment, they continue to the next step (or completion)
 
 <Tip>
-**Create a dedicated product for each form use case.** Instead of a generic "Registration Fee", create "Summer Camp 2025 Registration" — clearer for athletes and easier for you to track.
+  **Create a dedicated product for each form use case.** Instead of a generic "Registration Fee", create "Summer Camp 2025 Registration" — clearer for athletes and easier for you to track.
 </Tip>
+
+<Frame>
+  ![Form Payment Athlete View](/images/form-payment-athlete-view.png)
+</Frame>
 
 ## Adding a scheduler (book a session)
 
 Use this when you want athletes to book a session as part of the form flow — common for evaluation bookings, trial sessions, or onboarding.
 
 <Steps>
-<Step title="Open your form">
-Go to **Tools → Forms** and click on the form you want to edit.
-</Step>
-
-<Step title="Click Connections">
-In the top bar, click **Connections** to open the connections menu.
-</Step>
-
-<Step title="Select a scheduler">
-Choose the scheduler you want to embed. This must be a scheduler you've already created in **Schedule → Schedulers**.
-</Step>
-
-<Step title="Save your form">
-Click **Update Form** to save. The booking calendar is now part of your form flow.
-</Step>
+  <Step title="Open your form">
+    Go to **Tools → Forms** and click on the form you want to edit.
+  </Step>
+  <Step title="Click Connections">
+    In the top bar, click **Connections** to open the connections menu.
+  </Step>
+  <Step title="Select a scheduler">
+    Choose the scheduler you want to embed. This must be a scheduler you've already created in **Schedule → Schedulers**.
+  </Step>
+  <Step title="Save your form">
+    Click **Update Form** to save. The booking calendar is now part of your form flow.
+  </Step>
 </Steps>
 
 ### What the athlete sees
 
 After completing previous steps:
+
 1. They see an embedded calendar with your available times
 2. They select a date and time
 3. After booking, they continue to completion
@@ -95,55 +99,58 @@ After completing previous steps:
 Use this when you want form submissions tied to athlete profiles in your People list.
 
 <Steps>
-<Step title="Open Connections">
-In your form builder, click **Connections** in the top bar.
-</Step>
-
-<Step title="Enable Login/Signup">
-Toggle on the login/signup requirement.
-</Step>
-
-<Step title="Save your form">
-Click **Update Form** to save.
-</Step>
+  <Step title="Open Connections">
+    In your form builder, click **Connections** in the top bar.
+  </Step>
+  <Step title="Enable Login/Signup">
+    Toggle on the login/signup requirement.
+  </Step>
+  <Step title="Save your form">
+    Click **Update Form** to save.
+  </Step>
 </Steps>
 
 ### What this enables
 
-| With Login/Signup OFF | With Login/Signup ON |
-|-----------------------|----------------------|
-| Anyone can submit anonymously | Athlete must create account or log in |
-| Data captured but not linked | Data syncs to their People profile |
+| With Login/Signup OFF                   | With Login/Signup ON                   |
+| --------------------------------------- | -------------------------------------- |
+| Anyone can submit anonymously           | Athlete must create account or log in  |
+| Data captured but not linked            | Data syncs to their People profile     |
 | Can't see submission on athlete profile | Form appears in their activity history |
-| No identity verification | You know exactly who submitted |
+| No identity verification                | You know exactly who submitted         |
 
 <Note>
-**For waivers, always require login.** You want the signed waiver attached to a specific athlete's profile — not floating anonymously in your responses.
+  **For waivers, always require login.** You want the signed waiver attached to a specific athlete's profile — not floating anonymously in your responses.
 </Note>
 
 ## Common connection combinations
 
 ### Lead capture form
+
 **Connections:** None
 
 Just collect info. No payment, no booking, no account required. Keep the barrier low for first contact.
 
 ### Trial session registration
+
 **Connections:** Login/Signup + Product (trial fee) + Scheduler
 
 Athlete creates account → pays trial fee → books their session. You get a qualified lead with payment commitment and a booking on your calendar.
 
 ### Camp registration
+
 **Connections:** Login/Signup + Product (camp fee)
 
 Athlete creates account → pays camp fee. No scheduling needed since camp dates are fixed. Their registration is tied to their profile.
 
 ### New athlete onboarding
+
 **Connections:** Login/Signup + Scheduler
 
 Athlete creates account → books first evaluation. No payment at this stage — you'll charge after the eval or via a separate product.
 
 ### Waiver collection
+
 **Connections:** Login/Signup only
 
 Athlete creates account → completes waiver. The signed waiver attaches to their profile. No payment or booking needed.
@@ -151,42 +158,43 @@ Athlete creates account → completes waiver. The signed waiver attaches to thei
 ## Viewing connected transactions and bookings
 
 ### Payments
+
 When an athlete pays via a form:
+
 - Transaction appears in **Payments → Transactions**
 - Shows the product, amount, athlete, and timestamp
 - Links to the form submission
 
 ### Bookings
+
 When an athlete books via a form:
+
 - Session appears on your **Calendar**
 - Shows in the athlete's booking history
 - Links to the form submission
 
 ### Form responses
+
 All submissions (with or without connections) appear in your form's **Responses** tab.
 
 ## Tips for connected forms
 
 <AccordionGroup>
-<Accordion title="Create products before building the form">
-You can only connect existing products. Build your registration fee or camp product first in Payments → Products, then add it to your form.
-</Accordion>
-
-<Accordion title="Create schedulers before building the form">
-Same logic — you can only connect existing schedulers. Set up your availability and scheduler first.
-</Accordion>
-
-<Accordion title="Test the full flow yourself">
-Before sharing, submit your own form. Go through every page — fields, login, payment (use test mode if available), and booking. Experience what your athletes will experience.
-</Accordion>
-
-<Accordion title="Keep form fields minimal when adding connections">
-Each connection adds a page. If your form already has 15 fields plus payment plus booking, that's a lot of steps. Consider what's truly essential.
-</Accordion>
-
-<Accordion title="Use login for any form you want tracked">
-Anonymous submissions work, but you lose the profile connection. For anything beyond casual lead capture, require login.
-</Accordion>
+  <Accordion title="Create products before building the form">
+    You can only connect existing products. Build your registration fee or camp product first in Payments → Products, then add it to your form.
+  </Accordion>
+  <Accordion title="Create schedulers before building the form">
+    Same logic — you can only connect existing schedulers. Set up your availability and scheduler first.
+  </Accordion>
+  <Accordion title="Test the full flow yourself">
+    Before sharing, submit your own form. Go through every page — fields, login, payment (use test mode if available), and booking. Experience what your athletes will experience.
+  </Accordion>
+  <Accordion title="Keep form fields minimal when adding connections">
+    Each connection adds a page. If your form already has 15 fields plus payment plus booking, that's a lot of steps. Consider what's truly essential.
+  </Accordion>
+  <Accordion title="Use login for any form you want tracked">
+    Anonymous submissions work, but you lose the profile connection. For anything beyond casual lead capture, require login.
+  </Accordion>
 </AccordionGroup>
 
 ## What you can't do
@@ -199,11 +207,10 @@ Anonymous submissions work, but you lose the profile connection. For anything be
 ## Next steps
 
 <CardGroup cols={2}>
-<Card title="Share Your Forms" icon="share" href="/tools/forms/sharing-forms">
-Get your link, embed on your website, and configure what happens after submission
-</Card>
-
-<Card title="Responses & Automations" icon="bolt" href="/tools/forms/responses-and-automations">
-View submissions, export data, and trigger automated actions
-</Card>
+  <Card title="Share Your Forms" icon="share" href="/tools/forms/sharing-forms">
+    Get your link, embed on your website, and configure what happens after submission
+  </Card>
+  <Card title="Responses & Automations" icon="bolt" href="/tools/forms/responses-and-automations">
+    View submissions, export data, and trigger automated actions
+  </Card>
 </CardGroup>
