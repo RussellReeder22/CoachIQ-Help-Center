@@ -283,9 +283,9 @@
             "pages": [
               "forms/overview",
               "forms/creating-forms",
-              "forms/collecting-payments-bookings",
+              "forms/payments-and-bookings",
               "forms/sharing-forms",
-              "forms/responses-automations"
+              "forms/responses-and-automations"
             ]
           },
           {
@@ -497,7 +497,7 @@
     { "source": "/tools/forms-overview/leveraging-forms-for-camps", "destination": "/forms/overview" },
     { "source": "/tools/forms-overview/athlete-onboarding-wavier-form", "destination": "/forms/overview" },
     { "source": "/tools/forms-overview/sharing-form-options", "destination": "/forms/sharing-forms" },
-    { "source": "/tools/forms-overview/add-payments-to-forms", "destination": "/forms/collecting-payments-bookings" },
+    { "source": "/tools/forms-overview/add-payments-to-forms", "destination": "/forms/payments-and-bookings" },
     { "source": "/tools/forms-overview/require-login-sign-up-to-forms", "destination": "/forms/overview" },
     { "source": "/tools/how-to-create-automations-in-coachiq", "destination": "/automations/what-are-automations" },
     { "source": "/tools/how-to-create-automations-in-coachiq/using-webhooks-in-coachiq", "destination": "/automations/triggers-actions-reference" },
