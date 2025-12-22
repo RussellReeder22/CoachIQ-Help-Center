@@ -432,50 +432,74 @@ The webhook payload automatically includes full trigger context (user data, even
 
 ## Dynamic Fields
 
-Dynamic fields let you personalize messages with real data. Insert them by typing `@` in any text field.
+Dynamic fields let you personalize messages with real data from your automations. Use the exact syntax shown below in any text field that supports dynamic fields.
+
+<Note>
+Copy and paste these fields exactly as shown, including the double curly braces `{{` and `}}`.
+</Note>
 
 ### User Fields
 
 Available in **all automations**:
 
-| Field | What It Inserts |
-|-------|-----------------|
-| `@User.FirstName` | User's first name |
-| `@User.LastName` | User's last name |
-| `@User.FullName` | User's full name |
-| `@User.Email` | User's email address |
-| `@User.Phone` | User's phone number |
-
-### Credit Fields
-
-Available in **Scheduled Check automations only**:
-
-| Field | What It Inserts |
-|-------|-----------------|
-| `@User.CreditCount` | Total available credits |
-| `@User.CreditsExpiring` | Number of credits expiring soon |
-| `@User.CreditExpirationDate` | Date of next credit expiration |
-| `@User.DaysUntilExpiration` | Days until credits expire |
+| Field | What It Inserts | Example Output |
+|-------|-----------------|----------------|
+| `{{field.user.email}}` | User's email address | john@example.com |
+| `{{field.user.firstName}}` | User's first name | John |
+| `{{field.user.lastName}}` | User's last name | Smith |
+| `{{field.user.phone}}` | User's phone number | (555) 123-4567 |
 
 ### Booking Fields
 
-Available in **Scheduled Check automations only**:
+Available in **booking-related automations**:
 
-| Field | What It Inserts |
-|-------|-----------------|
-| `@User.LastBookingDate` | Date of user's last booking |
-| `@User.DaysSinceLastBooking` | Days since last booking |
-| `@User.NextBookingDate` | Date of next upcoming booking |
-| `@User.BookingCountThisMonth` | Number of bookings this month |
+| Field | What It Inserts | Example Output |
+|-------|-----------------|----------------|
+| `{{field.booking.session.title}}` | Name of the booked session | Morning Training Session |
+| `{{field.user.booking.days_since_last}}` | Days since user's last booking | 7 |
+| `{{field.user.booking.upcoming}}` | Whether user has upcoming booking | true or false |
 
-### Other Fields
+<Tip>
+Use `{{field.booking.session.title}}` in booking confirmations to remind users which session they registered for.
+</Tip>
 
-Available in **all automations**:
+### Credit Fields
 
-| Field | What It Inserts |
-|-------|-----------------|
-| `@Today` | Current date |
-| `@CoachName` | Your name (from account settings) |
+Available in **automations that check credit status**:
+
+| Field | What It Inserts | Example Output |
+|-------|-----------------|----------------|
+| `{{field.user.credits.has_available}}` | Whether user has any credits | true or false |
+| `{{field.user.credits.expire_days}}` | Days until credits expire | 14 |
+| `{{field.user.credits.count}}` | Total number of credits user has | 5 |
+
+<Warning>
+Credit fields are primarily available in **Scheduled Check** automations. Using them in other automation types may return empty values.
+</Warning>
+
+### Example Usage
+
+Here's how to use dynamic fields in a message:
+
+```
+Hi {{field.user.firstName}},
+
+You have {{field.user.credits.count}} credits remaining. 
+They expire in {{field.user.credits.expire_days}} days.
+
+Book your next session soon!
+```
+
+**This would send:**
+
+```
+Hi John,
+
+You have 5 credits remaining.
+They expire in 14 days.
+
+Book your next session soon!
+```
 
 ---
 
