@@ -98,20 +98,20 @@ You'll create **two separate product sets** in CoachIQ:
   <Step title="Create your new public-facing products">
     Now set up products at your new pricing:
 
-    1. Navigate to **Dashboard → Products**
-    2. Click **Create Product**
+    1. Navigate to **Payments → Products**
+    2. Click **Create +**
     3. Name it with your public-facing name:
        - Example: "Monthly Training"
        - Example: "Group Sessions"
     4. Set the price to your **new rate**
     5. Configure all settings identically to the legacy version
     7. Save the product
-    6. \*\*Display this product \*\*on your website and athlete portal
+    6. Display this product on your website and athlete portal
 
     These are the products new clients will see and purchase from your public pages.
 
     <Frame>
-      ![Creating product with new pricing enabled for website](/images/product-creation-new-pricing.png)
+      ![Screenshot 20251228 094120 Arc Search](/images/Screenshot_20251228_094120_ArcSearch.jpg)
     </Frame>
   </Step>
   <Step title="Send legacy products to existing clients">
@@ -225,7 +225,7 @@ When you update your product pricing in CoachIQ, **existing active subscriptions
   <Step title="Review your current products and subscriptions">
     Before making changes, understand your current state:
 
-    1. Navigate to **Dashboard → Products**
+    1. Navigate to **Payments → Products**
     2. Note which products have active subscribers
     3. For each product, review:
        - Current pricing
@@ -239,17 +239,14 @@ When you update your product pricing in CoachIQ, **existing active subscriptions
   <Step title="Update your product pricing">
     Simply change the price on your existing products:
 
-    1. Go to **Dashboard → Products**
+    1. Go to **Payments → Products**
     2. Select the product you want to update
     3. Navigate to the **Pricing** section
     4. Enter your new price
     5. Click **Save Changes**
 
-    That's it! The system handles the rest automatically.
+    That's it! Any new customer will be pay your new rate while your existing customers are locked in to the previous rate.
 
-    <Frame>
-      ![Updating product price in CoachIQ](/images/update-product-pricing.png)
-    </Frame>
     <Note>
       **What happens behind the scenes**: CoachIQ updates the product price for new purchases, but Stripe maintains existing subscription rates unchanged. Your existing clients continue paying their original rate automatically.
     </Note>
