@@ -34,7 +34,7 @@
     "links": [
       {
         "label": "Office Hours",
-        "href": "https://coachiq.com/office-hours"
+        "href": "https://cal.com/team/coach-iq/office-hours"
       }
     ],
     "primary": {
@@ -391,7 +391,7 @@
   "footer": {
     "socials": {
       "x": "https://x.com/coachiq",
-      "instagram": "https://instagram.com/coachiq",
+      "instagram": "https://www.instagram.com/coachiq.io/",
       "linkedin": "https://linkedin.com/company/coachiq",
       "youtube": "https://youtube.com/@coachiq"
     }
