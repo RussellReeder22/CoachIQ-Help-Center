@@ -1,0 +1,306 @@
+---
+title: "Set Up Your Professional Business Email"
+description: "Create a professional email like coach@yourbusiness.com using Google Workspace. Step-by-step guide for sports coaches and training businesses."
+sidebarTitle: "Professional Email"
+icon: "envelope"
+---
+
+A professional email address builds credibility with athletes and parents. This guide walks you through setting up `coach@yourbusiness.com` using Google Workspace in about 30 minutes.
+
+<Info>
+  **Why does this matter?** Parents and athletes trust businesses with professional emails. A custom domain email like `coach@smithtraining.com` looks more credible than `coach_smith_2019@gmail.com` on your website, invoices, and business cards.
+</Info>
+
+## What you'll need
+
+Before starting, make sure you have:
+
+- A domain name (like `smithtraining.com`) — we'll help you get one if needed
+- A credit card for Google Workspace (\$6/month per user)
+- About 30 minutes
+
+<Steps>
+  <Step title="Get your domain name">
+    Your domain is your business address on the internet (example: `smithtraining.com`).
+
+    <Tabs>
+      <Tab title="Buy through Google (Easiest)">
+        Google walks you through purchasing a domain during Workspace signup. This is the simplest option—everything stays in one place and DNS records are configured automatically.
+
+        **Cost:** ~\$12/year for most `.com` domains
+      </Tab>
+      <Tab title="Buy from Namecheap">
+        1. Go to [namecheap.com](https://namecheap.com)
+        2. Search for your desired domain
+        3. Add to cart and complete purchase
+        4. You'll configure DNS settings later in this guide
+
+        **Cost:** ~\$10-15/year
+      </Tab>
+      <Tab title="Buy from GoDaddy">
+        1. Go to [godaddy.com](https://godaddy.com)
+        2. Search for your desired domain
+        3. Add to cart and complete purchase
+        4. You'll configure DNS settings later in this guide
+
+        **Cost:** ~\$15-20/year
+      </Tab>
+    </Tabs>
+    <Tip>
+      **Domain name tips:**
+
+      - Keep it short and easy to spell
+      - Use `.com` if available (most trusted)
+      - Match your business name when possible
+      - Avoid hyphens and numbers
+    </Tip>
+  </Step>
+  <Step title="Sign up for Google Workspace">
+    Google Workspace gives you professional email plus Google Drive, Calendar, and Meet—all connected to your domain.
+
+    ### Go to Google Workspace
+
+    1. Visit [workspace.google.com](https://workspace.google.com)
+    2. Click **Get Started** or **Start Free Trial**
+
+    ### Enter your business info
+
+    - **Business name:** Your coaching business name
+    - **Number of employees:** Select "Just you" or your team size
+    - **Country:** United States
+
+    ### Choose your plan
+
+    For most coaches, **Business Starter (\$6/user/month)** is perfect:
+
+    | Feature                            | Included |
+    | ---------------------------------- | -------- |
+    | Professional email @yourdomain.com | ✓        |
+    | 30 GB storage per user             | ✓        |
+    | Video meetings (100 participants)  | ✓        |
+    | Standard security                  | ✓        |
+
+    <Info>
+      You can upgrade to Business Standard (\$12/month) later if you need more storage or features.
+    </Info>
+    ### Enter your domain
+
+    - **Already own a domain?** Enter it here
+    - **Need to buy one?** Google will help you search and purchase
+
+    ### Create your admin account
+
+    Choose a professional email address:
+
+    | Good examples                                             | Avoid                                                                           |
+    | --------------------------------------------------------- | ------------------------------------------------------------------------------- |
+    | [coach@smithtraining.com](mailto:coach@smithtraining.com) | [coachj2019@smithtraining.com](mailto:coachj2019@smithtraining.com)             |
+    | [john@smithtraining.com](mailto:john@smithtraining.com)   | [john_smith_coach@smithtraining.com](mailto:john_smith_coach@smithtraining.com) |
+    | [info@smithtraining.com](mailto:info@smithtraining.com)   | [thebestcoach123@smithtraining.com](mailto:thebestcoach123@smithtraining.com)   |
+
+    ### Complete payment
+
+    Enter your payment info. Google typically offers a 14-day free trial.
+  </Step>
+  <Step title="Verify your domain">
+    <Info>
+      **Skip this step** if you bought your domain through Google—verification is automatic.
+    </Info>
+    Google needs to confirm you own your domain. This sounds technical, but just follow these steps:
+
+    ### Get your verification code
+
+    Google provides a verification code that looks like:
+
+    ```
+    google-site-verification=ABC123xyz...
+    ```
+
+    ### Add the code to your domain settings
+
+    <Tabs>
+      <Tab title="Namecheap">
+        1. Log into Namecheap → **Domain List** → **Manage**
+        2. Click **Advanced DNS**
+        3. Click **Add New Record**
+        4. Configure the record:
+           - **Type:** TXT
+           - **Host:** @
+           - **Value:** Paste the Google verification code
+           - **TTL:** Automatic
+        5. Click **Save All Changes**
+      </Tab>
+      <Tab title="GoDaddy">
+        1. Log into GoDaddy → **My Products** → **DNS**
+        2. Click **Add** under Records
+        3. Configure the record:
+           - **Type:** TXT
+           - **Name:** @
+           - **Value:** Paste the Google verification code
+           - **TTL:** 1 Hour
+        4. Click **Save**
+      </Tab>
+      <Tab title="Google Domains">
+        1. Log into [domains.google.com](https://domains.google.com)
+        2. Click your domain → **DNS**
+        3. Scroll to **Custom records**
+        4. Add a TXT record with the verification code
+        5. Click **Save**
+      </Tab>
+    </Tabs>
+    ### Complete verification
+
+    Click **Verify** in Google Workspace. Wait 5-10 minutes if it doesn't work immediately—DNS changes take time to propagate.
+
+    <Warning>
+      DNS changes can take up to 1 hour to propagate. If verification fails, wait and try again.
+    </Warning>
+  </Step>
+  <Step title="Set up email routing (MX records)">
+    <Info>
+      **Skip this step** if you bought your domain through Google—MX records are configured automatically.
+    </Info>
+    MX records tell the internet where to deliver your emails. You need to point them to Google's mail servers.
+
+    ### Delete existing MX records
+
+    First, remove any existing MX records in your domain settings.
+
+    ### Add Google's MX records
+
+    Add these five records exactly as shown:
+
+    | Priority | Mail Server             |
+    | -------- | ----------------------- |
+    | 1        | ASPMX.L.GOOGLE.COM      |
+    | 5        | ALT1.ASPMX.L.GOOGLE.COM |
+    | 5        | ALT2.ASPMX.L.GOOGLE.COM |
+    | 10       | ALT3.ASPMX.L.GOOGLE.COM |
+    | 10       | ALT4.ASPMX.L.GOOGLE.COM |
+
+    <Tabs>
+      <Tab title="Namecheap">
+        1. Go to **Advanced DNS** → **Mail Settings**
+        2. Select **Custom MX**
+        3. Add each record from the table above
+        4. Click **Save All Changes**
+      </Tab>
+      <Tab title="GoDaddy">
+        1. Go to **DNS** → **MX Records**
+        2. Delete any existing MX records
+        3. Add each record from the table above
+        4. Click **Save**
+      </Tab>
+    </Tabs>
+    <Warning>
+      MX record changes can take up to 48 hours, but usually work within 1-2 hours. Test by sending an email from a different account.
+    </Warning>
+  </Step>
+  <Step title="Access your new email">
+    Once setup is complete, access your professional email:
+
+    ### On the web
+
+    1. Go to [gmail.com](https://gmail.com)
+    2. Sign in with your new email (`coach@yourdomain.com`)
+    3. Use the password you created during signup
+
+    ### On your phone
+
+    1. Download the **Gmail app** (if you don't have it)
+    2. Tap **Add Account** → **Google**
+    3. Sign in with your new business email
+
+    <Check>
+      Send a test email to yourself from a personal account to confirm everything works!
+    </Check>
+  </Step>
+  <Step title="Set up your profile">
+    Complete these important first steps to look professional:
+
+    ### Add a profile photo
+
+    1. Go to [gmail.com](https://gmail.com) → Click your initials (top right)
+    2. Click **Manage your Google Account**
+    3. Select **Personal info** → **Photo**
+    4. Upload a professional headshot
+
+    ### Create your email signature
+
+    1. In Gmail: Click the **gear icon** → **See all settings**
+    2. Scroll to **Signature** → Click **Create new**
+    3. Add your professional signature:
+
+    ```
+    John Smith
+    Head Coach, Smith Training Academy
+    📞 (555) 123-4567
+    🌐 smithtraining.com
+    📍 Chicago, IL
+    ```
+
+    <Tip>
+      Keep signatures simple. Include your name, title, phone, website, and location. Avoid quotes, images, and excessive formatting.
+    </Tip>
+    ### Forward your old email (optional)
+
+    If people still email your old personal address:
+
+    1. Log into your **old** Gmail account
+    2. Go to **Settings** → **Forwarding and POP/IMAP**
+    3. Click **Add a forwarding address**
+    4. Enter your new business email
+    5. Verify and enable forwarding
+  </Step>
+</Steps>
+
+## Cost summary
+
+| Item                                | Cost               |
+| ----------------------------------- | ------------------ |
+| Domain name                         | ~\$12/year         |
+| Google Workspace (Business Starter) | \$6/month per user |
+| **Total for 1 person**              | **~\$84/year**     |
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Domain verification failed">
+    - **Wait and retry:** DNS changes can take up to 1 hour. Try again later.
+    - **Check for typos:** Verify you pasted the complete verification code.
+    - **Remove extra spaces:** Ensure no spaces before or after the code.
+    - **Correct record type:** Make sure you created a TXT record, not another type.
+  </Accordion>
+  <Accordion title="Not receiving emails">
+    - **Wait for propagation:** MX records can take up to 48 hours (usually 1-2 hours).
+    - **Verify MX records:** Double-check all five records are entered correctly.
+    - **Test from external account:** Send a test email from Gmail or another provider.
+    - **Check spam folder:** Your first emails might land in spam.
+  </Accordion>
+  <Accordion title="Forgot my password">
+    1. Go to [accounts.google.com](https://accounts.google.com)
+    2. Click **Forgot password**
+    3. Follow the recovery steps using your backup email or phone
+  </Accordion>
+  <Accordion title="Can't sign in on mobile">
+    - **Check credentials:** Use your full email address (`coach@domain.com`)
+    - **Enable less secure apps:** Some older phones need this setting (not recommended long-term)
+    - **Update Gmail app:** Make sure you have the latest version
+  </Accordion>
+</AccordionGroup>
+
+## Quick reference
+
+| Task                    | Where to go                                          |
+| ----------------------- | ---------------------------------------------------- |
+| Check your email        | [gmail.com](https://gmail.com)                       |
+| Manage Google Workspace | [admin.google.com](https://admin.google.com)         |
+| Add more email users    | admin.google.com → **Users**                         |
+| View your billing       | admin.google.com → **Billing**                       |
+| Get help from Google    | [support.google.com/a](https://support.google.com/a) |
+
+---
+
+<Card title="Need help?" icon="headset" href="/support">
+  Our team is here to help you get set up. Reach out if you run into any issues.
+</Card>
