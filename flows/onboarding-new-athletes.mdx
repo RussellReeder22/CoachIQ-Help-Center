@@ -320,344 +320,177 @@ Before moving forward, verify you have:
 
 ---
 
-## Phase 2: Setting Up the Athlete Portal - Their Home Base
+## Phase 2: Configure Your Athlete Portal
 
-The athlete portal is where your clients access everything after signing up. A well-configured portal reduces "How do I...?" questions and creates a professional, organized experience.
+Your athlete portal is the branded hub where clients book sessions, access training content, and manage their membership. A well-organized portal creates a professional experience that builds trust and reduces confusion.
 
-### What makes a great athlete portal
+### Step 1: Set up portal branding and navigation
 
-Your portal should be the one place athletes need to:
-
-- Book and manage their sessions
-- Access their training programs
-- Communicate with you
-- Make payments
-
----
-
-### Step 1: Configure portal navigation and branding
+First impressions matter. Customize your portal to match your brand and enable only the sections you need.
 
 <Steps>
-  <Step title="Navigate to Athlete Portal settings">
-    From your dashboard, select **Dashboard** → **Athlete Portal**→ **Edit**.
+  <Step title="Navigate to App Builder">
+    From your dashboard, select **App Builder** from the main navigation.
   </Step>
-  <Step title="Customize branding">
-    **Visual identity:**
+  <Step title="Customize brand colors and theme">
+    **Design Settings:**
 
-    - **Logo**: Upload your coaching logo (recommended: 300x100px)
-    - **Brand colors**: Primary and accent colors (match your website)
-    - **Background**: Choose from preset themes or upload custom image
-
-    **Purpose**: When athletes log in, they should immediately recognize your brand and feel they're in a professional environment.
-  </Step>
-  <Step title="Configure navigation menu">
-    Enable/disable portal sections based on what you offer:
-
-    **Recommended enabled sections:**
-
-    - ✅ **Dashboard**: Portal home with overview
-    - ✅ **Schedule**: Book and manage sessions
-    - ✅ **Programs**: Access training workouts
-    - ✅ **Messages**: Communicate with coach
-    - ✅ **Billing**: View invoices and payment methods
-    - ✅ **Profile**: Personal information and goals
-
-    **Optional sections:**
-
-    - **Community**: If you offer group features
-    - **Nutrition**: If you provide meal planning
-    - **Shop**: If you sell products or merchandise
-    - **Resources**: For educational content library
-
-    <Tip>
-      **Pro tip**: Less is more for new athletes. Enable only what you actively use. You can add sections as you expand services.
-    </Tip>
-    Click **Save Navigation**.
-  </Step>
-  <Step title="Set portal homepage content">
-    The portal homepage (Dashboard) is the first thing athletes see after logging in.
-
-    **Welcome message example:**
-
-    ```
-    Welcome to [Your Coaching Name]!
-    
-    You're now part of our coaching family. Here's how to get the most from your training:
-    
-    📅 Book Sessions: Click "Schedule" to reserve your training times
-    💪 View Workouts: Access your personalized programs in "Programs"
-    💬 Stay Connected: Message me anytime with questions
-    📊 Track Progress: We'll log your metrics and celebrate wins
-    
-    Your next scheduled session: [Auto-populated]
-    Your current program: [Auto-populated]
-    
-    Let's accomplish great things together!
-    ```
-
-    **Quick action buttons:** Add prominent buttons for:
-
-    - "Book Next Session"
-    - "View Current Program"
-    - "Message Coach"
-    - "Update Payment Method"
-
-    Click **Save Dashboard**.
-
-    <Check>
-      **Success!** Your portal now provides clear direction and easy access to essential features.
-    </Check>
-  </Step>
-</Steps>
-
----
-
-### Step 2: Set up automated welcome sequence
-
-First impressions matter. Automate the new athlete onboarding experience so nothing falls through the cracks.
-
-<Steps>
-  <Step title="Navigate to Automations">
-    From your dashboard, select **Automations** → **\+ New Automation**.
-  </Step>
-  <Step title="Create 'New Athlete Welcome' automation">
-    **Trigger:** "Athlete completes first purchase" (membership)
-
-    **Action sequence:**
-
-    **Immediately:**
-
-    - Send welcome email with portal login instructions
-    - Send SMS: "Welcome! Check your email for portal access 🎉"
-
-    **Wait 1 hour:**
-
-    - Send email: "Quick Start Guide" with video walkthrough
-
-    **Wait 1 day:**
-
-    - Send SMS: "Have questions? Reply here or message me in the portal"
-
-    **Wait 3 days:**
-
-    - Send email: "Tips for getting the most from your membership"
-
-    **Wait 7 days:**
-
-    - Tag athlete for "Week 1 Check-in" (reminds you to personally reach out)
+    - Click the **Design** tab
+    - Set brand colors for primary and accent colors
+    - Choose light or dark theme
 
     <Note>
-      **Personalization tip**: These templates should sound like they come from you, not a robot. Use your natural voice and coaching style.
+      **Branding tip**: Use colors that match your website and social media for consistent brand recognition. High contrast between text and background improves readability.
     </Note>
-    Click **Save Automation**.
   </Step>
-  <Step title="Create portal navigation email template">
-    Most new athletes need help navigating the portal. Create this as a saved template.
+  <Step title="Enable active portal sections">
+    **Navigation Menu Configuration:**
 
-    **Template: "Welcome to Your Training Portal"**
+    Enable only the sections that match what you offer:
 
-    ```
-    Subject: Your [Coaching Name] Portal is Ready!
-    
-    Hi [Athlete Name],
-    
-    Welcome to the team! Your personal training portal is now active.
-    
-    📲 Portal Access
-    Website: [your-portal-url]
-    Email: [athlete's email]
-    Password: [auto-generated or "create your own"]
-    
-    🚀 Get Started in 3 Steps
-    
-    1. LOG IN & EXPLORE
-       - Bookmark the portal on your phone
-       - Download our mobile app (optional)
-       - Complete your profile
-    
-    2. BOOK YOUR SESSIONS
-       - Go to "Schedule" tab
-       - Choose your preferred times
-       - Set up recurring bookings (if applicable)
-    
-    3. REVIEW YOUR FIRST PROGRAM
-       - Click "Programs" tab
-       - Watch the exercise videos
-       - Ask questions if anything's unclear
-    
-    💡 Pro Tips
-    - Turn on portal notifications so you never miss updates
-    - Check messages daily—I'll send workouts and feedback here
-    - Log your session results for better programming
-    
-    See you at your first session!
-    
-    [Your name]
-    [Your phone number]
-    
-    P.S. Prefer to book over the phone? Just reply to this email or text me.
-    ```
+    - **Schedule**: Enable if you offer bookable training sessions
+    - **Content**: Enable if you provide training programs, drills, or video libraries
+    - **Products**: Enable if you sell memberships, packages, or merchandise
 
-    Save as reusable template.
-  </Step>
-</Steps>
+    **Default sections (always visible):**
 
----
-
-### Step 3: Optimize the booking experience
-
-Make it effortless for athletes to schedule sessions.
-
-<Steps>
-  <Step title="Configure calendar defaults">
-    Go to **Schedule** → **Settings**.
-
-    **Athlete-facing settings:**
-
-    - **Default view**: Week view (easier to see availability)
-    - **Time zone**: Auto-detect from athlete location
-    - **Show available slots**: 2 weeks in advance
-    - **Booking confirmations**: Email + SMS
-
-    **Notification settings:** Enable automatic reminders:
-
-    - 24 hours before session
-    - 2 hours before session (SMS only)
-    - Session cancelled/rescheduled alerts
-  </Step>
-  <Step title="Create booking instructions document">
-    In your portal, create a "How to Book Sessions" quick reference.
-
-    **Portal resource: "Booking Your Training Sessions"**
-
-    **For one-time bookings:**
-
-    1. Go to Schedule tab
-    2. Click any available green time slot
-    3. Confirm your booking
-    4. You'll receive email + text confirmation
-
-    **For recurring weekly bookings:**
-
-    1. Go to Schedule tab
-    2. Click your preferred time slot
-    3. Select "Repeat weekly"
-    4. Choose how many weeks (we recommend 4-week blocks)
-    5. Confirm your recurring series
-
-    **Cancellation policy:**
-
-    - Cancel/reschedule with 24hr notice (no penalty)
-    - Late cancellations (under 24hr) = [your policy]
-    - No-shows = [your policy]
-
-    **Need to change your recurring schedule?** Message me and I'll update your standing time slots.
-
-    <Tip>
-      **Pro tip**: Most athletes book the same weekly time slots. After their trial, proactively offer to set up recurring bookings for them.
-    </Tip>
-  </Step>
-</Steps>
-
----
-
-### Step 4: Set up program delivery system
-
-Athletes need clear access to their training workouts.
-
-<Steps>
-  <Step title="Navigate to Programs section">
-    Go to **Programs** in your main dashboard.
-  </Step>
-  <Step title="Create your starter program template">
-    Build a "New Athlete - Week 1" program that all new members receive.
-
-    **Program structure:**
-
-    - **Program name**: "Welcome Program - Week 1"
-    - **Duration**: 1 week (you'll progress them after)
-    - **Sessions**: 2-3 workouts appropriate for beginners/assessment week
-
-    **Session format:** Each workout should include:
-
-    - Warm-up (with video demonstrations)
-    - Main exercises (sets, reps, load)
-    - Cool-down/mobility
-    - Coach notes section
-
-    **Example Week 1 session:**
-
-    ```
-    Monday: Foundation Assessment Workout
-    
-    WARM-UP (10 min)
-    - Bike or row: 5 minutes easy
-    - Dynamic mobility: Hip circles, arm swings, leg swings
-    
-    ASSESSMENT MOVEMENTS
-    We're establishing baselines today—focus on form, not speed.
-    
-    - Goblet Squat: 3 sets x 10 reps
-      [Video demonstration link]
-      Notes: I'm watching depth and knee tracking
-    
-    - Push-ups: 3 sets x max reps (modify as needed)
-      [Video demonstration link]
-      Notes: We'll track your max each month
-    
-    [Continue with 4-6 more exercises]
-    
-    COOL-DOWN (5 min)
-    - Static stretching: Hold each 30 seconds
-    
-    COACH NOTES:
-    Reply in chat with:
-    1. How did this feel? (difficulty 1-10)
-    2. Any exercises that caused discomfort?
-    3. Questions about any movements?
-    
-    Great first session! 💪
-    ```
-  </Step>
-  <Step title="Set up program progression system">
-    **Organization strategy:**
-
-    Create program folders:
-
-    - Week 1-4 (Foundation)
-    - Week 5-8 (Build)
-    - Week 9-12 (Strength)
-    - Week 13+ (Advanced/Specialized)
-
-    **Automation option:** Set up an automation that:
-
-    - Assigns "Week 1" program when athlete completes first purchase
-    - Sends notification: "Your first workout is ready in the portal!"
-    - After 7 days, prompts you to review and assign Week 2
+    - Inbox: Athlete communication hub
+    - Billing: Memberships and payment methods
+    - Profile: Personal account information
 
     <Note>
-      **Programming tip**: Your first program should be conservative. It's easier to increase intensity than recover from doing too much too soon.
+      **Portal strategy**: Only enable sections you're actively using. A cluttered navigation confuses athletes. You can always enable more sections later as you add offerings.
     </Note>
   </Step>
 </Steps>
 
----
+### Step 2: Configure Products Page sections
 
-### Phase 2 checkpoint
+Organize your Products page so athletes can quickly find what they're looking for—memberships, drop-in sessions, camps, or merchandise.
 
-Your athlete portal should now have:
+<Steps>
+  <Step title="Navigate to Products Page configuration">
+    In **App Builder**, select **Products** from the section list.
+  </Step>
+  <Step title="Create product sections">
+    Click **\+ Add Section** to organize your offerings.
 
-- Branded appearance (logo, colors)
-- Streamlined navigation (only active features)
-- Welcome dashboard with clear next steps
-- Automated welcome sequence
-- Easy booking system with reminders
-- Starter program template ready to assign
-- Clear instructions for portal navigation
+    **Recommended section structure:**
 
-<Check>
-  **Success!** New athletes now have a professional, easy-to-navigate home base that reduces confusion and support questions.
-</Check>
+    **Section 1: Memberships or Packages**
+
+    - Monthly training memberships OR Multi-session packages
+    - Subscription-based packages OR One time payment packages
+    - Unlimited access plans for memberships
+
+    **Section 2: Camps & Clinics **(optional)
+
+    - Seasonal camps
+    - Skills clinics
+    - Special events or workshops
+
+    **Section 3: Merchandise** (optional)
+
+    - Training gear
+    - Apparel
+    - Equipment
+
+    <Note>
+      **Organization tip**: Athletes should find what they need in under 10 seconds. Use clear section names and order them by popularity (memberships first for most coaches).
+    </Note>
+  </Step>
+  <Step title="Assign products to sections">
+    For each section:
+
+    1. Click **Add Products**
+    2. Select which products appear in this section
+    3. Drag to reorder products (most popular at the top)
+    4. Add section description if needed (e.g., "Our most popular training options")
+
+    Save your changes.
+  </Step>
+</Steps>
+
+### Step 3: Configure Schedule Page sections
+
+Organize your Schedule page so athletes can easily find and book the right sessions—whether you're organizing by session type, location, or coach.
+
+<Steps>
+  <Step title="Navigate to Schedule Page configuration">
+    In **App Builder**, select **Schedule** from the section list.
+  </Step>
+  <Step title="Create schedule sections">
+    Click **\+ Add Section** to organize your bookable sessions.
+
+    **Option A: Organize by Session Type** (recommended for most coaches)
+
+    **Section 1: 1-on-1 Training**
+
+    - Individual skill development sessions
+    - Private coaching appointments
+
+    **Section 2: Small Group Training**
+
+    - 2-4 athlete sessions
+    - Partner training options
+
+    **Section 3: Team Training**
+
+    - Full team sessions
+    - Group clinics
+
+    **Section 4: Specialty Sessions**
+
+    - Video analysis appointments
+    - Strength & conditioning
+    - Mental performance coaching
+
+    ---
+
+    **Option B: Organize by Location** (recommended for multi-location facilities)
+
+    Example:
+
+    **Section 1: Downtown Facility**
+
+    - All sessions at main training center
+
+    **Section 2: Westside Location**
+
+    - All sessions at secondary facility
+
+    **Section 3: Mobile Training**
+
+    - On-site team training
+    - Home visits
+
+    <Note>
+      **Organization strategy**: Choose ONE organizational method—either by session type OR by location. Mixing both creates confusion. If you have multiple locations AND multiple session types, organize by location first, then athletes can filter by type within each location.
+    </Note>
+  </Step>
+  <Step title="Assign sessions to sections">
+    For each section:
+
+    1. Click **Add Sessions**
+    2. Select which session types appear in this section
+    3. Drag to reorder sessions (most popular at the top)
+    4. Add section description if helpful (e.g., "Book your weekly 1-on-1 training slot")
+
+    Save your changes.
+  </Step>
+  <Step title="Preview your athlete portal">
+    Click **Preview** to see the portal as athletes will experience it.
+
+    **Check for:**
+
+    - Branding looks consistent
+    - Sections are clearly labeled
+    - Products and sessions are easy to find
+    - Navigation makes sense for someone seeing it for the first time
+
+    Make adjustments as needed.
+  </Step>
+</Steps>
 
 ---
 
