@@ -344,7 +344,8 @@
             "group": "Complete Workflows",
             "pages": [
               "flows/index",
-              "flows/first-week-setup-checklist"
+              "flows/first-week-setup-checklist",
+              "guides/onboarding-new-athletes"
             ]
           }
         ]
@@ -359,7 +360,6 @@
               "guides/index",
               "guides/building-your-training-facility",
               "guides/waivers-liability-legal-essentials",
-              "guides/onboarding-new-athletes",
               "guides/pricing-your-services",
               "guides/hiring-and-managing-coaches",
               "guides/growing-your-coaching-business",
