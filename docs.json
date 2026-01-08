@@ -469,7 +469,6 @@
     { "source": "/scheduling/recurring-bookings", "destination": "/scheduling/recurring-bookings" },
     { "source": "/scheduling/canceling-sessions", "destination": "/scheduling/canceling-bookings" },
     { "source": "/scheduling/credits-system", "destination": "/scheduling/credit-system-overview" },
-    { "source": "/scheduling/managing-athlete-credits", "destination": "/scheduling/managing-athlete-credits" },
     { "source": "/scheduling/add-auto-reminders", "destination": "/scheduling/advanced-scheduler-settings" },
     { "source": "/scheduling/overlapping-other-sessions", "destination": "/scheduling/scheduler-settings-limits-and-permissions" },
     { "source": "/scheduling/adding-and-managing-coaches", "destination": "/scheduling/managing-availability-for-multiple-coaches" },
