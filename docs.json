@@ -318,6 +318,12 @@
             "pages": [
               "settings/index"
             ]
+          },
+          {
+            "group": "Helping Your Athlete",
+            "pages": [
+              "help-center/helping-your-athlete/login-issues"
+            ]
           }
         ]
       },
