@@ -1,0 +1,153 @@
+---
+title: "Why Aren't My Sessions Showing Up for Booking?"
+description: "Troubleshoot missing session availability in your booking calendar and help clients find open time slots"
+sidebarTitle: "Sessions Not Showing"
+icon: "calendar-xmark"
+---
+
+<Info>
+  **Quick check**: Most missing sessions are caused by availability settings, session limits, or timezone conflicts.
+</Info>
+
+## Common causes & fixes
+
+<AccordionGroup>
+  <Accordion title="1. Availability not set for that time">
+    **Most common issue** - Your availability determines when clients can book.
+
+    **Fix:**
+
+    1. Go to **Schedule** → **Availability**
+    2. Check if you have availability set for the day/time in question
+    3. Add availability blocks that cover when you want sessions bookable
+    4. Save changes
+
+    <Tip>
+      Sessions can only be booked during times you've marked as available. If you're available Monday 9am-5pm, but only set availability for 9am-12pm, afternoon slots won't show.
+    </Tip>
+  </Accordion>
+  <Accordion title="2. Session limit reached">
+    Your scheduler may have a maximum number of sessions per day/week.
+
+    **Fix:**
+
+    1. Go to **Schedule** → **Schedulers**
+    2. Select the scheduler you're troubleshooting
+    3. Check "Max bookings per day", "Maximum bookings per week", "Max athletes per time slot"
+    4. Increase limits or untoggle the limit to allow unlimited booking
+    5. Click **Save**
+  </Accordion>
+  <Accordion title="3. Minimum notice requirement">
+    You may require clients to book a certain time in advance.
+
+    **Fix:**
+
+    1. Go to **Schedule** → **Schedulers**
+    2. Select the scheduler you're troubleshooting
+    3. Check the **Minimum notice** setting (e.g., 24 hours)
+    4. Reduce if needed or set to 0 for same-day booking
+    5. Click **Save**
+
+    <Note>
+      Example: If minimum notice is 24 hours and the session is on Monday at 6 pm, then athletes can't book after Sunday at 6 pm.
+    </Note>
+  </Accordion>
+  <Accordion title="4. Date range restrictions">
+    Sessions may have start/end dates limiting bookability.
+
+    **Fix:**
+
+    1. Go to **Schedule** → **Schedulers**
+    2. Select the scheduler you're troubleshooting
+    3. Check **Set Date Range** settings
+    4. Verify "Start date" hasn't passed and "End date" hasn't arrived
+    5. Adjust dates as needed
+    6. Click **Save**
+  </Accordion>
+  <Accordion title="5. Session already booked">
+    Someone may have already booked that specific time slot.
+
+    **Fix:**
+
+    1. Go to **Schedule** → **Calendar**
+    2. Check if the time slot shows an existing session
+    3. If it's an error, cancel the existing session
+    4. The slot will become available again
+  </Accordion>
+  <Accordion title="6. Timezone mismatch">
+    Your availability may be set in a different timezone than expected.
+
+    **Fix:**
+
+    1. Go to **Schedule** → **Availability **→ **Select Availability **
+    2. Check the **Timezone** setting at the top of your availability
+    3. Verify it matches your actual timezone
+    4. Update if incorrect
+    5. Save changes and check calendar again - times will adjust
+
+    <Warning>
+      If you recently changed timezones, your availability blocks may have shifted. Review and adjust as needed.
+    </Warning>
+  </Accordion>
+  <Accordion title="7. Buffer time between sessions">
+    Buffer settings prevent back-to-back bookings.
+
+    **Fix:**
+
+    1. Go to **Products** → Select your session product
+    2. Find **Buffer Time** settings
+    3. Check "Buffer before" and "Buffer after" values
+    4. Reduce if blocking too many slots
+    5. Click **Save**
+
+    <Note>
+      Example: 30-minute buffer after each 60-minute session means a 10am session blocks booking until 11:30am.
+    </Note>
+  </Accordion>
+  <Accordion title="8. Scheduler is inactive">
+    The scheduler might be disabled or turned off.
+
+    **Fix:**
+
+    1. Go to **Schedule** → **Schedulers**
+    2. Select the scheduler you're troubleshooting
+    3. At the top of the scheduler settings, check if **Active** is toggled on
+    4. If it's off, toggle it on to enable bookings
+    5. Click **Save**
+  </Accordion>
+</AccordionGroup>
+
+## Quick diagnostic checklist
+
+Work through this in order:
+
+<Steps>
+  <Step title="Verify basic setup">
+    - Scheduler is **Active**
+    - You have availability set for the desired day/time
+    - The time slot isn't already booked
+  </Step>
+  <Step title="Check booking restrictions">
+    - Minimum notice isn't blocking near-term slots
+    - Daily/weekly session limits aren't maxed out (check in **Schedule** → **Schedulers**)
+    - Date range includes the timeframe you're checking
+  </Step>
+  <Step title="Review time settings">
+    - Timezone is correct
+    - Buffer times aren't blocking adjacent slots
+    - Session duration matches your availability blocks
+  </Step>
+</Steps>
+
+<Check>
+  **Found the issue?** After making changes, refresh your booking page or check from a client's perspective to verify sessions now appear.
+</Check>
+
+## Still not showing up?
+
+If you've checked everything above and sessions still aren't appearing:
+
+1. **Test from client view**: Visit your booking page while logged out or in incognito mode
+2. **Check specific session**: Go to **Schedule** → **Scheduler** and verify the session exists
+3. **Clear cache**: Browser cache can show outdated availability
+4. **Contact support**: Include screenshots of your availability settings and the issue

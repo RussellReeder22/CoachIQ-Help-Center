@@ -1,0 +1,101 @@
+---
+title: "Troubleshooting Video Upload Issues in Media Hub"
+description: "Resolve common problems when uploading videos to your CoachIQ Media Hub"
+sidebarTitle: "Video Upload Issues"
+icon: "circle-exclamation"
+---
+
+## Quick answer
+
+Most video upload issues are caused by file size limits, unsupported formats, or slow internet connections. CoachIQ supports MP4, MOV, and AVI files up to 500MB per video.
+
+## Common upload problems
+
+<AccordionGroup>
+  <Accordion title="Upload keeps failing or timing out">
+    **Try these solutions:**
+
+    1. **Check your file size** - Videos must be under 500MB
+       - If larger, compress your video using a free tool like HandBrake
+       - Or split longer videos into smaller segments
+    2. **Verify your internet connection**
+       - Upload speeds affect how quickly videos process
+       - Try closing other applications using bandwidth
+       - Consider uploading during off-peak hours
+    3. **Use a supported format**
+       - Supported: MP4, MOV, AVI
+       - Not supported: WMV, FLV, WebM
+       - Convert unsupported formats using a free converter
+
+    <Tip>
+      **Pro tip**: MP4 files typically upload fastest and have the best compatibility across devices.
+    </Tip>
+  </Accordion>
+  <Accordion title="Video uploaded but won't play">
+    **This usually means:**
+
+    1. **The video is still processing**
+       - Wait 5-10 minutes after upload completes
+       - Refresh your browser
+       - Check back if the video is very large
+    2. **Browser compatibility issue**
+       - Clear your browser cache
+       - Try a different browser (Chrome or Safari recommended)
+       - Update your browser to the latest version
+    3. **Video codec not supported**
+       - Re-export your video in H.264 codec
+       - Use standard frame rates (24, 30, or 60 fps)
+  </Accordion>
+  <Accordion title="Upload is taking an extremely long time">
+    **Speed up your uploads:**
+
+    - Videos process based on file size and internet speed
+    - Expected times:
+      - 50MB video: 2-5 minutes
+      - 200MB video: 8-15 minutes
+      - 500MB video: 20-30 minutes
+
+    <Warning>
+      Don't close your browser or navigate away until you see "Upload complete" confirmation.
+    </Warning>
+  </Accordion>
+  <Accordion title="Error: 'File type not supported'">
+    **Convert your video:**
+
+    1. Your video format isn't compatible
+    2. Use a free converter to change to MP4:
+       - CloudConvert (online)
+       - HandBrake (desktop app)
+       - VLC Media Player (desktop app)
+    3. Re-upload the converted MP4 file
+  </Accordion>
+</AccordionGroup>
+
+## Before uploading: Best practices
+
+<Steps>
+  <Step title="Prepare your video file">
+    - **Format**: MP4 (H.264 codec recommended)
+    - **Size**: Under 500MB
+    - **Resolution**: 1080p or lower for faster processing
+    - **Frame rate**: 24, 30, or 60 fps
+  </Step>
+  <Step title="Name your file clearly">
+    Use descriptive names before uploading (e.g., "squat-form-tutorial.mp4" instead of "video123.mp4"). This makes it easier to organize in your Media Hub.
+  </Step>
+  <Step title="Test your connection">
+    For large files, ensure you have a stable internet connection before starting the upload.
+  </Step>
+</Steps>
+
+## Still having issues?
+
+If you've tried these solutions and videos still won't upload:
+
+1. **Check CoachIQ status** - Visit [status page] to see if there are any platform issues
+2. **Try a different device** - Sometimes device-specific issues can interfere
+3. **Contact support** - Send us your details:
+   - File size
+   - File format
+   - Error message (screenshot if possible)
+   - Internet speed (test at speedtest.net)
