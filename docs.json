@@ -253,8 +253,7 @@
                   "payments/failed-payments"
                 ]
               },
-              "payments/coupon-overview",
-              "help-center/payments/untitled-page"
+              "payments/coupon-overview"
             ]
           },
           {
@@ -368,7 +367,6 @@
               "guides/index",
               "guides/building-your-training-facility",
               "business-guides/guides/hiring-onboarding-trainers",
-              "business-guides/guides/untitled-page",
               "guides/pricing-your-services",
               "guides/growing-your-coaching-business",
               "guides/grandfather-pricing"
