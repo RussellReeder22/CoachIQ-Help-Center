@@ -116,6 +116,7 @@ icon: "font-awesome-icon-name"  # For main/overview pages
 **Is it lengthy optional content?** → `<Accordion>` or `<AccordionGroup>`
 **Is it navigation/features?** → `<Card>` and `<CardGroup>`
 **Is it an image?** → Wrap in `<Frame>`
+**Is it a CoachIQ term needing definition?** → Use `<Tooltip>`
 
 ### Critical Formatting Rules
 1. **Blank lines before AND after** all component tags (required for rendering)
@@ -153,6 +154,8 @@ Click **+ New Scheduler** in the top right.
 Ensure you have admin permissions in Settings → Team.
 </Accordion>
 </AccordionGroup>
+
+Your <Tooltip tip="A booking page where athletes can schedule sessions with you">scheduler</Tooltip> will appear on your website automatically.
 ```
 
 ---
