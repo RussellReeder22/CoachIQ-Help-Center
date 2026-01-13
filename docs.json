@@ -75,6 +75,7 @@
                 "pages": [
                   "website/sections/sections",
                   "website/sections/working-with-sections",
+                  "website/sections/header-footer-navigation",
                   "website/sections/backgrounds-styling",
                   "website/sections/buttons-ctas"
                 ]
