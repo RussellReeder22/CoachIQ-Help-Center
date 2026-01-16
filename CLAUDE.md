@@ -18,6 +18,28 @@ This is a **Mintlify-powered help center** for **CoachIQ**, a comprehensive spor
 
 ---
 
+## Git Workflow (Important!)
+
+**Russell is non-technical. Keep git simple.**
+
+### The Workflow:
+1. Claude pushes all changes to the assigned `claude/*` branch
+2. At end of session, give Russell this merge link:
+
+```
+https://github.com/RussellReeder22/CoachIQ-Help-Center/compare/main...[branch-name]
+```
+
+3. Russell clicks link → "Create Pull Request" → "Merge Pull Request" → Done
+
+### Rules:
+- **Never ask Russell to run git commands**
+- **Always provide the clickable GitHub merge link**
+- **Commit often** so work isn't lost
+- **Push before ending session** so Russell can merge
+
+---
+
 ## File Structure
 
 ```
