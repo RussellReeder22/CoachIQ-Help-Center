@@ -194,6 +194,7 @@
                   "scheduling/manually-booking-athletes",
                   "scheduling/book-your-first-session",
                   "scheduling/recurring-bookings",
+                  "scheduling/editing-rescheduling-bookings",
                   "scheduling/canceling-bookings"
                 ]
               },
