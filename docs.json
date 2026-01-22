@@ -194,6 +194,7 @@
                   "scheduling/manually-booking-athletes",
                   "scheduling/book-your-first-session",
                   "scheduling/recurring-bookings",
+                  "scheduling/editing-rescheduling-bookings",
                   "scheduling/canceling-bookings"
                 ]
               },
@@ -325,6 +326,7 @@
             "pages": [
               "help-center/helping-your-athlete/untitled-page-1",
               "help-center/helping-your-athlete/untitled-page",
+              "help-center/helping-your-athlete/cancel-subscription",
               "help-center/helping-your-athlete/login-issues",
               "help-center/helping-your-athlete/credit-issues"
             ]
