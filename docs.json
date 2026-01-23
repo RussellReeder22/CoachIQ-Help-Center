@@ -244,7 +244,8 @@
                 "icon": "rotate",
                 "pages": [
                   "payments/subscriptions-dashboard",
-                  "payments/manage-subscriptions"
+                  "payments/manage-subscriptions",
+                  "payments/grandfather-pricing"
                 ]
               },
               {
@@ -374,8 +375,7 @@
               "guides/building-your-training-facility",
               "business-guides/guides/hiring-onboarding-trainers",
               "guides/pricing-your-services",
-              "guides/growing-your-coaching-business",
-              "guides/grandfather-pricing"
+              "guides/growing-your-coaching-business"
             ]
           }
         ]
@@ -582,7 +582,9 @@
     { "source": "/athlete-portal/overview", "destination": "/athlete-portal/understanding-your-athlete-portal" },
     { "source": "/athlete-portal/access-control", "destination": "/athlete-portal/paywall-settings" },
     { "source": "/athlete-portal/initial-setup", "destination": "/athlete-portal/understanding-your-athlete-portal" },
-    { "source": "/athlete-portal/design", "destination": "/athlete-portal/design-settings" }
+    { "source": "/athlete-portal/design", "destination": "/athlete-portal/design-settings" },
+
+    { "source": "/guides/grandfather-pricing", "destination": "/payments/grandfather-pricing" }
   ],
   "metadata": {
     "og:title": "CoachIQ Help Center",

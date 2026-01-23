@@ -1,0 +1,163 @@
+---
+title: "Grandfathering Client Pricing"
+description: "How to raise prices for new clients while keeping existing subscribers at their current rate"
+sidebarTitle: "Grandfather Pricing"
+---
+
+When you raise prices, you don't have to change what existing clients pay. Grandfathering lets you increase rates for new clients while honoring the rates your current clients signed up for.
+
+---
+
+## If You Already Have Subscribers in CoachIQ
+
+This is the most common scenario. You have active subscriptions running through Stripe, and you want to raise prices going forward.
+
+**The good news**: When you update a product's price in CoachIQ, existing subscriptions automatically stay at their current rate. Stripe handles this for you.
+
+<Steps>
+
+<Step title="Document your current pricing">
+
+Before changing anything, note your current rates. Take screenshots or write them down—you'll want this for reference when clients ask questions.
+
+</Step>
+
+<Step title="Update the product price">
+
+1. Go to **Payments → Products**
+2. Select the product you want to update
+3. Change the price to your new rate
+4. Click **Save**
+
+That's it. New subscribers pay the new price. Existing subscribers continue at their original rate.
+
+</Step>
+
+<Step title="Verify existing subscriptions weren't affected">
+
+Spot-check a few existing clients:
+
+1. Go to **People** and select a client with an active subscription
+2. View their subscription details
+3. Confirm the billing amount shows the old rate
+
+</Step>
+
+<Step title="Update your website">
+
+Make sure your public-facing pricing reflects the new rates. Check your website pricing section and any marketing materials.
+
+</Step>
+
+</Steps>
+
+<Info>
+
+**How it works**: CoachIQ updates the product price for new purchases, but Stripe maintains existing subscription rates unchanged. Your current clients won't see any difference.
+
+</Info>
+
+---
+
+## If You're Migrating to CoachIQ
+
+If you're new to CoachIQ and bringing existing clients from another system, you'll need to create separate products for legacy and new pricing.
+
+<Steps>
+
+<Step title="Create legacy products (for existing clients)">
+
+1. Go to **Payments → Products**
+2. Create products at your **old rates**
+3. Name them clearly: "Monthly Training (Legacy)" or include the price
+4. **Do not** display these on your website or athlete portal
+
+</Step>
+
+<Step title="Create new products (for future clients)">
+
+1. Create the same products at your **new rates**
+2. Use clean, public-facing names
+3. Display these on your website and athlete portal
+
+</Step>
+
+<Step title="Send legacy products to existing clients">
+
+Send each existing client a direct link to their legacy product. Don't share these links publicly.
+
+<Warning>
+
+Keep legacy product links private. Only send them directly to clients who should receive that pricing.
+
+</Warning>
+
+</Step>
+
+</Steps>
+
+---
+
+## Common Questions
+
+<AccordionGroup>
+
+<Accordion title="What if a client cancels and wants to resubscribe?">
+
+Once cancelled, they lose their legacy rate. If they resubscribe, they'll pay the current price.
+
+**Options**:
+- Set a policy like "return within 30 days to keep your rate"
+- Offer pausing instead of cancelling to maintain their rate
+- Manually create a subscription at the old rate in Stripe if you want to honor it
+
+Communicate your policy clearly so clients know what to expect.
+
+</Accordion>
+
+<Accordion title="What if a grandfathered client wants to upgrade?">
+
+When they change service levels, they're creating a new subscription at current pricing.
+
+If you want to honor their loyalty, manually set a custom price in Stripe that maintains their discount ratio. Document it in their client notes.
+
+</Accordion>
+
+<Accordion title="How do I track which clients have legacy pricing?">
+
+Two simple methods:
+
+1. **Tags**: Add a "Legacy Pricing" tag to grandfathered clients in CoachIQ
+2. **Notes**: Add their legacy rate and start date to their client profile
+
+</Accordion>
+
+<Accordion title="Can I eventually move everyone to new pricing?">
+
+Yes. Give 60-90 days notice and consider offering something to ease the transition (bonus session, free month). You can update individual subscription prices in Stripe when ready.
+
+</Accordion>
+
+<Accordion title="Should I tell new clients about grandfathered pricing?">
+
+Generally no. It can make new clients feel like they're overpaying. If asked directly, explain that you reward long-term loyalty with rate protection.
+
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+
+<Card title="Manage Subscriptions" icon="rotate" href="/payments/manage-subscriptions">
+  View and manage active client subscriptions
+</Card>
+
+<Card title="Product Builder" icon="box" href="/payments/product-builder">
+  Create and configure your products
+</Card>
+
+</CardGroup>
