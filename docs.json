@@ -215,7 +215,6 @@
           {
             "group": "Payments",
             "pages": [
-              "payments/index",
               "payments/getting-started",
               {
                 "group": "Stripe Setup",
@@ -584,7 +583,10 @@
     { "source": "/athlete-portal/initial-setup", "destination": "/athlete-portal/understanding-your-athlete-portal" },
     { "source": "/athlete-portal/design", "destination": "/athlete-portal/design-settings" },
 
-    { "source": "/guides/grandfather-pricing", "destination": "/payments/grandfather-pricing" }
+    { "source": "/guides/grandfather-pricing", "destination": "/payments/grandfather-pricing" },
+
+    { "source": "/payments/index", "destination": "/payments/getting-started" },
+    { "source": "/payments", "destination": "/payments/getting-started" }
   ],
   "metadata": {
     "og:title": "CoachIQ Help Center",
