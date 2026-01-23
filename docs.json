@@ -324,8 +324,8 @@
           {
             "group": "Helping Your Athlete",
             "pages": [
-              "help-center/helping-your-athlete/untitled-page-1",
-              "help-center/helping-your-athlete/untitled-page",
+              "help-center/helping-your-athlete/sessions-not-showing",
+              "help-center/helping-your-athlete/video-upload-issues",
               "help-center/helping-your-athlete/cancel-subscription",
               "help-center/helping-your-athlete/login-issues",
               "help-center/helping-your-athlete/credit-issues"
@@ -586,7 +586,10 @@
     { "source": "/guides/grandfather-pricing", "destination": "/payments/grandfather-pricing" },
 
     { "source": "/payments/index", "destination": "/payments/getting-started" },
-    { "source": "/payments", "destination": "/payments/getting-started" }
+    { "source": "/payments", "destination": "/payments/getting-started" },
+
+    { "source": "/help-center/helping-your-athlete/untitled-page-1", "destination": "/help-center/helping-your-athlete/sessions-not-showing" },
+    { "source": "/help-center/helping-your-athlete/untitled-page", "destination": "/help-center/helping-your-athlete/video-upload-issues" }
   ],
   "metadata": {
     "og:title": "CoachIQ Help Center",
