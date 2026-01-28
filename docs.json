@@ -321,16 +321,6 @@
             "pages": [
               "settings/index"
             ]
-          },
-          {
-            "group": "Helping Your Athlete",
-            "pages": [
-              "help-center/helping-your-athlete/sessions-not-showing",
-              "help-center/helping-your-athlete/video-upload-issues",
-              "help-center/helping-your-athlete/cancel-subscription",
-              "help-center/helping-your-athlete/login-issues",
-              "help-center/helping-your-athlete/credit-issues"
-            ]
           }
         ]
       },
@@ -351,15 +341,25 @@
         ]
       },
       {
-        "tab": "Complete Flows",
-        "icon": "route",
+        "tab": "Quick Guides",
+        "icon": "book-bookmark",
         "groups": [
           {
-            "group": "Complete Workflows",
+            "group": "Coach Guides",
             "pages": [
               "flows/index",
               "flows/first-week-setup-checklist",
               "flows/onboarding-new-athletes"
+            ]
+          },
+          {
+            "group": "Helping Your Athletes",
+            "pages": [
+              "help-center/helping-your-athlete/sessions-not-showing",
+              "help-center/helping-your-athlete/video-upload-issues",
+              "help-center/helping-your-athlete/cancel-subscription",
+              "help-center/helping-your-athlete/login-issues",
+              "help-center/helping-your-athlete/credit-issues"
             ]
           }
         ]
