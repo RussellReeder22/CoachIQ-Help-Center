@@ -191,6 +191,7 @@
                 "icon": "calendar-days",
                 "pages": [
                   "scheduling/calendar-overview-and-navigation",
+                  "scheduling/calendar-analytics",
                   "scheduling/understanding-booking-types",
                   "scheduling/manually-booking-athletes",
                   "scheduling/book-your-first-session",
