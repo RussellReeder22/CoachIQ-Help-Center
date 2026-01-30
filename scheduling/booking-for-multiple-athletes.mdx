@@ -1,0 +1,289 @@
+---
+title: "Booking for Multiple Athletes (Family Accounts)"
+description: "Enable parents to book multiple sessions for their children using a single account and shared credit balance"
+sidebarTitle: "Family & Multi-Athlete Booking"
+---
+
+<Info>
+**Where to find this**: Schedule → Schedulers → [Select Scheduler] → Settings → Permission(s)
+</Info>
+
+## What you'll accomplish
+
+Set up your schedulers to allow parents to book sessions for multiple children from a single account. This is ideal for families with 2-3+ kids who all train with you—one parent manages everything from one account.
+
+<Check>
+**Success criteria**: A parent with 10 credits can book 3 sessions (one for each child) on the same day, using 3 credits from their shared balance.
+</Check>
+
+---
+
+## How family booking works in CoachIQ
+
+CoachIQ uses a **single-account model** for families:
+
+- **One parent account** holds all credits and subscriptions
+- **Parent books sessions** for each child as needed
+- **Credits deduct** from the shared family balance
+- **No per-child limits**—booking is only limited by available credits
+
+<Note>
+**Current limitation**: There's no built-in field to indicate which child each booking is for. Parents simply book multiple slots, and you'll see "Parent Name" on each booking. Coordinate with families on who's attending which session.
+</Note>
+
+---
+
+## Enable multiple bookings per timeslot
+
+By default, users can only book a timeslot once. To allow families to book the same slot multiple times (one per child), enable this setting:
+
+<Steps>
+  <Step title="Open your scheduler settings">
+    Go to **Schedule** → **Schedulers** → click on the scheduler you want to configure.
+  </Step>
+
+  <Step title="Navigate to Settings tab">
+    In the scheduler builder, click **Settings** in the left sidebar.
+  </Step>
+
+  <Step title="Enable multiple bookings">
+    Scroll to the **Permission(s)** section and check **"Allow athletes to book a timeslot more than once"**.
+
+    <Frame>
+      ![Scheduler settings showing the permission to allow athletes to book a timeslot more than once](/images/scheduler-multiple-bookings-setting.png)
+    </Frame>
+
+    <Tip>
+    This setting is per-scheduler. Enable it on schedulers where families commonly book multiple kids (group classes, camps, clinics) and leave it off for 1-on-1 private sessions if needed.
+    </Tip>
+  </Step>
+
+  <Step title="Save your changes">
+    Click **Update** to save the scheduler settings.
+  </Step>
+</Steps>
+
+---
+
+## The parent booking experience
+
+Here's what parents see when booking for multiple children:
+
+<Steps>
+  <Step title="Parent logs into their account">
+    The parent uses their email and password to access the athlete portal or your website.
+  </Step>
+
+  <Step title="Parent views available sessions">
+    They see your schedulers with credit costs displayed (e.g., "1 Credit" per session).
+
+    <Frame>
+      ![Athlete schedule view showing sessions with credit costs](/images/athlete-schedule-page-credits.png)
+    </Frame>
+  </Step>
+
+  <Step title="Parent books first child">
+    They select a timeslot and book using credits. One credit is deducted.
+  </Step>
+
+  <Step title="Parent books second child">
+    They return to the same timeslot and book again. Another credit is deducted.
+
+    **With the permission enabled**: The system allows this second booking.
+
+    **Without the permission**: The system would block them with "You've already booked this slot."
+  </Step>
+
+  <Step title="Repeat for additional children">
+    Parent continues booking until all children are registered. Credits deduct from their single balance with each booking.
+  </Step>
+</Steps>
+
+---
+
+## Setting up families for success
+
+### Recommended product setup
+
+Create credit packages sized for families:
+
+| Package | Credits | Best For |
+|---------|---------|----------|
+| Single Athlete | 4-8 credits | One child training weekly |
+| Family Pack | 12-16 credits | 2 children training weekly |
+| Large Family | 20-24 credits | 3+ children or multiple sessions per week |
+
+<Tip>
+**Pricing strategy**: Offer a slight discount on larger packages to incentivize families to purchase upfront. A "Family Pack" at $400 for 16 credits (vs. $200 for 8) rewards their commitment.
+</Tip>
+
+### Communicate the workflow
+
+Many parents expect separate accounts for each child. Set expectations upfront:
+
+**In your onboarding or welcome message:**
+
+> "Families with multiple athletes: Create ONE parent account. Purchase a credit package, then book sessions for each child from that single account. Your credits are shared across all your children."
+
+**On your registration form:**
+
+Consider adding a field asking "How many athletes in your household?" to identify family accounts early.
+
+---
+
+## Managing family bookings as a coach
+
+### Identifying which child is attending
+
+Since bookings show the parent's name, use these strategies:
+
+<AccordionGroup>
+  <Accordion title="Add booking notes">
+    When you see a family has booked multiple slots, add a note to each booking indicating which child:
+
+    - Open the booking on your calendar
+    - Add a note: "Johnny (8th grade)" or "Sarah (6th grade)"
+    - This helps at check-in time
+  </Accordion>
+
+  <Accordion title="Ask at check-in">
+    For group sessions, simply ask "Which [Last Name] kid is here today?" at check-in. Most coaches find this quick and natural.
+  </Accordion>
+
+  <Accordion title="Use tags on the parent profile">
+    Add tags to the parent's profile listing their children:
+
+    - Tag: "Parent of Johnny, Sarah, Mike"
+    - Quick reference when viewing their bookings
+  </Accordion>
+
+  <Accordion title="Create a family roster document">
+    For families with 3+ kids, keep a simple reference:
+
+    | Parent Account | Children |
+    |---------------|----------|
+    | Smith Family | Johnny (14), Sarah (12), Mike (9) |
+    | Johnson Family | Emma (15), Liam (13) |
+  </Accordion>
+</AccordionGroup>
+
+### Viewing family credit balances
+
+To see how many credits a family has remaining:
+
+1. Go to **People** → **Clients**
+2. Switch to **Credits View** (top right dropdown)
+3. Find the parent's account
+4. View their credit bank balance
+
+<Frame>
+  ![Clients list showing credits view](/images/clients-credits-view.png)
+</Frame>
+
+---
+
+## Common family booking scenarios
+
+<AccordionGroup>
+  <Accordion title="Parent wants to book 3 kids for the same group class">
+    **Solution**: With the permission enabled, they book the same timeslot 3 times. Each booking deducts 1 credit (or whatever your scheduler costs).
+
+    **What you'll see**: 3 bookings from "Parent Name" on that timeslot.
+  </Accordion>
+
+  <Accordion title="Parent wants different sessions for different kids">
+    **Solution**: They book different timeslots as needed. No special setting required—this works by default.
+
+    **Example**: Book 4pm for Johnny (beginner class), 5pm for Sarah (advanced class).
+  </Accordion>
+
+  <Accordion title="Kids signed up with their own emails instead of parent">
+    **Problem**: You now have 3 separate accounts instead of 1 family account.
+
+    **Solution**:
+    1. Have the parent create their own account
+    2. Sell the credit package to the parent account
+    3. Parent books going forward
+    4. The kid accounts can remain dormant or be used for in-app messaging
+
+    <Warning>
+    You cannot merge accounts or transfer credits between accounts. Prevent this by clearly communicating "Parents should register, not kids" during signup.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Family runs out of credits mid-month">
+    **Solution**: Parent purchases another credit package. New credits add to their existing balance immediately, and they can continue booking.
+  </Accordion>
+
+  <Accordion title="One child quits but others continue">
+    **Solution**: No action needed. The parent simply books fewer sessions. Remaining credits stay in their account for the other children.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Best practices for coaches with family clients
+
+<CardGroup cols={2}>
+  <Card title="Label your forms clearly" icon="tag">
+    Change "Email" to "Parent's Email" on registration forms to reduce kids signing up with their own accounts.
+  </Card>
+
+  <Card title="Size packages for families" icon="box">
+    Offer 12, 16, or 20-credit packages alongside your standard 4-8 credit options.
+  </Card>
+
+  <Card title="Send reminders to parents" icon="bell">
+    Session reminders go to the booking account (parent), ensuring they coordinate which child attends.
+  </Card>
+
+  <Card title="Track families with tags" icon="users">
+    Tag parent accounts with "Family - 2 kids" or "Family - 3 kids" for quick identification.
+  </Card>
+</CardGroup>
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Can I limit how many times a parent can book the same slot?">
+    Not directly per-parent. The "Allow athletes to book a timeslot more than once" permission is either on or off.
+
+    However, you can use **Max athletes per time slot** to limit total capacity. If your group class holds 12 and one family books 3 spots, that leaves 9 for others.
+  </Accordion>
+
+  <Accordion title="Do credits expire for family accounts?">
+    Credits follow your standard expiration rules (if any). There's no special treatment for family vs. individual accounts.
+  </Accordion>
+
+  <Accordion title="Can siblings share a subscription?">
+    Yes. If a parent has a monthly subscription that grants 8 credits/month, they can use those 8 credits across all their children however they choose.
+  </Accordion>
+
+  <Accordion title="What if a parent wants separate tracking per child?">
+    CoachIQ's current model uses one account per family. For completely separate tracking, they would need separate accounts—but then they can't share credits.
+
+    **Workaround**: Use booking notes or tags to track which child attended which sessions.
+  </Accordion>
+
+  <Accordion title="How do refunds work for family bookings?">
+    Same as individual bookings. If a parent cancels within your policy window, credits return to their shared balance. They can rebook for any child.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Related articles
+
+<CardGroup cols={3}>
+  <Card title="Credit System Overview" icon="coins" href="/scheduling/credit-system-overview">
+    Deep dive into how credits work
+  </Card>
+  <Card title="Limits & Permissions" icon="sliders" href="/scheduling/scheduler-settings-limits-and-permissions">
+    All scheduler permission settings
+  </Card>
+  <Card title="Managing Credits" icon="wallet" href="/scheduling/managing-athlete-credits">
+    Add, adjust, and track athlete credits
+  </Card>
+</CardGroup>
