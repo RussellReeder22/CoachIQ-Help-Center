@@ -154,6 +154,7 @@
               "inbox/in-app-messages",
               "inbox/sms-messages",
               "inbox/announcements",
+              "inbox/email-marketing",
               "inbox/attaching-forms-schedulers-and-products",
               "inbox/using-tags-for-group-messages",
               "help-center/inbox/professional-email"
