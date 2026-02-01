@@ -239,7 +239,8 @@
                   "payments/attach-products",
                   "payments/credits-products",
                   "payments/processing-fee",
-                  "payments/guest-checkout"
+                  "payments/guest-checkout",
+                  "payments/checkout-terms-waivers"
                 ]
               },
               {

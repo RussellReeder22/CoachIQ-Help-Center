@@ -1,0 +1,162 @@
+---
+title: "Adding Terms & Waivers at Checkout"
+description: "Require clients to accept terms, cancellation policies, or liability waivers before completing a purchase"
+sidebarTitle: "Checkout Terms & Waivers"
+icon: "file-contract"
+---
+
+Require clients to agree to your terms, cancellation policy, or liability waiver before they can complete a purchase. When enabled, a checkbox appears at checkout that clients must check to proceed.
+
+<Info>
+**Where to find this**: Payments → Products → Select product → Advanced section
+</Info>
+
+## How it works
+
+When you enable terms on a product:
+
+1. A checkbox appears on the checkout page: "I agree to the Terms and Conditions"
+2. The text links to your terms page (hosted on your website or elsewhere)
+3. Clients must check the box before the "Purchase Now" button works
+4. The agreement is recorded with their purchase
+
+<Frame>
+  ![Checkout page showing terms agreement checkbox](/images/payments-terms-checkout-checkbox.png)
+</Frame>
+
+## Enable terms on a product
+
+<Steps>
+  <Step title="Open the product">
+    Go to **Payments** → **Products** and select the product you want to add terms to.
+  </Step>
+
+  <Step title="Go to Advanced settings">
+    Click **Advanced** in the left sidebar of the product builder.
+
+    <Frame>
+      ![Product builder Advanced section with terms settings](/images/payments-terms-product-builder-settings.png)
+    </Frame>
+  </Step>
+
+  <Step title="Enable Require Agreement to Terms">
+    Toggle **Require Agreement to Terms** to ON.
+  </Step>
+
+  <Step title="Add your Agreement Link">
+    Enter the full URL to your terms page (e.g., `https://yoursite.com/terms`).
+
+    This is the page clients see when they click "Terms and Conditions" at checkout.
+
+    <Tip>
+    Use CoachIQ's [legal page templates](/website/pages-navigation/legal-pages) to create your terms page, then copy the URL here.
+    </Tip>
+  </Step>
+
+  <Step title="Save the product">
+    Click **Update** (or **Create**) to save.
+
+    <Check>
+    **Done.** Clients must now accept your terms before purchasing this product.
+    </Check>
+  </Step>
+</Steps>
+
+## What to include in your terms
+
+Your terms page should cover policies relevant to the product. Common sections include:
+
+**For session packages and memberships:**
+- Cancellation policy (how much notice required)
+- No-show policy (whether missed sessions are forfeited)
+- Refund policy
+- Rescheduling rules
+
+**For physical training:**
+- Liability waiver
+- Assumption of risk
+- Medical clearance acknowledgment
+- Emergency contact consent
+
+**For programs with minors:**
+- Parental consent
+- Photo/video release
+- Supervision requirements
+
+<Frame>
+  ![Example terms page with cancellation and liability policies](/images/payments-terms-external-page-example.png)
+</Frame>
+
+## Creating your terms page
+
+You have two options:
+
+### Option 1: Use CoachIQ legal page templates (recommended)
+
+1. Go to **Website Builder** → **Add New Page** → **Templates**
+2. Select **Terms & Conditions** template
+3. Customize the template with your policies
+4. Publish the page
+5. Copy the page URL and paste it in your product's Agreement Link
+
+[Full guide to creating legal pages →](/website/pages-navigation/legal-pages)
+
+### Option 2: Use an external page
+
+Link to any URL where your terms are hosted (Google Doc, Notion page, external website, etc.). Just make sure the link is publicly accessible.
+
+## Terms vs. waiver forms
+
+| Approach | Best For | How It Works |
+|----------|----------|--------------|
+| **Checkout terms** (this feature) | Quick acceptance at purchase | Checkbox + link to terms page |
+| **Waiver form** | Detailed signatures, custom fields | Separate form before/after purchase |
+
+**Use checkout terms when:**
+- You need simple acknowledgment of policies
+- Terms apply to the specific product being purchased
+- You want acceptance tied to each transaction
+
+**Use a [waiver form](/forms/overview) when:**
+- You need detailed information (emergency contacts, medical history)
+- You want a separate signed document on file
+- The waiver applies to ongoing training, not just one purchase
+
+<Tip>
+Many coaches use both: checkout terms for cancellation/refund policies, plus a separate waiver form for liability and medical info.
+</Tip>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I use different terms for different products?">
+    Yes. Each product has its own Agreement Link setting. You can link to different terms pages for different products (e.g., camp terms vs. membership terms).
+  </Accordion>
+
+  <Accordion title="What if I don't have a terms page yet?">
+    Create one using CoachIQ's [legal page templates](/website/pages-navigation/legal-pages). You can have a basic terms page live in 15-20 minutes.
+  </Accordion>
+
+  <Accordion title="Is the agreement recorded anywhere?">
+    The agreement is tied to the transaction. If a client completed a purchase, they agreed to the terms that were linked at the time.
+  </Accordion>
+
+  <Accordion title="Can clients skip the checkbox?">
+    No. When terms are enabled, the checkbox is required. Clients cannot complete the purchase without checking it.
+  </Accordion>
+
+  <Accordion title="Does this work with guest checkout?">
+    Yes. The terms checkbox appears for both logged-in clients and guest checkout.
+  </Accordion>
+</AccordionGroup>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Legal Pages" icon="scale-balanced" href="/website/pages-navigation/legal-pages">
+    Create terms, privacy policy, and disclaimers
+  </Card>
+  <Card title="Product Builder" icon="box" href="/payments/product-builder">
+    All product settings reference
+  </Card>
+</CardGroup>
