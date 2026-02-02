@@ -47,6 +47,7 @@
     "tabs": [
       {
         "tab": "Help Center",
+        "icon": "book-open",
         "groups": [
           {
             "group": "CoachIQ Help Center",
