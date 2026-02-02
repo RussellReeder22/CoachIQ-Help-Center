@@ -173,6 +173,7 @@
                   "scheduling/creating-your-first-scheduler",
                   "scheduling/scheduler-settings-limits-and-permissions",
                   "scheduling/advanced-scheduler-settings",
+                  "scheduling/google-calendar-sync",
                   "scheduling/sharing-schedulers"
                 ]
               },
@@ -249,6 +250,7 @@
                 "pages": [
                   "payments/subscriptions-dashboard",
                   "payments/manage-subscriptions",
+                  "payments/stripe-coachiq-reconciliation",
                   "payments/grandfather-pricing"
                 ]
               },

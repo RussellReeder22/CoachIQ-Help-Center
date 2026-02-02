@@ -1,0 +1,184 @@
+---
+title: "Sync Bookings to Google Calendar"
+description: "Automatically sync your CoachIQ bookings to Google Calendar so sessions appear on your personal calendar."
+sidebarTitle: "Google Calendar Sync"
+---
+
+<Info>
+**Where to find this**: Schedule → Schedulers → [Select Scheduler] → Google
+</Info>
+
+## What you'll accomplish
+
+Connect your Google Calendar to a scheduler so all bookings automatically appear on your personal calendar. This keeps your CoachIQ schedule in sync with your everyday calendar without manual entry.
+
+<Note>
+**Beta feature**: Google Calendar sync is currently in beta. Core functionality is stable, but some features may be refined based on feedback.
+</Note>
+
+## How the sync works
+
+Google Calendar sync is **one-way**: CoachIQ → Google Calendar.
+
+| Action in CoachIQ | Result in Google Calendar |
+|-------------------|---------------------------|
+| Athlete books session | Event created |
+| Booking rescheduled | Event updated |
+| Booking cancelled | Event removed |
+| Recurring booking created | Recurring event created |
+
+<Warning>
+**Changes must be made in CoachIQ**. Editing or deleting events directly in Google Calendar does NOT update CoachIQ. Always manage bookings from your CoachIQ dashboard.
+</Warning>
+
+### What gets synced
+
+Each booking creates a Google Calendar event with:
+
+- Session date and time
+- Athlete name
+- Session type/scheduler name
+- Duration
+
+**Current behavior**: Each booking creates its own event. If 3 athletes book the same time slot, you'll see 3 separate events on your Google Calendar.
+
+---
+
+## Connecting Google Calendar
+
+<Steps>
+  <Step title="Open your scheduler settings">
+    Go to **Schedule → Schedulers** and click on the scheduler you want to sync.
+  </Step>
+
+  <Step title="Navigate to the Google tab">
+    In the scheduler settings sidebar, click **Google**.
+
+    <Frame>
+      ![Google Calendar sync settings in scheduler builder](/images/scheduler-google-calendar-sync.png)
+    </Frame>
+  </Step>
+
+  <Step title="Enable sync">
+    Toggle **Sync to Google Calendar** to ON.
+  </Step>
+
+  <Step title="Connect your Google account">
+    Click **Select Accounts** and sign in with your Google account. Grant CoachIQ permission to create and manage calendar events.
+
+    <Tip>
+    Use your primary work Google account—the one where you want to see your coaching schedule.
+    </Tip>
+  </Step>
+
+  <Step title="Save your scheduler">
+    Click **Update** to save your changes.
+
+    <Check>
+    **Success!** New bookings on this scheduler will now appear on your Google Calendar automatically.
+    </Check>
+  </Step>
+</Steps>
+
+---
+
+## Key things to know
+
+### Each scheduler syncs independently
+
+You connect Google Calendar per scheduler, not account-wide. This gives you flexibility:
+
+- Sync only specific schedulers to your calendar
+- Connect different Google accounts to different schedulers
+- Keep some schedulers private (not synced)
+
+### Sync is one-way only
+
+This is the most important concept to understand:
+
+| Where you make changes | What happens |
+|------------------------|--------------|
+| **CoachIQ** (correct) | Changes sync to Google Calendar |
+| **Google Calendar** (incorrect) | Nothing happens in CoachIQ |
+
+If you delete an event from Google Calendar, the booking still exists in CoachIQ. If you move an event in Google Calendar, the booking time doesn't change in CoachIQ.
+
+**Always manage your schedule from CoachIQ.**
+
+### Recurring bookings sync correctly
+
+When an athlete books a recurring session:
+
+- CoachIQ creates a recurring event in Google Calendar
+- The recurrence pattern matches (weekly, bi-weekly, etc.)
+- Deleting the entire recurring schedule removes all instances from Google Calendar
+
+---
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I sync to Apple Calendar or Outlook?">
+    Google Calendar sync is the only direct integration currently available. However, if you use iCal feeds, you can subscribe to your CoachIQ calendar from Apple Calendar or Outlook. See [Calendar Overview](/scheduling/calendar-overview-and-navigation) for iCal feed options.
+  </Accordion>
+
+  <Accordion title="Why don't I see past bookings?">
+    Sync only applies to bookings made AFTER you enable the integration. Existing bookings before you connected won't appear on Google Calendar.
+  </Accordion>
+
+  <Accordion title="Can athletes see my Google Calendar?">
+    No. This sync only sends events TO your Google Calendar. Athletes cannot see your Google Calendar or any events on it. They only see availability through CoachIQ's booking system.
+  </Accordion>
+
+  <Accordion title="What if I have multiple coaches?">
+    Each coach can connect their own Google account to schedulers they're assigned to. The sync sends events to whichever Google account is connected to that scheduler.
+  </Accordion>
+
+  <Accordion title="Will this block time on my Google Calendar for availability?">
+    The sync creates events on your Google Calendar, but CoachIQ does not read your Google Calendar to determine availability. Your CoachIQ availability is set separately in your availability templates.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Events not appearing on Google Calendar">
+    **Check these things:**
+
+    1. Sync is toggled ON in the scheduler's Google settings
+    2. You've connected a Google account (not just enabled the toggle)
+    3. The booking was made AFTER you enabled sync
+    4. Check the correct Google Calendar (you may have multiple)
+
+    **Still not working?** Try disconnecting and reconnecting your Google account.
+  </Accordion>
+
+  <Accordion title="Events showing wrong information">
+    If event details appear incorrect (wrong time, missing info), the booking data in CoachIQ may need updating. Edit the booking in CoachIQ and the Google Calendar event will update.
+  </Accordion>
+
+  <Accordion title="Cancelled booking still on Google Calendar">
+    In rare cases, cancellation sync may be delayed. Wait a few minutes and refresh your Google Calendar. If the event persists, you can manually delete it from Google Calendar (this won't affect CoachIQ).
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Creating Your First Scheduler" icon="calendar-plus" href="/scheduling/creating-your-first-scheduler">
+    Set up a scheduler before connecting Google Calendar
+  </Card>
+  <Card title="Calendar Overview" icon="calendar-days" href="/scheduling/calendar-overview-and-navigation">
+    Navigate and manage your CoachIQ calendar
+  </Card>
+  <Card title="Advanced Scheduler Settings" icon="sliders" href="/scheduling/advanced-scheduler-settings">
+    Configure coaches, locations, and reminders
+  </Card>
+  <Card title="Managing Availability" icon="clock" href="/scheduling/create-your-availability">
+    Set when athletes can book sessions
+  </Card>
+</CardGroup>
