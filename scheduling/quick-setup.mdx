@@ -5,641 +5,127 @@ sidebarTitle: "Quick Start Checklist"
 icon: "check-circle"
 ---
 
-## Use this checklist before going live
-
-Before you share your booking link with athletes, use this checklist to verify everything is configured correctly. Catching issues now prevents confusion, failed bookings, and frustrated athletes later.
+Use this checklist before sharing your booking link with athletes.
 
 <Info>
-  **Estimated time**: 5-10 minutes to complete this checklist
+**Estimated time**: 5-10 minutes
 </Info>
-
-## Phase 1: Account & Platform Setup
-
-These are one-time setup items that affect all your scheduling.
-
-<AccordionGroup>
-  <Accordion title="✅ Account & Payment Processing">
-    **What to verify**:
-
-    - CoachIQ account is active and accessible
-    - Payment processing is connected (if using paid sessions)
-    - Bank account linked for payouts (if using paid sessions)
-    - Test payment processed successfully (if using paid sessions)
-
-    **Why it matters**: Without payment processing set up, athletes can't complete paid bookings.
-
-    **How to check**: Go to **Payments → Settings** and verify your payment processor is connected and active.
-
-    <Tip>
-      **First-timer tip**: If you're starting with free sessions, you can skip payment setup for now and add it later when you're ready to monetize.
-    </Tip>
-  </Accordion>
-  <Accordion title="✅ Timezone Settings">
-    **What to verify**:
-
-    - Your timezone is set correctly in account settings
-    - Calendar displays times in your correct timezone
-
-    **Why it matters**: Incorrect timezone settings cause scheduling chaos—athletes booking at wrong times, missed sessions, confusion all around.
-
-    **How to check**:
-
-    1. Go to **Settings → Account Settings**
-    2. Verify timezone matches your location
-    3. Check calendar to confirm displayed times are correct
-
-    **Common mistake**: Forgetting to update timezone after traveling or relocating.
-  </Accordion>
-  <Accordion title="✅ Athlete List">
-    **What to verify**:
-
-    - At least one test athlete added to your system
-    - Test athlete has valid email address
-    - You can access athlete portal/app to see their view
-
-    **Why it matters**: You need a test athlete to properly verify the booking experience before going live.
-
-    **How to check**: Go to **People → Athletes** and confirm you have at least one athlete listed.
-
-    <Note>
-      **Create a test athlete**: Use your own email (or a test email) to create a fake athlete so you can test bookings without bothering real athletes.
-    </Note>
-  </Accordion>
-</AccordionGroup>
-
-## Phase 2: Scheduler Configuration
-
-Verify your scheduler (session type) is configured correctly.
-
-<AccordionGroup>
-  <Accordion title="✅ Session Details Are Clear & Compelling">
-    **What to verify**:
-
-    - Session name is descriptive and includes duration
-    - Description explains what athletes will get/learn
-    - Duration is set correctly (30, 45, 60 min, etc.)
-    - Session type matches your coaching style (1-on-1 vs group)
-
-    **Good session name examples**:
-
-    - ✅ "60-Minute Private Hitting Lesson"
-    - ✅ "45-Minute Small Group Speed Training"
-    - ✅ "30-Minute Free Assessment Session"
-
-    **Weak session name examples**:
-
-    - ❌ "Session 1"
-    - ❌ "Training"
-    - ❌ "PT-60-A"
-
-    **How to check**: View your scheduler in the Schedulers list—does it clearly communicate what athletes are booking?
-  </Accordion>
-  <Accordion title="✅ Availability Is Set Correctly">
-    **What to verify**:
-
-    - Days and times match when you actually want to coach
-    - Availability extends far enough into the future
-    - No accidental gaps or missing days
-    - Blackout days are set for known time off (vacation, holidays)
-
-    **Common mistakes**:
-
-    - Setting availability only 1-2 weeks out (athletes can't book far ahead)
-    - Forgetting to block vacation days
-    - AM/PM confusion (setting 3:00 AM instead of 3:00 PM)
-    - Not accounting for time zone differences
-
-    **How to check**:
-
-    1. Go to **Schedule → Calendar**
-    2. Switch to Week or Month view
-    3. Verify available slots appear on correct days/times
-
-    <Warning>
-      **Critical check**: Look at your calendar for the next 2-4 weeks. Do available slots appear when you expect them? If you see gaps or wrong times, edit your availability.
-    </Warning>
-  </Accordion>
-  <Accordion title="✅ Buffer Time Is Set (Recommended)">
-    **What to verify**:
-
-    - 10-15 minutes of buffer time between sessions
-    - Buffer accounts for your setup/cleanup needs
-    - Back-to-back sessions have adequate spacing
-
-    **Why it matters**: Buffer prevents burnout, allows bathroom breaks, and gives you time to prepare between athletes.
-
-    **How to check**: Look at your calendar when multiple sessions are booked—are they too close together?
-
-    **Recommended buffer times**:
-
-    - 1-on-1 sessions: 10-15 minutes
-    - Group sessions: 15-20 minutes
-    - Complex setups (video, equipment): 20-30 minutes
-
-    <Tip>
-      **Pro tip**: Athletes never see buffer time—they just see available slots properly spaced. Buffer is invisible to them but saves your sanity.
-    </Tip>
-  </Accordion>
-  <Accordion title="✅ Capacity Settings Match Your Intent">
-    **What to verify**:
-
-    - Max athletes per session is correct (1 for private, 4-20 for groups)
-    - Group size matches your facility/equipment capacity
-    - You're comfortable coaching that many athletes simultaneously
-
-    **How to check**: Edit your scheduler and review the "Max Athletes Per Session" setting.
-
-    **Common mistake**: Setting capacity to 10 for a "private" session, then being surprised when 10 athletes book the same slot.
-  </Accordion>
-</AccordionGroup>
-
-## Phase 3: Payment Configuration
-
-Critical verification if you're charging for sessions.
-
-<AccordionGroup>
-  <Accordion title="✅ Payment Method Is Configured Correctly">
-    **What to verify**:
-
-    - Free vs Paid vs Credit-based is set as intended
-    - Price/credit cost is correct
-    - Payment product is connected (if using direct payment)
-    - Credits are issued properly (if using credit-based)
-
-    **Decision framework**:
-
-    | **Use Free When...** | **Use Direct Payment When...** | **Use Credits When...** |
-    | -------------------- | ------------------------------ | ----------------------- |
-    | Trial sessions       | Drop-in/one-time bookings      | Ongoing relationships   |
-    | Team practices       | New/unproven athletes          | Monthly memberships     |
-    | Assessments          | Event registrations            | Session packages        |
-    | Makeup sessions      | Testing pricing                | Subscription models     |
-
-    <Tip>
-      **First session recommendation**: Start with FREE to learn the system, then add payment once comfortable.
-    </Tip>
-  </Accordion>
-  <Accordion title="✅ Credit System Is Set Up (If Using Credits)">
-    **What to verify**:
-
-    - Credit-issuing product exists (session package or subscription)
-    - Credit price is set on scheduler (e.g., 1 credit per session)
-    - Test athlete has credits to test booking
-    - Credit restrictions are configured (if any)
-
-    **How to check**:
-
-    1. Go to **Payments → Products**
-    2. Verify you have a product that issues credits
-    3. Manually grant test credits to your test athlete
-    4. Attempt a test booking with credits
-
-    <Note>
-      **Credit setup is complex**: If using credits for your first session, expect to spend extra time learning the credit system. Consider starting with free or direct payment first.
-    </Note>
-  </Accordion>
-  <Accordion title="✅ Pricing Makes Sense">
-    **What to verify**:
-
-    - Price matches your market and experience level
-    - Price is competitive with local coaches
-    - You're comfortable charging this rate
-    - Group pricing reflects per-athlete value vs 1-on-1
-
-    **Pricing reality check questions**:
-
-    - Would _you_ pay this price for this session?
-    - Is this sustainable for your business?
-    - Does this match or beat your previous hourly rate?
-    - For groups: Is the per-athlete price compelling?
-
-    **Common pricing mistakes**:
-
-    - Underpricing to attract athletes (hurts perceived value)
-    - Overpricing without proven results (discourages bookings)
-    - Same price for 1-on-1 and group sessions (should differ)
-    - Forgetting to account for your time, travel, equipment costs
-  </Accordion>
-</AccordionGroup>
-
-## Phase 4: Booking Experience Testing
-
-The most critical phase—see what athletes see and experience.
-
-<AccordionGroup>
-  <Accordion title="✅ Booking Link Works">
-    **What to verify**:
-
-    - Booking link opens correctly
-    - Page loads without errors
-    - Session information displays properly
-    - Available times are showing
-
-    **How to check**:
-
-    1. Copy your scheduler's booking link
-    2. Open in a new browser tab (or incognito/private window)
-    3. Verify everything displays as expected
-
-    <Warning>
-      **Critical**: If no available times show, your availability isn't configured correctly. Go back and verify your availability settings.
-    </Warning>
-  </Accordion>
-  <Accordion title="✅ Athlete View Is Clear & Professional">
-    **What to verify**:
-
-    - Session name and description are compelling
-    - Price or credit cost is clear
-    - Duration is obvious
-    - No confusing or technical jargon
-    - Mobile-friendly display
-
-    **What athletes should immediately understand**:
-
-    1. What they're booking (session type)
-    2. How long it lasts (duration)
-    3. What it costs (price or credits)
-    4. What they'll get out of it (value)
-
-    **How to check**: Show your booking link to someone unfamiliar with your business—can they understand what they're booking within 5 seconds?
-
-    <Tip>
-      **Pro tip**: Test on mobile! Many athletes will book from their phones. Your booking experience must work perfectly on small screens.
-    </Tip>
-  </Accordion>
-  <Accordion title="✅ Test Booking Completes Successfully">
-    **What to verify**:
-
-    - Can select an available time slot
-    - Can complete the booking process
-    - Receive booking confirmation (email/notification)
-    - Booking appears on your calendar correctly
-    - Test athlete receives confirmation
-
-    **How to test**:
-
-    1. As your test athlete, book a session
-    2. Complete the full booking flow
-    3. Verify confirmation notifications
-    4. Check your calendar for the booking
-    5. Verify all information is correct (time, athlete name, session type)
-
-    **If payment required**:
-
-    - Payment processes successfully
-    - Amount charged is correct
-    - Receipt is generated
-    - Funds appear in your account (or marked as pending)
-
-    **If credits required**:
-
-    - Credits are deducted properly
-    - Credit balance updates correctly
-    - Booking confirmation shows credit usage
-  </Accordion>
-  <Accordion title="✅ Cancellation Flow Works (If Enabled)">
-    **What to verify**:
-
-    - Athletes can cancel (if you allow it)
-    - Cancellation policy is clear
-    - Credits refund properly (if applicable)
-    - Cancellation notifications are sent
-    - Calendar updates after cancellation
-
-    **How to test**: After creating a test booking, cancel it and verify the process works smoothly.
-  </Accordion>
-</AccordionGroup>
-
-## Phase 5: Calendar & Management
-
-Ensure you can effectively manage bookings once they start coming in.
-
-<AccordionGroup>
-  <Accordion title="✅ Calendar Is Accurate & Readable">
-    **What to verify**:
-
-    - Bookings display correctly in calendar
-    - Day/Week/Month views all work
-    - Session information is complete
-    - Athlete names are visible
-    - Times are correct (timezone check)
-
-    **How to check**: Navigate to **Schedule → Calendar** and verify your test booking appears correctly in all views.
-  </Accordion>
-  <Accordion title="✅ You Can Manually Book Athletes">
-    **What to verify**:
-
-    - Can access booking builder
-    - Can select athletes, sessions, and times
-    - Manual bookings appear on calendar
-    - Notifications are sent to athletes
-
-    **Why it matters**: Even with self-service booking, you'll occasionally need to manually book athletes for makeups, special requests, or VIP clients.
-
-    **How to check**:
-
-    1. Go to **Schedule → Calendar**
-    2. Click **Book Session**
-    3. Walk through the manual booking process
-    4. Verify the booking appears correctly
-  </Accordion>
-  <Accordion title="✅ Notifications Are Working">
-    **What to verify**:
-
-    - Booking confirmations sent to athletes
-    - Booking notifications sent to you
-    - Reminder notifications configured (if desired)
-    - Cancellation notifications work
-
-    **How to check**: After your test booking, verify both you and the test athlete received notifications.
-
-    <Note>
-      **Reminder setup**: If you want automated reminders (1 day before, 1 hour before, etc.), configure these in your scheduler settings under "Reminders."
-    </Note>
-  </Accordion>
-</AccordionGroup>
-
-## Phase 6: Sharing & Distribution
-
-Make your booking link accessible to athletes.
-
-<AccordionGroup>
-  <Accordion title="✅ Sharing Strategy Is Ready">
-    **What to verify**:
-
-    - Booking link is saved and accessible
-    - Know where you'll share the link (social media, website, SMS)
-    - Have a system for ongoing distribution
-    - Considered embedding on website (if applicable)
-
-    **Sharing checklist**:
-
-    - Booking link saved in notes/document
-    - Added to email signature
-    - Posted on social media profiles
-    - Sent to current athlete roster
-    - Added to website (if you have one)
-    - Shared in messaging apps (WhatsApp, Discord, etc.)
-
-    <Tip>
-      **URL shortener tip**: If your booking link is long, use a URL shortener (bit.ly, tinyurl) to create a cleaner link like "bit.ly/CoachMikeBooking"
-    </Tip>
-  </Accordion>
-  <Accordion title="✅ Website Integration (If Applicable)">
-    **What to verify**:
-
-    - Scheduler embedded on your CoachIQ website
-    - Booking section appears correctly
-    - Athletes can book without leaving your site
-    - Website is published and live
-
-    **How to check**: Visit your website and test the embedded booking experience.
-
-    **If not using CoachIQ website**: You can still share direct booking links via social media, email, SMS, or embed on external websites using an iframe.
-  </Accordion>
-</AccordionGroup>
-
-## Common Setup Mistakes (And How to Avoid Them)
-
-### 1. No Availability Set
-
-**Symptom**: Booking link shows "No available times"
-
-**Fix**: Edit your scheduler and add availability (days/times you coach)
-
-### 2. Availability Too Far in Past/Future
-
-**Symptom**: No slots showing even though availability exists
-
-**Fix**: Check your scheduler's date range—ensure it includes today and extends into future
-
-### 3. Minimum Notice Too High
-
-**Symptom**: Athletes complain they can't book
-
-**Fix**: If you set "24-hour minimum notice," athletes can't book sessions within 24 hours. Reduce or remove this restriction.
-
-### 4. Wrong Timezone
-
-**Symptom**: Sessions booked at weird times, athletes/coaches confused
-
-**Fix**: Verify timezone in Settings → Account Settings matches your actual location
-
-### 5. Payment Not Configured
-
-**Symptom**: Athletes can't complete booking
-
-**Fix**: If requiring payment, ensure payment processor is connected and products are set up
-
-### 6. Buffer Time Too Long
-
-**Symptom**: Very few available slots showing
-
-**Fix**: 60+ minutes of buffer time dramatically reduces available slots. Keep buffer to 10-20 minutes.
-
-### 7. Capacity Set Incorrectly
-
-**Symptom**: Multiple athletes booking same "private" session slot
-
-**Fix**: Verify "Max Athletes Per Session" is set to 1 for private sessions
-
-### 8. Credits Not Issued
-
-**Symptom**: Athletes with credit-based sessions can't book
-
-**Fix**: Ensure test athletes have credits granted, or credit-issuing products are set up
-
-## Decision Framework: Credits vs. Direct Payment
-
-<Tabs>
-  <Tab title="Start with FREE">
-    **Best for**:
-
-    - Your very first session while learning CoachIQ
-    - Testing the system before charging
-    - Building initial athlete relationships
-    - Trial sessions for new athletes
-
-    **Pros**:
-
-    - Zero setup complexity
-    - Focus on learning the scheduling mechanics
-    - No payment processor configuration needed
-    - Easy to upgrade to paid later
-
-    **Cons**:
-
-    - No immediate revenue
-    - May attract less committed athletes
-    - Need to add payment later when ready
-
-    **Recommendation**: ✅ **Best choice for first session**
-  </Tab>
-  <Tab title="Use DIRECT PAYMENT">
-    **Best for**:
-
-    - Drop-in sessions
-    - One-time bookings
-    - New athletes (haven't purchased packages)
-    - Event registrations
-    - Workshops or clinics
-
-    **Pros**:
-
-    - Immediate revenue per booking
-    - Simple athlete understanding (pay per session)
-    - No credit management complexity
-    - Good for trying out pricing
-
-    **Cons**:
-
-    - Per-session friction (athletes decide each time)
-    - No pre-commitment from athletes
-    - Potential for cancellations
-
-    **Setup required**:
-
-    - Payment processor connected
-    - Product created with price
-    - Test payment processed
-
-    **Recommendation**: ✅ **Good for solo coaches with variable athletes**
-  </Tab>
-  <Tab title="Use CREDITS">
-    **Best for**:
-
-    - Ongoing coaching relationships
-    - Monthly subscriptions
-    - Session packages (5-pack, 10-pack)
-    - Committed athletes
-    - Reducing no-shows (pre-paid investment)
-
-    **Pros**:
-
-    - Pre-commitment from athletes
-    - Reduced booking friction (already paid)
-    - Better cash flow (upfront payment)
-    - Lower no-show rates
-    - Encourages package purchases
-
-    **Cons**:
-
-    - More complex setup
-    - Athletes must understand credit system
-    - Requires managing credit balances
-    - Initial learning curve
-
-    **Setup required**:
-
-    - Credit-issuing products created
-    - Credit price set on schedulers
-    - Athletes granted or purchase credits
-    - Understanding credit restrictions/expiration
-
-    **Recommendation**: ⚠️ **Best AFTER mastering basics—not for first session**
-  </Tab>
-</Tabs>
-
-## Final Pre-Launch Checklist
-
-Before you share your booking link with real athletes, confirm:
-
-### Critical Must-Haves
-
-- ✅ Test booking completed successfully
-- ✅ Booking appears on calendar correctly
-- ✅ Confirmations/notifications are working
-- ✅ Availability shows correct days/times
-- ✅ Pricing/payment is configured properly
-- ✅ Session name and description are clear
-- ✅ Tested on mobile device
-
-### Important Nice-to-Haves
-
-- Buffer time set (10-15 min recommended)
-- Blackout days added for known time off
-- Reminders configured for athletes
-- Cancellation policy set
-- Booking limits configured (if needed)
-- Program groupings created (if multiple schedulers)
-
-### Launch Readiness
-
-- Booking link saved and ready to share
-- Communication plan for sharing with athletes
-- First week availability looks good
-- Mentally prepared for bookings to come in
-- Know how to manually book if needed
-- Support contact saved (if you need help)
-
-<Check>
-  **All set?** You're ready to launch! Share your booking link and start accepting bookings.
-</Check>
-
-## What to monitor after launch
-
-After sharing your booking link, keep an eye on these for the first week:
-
-**Daily checks**:
-
-- Are bookings coming through?
-- Do bookings appear correctly on your calendar?
-- Are athletes receiving confirmations?
-- Any error messages or athlete complaints?
-
-**Weekly review**:
-
-- Booking volume (higher or lower than expected?)
-- Popular time slots (adjust availability if needed)
-- No-show rate (may need to adjust policies)
-- Athlete feedback about booking process
-
-<Tip>
-  **Pro tip**: After your first 5-10 bookings, ask athletes for feedback: "Was the booking process easy? Any confusion?" Use this feedback to improve your scheduler descriptions and settings.
-</Tip>
-
-## Troubleshooting Quick Reference
-
-| **Problem**                            | **Most Likely Cause**          | **Quick Fix**                             |
-| -------------------------------------- | ------------------------------ | ----------------------------------------- |
-| No available times showing             | Availability not set           | Add availability to scheduler             |
-| Athletes can't book                    | Payment/credits not configured | Set session to free, or fix payment setup |
-| Wrong times displaying                 | Timezone incorrect             | Fix timezone in account settings          |
-| Too few slots available                | Buffer time too long           | Reduce buffer time to 10-15 min           |
-| Multiple athletes in "private" session | Capacity set wrong             | Set max capacity to 1                     |
-| Booking confirmation not received      | Notifications disabled         | Check notification settings               |
-| Can't share booking link               | Scheduler not saved/active     | Save scheduler and get fresh link         |
 
 ---
 
-## Next steps
+## Platform Setup
 
-<CardGroup cols={2}>
-  <Card title="Create Schedulers" icon="plus-circle" href="/scheduling/creating-first-scheduler">
-    Add more session types with different durations, prices, or formats
-  </Card>
-  <Card title="Set Up Credits" icon="coins" href="/scheduling/credit-system-overview">
-    Learn how to create credit-based packages and subscriptions
-  </Card>
-  <Card title="Calendar Management" icon="calendar-alt" href="/scheduling/calendar-overview-and-navigation">
-    Master your scheduling command center
-  </Card>
-</CardGroup>
+- [ ] **Timezone** is correct in Settings → Account Settings
+- [ ] **Payment processing** connected (if charging for sessions)
+- [ ] **Test athlete** created to verify booking flow
+
+---
+
+## Scheduler Configuration
+
+- [ ] **Session name** is clear and includes duration (e.g., "60-Min Private Training")
+- [ ] **Description** explains what athletes get
+- [ ] **Duration** is set correctly
+- [ ] **Capacity** matches session type (1 for private, higher for groups)
+- [ ] **Buffer time** set to 10-15 minutes between sessions
+
+---
+
+## Availability
+
+- [ ] **Days and times** match when you want to coach
+- [ ] **Extends far enough** into the future (2-4 weeks minimum)
+- [ ] **Blackout days** set for known time off
+- [ ] **No AM/PM mistakes** (check calendar to verify)
+
+<Frame>
+  ![Calendar week view showing booked sessions](/images/calendar-week-view.png)
+</Frame>
+
+---
+
+## Payment (If Charging)
+
+- [ ] **Payment method** configured (free, direct payment, or credits)
+- [ ] **Price/credit cost** is correct
+- [ ] **Test transaction** completed successfully
+
+<Tip>
+**First time?** Start with free sessions to learn the system, then add payment later.
+</Tip>
+
+---
+
+## Test Booking
+
+This is the most important step—experience what athletes will experience.
+
+<Steps>
+  <Step title="Open your booking link">
+    Copy your scheduler's booking link and open it in an incognito/private browser window.
+  </Step>
+
+  <Step title="Complete a test booking">
+    Select a time slot and complete the full booking process as your test athlete.
+  </Step>
+
+  <Step title="Verify everything worked">
+    - Booking appears on your calendar
+    - Confirmation notification received
+    - Credit deducted (if applicable)
+    - Time slot no longer available to others
+  </Step>
+</Steps>
+
+<Warning>
+**No available times showing?** Your availability isn't configured correctly. Go to Schedule → Schedulers and verify availability settings.
+</Warning>
+
+---
+
+## Ready to Launch
+
+Before sharing your booking link, confirm:
+
+**Must-haves:**
+- [ ] Test booking completed successfully
+- [ ] Booking appears correctly on calendar
+- [ ] Notifications working
+- [ ] Tested on mobile device
+
+**Nice-to-haves:**
+- [ ] Reminders configured
+- [ ] Cancellation policy set
+- [ ] Booking link saved and ready to share
+
+<Check>
+**All set?** Share your booking link and start accepting bookings!
+</Check>
+
+---
+
+## Troubleshooting
+
+| Problem | Fix |
+|---------|-----|
+| No available times showing | Add availability to scheduler |
+| Athletes can't complete booking | Check payment/credit configuration |
+| Wrong times displaying | Fix timezone in account settings |
+| Too few slots available | Reduce buffer time to 10-15 min |
+| Multiple athletes in "private" session | Set max capacity to 1 |
+
+---
 
 ## Related articles
 
 <CardGroup cols={3}>
-  <Card title="Your First Session" icon="rocket" href="/scheduling/book-your-first-session">
-    Step-by-step guide to creating your first bookable session
+  <Card title="Create a Scheduler" icon="plus-circle" href="/scheduling/creating-your-first-scheduler">
+    Step-by-step scheduler creation
   </Card>
-  <Card title="Understanding Scheduling" icon="book-open" href="/scheduling/overview">
-    Complete overview of how scheduling works
+  <Card title="Set Up Availability" icon="calendar-check" href="/scheduling/create-your-availability">
+    Configure your coaching hours
   </Card>
-  <Card title="Availability Setup" icon="calendar-check" href="/scheduling/creating-your-availability">
-    Set up your coaching availability
+  <Card title="Credit System" icon="coins" href="/scheduling/credit-system-overview">
+    Understand credit-based booking
   </Card>
 </CardGroup>
-
-<Info>
-  **Still not sure if you're ready?** Walk through this checklist with our support team. [Contact Support](https://coachiq.com/support)
-</Info>

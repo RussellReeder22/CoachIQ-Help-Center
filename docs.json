@@ -47,6 +47,7 @@
     "tabs": [
       {
         "tab": "Help Center",
+        "icon": "book-open",
         "groups": [
           {
             "group": "CoachIQ Help Center",
@@ -154,6 +155,7 @@
               "inbox/in-app-messages",
               "inbox/sms-messages",
               "inbox/announcements",
+              "inbox/email-marketing",
               "inbox/attaching-forms-schedulers-and-products",
               "inbox/using-tags-for-group-messages",
               "help-center/inbox/professional-email"
@@ -172,6 +174,7 @@
                   "scheduling/creating-your-first-scheduler",
                   "scheduling/scheduler-settings-limits-and-permissions",
                   "scheduling/advanced-scheduler-settings",
+                  "scheduling/google-calendar-sync",
                   "scheduling/sharing-schedulers"
                 ]
               },
@@ -190,10 +193,14 @@
                 "icon": "calendar-days",
                 "pages": [
                   "scheduling/calendar-overview-and-navigation",
+                  "scheduling/calendar-analytics",
                   "scheduling/understanding-booking-types",
                   "scheduling/manually-booking-athletes",
                   "scheduling/book-your-first-session",
+                  "scheduling/booking-for-multiple-athletes",
                   "scheduling/recurring-bookings",
+                  "scheduling/editing-rescheduling-bookings",
+                  "scheduling/checking-in-athletes",
                   "scheduling/canceling-bookings"
                 ]
               },
@@ -214,7 +221,6 @@
           {
             "group": "Payments",
             "pages": [
-              "payments/index",
               "payments/getting-started",
               {
                 "group": "Stripe Setup",
@@ -235,7 +241,8 @@
                   "payments/attach-products",
                   "payments/credits-products",
                   "payments/processing-fee",
-                  "payments/guest-checkout"
+                  "payments/guest-checkout",
+                  "payments/checkout-terms-waivers"
                 ]
               },
               {
@@ -243,7 +250,9 @@
                 "icon": "rotate",
                 "pages": [
                   "payments/subscriptions-dashboard",
-                  "payments/manage-subscriptions"
+                  "payments/manage-subscriptions",
+                  "payments/stripe-coachiq-reconciliation",
+                  "payments/grandfather-pricing"
                 ]
               },
               {
@@ -319,15 +328,6 @@
             "pages": [
               "settings/index"
             ]
-          },
-          {
-            "group": "Helping Your Athlete",
-            "pages": [
-              "help-center/helping-your-athlete/untitled-page-1",
-              "help-center/helping-your-athlete/untitled-page",
-              "help-center/helping-your-athlete/login-issues",
-              "help-center/helping-your-athlete/credit-issues"
-            ]
           }
         ]
       },
@@ -348,15 +348,25 @@
         ]
       },
       {
-        "tab": "Complete Flows",
-        "icon": "route",
+        "tab": "Quick Guides",
+        "icon": "book-bookmark",
         "groups": [
           {
-            "group": "Complete Workflows",
+            "group": "Coach Guides",
             "pages": [
               "flows/index",
               "flows/first-week-setup-checklist",
               "flows/onboarding-new-athletes"
+            ]
+          },
+          {
+            "group": "Helping Your Athletes",
+            "pages": [
+              "help-center/helping-your-athlete/sessions-not-showing",
+              "help-center/helping-your-athlete/video-upload-issues",
+              "help-center/helping-your-athlete/cancel-subscription",
+              "help-center/helping-your-athlete/login-issues",
+              "help-center/helping-your-athlete/credit-issues"
             ]
           }
         ]
@@ -372,8 +382,7 @@
               "guides/building-your-training-facility",
               "business-guides/guides/hiring-onboarding-trainers",
               "guides/pricing-your-services",
-              "guides/growing-your-coaching-business",
-              "guides/grandfather-pricing"
+              "guides/growing-your-coaching-business"
             ]
           }
         ]
@@ -580,7 +589,15 @@
     { "source": "/athlete-portal/overview", "destination": "/athlete-portal/understanding-your-athlete-portal" },
     { "source": "/athlete-portal/access-control", "destination": "/athlete-portal/paywall-settings" },
     { "source": "/athlete-portal/initial-setup", "destination": "/athlete-portal/understanding-your-athlete-portal" },
-    { "source": "/athlete-portal/design", "destination": "/athlete-portal/design-settings" }
+    { "source": "/athlete-portal/design", "destination": "/athlete-portal/design-settings" },
+
+    { "source": "/guides/grandfather-pricing", "destination": "/payments/grandfather-pricing" },
+
+    { "source": "/payments/index", "destination": "/payments/getting-started" },
+    { "source": "/payments", "destination": "/payments/getting-started" },
+
+    { "source": "/help-center/helping-your-athlete/untitled-page-1", "destination": "/help-center/helping-your-athlete/sessions-not-showing" },
+    { "source": "/help-center/helping-your-athlete/untitled-page", "destination": "/help-center/helping-your-athlete/video-upload-issues" }
   ],
   "metadata": {
     "og:title": "CoachIQ Help Center",
