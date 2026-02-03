@@ -1,0 +1,188 @@
+---
+title: "URL Redirects"
+description: "Set up URL redirects to prevent broken links when you rename, move, or delete pages. Keep your SEO value and avoid frustrating visitors."
+sidebarTitle: "URL Redirects"
+icon: "arrow-right-arrow-left"
+keywords: "URL redirect, 301 redirect, broken links, page rename, SEO redirect, wildcard redirect"
+---
+
+<Info>
+**Where to find this**: Dashboard → Website Builder → Settings (gear icon) → URL Redirects → View/Edit
+</Info>
+
+## Why redirects matter
+
+When you change a page URL or delete a page, anyone with the old link gets a "Page Not Found" error. This includes:
+
+- **Google search results** still pointing to old URLs
+- **Social media posts** you've shared
+- **Backlinks** from other websites
+- **Bookmarks** parents have saved
+- **QR codes** on printed materials
+
+A redirect automatically sends visitors from the old URL to the new one - no broken links, no lost traffic.
+
+<Warning>
+**SEO impact**: Broken links hurt your search rankings. Google sees 404 errors as a sign of poor site maintenance. Redirects preserve your SEO value by telling Google "this page moved here."
+</Warning>
+
+## Setting up redirects
+
+<Steps>
+  <Step title="Open Website Settings">
+    In the Website Builder, click the **Settings** gear icon in the left sidebar.
+  </Step>
+
+  <Step title="Open URL Redirects">
+    Scroll to **URL Redirects** and click **View/Edit**. The redirect manager opens.
+
+    <Frame>
+      ![URL redirects modal](/images/website-url-redirects-modal.png)
+    </Frame>
+  </Step>
+
+  <Step title="Add a Redirect">
+    Fill in both fields:
+
+    | Field | What to Enter | Example |
+    |-------|--------------|---------|
+    | **Redirect From** | The old URL path (without domain) | `/summer-camp` |
+    | **Redirect To** | The new URL path or full external URL | `/summer-camp-2026` |
+
+    Click the **+** button to add another redirect if needed.
+  </Step>
+
+  <Step title="Save and Publish">
+    Close the modal and click **Publish** to activate your redirects.
+  </Step>
+</Steps>
+
+## Redirect examples
+
+### Renaming a page
+
+You renamed "Summer Camp" to "Summer Camp 2026":
+
+| Redirect From | Redirect To |
+|--------------|-------------|
+| `/summer-camp` | `/summer-camp-2026` |
+
+### Deleting a page
+
+You removed your "Evaluations" page and want visitors to see "Programs" instead:
+
+| Redirect From | Redirect To |
+|--------------|-------------|
+| `/evaluations` | `/programs` |
+
+### Redirecting to external site
+
+You want an old page to go to your booking calendar:
+
+| Redirect From | Redirect To |
+|--------------|-------------|
+| `/book-now` | `https://cal.com/your-calendar` |
+
+<Tip>
+**External URLs**: When redirecting to a different website, enter the full URL including `https://`.
+</Tip>
+
+## Using wildcards
+
+Wildcards let you redirect multiple pages at once using `*` as a placeholder.
+
+**Example**: You restructured your site and moved all camp pages under a new path:
+
+| Redirect From | Redirect To |
+|--------------|-------------|
+| `/camps/*` | `/programs/camps/*` |
+
+This redirects:
+- `/camps/summer` → `/programs/camps/summer`
+- `/camps/winter` → `/programs/camps/winter`
+- `/camps/spring-break` → `/programs/camps/spring-break`
+
+<Note>
+**Wildcard syntax**: Use `/*` at the end of a path to match all sub-pages. For example, `/old-section/*` catches everything under that section.
+</Note>
+
+## When to use redirects
+
+| Scenario | Action |
+|----------|--------|
+| Renamed a page | Redirect old slug → new slug |
+| Deleted a page with traffic | Redirect → most relevant existing page |
+| Restructured site sections | Use wildcards for bulk redirects |
+| Migrating from old website | Redirect old URLs → new equivalents |
+| Seasonal pages | Redirect last year's camp → this year's |
+| Typos in shared links | Redirect typo → correct URL |
+
+## Common mistakes to avoid
+
+<AccordionGroup>
+  <Accordion title="Redirect chains (A → B → C)">
+    Don't create chains where one redirect leads to another redirect. This slows down page loading and confuses search engines. Always redirect directly to the final destination.
+
+    **Bad**: `/old` → `/temporary` → `/final`
+    **Good**: `/old` → `/final`
+  </Accordion>
+
+  <Accordion title="Redirect loops (A → B → A)">
+    Never create a loop where pages redirect to each other. This breaks the page completely. Double-check your redirect destinations.
+  </Accordion>
+
+  <Accordion title="Forgetting the leading slash">
+    Always include the `/` at the start of your paths.
+
+    **Correct**: `/summer-camp`
+    **Incorrect**: `summer-camp`
+  </Accordion>
+
+  <Accordion title="Redirecting your home page">
+    Be very careful redirecting `/` (your home page). This affects your entire site's entry point. Only do this if you're absolutely sure.
+  </Accordion>
+</AccordionGroup>
+
+## Testing your redirects
+
+After publishing, test your redirects:
+
+1. Open an incognito/private browser window
+2. Visit your old URL directly (e.g., `yourdomain.com/old-page`)
+3. Verify you land on the new page
+4. Check that the browser URL shows the new address
+
+<Tip>
+**Pro tip**: Keep a list of your redirects somewhere (spreadsheet, notes) so you remember what points where. This helps when troubleshooting or making future changes.
+</Tip>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="How many redirects can I create?">
+    There's no hard limit, but keep your redirect list manageable. Too many redirects can slow site performance and become difficult to maintain.
+  </Accordion>
+
+  <Accordion title="Do redirects affect page speed?">
+    Slightly. Each redirect adds a small delay (usually milliseconds). This is almost always worth it compared to broken links, but avoid unnecessary redirect chains.
+  </Accordion>
+
+  <Accordion title="Can I redirect to a specific section of a page?">
+    Yes, you can include anchor links. For example: `/old-faq` → `/about#faq` would redirect to the FAQ section of your About page.
+  </Accordion>
+
+  <Accordion title="How do I remove a redirect?">
+    In the URL Redirects modal, click the **X** button next to the redirect you want to remove, then publish your changes.
+  </Accordion>
+
+  <Accordion title="Will Google update its search results?">
+    Yes, but it takes time. Google will eventually crawl the redirect and update its index. You can speed this up by requesting re-indexing in Google Search Console.
+  </Accordion>
+</AccordionGroup>
+
+## Related articles
+
+- [URL Slugs & Page Management](/website/pages-navigation/url-slugs-page-management)
+- [Sitemap Builder](/website/seo-marketing/sitemap-builder)
+- [Google Search Console Setup](/website/seo-marketing/seo-google-search-console)
+- [Website SEO Basics](/website/seo-marketing/website-seo-basics)
