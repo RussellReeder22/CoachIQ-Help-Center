@@ -1,1789 +1,241 @@
 ---
-title: "Onboarding A New Athlete: Complete Setup Guide"
-description: "Master the complete athlete onboarding workflow from lead capture through membership conversion using CoachIQ's integrated tools"
-sidebarTitle: "Onboard New Athletes"
+title: "How Athletes Join Your Program"
+description: "The simple path from your website to a fully set-up athlete in your system - purchase, portal, done."
+sidebarTitle: "How Athletes Join"
 icon: "user-plus"
 ---
 
 <Info>
-  **Estimated setup time**: 2-3 hours for initial configuration | **Recommended for**: All coaches ready to systematize their client acquisition
+**The big picture**: Your website is your front door. Athletes purchase a product, and they're automatically set up in your system - account created, waiver signed, ready to go.
 </Info>
 
-## What you'll accomplish
-
-By the end of this guide, you'll have a complete, automated system that:
-
-- Captures new leads through your website
-- Schedules and manages trial sessions
-- Onboards athletes into your training programs
-- Converts trials into paying memberships
-
-This systematic approach ensures every new athlete receives a consistent, professional experience while saving you hours of manual administrative work.
-
-## Overview: Your athlete onboarding journey
+## The Athlete Journey
 
 <CardGroup cols={4}>
-  <Card title="1. Foundation" icon="gear">
-    Products, schedulers & forms
+  <Card title="1. Visit Website" icon="globe">
+    Find your pricing
   </Card>
-  <Card title="2. Athlete Portal" icon="house-user">
-    Customer home base
+  <Card title="2. Purchase" icon="credit-card">
+    Select a plan
   </Card>
-  <Card title="3. Website Flow" icon="globe">
-    Lead capture & trials
+  <Card title="3. Account Created" icon="user-check">
+    Waiver signed automatically
   </Card>
-  <Card title="4. Conversion" icon="lock">
-    Lock in memberships
-  </Card>
-</CardGroup>
-
----
-
-## Phase 1: Getting Started - Build Your Foundation
-
-Before you can onboard athletes, you need the infrastructure in place. Think of this as building your coaching business's operating system.
-
-### What you'll create in this phase
-
-- **Products**: Your service offerings (trial sessions, memberships, training packages)
-- **Schedulers**: Booking calendars for different session types
-- **Forms**: Information collection and lead capture tools
-
----
-
-### Step 1: Create your core products
-
-Products are the services you sell. For effective athlete onboarding, you need at least two product types: a trial offer and a membership.
-
-<Steps>
-  <Step title="Navigate to Products">
-    From your dashboard, select **Products** from the main navigation menu.
-
-    Click **\+ New Product** in the top right.
-  </Step>
-  <Step title="Create your trial session product">
-    Set up an attractive entry point for new athletes:
-
-    From your dashboard, navigate to **Products** in the main menu, then click **\+ New Product**.
-
-    **Product details:**
-
-    - **Name**: "Free Trial Session" or "Intro Training Session"
-    - **Price**: 0 or discounted rate (e.g., 15 for a \$50 value)
-    - **Description**: Write compelling copy that explains what they'll experience
-
-    <Frame>
-      ![Trial Session Example](/images/trial-session-example.png)
-    </Frame>
-    **Description example:**
-
-    ```
-    Experience personalized coaching with a complimentary 60-minute session. We'll:
-    - Assess your current fitness level
-    - Discuss your goals
-    - Create a customized training roadmap
-    - Show you exactly how we'll help you succeed
-    
-    No commitment required. Come see if we're the right fit!
-    ```
-
-    <Tip>
-      **Pro tip**: Offering something free removes the barrier to entry. Even a small price (\$15) can work if you want to qualify serious prospects while still appearing accessible.
-    </Tip>
-    <Note>
-      You'll connect this product to your trial scheduler in the next step, which is where you'll define session duration, availability, and booking rules.
-    </Note>
-    Click **Save Product**.
-  </Step>
-  <Step title="Create your membership product">
-    Now create your main revenue driver:
-
-    **Product details:**
-
-    - **Name**: "Monthly Training Membership" (or your specific program name)
-    - **Price**: Your monthly rate (e.g., \$199/month)
-    - **Description**: Clearly explain what's included and the value they receive
-
-    **Description example:**
-
-    ```
-    Your complete training solution includes:
-    - 12 training sessions per month (3x per week)
-    - Personalized workout programs updated weekly
-    - Direct coach communication via app
-    - Progress tracking and analytics
-    - Nutrition guidance and accountability
-    - Monthly goal reviews and adjustments
-    
-    Cancel anytime with 30-day notice.
-    ```
-
-    **Set up session credits:** Configure how many credits members receive when they purchase this membership:
-
-    - **Credits granted upon purchase**: Set the number of credits (e.g., 12 credits for a monthly membership = 3 sessions per week)
-    - **Credit renewal**: Configure credits to renew each billing cycle (monthly)
-
-    <Note>
-      **How credits work**: When an athlete purchases this membership, they automatically receive the specified number of credits. They'll use these credits to book sessions from your training schedulers. For example, if each session costs 1 credit and they receive 12 credits per month, they can book 12 training sessions.
-    </Note>
-    <Tip>
-      **Pro tip**: Match your credit allocation to your training frequency. For 2x/week training = 8-9 credits/month. For 3x/week = 12-13 credits/month or unlimited credits.
-    </Tip>
-    Click **Save Product**.
-
-    <Check>
-      **Success!** You now have a clear pathway: Free trial → Paid membership with automatic credit allocation for session booking.
-    </Check>
-  </Step>
-  <Step title="Create any additional products (optional)">
-    Consider adding:
-
-    - **Drop-in sessions**: One-time training for flexibility
-    - **Assessment packages**: Initial evaluation + follow-ups
-    - **Small group training**: Different price point option
-    - **Add-on services**: Nutrition plans, recovery sessions, etc.
-
-    These give prospects multiple entry points and current clients upgrade options.
-  </Step>
-</Steps>
-
----
-
-### Step 2: Configure your schedulers
-
-Schedulers control when and how athletes can book time with you. You'll need separate schedulers for trials versus member sessions. Before creating schedulers, you'll first set up your availability.
-
-<Steps>
-  <Step title="Navigate to Schedule and set your availability">
-    From your dashboard, select **Schedule** from the main navigation.
-
-    Before creating schedulers, you need to define when you're available to train clients.
-
-    Click **Availability** in the schedule section, then **\+ Add Availability**.
-
-    **Set your training hours:**
-
-    - **Days**: Select which days you train clients (e.g., Monday, Wednesday, Friday)
-    - **Time blocks**: Define your available hours (e.g., 6:00 AM - 8:00 PM)
-    - **Recurring**: Set this as your standard weekly availability
-
-    <Tip>
-      **Pro tip**: Create separate availability blocks for different purposes. For example, "Morning Training" (6-10 AM) and "Evening Training" (4-8 PM) gives you flexibility when creating schedulers.
-    </Tip>
-    Click **Save Availability**.
-  </Step>
-  <Step title="Create your trial session scheduler">
-    Now that your availability is set, create a scheduler for trial bookings.
-
-    From the Schedule page, click **Schedulers** → **\+ New Scheduler**.
-
-    **Basic settings:**
-
-    - **Name**: "Trial Session Booking"
-    - **Duration**: 60 minutes (recommended for proper assessment)
-    - **Buffer time**: 10-15 minutes between sessions (for notes and setup, optional)
-
-    **Attach your trial product:**
-
-    - **Linked product**: Select your "Free Trial Session" product
-    - This connects the booking to payment processing (even if \$0)
-
-    **Availability settings:**
-
-    - **Use availability**: Select your created availability blocks
-    - **Specific time slots**: Choose limited slots for trials (e.g., 10:00 AM, 5:00 PM, 6:00 PM)
-    - **Days**: Select specific days (don't give all your time to trials)
-
-    <Warning>
-      **Important**: Don't make all your time slots available for trials. Reserve prime times for paying members. Offer 3-5 trial slots per week maximum.
-    </Warning>
-    **Booking rules:**
-
-    - **Booking window**: Minimum 2 hours advance notice
-    - **Max bookings per slot**: 1 (for one-on-one), 2 (semi-private), (3+ group session)
-
-    Click **Save Scheduler**.
-  </Step>
-  <Step title="Create your member training scheduler">
-    Now create a scheduler for your paying members with full access to your availability.
-
-    Click **\+ New Scheduler**.
-
-    **Basic settings:**
-
-    - **Name**: Use a descriptive name for your specific programming (e.g., "Group Session at Main Gym" or "1-on-1 Training at Downtown Location")
-    - **Duration**: Your standard session length (typically 45-60 minutes)
-    - **Session type**: One-on-one, Semi-Private, or Group (based on your training model)
-
-    **Credit-based booking:**
-
-    - **Enable credits**: Turn on credit-based payment
-    - **Credits per booking**: Set how many credits each session costs (typically 1 credit = 1 session)
-    - **How it works**: When athletes purchase your membership product, they receive credits that can be used to book sessions from this scheduler
-
-    <Note>
-      **Credit system**: Membership products should be configured to grant credits (e.g., "Monthly Membership" grants 12 credits per month). Athletes then use these credits to book their training sessions.
-    </Note>
-    **Availability settings:**
-
-    - **Use availability**: Select the availability block(s) you created earlier that apply to this scheduler
-    - Members will see all available time slots within those availability blocks
-
-    **Booking rules:**
-
-    - **Advance booking**: Set how far in advance members can book (e.g., up to 2-4 weeks)
-    - **Cancellation policy**: Require 24 hours notice (or your preferred timeframe)
-    - **Reschedule**: Allow members to reschedule themselves within your cancellation policy
-
-    <Tip>
-      **Pro tip**: If you want to set up recurring weekly appointments for members (same time slot each week), you can do this manually from the admin Schedule view by creating recurring bookings on their behalf.
-    </Tip>
-    Click **Save Scheduler**.
-
-    <Check>
-      **Success!** You now have separate booking systems for prospects and members, protecting your premium time slots while still capturing new leads.
-    </Check>
-  </Step>
-</Steps>
-
----
-
-### Step 3: Build your information collection forms
-
-Forms capture essential information from new athletes. You'll need forms for lead capture and detailed athlete intake.
-
-<Steps>
-  <Step title="Navigate to Forms">
-    From your dashboard, select **Forms** from the main navigation.
-
-    Click **\+ New Form** in the top right.
-  </Step>
-  <Step title="Create your lead capture form">
-    This short form embeds on your website to capture trial bookings.
-
-    **Form settings:**
-
-    - **Name**: "Trial Session"
-    - **Type**: Lead Capture
-    - **Redirect after submit**: Thank you page or trial scheduler
-
-    **Required fields (keep it minimal):**
-
-    - Full Name
-    - Email Address
-    - Phone Number
-
-    **Optional fields to consider:** While keeping forms short is ideal, these additional fields can provide valuable insights:
-
-    - **"What are your training goals?"** (short text or dropdown)
-      - Helps you personalize your trial session approach
-      - Pre-qualifies leads based on goals you specialize in
-    - **"How did you hear about us?"** (dropdown)
-      - Tracks your most effective marketing channels
-      - Options: Social Media, Google Search, Friend Referral, Instagram, Facebook, etc.
-    - **"What's your skill level?"** (dropdown)
-      - Options: Beginner, Intermediate, Advanced
-      - Helps you prepare appropriate trial session intensity
-    - **"Preferred training time"** (checkbox or dropdown)
-      - Options: Morning (6-10am), Midday (10am-2pm), Afternoon (2-5pm), Evening (5-8pm)
-      - Streamlines the scheduling conversation
-
-    <Tip>
-      **Pro tip**: Every field you add reduces conversion by 5-10%. Keep lead forms to 3-4 fields max for highest conversion rates. You'll collect detailed info later through your intake form. If you do add optional fields, make them truly optional—never require more than name, email, and phone.
-    </Tip>
-    <Note>
-      **Testing recommendation**: Start with just the 3 essential fields (name, email, phone). After 20-30 submissions, test adding one optional field to see if the additional data is worth a potential small drop in conversions.
-    </Note>
-    **Confirmation message:**
-
-    ```
-    Thanks for your interest! We'll contact you within 24 hours to schedule your complimentary trial session.
-    ```
-
-    Click **Save Form**.
-
-    <Check>
-      **Success!** You now have a low-friction lead capture form
-    </Check>
-  </Step>
-</Steps>
-
----
-
-### Phase 1 checkpoint
-
-Before moving forward, verify you have:
-
-- Trial session product created (\$0 or discounted)
-- Membership product created (recurring payment)
-- Availability blocks defined
-- Trial scheduler configured (limited availability)
-- Member scheduler configured (full availability)
-- Lead capture form (website ready)
-
----
-
-## Phase 2: Configure Your Athlete Portal
-
-Your athlete portal is the branded hub where clients book sessions, access training content, and manage their membership. A well-organized portal creates a professional experience that builds trust and reduces confusion.
-
-### Step 1: Set up portal branding and navigation
-
-First impressions matter. Customize your portal to match your brand and enable only the sections you need.
-
-<Steps>
-  <Step title="Navigate to App Builder">
-    From your dashboard, select **App Builder** from the main navigation.
-  </Step>
-  <Step title="Customize brand colors and theme">
-    **Design Settings:**
-
-    - Click the **Design** tab
-    - Set brand colors for primary and accent colors
-    - Choose light or dark theme
-
-    <Frame>
-      ![Design Settings Portal](/images/design-settings-portal.png)
-    </Frame>
-    <Note>
-      **Branding tip**: Use colors that match your website and social media for consistent brand recognition. High contrast between text and background improves readability.
-    </Note>
-  </Step>
-  <Step title="Enable active portal sections">
-    **Navigation Menu Configuration:**
-
-    Enable only the sections that match what you offer:
-
-    - **Schedule**: Enable if you offer bookable training sessions
-    - **Content**: Enable if you provide training programs, drills, or video libraries
-    - **Products**: Enable if you sell memberships, packages, or merchandise
-
-    **Default sections (always visible):**
-
-    - Inbox: Athlete communication hub
-    - Billing: Memberships and payment methods
-    - Profile: Personal account information
-
-    <Note>
-      **Portal strategy**: Only enable sections you're actively using. A cluttered navigation confuses athletes. You can always enable more sections later as you add offerings.
-    </Note>
-  </Step>
-</Steps>
-
-### Step 2: Configure Products Page sections
-
-Organize your Products page so athletes can quickly find what they're looking for—memberships, drop-in sessions, camps, or merchandise.
-
-<Steps>
-  <Step title="Navigate to Products Page configuration">
-    In **App Builder**, select **Products** from the section list.
-  </Step>
-  <Step title="Create product sections">
-    Click **\+ Add Section** to organize your offerings.
-
-    **Recommended section structure:**
-
-    **Section 1: Memberships or Packages**
-
-    - Monthly training memberships OR Multi-session packages
-    - Subscription-based packages OR One time payment packages
-    - Unlimited access plans for memberships
-
-    **Section 2: Camps & Clinics** (optional)
-
-    - Seasonal camps
-    - Skills clinics
-    - Special events or workshops
-
-    **Section 3: Merchandise** (optional)
-
-    - Training gear
-    - Apparel
-    - Equipment
-
-    <Note>
-      **Organization tip**: Athletes should find what they need in under 10 seconds. Use clear section names and order them by popularity (memberships first for most coaches).
-    </Note>
-  </Step>
-  <Step title="Assign products to sections">
-    For each section:
-
-    1. Click **Add Products**
-    2. Select which products appear in this section
-    3. Drag to reorder products (most popular at the top)
-    4. Add section description if needed (e.g., "Our most popular training options")
-
-    Save your changes.
-  </Step>
-</Steps>
-
-### Step 3: Configure Schedule Page sections
-
-Organize your Schedule page so athletes can easily find and book the right sessions—whether you're organizing by session type, location, or coach.
-
-<Steps>
-  <Step title="Navigate to Schedule Page configuration">
-    In **App Builder**, select **Schedule** from the section list.
-  </Step>
-  <Step title="Create schedule sections">
-    Click **\+ Add Section** to organize your bookable sessions.
-
-    **Option A: Organize by Session Type** (recommended for most coaches)
-
-    **Section 1: 1-on-1 Training**
-
-    - Individual skill development sessions
-    - Private coaching appointments
-
-    **Section 2: Small Group Training**
-
-    - 2-4 athlete sessions
-    - Partner training options
-
-    **Section 3: Team Training**
-
-    - Full team sessions
-    - Group clinics
-
-    **Section 4: Specialty Sessions**
-
-    - Video analysis appointments
-    - Strength & conditioning
-    - Mental performance coaching
-
-    ---
-
-    **Option B: Organize by Location** (recommended for multi-location facilities)
-
-    Example:
-
-    **Section 1: Downtown Facility**
-
-    - All sessions at main training center
-
-    **Section 2: Westside Location**
-
-    - All sessions at secondary facility
-
-    **Section 3: Mobile Training**
-
-    - On-site team training
-    - Home visits
-
-    <Note>
-      **Organization strategy**: Choose ONE organizational method—either by session type OR by location. Mixing both creates confusion. If you have multiple locations AND multiple session types, organize by location first, then athletes can filter by type within each location.
-    </Note>
-  </Step>
-  <Step title="Assign sessions to sections">
-    For each section:
-
-    1. Click **Add Sessions**
-    2. Select which session types appear in this section
-    3. Drag to reorder sessions (most popular at the top)
-    4. Add section description if helpful (e.g., "Book your weekly 1-on-1 training slot")
-
-    Save your changes.
-  </Step>
-  <Step title="Preview your athlete portal">
-    Click **Preview** to see the portal as athletes will experience it.
-
-    **Check for:**
-
-    - Branding looks consistent
-    - Sections are clearly labeled
-    - Products and sessions are easy to find
-    - Navigation makes sense for someone seeing it for the first time
-
-    Make adjustments as needed.
-  </Step>
-</Steps>
-
----
-
-## Phase 3: Website Flow - Attract and Convert Leads
-
-Your website is your 24/7 salesperson. A well-designed flow captures leads, nurtures interest, and converts visitors into trial bookings without you lifting a finger.
-
-### The conversion funnel strategy
-
-```
-Website visitor → Trial session offer → Form submission → 
-Automated follow-up → Trial booking → Trial session → 
-Membership conversion (Phase 4)
-```
-
----
-
-### Step 1: Create your trial session landing page
-
-<Steps>
-  <Step title="Navigate to Website Builder">
-    From your dashboard, select **Website** → **Edit** → **\+ New Page**.
-  </Step>
-  <Step title="Design your trial offer page">
-    **Page settings:**
-
-    - **Page name**: "Free Trial Session" or "Try a Session"
-    - **URL slug**: `/trial` or `/intro-session`
-    - **Template**: Landing page (focused, minimal navigation)
-
-    **Essential page elements:**
-
-    **Hero section** (first thing visitors see):
-
-    ```
-    Headline: "Experience Expert Coaching - Complimentary First Session"
-    
-    Subheadline: "Discover how personalized training can help you [achieve specific outcome]. No commitment, no pressure—just results-focused coaching."
-    
-    CTA Button: "Claim Your Free Session →"
-    ```
-
-    **Social proof section:**
-
-    - 3-5 client testimonials with photos
-    - Before/after results (if appropriate)
-    - Certifications and credentials
-    - "Trained 500+ athletes" type stats
-
-    **What to expect section:** Break down the trial session:
-
-    ```
-    Your 60-Minute Complimentary Session Includes:
-    
-    ✓ Fitness assessment and goal discussion (15 min)
-    ✓ Personalized workout experience (35 min)
-    ✓ Custom training roadmap review (10 min)
-    ✓ Zero pressure - just see if we're the right fit
-    ```
-
-    **FAQ section:** Address common objections:
-
-    - "What should I bring?"
-    - "What if I'm a complete beginner?"
-    - "Do I need to buy a membership?"
-    - "What's the cancellation policy?"
-
-    **Final CTA section:**
-
-    ```
-    "Ready to Take the First Step?"
-    
-    [Embedded booking form]
-    
-    or
-    
-    [Button: "Schedule Your Free Trial →"]
-    ```
-
-    <Tip>
-      **Conversion tip**: Use ONE clear call-to-action throughout the page. Don't give visitors multiple competing options. Everything points to booking that trial.
-    </Tip>
-  </Step>
-  <Step title="Embed your lead capture form">
-    Two approaches:
-
-    **Option A: Direct booking (faster):** Embed your trial session scheduler directly on the page.
-
-    - Visitor selects time slot
-    - Completes minimal info (name, email, phone)
-    - Books immediately
-
-    **Option B: Two-step process (better for qualification):** Embed your lead capture form first.
-
-    - Visitor submits interest
-    - You review and respond personally
-    - Send booking link in follow-up
-
-    **Recommended: Option A for most coaches**
-
-    To embed:
-
-    1. Go to your trial scheduler settings
-    2. Copy the embed code
-    3. Paste into your website page
-    4. Test the booking flow
-
-    <Check>
-      **Success!** Visitors can now book trials 24/7 without waiting for you to respond.
-    </Check>
-  </Step>
-</Steps>
-
----
-
-### Step 2: Set up automated lead nurturing
-
-When someone submits your form or books a trial, automation ensures immediate engagement.
-
-<Steps>
-  <Step title="Create 'Trial Booking Confirmation' automation">
-    Go to **Automations** → **\+ New Automation**.
-
-    **Trigger:** "Trial session booked"
-
-    **Immediate actions:**
-
-    **Email 1: Booking confirmation**
-
-    ```
-    Subject: Your Trial Session is Confirmed! 🎉
-    
-    Hi [Name],
-    
-    Perfect! Your complimentary training session is scheduled:
-    
-    📅 Date: [Auto: Date]
-    ⏰ Time: [Auto: Time]
-    📍 Location: [Your facility address]
-    👤 Coach: [Your name]
-    
-    BEFORE YOUR SESSION:
-    
-    1. Complete this quick intake form (2 minutes):
-       [Link to athlete intake form]
-       This helps me personalize your experience.
-    
-    2. Arrive 10 minutes early for check-in
-    
-    3. Bring:
-       - Athletic shoes
-       - Water bottle
-       - Comfortable workout clothes
-       - Your goals and questions!
-    
-    WHAT HAPPENS NEXT:
-    
-    I'll send you a text reminder 24 hours before your session. If you need to reschedule, just reply to this email or text [your phone].
-    
-    Looking forward to meeting you!
-    
-    [Your name]
-    [Your phone]
-    
-    P.S. Check your spam folder for emails from [your-domain.com] and mark as "not spam" so you don't miss updates.
-    ```
-
-    **SMS 1: Simple confirmation**
-
-    ```
-    "Hey [Name]! Your trial session is confirmed for [Date] at [Time]. I just emailed you details. See you soon! - [Your name]"
-    ```
-
-    **Action: Send athlete intake form** Automatically email the detailed intake form with 24-hour completion deadline.
-
-    Click **Save Automation**.
-  </Step>
-  <Step title="Create 'Trial Session Reminder' automation">
-    **Trigger:** "24 hours before trial session"
-
-    **Actions:**
-
-    **SMS reminder:**
-
-    ```
-    "Hi [Name], reminder: Your trial session is tomorrow at [Time]. Reply YES to confirm or let me know if you need to reschedule. - [Your name]"
-    ```
-
-    **Email reminder (if intake form not completed):**
-
-    ```
-    Subject: Tomorrow: Your Trial Session + Quick Action Needed
-    
-    Hi [Name],
-    
-    Quick reminder—your session is tomorrow at [Time]!
-    
-    ⚠️ ACTION NEEDED: I don't have your intake form yet. Please complete it before tomorrow so I can personalize your session:
-    [Link to intake form]
-    
-    See you soon!
-    [Your name]
-    ```
-
-    <Warning>
-      **Important**: 30-50% of trial bookings may not show up without reminders. This automation dramatically improves show rates.
-    </Warning>
-  </Step>
-  <Step title="Create 'Trial No-Show Follow-Up' automation">
-    **Trigger:** "Trial session marked as no-show"
-
-    **Wait:** 1 hour after missed session
-
-    **SMS follow-up:**
-
-    ```
-    "Hi [Name], I missed you at today's session. Everything okay? Let me know if you'd like to reschedule—I'm here to help. - [Your name]"
-    ```
-
-    **Wait:** 2 days (if no response)
-
-    **Email follow-up:**
-
-    ```
-    Subject: Still Interested in Training?
-    
-    Hi [Name],
-    
-    I noticed you weren't able to make your trial session. Life gets busy—I totally understand!
-    
-    If you're still interested in achieving your fitness goals, I'd love to get you rescheduled. Just reply with a time that works better.
-    
-    If now isn't the right time, no problem at all. The offer stands whenever you're ready.
-    
-    [Your name]
-    ```
-
-    **Purpose:** Recover 20-30% of no-shows with caring, non-pushy follow-up.
-  </Step>
-</Steps>
-
----
-
-### Step 3: Optimize your website for conversions
-
-Beyond the trial page, your entire website should funnel toward booking.
-
-<Steps>
-  <Step title="Add trial CTAs throughout your site">
-    **Homepage:**
-
-    - Hero section button
-    - Middle of page reminder
-    - Footer section
-
-    **About page:**
-
-    - After your story/credentials
-
-    **Services page:**
-
-    - After each service description
-
-    **Testimonials page:**
-
-    - After testimonial section
-
-    **CTA button text variations:**
-
-    - "Start with a Free Session"
-    - "Book Your Trial"
-    - "Try Us Free"
-    - "Get Started Today"
-    - "Claim Your Complimentary Session"
-
-    <Tip>
-      **Design tip**: Make your CTA button a contrasting color (different from your main brand colors) so it stands out visually.
-    </Tip>
-  </Step>
-  <Step title="Create exit-intent popup">
-    Catch visitors before they leave.
-
-    **Popup trigger:** Mouse moves toward closing browser tab
-
-    **Popup content:**
-
-    ```
-    WAIT! Before You Go...
-    
-    Try your first session completely free.
-    No credit card. No commitment.
-    
-    [Name field]
-    [Email field]
-    [Phone field]
-    
-    [Button: "Claim My Free Session"]
-    
-    We'll contact you within 24 hours to schedule.
-    ```
-
-    **Settings:**
-
-    - Show only once per visitor (don't be annoying)
-    - Don't show on mobile (different user behavior)
-    - Don't show to people who already booked
-
-    This can recover 5-15% of bouncing visitors.
-  </Step>
-  <Step title="Set up Facebook Pixel and Google Analytics">
-    Track what's working so you can improve.
-
-    **Key metrics to monitor:**
-
-    - Trial page visitors
-    - Form submissions
-    - Booking completions
-    - Booking-to-show rate
-    - Trial-to-membership conversion rate
-
-    **In CoachIQ:** Go to **Settings** → **Integrations** → Add tracking codes.
-
-    **Minimum tracking:**
-
-    - Google Analytics: Overall traffic and behavior
-    - Facebook Pixel: For retargeting ads (advanced)
-
-    <Note>
-      **Privacy note**: Add a cookie consent banner if required by your region (GDPR, CCPA, etc.).
-    </Note>
-  </Step>
-</Steps>
-
----
-
-### Step 4: Create a lead magnet (optional but powerful)
-
-Some visitors aren't ready to book yet. Capture them with valuable free content.
-
-<Steps>
-  <Step title="Create a valuable lead magnet">
-    **Popular lead magnet ideas for coaches:**
-
-    - "7-Day Workout Challenge" (PDF guide)
-    - "Nutrition Quick-Start Guide"
-    - "Goal-Setting Workbook"
-    - "Common Training Mistakes" checklist
-    - "Beginner's Guide to [Your Specialty]"
-
-    **Requirements:**
-
-    - Genuinely valuable (don't just make a sales pitch)
-    - Quick to consume (5-15 minutes)
-    - Related to your coaching (pre-qualifies leads)
-    - Easy to deliver (PDF, video, email series)
-  </Step>
-  <Step title="Create lead magnet landing page">
-    **Page structure:**
-
-    ```
-    Headline: "Free Download: [Lead Magnet Name]"
-    
-    Bullet points of what they'll learn
-    
-    [Name + Email form]
-    
-    [Button: "Send Me the Guide"]
-    
-    After download: Redirect to trial session offer
-    ```
-
-    **Follow-up sequence (automated):**
-
-    - **Immediately:** Deliver the lead magnet
-    - **Day 2:** Check-in email + trial offer
-    - **Day 5:** Success story email + trial offer
-    - **Day 7:** Last chance trial invitation
-
-    This nurtures leads who need more touchpoints before booking.
-  </Step>
-</Steps>
-
----
-
-### Phase 3 checkpoint
-
-Your website should now have:
-
-- Dedicated trial session landing page
-- Embedded booking form or scheduler
-- Trial booking confirmation automation
-- 24-hour reminder automation
-- No-show recovery automation
-- Trial CTAs throughout website
-- Exit-intent popup (optional)
-- Analytics tracking setup
-- Lead magnet and nurture sequence (optional)
-
-<Check>
-  **Success!** Your website is now a lead-generating machine that works while you sleep.
-</Check>
-
----
-
-## Phase 4: Lock In the Athlete - Convert Trial to Membership
-
-The trial session went great. Now it's time to convert that positive experience into a long-term coaching relationship.
-
-### The conversion psychology
-
-**Timing is everything:** The best time to convert is immediately after the trial session when enthusiasm is highest. Have your process ready.
-
----
-
-### Step 1: The post-trial conversation (in-person)
-
-<Steps>
-  <Step title="Prepare your conversion script">
-    **End-of-session framework** (last 10 minutes of trial):
-
-    **1. Summary and praise:**
-
-    ```
-    "Great work today! You [specific praise about their effort or form]. 
-    
-    Based on what we did today, here's what I observed:
-    - [Strength/positive]: You have good [flexibility/strength/etc.]
-    - [Opportunity]: We can definitely improve your [specific area]
-    - [Goal connection]: With consistent training, achieving [their stated goal] is absolutely realistic."
-    ```
-
-    **2. Present the roadmap:**
-
-    ```
-    "Here's what I recommend to get you to [their goal]:
-    
-    Training [2-3x per week] for the next [12 weeks/3 months], focusing on:
-    - Phase 1 (Weeks 1-4): [Focus area]
-    - Phase 2 (Weeks 5-8): [Focus area]  
-    - Phase 3 (Weeks 9-12): [Focus area]
-    
-    This is exactly what I've used with clients like [similar success story name] who went from [before state] to [after state]."
-    ```
-
-    **3. Introduce membership options:**
-
-    ```
-    "To make this happen, here are your options:
-    
-    OPTION 1: [Best value option - highlight this]
-    Monthly Membership: $[price]/month
-    - [Benefit 1]
-    - [Benefit 2]
-    - [Benefit 3]
-    - Cancel anytime with 30-day notice
-    
-    OPTION 2: [Alternative if relevant]
-    Package: [Details and pricing]
-    
-    Most of my athletes start with the monthly membership because it gives you flexibility while staying committed to your goals."
-    ```
-
-    **4. The direct ask:**
-
-    ```
-    "Based on what you've told me about wanting to [their goal] and what I've seen today, I think you'd be perfect for this program.
-    
-    Would you like to get started with the monthly membership?"
-    ```
-
-    **5. Handle objections:**
-
-    **"I need to think about it":** "Absolutely, I respect that. What specifically would you like to think over? Is it the time commitment, the investment, or something about the training itself?"
-
-    **"It's more than I expected to spend":** "I get it—this is an investment. Let me ask: if you don't start now, what's your plan for achieving [their goal]? Most people find that having a coach saves them months of trial and error."
-
-    **"I need to check my schedule":** "No problem. I can hold a spot for you for 24 hours. Let me send you the program details and we can chat tomorrow after you've looked at your calendar?"
-
-    <Tip>
-      **Pro tip**: Have your phone/tablet ready to sign them up immediately. The longer the gap between "yes" and payment setup, the more likely they'll change their mind.
-    </Tip>
-  </Step>
-  <Step title="Complete the sign-up process">
-    **If they say yes immediately:**
-
-    1. Pull up your CoachIQ admin on your device
-    2. Go to **Athletes** → **\+ Add New Athlete**
-    3. Enter their information (already have from intake form)
-    4. Go to **Products** → Select their chosen membership
-    5. Click **Set Up Payment**
-    6. They enter their payment info directly on your device
-    7. Schedule their first member session right then
-
-    **Confirmation script:**
-
-    ```
-    "Perfect! You're all set. Your first charge will be [date] for $[amount].
-    
-    Let's get your first week scheduled right now. What days work best for you?
-    
-    [Schedule 2-3 sessions]
-    
-    You'll get an email with your portal login where you can see all your workouts and book future sessions. I'll also text you a welcome message.
-    
-    Congratulations on making this commitment to yourself! 💪"
-    ```
-
-    <Check>
-      **Success!** New member signed up and scheduled—the highest probability conversion scenario.
-    </Check>
-  </Step>
-</Steps>
-
----
-
-### Step 2: Automate the post-trial follow-up
-
-For trials who don't convert immediately, automation keeps you top-of-mind.
-
-<Steps>
-  <Step title="Create 'Trial Session Completed' automation">
-    Go to **Automations** → **\+ New Automation**.
-
-    **Trigger:** "Trial session marked complete" AND "Athlete has NOT purchased membership"
-
-    **Wait:** 1 hour after session
-
-    **SMS follow-up:**
-
-    ```
-    "Hey [Name]! Great meeting you today. As promised, here's the link to get started with your personalized program: [Membership signup link]. Let me know if you have any questions! - [Your name]"
-    ```
-
-    **Email follow-up:**
-
-    ```
-    Subject: Here's Your Personalized Training Plan, [Name]
-    
-    Hi [Name],
-    
-    It was great working with you today! I'm excited about your potential—you showed excellent [specific praise].
-    
-    As we discussed, here's your roadmap to [their stated goal]:
-    
-    [Recap the recommended training plan]
-    
-    READY TO GET STARTED?
-    
-    → Join the [Monthly Membership] Program: [Signup link]
-    
-    Your first month includes:
-    - [Benefit recap]
-    - [Benefit recap]
-    - [Benefit recap]
-    
-    I'm holding time slots for you, but they fill up quickly. Let me know by [tomorrow/end of week] so I can save your preferred training times.
-    
-    Questions? Just reply to this email or text me at [your phone].
-    
-    To your success,
-    [Your name]
-    
-    P.S. Remember what we talked about: [specific motivating point from your conversation]. You've got this!
-    ```
-  </Step>
-  <Step title="Create 'Trial Follow-Up Day 2' automation">
-    **Trigger:** "2 days after trial session" AND "No membership purchase"
-
-    **Email:**
-
-    ```
-    Subject: Quick Question, [Name]
-    
-    Hi [Name],
-    
-    I wanted to check in—did you have a chance to review the training plan I sent?
-    
-    I know deciding to invest in coaching is a big step. If you have any questions or concerns, I'm here to help you think it through.
-    
-    Common questions I get:
-    - "Will I actually see results?" → [Brief answer]
-    - "Can I really commit to [X] times per week?" → [Brief answer]
-    - "What if I need to pause my membership?" → [Brief answer]
-    
-    Reply with what's on your mind, or if you're ready to start, just click here: [Signup link]
-    
-    [Your name]
-    ```
-
-    **Purpose:** Open the door for objection handling in a low-pressure way.
-  </Step>
-  <Step title="Create 'Trial Follow-Up Day 5' automation">
-    **Trigger:** "5 days after trial session" AND "No membership purchase"
-
-    **Email (social proof focus):**
-
-    ```
-    Subject: How [Similar Client] Got Results
-    
-    Hi [Name],
-    
-    I was thinking about your goal to [their stated goal] and it reminded me of another athlete I work with.
-    
-    [Client name] started exactly where you are—[similar starting point]. Here's what happened:
-    
-    - Month 1: [Result]
-    - Month 2: [Result]  
-    - Month 3: [Result]
-    
-    [Include a testimonial quote or before/after if you have permission]
-    
-    The difference? [He/She] committed to the process and stayed consistent.
-    
-    If you're ready to write your own success story, I'd love to coach you: [Signup link]
-    
-    If now's not the right time, I completely understand. The offer stands whenever you're ready to take that first step.
-    
-    [Your name]
-    ```
-  </Step>
-  <Step title="Create 'Trial Follow-Up Day 7' automation (final attempt)">
-    **Trigger:** "7 days after trial session" AND "No membership purchase"
-
-    **Email (last chance):**
-
-    ```
-    Subject: Last Call: I'm Moving On
-    
-    Hi [Name],
-    
-    This will be my last email unless you reach out.
-    
-    I know I've followed up a few times, and I don't want to be that pushy coach who won't leave you alone!
-    
-    Here's the truth: I genuinely believe you can achieve [their goal]. I saw it in our session together. But I also know that timing has to be right, and maybe now isn't it for you.
-    
-    If you change your mind down the road, my door is always open. Just send me a message.
-    
-    If you're ready to commit right now, here's the link one more time: [Signup link]
-    
-    Either way, I wish you nothing but success in your fitness journey.
-    
-    All the best,
-    [Your name]
-    
-    P.S. If you're on the fence, let's just talk it through. Reply with a good time to call and I'll reach out—no pressure.
-    ```
-
-    **After this:** Move them to a "Nurture - Not Ready" list for occasional value emails (monthly workout tips, etc.) without sales pressure.
-  </Step>
-</Steps>
-
----
-
-### Step 3: The trial-to-member transition experience
-
-Once someone converts, make their first week as a member exceptional.
-
-<Steps>
-  <Step title="Day 1: Welcome and onboarding (automated)">
-    **Triggers when:** Membership purchase completed
-
-    **Actions:**
-
-    - Send welcome email with portal credentials (already set up in Phase 2)
-    - Send SMS: "Welcome to the team! 🎉"
-    - Assign "Week 1 - New Member" program
-    - Create task for yourself: "Week 1 check-in with [Name]"
-
-    **Your personal action** (non-automated): Send a personal video message (30-60 seconds):
-
-    ```
-    "Hey [Name]! Quick video to say welcome to the team. I'm pumped to work with you. Check your email for portal access and I'll see you at our first session on [Day]. Feel free to text me with any questions!"
-    ```
-
-    <Tip>
-      **Retention booster**: Personal video messages have an outsized impact on making new members feel valued. Takes 2 minutes, drastically improves retention.
-    </Tip>
-  </Step>
-  <Step title="First member session - set expectations">
-    **Session agenda:**
-
-    **1. Portal walkthrough (5 minutes):**
-
-    - Show them how to book future sessions
-    - Show them where to find workouts
-    - Show them how to message you
-
-    **2. Program overview (5 minutes):**
-
-    - Explain the training progression
-    - Set short-term milestones (4-6 weeks)
-    - Explain how you'll track progress
-
-    **3. Training session (45 minutes):**
-
-    - Execute first workout from their assigned program
-    - Over-coach and over-communicate (they're still learning)
-    - Celebrate effort and progress
-
-    **4. Schedule next sessions (5 minutes):**
-
-    - Book their next 2-3 sessions before they leave
-    - Set up recurring weekly slots if possible
-
-    **Script:**
-
-    ```
-    "Before you go, let's get your next few sessions locked in. What days work best for you each week?
-    
-    [Book sessions]
-    
-    Perfect! These will show up in your portal calendar, and you'll get reminders. You can also book or reschedule anytime through the portal.
-    
-    Great first session! You're going to love what we accomplish together."
-    ```
-  </Step>
-  <Step title="Week 1 check-in (manual)">
-    **Day 3-5 of membership:**
-
-    Personal outreach (text or call):
-
-    ```
-    "Hey [Name]! Quick check-in. How are you feeling after your first couple sessions? Any soreness? Any questions about the workouts or the portal? I'm here if you need anything!"
-    ```
-
-    **Purpose:** Early intervention if they're confused, overwhelmed, or experiencing excessive soreness. Shows you care. Dramatically improves 30-day retention.
-  </Step>
-  <Step title="30-day milestone celebration">
-    **Trigger:** 30 days after membership start
-
-    **Automated email:**
-
-    ```
-    Subject: 30 Days! Let's Celebrate Your Progress 🎉
-    
-    Hi [Name],
-    
-    Can you believe it's been a month already?
-    
-    Here's what you've accomplished:
-    - Sessions completed: [Auto: Session count]
-    - Workouts finished: [Program completion stats]
-    - [Personal achievement you've noted]
-    
-    Take a moment to acknowledge how far you've come. Showing up consistently for 30 days is HUGE—most people don't make it this far.
-    
-    I'm proud of your commitment. Let's keep this momentum going!
-    
-    [Your name]
-    
-    P.S. I'd love to hear from you—reply with your biggest win from this first month!
-    ```
-
-    **Also:** Schedule a goal review session in week 5-6 to reset targets and keep engagement high.
-  </Step>
-</Steps>
-
----
-
-### Step 4: Track and optimize your conversion funnel
-
-Numbers don't lie. Track these metrics to improve your process.
-
-<Steps>
-  <Step title="Key metrics to monitor">
-    **In CoachIQ dashboard** (or manual spreadsheet):
-
-    **Top-of-funnel:**
-
-    - Website visitors to trial page: [X per week]
-    - Trial booking conversion rate: [%]
-    - Trial bookings per week: [X]
-
-    **Middle-of-funnel:**
-
-    - Trial show rate: [%] (goal: 80%+)
-    - Trial-to-membership conversation rate: [%] (goal: 40-60%)
-    - Immediate vs. delayed conversions: [ratio]
-
-    **Bottom-of-funnel:**
-
-    - First-month retention: [%] (goal: 95%+)
-    - 90-day retention: [%] (goal: 80%+)
-    - Lifetime value per athlete: \$[X]
-
-    <Note>
-      **Benchmark note**: A 50% trial-to-member conversion rate is solid. If you're below 30%, revisit your trial experience and follow-up process.
-    </Note>
-  </Step>
-  <Step title="Monthly optimization review">
-    **Set a recurring monthly task:**
-
-    1. **Review conversion rates**: Where are people dropping off?
-    2. **Read trial intake forms**: What goals and objections are common?
-    3. **Survey trial no-shows**: "What would have helped you make the session?" (insights!)
-    4. **Test one thing**: Change your trial offer, adjust follow-up timing, improve landing page, etc.
-    5. **Measure results**: Did conversion rate improve?
-
-    **Example tests to run:**
-
-    - Test 1: Free trial vs. \$15 paid trial (does price qualify better leads?)
-    - Test 2: 3-day vs. 7-day follow-up sequence (what timing converts best?)
-    - Test 3: Different trial session format (group trial vs. one-on-one?)
-    - Test 4: Longer trial (2 sessions instead of 1?)
-
-    <Tip>
-      **Optimization tip**: Change only ONE variable at a time so you know what's working. Run each test for at least 20-30 trials before deciding.
-    </Tip>
-  </Step>
-</Steps>
-
----
-
-### Phase 4 checkpoint
-
-Your conversion system should now include:
-
-- In-person conversion script prepared
-- Same-day signup process streamlined
-- Post-trial SMS automation (1 hour after)
-- Post-trial email sequence (Days 1, 2, 5, 7)
-- New member welcome automation
-- First member session structure
-- Week 1 personal check-in
-- 30-day milestone celebration
-- Conversion metrics tracking
-- Monthly optimization process
-
-<Check>
-  **Success!** You now have a complete system for converting trials into long-term, retained members.
-</Check>
-
----
-
-## Complete System Overview
-
-You've now built a comprehensive athlete onboarding machine:
-
-<CardGroup cols={2}>
-  <Card title="Phase 1: Foundation" icon="gear">
-    Products, schedulers, forms → Infrastructure for bookings and payments
-  </Card>
-  <Card title="Phase 2: Athlete Portal" icon="house-user">
-    Branded member experience → Professional home base for clients
-  </Card>
-  <Card title="Phase 3: Website Flow" icon="globe">
-    Lead capture and nurturing → 24/7 automated trial bookings
-  </Card>
-  <Card title="Phase 4: Conversion" icon="lock">
-    Trial-to-member system → Consistent revenue from new athletes
+  <Card title="4. Portal Access" icon="mobile">
+    Book sessions, view membership
   </Card>
 </CardGroup>
 
 ---
 
-## Quick Reference: Your Week 1 Action Plan
+## Your website is the starting point
+
+Direct all athletes and parents to your website. It's their homepage for everything:
+
+- Finding your programs and pricing
+- Purchasing memberships or packages
+- Accessing the member login (Athlete Portal)
+- Signing up for camps, clinics, or new offerings
+
+<Tip>
+**Train your athletes**: When anyone asks "how do I sign up?" or "where do I book?" - the answer is always your website. Make it the single source of truth.
+</Tip>
+
+---
+
+## Step 1: Athlete selects a product
+
+Athletes visit your website and navigate to your pricing or products page. They choose the plan that fits their needs:
+
+- Monthly membership (1x, 2x, or 3x per week)
+- Session package (10-pack, etc.)
+- Camp or clinic registration
+- Trial session
+
+<Frame>
+  ![Example pricing page with product options](/images/Products-page.png)
+</Frame>
+
+---
+
+## Step 2: Athlete completes purchase
+
+When they click to purchase, the checkout process handles everything:
+
+- **Payment collected** via Stripe
+- **Account created** automatically (email + password)
+- **Waiver and terms signed** (if you've configured this on the product)
+- **Credits granted** (if it's a package or membership)
+
+<Note>
+**Waiver collection**: You can require athletes to sign a waiver during checkout. This is configured in your product settings.
+</Note>
+
+<Card title="Product setup guide" icon="box" href="/payments/product-overview">
+  How to configure waivers, terms, and checkout options
+</Card>
+
+---
+
+## Step 3: Athlete lands in the portal
+
+After purchase, the athlete is automatically logged into the **Athlete Portal** - their member hub.
+
+From here they can:
+
+- **Book sessions** using their credits or membership
+- **View their membership** and billing
+- **Message you** through the inbox
+- **Access programs** (if you offer them)
+- **See upcoming sessions** on their schedule
+
+<Frame>
+  ![Athlete Portal dashboard](/images/athlete-portal-dashboard-ex.png)
+</Frame>
+
+---
+
+## Step 4: Athlete downloads the app (optional)
+
+For the best experience, athletes can download the CoachIQ app:
+
+- **iOS**: Available on the App Store
+- **Android**: Available on Google Play
+
+The app syncs with the web portal - same account, same data, accessible anywhere.
+
+<Tip>
+**Encourage app downloads**: Athletes who use the app book more consistently and are easier to communicate with via push notifications.
+</Tip>
+
+<Card title="iOS App Setup" icon="apple" href="/athlete-portal/ios-app-setup">
+  Help athletes download and set up the mobile app
+</Card>
+
+---
+
+## What athletes see after joining
+
+Once an athlete purchases and enters the portal, they have access to:
+
+| Feature | What it does |
+|---------|--------------|
+| **Schedule** | Book sessions using credits or membership |
+| **Products** | Purchase additional packages or upgrades |
+| **Inbox** | Message their coach directly |
+| **Billing** | View membership, update payment method |
+| **Profile** | Update personal information |
+
+---
+
+## Customize the welcome experience
+
+When new athletes join, you can automatically:
+
+- Send a **welcome message** via email or SMS
+- Deliver **onboarding instructions**
+- Share **what to expect** for their first session
+
+This is configured through automations.
+
+<Card title="Automations guide" icon="bolt" href="/automations/overview">
+  Set up welcome messages and automated flows
+</Card>
+
+---
+
+## Example: The complete flow
+
+Here's what it looks like for a parent signing up their kid:
 
 <Steps>
-  <Step title="Day 1: Build Foundation (2-3 hours)">
-    - Create trial session product
-    - Create membership product
-    - Set up availability blocks
-    - Build trial scheduler
-    - Build member scheduler
-    - Create lead capture form
-    - Create athlete intake form
+  <Step title="Parent visits your website">
+    They find your site through Google, social media, or a referral.
   </Step>
-  <Step title="Day 2: Set Up Portal (1-2 hours)">
-    - Brand athlete portal
-    - Configure navigation
-    - Write welcome dashboard message
-    - Create new athlete welcome automation
-    - Set up booking reminders
+  <Step title="Parent browses pricing">
+    They see your options: 1x/week ($149/mo), 2x/week ($249/mo), 3x/week ($349/mo).
   </Step>
-  <Step title="Day 3: Build Website Flow (2-3 hours)">
-    - Create trial landing page
-    - Embed booking form/scheduler
-    - Add trial CTAs throughout site
-    - Set up trial booking automation
-    - Create post-trial follow-up sequence
+  <Step title="Parent selects 2x/week plan">
+    They click "Sign Up" and enter payment info.
   </Step>
-  <Step title="Day 4: Create Conversion Assets (1-2 hours)">
-    - Write conversion script
-    - Practice objection handling
-    - Create starter program template
-    - Set up member onboarding automation
-    - Plan Week 1 check-in process
+  <Step title="Account is created">
+    Email, password, and waiver are handled during checkout.
   </Step>
-  <Step title="Day 5: Test Everything (1 hour)">
-    - Book a test trial (use your own info)
-    - Walk through every automation
-    - Test member signup flow
-    - Check all emails render properly
-    - Verify portal access works
+  <Step title="Parent lands in portal">
+    They see the welcome message and can immediately book their first sessions.
   </Step>
-  <Step title="Day 6-7: Launch & Promote">
-    - Share trial offer on social media
-    - Email your existing list
-    - Tell current clients (referral incentive?)
-    - Consider running paid ads
-    - Monitor first bookings!
+  <Step title="Parent books sessions">
+    Using their membership, they book Tuesday and Thursday at 5pm.
+  </Step>
+  <Step title="Athlete shows up">
+    Confirmations and reminders are sent automatically. Done.
   </Step>
 </Steps>
 
 ---
 
-## Common Questions
+## Quick reference
+
+### Where athletes go
+
+| Task | Where to send them |
+|------|-------------------|
+| Sign up / purchase | Your website → Products/Pricing page |
+| Book sessions | Athlete Portal → Schedule |
+| View membership | Athlete Portal → Billing |
+| Message coach | Athlete Portal → Inbox |
+| Download app | App Store or Google Play |
+
+### Where you manage athletes
+
+| Task | Location in admin |
+|------|-------------------|
+| View all athletes | People |
+| See athlete details | People → Click athlete name |
+| Add athlete manually | People → Add |
+| View bookings | Calendar |
+
+<Card title="Managing athlete profiles" icon="users" href="/people/adding-editing-clients">
+  How to view, edit, and manually add athletes
+</Card>
+
+---
+
+## Common questions
 
 <AccordionGroup>
-  <Accordion title="How many trial sessions should I offer per week?">
-    **Start conservative:** Reserve 3-5 time slots per week for trials (e.g., Monday 10am, Wednesday 5pm, Friday 6am). This protects your prime training times for paying members while still generating new leads.
-
-    **As you scale:** If trials consistently fill and you have capacity, add more slots. If trials aren't booking, the issue is likely marketing (not enough traffic) or offer clarity (confused prospects), not number of slots.
-
-    **Rule of thumb:** Never offer more than 20% of your weekly availability to trials.
+  <Accordion title="What if someone wants to sign up in person?">
+    They can still go through your website on their phone right there with you. Or you can add them manually from **People → Add** and send them an invite to set up their account.
   </Accordion>
-  <Accordion title="Should my trial really be free, or should I charge something?">
-    **Free (\$0) advantages:**
-
-    - Removes all barrier to entry
-    - Maximizes bookings
-    - Best for new coaches building reputation
-
-    **Paid (\$10-25) advantages:**
-
-    - Pre-qualifies serious prospects
-    - Reduces no-shows
-    - Establishes value exchange
-    - Best for established coaches with demand
-
-    **Test both**: Run 30 free trials, measure show rate and conversion. Then run 30 paid trials at \$15-20, measure again. Let data decide.
-
-    **Most coaches find:** A small fee (\$15) improves show rate (70% → 85%) without significantly reducing bookings.
+  <Accordion title="Do athletes need to create a password?">
+    Yes, during checkout they'll create their account with email and password. This gives them access to the Athlete Portal.
   </Accordion>
-  <Accordion title="What if someone completes a trial but says they're not ready to commit?">
-    **Immediate response**: "I totally understand. Can I ask what's holding you back—is it the timing, the investment, or something about the training itself?"
-
-    **Listen for the real objection**, then address it specifically.
-
-    **If they're genuinely not ready**: "No problem at all. I'll add you to my monthly tips newsletter so you stay connected. When you're ready, just reach out—I'd love to work with you."
-
-    **Then**: Put them in your nurture sequence (monthly value emails, no hard selling). Some will convert 3-6 months later when timing improves.
-
-    **Success rate**: Expect to convert 10-15% of "not now" prospects within 6 months through nurture.
+  <Accordion title="Can parents manage multiple kids?">
+    Yes. A parent can have one account and manage multiple athlete profiles under it.
   </Accordion>
-  <Accordion title="How do I handle trial bookings when I'm fully booked with members?">
-    **Option 1**: Pause trial bookings temporarily
-
-    - Disable your trial scheduler
-    - Add waitlist form: "We're currently at capacity. Join the waitlist for our next opening."
-
-    **Option 2**: Extended lead time
-
-    - Keep trials available but push booking window out (e.g., 2-3 weeks advance booking)
-    - Some prospects will wait; others won't
-
-    **Option 3**: Raise your prices
-
-    - High demand = opportunity to increase rates
-    - New members at higher rate balance out your revenue with fewer athletes
-
-    **The goal isn't unlimited athletes—it's a full schedule at your desired rate.**
+  <Accordion title="What if an athlete forgets their password?">
+    They can reset it from the login page. You can also send them a new invite from their profile in **People**.
   </Accordion>
-  <Accordion title="What's a reasonable trial-to-member conversion rate?">
-    **Benchmarks by coach type:**
-
-    **New coaches** (under 1 year): 30-40%
-
-    - Still building systems and confidence
-    - Learning what resonates
-
-    **Experienced coaches** (1-3 years): 40-60%
-
-    - Dialed-in process
-    - Strong social proof
-
-    **Established coaches** (3+ years): 60-70%+
-
-    - Reputation precedes them
-    - Highly qualified leads
-
-    **If you're below 30%:** Your trial experience needs work, or you're attracting wrong-fit prospects.
-
-    **If you're above 70%:** Consider whether you're underpricing or could raise rates.
-  </Accordion>
-  <Accordion title="How long should I wait before following up after someone doesn't respond to my emails?">
-    **The follow-up sequence:**
-
-    - **1 hour post-trial**: Immediate thank-you + signup link
-    - **Day 2**: Check-in + objection handling
-    - **Day 5**: Social proof story
-    - **Day 7**: Final "last call" email
-
-    **After Day 7**: Move to monthly nurture (no sales pressure).
-
-    **Don't be afraid of "too many emails."** You sent 4 emails over 7 days to someone who expressed interest by booking your trial. That's not excessive—that's professional follow-through.
-
-    **If they unsubscribe:** They weren't going to convert anyway. Better to know quickly.
-  </Accordion>
-  <Accordion title="Should I offer a discount or promotion to convert trial sessions faster?">
-    **Strategic discounts can work:**
-
-    **Effective:**
-
-    - "First month 50% off" (lowers initial commitment fear)
-    - "Sign up today, save \$[X]" (urgency for immediate conversions)
-    - "3-month commitment = 10% off" (rewards commitment, improves retention)
-
-    **Less effective:**
-
-    - Ongoing discounts (trains athletes to expect deals)
-    - "Friends and family" rates that never end
-    - Discounting because you're desperate
-
-    **Alternative to discounting**: Add value instead
-
-    - "Sign up today, get a free nutrition consultation"
-    - "This month: Includes goal-setting workshop"
-    - "Bonus: Custom meal plan with membership"
-
-    **Truth**: If your trial experience is strong and you're solving a real problem, you shouldn't need discounts to convert. Price objections are often value perception issues in disguise.
-  </Accordion>
-  <Accordion title="What if an athlete churns in their first month—should I reach out?">
-    **Absolutely yes.** First-month churn is almost always fixable if caught early.
-
-    **Immediate outreach** (within 24 hours of cancellation notice):
-
-    "Hi [Name], I saw you cancelled your membership. I'm sorry to see you go! Can I ask what happened? If something wasn't working, I'd love a chance to fix it."
-
-    **Common rescue scenarios:**
-
-    **"Too expensive":** → "I understand. Would a reduced rate work if we trained 2x/week instead of 3x?"
-
-    **"Too hard / too sore":** → "That's on me—I should have ramped up more gradually. Let me adjust your program. Give me one more week?"
-
-    **"Schedule conflict":** → "What times DO work? Let me see if I can accommodate you."
-
-    **Success rate**: You'll save 30-40% of first-month cancellations with genuine, helpful outreach.
-
-    **If they still leave**: Ask for honest feedback. Their answer improves your process for the next athlete.
+  <Accordion title="How do trial sessions work?">
+    Trial sessions work the same way - create a trial product (free or discounted), athlete purchases it, account is created, they book their trial from the portal.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## Advanced Optimization: Once Your System Is Running
-
-After your first 20-30 trial bookings, start optimizing:
-
-### A/B Testing Ideas
-
-**Test #1: Trial offer variation**
-
-- Run 1 month: "Free trial session"
-- Run 1 month: "No-sweat intro" (different framing, same offer)
-- Compare booking rates
-
-**Test #2: Landing page headlines**
-
-- Version A: "Get Your Free Trial Session"
-- Version B: "See Results in Just One Session"
-- Compare conversion rates
-
-**Test #3: Follow-up timing**
-
-- Group A: Emails at 1hr, Day 2, Day 5, Day 7
-- Group B: Emails at 1hr, Day 1, Day 3, Day 5
-- Compare response and conversion rates
-
-**Test #4: Trial session length**
-
-- Group A: 45-minute trial
-- Group B: 60-minute trial
-- Compare show rates, conversion rates, and time investment ROI
-
-### Scaling Considerations
-
-**When you're ready to grow beyond solo coaching:**
-
-**Hire a front-desk person:**
-
-- Handles trial greeting and check-in
-- Sends booking confirmations
-- Follows up on no-shows
-- Frees your time for coaching only
-
-**Add junior coaches:**
-
-- They run trial sessions
-- You focus on member training and conversion calls
-- Create commission structure (e.g., \$25 per converted trial)
-
-**Implement group trials:**
-
-- "Free small group intro class" (4-6 people)
-- More efficient than one-on-one
-- Creates social proof (prospects see others succeeding)
-- Converts at 30-40% (lower than individual, but volume makes up for it)
-
----
-
-## Troubleshooting Common Issues
-
-<AccordionGroup>
-  <Accordion title="My trial bookings are low—how do I get more leads?">
-    **Diagnosis checklist:**
-
-    Is your trial page getting traffic?
-
-    - **If NO**: Marketing problem (SEO, ads, social media)
-    - **If YES**: Conversion problem (offer, copy, trust signals)
-
-    **Quick wins to boost bookings:**
-
-    1. **Social proof blitz**: Add 5+ testimonials with photos to trial page
-    2. **Simplify form**: Reduce to name, email, phone only
-    3. **Urgency**: "Limited spots this month" (if true)
-    4. **Retargeting ads**: Show ads to people who visited but didn't book
-    5. **Referral incentive**: Give current clients \$50 off for referrals
-
-    **Long-term strategy**: Consistent content marketing (social posts, videos, blogs) builds awareness. Trials are outcome, not tactic.
-  </Accordion>
-  <Accordion title="My trial show rate is below 70%—how do I fix no-shows?">
-    **Prevention strategies:**
-
-    **1. Confirmation immediately:**
-
-    - Send email + SMS within 2 minutes of booking
-    - Clear date, time, location
-
-    **2. Require intake form:**
-
-    - People who complete forms show up at 85%+ rates
-    - Creates investment before session
-
-    **3. Send reminder 24hrs out:**
-
-    - Text message: "Reminder: Your session is tomorrow at [time]. Reply YES to confirm."
-    - If they reply, show rate jumps to 90%+
-
-    **4. Personal touch:**
-
-    - Call or text personally: "Hey [Name], looking forward to meeting you tomorrow!"
-    - The personal connection makes them not want to disappoint you
-
-    **5. Small deposit:**
-
-    - Charge \$10-20 (refunded if they show)
-    - Dramatically reduces no-shows
-
-    **If they no-show anyway:** Follow up within 1 hour (they might show late) and again next day with zero judgment, just helpfulness.
-  </Accordion>
-  <Accordion title="People love the trial but won't commit to membership—what's wrong?">
-    **Common causes:**
-
-    **1. Price shock:**
-
-    - Trial set wrong expectation (too different from membership experience)
-    - Solution: Make trial a mini-version of actual training
-
-    **2. No clear next step:**
-
-    - You didn't ask for the sale
-    - Solution: Practice your conversion script until it's natural
-
-    **3. Value unclear:**
-
-    - They don't understand what membership includes
-    - Solution: Visual roadmap showing 12-week progression
-
-    **4. No urgency:**
-
-    - "I'll think about it" = "no" 90% of the time
-    - Solution: Ethical urgency (schedule filling up, rate increase coming, you're motivated NOW)
-
-    **5. Trust not built:**
-
-    - One session might not be enough
-    - Solution: Offer 2-session trial or week trial (\$50) for deeper relationship
-
-    **Advanced diagnostic**: Survey every non-converting trial (anonymous form). Ask: "What would it take for you to join?" Their answers reveal the truth.
-  </Accordion>
-  <Accordion title="My automations aren't sending—what should I check?">
-    **Troubleshooting checklist:**
-
-    **1. Automation is enabled:**
-
-    - Go to Automations → Check status shows "Active"
-
-    **2. Trigger is firing:**
-
-    - Test by manually triggering (book a fake trial)
-    - Check automation history/logs
-
-    **3. Email deliverability:**
-
-    - Check spam folder (yours and athlete's)
-    - Verify sending domain authenticated (SPF/DKIM records)
-    - Ask athlete to whitelist your domain
-
-    **4. SMS not sending:**
-
-    - Verify athlete phone number format (country code included?)
-    - Check SMS credits/balance in CoachIQ
-    - Confirm athlete opted in to SMS
-
-    **5. Timing delays:**
-
-    - "Wait 1 hour" might fire at irregular times due to processing
-    - Check if emails are just delayed, not missing
-
-    **Still broken?** Contact CoachIQ support with:
-
-    - Specific automation name
-    - Expected trigger
-    - Screenshot of automation settings
-    - Example athlete it should have triggered for
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Your Success Metrics Dashboard
-
-Track these weekly to measure system health:
-
-| Metric             | Week 1  | Week 2  | Week 3  | Week 4  | Goal  |
-| ------------------ | ------- | ------- | ------- | ------- | ----- |
-| Trial page visits  | \__\_   | \__\_   | \__\_   | \__\_   | 50+   |
-| Trial bookings     | \__\_   | \__\_   | \__\_   | \__\_   | 5-10  |
-| Trial show rate    | \__\_%  | \__\_%  | \__\_%  | \__\_%  | 80%+  |
-| Trials → Members   | \__\_   | \__\_   | \__\_   | \__\_   | 50%+  |
-| New member revenue | \$\__\_ | \$\__\_ | \$\__\_ | \$\__\_ | \$1K+ |
-
-**Monthly review questions:**
-
-1. Which traffic source brought the most trial bookings?
-2. What common objection appeared in non-conversions?
-3. Which automation had the highest open/response rate?
-4. What's my cost per acquired member?
-5. What one thing will I test/improve next month?
-
----
-
-## Final Thoughts: You've Built Something Powerful
-
-This system represents a complete business infrastructure that will serve you for years. Every trial that converts is a testament to your coaching skill AND your business systems.
-
-**Remember:**
-
-- **Week 1**: You're learning and adjusting
-- **Month 1**: You're building momentum
-- **Month 3**: You're starting to see consistent results
-- **Month 6**: This system runs smoothly with minimal intervention
-
-**The goal isn't perfection—it's progress.** Start with the foundation (Phase 1), get your first trial booking, and improve from there.
-
-### Next Steps
+## Related articles
 
 <CardGroup cols={2}>
-  <Card title="Share Feedback" icon="comment">
-    Found something unclear? Have suggestions? Use the feedback button to help us improve this guide.
+  <Card title="Product Setup" icon="box" href="/payments/product-overview">
+    Configure products, waivers, and checkout options
   </Card>
-  <Card title="Get Support" icon="life-ring">
-    Stuck on implementation? Reach out to CoachIQ support or join our coach community for help.
+  <Card title="Athlete Portal Overview" icon="mobile" href="/athlete-portal/overview">
+    What athletes see and how to customize it
   </Card>
-  <Card title="Explore Advanced Features" icon="rocket">
-    Ready to level up? Check out our guides on automations, group training, and analytics.
+  <Card title="Automations" icon="bolt" href="/automations/overview">
+    Set up welcome messages and automated flows
   </Card>
-  <Card title="Celebrate Wins" icon="trophy">
-    When you convert your first trial using this system, tag us! We love celebrating coach success.
+  <Card title="Managing Athletes" icon="users" href="/people/adding-editing-clients">
+    View, edit, and manually add athletes
   </Card>
 </CardGroup>
-
----
-
-**You've got this. Now go build something amazing.** 💪
-
----
-
-## Related Articles
-
-- [Setting Up Your First Product](link-to-products-guide)
-- [Creating Effective Training Programs](link-to-programs-guide)
-- [Mastering CoachIQ Automations](link-to-automations-guide)
-- [Payment Processing Setup](link-to-payments-guide)
-- [Athlete Portal Customization](link-to-portal-guide)
-- [SMS and Email Communication Best Practices](link-to-communication-guide)
-- [Analytics: Measuring Your Business Performance](link-to-analytics-guide)
