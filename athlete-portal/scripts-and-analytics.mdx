@@ -1,0 +1,207 @@
+---
+title: "Add Analytics and Tracking to Your Athlete Portal"
+description: "Learn how to add Google Analytics, Facebook Pixel, and custom scripts to track athlete engagement on your portal's web edition."
+sidebarTitle: "Scripts & Analytics"
+icon: "chart-line"
+keywords: ["analytics", "Google Analytics", "Facebook Pixel", "tracking", "custom scripts", "web analytics"]
+---
+
+<Info>
+  **Where to find this**: Dashboard → App Builder → Settings → Scripts & Analytics
+</Info>
+
+<Frame>
+  ![Scripts & Analytics Settings](/images/athlete-portal-scripts-analytics-settings.png)
+</Frame>
+
+<Note>
+  **Web edition only**: Scripts and analytics only apply to the web version of your athlete portal (accessed via browser). Native iOS and Android apps cannot run custom scripts due to platform restrictions.
+</Note>
+
+## What you'll accomplish
+
+Add tracking and analytics to your athlete portal's web edition. This lets you:
+
+- Track athlete engagement with Google Analytics
+- Run Facebook Pixel for retargeting and conversion tracking
+- Load third-party tools (Hotjar, Intercom, etc.)
+- Add custom JavaScript for advanced integrations
+
+## Accessing Scripts & Analytics settings
+
+<Steps>
+  <Step title="Navigate to App Builder">
+    From your dashboard, select **App** in the left sidebar.
+  </Step>
+  <Step title="Go to Settings">
+    Click **Settings** in the navigation menu.
+  </Step>
+  <Step title="Select Scripts & Analytics">
+    Choose **Scripts & Analytics** to access your tracking options.
+  </Step>
+</Steps>
+
+## Adding Google Analytics
+
+Track athlete behavior, page views, and engagement metrics with Google Analytics.
+
+### Get your Measurement ID
+
+<Steps>
+  <Step title="Open Google Analytics">
+    Go to [analytics.google.com](https://analytics.google.com) and sign in.
+  </Step>
+  <Step title="Access Admin settings">
+    Click the **Admin** gear icon in the bottom left corner.
+  </Step>
+  <Step title="Open Data Streams">
+    Under **Property Settings**, click **Data Streams**.
+  </Step>
+  <Step title="Get or create a Web stream">
+    Select your existing web stream, or click **Add stream** → **Web** to create one.
+
+    Enter your athlete portal URL (e.g., `app.coachiq.io/your-org/your-portal`).
+  </Step>
+  <Step title="Copy the Measurement ID">
+    Copy the **Measurement ID** - it starts with `G-` followed by letters and numbers (e.g., `G-ABC123XYZ`).
+
+    <Tip>
+      You only need the Measurement ID, not the full script code. CoachIQ handles the script injection automatically.
+    </Tip>
+  </Step>
+</Steps>
+
+### Add to CoachIQ
+
+<Steps>
+  <Step title="Paste your Measurement ID">
+    In the **Analytics** section, paste your Measurement ID into the **Google Analytics** field.
+  </Step>
+  <Step title="Save your changes">
+    Click **Update Analytics** in the top right corner.
+
+    <Check>
+      Your Google Analytics tracking is now active on your athlete portal web edition.
+    </Check>
+  </Step>
+</Steps>
+
+### Verify it's working
+
+<Steps>
+  <Step title="Open Google Analytics Realtime">
+    In Google Analytics, go to **Reports** → **Realtime**.
+  </Step>
+  <Step title="Visit your athlete portal">
+    In another browser tab, visit your athlete portal web edition.
+  </Step>
+  <Step title="Check for activity">
+    You should appear as an active user in the Realtime report within a few seconds.
+  </Step>
+</Steps>
+
+## Adding Facebook Pixel
+
+Track conversions and build retargeting audiences with Facebook Pixel.
+
+<Steps>
+  <Step title="Get your Pixel ID">
+    In Meta Business Suite, go to **Events Manager** → **Data Sources** → your Pixel.
+
+    Copy the **Pixel ID** (a string of numbers, e.g., `1234567890123456`).
+  </Step>
+  <Step title="Add to CoachIQ">
+    In the **Analytics** section, paste your Pixel ID into the **Facebook Pixel** field.
+  </Step>
+  <Step title="Save your changes">
+    Click **Update Analytics** to activate tracking.
+  </Step>
+</Steps>
+
+## Adding External Scripts
+
+Load third-party JavaScript libraries by URL. Use this for tools like Hotjar, Intercom, Drift, or any service that provides a script URL.
+
+<Steps>
+  <Step title="Get the script URL">
+    From your third-party tool, copy the script source URL (starts with `https://`).
+  </Step>
+  <Step title="Add the URL">
+    In the **External Scripts** section, paste the URL into the **Script Source URL** field.
+  </Step>
+  <Step title="Add more scripts (optional)">
+    Click **+ Add Script Source** to add additional script URLs.
+  </Step>
+  <Step title="Save your changes">
+    Click **Update Analytics** to load the scripts.
+  </Step>
+</Steps>
+
+<Warning>
+  **Only add scripts you trust.** External scripts have full access to your athlete portal page. Only use scripts from reputable services.
+</Warning>
+
+## Adding Custom JavaScript
+
+Run your own JavaScript code for advanced integrations, custom tracking events, or specialized functionality.
+
+<Steps>
+  <Step title="Write your code">
+    In the **Custom Js** section, enter your JavaScript code.
+
+    <Tip>
+      Don't include `<script>` tags - just write the JavaScript code directly.
+    </Tip>
+  </Step>
+  <Step title="Save your changes">
+    Click **Update Analytics** to activate your custom code.
+  </Step>
+</Steps>
+
+### Example: Custom event tracking
+
+```javascript
+// Track when athletes click specific buttons
+document.addEventListener('click', function(e) {
+  if (e.target.matches('.book-session-btn')) {
+    gtag('event', 'book_session_click', {
+      'event_category': 'engagement'
+    });
+  }
+});
+```
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Does this work on the mobile apps?">
+    No. Scripts and analytics only work on the **web edition** of your athlete portal (accessed through a browser). Native iOS and Android apps cannot execute custom scripts due to platform security restrictions.
+  </Accordion>
+  <Accordion title="Can I add multiple analytics tools?">
+    Yes. You can use Google Analytics, Facebook Pixel, multiple external scripts, and custom JavaScript all at the same time.
+  </Accordion>
+  <Accordion title="Why isn't my tracking showing data?">
+    Common causes:
+
+    - **Didn't click Update Analytics** - Make sure you saved your changes
+    - **Ad blocker active** - Disable ad blockers when testing
+    - **Wrong ID format** - Google Analytics IDs start with `G-`, Pixel IDs are numeric only
+    - **Caching** - Try a hard refresh (Ctrl+Shift+R or Cmd+Shift+R)
+  </Accordion>
+  <Accordion title="Do I need to add the full Google Analytics script?">
+    No. Just paste your Measurement ID (e.g., `G-ABC123XYZ`) into the Google Analytics field. CoachIQ automatically loads and configures the tracking script for you.
+  </Accordion>
+  <Accordion title="What's the difference between External Scripts and Custom JS?">
+    - **External Scripts**: Loads JavaScript files from a URL (for third-party tools)
+    - **Custom JS**: Runs your own JavaScript code directly (for custom functionality)
+  </Accordion>
+  <Accordion title="Will this affect my website tracking?">
+    No. These settings only apply to your **Athlete Portal** (App Builder). Website tracking is configured separately in Website Builder → Analytics & Tracking.
+  </Accordion>
+</AccordionGroup>
+
+## Related articles
+
+- [Understanding Your Athlete Portal](/athlete-portal/understanding-your-athlete-portal)
+- [Website Analytics & Tracking](/website/analytics-tracking/analytics-tracking)
+- [Portal Design Settings](/athlete-portal/design-settings)
