@@ -3,7 +3,7 @@ title: "Products Overview"
 description: "Understand the three product types in CoachIQ and how to use them to monetize your coaching business"
 sidebarTitle: "Products Overview"
 icon: "box"
-keywords: ["products", "product types", "sell products", "create product", "one-time", "subscription", "access code"]
+keywords: ["products", "product types", "sell products", "create product", "one-time", "subscription", "access code", "hide product", "archive product", "product visibility", "launch later", "hidden product", "disable product", "deactivate product"]
 ---
 
 <Info>
@@ -185,6 +185,88 @@ Ready to build a product?
 </Steps>
 
 [Full product creation guide →](/payments/creating-first-product)
+
+## Product visibility: Where athletes can find products
+
+Products don't automatically appear to athletes. You control visibility by choosing where to add them:
+
+<CardGroup cols={2}>
+  <Card title="Athlete Portal Products Page" icon="store">
+    Add products to sections in **App Builder → Products**. Athletes see them when browsing your portal (web only—not visible on iOS/Android apps).
+  </Card>
+  <Card title="Direct Product Link" icon="link">
+    Every product has a shareable checkout URL. Athletes can only access it if you share the link with them.
+  </Card>
+  <Card title="Attached to Scheduler" icon="calendar">
+    Connect products as payment options in **Schedule → Schedulers → Payment Settings**. Athletes see them when booking sessions.
+  </Card>
+  <Card title="Attached to Form" icon="file-lines">
+    Add products to forms in **Tools → Forms**. Athletes see them when submitting the form.
+  </Card>
+</CardGroup>
+
+<Check>
+**Key insight**: A product you create but don't add anywhere is effectively hidden. Athletes can't discover it unless you explicitly place it in one of these locations or share its direct link.
+</Check>
+
+## Setting up products before launch
+
+Want to create products now but launch them later? Here's the recommended workflow:
+
+<Steps>
+  <Step title="Create your product">
+    Build the product with all settings configured in **Payments → Products → + Create**.
+  </Step>
+  <Step title="Don't add it anywhere yet">
+    - Don't add to Athlete Portal Products page
+    - Don't attach to any schedulers
+    - Don't attach to any forms
+    - Don't share the direct link
+  </Step>
+  <Step title="Launch when ready">
+    When you're ready to go live, add the product to wherever you want athletes to find it.
+  </Step>
+</Steps>
+
+<Tip>
+**No "draft mode" needed**: Products are invisible to athletes until you actively place them somewhere. You can take your time configuring everything before launch.
+</Tip>
+
+## Archiving products
+
+Archive products you no longer want to sell. Archiving completely disables a product—it can't be purchased anywhere, including via direct link.
+
+<Steps>
+  <Step title="Go to Products page">
+    Navigate to **Payments → Products**.
+  </Step>
+  <Step title="Find the product">
+    Click on the product row to open the action menu.
+  </Step>
+  <Step title="Select Archive Product">
+    Click **Archive Product** to disable it.
+  </Step>
+</Steps>
+
+**What happens when you archive:**
+- Product can't be purchased anywhere (portal, schedulers, forms, direct links)
+- Existing subscriptions and credits are not affected
+- Transaction history and data remain intact
+- Product moves to the "Archived" filter view
+- You can unarchive later to re-enable the product
+
+<Note>
+**Archive vs. not adding anywhere**: If you just want to hide a product temporarily, don't add it anywhere (or remove it from where it's displayed). Use Archive when you want to completely disable a product so it can't be purchased even if someone has the direct link.
+</Note>
+
+### Viewing and restoring archived products
+
+To see archived products, use the status filter dropdown on the Products page:
+- **Active**: Products available for purchase
+- **Archived**: Disabled products
+- **All**: Both active and archived
+
+To restore an archived product, view the archived product and select the option to unarchive it.
 
 ## What you need to know about products
 
