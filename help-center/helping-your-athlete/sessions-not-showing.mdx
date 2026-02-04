@@ -3,17 +3,38 @@ title: "Why Aren't My Sessions Showing Up for Booking?"
 description: "Troubleshoot missing session availability in your booking calendar and help clients find open time slots"
 sidebarTitle: "Sessions Not Showing"
 icon: "calendar-xmark"
-keywords: ["sessions not showing", "no available times", "booking not working", "calendar empty", "can't see sessions", "availability missing"]
+keywords: ["sessions not showing", "no available times", "booking not working", "calendar empty", "can't see sessions", "availability missing", "no dates showing", "no times showing", "double booking", "coach already booked", "connected coach"]
 ---
 
 <Info>
-  **Quick check**: Most missing sessions are caused by availability settings, session limits, or timezone conflicts.
+  **Quick check**: Most missing sessions are caused by the connected coach being booked elsewhere, availability settings, or session limits.
 </Info>
 
 ## Common causes & fixes
 
 <AccordionGroup>
-  <Accordion title="1. Availability not set for that time">
+  <Accordion title="1. Connected coach already booked (double-booking prevention)">
+    **Very common** - If the coach assigned to this scheduler has sessions booked at the same times through another scheduler, those time slots won't appear. This is CoachIQ preventing double-bookings.
+
+    **Fix:**
+
+    1. Go to **Schedule** → **Calendar**
+    2. Check if the connected coach has existing sessions during the times you expect to see availability
+    3. If they do, that's why those slots aren't showing — the coach is already booked
+    4. To free up slots, either cancel/reschedule the conflicting sessions or adjust the coach's availability
+
+    <Tip>
+      **Example**: Coach Mike is connected to both "Private Training" and "Group Classes" schedulers. If he has a Group Class booked Monday 4-5pm, that slot won't appear for Private Training bookings either — even though both schedulers pull from the same availability.
+    </Tip>
+
+    **To check which coach is connected:**
+
+    1. Go to **Schedule** → **Schedulers**
+    2. Select the scheduler in question
+    3. Look for **Connected Coaches** section
+    4. Note which coach(es) are assigned, then check their calendar for conflicts
+  </Accordion>
+  <Accordion title="2. Availability not set for that time">
     **Most common issue** - Your availability determines when clients can book.
 
     **Fix:**
@@ -27,7 +48,7 @@ keywords: ["sessions not showing", "no available times", "booking not working", 
       Sessions can only be booked during times you've marked as available. If you're available Monday 9am-5pm, but only set availability for 9am-12pm, afternoon slots won't show.
     </Tip>
   </Accordion>
-  <Accordion title="2. Session limit reached">
+  <Accordion title="3. Session limit reached">
     Your scheduler may have a maximum number of sessions per day/week.
 
     **Fix:**
@@ -38,7 +59,7 @@ keywords: ["sessions not showing", "no available times", "booking not working", 
     4. Increase limits or untoggle the limit to allow unlimited booking
     5. Click **Save**
   </Accordion>
-  <Accordion title="3. Minimum notice requirement">
+  <Accordion title="4. Minimum notice requirement">
     You may require clients to book a certain time in advance.
 
     **Fix:**
@@ -53,7 +74,7 @@ keywords: ["sessions not showing", "no available times", "booking not working", 
       Example: If minimum notice is 24 hours and the session is on Monday at 6 pm, then athletes can't book after Sunday at 6 pm.
     </Note>
   </Accordion>
-  <Accordion title="4. Date range restrictions">
+  <Accordion title="5. Date range restrictions">
     Sessions may have start/end dates limiting bookability.
 
     **Fix:**
@@ -65,7 +86,7 @@ keywords: ["sessions not showing", "no available times", "booking not working", 
     5. Adjust dates as needed
     6. Click **Save**
   </Accordion>
-  <Accordion title="5. Session already booked">
+  <Accordion title="6. Session already booked">
     Someone may have already booked that specific time slot.
 
     **Fix:**
@@ -75,7 +96,7 @@ keywords: ["sessions not showing", "no available times", "booking not working", 
     3. If it's an error, cancel the existing session
     4. The slot will become available again
   </Accordion>
-  <Accordion title="6. Timezone mismatch">
+  <Accordion title="7. Timezone mismatch">
     Your availability may be set in a different timezone than expected.
 
     **Fix:**
@@ -90,13 +111,13 @@ keywords: ["sessions not showing", "no available times", "booking not working", 
       If you recently changed timezones, your availability blocks may have shifted. Review and adjust as needed.
     </Warning>
   </Accordion>
-  <Accordion title="7. Buffer time between sessions">
+  <Accordion title="8. Buffer time between sessions">
     Buffer settings prevent back-to-back bookings.
 
     **Fix:**
 
-    1. Go to **Products** → Select your session product
-    2. Find **Buffer Time** settings
+    1. Go to **Schedule** → **Schedulers** → Select the scheduler
+    2. Find **Buffer** settings
     3. Check "Buffer before" and "Buffer after" values
     4. Reduce if blocking too many slots
     5. Click **Save**
@@ -105,7 +126,7 @@ keywords: ["sessions not showing", "no available times", "booking not working", 
       Example: 30-minute buffer after each 60-minute session means a 10am session blocks booking until 11:30am.
     </Note>
   </Accordion>
-  <Accordion title="8. Scheduler is inactive">
+  <Accordion title="9. Scheduler is inactive">
     The scheduler might be disabled or turned off.
 
     **Fix:**
@@ -123,9 +144,15 @@ keywords: ["sessions not showing", "no available times", "booking not working", 
 Work through this in order:
 
 <Steps>
+  <Step title="Check for coach conflicts first">
+    - Go to **Schedule** → **Calendar** and look at the connected coach's schedule
+    - If they have sessions booked from other schedulers during those times, that's why slots aren't showing
+    - This is the most overlooked cause when "everything looks right" but slots still don't appear
+  </Step>
   <Step title="Verify basic setup">
     - Scheduler is **Active**
     - You have availability set for the desired day/time
+    - A coach is connected to the scheduler
     - The time slot isn't already booked
   </Step>
   <Step title="Check booking restrictions">

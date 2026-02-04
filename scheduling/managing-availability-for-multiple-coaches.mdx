@@ -520,6 +520,7 @@ Effective calendar use is essential for multi-coach coordination.
 
     **Causes**:
 
+    - **Connected coach already booked elsewhere** (very common!) - If this coach is assigned to multiple schedulers and has sessions booked through one scheduler, those time slots won't appear for their other schedulers. This is CoachIQ's double-booking prevention working correctly
     - Blackout days incorrectly added
     - Availability not saved properly
     - Buffer time consuming all availability
@@ -527,13 +528,21 @@ Effective calendar use is essential for multi-coach coordination.
 
     **How to fix**:
 
+    - **Check for conflicts first**: Go to **Schedule** → **Calendar**, filter to that coach, and look for existing sessions from ANY scheduler during the times you expect availability
+    - If you find conflicts, either reschedule those sessions or understand that the coach being unavailable is expected behavior
     - Edit coach's scheduler and verify availability settings
     - Remove inappropriate blackout days
     - Check buffer time calculations
     - Verify scheduler is active/published
     - Test booking flow to confirm slots appear
 
-    **Debug method**: Filter calendar to only that coach and verify availability windows show properly.
+    **Debug method**: Filter calendar to only that coach and verify availability windows show properly. Look for sessions from other schedulers that might be blocking the times you expect.
+
+    <Tip>
+      **Example**: Coach Mike is connected to both "Private Training" and "Group Classes" schedulers. If he has a Group Class booked Monday 4-5pm, that slot won't appear for Private Training either—both schedulers share the same coach, so both are affected by his existing bookings.
+    </Tip>
+
+    For detailed troubleshooting, see [Why Aren't My Sessions Showing Up?](/help-center/helping-your-athlete/sessions-not-showing)
   </Accordion>
 </AccordionGroup>
 

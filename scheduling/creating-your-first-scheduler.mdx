@@ -862,13 +862,15 @@ Final checks before activating your scheduler.
 
     **Possible causes**:
 
-    1. **No availability set** - Forgot to add days/times
-    2. **Availability in past** - End date already passed
-    3. **All dates blocked** - Blackout days covering everything
-    4. **Buffer time too long** - Consuming entire availability window
+    1. **Connected coach already booked elsewhere** - If the coach assigned to this scheduler has sessions booked through other schedulers at those times, slots won't appear (this is double-booking prevention working correctly)
+    2. **No availability set** - Forgot to add days/times
+    3. **Availability in past** - End date already passed
+    4. **All dates blocked** - Blackout days covering everything
+    5. **Buffer time too long** - Consuming entire availability window
 
     **How to fix**:
 
+    - **Check for coach conflicts first**: Go to Schedule → Calendar and check if the connected coach has existing sessions during the times you expect to see availability
     - Edit scheduler → Availability section
     - Verify days are checked
     - Verify time ranges are set
@@ -880,6 +882,8 @@ Final checks before activating your scheduler.
     <Tip>
       **Quick test**: Remove all buffer time temporarily. If slots appear, buffer was consuming availability. Adjust accordingly.
     </Tip>
+
+    For detailed troubleshooting, see [Why Aren't My Sessions Showing Up?](/help-center/helping-your-athlete/sessions-not-showing)
   </Accordion>
   <Accordion title="Wrong times showing (AM vs PM confusion)">
     **Issue**: Slots showing 3:00 AM when you meant 3:00 PM
@@ -984,7 +988,7 @@ Final checks before activating your scheduler.
   <Card title="Manual Booking" icon="user-plus" href="/scheduling/manually-booking-athletes">
     Book athletes directly into sessions
   </Card>
-  <Card title="Troubleshooting" icon="tools" href="/scheduling/troubleshooting-no-available-times">
+  <Card title="Troubleshooting" icon="tools" href="/help-center/helping-your-athlete/sessions-not-showing">
     Fix scheduler and availability problems
   </Card>
 </CardGroup>
