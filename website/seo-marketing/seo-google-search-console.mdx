@@ -1,26 +1,22 @@
 ---
-title: "How to Improve Your SEO with Google Search Console"
-description: "Connect your CoachIQ website to Google Search Console to improve search rankings and help potential clients find your coaching business online"
+title: "Get Your CoachIQ Website Indexed on Google"
+description: "Step-by-step guide to setting up Google Search Console and submitting your sitemap so Google indexes your CoachIQ website and shows it in search results."
 sidebarTitle: "Google Search Console Setup"
 icon: "magnifying-glass-chart"
 ---
 
 <Info>
-**What you'll accomplish**: Connect your CoachIQ website to Google Search Console so Google can properly index your site and show it to potential clients searching for coaching services.
+  **What you'll accomplish**: Connect your CoachIQ website to Google Search Console, submit your sitemap, and get Google to index your site so it appears in search results.
 </Info>
 
 ## Why this matters
 
-Google Search Console is a free tool that helps Google understand and display your coaching website in search results. Without it, potential clients may have trouble finding you when they search for coaching services in your area.
+Google doesn't automatically know your website exists. Google Search Console is the free tool that tells Google about your site, submits your pages for indexing, and lets you monitor how your site performs in search results.
 
-**What you'll get:**
-- Better visibility in Google search results
-- Insights into how people find your site
-- Alerts about any technical issues affecting your search ranking
-- Control over how Google indexes your content
+Without this setup, your CoachIQ website may not appear when potential clients search for coaching services in your area.
 
 <Note>
-**Time required**: 10-15 minutes for initial setup. Google typically takes 2-3 days to begin showing your site in search results.
+  **Time required**: 10-15 minutes for setup. Google typically takes 2-3 days to begin crawling and 1-2 weeks before pages start appearing in search results.
 </Note>
 
 ## Before you begin
@@ -28,281 +24,150 @@ Google Search Console is a free tool that helps Google understand and display yo
 You'll need:
 - A published CoachIQ website
 - A Google account (Gmail works perfectly)
-- Access to your domain settings (usually through your domain provider)
+- Access to your domain settings (if using a custom domain)
 
-## Step-by-step setup guide
+## Connect Google Search Console
 
 <Steps>
-<Step title="Access Google Search Console">
-Open your web browser and search for "Google Search Console" or go directly to [search.google.com/search-console](https://search.google.com/search-console).
+  <Step title="Go to Google Search Console">
+    Open [search.google.com/search-console](https://search.google.com/search-console) and click **Start now**.
 
-Click **Start now** to begin the setup process.
+    Sign in with the Google account you want to manage your website analytics with.
+  </Step>
 
-Sign in with the Google account you want to use for managing your website analytics. Your personal Gmail account works great for this.
-</Step>
+  <Step title="Add your website">
+    You'll see two options:
+    - **Domain** (left side)
+    - **URL prefix** (right side)
 
-<Step title="Add your CoachIQ website">
-You'll see two options on the welcome screen:
-- **Domain** (left side)
-- **URL prefix** (right side)
+    Choose **URL prefix**. Paste your complete website URL (for example: `https://yourcoachingname.com`) and click **Continue**.
 
-For your CoachIQ site, choose **URL prefix**.
+    <Tip>
+      Include `https://` at the beginning and don't add a trailing slash at the end.
+    </Tip>
+  </Step>
 
-Paste your complete website URL (for example: `https://yourcoachingname.com`) and click **Continue**.
+  <Step title="Verify you own the site">
+    Google needs to confirm you own this website. You'll see several verification methods — the two most common for CoachIQ sites:
 
-<Tip>
-**Pro tip**: Make sure to include the `https://` at the beginning of your URL and don't add a trailing slash at the end.
-</Tip>
-</Step>
+    **HTML tag (recommended):**
+    1. Select the **HTML tag** method
+    2. Copy the meta tag Google provides
+    3. In your CoachIQ Website Builder, go to **Settings** → **SEO** and paste the verification code
+    4. Click **Verify** back in Google Search Console
 
-<Step title="Verify site ownership">
-Google needs to confirm you own this website before giving you access to its data.
+    **DNS record (if using a custom domain):**
+    1. Select the **Domain name provider** method
+    2. Copy the TXT record Google provides
+    3. Add it to your domain's DNS settings through your domain provider (GoDaddy, Namecheap, etc.)
+    4. Click **Verify** — DNS changes can take up to 24 hours to propagate
 
-The easiest verification method is through your domain manager:
-1. Google will show several verification options
-2. Look for the automatic verification option through your domain provider
-3. Follow the prompts to connect and verify
+    <Check>
+      Once verified, you'll see a confirmation message and be taken to your Search Console dashboard.
+    </Check>
+  </Step>
 
-If automatic verification isn't available, Google will guide you through alternative methods like adding a special code to your site or DNS records.
+  <Step title="Submit your sitemap">
+    CoachIQ automatically generates a sitemap for your website. You just need to tell Google where it is.
 
-<Check>
-**Success!** Once verification succeeds, you'll see a confirmation message and be taken to your Search Console dashboard.
-</Check>
-</Step>
+    In the left sidebar of Search Console, click **Indexing** → **Sitemaps**.
 
-<Step title="Submit your sitemap">
-A sitemap tells Google about all the pages on your site. CoachIQ automatically creates one for you.
+    In the "Add a new sitemap" field, enter:
+    ```
+    sitemap.xml
+    ```
 
-In the left sidebar of Search Console, navigate to **Indexing** → **Sitemaps**.
+    Click **Submit**.
 
-In the "Add a new sitemap" field at the top of the page, enter:
-```
-sitemap.xml
-```
+    <Note>
+      Your full sitemap URL is your website address + `/sitemap.xml` (for example: `https://yourcoachingname.com/sitemap.xml`). CoachIQ keeps this updated automatically whenever you change your site.
+    </Note>
+  </Step>
 
-Click **Submit**.
+  <Step title="Confirm the submission">
+    Refresh the page and check under "Submitted sitemaps". You should see:
+    - **Success** — Google accepted your sitemap
+    - **Pending** — Google is still processing (normal)
 
-<Note>
-Your complete sitemap URL will be your website address + `/sitemap.xml`. For example: `https://yourcoachingname.com/sitemap.xml`
-</Note>
-</Step>
+    If you see errors, double-check that you entered `sitemap.xml` correctly.
 
-<Step title="Confirm successful submission">
-After submitting, refresh the page and look under "Submitted sitemaps".
-
-You should see your sitemap listed with a status that shows:
-- **Success** (ideal - means Google accepted it)
-- **Pending** (normal - Google is processing it)
-
-If you see any errors, double-check that you entered `sitemap.xml` correctly.
-
-<Warning>
-It typically takes 2-3 days for Google to fully process your sitemap and begin showing your pages in search results. Be patient - this is completely normal!
-</Warning>
-</Step>
+    <Warning>
+      It takes 2-3 days for Google to begin crawling and 1-2 weeks for pages to start appearing in search results. This is completely normal — don't resubmit repeatedly.
+    </Warning>
+  </Step>
 </Steps>
 
-## Optimizing your CoachIQ site for better SEO
+## Check your indexing status
 
-Once your site is connected to Google Search Console, maximize your search visibility by optimizing these CoachIQ features:
+After a few days, come back to Search Console to confirm Google is indexing your pages.
 
-### Website content optimization
+**Pages report** (left sidebar → Indexing → Pages):
+- See how many pages Google has indexed
+- Identify pages that aren't indexed and why
+- Confirm your most important pages are showing up
 
-**Page titles and descriptions**
-Every page on your CoachIQ site should have:
-- Clear, descriptive titles that include relevant keywords (e.g., "Youth Soccer Training - [Your Name] Coaching")
-- Compelling meta descriptions that encourage clicks
-- Your location for local search visibility
-
-**Quality content**
-- Write detailed service descriptions explaining what makes your coaching unique
-- Include testimonials and success stories
-- Regularly update your blog or resources section
-- Use natural language that your ideal clients would search for
-
-### Local SEO settings
-
-If you coach in a specific area, make sure to:
-1. Add your complete business address in your CoachIQ site settings
-2. Include your city/region in page titles and content
-3. Create location-specific service pages if you serve multiple areas
-4. Embed a Google Map showing your training location
-
-### Mobile optimization
-
-Your CoachIQ website is automatically mobile-friendly, but you can help SEO by:
-- Keeping paragraphs short and scannable
-- Using clear headings and subheadings
-- Ensuring images load quickly
-- Testing your site on your phone regularly
-
-### Technical SEO (handled automatically)
-
-CoachIQ takes care of these technical elements for you:
-- Fast page loading speeds
-- Secure HTTPS connection
-- Mobile-responsive design
-- Clean URL structure
-- Automatic sitemap generation
-
-## Monitoring your search performance
-
-### Using Search Console insights
-
-After a few weeks of data collection, check your Search Console regularly:
-
-**Performance report** (left sidebar)
-- See which search terms bring people to your site
-- Identify your most popular pages
-- Track clicks, impressions, and average position
-- Compare performance over time
-
-**Coverage report**
-- Confirm all your important pages are indexed
-- Identify and fix any errors preventing pages from appearing in search
+**URL Inspection tool** (top search bar in Search Console):
+- Paste any page URL from your site to check its index status
+- Request indexing for individual pages if they haven't been picked up yet
+- See when Google last crawled the page
 
 <Tip>
-**Pro tip**: Check Search Console monthly to spot trends and opportunities. If certain keywords perform well, create more content around those topics!
+  If an important page isn't indexed after 2 weeks, use the URL Inspection tool to manually request indexing for that specific page.
 </Tip>
-
-## Common questions
-
-<AccordionGroup>
-<Accordion title="How long before I see results in Google search?">
-After submitting your sitemap, expect:
-- **2-3 days**: Google begins crawling your site
-- **1-2 weeks**: Pages start appearing in search results
-- **4-12 weeks**: Noticeable improvement in search rankings
-
-SEO is a long-term strategy. Consistent, quality content and proper setup yield the best results over time.
-</Accordion>
-
-<Accordion title="Do I need to resubmit my sitemap when I update my site?">
-No! CoachIQ automatically updates your sitemap whenever you make changes to your website. Google will regularly check for updates on its own.
-
-However, you can manually request Google to re-crawl your site in Search Console if you've made major changes and want them indexed faster.
-</Accordion>
-
-<Accordion title="What if my sitemap shows errors?">
-First, double-check that you entered `sitemap.xml` correctly in Search Console.
-
-If errors persist:
-1. Verify your CoachIQ website is published (not in draft mode)
-2. Check that your domain is properly connected
-3. Wait 24-48 hours as sometimes errors resolve automatically
-4. Contact CoachIQ support if issues continue
-
-Common error causes are usually temporary and related to DNS propagation.
-</Accordion>
-
-<Accordion title="Can I use Search Console with a custom domain?">
-Absolutely! In fact, custom domains (like yourcoaching.com) perform better in search results than CoachIQ subdomains.
-
-The setup process is identical - just use your custom domain URL when adding your property to Search Console.
-
-<Check>
-Learn more: [Setting Up Your Custom Domain](/website/custom-domain-setup)
-</Check>
-</Accordion>
-
-<Accordion title="Should I connect Google Analytics too?">
-Yes! While Search Console shows how people find your site through search, Google Analytics shows what they do once they arrive.
-
-Together, these tools give you complete visibility into your website performance and help you optimize for more client conversions.
-
-<Check>
-Learn more: [Connecting Google Analytics to Your Website](/seo-marketing/google-analytics-setup)
-</Check>
-</Accordion>
-
-<Accordion title="What's the difference between 'Domain' and 'URL prefix' verification?">
-**URL prefix** (recommended for most coaches):
-- Easier to set up
-- Works immediately with CoachIQ sites
-- Tracks one specific version of your site (https://yoursite.com)
-
-**Domain**:
-- Tracks all versions (www, non-www, http, https) in one property
-- Requires DNS record changes
-- More complex setup but cleaner long-term
-
-For most coaching businesses, URL prefix is the simpler and perfectly adequate choice.
-</Accordion>
-</AccordionGroup>
 
 ## Troubleshooting
 
-### Verification fails
+<AccordionGroup>
+  <Accordion title="Verification keeps failing">
+    **HTML tag method**: Make sure you pasted the full meta tag (starting with `<meta`) into your CoachIQ SEO settings, then saved before clicking Verify.
 
-**If automatic verification doesn't work:**
-1. Try the HTML tag method - Google will provide a code snippet
-2. Contact CoachIQ support to help you add the verification code
-3. Alternatively, use the DNS verification method through your domain provider
+    **DNS method**: DNS changes can take up to 24 hours. Wait and retry. Double-check the TXT record was added correctly with your domain provider.
 
-### Sitemap not found
+    If neither works, [contact CoachIQ support](mailto:info@coachiq.io) with a screenshot of the error.
+  </Accordion>
 
-**If Google can't find your sitemap:**
-- Ensure your CoachIQ website is published (not in draft)
-- Verify you're using the correct format: `sitemap.xml` (not your full URL)
-- Check that your domain is properly connected and active
-- Wait 24 hours for DNS changes to propagate if you recently connected a custom domain
+  <Accordion title="Sitemap shows errors or 'Couldn't fetch'">
+    1. Verify your CoachIQ website is published (not in draft mode)
+    2. Check that your domain is properly connected and active
+    3. Make sure you entered just `sitemap.xml`, not the full URL
+    4. If you recently connected a custom domain, wait 24 hours for DNS to propagate
+  </Accordion>
 
-### No data showing in Search Console
+  <Accordion title="No pages are being indexed after a week">
+    - Confirm your sitemap status shows **Success**
+    - Check that your site has published content (not just a coming soon page)
+    - Use the URL Inspection tool to manually request indexing on your homepage
+    - Share your website URL on social media or other sites — external links help Google discover your site faster
+  </Accordion>
 
-**If your dashboard is empty after several days:**
-- This is normal for brand new websites - it takes time to gather data
-- Verify your sitemap was successfully submitted
-- Check that your site has actual content published (not just a coming soon page)
-- Share your website on social media and other platforms to help Google discover it
+  <Accordion title="How long until I see results in Google search?">
+    After submitting your sitemap, expect:
+    - **2-3 days**: Google begins crawling your site
+    - **1-2 weeks**: Pages start appearing in search results
+    - **4-12 weeks**: Rankings start improving as Google builds trust in your site
 
-<Warning>
-**Still having issues?** Take a screenshot of the error message you're seeing in Search Console and [contact CoachIQ support](/support/contact-us). We can help identify the specific issue and guide you through the solution.
-</Warning>
+    New websites take longer. Consistently publishing quality content speeds this up.
+  </Accordion>
 
-## Pro tips for maximum SEO impact
+  <Accordion title="Do I need to resubmit my sitemap when I update my site?">
+    No. CoachIQ automatically updates your sitemap whenever you make changes. Google re-checks it on its own.
 
-### Content strategy
-- **Publish regularly**: Add new content (blog posts, resources, updates) at least monthly
-- **Answer questions**: Create content around common questions your clients ask
-- **Use keywords naturally**: Include terms your ideal clients search for, but write for humans first
-- **Internal linking**: Link between your own pages to help Google understand your site structure
+    If you've made major changes and want them indexed faster, use the URL Inspection tool to request re-crawling on specific pages.
+  </Accordion>
 
-### Local search optimization
-- **Claim your Google Business Profile**: This works alongside Search Console for local visibility
-- **Consistent NAP**: Keep your Name, Address, Phone number identical everywhere online
-- **Get reviews**: Client testimonials on Google help your local search ranking
-- **Local content**: Mention your city, region, and local landmarks in your content
+  <Accordion title="What's the difference between Domain and URL prefix verification?">
+    **URL prefix** (recommended): Easier to set up, works immediately with CoachIQ sites, tracks one version of your site (`https://yoursite.com`).
 
-### Technical best practices
-- **Use descriptive URLs**: Your CoachIQ pages should have clear, keyword-rich URLs
-- **Optimize images**: Use descriptive file names and alt text for all images
-- **Fix broken links**: Regularly check that all your links work properly
-- **Speed matters**: Keep your pages fast by optimizing image sizes
+    **Domain**: Tracks all versions (www, non-www, http, https) in one property. Requires DNS record changes. More complex but cleaner long-term.
 
-### Building authority
-- **Quality backlinks**: Get other reputable sites to link to yours (directories, local business sites)
-- **Social proof**: Active social media presence signals credibility to Google
-- **Fresh content**: Regular updates signal to Google that your site is active and relevant
+    For most coaches, URL prefix is the right choice.
+  </Accordion>
+</AccordionGroup>
 
 ## Related articles
 
-<CardGroup cols={2}>
-<Card title="Custom Domain Setup" icon="globe" href="/website/custom-domain-setup">
-  Connect your own domain for better SEO
-</Card>
-<Card title="Website Builder Basics" icon="browser" href="/website/website-builder-overview">
-  Optimize your site structure and content
-</Card>
-<Card title="Google Analytics Setup" icon="chart-line" href="/seo-marketing/google-analytics-setup">
-  Track visitor behavior and conversions
-</Card>
-<Card title="Social Media Integration" icon="share-nodes" href="/seo-marketing/social-media-integration">
-  Expand your online presence
-</Card>
-</CardGroup>
-
----
-
-<Check>
-**Ready to take it further?** Once your Search Console is set up and showing data, explore our [Advanced SEO Strategies guide](/seo-marketing/advanced-seo-strategies) to learn techniques used by top-performing coaching websites.
-</Check>
+- [SEO Basics for Your CoachIQ Website](/website/seo-marketing/website-seo-basics)
+- [Manage Your Sitemap](/website/seo-marketing/sitemap-builder)
+- [Set Up Google My Business](/website/seo-marketing/google-my-business)
+- [Meta Titles & Descriptions](/website/seo-marketing/meta-titles-descriptions)
+- [Connect Your Custom Domain](/website/domain-setup/domain-setup)
