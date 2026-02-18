@@ -33,13 +33,27 @@ Each transaction displays:
 | Column      | What it shows                           |
 | ----------- | --------------------------------------- |
 | **Date**    | When transaction occurred               |
-| **Type**    | One-Time, Subscription, or Refund       |
+| **Status**  | Succeeded, Blocked, Payout, etc.        |
+| **Amount**  | Transaction amount                      |
 | **Client**  | Client name (clickable link to profile) |
 | **Product** | Which product was purchased             |
-| **Amount**  | Transaction amount                      |
-| **Status**  | Succeeded, Failed, Refunded, or Pending |
+| **Source**  | How the transaction was created (see below) |
 
 Click any transaction row to view complete details.
+
+## Transaction source types
+
+The **Source** column tells you how a transaction was created:
+
+| Source | What it means |
+| ------ | ------------- |
+| **Open** | Transaction has a Stripe ID. Click **Open** to view the charge directly in Stripe. |
+| **Admin** | Transaction was created by an admin — no Stripe charge is mapped. This appears when a purchase is manually added through the dashboard (e.g., comping a client, granting a free trial) or when a Stripe ID has been manually removed from a subscription. |
+| **Coupon** | A coupon code was applied to the transaction. |
+
+<Note>
+**"Admin" does not mean the admin was charged.** It means an admin created the transaction manually without a Stripe payment. This is normal for comped access, free trials granted by the coach, or manual adjustments.
+</Note>
 
 ## Transaction status types
 
@@ -112,7 +126,7 @@ Top of page displays key metrics:
 
 ## View transaction details
 
-Click Open under the Source column of the transaction to view on Stripe::
+Click **Open** under the Source column of the transaction to view on Stripe:
 
 **Transaction information:**
 
@@ -242,6 +256,14 @@ Click Open under the Source column of the transaction to view on Stripe::
     4. Verify client completed full checkout process
 
     Payment confirmation email proves transaction completed.
+  </Accordion>
+  <Accordion title="What does 'Admin' mean in the Source column?">
+    **Admin** means the transaction was created manually by an admin — there is no Stripe charge linked to it. This happens when:
+
+    - You manually grant a client access or a free trial from the dashboard
+    - A Stripe ID was removed from a subscription manually
+
+    The admin was **not** charged. It simply means the purchase bypassed Stripe.
   </Accordion>
   <Accordion title="Transaction amount doesn't match product price">
     **Possible reasons:**
