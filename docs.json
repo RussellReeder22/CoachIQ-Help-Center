@@ -234,6 +234,7 @@
                 "pages": [
                   "payments/connecting-stripe",
                   "payments/stripe-dashboard",
+                  "payments/disconnect-stripe",
                   "payments/sharing-rev"
                 ]
               },
