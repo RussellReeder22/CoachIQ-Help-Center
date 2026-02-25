@@ -362,7 +362,8 @@
             "pages": [
               "flows/index",
               "flows/first-week-setup-checklist",
-              "flows/onboarding-new-athletes"
+              "flows/onboarding-new-athletes",
+              "flows/running-camps"
             ]
           },
           {
