@@ -132,8 +132,7 @@
                   "website/seo-marketing/favicon-share-images",
                   "website/seo-marketing/sitemap-builder",
                   "website/seo-marketing/url-redirects",
-                  "website/seo-marketing/seo-google-search-console",
-                  "help-center/website-builder/seo-and-marketing/meta-ads-account"
+                  "website/seo-marketing/seo-google-search-console"
                 ]
               }
             ]
@@ -334,6 +333,13 @@
             "group": "Settings",
             "pages": [
               "settings/index"
+            ]
+          },
+          {
+            "group": "Power-Ups Setup",
+            "icon": "bolt",
+            "pages": [
+              "power-ups-setup/grant-meta-ads-access"
             ]
           }
         ]
@@ -602,6 +608,8 @@
 
     { "source": "/payments/index", "destination": "/payments/getting-started" },
     { "source": "/payments", "destination": "/payments/getting-started" },
+
+    { "source": "/help-center/website-builder/seo-and-marketing/meta-ads-account", "destination": "/power-ups-setup/grant-meta-ads-access" },
 
     { "source": "/help-center/helping-your-athlete/untitled-page-1", "destination": "/help-center/helping-your-athlete/sessions-not-showing" },
     { "source": "/help-center/helping-your-athlete/untitled-page", "destination": "/help-center/helping-your-athlete/video-upload-issues" }
