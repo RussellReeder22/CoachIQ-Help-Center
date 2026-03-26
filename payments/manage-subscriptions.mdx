@@ -208,6 +208,10 @@ When subscription payment fails, status changes to Past Due.
     3. Let subscription continue, client just doesn't book sessions
 
     Most coaches use option 3 for short pauses.
+
+    <Note>
+      When you pause collection on a Stripe subscription, Stripe keeps the subscription status as **Active** — it just stops collecting payment. Because CoachIQ reads subscription status directly from Stripe, athletes with paused-collection subscriptions will still appear as **Active** in CoachIQ, including when filtering by Active in Payments > Products. Keep this in mind when reviewing your active subscriber count.
+    </Note>
   </Accordion>
   <Accordion title="Client's card expires next month">
     **Proactive approach:**
