@@ -257,6 +257,7 @@
                 "pages": [
                   "payments/subscriptions-dashboard",
                   "payments/manage-subscriptions",
+                  "payments/upgrade-membership",
                   "payments/stripe-coachiq-reconciliation",
                   "payments/grandfather-pricing"
                 ]
