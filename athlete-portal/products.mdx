@@ -10,7 +10,7 @@ keywords: ["products in portal", "athlete portal payments", "iOS restrictions", 
   **Where to find this**: Dashboard → App Builder → Products
 </Info>
 
-![Athlete Portal Product Page Pn](/images/athlete-portal-product-page.png)
+![CoachIQ Athlete Portal Products page displaying memberships and packages](/images/athlete-portal-product-page.png)
 
 <Warning>
   **Critical Platform Restriction**: The Products page is **NOT visible** on iOS and Android mobile apps due to Apple App Store and Google Play Store policies. Athletes can only purchase products through your web portal or mobile browser.
@@ -20,7 +20,7 @@ keywords: ["products in portal", "athlete portal payments", "iOS restrictions", 
 
 Set up your products page to display memberships, packages, and services for purchase through your web portal. You'll learn how to organize products into sections, manage visibility settings, and understand critical platform limitations that affect how athletes access your payment options.
 
-![Clean Shot2025 09 26at19 44 47 Pn](/images/CleanShot2025-09-26at19.44.47.png)
+![CoachIQ web portal product cards with pricing and purchase buttons](/images/CleanShot2025-09-26at19.44.47.png)
 
 ## Platform restrictions you must know
 
@@ -67,15 +67,15 @@ The Products page displays your payment options, memberships, and packages that 
 <Note>
   **Required**:
 
-  - At least one product must exist in Payments → Products
+  - At least one product must exist in [Payments → Products](/payments/product-overview)
   - Stripe account must be connected for payment processing
 </Note>
 
 <Info>
-**Products are hidden by default**: Creating a product in Payments → Products doesn't automatically make it visible to athletes. You must explicitly add products to this page (or attach them to schedulers/forms) for athletes to discover them. This lets you set up products before you're ready to launch. [Learn more about product visibility →](/payments/product-overview#product-visibility-where-athletes-can-find-products)
+**Products are hidden by default**: Creating a product in [Payments → Products](/payments/product-overview) doesn't automatically make it visible to athletes. You must explicitly add products to this page (or attach them to schedulers/forms) for athletes to discover them. This lets you set up products before you're ready to launch. [Learn more about product visibility →](/payments/product-overview#product-visibility-where-athletes-can-find-products)
 </Info>
 
-![Products Page Pn](/images/Products-page.png)
+![CoachIQ Products page listing available products in the admin dashboard](/images/Products-page.png)
 
 ## Accessing product settings
 
@@ -83,12 +83,12 @@ The Products page displays your payment options, memberships, and packages that 
   <Step title="Navigate to App Builder">
     From your dashboard, select **App** in the left sidebar.
 
-    ![Athelteportal Pn](/images/athelteportal.png)
+    ![CoachIQ App Builder sidebar with App selected in left navigation](/images/athelteportal.png)
   </Step>
   <Step title="Select Content tab">
     Click on the **Content** tab in the main navigation.
 
-    ![Coachiq App Builder Content Page Sections Pn](/images/coachiq-app-builder-content-page-sections.png)
+    ![CoachIQ App Builder Content tab showing page sections](/images/coachiq-app-builder-content-page-sections.png)
   </Step>
   <Step title="Choose Products">
     Select **Products** from the content options to access your product configuration page.
@@ -105,7 +105,7 @@ The Products page displays your payment options, memberships, and packages that 
   <Step title="Locate the Active toggle">
     Find the **Active** toggle in the top right corner of the Products page.
 
-    ![Athlete Portal Update Page Update Settings Preivew Page Pn](/images/Athlete-portal-update-page-update-settings-preivew-page.png)
+    ![CoachIQ Athlete Portal action bar with Update Page and Settings buttons](/images/Athlete-portal-update-page-update-settings-preivew-page.png)
 
     <Frame>
       
@@ -327,7 +327,7 @@ Since products don't appear on mobile apps, you need alternative strategies to d
 
 ### Products not appearing in selection
 
-- Verify products exist in Payments → Products
+- Verify products exist in [Payments → Products](/payments/product-overview)
 - Check the product isn't archived (use the status filter dropdown to check)
 - Confirm Stripe is properly connected
 - Refresh the App Builder page
@@ -344,7 +344,7 @@ Since products don't appear on mobile apps, you need alternative strategies to d
 ### Purchase buttons not working (web)
 
 - Verify Stripe integration is active
-- Check product configuration in Payments
+- Check product configuration in [Payments](/payments/product-overview)
 - Ensure product has valid pricing
 - Test in incognito/private browser
 
@@ -410,9 +410,23 @@ Since products don't appear on mobile apps, you need alternative strategies to d
 
 ## Related articles
 
-- [Creating Products in Payments](/payments/product-builder)
-- [Setting Up Stripe](/payments/connecting-stripe)
-- [Understanding the Athlete Portal](/athlete-portal/understanding-your-athlete-portal)
-- [Paywall Settings](/athlete-portal/paywall-settings)
-- [Product Types](/payments/product-types)
-- [Communicating with Athletes](/inbox/inbox-overview)
+<CardGroup cols={2}>
+  <Card title="Creating Products" icon="box" href="/payments/product-builder">
+    Build memberships, packages, and one-time products in the Product Builder
+  </Card>
+  <Card title="Setting Up Stripe" icon="credit-card" href="/payments/connecting-stripe">
+    Connect your Stripe account for payment processing
+  </Card>
+  <Card title="Understanding the Athlete Portal" icon="mobile" href="/athlete-portal/understanding-your-athlete-portal">
+    Learn how the Athlete Portal works for coaches and athletes
+  </Card>
+  <Card title="Paywall Settings" icon="lock" href="/athlete-portal/paywall-settings">
+    Restrict page access until athletes purchase a qualifying product
+  </Card>
+  <Card title="Product Types" icon="box" href="/payments/product-types">
+    Understand the different product types available in CoachIQ
+  </Card>
+  <Card title="Communicating with Athletes" icon="inbox" href="/inbox/inbox-overview">
+    Send messages and announcements through your Inbox
+  </Card>
+</CardGroup>

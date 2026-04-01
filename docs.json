@@ -433,7 +433,7 @@
     "prompt": "Search CoachIQ Help..."
   },
   "seo": {
-    "indexing": "navigable"
+    "indexing": "all"
   },
   "redirects": [
     { "source": "/website/website-overview", "destination": "/website/overview" },
@@ -619,6 +619,8 @@
     "og:title": "CoachIQ Help Center",
     "og:description": "Everything you need to run and grow your sports coaching business",
     "og:image": "/images/og-image.png",
+    "og:type": "website",
+    "og:site_name": "CoachIQ Help Center",
     "twitter:card": "summary_large_image"
   }
 }

@@ -24,7 +24,7 @@ Turn website visitors into trial bookers, and trial bookers into paying members.
 
 <AccordionGroup>
   <Accordion title="Website Lead → Trial Booking">
-    **What it does**: When someone fills out your trial request form, automatically send them an email with a link to book their free session.
+    **What it does**: When someone fills out your trial request [form](/forms/overview), automatically send them an email with a link to [book their free session](/scheduling/creating-your-first-scheduler).
 
     | Trigger  | Condition          | Action        |
     | -------- | ------------------ | ------------- |
@@ -115,7 +115,7 @@ Turn website visitors into trial bookers, and trial bookers into paying members.
 </AccordionGroup>
 
 <Frame>
-  ![Conversion Templates Pn](/images/conversion-templates.png)
+  ![CoachIQ automation templates for converting leads and trials](/images/conversion-templates.png)
 </Frame>
 
 ---
@@ -126,7 +126,7 @@ Make every new member feel like they made the right decision.
 
 <AccordionGroup>
   <Accordion title="New Member Welcome">
-    **What it does**: When someone purchases a subscription, automatically send a welcome email with booking instructions and tag them as an active member.
+    **What it does**: When someone [purchases a subscription](/payments/product-overview), automatically send a welcome email with [booking instructions](/scheduling/overview) and [tag](/people/tags-filters) them as an active member.
 
     | Trigger      | Condition               | Actions                    |
     | ------------ | ----------------------- | -------------------------- |
@@ -162,7 +162,7 @@ Make every new member feel like they made the right decision.
 </AccordionGroup>
 
 <Frame>
-  ![New Member Automation Pn](/images/new-member-automation.png)
+  ![CoachIQ new member welcome automation setup](/images/new-member-automation.png)
 </Frame>
 
 ---
@@ -265,7 +265,7 @@ Catch disengaged members before they cancel and keep your credit users booking s
 </AccordionGroup>
 
 <Frame>
-  ![Retention Templates Pn](/images/retention-templates.png)
+  ![CoachIQ automation templates for member retention and engagement](/images/retention-templates.png)
 </Frame>
 
 ---
@@ -347,7 +347,7 @@ Streamline registration confirmations and pre-event communication.
 </AccordionGroup>
 
 <Frame>
-  ![Camp Automation Templates Pn](/images/camp-automation-templates.png)
+  ![CoachIQ automation templates for camps and event registration](/images/camp-automation-templates.png)
 </Frame>
 
 ---
@@ -370,7 +370,7 @@ Automate your recurring announcements and stay on top of your schedule.
     1. **Trigger**: Scheduled Check
        - **Schedule**: Once a week on Monday at 8:00 AM
     2. **Condition**: Has active subscription → Yes
-    3. **Action**: Send an Announcement
+    3. **Action**: Send an [Announcement](/inbox/announcements)
        - **To**: Specific tag → "Active Members"
        - **Title**: `This Week's Schedule is LIVE! 🗓️`
        - **Attach Session**: Select your primary training session
@@ -418,7 +418,7 @@ Automate your recurring announcements and stay on top of your schedule.
 </AccordionGroup>
 
 <Frame>
-  ![Operations Templates Pn](/images/operations-templates.png)
+  ![CoachIQ automation templates for weekly operations and announcements](/images/operations-templates.png)
 </Frame>
 
 ---
@@ -431,5 +431,28 @@ Automate your recurring announcements and stay on top of your schedule.
   </Card>
   <Card title="Triggers & Actions Reference" icon="list" href="/automations/triggers-actions-reference">
     See every trigger, condition, action, and dynamic field available in CoachIQ automations.
+  </Card>
+</CardGroup>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Forms Overview" icon="file-lines" href="/forms/overview">
+    Create the forms that trigger lead-capture automations
+  </Card>
+  <Card title="Product Overview" icon="credit-card" href="/payments/product-overview">
+    Set up memberships, credit packs, and camps that trigger purchase automations
+  </Card>
+  <Card title="Scheduling Overview" icon="calendar" href="/scheduling/overview">
+    Manage sessions referenced in booking automations
+  </Card>
+  <Card title="Announcements" icon="inbox" href="/inbox/announcements">
+    Learn about the announcement action used in weekly operations automations
+  </Card>
+  <Card title="Tags and Filters" icon="users" href="/people/tags-filters">
+    Organize members with tags used throughout these playbook automations
+  </Card>
+  <Card title="Responses and Automations" icon="file-lines" href="/forms/responses-and-automations">
+    See how form responses connect to automation triggers
   </Card>
 </CardGroup>
