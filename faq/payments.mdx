@@ -1,0 +1,138 @@
+---
+title: "Payments FAQ — Common Questions About Getting Paid"
+description: "How do I accept payments? What are the fees? How do refunds work? Answers to the most common payment questions in CoachIQ."
+sidebarTitle: "Payments & Pricing"
+icon: "credit-card"
+---
+
+Answers to the most common questions about accepting payments, managing subscriptions, and handling transactions in CoachIQ.
+
+## Getting Started with Payments
+
+<AccordionGroup>
+
+  <Accordion title="How do I accept payments through CoachIQ?" id="accept-payments">
+    Connect your Stripe account to CoachIQ, create products (session packages, memberships, etc.), and attach them to your schedulers, forms, or Athlete Portal. When athletes book or purchase, payment processes through Stripe and deposits directly into your bank account.
+
+    [Set up payments step by step](/payments/getting-started)
+  </Accordion>
+
+  <Accordion title="What payment processor does CoachIQ use?" id="payment-processor">
+    CoachIQ uses Stripe for all payment processing. Stripe handles credit cards, debit cards, and digital wallets. You need a Stripe account to accept payments — you can create one for free during setup.
+
+    [Connect Stripe to CoachIQ](/payments/connecting-stripe)
+  </Accordion>
+
+  <Accordion title="What are the payment processing fees?" id="processing-fees">
+    Stripe charges 2.9% + \$0.30 per successful transaction (US standard rates). You can choose to absorb the fee yourself or pass it to the client at checkout. CoachIQ does not charge additional transaction fees on top of Stripe's.
+
+    [Configure processing fees](/payments/processing-fee)
+  </Accordion>
+
+  <Accordion title="When do I receive my payouts from Stripe?" id="payout-timing">
+    Your first payout takes 7–10 business days. After that, Stripe deposits funds on a rolling basis — typically daily or weekly, depending on your Stripe settings. Funds go directly to your connected bank account.
+
+    [Learn about Stripe payouts](/payments/stripe-dashboard)
+  </Accordion>
+
+</AccordionGroup>
+
+## Products & Pricing
+
+<AccordionGroup>
+
+  <Accordion title="What types of products can I sell?" id="product-types">
+    CoachIQ supports three product types:
+
+    - **One-time** — Single purchases like private lessons, camps, or evaluations
+    - **Subscription** — Recurring billing for monthly memberships or training packages
+    - **Access code** — Code-based redemption for partner discounts, promos, or free access
+
+    [Products overview](/payments/product-overview)
+  </Accordion>
+
+  <Accordion title="Can I charge athletes at the time of booking?" id="charge-at-booking">
+    Yes. Attach a product to your scheduler, and athletes pay when they book. You can require a one-time payment, use the credit system (athletes pre-purchase session packs), or offer free bookings with no payment required.
+
+    [Attach products to schedulers](/payments/attach-products)
+  </Accordion>
+
+  <Accordion title="How do I set up subscriptions for athletes?" id="subscriptions">
+    Create a subscription product in **Payments > Products** with a recurring price (e.g., \$199/month). You can optionally include credits that renew each billing period. Athletes subscribe and their card is charged automatically each month.
+
+    [Manage subscriptions](/payments/manage-subscriptions)
+  </Accordion>
+
+  <Accordion title="Can I offer coupons or discounts?" id="coupons">
+    Yes. Create coupon codes in **Payments > Coupons** with percentage discounts, fixed-amount discounts, or 100% off for free access. Set redemption limits and expiration dates. Athletes enter the code at checkout.
+
+    [Coupons overview](/payments/coupon-overview)
+  </Accordion>
+
+</AccordionGroup>
+
+## Refunds & Issues
+
+<AccordionGroup>
+
+  <Accordion title="How do refunds work?" id="refunds">
+    Issue full or partial refunds from your Stripe dashboard. Go to **Payments > Transactions**, click the transaction, then click **Open** to view it in Stripe and process the refund. Money returns to the athlete's original payment method within 5–10 business days.
+
+    <Warning>
+      Stripe does not refund the original processing fee, even on a full refund.
+    </Warning>
+
+    [Issuing refunds guide](/payments/issuing-refunds)
+  </Accordion>
+
+  <Accordion title="How do I handle failed payments?" id="failed-payments">
+    When a payment fails (expired card, insufficient funds, etc.), CoachIQ flags the transaction. For subscriptions, Stripe automatically retries failed charges based on your retry settings. You can also reach out to the athlete to update their payment method.
+
+    [Failed payments guide](/payments/failed-payments)
+  </Accordion>
+
+  <Accordion title="Can athletes pay without creating an account?" id="guest-checkout">
+    Yes — enable guest checkout on individual products. Athletes enter just their email and payment info, no account required. This is ideal for one-time purchases like merchandise or drop-in sessions. For ongoing access (memberships, credits, portal), account creation is recommended.
+
+    [Guest checkout settings](/payments/guest-checkout)
+  </Accordion>
+
+</AccordionGroup>
+
+## Advanced
+
+<AccordionGroup>
+
+  <Accordion title="Can I require a waiver or terms acceptance at checkout?" id="terms-waivers">
+    Yes. Enable "Require Agreement to Terms" in a product's advanced settings. A checkbox appears at checkout that athletes must accept before purchasing. Link it to your terms page, cancellation policy, or liability waiver.
+
+    [Add terms and waivers at checkout](/payments/checkout-terms-waivers)
+  </Accordion>
+
+  <Accordion title="Can I split revenue with other coaches at my facility?" id="revenue-sharing">
+    CoachIQ offers basic revenue sharing that routes 100% of a product's revenue to another CoachIQ organization's Stripe account. This is useful for white-label programs or referral products. Contact support to enable this feature.
+
+    [Revenue sharing](/payments/sharing-rev)
+  </Accordion>
+
+  <Accordion title="Does CoachIQ support international currencies?" id="currencies">
+    Yes. CoachIQ supports all currencies that Stripe supports. Set your currency in your Stripe account settings and it applies to all CoachIQ transactions automatically.
+  </Accordion>
+
+</AccordionGroup>
+
+---
+
+## Still Have Questions?
+
+<CardGroup cols={2}>
+
+  <Card title="Book Office Hours" icon="calendar" href="https://cal.com/team/coach-iq/office-hours">
+    Jump on a live call with our team
+  </Card>
+
+  <Card title="Contact Support" icon="envelope" href="mailto:info@coachiq.io">
+    Email us at info@coachiq.io
+  </Card>
+
+</CardGroup>

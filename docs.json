@@ -409,7 +409,10 @@
           {
             "group": "Frequently Asked Questions",
             "pages": [
-              "faq/scheduling"
+              "faq/general",
+              "faq/scheduling",
+              "faq/payments",
+              "faq/getting-started"
             ]
           }
         ]
