@@ -403,6 +403,18 @@
         ]
       },
       {
+        "tab": "FAQ",
+        "icon": "circle-question",
+        "groups": [
+          {
+            "group": "Frequently Asked Questions",
+            "pages": [
+              "faq/scheduling"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Change log",
         "icon": "clock-rotate-left",
         "groups": [
