@@ -884,6 +884,40 @@ Family uses one account to book the same Advanced Skills Training timeslot for t
 
 ---
 
+## Setting 7: Rescheduling permissions
+
+Control whether athletes can reschedule their own bookings and whether rescheduling is blocked within the cancellation window.
+
+### What it does
+
+Two toggles in the **Permission(s)** section work together to protect your revenue from last-minute session changes:
+
+**Allow athletes to reschedule** — When enabled, athletes can move their booking to a different available time slot from the Athlete Portal or app. Disable this to lock bookings in place — useful for camps, evaluations, or any session type where no changes are acceptable after booking.
+
+**Block rescheduling within cancellation window** — When enabled, athletes cannot reschedule once they're inside the cancellation notice window. This closes the loophole where an athlete could avoid a late-cancellation credit forfeit by rescheduling instead of canceling outright.
+
+<Frame>
+  <img src="/images/reschedule-within-cancellation-window.png" alt="Rescheduling permissions toggles in scheduler settings" />
+</Frame>
+
+### Why this matters
+
+Without these controls, an athlete can reschedule a session at the last minute — effectively moving a hard-to-fill slot without triggering the cancellation policy. The **Block rescheduling within cancellation window** toggle closes that gap: if they're inside the cancellation window, they can't reschedule either.
+
+### Recommended configuration
+
+| Situation | Allow reschedule | Block within cancellation window |
+|-----------|-----------------|----------------------------------|
+| Standard paid sessions | Enabled | Enabled |
+| Camps, evaluations, locked sessions | Disabled | — |
+| Low-demand or trial sessions | Enabled | Disabled |
+
+<Tip>
+  **Revenue protection**: Enable both toggles for any paid scheduler. Athletes who need to change a session must do so before the cancellation window opens — giving you time to fill the original slot.
+</Tip>
+
+---
+
 ## Common configuration mistakes and fixes
 
 <AccordionGroup>
