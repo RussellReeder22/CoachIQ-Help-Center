@@ -190,6 +190,7 @@
                 "pages": [
                   "scheduling/how-avaliability-works",
                   "scheduling/create-your-availability",
+                  "scheduling/seasonal-schedule-transition",
                   "scheduling/setting-black-out-dates",
                   "scheduling/managing-availability-for-multiple-coaches"
                 ]
@@ -585,49 +586,38 @@
     { "source": "/advanced/personalized-ios-app-set-up", "destination": "/power-ups/personalized-app" },
     { "source": "/advanced/personalized-ios-app-set-up/update-apple-agreements", "destination": "/power-ups/personalized-app" },
     { "source": "/advanced/billing-info", "destination": "/settings/index" },
-
     { "source": "/schedule/availability", "destination": "/scheduling/create-your-availability" },
     { "source": "/schedule/overview", "destination": "/scheduling/overview" },
     { "source": "/schedule/calendar", "destination": "/scheduling/calendar-overview-and-navigation" },
     { "source": "/schedule/credits", "destination": "/scheduling/credit-system-overview" },
     { "source": "/schedule/first-session", "destination": "/scheduling/book-your-first-session" },
-
     { "source": "/clients/adding-editing-clients", "destination": "/people/adding-editing-clients" },
     { "source": "/clients/overview", "destination": "/people/overview" },
     { "source": "/clients/tags-filters", "destination": "/people/tags-filters" },
     { "source": "/clients/managing-staff", "destination": "/people/managing-staff" },
-
     { "source": "/powerups/branded-app", "destination": "/power-ups/personalized-app" },
     { "source": "/powerups/personalized-app", "destination": "/power-ups/personalized-app" },
     { "source": "/powerups/done-for-you-paid-ads", "destination": "/power-ups/done-for-you-paid-ads" },
     { "source": "/powerups/additional-apps", "destination": "/power-ups/additional-apps" },
-
     { "source": "/scheduling/first-bookable-session", "destination": "/scheduling/book-your-first-session" },
     { "source": "/scheduling/calendar-and-navigation-overview", "destination": "/scheduling/calendar-overview-and-navigation" },
     { "source": "/scheduling/creating-availability-schedule", "destination": "/scheduling/create-your-availability" },
     { "source": "/scheduling/scheduler-payment-options", "destination": "/scheduling/setting-up-payment-options" },
     { "source": "/scheduling/credit-system-explained", "destination": "/scheduling/credit-system-overview" },
-
     { "source": "/payments/products-overview", "destination": "/payments/product-overview" },
     { "source": "/payments/creating-first-product", "destination": "/payments/product-builder" },
     { "source": "/payments/transactions-dashboard", "destination": "/payments/transactions" },
     { "source": "/payments/managing-subscriptions", "destination": "/payments/manage-subscriptions" },
-
     { "source": "/content/lessons-overview", "destination": "/content/lesson-overview" },
     { "source": "/content/media-hub", "destination": "/content/media-overview" },
-
     { "source": "/athlete-portal/overview", "destination": "/athlete-portal/understanding-your-athlete-portal" },
     { "source": "/athlete-portal/access-control", "destination": "/athlete-portal/paywall-settings" },
     { "source": "/athlete-portal/initial-setup", "destination": "/athlete-portal/understanding-your-athlete-portal" },
     { "source": "/athlete-portal/design", "destination": "/athlete-portal/design-settings" },
-
     { "source": "/guides/grandfather-pricing", "destination": "/payments/grandfather-pricing" },
-
     { "source": "/payments/index", "destination": "/payments/getting-started" },
     { "source": "/payments", "destination": "/payments/getting-started" },
-
     { "source": "/help-center/website-builder/seo-and-marketing/meta-ads-account", "destination": "/power-ups-setup/grant-meta-ads-access" },
-
     { "source": "/help-center/helping-your-athlete/untitled-page-1", "destination": "/help-center/helping-your-athlete/sessions-not-showing" },
     { "source": "/help-center/helping-your-athlete/untitled-page", "destination": "/help-center/helping-your-athlete/video-upload-issues" }
   ],
