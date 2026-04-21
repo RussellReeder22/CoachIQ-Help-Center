@@ -1,0 +1,99 @@
+---
+title: "Switching to a seasonal schedule"
+description: "Transition from one seasonal availability to another automatically, with no overlap and no manual swap required."
+sidebarTitle: "Seasonal schedule switch"
+---
+
+When your schedule changes between seasons — spring to summer, fall to winter, or any transition in between — you can set it up in advance so the switch happens automatically. Add your new seasonal availability as an additional block, set start and end dates on each, and the scheduler flips over on the date you choose with no overlap and no manual changes needed.
+
+<Info>
+**Where to find this:** Schedule → **Schedulers** → open a scheduler → **Availability** section
+</Info>
+
+<Note>
+**Before you begin:** You'll need your incoming seasonal availability already created for each scheduler. If you haven't done that yet, create it first (see Step 1 below), then continue with the rest. If it's already set up, skip to Step 2.
+</Note>
+
+<Steps>
+  <Step title="Create your new seasonal availability (if you haven't already)">
+    Go to **Schedule** → **Schedulers**. In the **Availability** panel on the left side of the page, click the **+** button to create a new availability.
+
+    <Frame>
+      ![The Schedulers page showing the Availability panel with existing availabilities listed and the + button highlighted to add a new one](/images/scheduling/seasonal-availability.png)
+    </Frame>
+
+    Give it a descriptive name that reflects the season and session type (for example, "Youth Skills - Summer"). Set the days and times for your new schedule, then click **Update** to save it.
+
+    <Frame>
+      ![The Availability editor showing Youth Skills - Summer with Monday through Thursday checked at 6:00 PM to 7:00 PM, with the CoachIQ Copilot panel and Preview calendar on the right](/images/scheduling/new-availability-ui.png)
+    </Frame>
+  </Step>
+
+  <Step title="Open the scheduler you want to update">
+    From the **Schedulers** page, click into the first scheduler you want to transition. Navigate to its **Availability** section in the left sidebar.
+  </Step>
+
+  <Step title="Add the new seasonal availability as Additional Availability">
+    Scroll to the **Additional Availability** section and click **+ Add Additional Availability**. Select your new seasonal availability from the dropdown.
+  </Step>
+
+  <Step title="Set a start date on the new availability and an end date on the current one">
+    With the new availability block added, check **Set a start date** and enter the date your new season begins — for example, 06/01/2026 for a spring-to-summer switch.
+
+    Then scroll up to your **Default Availability** block, check **Set an end date**, and enter the last day of your current season — for example, 05/31/2026.
+
+    <Frame>
+      ![The Single Scheduler settings page showing Default Availability (Youth Skills - Spring) with an end date of 05/31/2026 set, and Additional Availability #1 (Youth Skills - Summer) with a start date of 06/01/2026 set](/images/scheduling/additional-availability-setup.png)
+    </Frame>
+
+    | Setting | What it controls |
+    |---------|------------------|
+    | **End Date** on current availability | Last day your current season is bookable |
+    | **Start Date** on new availability | First day your new season is bookable |
+
+    Set them as consecutive dates and there will be zero overlap or gap.
+  </Step>
+
+  <Step title="Preview and save">
+    Check the **Preview** calendar on the right side of the page to confirm the transition looks correct — your current hours should show up through the end date and your new seasonal hours from the start date onward.
+
+    When everything looks right, click **Update**.
+  </Step>
+
+  <Step title="Repeat for each scheduler">
+    Go through each of your remaining schedulers and repeat Steps 2–5. Each scheduler manages its own availability blocks independently, so you'll need to update them one at a time.
+  </Step>
+</Steps>
+
+<AccordionGroup>
+  <Accordion title="What if I don't set an end date on my current availability?">
+    Both availability blocks will be active at the same time and athletes will see slots from both seasons. Always set an **End Date** on your current availability to prevent overlap.
+  </Accordion>
+
+  <Accordion title="Can I adjust the dates after saving?">
+    Yes. Go back into the scheduler, find either availability block, and update the **Start Date** or **End Date**. Changes apply immediately to future-available slots — existing bookings are not affected.
+  </Accordion>
+
+  <Accordion title="My new availability isn't showing in the Additional Availability dropdown">
+    The availability must be created before it can be attached to a scheduler. Go to **Schedule** → **Schedulers**, click the **+** button in the Availability panel to create it, then return to the scheduler you're updating and it will appear in the dropdown.
+  </Accordion>
+
+  <Accordion title="Do I need to do this for every scheduler?">
+    Yes — each scheduler manages its own availability blocks. If you have three schedulers, you'll need to set the start/end dates in each one individually.
+  </Accordion>
+</AccordionGroup>
+
+<CardGroup cols={2}>
+  <Card title="Creating Your Availability Schedule" icon="calendar-plus" href="/scheduling/create-your-availability">
+    Set up a new availability block from scratch before attaching it to a scheduler.
+  </Card>
+  <Card title="Creating Your First Scheduler" icon="calendar" href="/scheduling/creating-your-first-scheduler">
+    Full walkthrough of scheduler settings, including the Availability section.
+  </Card>
+  <Card title="Setting Blackout Dates" icon="calendar-xmark" href="/scheduling/setting-black-out-dates">
+    Block specific dates without changing your overall availability.
+  </Card>
+  <Card title="How Availability Works" icon="circle-info" href="/scheduling/how-avaliability-works">
+    Understand how availability blocks connect to schedulers and generate bookable slots.
+  </Card>
+</CardGroup>
