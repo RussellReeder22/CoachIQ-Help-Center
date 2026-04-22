@@ -342,7 +342,8 @@
             "group": "Power-Ups Setup",
             "icon": "bolt",
             "pages": [
-              "power-ups-setup/grant-meta-ads-access"
+              "power-ups-setup/grant-meta-ads-access",
+              "power-ups-setup/grant-mindbody-access"
             ]
           }
         ]
