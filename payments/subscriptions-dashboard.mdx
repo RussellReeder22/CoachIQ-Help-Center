@@ -134,6 +134,40 @@ Click any row to view full subscription details.
   ![CoachIQ subscriptions page product filter dropdown](/images/filter-products.png)
 </Frame>
 
+## Check for unsynced subscriptions
+
+An **unsynced subscription** is one that exists in CoachIQ but isn't linked to Stripe. When a subscription is unsynced, the platform doesn't know to process payments, issue credits, or manage billing for that client.
+
+Use the **Unsynced** filter to quickly identify any subscriptions that may have slipped through without a Stripe connection.
+
+<Steps>
+  <Step title="Go to Payments → Subscriptions">
+    Open the Subscriptions dashboard from the main navigation.
+  </Step>
+
+  <Step title="Click the Unsynced filter">
+    In the status filter tabs at the top of the page, select **Unsynced**. This filters the list to show only subscriptions that aren't connected to Stripe.
+
+    <Frame>
+      ![Subscriptions dashboard filtered to show unsynced subscriptions](/images/subscriptions-unsynced-filter.png)
+    </Frame>
+  </Step>
+
+  <Step title="Review and resolve">
+    For each unsynced subscription, check:
+
+    - Does the client have an active subscription in Stripe? If yes, the subscription may need to be relinked.
+    - Was this a manual product addition that was never connected to billing?
+    - Did a transfer or migration cause it to lose its Stripe connection?
+
+    If you find unsynced subscriptions that should be billing, contact [CoachIQ support](mailto:info@coachiq.io) to get them resynced.
+  </Step>
+</Steps>
+
+<Warning>
+  Unsynced subscriptions mean the client may have access to your services without being billed. Check this filter periodically — especially after bulk imports or account transfers.
+</Warning>
+
 ## View subscription details
 
 Click Open under the Source column of the subscription to view on Stripe:
