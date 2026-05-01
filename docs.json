@@ -180,7 +180,10 @@
                   "scheduling/creating-your-first-scheduler",
                   "scheduling/scheduler-settings-limits-and-permissions",
                   "scheduling/advanced-scheduler-settings",
-                  "scheduling/overlapping-slots",
+                  {
+                    "page": "scheduling/overlapping-slots",
+                    "icon": "layer-group"
+                  },
                   "scheduling/google-calendar-sync",
                   "scheduling/sharing-schedulers"
                 ]
