@@ -47,7 +47,6 @@
     "tabs": [
       {
         "tab": "Help Center",
-        "url": "introduction",
         "icon": "book-open",
         "groups": [
           {
@@ -459,6 +458,7 @@
     "indexing": "all"
   },
   "redirects": [
+    { "source": "/", "destination": "/introduction" },
     { "source": "/website/website-overview", "destination": "/website/overview" },
     { "source": "/website/pages-and-templates", "destination": "/website/pages-navigation/pages-navigation" },
     { "source": "/website/pages-and-templates/header-navigation-and-footer-editing", "destination": "/website/pages-navigation/pages-navigation" },
