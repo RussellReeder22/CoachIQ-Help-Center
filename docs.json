@@ -52,7 +52,7 @@
           {
             "group": "CoachIQ Help Center",
             "pages": [
-              "introduction"
+              "index"
             ]
           },
           {
@@ -458,6 +458,7 @@
     "indexing": "all"
   },
   "redirects": [
+    { "source": "/introduction", "destination": "/" },
     { "source": "/website/website-overview", "destination": "/website/overview" },
     { "source": "/website/pages-and-templates", "destination": "/website/pages-navigation/pages-navigation" },
     { "source": "/website/pages-and-templates/header-navigation-and-footer-editing", "destination": "/website/pages-navigation/pages-navigation" },
