@@ -47,6 +47,7 @@
     "tabs": [
       {
         "tab": "Help Center",
+        "url": "introduction",
         "icon": "book-open",
         "groups": [
           {
