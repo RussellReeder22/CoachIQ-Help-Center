@@ -518,7 +518,6 @@
     { "source": "/scheduling/scheduling-overview", "destination": "/scheduling/overview" },
     { "source": "/scheduling/create-a-session", "destination": "/scheduling/creating-your-first-scheduler" },
     { "source": "/scheduling/manually-book-athletes", "destination": "/scheduling/manually-booking-athletes" },
-    { "source": "/scheduling/recurring-bookings", "destination": "/scheduling/recurring-bookings" },
     { "source": "/scheduling/canceling-sessions", "destination": "/scheduling/canceling-bookings" },
     { "source": "/scheduling/credits-system", "destination": "/scheduling/credit-system-overview" },
     { "source": "/scheduling/add-auto-reminders", "destination": "/scheduling/advanced-scheduler-settings" },
