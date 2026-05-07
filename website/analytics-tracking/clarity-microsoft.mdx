@@ -3,7 +3,7 @@ title: "Add Microsoft Clarity to Your Coaching Website"
 description: "Install Microsoft Clarity on your CoachIQ website in 2 minutes. See heatmaps, session recordings, and understand how visitors use your coaching site - 100% free."
 sidebarTitle: "Microsoft Clarity"
 icon: "microsoft"
-keywords: "Microsoft Clarity setup, heatmaps coaching website, session recordings, user behavior analytics, Clarity tracking code"
+keywords: ["Microsoft Clarity setup", "heatmaps coaching website", "session recordings", "user behavior analytics", "Clarity tracking code"]
 ---
 
 <Info>
@@ -35,12 +35,14 @@ Microsoft Clarity is a free tool that shows you exactly how visitors interact wi
     1. Go to **Settings** (gear icon)
     2. Click **Setup**
     3. Select **Install tracking code manually**
-    4. You'll see a script that starts with:
+    4. You'll see a script block — find the URL inside it that looks like:
 
-    https://www.clarity.ms/tag/XXXXXXXXX 5. Copy just the ID part after `/tag/` (usually 10 characters)
+    `https://www.clarity.ms/tag/XXXXXXXXX`
+
+    5. Copy that full URL (including `https://`)
 
     <Tip>
-      The ID looks like: **pg4r7pepzr** (random letters/numbers)
+      The part after `/tag/` is your project ID (e.g., **pg4r7pepzr**). You need the full URL, not just the ID.
     </Tip>
   </Step>
 </Steps>
@@ -53,7 +55,7 @@ Microsoft Clarity is a free tool that shows you exactly how visitors interact wi
     2. Click **Scripts & Analytics** in the left sidebar
 
     <Frame>
-      ![Scriptsscreen Pn](/images/scriptsscreen.png)
+      ![CoachIQ Scripts and Analytics modal showing script fields for tracking setup](/images/scriptsscreen.png)
     </Frame>
   </Step>
   <Step title="Add Clarity script">

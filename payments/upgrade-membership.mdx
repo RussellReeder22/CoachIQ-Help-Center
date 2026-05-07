@@ -1,0 +1,84 @@
+---
+title: "Upgrading an Athlete's Membership"
+description: "Step-by-step guide to upgrading an athlete from one membership tier to another while keeping Stripe and CoachIQ in sync"
+sidebarTitle: "Upgrade Membership"
+icon: "arrow-up"
+keywords: ["upgrade membership", "change subscription", "membership tier", "subscription ID", "stripe upgrade", "bronze to platinum"]
+---
+
+<Info>
+  **Where to find this**: Stripe Dashboard → Subscriptions + People → Athlete Profile → Products tab
+</Info>
+
+Upgrading a membership requires two steps: updating the subscription in Stripe first, then linking the new subscription on the athlete's CoachIQ profile. Do not add the new membership in CoachIQ before completing the Stripe side — doing so will cause the new product to appear unlinked or not show up at all.
+
+## How to upgrade a membership
+
+<Steps>
+  <Step title="Update the subscription in Stripe">
+    Log in to your Stripe Dashboard and navigate to **Customers → Subscriptions**. Find the athlete's existing subscription and upgrade it to the new membership tier.
+
+    <Frame>
+      <img src="/images/stripe-upgrade-subscription.png" alt="Upgrading a subscription in Stripe" />
+    </Frame>
+  </Step>
+  <Step title="Copy the new subscription ID">
+    Once the subscription is updated, copy the subscription ID from the Stripe subscription detail page. It starts with `sub_`.
+
+    <Frame>
+      <img src="/images/stripe-subscription-id.png" alt="Subscription ID location in Stripe" />
+    </Frame>
+
+    <Tip>
+      Paste the subscription ID somewhere temporary (Notes, a text editor) so it's ready for the next step.
+    </Tip>
+  </Step>
+  <Step title="Open the athlete's profile in CoachIQ">
+    Go to **People** and open the athlete's profile. Click the **Products** tab.
+
+    <Frame>
+      <img src="/images/athlete-profile-products-tab.png" alt="Products tab on athlete profile" />
+    </Frame>
+  </Step>
+  <Step title="Add the new membership and paste the subscription ID">
+    Click **Add Product**, select the new membership tier, and paste the Stripe subscription ID into the subscription ID field. This links CoachIQ to the correct Stripe subscription.
+
+    <Frame>
+      <img src="/images/athlete-profile-add-product-subscription-id.png" alt="Adding a product reference with subscription ID" />
+    </Frame>
+
+    <Check>
+      The new membership should now appear as active on the athlete's profile.
+    </Check>
+  </Step>
+  <Step title="Remove the old membership">
+    With the new membership confirmed as active, remove the old membership tier from the athlete's profile so there are no duplicate subscriptions.
+
+    <Frame>
+      <img src="/images/athlete-profile-remove-old-subscription.png" alt="Removing the old membership from athlete profile" />
+    </Frame>
+
+    <Warning>
+      Do not remove the old membership until you have confirmed the new one is showing correctly. Removing it first can leave the athlete without an active subscription.
+    </Warning>
+  </Step>
+</Steps>
+
+## Common issues
+
+<AccordionGroup>
+  <Accordion title="New membership isn't showing on the athlete's profile after adding it">
+    This usually means the Stripe subscription ID wasn't entered, or was entered incorrectly. Go back to the product reference, confirm the subscription ID matches the one in Stripe (starting with `sub_`), and re-save.
+  </Accordion>
+  <Accordion title="Athlete has two active memberships showing">
+    You added the new membership but didn't remove the old one. Go to the athlete's Subscriptions tab and remove the previous membership tier.
+  </Accordion>
+  <Accordion title="I upgraded in Stripe but forgot to update CoachIQ">
+    That's okay. The Stripe subscription is the billing source of truth. Just complete steps 3–5 above — open the athlete's profile, add the new product reference with the correct subscription ID, and remove the old one.
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+- [Manage Subscriptions](/payments/manage-subscriptions) — Cancel, pause, or refund subscriptions
+- [Subscriptions Dashboard](/payments/subscriptions-dashboard) — View all active subscriptions across your roster

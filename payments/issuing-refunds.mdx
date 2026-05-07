@@ -3,6 +3,7 @@ title: "Issuing Refunds"
 description: "Process full and partial refunds for one-time purchases and subscription payments"
 sidebarTitle: "Issue Refunds"
 icon: "rotate-left"
+keywords: ["refund", "refunds", "issue refund", "partial refund", "full refund", "money back", "return payment"]
 ---
 
 <Info>
@@ -89,7 +90,7 @@ Common refund scenarios:
     Button appears in the top right corner (if transaction eligible for refund).
 
     <Frame>
-      ![Refund Stripe Pn](/images/refund-stripe.png)
+      ![Stripe transaction detail page with Refund button highlighted](/images/refund-stripe.png)
     </Frame>
     <Warning>
       Refund button only appears for successful, non-refunded transactions. Failed or already-refunded transactions can't be refunded.
@@ -103,7 +104,7 @@ Common refund scenarios:
     Amount must be less than or equal to original charge.
 
     <Frame>
-      ![Refund Details Pn](/images/refund-details.png)
+      ![Stripe refund form showing amount and reason fields](/images/refund-details.png)
     </Frame>
   </Step>
   <Step title="Add reason (optional)">
@@ -357,8 +358,6 @@ When refunding subscription charges, additional options appear:
 <Check>
   Always offer to refund if client unhappy. Prevents chargebacks and maintains goodwill.
 </Check>
-
-[Learn about chargebacks →](/payments/disputes-chargebacks)
 
 ## Common refund scenarios
 

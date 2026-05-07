@@ -3,6 +3,7 @@ title: "Canceling Bookings: Process and Outcomes"
 description: "Quick guide to canceling sessions, understanding credit refunds, and managing cancellation notifications"
 sidebarTitle: "Canceling Bookings"
 icon: "times-circle"
+keywords: ["cancel booking", "cancel session", "cancellation", "delete booking", "remove booking", "credit refund on cancel"]
 ---
 
 <Info>
@@ -36,6 +37,16 @@ icon: "times-circle"
 
 ---
 
+## Controlling whether athletes can cancel
+
+You can enable or disable athlete self-cancellation on a per-scheduler basis. When disabled, only coaches and admins can cancel bookings — athletes must contact you directly.
+
+Find this in your scheduler under **Settings → Booking Rules → Allow athletes to cancel**.
+
+You can also control whether credits are refunded on cancellation with the **Refund credits used on cancelation** toggle in the same section. See [Scheduler Settings: Limits and Permissions](/scheduling/scheduler-settings-limits-and-permissions) for all Booking Rules options.
+
+---
+
 ## How to cancel a booking
 
 <Steps>
@@ -50,11 +61,16 @@ icon: "times-circle"
   <Step title="Open booking details">
     Click on the specific booking to open the details panel.
 
+    <Frame>
+      ![Session detail modal showing booking participants and actions](/images/session-detail-modal.png)
+    </Frame>
+
     You'll see:
 
-    - Athlete name
+    - Athlete name and participants list
     - Session time/date
     - Scheduler type
+    - Action buttons including **Send Message to All**
   </Step>
   <Step title="Click 'Cancel'">
     Look for the **Cancel** button (usually red or in actions menu).
@@ -71,7 +87,7 @@ icon: "times-circle"
     Note: If a client booked with a credit the system will prompt you to refund the credit to their account or not.
 
     <Frame>
-      ![Credit Refund Pn](/images/credit-refund.png)
+      ![CoachIQ cancellation confirmation dialog with credit refund option](/images/credit-refund.png)
     </Frame>
     **Cancel** to complete the cancellation.
 
@@ -482,3 +498,9 @@ Your cancellation policy determines credit refund rules. Configure this in your 
 <Info>
   **Questions about cancellation policies?** Our support team can help you configure the optimal cancellation rules for your coaching business. [Contact Support](https://support.coachiq.com)
 </Info>
+
+<Note>
+
+Need to move a session instead of canceling? See [Editing & Rescheduling Bookings](/scheduling/editing-rescheduling-bookings).
+
+</Note>

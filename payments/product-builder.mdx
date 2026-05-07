@@ -3,6 +3,7 @@ title: "Product Builder: Complete Reference"
 description: "Field-by-field guide to every option in the CoachIQ Product Builder"
 sidebarTitle: "Product Builder Reference"
 icon: "book"
+keywords: ["product builder", "create product", "product settings", "product options", "price", "credits", "confirmation page", "archive product", "hide product", "deactivate product"]
 ---
 
 <Info>
@@ -14,7 +15,7 @@ icon: "book"
 The Product Builder has 7 sections. Only Section 1 is required. Configure additional sections based on your needs.
 
 <Frame>
-  ![Product Builder Pn](/images/product-builder.png)
+  ![CoachIQ Product Builder interface showing all configuration sections](/images/product-builder.png)
 </Frame>
 
 ## Section 1: Product Details
@@ -367,21 +368,25 @@ Special configurations for specific business needs.
 
     **OFF (default):** No terms required at checkout
 
-    **ON:** Checkbox with link to terms appears at checkout
+    **ON:** Checkbox with link to terms appears at checkout. Client must check the box to complete purchase.
 
     **Configure:**
 
-    - Terms text (displays inline)
-    - Terms URL (links to external page)
+    - Toggle **Require Agreement to Terms** to ON
+    - Enter your **Agreement Link** (URL to your terms page)
 
-    **Best practices:**
+    <Frame>
+      ![Product builder terms settings](/images/payments-terms-product-builder-settings.png)
+    </Frame>
 
-    - Include liability waivers
-    - Cancellation policies
-    - Refund policies
-    - Usage restrictions
+    **Common uses:**
 
-    Client must check the box to complete purchase.
+    - Cancellation and refund policies
+    - Liability waivers
+    - No-show policies
+    - Service agreements
+
+    [Full guide to checkout terms & waivers →](/payments/checkout-terms-waivers)
   </Accordion>
 </AccordionGroup>
 
@@ -442,7 +447,28 @@ Special configurations for specific business needs.
   </Accordion>
 </AccordionGroup>
 
+## Archiving products
+
+Products don't have an Active/Inactive toggle like schedulers. Instead, you control visibility by where you add products, and use Archive to completely disable a product.
+
+**To archive a product:**
+1. Go to **Payments → Products**
+2. Click on the product row
+3. Select **Archive Product**
+
+**What archiving does:**
+- Completely disables the product—can't be purchased anywhere
+- Removes from Athlete Portal, schedulers, forms, and direct links
+- Preserves all data and transaction history
+- Doesn't affect existing subscriptions or credits
+- Can be reversed by unarchiving
+
+<Note>
+**Set up now, launch later**: You don't need to archive products to hide them. Products are invisible to athletes until you add them to the Athlete Portal, attach them to schedulers/forms, or share the direct link. See [Products Overview](/payments/product-overview) for the full visibility model.
+</Note>
+
 ## Related articles
 
 - [Product Types Explained](/payments/product-types)
 - [Credits & Products](/payments/credits-products)
+- [Products Overview](/payments/product-overview) - Understand product visibility and archiving
