@@ -884,40 +884,73 @@ Family uses one account to book the same Advanced Skills Training timeslot for t
 
 ---
 
-## Setting 7: Rescheduling permissions
+## Setting 7: Booking Rules (Athlete Permissions)
 
-Control whether athletes can reschedule their own bookings and whether rescheduling is blocked within the cancellation window.
+Control what athletes can and cannot do with their own bookings.
 
-### What it does
-
-Two toggles in the **Permission(s)** section work together to protect your revenue from last-minute session changes:
-
-**Allow athletes to reschedule** — When enabled, athletes can move their booking to a different available time slot from the Athlete Portal or app. Disable this to lock bookings in place — useful for camps, evaluations, or any session type where no changes are acceptable after booking.
-
-**Block rescheduling within cancellation window** — When enabled, athletes cannot reschedule once they're inside the cancellation notice window. This closes the loophole where an athlete could avoid a late-cancellation credit forfeit by rescheduling instead of canceling outright.
+<Info>
+  **Where to find this**: Scheduler → Settings → Booking Rules
+</Info>
 
 <Frame>
-  <img src="/images/reschedule-within-cancellation-window.png" alt="Rescheduling permissions toggles in scheduler settings" />
+  ![Scheduler Booking Rules showing all six permission toggles](/images/scheduler-booking-rules.png)
 </Frame>
 
-### Why this matters
+| Toggle | What it controls |
+|--------|-----------------|
+| **Allow athletes to cancel** | Whether athletes can cancel their own bookings from the portal or app |
+| **Refund credits used on cancelation** | Whether credits are automatically returned when an athlete cancels |
+| **Allow athletes to reschedule** | Whether athletes can move their booking to a different available time |
+| **Block rescheduling within cancellation window** | Prevents rescheduling once inside the cancellation notice window |
+| **Allow athletes to book a timeslot more than once** | Lets athletes (or parents) book the same time slot multiple times |
+| **Show booked athletes to other athletes** | Displays participant names to other athletes in the same slot |
 
-Without these controls, an athlete can reschedule a session at the last minute — effectively moving a hard-to-fill slot without triggering the cancellation policy. The **Block rescheduling within cancellation window** toggle closes that gap: if they're inside the cancellation window, they can't reschedule either.
+### Allow athletes to cancel
+
+When **on**, athletes can cancel their own bookings from the Athlete Portal or app. When **off**, only coaches and admins can cancel — athletes must contact you directly.
+
+<Tip>
+  Disable this for camps, workshops, or any non-refundable sessions where bookings should be final.
+</Tip>
+
+### Refund credits used on cancelation
+
+When **on**, credits are automatically returned to the athlete's balance when they cancel within the allowed window. When **off**, credits are forfeited on all cancellations regardless of timing.
+
+Pair this with your cancellation notice window (Setting 3) for the most common setup: credits refunded for cancellations with proper notice, forfeited for late cancellations.
+
+### Allow athletes to reschedule
+
+When **on**, athletes can move their booking to a different available time slot from the Athlete Portal or app. When **off**, only coaches and admins can reschedule — athletes must contact you to make changes.
+
+### Block rescheduling within cancellation window
+
+When **on**, athletes cannot reschedule once they're inside the cancellation notice window. This closes the loophole where an athlete avoids a late-cancellation credit forfeit by rescheduling instead of canceling.
+
+**Example**: If your cancellation policy requires 24-hour notice and this toggle is on, an athlete cannot reschedule a session that starts in 6 hours — they'd need to cancel (and forfeit the credit) or keep the booking.
+
+### Allow athletes to book a timeslot more than once
+
+When **on**, the same athlete or parent account can book the same time slot more than once. Useful for families booking multiple children into the same session.
+
+### Show booked athletes to other athletes
+
+When **on**, athletes who book a group session can see the names of other participants. Useful for group classes or team sessions where social visibility is a benefit.
 
 ### Recommended configuration
 
-| Situation | Allow reschedule | Block within cancellation window |
-|-----------|-----------------|----------------------------------|
-| Standard paid sessions | Enabled | Enabled |
-| Camps, evaluations, locked sessions | Disabled | — |
-| Low-demand or trial sessions | Enabled | Disabled |
+| Situation | Allow cancel | Refund credits | Allow reschedule | Block within window |
+|-----------|-------------|----------------|-----------------|---------------------|
+| Standard paid sessions | On | On | On | On |
+| Camps / workshops | Off | Off | Off | — |
+| Free / trial sessions | On | On | On | Off |
+| Premium / high-demand | On | On | Off | — |
 
 <Tip>
-  **Revenue protection**: Enable both toggles for any paid scheduler. Athletes who need to change a session must do so before the cancellation window opens — giving you time to fill the original slot.
+  **Revenue protection**: For any paid scheduler, enable **Block rescheduling within cancellation window**. This ensures athletes who need to change a session do so before the window closes — giving you time to fill the original slot.
 </Tip>
 
 For more on how rescheduling works from the coach side, see [Editing & Rescheduling Bookings](/scheduling/editing-rescheduling-bookings).
----
 
 ## Common configuration mistakes and fixes
 
