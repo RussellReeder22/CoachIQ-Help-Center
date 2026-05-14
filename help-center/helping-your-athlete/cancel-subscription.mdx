@@ -7,57 +7,60 @@ keywords: ["cancel subscription", "cancel membership", "stop billing", "end subs
 ---
 
 <Info>
-  **Where athletes find this**: Athlete Portal → Profile Menu → Billing
+  **Where athletes find this**: Athlete Portal → Profile Menu → **Billing**
 </Info>
-
-## Overview
-
-When enabled, athletes can cancel their own subscriptions directly from their portal without contacting you. This gives them autonomy while reducing your administrative workload.
 
 ## Enabling self-service cancellation
 
-Before athletes can cancel, you need to enable this option for the subscription product.
+Before athletes can cancel directly, you need to enable this option for the subscription product.
 
 <Steps>
   <Step title="Navigate to your subscription product">
-    From your dashboard, go to **Products** and select the subscription product you want to configure.
+    From your dashboard, go to **Payments** → **Products** and select the subscription product you want to configure.
   </Step>
-  <Step title="Enable cancellation option">
-    Scroll to the subscription settings and toggle **ON** the "Allow users to cancel" option.
+  <Step title="Enable the cancellation option">
+    Scroll to the subscription settings and toggle **ON** the **Allow users to cancel** option.
 
     <Tip>
-      **Best practice**: Enable this for most subscriptions to reduce support requests. Only disable if you want to have a conversation before cancellations.
+      Enable this for most subscriptions to reduce support requests. Only disable it if you want to have a conversation before processing cancellations.
     </Tip>
+
     Save your changes.
   </Step>
 </Steps>
 
 ## How athletes cancel their subscription
 
-Once enabled, your athletes follow these steps:
+Athletes with an active paid membership will always see a cancel option in the **Billing** section of their portal. What happens when they tap it depends on your product settings.
 
 <Steps>
-  <Step title="Access the athlete portal">
-    Athletes log into their athlete portal at their custom portal URL.
-  </Step>
-  <Step title="Open profile menu">
-    Click their **profile picture** or **initials** in the top right corner of the page.
+  <Step title="Open the profile menu">
+    The athlete clicks their **profile picture** or **initials** in the top right corner of the portal.
 
     <Frame>
       ![Profile Pic Select](/images/profile-pic-select.jpg)
     </Frame>
   </Step>
-  <Step title="Navigate to billing">
-    Select **Billing** from the sidebar menu.
+  <Step title="Navigate to Billing">
+    Select **Billing** from the sidebar menu. Active subscriptions are listed here.
   </Step>
-  <Step title="Cancel subscription">
-    Athletes will see their active subscriptions and can select the option to cancel.
+  <Step title="Select the cancel option">
+    The athlete will always see a cancel option next to their subscription. What happens next depends on your settings:
 
-    <Check>
-      **Success!** The athlete will receive confirmation of the cancellation, and you'll be notified through the platform.
-    </Check>
+    | Setting | What the athlete sees |
+    |--------|----------------------|
+    | **Allow cancellation ON** | Subscription is canceled immediately. Access continues until the end of the current billing period. You receive a notification. |
+    | **Allow cancellation OFF** | Athlete is prompted to send you a cancellation request message. You handle the cancellation manually. |
   </Step>
 </Steps>
+
+## Data deletion requests (iOS app)
+
+If you receive a message saying an athlete wants to delete their data, this is separate from subscription cancellation. Apple requires all iOS apps to provide users with a way to request account and data deletion.
+
+Athletes find this button in **Settings** inside the CoachIQ iOS app. Tapping it sends a deletion request — it does not cancel a subscription or affect billing.
+
+If you receive a data deletion request, contact the CoachIQ team to process it.
 
 ## Common questions
 
@@ -66,13 +69,13 @@ Once enabled, your athletes follow these steps:
     The subscription remains active until the end of the current billing period. The athlete retains access until then and won't be charged again.
   </Accordion>
   <Accordion title="Will I be notified when an athlete cancels?">
-    Yes, you'll receive notification through CoachIQ when an athlete cancels their subscription.
+    Yes. When an athlete cancels directly, you'll receive a notification through CoachIQ. When cancellation is disabled, you'll receive their cancellation request message instead.
   </Accordion>
   <Accordion title="Can athletes resubscribe after canceling?">
     Yes, athletes can purchase a new subscription at any time through your products page or their portal.
   </Accordion>
   <Accordion title="What if I want to require approval before cancellations?">
-    Simply toggle **OFF** the "Allow users to cancel" setting for that product. Athletes will need to contact you directly to cancel.
+    Toggle **OFF** the **Allow users to cancel** setting for that product. Athletes will still see the cancel option, but it will direct them to send you a cancellation request message instead of canceling automatically.
   </Accordion>
 </AccordionGroup>
 
