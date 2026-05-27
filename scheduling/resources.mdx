@@ -1,0 +1,54 @@
+---
+title: "Resources"
+description: "Track courts, rooms, and equipment — and attach them to schedulers to prevent double-booking."
+icon: "location-dot"
+---
+
+## What are Resources?
+
+Resources are physical assets your facility uses to run sessions — courts, batting cages, training rooms, or any space or equipment that can only support one session at a time. When you attach a resource to a scheduler, CoachIQ prevents that resource from being double-booked across overlapping time slots.
+
+<Note>
+  Resources are visible to admins and coaches only. Athletes do not see resource names or assignments during booking.
+</Note>
+
+<Frame>
+  ![Setup Resources tab showing list of resources](/images/scheduling/set-up-resources.png)
+</Frame>
+
+## Creating a resource
+
+Go to **Scheduling → Setup → Resources** and click **+ Add resource**. Fill in:
+
+- **Title** (required) — e.g. "Half Court A"
+- **Description** (optional) — internal notes for staff
+- **Type** (optional) — e.g. "Full court", "Batting cage", "Room"
+- **Location** (required) — which location this resource belongs to
+- **Color** — identifies the resource on your calendar
+
+<Frame>
+  ![Edit Resource modal with fields for title, description, type, location, and color](/images/scheduling/resource-edit.png)
+</Frame>
+
+## Attaching a resource to a scheduler
+
+Two paths, same result:
+
+- **From Setup → Resources**: click **Attach to scheduler** on the resource card
+- **From inside a scheduler**: scroll to the **Resources** section and select the resource from the available list
+
+<Frame>
+  ![Resources panel inside scheduler settings showing attached resources](/images/scheduling/resources-in-scheduler-settings.png)
+</Frame>
+
+A resource can be attached to multiple schedulers at once. When a resource is exclusive to one scheduler, you'll see "Not shared with other schedulers" in the scheduler view. To remove it, click **Detach**.
+
+## How double-booking prevention works
+
+Once a resource is attached to a scheduler, CoachIQ locks that resource for the duration of each booked session. If that time slot is already filled by another session using the same resource, it becomes unavailable — even if the second scheduler still has open capacity.
+
+## Example use cases
+
+- **Basketball facility**: "Half Court A" and "Half Court B" each attached to separate group training schedulers
+- **Training room**: "Speed & Agility Room" on a conditioning scheduler prevents two coaches from booking the same room at the same time
+- **Batting cage**: "Cage 1" on a hitting session scheduler ensures each session has a dedicated lane
