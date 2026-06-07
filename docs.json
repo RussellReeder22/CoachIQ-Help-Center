@@ -319,6 +319,7 @@
               "automations/build-your-first-automation",
               "automations/triggers-actions-reference",
               "automations/scheduled-automations",
+              "automations/zapier-integration",
               "automations/automation-playbook"
             ]
           },
@@ -842,7 +843,7 @@
     },
     {
       "source": "/tools/how-to-create-automations-in-coachiq/integrate-with-zapier",
-      "destination": "/automations/triggers-actions-reference"
+      "destination": "/automations/zapier-integration"
     },
     {
       "source": "/tools/qr-codes-in-coachiq",
