@@ -42,7 +42,7 @@ Each booking creates a Google Calendar event with:
 - Session type/scheduler name
 - Duration
 
-**Current behavior**: Each booking creates its own event. If 3 athletes book the same time slot, you'll see 3 separate events on your Google Calendar.
+For group sessions, you choose how those bookings appear using the two options in the next section. By default, each booking creates its own event—so if 3 athletes book the same time slot, you'll see 3 separate events on your Google Calendar.
 
 ---
 
@@ -73,6 +73,15 @@ Each booking creates a Google Calendar event with:
     </Tip>
   </Step>
 
+  <Step title="Choose your group and guest options">
+    Two optional toggles control how bookings appear. Both are **off by default**.
+
+    | Option | What it does |
+    |--------|--------------|
+    | **Combine group bookings into one shared event** | Group sessions show up as a single Google Calendar event instead of one event per athlete. The event updates automatically as more athletes book the same slot. |
+    | **Add clients as event guests** | Athletes are added as guests on the event and receive a Google Calendar invite, so the session appears on their own calendar. |
+  </Step>
+
   <Step title="Save your scheduler">
     Click **Update** to save your changes.
 
@@ -85,6 +94,18 @@ Each booking creates a Google Calendar event with:
 ---
 
 ## Key things to know
+
+### Combine group bookings into one shared event
+
+When this is on, a group session creates a single Google Calendar event rather than a separate event for each athlete. As additional athletes book the same time slot, the shared event updates automatically to reflect everyone on the roster.
+
+With the toggle off (the default), each athlete's booking creates its own event.
+
+### Add clients as event guests
+
+When this is on, athletes are added as guests on the Google Calendar event and receive a calendar invite by email, so the session also lands on their own calendar.
+
+If you turn this on alongside **Combine group bookings into one shared event**, all athletes in a group session are added as guests on the same event. Google's guest list is visible to attendees by default, so athletes in a combined group event may be able to see one another. Leave this toggle off if you'd prefer to keep group rosters private.
 
 ### Each scheduler syncs independently
 
@@ -129,7 +150,9 @@ When an athlete books a recurring session:
   </Accordion>
 
   <Accordion title="Can athletes see my Google Calendar?">
-    No. This sync only sends events TO your Google Calendar. Athletes cannot see your Google Calendar or any events on it. They only see availability through CoachIQ's booking system.
+    No. This sync only sends events TO your Google Calendar, and athletes cannot see your calendar or any other events on it.
+
+    The exception is **Add clients as event guests**: when that toggle is on, each athlete receives an invite to their own session event, and that event appears on their calendar. They still can't see anything else on your calendar. In a combined group event, attendees may see the other guests on that event's guest list.
   </Accordion>
 
   <Accordion title="What if I have multiple coaches?">
