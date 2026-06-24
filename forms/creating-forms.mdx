@@ -72,10 +72,21 @@ Pre-built fields designed for athlete and parent data. When you require login/si
 | Athlete Age        | Athlete's age              |
 | Parent First Name  | Parent/guardian first name |
 | Parent Last Name   | Parent/guardian last name  |
+| Custom Field       | Maps to one of your org's People custom fields (you pick which) |
 
 <Note>
   **Profile sync only works when Login/Signup is required.** Without it, Contact Info fields capture data but don't automatically connect to People profiles.
 </Note>
+
+#### Custom Field — map to your People custom fields
+
+The **Custom Field** option (at the bottom of the **Contact Info** category) lets a form write to your organization's **People custom fields** — the same custom fields on an athlete's profile in [People](/people/overview), like "Started Training" or "Child Name".
+
+1. In the form builder, open the **Contact Info** category and select **Custom Field**.
+2. In the **Custom Field** dropdown, choose which custom field to map to (e.g., "Child Name").
+3. Toggle **Required?** if the answer is mandatory.
+
+With **Login/Signup required**, the athlete's answer writes straight to that custom field on their People profile — so an onboarding form can fully populate a new athlete's custom fields, the same way the waiver field connects to the Waivers tab.
 
 ### General fields
 

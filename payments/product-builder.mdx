@@ -199,6 +199,56 @@ Configure pricing frequency and processing fees.
       Use "End after billing cycles" for finite training packages sold as subscriptions, such as a 12-week program billed monthly.
     </Tip>
   </Accordion>
+  <Accordion title="Schedule charges for later">
+    **All product types**
+
+    Collect the purchase now but delay the first charge to a future date. Turn the toggle ON and set a **First charge date** (MM/DD/YYYY).
+
+    **OFF (default):** The client is charged at checkout.
+
+    **ON:** The client enters their card and completes checkout now. The card is saved and automatically charged on the First charge date — no manual action needed.
+
+    **Use cases:**
+
+    - Open registration for a season or camp that bills on a set start date
+    - Locking in sign-ups now while charging everyone on the same future day
+
+    <Tip>
+      Example: Open summer-program registration in April with a First charge date of June 1 — parents register now and are charged automatically on June 1.
+    </Tip>
+  </Accordion>
+  <Accordion title="Enable free trial">
+    **All product types**
+
+    Give clients a trial period before any charge. Turn the toggle ON and set the **Trial period (days)** (for example, 7).
+
+    **OFF (default):** Billing begins at checkout.
+
+    **ON:** The client isn't charged during the trial. The first payment processes when the trial period ends, unless they cancel before then.
+
+    **Use cases:**
+
+    - "First week free" memberships
+    - Letting athletes try a program before committing
+
+    For subscriptions, the trial shows as a **Trialing** status on the client's [Subscriptions tab](/people/client-profiles/client-profiles-subscriptions).
+  </Accordion>
+  <Accordion title="Show payment methods (collect a card on file)">
+    **Free (\$0.00) products**
+
+    When a product's price is **\$0.00**, the Payment section shows a **Show payment methods** toggle. Turn it ON to require buyers to enter a card at checkout and save it to their account — **without charging them today**. (Enabling it mirrors the product into Stripe so the card can be charged later.)
+
+    **Collect a card on file:**
+
+    1. Create a product and set the **Price** to **\$0.00**.
+    2. Turn on **Show payment methods**.
+    3. Share or attach the product. At checkout, the buyer enters a card, which is saved to their profile — no charge is made.
+
+    **Use cases:**
+
+    - Getting parents' cards on file before a season or program starts
+    - Securing a card for future manual or scheduled charges
+  </Accordion>
 </AccordionGroup>
 
 ## Section 3: Credits

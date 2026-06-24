@@ -9,7 +9,7 @@ icon: "location-dot"
 Resources are physical assets your facility uses to run sessions — courts, batting cages, training rooms, or any space or equipment that can only support one session at a time. When you attach a resource to a scheduler, CoachIQ prevents that resource from being double-booked across overlapping time slots.
 
 <Note>
-  Resources are visible to admins and coaches only. Athletes do not see resource names or assignments during booking.
+  Resources are visible to admins and coaches only. Athletes do not see resource names or assignments during booking. A single scheduler can reserve more than one resource per session — see [Attach multiple resources to one scheduler](#attach-multiple-resources-to-one-scheduler).
 </Note>
 
 <Frame>
@@ -42,6 +42,18 @@ Two paths, same result:
 </Frame>
 
 A resource can be attached to multiple schedulers at once. When a resource is exclusive to one scheduler, you'll see "Not shared with other schedulers" in the scheduler view. To remove it, click **Detach**.
+
+## Attach multiple resources to one scheduler
+
+A single scheduler can hold more than one resource at a time — useful when a session needs several spaces at once, like a team practice that reserves multiple batting cages.
+
+In the scheduler's **Resources** tab, each attached resource appears as a card with a **Detach** option. If a resource is also used by other schedulers, the card shows **Shared with X schedulers** and lists them. To attach another, click a resource under **Add Resource**.
+
+When a session from that scheduler is booked, every attached resource is reserved for that time slot, so none of them can be double-booked elsewhere.
+
+### Example
+
+A softball facility attaches **Cage 1**, **Cage 2**, and **Cage 3** to a "Team Practice" scheduler. Each booked practice reserves all three cages for its window, and they free up together when the session ends.
 
 ## How double-booking prevention works
 

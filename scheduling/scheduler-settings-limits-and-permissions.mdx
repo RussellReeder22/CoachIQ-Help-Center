@@ -952,6 +952,41 @@ When **on**, athletes who book a group session can see the names of other partic
 
 For more on how rescheduling works from the coach side, see [Editing & Rescheduling Bookings](/scheduling/editing-rescheduling-bookings).
 
+## Setting 8: Overlapping slots and slot cadence
+
+Control whether session start times can overlap, and how often they're offered.
+
+<Info>
+  **Where to find this**: Schedule → Schedulers → [Select Scheduler] → **Settings** tab → **Duration**
+</Info>
+
+### Allow overlapping slots within this session
+
+By default, the scheduler offers the next start time only after the current session length has elapsed, so sessions never overlap. When you check **Allow overlapping slots within this session**, the scheduler also offers start times that overlap a session already in progress.
+
+- **Unchecked** (default): Start times don't overlap. The next slot opens only after a session ends.
+- **Checked**: Start times can overlap. A new session can begin while another is still running.
+
+Once checked, a **Slot Cadence** control appears to set how frequently those start times appear.
+
+**Example**: A 60-minute "Youth Skills" session with overlapping slots enabled and Slot Cadence set to **Every 15 minutes** offers start times at 10:00, 10:15, 10:30, and so on — each a full 60-minute session that overlaps the next.
+
+### Slot Cadence
+
+Slot Cadence sets the interval at which start times are offered:
+
+- Every hour (on the hour)
+- Every 30 minutes
+- Every 20 minutes
+- Every 15 minutes
+- Every 10 minutes
+- Every 5 minutes
+- **Custom minute marks** — define your own specific start times
+
+<Note>
+  Overlapping slots is different from **session capacity** (Setting 1). Capacity controls how many athletes share the *same* slot; overlapping slots controls whether *new* start times can begin during an active session.
+</Note>
+
 ## Common configuration mistakes and fixes
 
 <AccordionGroup>
