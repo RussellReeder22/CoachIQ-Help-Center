@@ -173,6 +173,17 @@
               "scheduling/overview",
               "scheduling/quick-setup",
               {
+                "group": "Availability",
+                "icon": "clock",
+                "pages": [
+                  "scheduling/how-avaliability-works",
+                  "scheduling/create-your-availability",
+                  "scheduling/seasonal-schedule-transition",
+                  "scheduling/setting-black-out-dates",
+                  "scheduling/managing-availability-for-multiple-coaches"
+                ]
+              },
+              {
                 "group": "Schedulers",
                 "icon": "calendar-plus",
                 "pages": [
@@ -183,17 +194,6 @@
                   "scheduling/resources",
                   "scheduling/google-calendar-sync",
                   "scheduling/sharing-schedulers"
-                ]
-              },
-              {
-                "group": "Availability",
-                "icon": "clock",
-                "pages": [
-                  "scheduling/how-avaliability-works",
-                  "scheduling/create-your-availability",
-                  "scheduling/seasonal-schedule-transition",
-                  "scheduling/setting-black-out-dates",
-                  "scheduling/managing-availability-for-multiple-coaches"
                 ]
               },
               {
