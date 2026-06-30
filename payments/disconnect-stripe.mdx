@@ -1,0 +1,110 @@
+---
+title: "How to Disconnect Your Stripe Account"
+description: "Remove the connection between CoachIQ and your Stripe account — step-by-step with no support ticket needed."
+sidebarTitle: "Disconnect Stripe"
+icon: "link-slash"
+keywords: ["disconnect stripe", "remove stripe", "stripe connect", "cancel stripe coachiq", "stripe access", "unlink stripe"]
+---
+
+<Info>
+**Where to find this**: Settings → Stripe Portal → Disconnect
+</Info>
+
+## Why you might see a Stripe Connect banner
+
+If you visit your Stripe dashboard and see a banner that says **"CoachIQ has access to new tools to help manage your account"** — don't worry. This is standard Stripe Connect behavior. It means your Stripe account is still linked to CoachIQ.
+
+<Frame>
+  ![Stripe dashboard showing CoachIQ has access banner](/images/stripe-disconnect-banner.png)
+</Frame>
+
+This banner appears even after you cancel your CoachIQ subscription. The Stripe connection stays active until you manually disconnect it. It's not a security concern — CoachIQ can't charge you or access your funds — but if you want a clean break, follow the steps below.
+
+---
+
+## How to disconnect Stripe from CoachIQ
+
+<Steps>
+  <Step title="Go to Settings → Stripe Portal">
+    From your CoachIQ dashboard, click **Settings** in the bottom-left corner, then click **Stripe Portal**.
+
+    <Frame>
+      ![Settings menu showing Stripe Portal option](/images/stripe-settings-location.png)
+    </Frame>
+  </Step>
+
+  <Step title="Click Disconnect">
+    On the Stripe Portal page, you'll see your connected Stripe account with all your synced products. Click **Disconnect** in the top-right area of the page.
+
+    <Frame>
+      ![Stripe Portal page with Disconnect button](/images/stripe-portal-disconnect.png)
+    </Frame>
+  </Step>
+
+  <Step title="Confirm the disconnection">
+    Confirm that you want to disconnect. Once complete, the connection between CoachIQ and Stripe is removed.
+
+    <Check>
+    **Done!** Your Stripe account is no longer connected to CoachIQ. The banner in your Stripe dashboard will disappear.
+    </Check>
+  </Step>
+</Steps>
+
+<Warning>
+**Before you disconnect**: If you still have active customers on CoachIQ, disconnecting Stripe will stop all payment processing. Subscriptions won't renew, and new purchases won't go through. Only disconnect if you're done using CoachIQ for payments.
+</Warning>
+
+---
+
+## What happens after disconnecting
+
+| What | What happens |
+|------|-------------|
+| **Existing Stripe subscriptions** | Remain active on Stripe's side — CoachIQ just stops managing them |
+| **New payments through CoachIQ** | Won't process — no Stripe account connected |
+| **Your Stripe account** | Fully yours — no CoachIQ access |
+| **Stripe Connect banner** | Disappears from your Stripe dashboard |
+| **Your CoachIQ account** | Still accessible — you just can't collect payments |
+
+---
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I reconnect Stripe later?">
+    Yes. Go to **Settings → Stripe Portal** and click the Stripe logo to reconnect. You can connect the same Stripe account or a different one.
+
+    <Frame>
+      ![Connect Stripe button](/images/Connectstripe.png)
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Will disconnecting cancel my customers' subscriptions?">
+    No. Existing subscriptions remain active on Stripe's side. However, CoachIQ will no longer manage them — renewals won't sync, and subscription changes made in CoachIQ won't apply. If you need to cancel subscriptions, do that from your Stripe dashboard before disconnecting.
+  </Accordion>
+
+  <Accordion title="I already cancelled CoachIQ — can I still disconnect?">
+    Yes. Log into your CoachIQ admin at [admin.coachiq.io](https://admin.coachiq.io) and follow the same steps. Your admin account remains accessible even after cancellation. If you can't log in, contact [info@coachiq.io](mailto:info@coachiq.io) and the team will disconnect it for you.
+  </Accordion>
+
+  <Accordion title="Stripe says only CoachIQ can disconnect — what do I do?">
+    That's correct — because CoachIQ initiated the Stripe Connect integration, the disconnect must happen from CoachIQ's side. Follow the self-service steps above. No support ticket needed.
+  </Accordion>
+
+  <Accordion title="Is the Stripe Connect banner a security concern?">
+    No. While the connection is active, CoachIQ can only process payments that you've configured in your dashboard. CoachIQ cannot withdraw funds, access your bank account, or make changes to your Stripe account. The banner is just Stripe's way of showing that a platform integration exists.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Connecting Stripe" icon="link" href="/payments/connecting-stripe">
+    How to set up your Stripe account with CoachIQ
+  </Card>
+  <Card title="Stripe Dashboard" icon="chart-line" href="/payments/stripe-dashboard">
+    Navigate your Stripe dashboard and manage payouts
+  </Card>
+</CardGroup>

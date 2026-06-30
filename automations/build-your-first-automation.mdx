@@ -3,9 +3,14 @@ title: "Build Your First Automation"
 description: "Create a welcome email that sends automatically when someone joins—in under 5 minutes"
 sidebarTitle: "Build Your First Automation"
 icon: "play"
+keywords: ["create automation", "first automation", "welcome email", "new member email", "automation tutorial", "set up automation"]
 ---
 
-By the end of this guide, every new member will automatically receive a welcome email with instructions to book their first session. You'll also tag them as an "Active Member" so you can easily find them later.
+<Info>
+**Where to find this**: Tools → Automations → + New Automation
+</Info>
+
+By the end of this guide, every new member will automatically receive a welcome email with instructions to [book their first session](/scheduling/overview). You'll also [tag](/people/tags-filters) them as an "Active Member" so you can easily find them later.
 
 No templates, no shortcuts—we're building from scratch so you understand how it works.
 
@@ -27,16 +32,16 @@ No templates, no shortcuts—we're building from scratch so you understand how i
     You'll see a blank canvas with a prompt to choose your trigger.
 
     <Frame>
-      ![Create New Automation Pn](/images/create-new-automation.png)
+      ![CoachIQ automation builder blank canvas with trigger prompt](/images/create-new-automation.png)
     </Frame>
   </Step>
   <Step title="Choose Your Trigger">
     Click **Select Trigger** and choose **New Purchase**.
 
-    This trigger fires whenever someone buys any product—memberships, credit packs, camps, or one-time sessions.
+    This trigger fires whenever someone buys any [product](/payments/product-overview)—memberships, credit packs, camps, or one-time sessions.
 
     <Frame>
-      ![Trigger Options Pn](/images/trigger-options.png)
+      ![CoachIQ automation trigger selection menu showing available triggers](/images/trigger-options.png)
     </Frame>
   </Step>
   <Step title="Add a Condition">
@@ -129,9 +134,9 @@ A few ways to confirm your automation is running:
 
 You now understand the three building blocks of every automation:
 
-- **Triggers** start automations when something happens (a purchase, booking, form submission)
+- **Triggers** start automations when something happens (a purchase, booking, [form submission](/forms/overview))
 - **Conditions** filter who it applies to (only subscriptions, only first-time buyers)
-- **Actions** are what CoachIQ does automatically (send messages, add tags, manage credits)
+- **Actions** are what CoachIQ does automatically (send [messages](/inbox/inbox-overview), add tags, manage credits)
 
 Every automation in CoachIQ—no matter how complex—uses this same pattern.
 
@@ -145,5 +150,22 @@ Every automation in CoachIQ—no matter how complex—uses this same pattern.
   </Card>
   <Card title="Scheduled Automations" icon="calendar" href="/automations/scheduled-automations">
     Learn how to run automations on a schedule—like weekly check-ins for inactive members or credit expiration alerts.
+  </Card>
+</CardGroup>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Forms Overview" icon="file-lines" href="/forms/overview">
+    Build forms that trigger automations on submission
+  </Card>
+  <Card title="Creating Your First Scheduler" icon="calendar" href="/scheduling/creating-your-first-scheduler">
+    Set up the sessions your automations will reference
+  </Card>
+  <Card title="Inbox Overview" icon="inbox" href="/inbox/inbox-overview">
+    Where automated emails and in-app messages are delivered
+  </Card>
+  <Card title="Tags and Filters" icon="users" href="/people/tags-filters">
+    Organize members with tags that automations can add or remove
   </Card>
 </CardGroup>

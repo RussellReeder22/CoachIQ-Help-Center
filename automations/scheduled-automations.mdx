@@ -3,16 +3,17 @@ title: "Scheduled Automations"
 description: "Run automations on a schedule to catch expiring credits, inactive members, and more"
 sidebarTitle: "Scheduled Automations"
 icon: "calendar"
+keywords: ["scheduled automation", "recurring automation", "daily automation", "expiring credits", "inactive members", "timed automation", "cron"]
 ---
 
-Most automations react to something happening—a purchase, a booking, a form submission. Scheduled automations are different. They run on a schedule and **proactively find people** who match your criteria.
+Most automations react to something happening—a purchase, a booking, a [form](/forms/overview) submission. Scheduled automations are different. They run on a schedule and **proactively find people** who match your criteria.
 
 Think of it this way:
 
 - **Event-based**: The doorbell rings, you answer it
 - **Scheduled**: You check the mailbox every morning
 
-This is how you build credit expiration reminders, inactive member outreach, weekly announcements, and milestone celebrations.
+This is how you build credit expiration reminders, inactive member outreach, weekly [announcements](/inbox/announcements), and milestone celebrations.
 
 ---
 
@@ -59,7 +60,7 @@ Scheduled automations require at least one condition. This prevents the automati
 
 | Condition                                | What It Checks                                              |
 | ---------------------------------------- | ----------------------------------------------------------- |
-| **Has a specific tag**                   | User has this tag                                           |
+| **Has a specific [tag](/people/tags-filters)**   | User has this tag                                           |
 | **Doesn't have a specific tag**          | User doesn't have this tag                                  |
 | **Has active subscription**              | User is currently subscribed                                |
 | **Does not have an active subscription** | User has no active subscription                             |
@@ -103,7 +104,7 @@ Here's what happens when your scheduled automation fires:
 These personalization fields are **only available** in scheduled automations. They let you include real-time data about each user's credits, bookings, and activity.
 
 <Frame>
-  ![Scheduled Conditons Pn](/images/scheduled-conditons.png)
+  ![CoachIQ scheduled automation condition and dynamic field options](/images/scheduled-conditons.png)
 </Frame>
 
 ### Credit Fields
@@ -186,5 +187,22 @@ These are the most popular scheduled automations coaches use. Full setup instruc
   </Card>
   <Card title="Triggers & Actions Reference" icon="list" href="/automations/triggers-actions-reference">
     Complete list of all triggers, conditions, actions, and dynamic fields.
+  </Card>
+</CardGroup>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Inbox Overview" icon="inbox" href="/inbox/inbox-overview">
+    Where automated in-app messages and emails are delivered to members
+  </Card>
+  <Card title="Announcements" icon="inbox" href="/inbox/announcements">
+    Send broadcast messages to groups of members via scheduled automations
+  </Card>
+  <Card title="Tags and Filters" icon="users" href="/people/tags-filters">
+    Use tags to control which members scheduled automations target
+  </Card>
+  <Card title="People Overview" icon="users" href="/people/overview">
+    Manage the member profiles that scheduled automations check against
   </Card>
 </CardGroup>

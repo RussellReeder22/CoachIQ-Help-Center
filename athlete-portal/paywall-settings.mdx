@@ -3,20 +3,20 @@ title: "Set Up Page Paywalls to Monetize Your Athlete Portal"
 description: "Learn how to restrict athlete access to Programs, Scheduling, and Products pages until payment. Complete paywall setup guide with troubleshooting."
 sidebarTitle: "Page Paywalls"
 icon: "lock"
-keywords: "CoachIQ paywall, athlete portal paywall, restrict page access, membership paywall, subscription paywall, coaching app monetization"
+keywords: ["paywall", "restrict access", "membership wall", "subscription paywall", "monetize app", "page access control"]
 ---
 
 <Info>
   **Quick Answer**: Page paywalls restrict athlete access to specific pages (Programs, Scheduling, or Products) in your athlete portal until they purchase a required product. Configure paywalls at App Builder → Settings → Pages Paywall.
 </Info>
 
-![Paywalled Athlete App Pn](/images/paywalled-athlete-app.png)
+![CoachIQ paywalled athlete app showing purchase prompt for restricted content](/images/paywalled-athlete-app.png)
 
 ## What is a page paywall in CoachIQ?
 
 A page paywall is a monetization feature that restricts athlete access to entire sections of your athlete portal until they purchase a qualifying product. When athletes attempt to access a paywalled page without the required product, they see a purchase prompt instead of the content.
 
-![Athleteportal Paywall Page Settings Pn](/images/athleteportal-paywall-page-settings.png)
+![CoachIQ Athlete Portal paywall page settings configuration](/images/athleteportal-paywall-page-settings.png)
 
 **Key capabilities:**
 
@@ -30,13 +30,13 @@ A page paywall is a monetization feature that restricts athlete access to entire
 <Note>
   **Required before starting:**
 
-  - At least one product created in Payments → Products
+  - At least one product created in [Payments → Products](/payments/product-overview)
   - Admin or owner permissions in CoachIQ
   - Active athlete portal (configured in App Builder)
   - Pages activated in Menu & Links settings
 </Note>
 
-![Products Page Pn](/images/Products-page.png)
+![CoachIQ Products page in the admin dashboard](/images/Products-page.png)
 
 ## Setting up your first page paywall
 
@@ -55,14 +55,14 @@ A page paywall is a monetization feature that restricts athlete access to entire
     - **Products** - Your product catalog and purchase options
     - **Schedulers** - Session booking and calendar access
 
-    ![Selectwhichpagesyouwishtopaywall Pn](/images/selectwhichpagesyouwishtopaywall.png)
+    ![CoachIQ page selection checkboxes for choosing which pages to paywall](/images/selectwhichpagesyouwishtopaywall.png)
   </Step>
   <Step title="Add qualifying products">
     Click **\+ Add Product** under the page section you want to paywall. This opens a product selection modal.
 
     Select one or more products that will grant access to this page. Athletes must purchase at least one of these products to unlock the page.
 
-    ![Selectproducttopaywallspecificpage Pn](/images/selectproducttopaywallspecificpage.png)
+    ![CoachIQ product selection modal for assigning products to a paywalled page](/images/selectproducttopaywallspecificpage.png)
   </Step>
   <Step title="Configure product grouping">
     You can create multiple product groups (sections) for different membership tiers:
@@ -89,7 +89,7 @@ A page paywall is a monetization feature that restricts athlete access to entire
 
 When an athlete without the required product tries to access a paywalled page, they see:
 
-![Paywalled Athlete App Pn](/images/paywalled-athlete-app.png)
+![Athlete view of a paywalled page with product pricing and purchase button](/images/paywalled-athlete-app.png)
 
 **The paywall experience includes:**
 
@@ -147,7 +147,7 @@ Configure how your paywalled pages appear in search results and browsers:
 - **Meta Description**: Describe the value behind the paywall
 - **URL Slug**: Customize the page URL (e.g., `/paywall` or `/premium-access`)
 
-![Clean Shot2025 09 26at20 20 26 Pn](/images/CleanShot2025-09-26at20.20.26.png)
+![CoachIQ paywall page SEO settings with title, description, and URL slug](/images/CleanShot2025-09-26at20.20.26.png)
 
 <Tip>
   Use compelling descriptions that highlight the value athletes get after purchasing, not just that the content is locked.
@@ -174,13 +174,13 @@ Ensure your product descriptions clearly communicate:
 **Diagnosis checklist:**
 
 1. **No qualifying product purchased**
-   - Check: People → [Athlete Name] → Products tab
+   - Check: [People](/people/overview) → [Athlete Name] → Products tab
    - Solution: Direct athlete to purchase page on web portal
 2. **Subscription expired**
-   - Check: Payments → Subscriptions → Filter by athlete
+   - Check: [Payments → Subscriptions](/payments/subscriptions-dashboard) → Filter by athlete
    - Solution: Update payment method or reactivate subscription
 3. **Payment failed**
-   - Check: Payments → Transactions → Failed payments
+   - Check: [Payments → Transactions](/payments/transactions) → Failed payments
    - Solution: Have athlete update billing information
 4. **Product removed from paywall**
    - Check: Pages Paywall settings for product list
@@ -251,7 +251,7 @@ Ensure your product descriptions clearly communicate:
     No, paywalled pages are completely restricted. Consider creating a separate "preview" or "demo" section outside the paywall to showcase value.
   </Accordion>
   <Accordion title="How do I offer a free trial before the paywall?">
-    Create a subscription product with a trial period in Payments → Products. Set the trial length (e.g., 7 days free), then add this product to your paywall.
+    Create a subscription product with a trial period in [Payments → Products](/payments/product-overview). Set the trial length (e.g., 7 days free), then add this product to your paywall.
   </Accordion>
   <Accordion title="Do paywalls work on both mobile app and web?">
     Yes, paywalls function on both platforms. However, purchases can only be made through the web portal due to iOS restrictions.
@@ -284,6 +284,29 @@ Track your paywall effectiveness:
 
 **Where to find data:**
 
-- Payments → Transactions (purchase tracking)
-- Payments → Subscriptions (active membership monitoring)
-- People → Activity logs (access patterns)
+- [Payments → Transactions](/payments/transactions) (purchase tracking)
+- [Payments → Subscriptions](/payments/subscriptions-dashboard) (active membership monitoring)
+- [People](/people/overview) → Activity logs (access patterns)
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Product Overview" icon="box" href="/payments/product-overview">
+    Understand how products work and where athletes can find them
+  </Card>
+  <Card title="Product Builder" icon="credit-card" href="/payments/product-builder">
+    Create memberships, packages, and one-time products
+  </Card>
+  <Card title="Attach Products to Schedulers" icon="calendar-plus" href="/payments/attach-products">
+    Require payment or credits when athletes book sessions
+  </Card>
+  <Card title="Products in Your Athlete Portal" icon="mobile" href="/athlete-portal/products">
+    Display and organize products in your athlete-facing portal
+  </Card>
+  <Card title="Transactions" icon="credit-card" href="/payments/transactions">
+    Track purchases, refunds, and payment history
+  </Card>
+  <Card title="Managing People" icon="users" href="/people/overview">
+    View athlete profiles, products, and activity
+  </Card>
+</CardGroup>
