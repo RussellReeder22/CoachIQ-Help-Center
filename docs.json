@@ -346,8 +346,55 @@
             "group": "Power-Ups Setup",
             "icon": "bolt",
             "pages": [
+              "power-ups-setup/personalized-app-setup",
               "power-ups-setup/grant-meta-ads-access",
               "power-ups-setup/grant-mindbody-access"
+            ]
+          },
+          {
+            "group": "Quick Guides",
+            "icon": "book-bookmark",
+            "pages": [
+              {
+                "group": "Coach Guides",
+                "pages": [
+                  "flows/first-week-setup-checklist",
+                  "flows/onboarding-new-athletes",
+                  "flows/running-camps"
+                ]
+              },
+              {
+                "group": "Helping Your Athletes",
+                "pages": [
+                  "help-center/helping-your-athlete/sessions-not-showing",
+                  "help-center/helping-your-athlete/video-upload-issues",
+                  "help-center/helping-your-athlete/cancel-subscription",
+                  "help-center/helping-your-athlete/login-issues",
+                  "help-center/helping-your-athlete/credit-issues"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Business Guides",
+            "icon": "book-open",
+            "pages": [
+              "guides/index",
+              "guides/getting-found-online-seo",
+              "guides/building-your-training-facility",
+              "business-guides/guides/hiring-onboarding-trainers",
+              "business-guides/guides/legal-risk-management",
+              "guides/pricing-your-services"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "icon": "circle-question",
+            "pages": [
+              "faq/general",
+              "faq/scheduling",
+              "faq/payments",
+              "faq/getting-started"
             ]
           }
         ]
@@ -364,63 +411,6 @@
               "power-ups/custom-feature-request",
               "power-ups/done-for-you-paid-ads",
               "power-ups/personalized-app"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Quick Guides",
-        "icon": "book-bookmark",
-        "groups": [
-          {
-            "group": "Coach Guides",
-            "pages": [
-              "flows/index",
-              "flows/first-week-setup-checklist",
-              "flows/onboarding-new-athletes",
-              "flows/running-camps"
-            ]
-          },
-          {
-            "group": "Helping Your Athletes",
-            "pages": [
-              "help-center/helping-your-athlete/sessions-not-showing",
-              "help-center/helping-your-athlete/video-upload-issues",
-              "help-center/helping-your-athlete/cancel-subscription",
-              "help-center/helping-your-athlete/login-issues",
-              "help-center/helping-your-athlete/credit-issues"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Business Guides",
-        "icon": "book-open",
-        "groups": [
-          {
-            "group": "Guides",
-            "pages": [
-              "guides/index",
-              "guides/getting-found-online-seo",
-              "guides/building-your-training-facility",
-              "business-guides/guides/hiring-onboarding-trainers",
-              "business-guides/guides/legal-risk-management",
-              "guides/pricing-your-services"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "FAQ",
-        "icon": "circle-question",
-        "groups": [
-          {
-            "group": "Frequently Asked Questions",
-            "pages": [
-              "faq/general",
-              "faq/scheduling",
-              "faq/payments",
-              "faq/getting-started"
             ]
           }
         ]
@@ -981,11 +971,11 @@
     },
     {
       "source": "/advanced/personalized-ios-app-set-up",
-      "destination": "/power-ups/personalized-app"
+      "destination": "/power-ups-setup/personalized-app-setup"
     },
     {
       "source": "/advanced/personalized-ios-app-set-up/update-apple-agreements",
-      "destination": "/power-ups/personalized-app"
+      "destination": "/power-ups-setup/personalized-app-setup"
     },
     {
       "source": "/advanced/billing-info",
