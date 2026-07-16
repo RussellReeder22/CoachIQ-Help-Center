@@ -1,0 +1,148 @@
+---
+title: "Grant Meta Ads Access to CoachIQ"
+description: "One-time setup to give CoachIQ the access needed to manage your Facebook and Instagram ad campaigns"
+sidebarTitle: "Grant Meta Ads Access"
+icon: "meta"
+keywords: ["Meta ads access", "Facebook ads", "Instagram ads", "grant ad access", "Business Manager", "ad account permissions", "Partner ID"]
+---
+
+<Info>
+**Required for**: [Done-for-You Paid Ads](/power-ups/done-for-you-paid-ads) power-up
+</Info>
+
+This guide walks you through giving CoachIQ permission to manage your Meta ad campaigns through the Done-for-You Ads power-up. The process takes about 5 minutes and uses Meta's official Partner system — no passwords or personal account access is shared.
+
+## Before you start
+
+<Note>
+**Make sure you have:**
+
+- Admin access to your [Meta Business Manager](https://business.facebook.com)
+- An **Ad Account** already created in that Business Manager
+- A **Facebook Page** connected to your business
+</Note>
+
+<Tip>
+**Don't have a Business Manager yet?** Go to [business.facebook.com](https://business.facebook.com) and click **Create Account**. You'll need to add your ad account and page before continuing.
+</Tip>
+
+<Warning>
+**Use a desktop browser.** The Meta Business Suite mobile app doesn't support partner access. You'll also need **two-factor authentication enabled** on your Facebook account — Meta may block the partner add otherwise. Turn it on at [Account Center → Password and security](https://accountscenter.facebook.com/) before starting.
+</Warning>
+
+## Grant access
+
+<Steps>
+  <Step title="Open Business Settings">
+    1. Go to [business.facebook.com](https://business.facebook.com)
+    2. In the left sidebar, click the **Settings** gear icon (bottom-left corner)
+    3. You are now in **Business Settings**
+  </Step>
+
+  <Step title="Navigate to Partners">
+    1. In the left menu, scroll down to **Accounts**
+    2. Click **Partners**
+    3. Click the blue **Add** button
+    4. Select **"Give a partner access to your assets"**
+
+    <Warning>
+    Choose **"Give a partner access to your assets"** — NOT **"Ask a partner to share their assets with you."** These are two different options and the wrong one won't work.
+    </Warning>
+  </Step>
+
+  <Step title="Enter CoachIQ's Partner ID">
+    In the field labeled **Partner Business ID**, enter:
+
+    ```
+    24353215757671699
+    ```
+
+    Click **Next** to confirm. You should see CoachIQ appear as the verified business. Click **Next** again to proceed to asset assignment.
+  </Step>
+
+  <Step title="Assign your ad account">
+    1. Under **Ad Accounts**, locate your ad account in the list
+    2. Toggle it **on**
+    3. Set the permission level to **Advertiser** (recommended) or **Admin** if your CoachIQ onboarding team specified Admin
+    4. Click **Save**
+
+    <Info>
+    If you don't see your ad account here, it may not be connected to your Business Manager yet. Go to **Accounts → Ad Accounts** and add it before continuing.
+    </Info>
+  </Step>
+
+  <Step title="Assign your Facebook Page">
+    1. Under **Pages**, locate your Facebook Page
+    2. Toggle it **on**
+    3. Enable the following permissions:
+       - **Create content**
+       - **Manage ads**
+       - **View performance**
+    4. Click **Save**
+
+    <Info>
+    Your Instagram account does not need to be added separately. As long as your Instagram is connected to the Facebook Page, CoachIQ will be able to run ads on both placements.
+    </Info>
+  </Step>
+
+  <Step title="Assign your Meta Pixel (or let us create one)">
+    The Meta Pixel is the tracking code that lives on your website and tells Meta which ad clicks turn into bookings, signups, or sales. CoachIQ needs access to your pixel so we can pull the code and install it on your site — and so your campaigns can actually optimize for results.
+
+    **If you already have a pixel:**
+
+    1. In the asset list, click **Data Sources → Pixels** (sometimes labeled **Datasets**)
+    2. Select the pixel used on your website
+    3. Toggle it **on** and grant **Manage pixel** access
+    4. Click **Save**
+
+    <Info>
+    **Don't have a pixel yet?** No action needed in this step. Once you've completed the previous steps, your CoachIQ team will create one inside your Business Manager and install the code on your website for you. The pixel stays in your account — you own it permanently.
+    </Info>
+
+    <Warning>
+    **Why this matters:** Without pixel access, CoachIQ can't install tracking on your site, can't see which ads drive conversions, and can't optimize campaigns or build lookalike audiences. Ads will still run — but they won't get smarter, and you won't know what's working.
+    </Warning>
+  </Step>
+</Steps>
+
+<Check>
+**You're done!** Once your assets are assigned, CoachIQ will automatically have access — no invitation email needs to be accepted. Your onboarding team will confirm receipt and begin campaign setup within 1 business day.
+</Check>
+
+<Note>
+**What CoachIQ sees on their end:** Only the specific assets you assigned — your ad account, Page, and pixel. They cannot see your personal profile, messages, other Pages, other ad accounts, or anything else in your Business Manager.
+</Note>
+
+## What CoachIQ can and cannot do
+
+| Can do | Cannot do |
+|---|---|
+| Create and manage ad campaigns | Delete your ad account |
+| Adjust budgets and targeting | Change account ownership |
+| Publish and pause ads | Access your personal Facebook profile |
+| View performance and analytics | Add or remove other team members |
+| Access your Page for ad-related posts | View or manage organic Page posts |
+
+## Revoking access
+
+You can remove CoachIQ's access at any time:
+
+<Steps>
+  <Step title="Open Partners">
+    Go to **Business Settings → Accounts → Partners**.
+  </Step>
+
+  <Step title="Remove CoachIQ">
+    Find CoachIQ in the list and click **Remove**.
+
+    <Note>
+    This immediately removes all access to your assigned assets.
+    </Note>
+  </Step>
+</Steps>
+
+---
+
+<Info>
+**Need help?** Reach out to your CoachIQ account manager or email [info@coachiq.io](mailto:info@coachiq.io). We're happy to walk you through this setup on a call.
+</Info>
