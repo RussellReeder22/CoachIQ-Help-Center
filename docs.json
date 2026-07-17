@@ -375,17 +375,6 @@
             ]
           },
           {
-            "group": "Business Guides",
-            "icon": "book-open",
-            "pages": [
-              "guides/getting-found-online-seo",
-              "guides/building-your-training-facility",
-              "business-guides/guides/hiring-onboarding-trainers",
-              "business-guides/guides/legal-risk-management",
-              "guides/pricing-your-services"
-            ]
-          },
-          {
             "group": "FAQ",
             "icon": "circle-question",
             "pages": [
@@ -409,6 +398,23 @@
               "power-ups/custom-feature-request",
               "power-ups/done-for-you-paid-ads",
               "power-ups/personalized-app"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Business Guides",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/index",
+              "guides/getting-found-online-seo",
+              "guides/building-your-training-facility",
+              "business-guides/guides/hiring-onboarding-trainers",
+              "business-guides/guides/legal-risk-management",
+              "guides/pricing-your-services"
             ]
           }
         ]
