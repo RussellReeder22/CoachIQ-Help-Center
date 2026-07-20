@@ -160,6 +160,7 @@
               "inbox/inbox-overview",
               "inbox/in-app-messages",
               "inbox/sms-messages",
+              "inbox/sms-credits",
               "inbox/announcements",
               "inbox/email-marketing",
               "inbox/attaching-forms-schedulers-and-products",
