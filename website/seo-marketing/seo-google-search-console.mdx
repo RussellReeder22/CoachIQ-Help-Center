@@ -1,0 +1,173 @@
+---
+title: "Get Your CoachIQ Website Indexed on Google"
+description: "Step-by-step guide to setting up Google Search Console and submitting your sitemap so Google indexes your CoachIQ website and shows it in search results."
+sidebarTitle: "Google Search Console Setup"
+icon: "magnifying-glass-chart"
+---
+
+<Info>
+  **What you'll accomplish**: Connect your CoachIQ website to Google Search Console, submit your sitemap, and get Google to index your site so it appears in search results.
+</Info>
+
+## Why this matters
+
+Google doesn't automatically know your website exists. Google Search Console is the free tool that tells Google about your site, submits your pages for indexing, and lets you monitor how your site performs in search results.
+
+Without this setup, your CoachIQ website may not appear when potential clients search for coaching services in your area.
+
+<Note>
+  **Time required**: 10-15 minutes for setup. Google typically takes 2-3 days to begin crawling and 1-2 weeks before pages start appearing in search results.
+</Note>
+
+## Before you begin
+
+You'll need:
+- A published CoachIQ website
+- A Google account (Gmail works perfectly)
+- Access to your domain settings (if using a custom domain)
+
+## Connect Google Search Console
+
+<Steps>
+  <Step title="Go to Google Search Console">
+    Open [search.google.com/search-console](https://search.google.com/search-console) and click **Start now**.
+
+    Sign in with the Google account you want to manage your website analytics with.
+  </Step>
+
+  <Step title="Add your website">
+    You'll see two options:
+    - **Domain** (left side)
+    - **URL prefix** (right side)
+
+    Choose **URL prefix**. Paste your complete website URL (for example: `https://yourcoachingname.com`) and click **Continue**.
+
+    <Tip>
+      Include `https://` at the beginning and don't add a trailing slash at the end.
+    </Tip>
+  </Step>
+
+  <Step title="Verify you own the site">
+    Google needs to confirm you own this website. You'll see several verification methods — the two most common for CoachIQ sites:
+
+    **HTML tag (recommended):**
+    1. Select the **HTML tag** method
+    2. Copy the meta tag Google provides
+    3. In your CoachIQ Website Builder, go to **Settings** → **SEO** and paste the verification code
+    4. Click **Verify** back in Google Search Console
+
+    **DNS record (if using a custom domain):**
+    1. Select the **Domain name provider** method
+    2. Copy the TXT record Google provides
+    3. Add it to your domain's DNS settings through your domain provider (GoDaddy, Namecheap, etc.)
+    4. Click **Verify** — DNS changes can take up to 24 hours to propagate
+
+    <Check>
+      Once verified, you'll see a confirmation message and be taken to your Search Console dashboard.
+    </Check>
+  </Step>
+
+  <Step title="Submit your sitemap">
+    CoachIQ automatically generates a sitemap for your website. You just need to tell Google where it is.
+
+    In the left sidebar of Search Console, click **Indexing** → **Sitemaps**.
+
+    In the "Add a new sitemap" field, enter:
+    ```
+    sitemap.xml
+    ```
+
+    Click **Submit**.
+
+    <Note>
+      Your full sitemap URL is your website address + `/sitemap.xml` (for example: `https://yourcoachingname.com/sitemap.xml`). CoachIQ keeps this updated automatically whenever you change your site.
+    </Note>
+  </Step>
+
+  <Step title="Confirm the submission">
+    Refresh the page and check under "Submitted sitemaps". You should see:
+    - **Success** — Google accepted your sitemap
+    - **Pending** — Google is still processing (normal)
+
+    If you see errors, double-check that you entered `sitemap.xml` correctly.
+
+    <Warning>
+      It takes 2-3 days for Google to begin crawling and 1-2 weeks for pages to start appearing in search results. This is completely normal — don't resubmit repeatedly.
+    </Warning>
+  </Step>
+</Steps>
+
+## Check your indexing status
+
+After a few days, come back to Search Console to confirm Google is indexing your pages.
+
+**Pages report** (left sidebar → Indexing → Pages):
+- See how many pages Google has indexed
+- Identify pages that aren't indexed and why
+- Confirm your most important pages are showing up
+
+**URL Inspection tool** (top search bar in Search Console):
+- Paste any page URL from your site to check its index status
+- Request indexing for individual pages if they haven't been picked up yet
+- See when Google last crawled the page
+
+<Tip>
+  If an important page isn't indexed after 2 weeks, use the URL Inspection tool to manually request indexing for that specific page.
+</Tip>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Verification keeps failing">
+    **HTML tag method**: Make sure you pasted the full meta tag (starting with `<meta`) into your CoachIQ SEO settings, then saved before clicking Verify.
+
+    **DNS method**: DNS changes can take up to 24 hours. Wait and retry. Double-check the TXT record was added correctly with your domain provider.
+
+    If neither works, [contact CoachIQ support](mailto:info@coachiq.io) with a screenshot of the error.
+  </Accordion>
+
+  <Accordion title="Sitemap shows errors or 'Couldn't fetch'">
+    1. Verify your CoachIQ website is published (not in draft mode)
+    2. Check that your domain is properly connected and active
+    3. Make sure you entered just `sitemap.xml`, not the full URL
+    4. If you recently connected a custom domain, wait 24 hours for DNS to propagate
+  </Accordion>
+
+  <Accordion title="No pages are being indexed after a week">
+    - Confirm your sitemap status shows **Success**
+    - Check that your site has published content (not just a coming soon page)
+    - Use the URL Inspection tool to manually request indexing on your homepage
+    - Share your website URL on social media or other sites — external links help Google discover your site faster
+  </Accordion>
+
+  <Accordion title="How long until I see results in Google search?">
+    After submitting your sitemap, expect:
+    - **2-3 days**: Google begins crawling your site
+    - **1-2 weeks**: Pages start appearing in search results
+    - **4-12 weeks**: Rankings start improving as Google builds trust in your site
+
+    New websites take longer. Consistently publishing quality content speeds this up.
+  </Accordion>
+
+  <Accordion title="Do I need to resubmit my sitemap when I update my site?">
+    No. CoachIQ automatically updates your sitemap whenever you make changes. Google re-checks it on its own.
+
+    If you've made major changes and want them indexed faster, use the URL Inspection tool to request re-crawling on specific pages.
+  </Accordion>
+
+  <Accordion title="What's the difference between Domain and URL prefix verification?">
+    **URL prefix** (recommended): Easier to set up, works immediately with CoachIQ sites, tracks one version of your site (`https://yoursite.com`).
+
+    **Domain**: Tracks all versions (www, non-www, http, https) in one property. Requires DNS record changes. More complex but cleaner long-term.
+
+    For most coaches, URL prefix is the right choice.
+  </Accordion>
+</AccordionGroup>
+
+## Related articles
+
+- [SEO Basics for Your CoachIQ Website](/website/seo-marketing/website-seo-basics)
+- [Manage Your Sitemap](/website/seo-marketing/sitemap-builder)
+- [Set Up Google My Business](/website/seo-marketing/google-my-business)
+- [Meta Titles & Descriptions](/website/seo-marketing/meta-titles-descriptions)
+- [Connect Your Custom Domain](/website/domain-setup/domain-setup)

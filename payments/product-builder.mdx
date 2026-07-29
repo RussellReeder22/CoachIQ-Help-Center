@@ -3,6 +3,7 @@ title: "Product Builder: Complete Reference"
 description: "Field-by-field guide to every option in the CoachIQ Product Builder"
 sidebarTitle: "Product Builder Reference"
 icon: "book"
+keywords: ["product builder", "create product", "product settings", "product options", "price", "credits", "confirmation page", "archive product", "hide product", "deactivate product"]
 ---
 
 <Info>
@@ -14,7 +15,7 @@ icon: "book"
 The Product Builder has 7 sections. Only Section 1 is required. Configure additional sections based on your needs.
 
 <Frame>
-  ![Product Builder Pn](/images/product-builder.png)
+  ![CoachIQ Product Builder interface showing all configuration sections](/images/product-builder.png)
 </Frame>
 
 ## Section 1: Product Details
@@ -117,17 +118,17 @@ Configure pricing frequency and processing fees.
   <Accordion title="Payment Frequency">
     **Subscription products only**
 
-    How often to charge the client's card.
+    Define how often payments occur and credits are issued. Use the **Payment Every** field to set a custom interval: enter a number and select the period (Day, Week, Month, or Year).
 
-    **Options:**
+    **Common setups:**
 
-    - Monthly (most common)
-    - Quarterly (every 3 months)
-    - Semi-annually (every 6 months)
-    - Annually (once per year)
+    - Every 1 Month — monthly billing (most common)
+    - Every 3 Months — quarterly billing
+    - Every 6 Months — semi-annual billing
+    - Every 1 Year — annual billing
 
     <Tip>
-      Monthly subscriptions create the most predictable recurring revenue and are easier for clients to commit to.
+      Monthly billing creates the most predictable recurring revenue and is easiest for clients to commit to.
     </Tip>
   </Accordion>
   <Accordion title="Processing Fee">
@@ -158,6 +159,95 @@ Configure pricing frequency and processing fees.
     <Warning>
       Some states restrict credit card surcharges. Check local regulations before passing fees to clients.
     </Warning>
+  </Accordion>
+  <Accordion title="Add an initial down payment">
+    **Subscription products only**
+
+    Charge a one-time amount on the first invoice in addition to the recurring price.
+
+    **OFF (default):** Client is charged the recurring price starting on day one.
+
+    **ON:** A separate one-time charge is added to the first invoice only. All subsequent invoices charge the recurring price.
+
+    **Use cases:**
+
+    - Setup or enrollment fees
+    - Commitment deposits
+    - Registration fees
+
+    <Tip>
+      Example: $50 setup fee + $200/month recurring. The client pays $250 on day one, then $200 each month after.
+    </Tip>
+  </Accordion>
+  <Accordion title="Enable access codes">
+    **All product types**
+
+    Toggle ON to allow clients to redeem access codes at checkout to unlock this product. Configure the actual codes in [Section 7: Access Codes](#section-7-access-codes).
+  </Accordion>
+  <Accordion title="Subscription length">
+    **Subscription products only**
+
+    Define when the subscription ends.
+
+    **Ongoing (no end)** (default): Subscription continues until the client or coach cancels manually.
+
+    **End after a number of billing cycles:** Subscription automatically cancels after a set number of payments. Example: set to 12 for an annual commitment billed monthly.
+
+    **End on a specific date:** Subscription automatically cancels on a chosen calendar date. Example: set to June 30 for a season-based membership.
+
+    <Tip>
+      Use "End after billing cycles" for finite training packages sold as subscriptions, such as a 12-week program billed monthly.
+    </Tip>
+  </Accordion>
+  <Accordion title="Schedule charges for later">
+    **All product types**
+
+    Collect the purchase now but delay the first charge to a future date. Turn the toggle ON and set a **First charge date** (MM/DD/YYYY).
+
+    **OFF (default):** The client is charged at checkout.
+
+    **ON:** The client enters their card and completes checkout now. The card is saved and automatically charged on the First charge date — no manual action needed.
+
+    **Use cases:**
+
+    - Open registration for a season or camp that bills on a set start date
+    - Locking in sign-ups now while charging everyone on the same future day
+
+    <Tip>
+      Example: Open summer-program registration in April with a First charge date of June 1 — parents register now and are charged automatically on June 1.
+    </Tip>
+  </Accordion>
+  <Accordion title="Enable free trial">
+    **All product types**
+
+    Give clients a trial period before any charge. Turn the toggle ON and set the **Trial period (days)** (for example, 7).
+
+    **OFF (default):** Billing begins at checkout.
+
+    **ON:** The client isn't charged during the trial. The first payment processes when the trial period ends, unless they cancel before then.
+
+    **Use cases:**
+
+    - "First week free" memberships
+    - Letting athletes try a program before committing
+
+    For subscriptions, the trial shows as a **Trialing** status on the client's [Subscriptions tab](/people/client-profiles/client-profiles-subscriptions).
+  </Accordion>
+  <Accordion title="Show payment methods (collect a card on file)">
+    **Free (\$0.00) products**
+
+    When a product's price is **\$0.00**, the Payment section shows a **Show payment methods** toggle. Turn it ON to require buyers to enter a card at checkout and save it to their account — **without charging them today**. (Enabling it mirrors the product into Stripe so the card can be charged later.)
+
+    **Collect a card on file:**
+
+    1. Create a product and set the **Price** to **\$0.00**.
+    2. Turn on **Show payment methods**.
+    3. Share or attach the product. At checkout, the buyer enters a card, which is saved to their profile — no charge is made.
+
+    **Use cases:**
+
+    - Getting parents' cards on file before a season or program starts
+    - Securing a card for future manual or scheduled charges
   </Accordion>
 </AccordionGroup>
 
@@ -367,21 +457,25 @@ Special configurations for specific business needs.
 
     **OFF (default):** No terms required at checkout
 
-    **ON:** Checkbox with link to terms appears at checkout
+    **ON:** Checkbox with link to terms appears at checkout. Client must check the box to complete purchase.
 
     **Configure:**
 
-    - Terms text (displays inline)
-    - Terms URL (links to external page)
+    - Toggle **Require Agreement to Terms** to ON
+    - Enter your **Agreement Link** (URL to your terms page)
 
-    **Best practices:**
+    <Frame>
+      ![Product builder terms settings](/images/payments-terms-product-builder-settings.png)
+    </Frame>
 
-    - Include liability waivers
-    - Cancellation policies
-    - Refund policies
-    - Usage restrictions
+    **Common uses:**
 
-    Client must check the box to complete purchase.
+    - Cancellation and refund policies
+    - Liability waivers
+    - No-show policies
+    - Service agreements
+
+    [Full guide to checkout terms & waivers →](/payments/checkout-terms-waivers)
   </Accordion>
 </AccordionGroup>
 
@@ -442,7 +536,28 @@ Special configurations for specific business needs.
   </Accordion>
 </AccordionGroup>
 
+## Archiving products
+
+Products don't have an Active/Inactive toggle like schedulers. Instead, you control visibility by where you add products, and use Archive to completely disable a product.
+
+**To archive a product:**
+1. Go to **Payments → Products**
+2. Click on the product row
+3. Select **Archive Product**
+
+**What archiving does:**
+- Disables the ability to purchase the product — it can't be bought anywhere
+- Does NOT remove the product from the Athlete Portal or other places it's listed — remove it manually from any pages if you want to hide it
+- Preserves all data and transaction history
+- Doesn't affect existing subscriptions or credits
+- Can be reversed by unarchiving
+
+<Note>
+**Set up now, launch later**: You don't need to archive products to hide them. Products are invisible to athletes until you add them to the Athlete Portal, attach them to schedulers/forms, or share the direct link. See [Products Overview](/payments/product-overview) for the full visibility model.
+</Note>
+
 ## Related articles
 
 - [Product Types Explained](/payments/product-types)
 - [Credits & Products](/payments/credits-products)
+- [Products Overview](/payments/product-overview) - Understand product visibility and archiving

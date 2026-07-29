@@ -1,0 +1,138 @@
+---
+title: "Set Up Your Personalized App"
+description: "Everything you need to get your custom-branded iOS app built, approved, and live on the App Store"
+sidebarTitle: "Personalized App Setup"
+icon: "mobile-screen"
+keywords: ["personalized app setup", "branded app setup", "apple developer", "app store connect", "invite coachiq", "duns number", "app enrollment"]
+---
+
+Once you've requested your Personalized App, this guide walks you through everything needed to get it built, approved, and live on the App Store. If you haven't requested one yet, start with the [Personalized App](/power-ups/personalized-app) overview.
+
+<Info>
+  **How it works**: You set up an Apple Developer account and invite CoachIQ to it. From there, CoachIQ builds, submits, and maintains your branded app.
+</Info>
+
+## What You'll Need
+
+Before getting started, have these ready:
+
+- A credit card for the Apple Developer Program fee ($99/year, paid directly to Apple)
+- Your business's legal name and D-U-N-S number (required for Organization enrollment)
+- Your coaching brand assets: high-resolution logo, brand colors (hex codes), app icon
+- Access to your business email
+
+## Setup Process
+
+<Steps>
+  <Step title="Request the Personalized App">
+    In your CoachIQ admin, go to **Power-Ups** in the bottom-left sidebar. Find the **Personalized App** card and click **Request**.
+
+    <Frame caption="Request the Personalized App from the Power-Ups page in your admin">
+      ![CoachIQ admin Power-Ups page with Personalized App Request button highlighted](/images/power-up-request-app.png)
+    </Frame>
+
+    <Tip>
+      Have your brand colors (hex codes), high-resolution logo, and app store description ready before submitting your request.
+    </Tip>
+  </Step>
+  <Step title="Create your Apple Developer account">
+    You'll need an Apple Developer account enrolled as an **Organization** (not Individual) to publish your branded app.
+
+    ### Enrollment steps
+
+    1. **Create a free Apple Developer account**: Go to [developer.apple.com](https://developer.apple.com/), click **Account**, and sign in with your Apple ID
+
+    2. **Enroll in the program** ($99/year): Click **Join Apple Developer Program** → **Enroll** → **Start Enrollment**
+
+    3. **Select Organization** as your entity type: Enter your company information and submit your application
+
+    4. **Wait for Apple's approval**: Apple will verify your information and send an email with your enrollment status
+
+    5. **Complete your enrollment**: After approval, log in to [Apple Developer](https://developer.apple.com/) and access [App Store Connect](https://appstoreconnect.apple.com/)
+
+    <Warning>
+      **Important**: Enable auto-renewal for your Apple Developer membership to prevent app interruptions. Complete any verification steps Apple requests after enrollment.
+    </Warning>
+
+    <Note>
+      Need detailed guidance? Review Apple's official [Enrolling as an Organization](https://developer.apple.com/support/app-account/#organization) guide before starting.
+    </Note>
+  </Step>
+  <Step title="Invite CoachIQ to your Apple Developer account">
+    Grant CoachIQ the access needed to build and publish your app.
+
+    ### How to send the invitation
+
+    1. Sign in to [developer.apple.com](https://developer.apple.com/) with your Apple ID
+
+    2. Click the **Account** tab, then select **Users and Access** from the sidebar
+
+    3. Click the **+** button to add a new user
+
+    4. Enter the CoachIQ developer email: **[dev@coachiq.io](mailto:dev@coachiq.io)**
+
+    5. Configure the following permissions:
+       - **Role**: Admin
+       - **Access to Certificates, Identifiers & Profiles**: ✓ Enabled
+
+    6. Click **Invite** to send the invitation
+
+    <Check>
+      **Invitation sent!** CoachIQ will receive an email from Apple and accept the invitation to begin building your app.
+    </Check>
+  </Step>
+  <Step title="Provide your brand assets">
+    Our team will reach out to collect:
+
+    - Your logo (high-resolution)
+    - Brand colors (hex codes if you have them)
+    - Business name as you want it to appear
+    - A brief description of your business
+
+    We'll handle the rest, including designing your App Store screenshots and listing.
+  </Step>
+</Steps>
+
+## What Happens Next
+
+After you complete the steps above:
+
+1. **We build your app** — Our team creates your branded iOS app using your submitted assets
+2. **You review the test version** — We'll push a test build directly to your device for approval
+3. **App Store submission** — Once you approve, we submit your app to Apple for review
+4. **Launch** — After Apple approves (typically 1–3 days), your app goes live on the App Store
+
+<Check>
+  **Timeline**: The complete process takes approximately 30 days from request to live app.
+</Check>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="Why do I need an Organization account instead of Individual?">
+    Organization accounts allow you to transfer app ownership, add team members, and present your business professionally in the App Store. Individual accounts are tied to a single person and have limitations for business use.
+  </Accordion>
+  <Accordion title="What is a D-U-N-S number and how do I get one?">
+    A D-U-N-S number is a unique nine-digit identifier for businesses issued by Dun & Bradstreet. Apple requires this for Organization enrollments. You can [request a free D-U-N-S number](https://developer.apple.com/support/D-U-N-S/) through Apple's lookup tool if you don't have one.
+  </Accordion>
+  <Accordion title="How do I check if my invitation to CoachIQ is pending?">
+    Go to **Users and Access** in your Apple Developer account. If the status shows "Pending" next to [dev@coachiq.io](mailto:dev@coachiq.io), the invite hasn't been accepted yet. Allow 1–2 business days for our team to accept.
+  </Accordion>
+  <Accordion title="What happens if my Apple Developer membership expires?">
+    Your app will be removed from the App Store until you renew. Enable auto-renewal in your Apple Developer account to prevent interruptions.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Apple rejected my Organization enrollment">
+    Common reasons include: mismatched business name with D-U-N-S records, incomplete business registration, or missing verification documents. Contact [Apple Developer Support](https://developer.apple.com/contact/) for specific guidance on your rejection.
+  </Accordion>
+  <Accordion title="I can't find the Users and Access section">
+    Ensure you're signed in at [developer.apple.com](https://developer.apple.com/) (not App Store Connect) and that your enrollment is fully approved. The Users and Access option only appears after your membership is active.
+  </Accordion>
+  <Accordion title="The invitation email to CoachIQ bounced">
+    Double-check you entered **[dev@coachiq.io](mailto:dev@coachiq.io)** exactly. If the issue persists, contact CoachIQ support and we'll provide an alternative email address.
+  </Accordion>
+</AccordionGroup>

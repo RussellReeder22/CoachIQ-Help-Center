@@ -3,6 +3,7 @@ title: "Creating & Customizing Forms"
 description: "Build professional intake forms, registrations, and waivers using templates or from scratch — complete field type reference included."
 sidebarTitle: "Creating Forms"
 icon: "hammer"
+keywords: ["create form", "build form", "form builder", "form fields", "custom form", "form templates", "add fields", "edit form"]
 ---
 
 This guide covers everything you need to build forms in CoachIQ — from quick template setups to fully custom builds.
@@ -60,7 +61,7 @@ Fields are organized into 5 categories. Click a category icon in the center pane
 
 ### Contact Info fields
 
-Pre-built fields designed for athlete and parent data. When you require login/signup (in Connections), these fields sync to the athlete's profile in People.
+Pre-built fields designed for athlete and parent data. When you require login/signup (in Connections), these fields sync to the athlete's profile in [People](/people/overview).
 
 | Field              | What it captures           |
 | ------------------ | -------------------------- |
@@ -71,10 +72,21 @@ Pre-built fields designed for athlete and parent data. When you require login/si
 | Athlete Age        | Athlete's age              |
 | Parent First Name  | Parent/guardian first name |
 | Parent Last Name   | Parent/guardian last name  |
+| Custom Field       | Maps to one of your org's People custom fields (you pick which) |
 
 <Note>
   **Profile sync only works when Login/Signup is required.** Without it, Contact Info fields capture data but don't automatically connect to People profiles.
 </Note>
+
+#### Custom Field — map to your People custom fields
+
+The **Custom Field** option (at the bottom of the **Contact Info** category) lets a form write to your organization's **People custom fields** — the same custom fields on an athlete's profile in [People](/people/overview), like "Started Training" or "Child Name".
+
+1. In the form builder, open the **Contact Info** category and select **Custom Field**.
+2. In the **Custom Field** dropdown, choose which custom field to map to (e.g., "Child Name").
+3. Toggle **Required?** if the answer is mandatory.
+
+With **Login/Signup required**, the athlete's answer writes straight to that custom field on their People profile — so an onboarding form can fully populate a new athlete's custom fields, the same way the waiver field connects to the Waivers tab.
 
 ### General fields
 
@@ -235,5 +247,22 @@ Complete
   </Card>
   <Card title="Share Your Forms" icon="share" href="/forms/sharing-forms">
     Get your link, embed on your website, and configure completion actions
+  </Card>
+</CardGroup>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Product Overview" icon="credit-card" href="/payments/product-overview">
+    Understand the products you can connect to forms for payment collection
+  </Card>
+  <Card title="Creating Your First Scheduler" icon="calendar" href="/scheduling/creating-your-first-scheduler">
+    Build a scheduler to embed in your form flow for session bookings
+  </Card>
+  <Card title="What Are Automations?" icon="bolt" href="/automations/what-are-automations">
+    Trigger automated actions when forms are submitted
+  </Card>
+  <Card title="People Overview" icon="users" href="/people/overview">
+    See how form submissions connect to athlete profiles when login is required
   </Card>
 </CardGroup>

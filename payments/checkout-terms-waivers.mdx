@@ -1,0 +1,222 @@
+---
+title: "Waivers: Create, Require & Track Compliance"
+description: "Create liability waivers, require agreement at checkout or on forms, and track which clients have accepted"
+sidebarTitle: "Waivers & Terms"
+icon: "file-contract"
+keywords: ["waivers", "liability waiver", "terms and conditions", "checkout terms", "require agreement", "compliance report", "waiver tracking", "acceptance tracking"]
+---
+
+<Info>
+  **Where to find this**: Tools → Waivers
+</Info>
+
+CoachIQ's waiver system lets you create waivers, attach them to products and forms, and track exactly who has accepted — all from one place.
+
+## The waivers dashboard
+
+Navigate to **Tools → Waivers** to see all your waivers at a glance.
+
+<Frame>
+  ![Waivers dashboard showing waiver list with status, linked products, and acceptance count](/images/waivers-dashboard.png)
+</Frame>
+
+The dashboard shows:
+
+| Column | What it shows |
+|--------|---------------|
+| **Waiver** | The waiver name |
+| **Status** | Active or Archived |
+| **Products** | Number of products requiring this waiver |
+| **Acceptance** | How many clients have accepted vs. total |
+| **Created** | Date the waiver was created |
+
+---
+
+## Create a waiver
+
+<Steps>
+  <Step title="Go to Tools → Waivers">
+    Click **+ Create Waiver** in the top-right corner.
+  </Step>
+
+  <Step title="Fill in the waiver details">
+    - **Label** — Give your waiver a clear name (e.g., "Liability Waiver", "Cancellation Policy")
+    - **URL** — Link to the full waiver document. This can be a page on your CoachIQ website, a Google Drive link, a PDF, or any public URL.
+
+    <Frame>
+      ![Edit Waiver modal showing label, URL, status, and linked products](/images/waivers-edit-waiver.png)
+    </Frame>
+
+    <Tip>
+      Host your waiver on your CoachIQ website using [legal page templates](/website/pages-navigation/legal-pages) — it keeps everything in one place and looks professional.
+    </Tip>
+  </Step>
+
+  <Step title="Save the waiver">
+    Click **Save Changes**. Your waiver is now active and ready to attach to products or forms.
+  </Step>
+</Steps>
+
+---
+
+## Require a waiver at checkout
+
+Attach a waiver to any product so clients must agree before purchasing.
+
+<Steps>
+  <Step title="Open the product">
+    Go to **Payments → Products** and select the product you want to add a waiver to.
+  </Step>
+
+  <Step title="Go to Advanced settings">
+    Click **Advanced** in the left sidebar of the product editor.
+  </Step>
+
+  <Step title="Toggle on Require Agreement to Terms">
+    Enable the toggle, then select your waiver from the dropdown. You can also search for existing waivers or create a new one directly from here.
+
+    <Frame>
+      ![Product Advanced tab showing Require Agreement to Terms toggle with linked waiver](/images/waivers-product-terms.png)
+    </Frame>
+  </Step>
+
+  <Step title="Save the product">
+    Click **Update Subscription** (or **Create**) to save.
+
+    <Check>
+      **Done!** Clients will now see a checkbox at checkout: "I agree to the [Waiver Name]." They must check it before they can purchase.
+    </Check>
+  </Step>
+</Steps>
+
+<Frame>
+  ![Checkout page showing the mandatory "I agree to the Terms and Conditions (view)" checkbox before purchasing](/images/waivers-checkout-terms.png)
+</Frame>
+
+When a client clicks the waiver name at checkout, it opens the URL you set — so they can read the full document before agreeing.
+
+---
+
+## Add a waiver to a form
+
+You can also require waiver acceptance on any form — useful for registration forms, intake forms, or onboarding flows.
+
+<Steps>
+  <Step title="Open your form">
+    Go to **Tools → Forms** and select the form you want to edit.
+  </Step>
+
+  <Step title="Add a Waiver component">
+    In the form builder, click the **General** section in the left panel and select **Waiver** from the component list.
+
+    <Frame>
+      ![Form builder showing the Waiver component option in the General section](/images/waivers-form-builder.png)
+    </Frame>
+  </Step>
+
+  <Step title="Select your waiver">
+    Choose the waiver you want to require. The form will display a checkbox with a link to the waiver document.
+  </Step>
+
+  <Step title="Save the form">
+    Click **Update Form** to save.
+
+    <Check>
+      **Done!** Anyone submitting this form must accept the waiver before completing it.
+    </Check>
+  </Step>
+</Steps>
+
+---
+
+## Track waiver compliance
+
+The compliance report shows exactly who has accepted each waiver and who hasn't — so you always know where you stand.
+
+<Steps>
+  <Step title="Open the compliance report">
+    Go to **Tools → Waivers** and click on the acceptance count (e.g., "1/200") for any waiver.
+  </Step>
+
+  <Step title="Review acceptance status">
+    The compliance report shows:
+
+    - **All** — Every client in your system
+    - **Accepted** — Clients who have agreed to the waiver (with the date)
+    - **Missing** — Clients who have not yet accepted
+
+    <Frame>
+      ![Compliance Report showing accepted vs missing clients with filter tabs and export option](/images/waivers-compliance-report.png)
+    </Frame>
+  </Step>
+
+  <Step title="Export the report">
+    Click **Export CSV** to download the full compliance list. Use this for your records, insurance requirements, or audits.
+  </Step>
+</Steps>
+
+<Tip>
+  Filter by **Missing** to quickly identify clients who still need to accept. You can then send them a message through the Inbox with a link to the product or form that includes the waiver.
+</Tip>
+
+---
+
+## Edit or archive a waiver
+
+Click on any waiver in the dashboard to edit it. You can update:
+
+- **Label** — Rename the waiver
+- **URL** — Point to an updated document
+- **Status** — Set to Active or Archived
+- **Linked Products** — See and manage which products require this waiver
+
+Click **Archive** to deactivate a waiver without deleting it. Archived waivers are removed from checkout and forms but their acceptance records are preserved.
+
+---
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I use different waivers for different products?">
+    Yes. Each product can require its own waiver. For example, use a liability waiver for training sessions and a cancellation policy for memberships.
+  </Accordion>
+
+  <Accordion title="What happens when a client agrees to a waiver?">
+    The system records who accepted, when they accepted, and how (via purchase or via form). This shows up in the compliance report and on the client's activity feed.
+  </Accordion>
+
+  <Accordion title="Can clients skip the waiver checkbox?">
+    No. When a waiver is required, the checkbox is mandatory. Clients cannot complete the purchase or submit the form without checking it.
+  </Accordion>
+
+  <Accordion title="What URL should I use for my waiver?">
+    Any publicly accessible link works — a page on your CoachIQ website, a Google Doc, a PDF hosted on Google Drive, or an external website. Just make sure the link works for anyone who clicks it.
+  </Accordion>
+
+  <Accordion title="Does this work with guest checkout?">
+    Yes. The waiver checkbox appears for both logged-in clients and guest checkout.
+  </Accordion>
+
+  <Accordion title="Can I see waiver acceptance on a specific client?">
+    Yes. Check the client's activity feed in **People → Client Profile** to see when they accepted and through which product or form.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Legal Pages" icon="scale-balanced" href="/website/pages-navigation/legal-pages">
+    Create terms, privacy policy, and disclaimers on your website
+  </Card>
+  <Card title="Product Builder" icon="box" href="/payments/product-builder">
+    All product settings including Advanced options
+  </Card>
+  <Card title="Creating Forms" icon="rectangle-list" href="/forms/creating-forms">
+    Build forms with waiver components and more
+  </Card>
+  <Card title="Forms Overview" icon="file-lines" href="/forms/overview">
+    Everything you can do with CoachIQ forms
+  </Card>
+</CardGroup>

@@ -1,0 +1,193 @@
+---
+title: "Integrate CoachIQ with Zapier"
+description: "Connect CoachIQ to thousands of apps — push new athletes, bookings, purchases, and form submissions to Google Sheets, Airtable, your CRM, and more."
+sidebarTitle: "Zapier Integration"
+icon: "bolt"
+---
+
+Connect CoachIQ to the tools you already use. Zapier lets you send data out of CoachIQ automatically whenever something happens — a new athlete signs up, a session is booked, a form is submitted — without any code.
+
+<Info>
+**Where to find this:** **Settings** → **Developer** → **API Keys**
+</Info>
+
+## One-time setup
+
+<Steps>
+  <Step title="Add CoachIQ to your Zapier account">
+    The CoachIQ Zapier app is private and won't appear if you search Zapier's app directory. You must accept the invite link first.
+
+    Open the link below while signed in to Zapier, then click **Accept Invite & Build a Zap**:
+
+    [Accept the CoachIQ Zapier invite →](https://zapier.com/developer/public-invite/208528/e1b120aaaf4d5eb365a91028eb3bcfc2/)
+
+    CoachIQ is now available when you search for an app inside any Zap. You only do this once per Zapier account.
+  </Step>
+
+  <Step title="Get your Group ID and API Key from CoachIQ">
+    In CoachIQ, go to **Settings** → **Developer** → **API Keys**.
+
+    **Group ID:** Click the **Copy** button next to your Group ID and save it somewhere handy.
+
+    <Warning>
+    The API Keys page shows **two** copy buttons — **Org ID** and **Group ID**. Zapier requires the **Group ID**. Copying the Org ID by mistake will cause an "Unauthorized" error when connecting.
+    </Warning>
+
+    **API Key:** Click **+ New API Key**, give it a name (e.g. "Zapier"), then copy the key immediately.
+
+    <Info>
+    Your API Key is **128 characters long** and is shown **only once** — when you leave the page, it's gone. If you lose it, create a new one. You can have up to 10 keys per group.
+    </Info>
+  </Step>
+
+  <Step title="Connect CoachIQ in Zapier">
+    In Zapier, start a new Zap and add **CoachIQ** as the trigger or action app. When Zapier asks you to connect an account, a small window opens with two fields:
+
+    | Field | What to paste |
+    |-------|--------------|
+    | **API Key** | The 128-character key you just copied |
+    | **Group ID** | The Group ID from Settings → Developer → API Keys |
+
+    Click **Yes, Continue**. Zapier saves this as a reusable CoachIQ connection — you won't need to enter these again for future Zaps.
+  </Step>
+
+  <Step title="Test the connection">
+    Zapier automatically runs an authorization check. A green check means you're connected. If you see **Unauthorized**, re-copy both values from CoachIQ and try again — the most common cause is accidentally pasting the Org ID instead of the Group ID.
+  </Step>
+</Steps>
+
+---
+
+## Available triggers
+
+CoachIQ triggers fire in real time using webhooks. **The Zap must be turned ON to receive events** — events don't queue up while a Zap is off, and they don't backfill past activity. The **Test trigger** button in Zapier pulls a sample record for building purposes only; real automation starts when you publish and turn the Zap on.
+
+| Trigger | When it fires | Key fields available |
+|---------|---------------|----------------------|
+| **New User** | A new athlete creates an account or is added to your group | email, phone, first name, last name |
+| **New Form** | A form is submitted | form name, each field's question and response, submitter info |
+| **New Purchase** | A product or subscription is purchased | product name, price, order amount, how it was bought |
+| **New Booking** | A session is booked | session title, date, start/end time, time zone, notes |
+
+**Two things to know about trigger data:**
+
+- **Guest submissions and anonymous purchases:** for **New Form** and **New Purchase**, the submitter or buyer may not be a logged-in user. In those cases, user fields (email, phone, name) come through empty. Build your Zap to handle this — don't assume user data is always present.
+- **Money values are text, not numbers:** purchase amounts come through as strings like `"49.99"`. If a later step needs to do math, add a Zapier **Formatter** step to convert them.
+
+---
+
+## Available actions
+
+Use these to create records or send messages inside CoachIQ from an external trigger.
+
+| Action | What it does | Required | Notes |
+|--------|--------------|----------|-------|
+| **Create User** | Adds a new athlete to your group | Email (valid format) | If that email already exists, returns the existing athlete — no duplicate is created |
+| **Send an In-App Message** | Sends an in-app message to one athlete | Message + email or phone | Optional: `From Email` — must be an admin's email in your group |
+| **Send an SMS Message** | Texts one athlete | Message + email or phone | Max 600 characters; aim for 160 for single-segment delivery |
+| **Send an Announcement** | Posts an announcement to one athlete or everyone | Message | Set **Send to everyone → yes** to broadcast to the whole group |
+
+**A note on the "From Email" field:** this sets who the message appears to be from in the athlete's inbox. It must be the email address of an admin in your group. If you leave it blank, CoachIQ sends from your most-recently-created admin automatically.
+
+---
+
+## Common use cases
+
+| Goal | Trigger | Action |
+|------|---------|--------|
+| Log new athletes in a spreadsheet | New User | Google Sheets: Create Row |
+| Sync bookings to Airtable | New Booking | Airtable: Create Record |
+| Add buyers to an email list | New Purchase | Mailchimp: Add/Update Subscriber |
+| Alert yourself when a form comes in | New Form | CoachIQ: Send an SMS Message (to your own number) |
+| Add external leads into CoachIQ | Typeform / Google Form: New Submission | CoachIQ: Create User |
+
+---
+
+## Worked examples
+
+### New athlete → send a welcome in-app message
+
+1. **Trigger:** CoachIQ → **New User**. Connect your account, click **Test trigger** to pull a sample.
+2. **Action:** CoachIQ → **Send an In-App Message**.
+   - **Email:** map the **Email** field from the New User trigger.
+   - **Message:** `Welcome! Reply here any time you have a question.`
+   - **From Email** (optional): your admin email address.
+3. Click **Test** — you should see `In-App message sent!` in the response.
+4. Click **Publish**, then toggle the Zap **On**.
+
+### New form submission → text yourself
+
+1. **Trigger:** CoachIQ → **New Form**. Test it to pull a recent submission.
+2. **Action:** CoachIQ → **Send an SMS Message**.
+   - **Phone:** type your own phone number directly — this alert goes to you, not the submitter.
+   - **Message:** `New intake form just came in.` (keep it under 160 characters).
+3. Test, confirm `SMS sent!`, then turn the Zap **On**.
+
+> Because forms can be submitted by guests with no email on file, send this alert to your own number rather than mapping the submitter's contact info.
+
+### External lead form → add athlete to CoachIQ
+
+1. **Trigger:** your other app (e.g. **Google Sheets → New Spreadsheet Row** or **Typeform → New Submission**). Test it.
+2. **Action:** CoachIQ → **Create User**.
+   - **Email** (required): map the lead's email from your trigger.
+   - **First Name / Last Name / Phone:** map them if you have them (all optional).
+3. Test — you'll see the athlete's record returned. If that email is already in your group, CoachIQ returns the existing athlete instead of creating a duplicate. That's expected behavior.
+4. Turn the Zap **On**.
+
+---
+
+<AccordionGroup>
+  <Accordion title="CoachIQ doesn't appear when I search Zapier">
+    The CoachIQ integration is private and won't show up in Zapier's public app directory. Open the [private invite link](https://zapier.com/developer/public-invite/208528/e1b120aaaf4d5eb365a91028eb3bcfc2/), accept it, and CoachIQ will be available when building Zaps.
+  </Accordion>
+
+  <Accordion title="Connection test fails with 'Unauthorized'">
+    This almost always means the wrong value was pasted into one of the fields. The most common cause: copying the **Org ID** instead of the **Group ID** from the API Keys page — they sit next to each other with similar-looking copy buttons.
+
+    Re-open **Settings** → **Developer** → **API Keys**, copy the **Group ID** specifically, then reconnect in Zapier.
+  </Accordion>
+
+  <Accordion title="My API Key looks too short or the connection won't save">
+    A real CoachIQ API Key is 128 characters. If Zapier rejects it for being too short, you likely pasted a partial key. Re-copy the full key from CoachIQ. If you can no longer see the key (it's shown only once), create a **+ New API Key** and use the new one.
+  </Accordion>
+
+  <Accordion title="My Zap isn't firing">
+    Check these in order:
+
+    1. **Is the Zap turned ON?** CoachIQ triggers only deliver events to Zaps that are actively on. A Zap in draft or toggled off won't receive anything.
+    2. **Did the event happen after you turned it on?** Triggers fire on new events going forward — they don't backfill past activity.
+    3. **Did the right event occur?** A New Form Zap only fires on form submissions, New Booking only on bookings, etc.
+    4. **Check Zapier's Zap History.** Open the Zap and look at its run history to see if it received the event and whether a later step errored.
+  </Accordion>
+
+  <Accordion title="'A user is already connected to your group with that email'">
+    This is not a failure. When you use **Create User** and that email already exists in your group, CoachIQ returns the existing athlete's record instead of creating a duplicate. Your later steps still have a user to work with — just let it pass through.
+  </Accordion>
+
+  <Accordion title="SMS message is being rejected for length">
+    SMS messages are capped at **600 characters**. If you're hitting that limit, shorten the message. For the most reliable delivery, keep texts to **160 characters or fewer** — that's a single text segment. If you need to send more text, use **Send an In-App Message** or **Send an Announcement** instead (both allow up to 15,000 characters).
+  </Accordion>
+
+  <Accordion title="Can I use one API Key for multiple Zaps?">
+    Yes — one API Key can authenticate any number of Zaps. If you want the ability to revoke access to a specific Zap without affecting others, create a separate key for each integration.
+  </Accordion>
+
+  <Accordion title="I manage more than one CoachIQ group">
+    Each Zapier connection is tied to one Group ID and API Key pair. To work with multiple groups, add a separate CoachIQ connection in Zapier for each one, using that group's own Group ID and key. Name them clearly (e.g. "CoachIQ — East Location") so you can pick the right one per Zap.
+  </Accordion>
+</AccordionGroup>
+
+<CardGroup cols={2}>
+  <Card title="What are automations?" icon="bolt" href="/automations/what-are-automations">
+    Build automated workflows entirely inside CoachIQ
+  </Card>
+  <Card title="Triggers and actions reference" icon="list" href="/automations/triggers-actions-reference">
+    Full reference for every CoachIQ automation trigger and action
+  </Card>
+  <Card title="API Keys" icon="key" href="/settings/index#api-keys">
+    Find your Group ID and generate API keys
+  </Card>
+  <Card title="Webhooks" icon="webhook" href="/settings/index#creating-a-webhook">
+    Advanced integrations using custom webhook endpoints
+  </Card>
+</CardGroup>
