@@ -134,21 +134,21 @@ Configure pricing frequency and processing fees.
   <Accordion title="Processing Fee">
     **All product types**
 
-    Configure who pays Stripe's transaction fees (2.9% + \$0.30 in US).
+    Configure who pays transaction fees. Two fees apply to every transaction — Stripe's 2.9% + \$0.30, and CoachIQ's 1% + \$0.20 on top — for a combined 3.9% + \$0.50 (US). You set the fixed amount and percentage fields directly, so make sure they're set to cover both fees.
 
     **Options:**
 
     **You absorb the fee** (default)
 
     - Client pays product price
-    - You receive product price minus Stripe fees
-    - Example: $50 product = $48.05 to you
+    - You receive product price minus the combined fee
+    - Example: $50 product = $47.55 to you
 
     **Client pays the fee**
 
-    - Stripe fee added as separate line item at checkout
+    - Combined fee added as separate line item at checkout
     - You receive full product price
-    - Example: $50 product + $1.76 fee = \$51.76 charged to client
+    - Example: $50 product + $2.45 fee = \$52.45 charged to client
 
     **Custom fee structure:**
 

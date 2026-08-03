@@ -12,21 +12,24 @@ keywords: ["processing fees", "stripe fees", "transaction fees", "who pays fees"
 
 ## What processing fees are
 
-Every successful transaction through Stripe incurs fees:
+Every successful transaction incurs two fees: Stripe's processing fee, plus CoachIQ's platform fee.
 
 **US standard rates:**
 
-- 2.9% of transaction amount
-- Plus \$0.30 per transaction
+- Stripe: 2.9% of transaction amount, plus \$0.30 per transaction
+- CoachIQ: 1% of transaction amount, plus \$0.20 per transaction, added on top of Stripe's fee
+- Combined: 3.9% + \$0.50 per transaction
 
 **Example:**
 
 - \$100 charge
 - Stripe fee: (100 × 0.029) + 0.30 = \$3.20
-- You receive: \$96.80
+- CoachIQ fee: (100 × 0.01) + 0.20 = \$1.20
+- Total fee: \$4.40
+- You receive: \$95.60
 
 <Note>
-  Fees set by Stripe, not CoachIQ. International cards and currency conversions may have additional fees.
+  International cards and currency conversions may have additional Stripe fees.
 </Note>
 
 ## Who pays the fees
@@ -37,14 +40,14 @@ You decide who covers Stripe's processing fees:
   <Tab title="You absorb fees">
     **Default option - You pay the fees**
 
-    Client pays product price. You receive product price minus Stripe fees.
+    Client pays product price. You receive product price minus the combined Stripe + CoachIQ fee.
 
     **Example:**
 
     - Product price: \$100
     - Client pays: \$100
-    - Stripe fee: \$3.20
-    - You receive: \$96.80
+    - Total fee (Stripe + CoachIQ): \$4.40
+    - You receive: \$95.60
 
     **Pros:**
 
@@ -56,18 +59,18 @@ You decide who covers Stripe's processing fees:
 
     - Reduces your revenue per sale
     - Fees add up over time
-    - You lose 2.9%+ on every sale
+    - You lose 3.9%+ on every sale
   </Tab>
   <Tab title="Client pays fees">
     **Pass fees to client**
 
-    Stripe fees added as separate line item at checkout. You receive full product price.
+    Combined fee added as separate line item at checkout. You receive full product price.
 
     **Example:**
 
     - Product price: \$100
-    - Stripe fee: \$3.20
-    - Client pays: \$103.20
+    - Total fee (Stripe + CoachIQ): \$4.40
+    - Client pays: \$104.40
     - You receive: \$100.00
 
     **Pros:**
@@ -116,11 +119,11 @@ You decide who covers Stripe's processing fees:
   <Step title="Configure fee structure (if client pays)">
     **Two fields appear:**
 
-    **Fixed amount:** \$0.30 (Stripe's fixed fee)
+    **Fixed amount:** \$0.50 (Stripe's \$0.30 + CoachIQ's \$0.20)
 
-    **Percentage:** 2.9% (Stripe's percentage fee)
+    **Percentage:** 3.9% (Stripe's 2.9% + CoachIQ's 1%)
 
-    These default to Stripe's standard US rates. Adjust if your Stripe rates differ.
+    These default to the combined Stripe + CoachIQ standard US rates. You control both fields directly — adjust them if your Stripe rates differ, but keep CoachIQ's 1% + \$0.20 included so the combined fee is fully covered.
 
     <Tip>
       Check your actual Stripe rates in Stripe Dashboard. Rates may differ based on processing volume, country, or negotiated pricing.
@@ -156,9 +159,9 @@ You decide who covers Stripe's processing fees:
     ```
     Product: 60-Minute Session
     Price: $75.00
-    Processing Fee: $2.48
+    Processing Fee: $3.43
     ─────────────────────
-    Total: $77.48
+    Total: $78.43
     ```
 
     Transparent breakdown showing fee separately.
@@ -171,21 +174,21 @@ You decide who covers Stripe's processing fees:
 
 ## Calculating fee amounts
 
-**Stripe's standard formula:**
+**Combined formula:**
 
-Fee = (Transaction amount × 0.029) + \$0.30
+Fee = (Transaction amount × 0.039) + \$0.50 (Stripe's 2.9% + \$0.30, plus CoachIQ's 1% + \$0.20)
 
 **Examples:**
 
-| Product Price | Stripe Fee | You Absorb       | Client Pays          |
+| Product Price | Total Fee (Stripe + CoachIQ) | You Absorb       | Client Pays          |
 | ------------- | ---------- | ---------------- | -------------------- |
-| \$50          | \$1.75     | You get \$48.25  | Client pays \$51.75  |
-| \$100         | \$3.20     | You get \$96.80  | Client pays \$103.20 |
-| \$200         | \$6.10     | You get \$193.90 | Client pays \$206.10 |
-| \$500         | \$14.80    | You get \$485.20 | Client pays \$514.80 |
+| \$50          | \$2.45     | You get \$47.55  | Client pays \$52.45  |
+| \$100         | \$4.40     | You get \$95.60  | Client pays \$104.40 |
+| \$200         | \$8.30     | You get \$191.70 | Client pays \$208.30 |
+| \$500         | \$20.00    | You get \$480.00 | Client pays \$520.00 |
 
 <Note>
-  These calculations use 2.9% + \$0.30. Your actual rates may differ based on your Stripe account.
+  These calculations use the combined 3.9% + \$0.50 rate (Stripe 2.9% + \$0.30, CoachIQ 1% + \$0.20). Your actual Stripe rate may differ based on your account; CoachIQ's 1% + \$0.20 applies uniformly.
 </Note>
 
 ## Custom fee structures
@@ -243,10 +246,10 @@ Some coaches configure custom fee amounts:
     If you absorb fees, increase base price to maintain margins:
 
     - Target: \$100 profit per session
-    - Stripe fee: ~3%
-    - Set price: \$103 + to net \$100
+    - Combined fee (Stripe + CoachIQ): ~4%
+    - Set price: ~\$105 to net \$100
 
-    Client sees: \$103 (clean price)You receive: ~\$100 after fees
+    Client sees: \$105 (clean price)You receive: ~\$100 after fees
   </Tab>
   <Tab title="Pass fees - Price lower">
     **Price products at target, add fees**
@@ -255,9 +258,9 @@ Some coaches configure custom fee amounts:
 
     - Target: \$100 profit per session
     - Set price: \$100
-    - Fee added: ~\$3.20
+    - Fee added: ~\$4.40
 
-    Client sees: $100 + $3.20 fee = $103.20
+    Client sees: $100 + $4.40 fee = $104.40
 You receive: $100
   </Tab>
 </Tabs>
@@ -270,12 +273,12 @@ You receive: $100
 
 **International cards:**
 
-- Additional 1% for non-US cards
-- Configure: 3.9% + \$0.30 for international
+- Stripe adds 1% for non-US cards (Stripe total: 3.9% + \$0.30 for international)
+- CoachIQ's 1% + \$0.20 still applies on top of Stripe's rate, international or domestic
 
 **Currency conversion:**
 
-- Additional 1% for currency conversion
+- Additional 1% for currency conversion (Stripe)
 - Applies when charge currency differs from payout currency
 
 **Disputed charges:**
@@ -285,7 +288,7 @@ You receive: $100
 - Usually not passed to clients
 
 <Note>
-  Most coaches use standard 2.9% + \$0.30 for US cards and absorb international card fees rather than configuring multiple fee structures.
+  Most coaches use the standard combined rate (Stripe 2.9% + \$0.30, CoachIQ 1% + \$0.20) for US cards and absorb international card fees rather than configuring multiple fee structures.
 </Note>
 
 ## Changing fee configuration
