@@ -142,6 +142,7 @@
             "group": "Athlete Portal",
             "pages": [
               "athlete-portal/understanding-your-athlete-portal",
+              "athlete-portal/family-accounts",
               "athlete-portal/app-builder-navigation-and-interface",
               "athlete-portal/design-settings",
               "athlete-portal/menu-and-links",
@@ -203,6 +204,7 @@
                 "pages": [
                   "scheduling/calendar-overview-and-navigation",
                   "scheduling/calendar-analytics",
+                  "scheduling/shared-calendar-across-groups",
                   "scheduling/understanding-booking-types",
                   "scheduling/manually-booking-athletes",
                   "scheduling/book-your-first-session",
