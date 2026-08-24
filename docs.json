@@ -142,7 +142,6 @@
             "group": "Athlete Portal",
             "pages": [
               "athlete-portal/understanding-your-athlete-portal",
-              "athlete-portal/family-accounts",
               "athlete-portal/app-builder-navigation-and-interface",
               "athlete-portal/design-settings",
               "athlete-portal/menu-and-links",
@@ -152,6 +151,7 @@
               "athlete-portal/products",
               "athlete-portal/paywall-settings",
               "athlete-portal/hidden-products-paywall",
+              "athlete-portal/family-accounts",
               "athlete-portal/scripts-and-analytics"
             ]
           },
