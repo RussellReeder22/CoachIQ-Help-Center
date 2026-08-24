@@ -3,7 +3,7 @@ title: "Booking for Multiple Athletes (Family Accounts)"
 description: "Enable parents to book multiple sessions for their children using a single account and shared credit balance"
 sidebarTitle: "Family & Multi-Athlete Booking"
 icon: "users"
-keywords: ["family account", "multiple athletes", "parent booking", "book for kids", "siblings", "shared credits", "family booking"]
+keywords: ["family account", "multiple athletes", "parent booking", "book for kids", "siblings", "shared credits", "family booking", "select athlete", "family credits"]
 ---
 
 <Info>
@@ -30,10 +30,10 @@ CoachIQ uses a **single-account model** for families:
 - **No per-child limits**—booking is only limited by available credits
 
 <Note>
-**Current limitation**: There's no built-in field to indicate which child each booking is for. Parents simply book multiple slots, and you'll see "Parent Name" on each booking. Coordinate with families on who's attending which session.
-</Note>
+**If the parent has added family members**: Booking now includes a **Select Athlete** step, so each booking is tied to a specific child instead of just the parent's account. See [Family Accounts](/athlete-portal/family-accounts) for how parents add family members from **Settings → Family** in the athlete portal.
 
-Parents can now add and switch between family members themselves from **Settings → Family** in the athlete portal, without you setting up each child's access by hand — see [Family Accounts](/athlete-portal/family-accounts). Credits and billing still work exactly as described below.
+**If they haven't**: There's still no built-in field to indicate which child a booking is for — you'll see "Parent Name" on each booking. Coordinate with families on who's attending, or point them to Family Accounts to fix this going forward.
+</Note>
 
 ---
 
@@ -87,11 +87,11 @@ Here's what parents see when booking for multiple children:
   </Step>
 
   <Step title="Parent books first child">
-    They select a timeslot and book using credits. One credit is deducted.
+    They select a timeslot. If they've added family members under **Settings → Family**, a **Select Athlete** step appears — they choose which child the session is for, then complete checkout. One credit is deducted from the shared Family Credits balance.
   </Step>
 
   <Step title="Parent books second child">
-    They return to the same timeslot and book again. Another credit is deducted.
+    They return to the same timeslot and book again, this time selecting the other child on the **Select Athlete** step. Another credit is deducted from the same shared balance.
 
     **With the permission enabled**: The system allows this second booking.
 
@@ -139,7 +139,7 @@ Consider adding a field asking "How many athletes in your household?" to identif
 
 ### Identifying which child is attending
 
-Since bookings show the parent's name, use these strategies:
+If the family has added family members under **Settings → Family**, the **Select Athlete** step at booking already tells you which child a session is for — check the booking details. The strategies below are for families who haven't set that up yet, where bookings still only show the parent's name:
 
 <AccordionGroup>
   <Accordion title="Add booking notes">
@@ -266,9 +266,7 @@ To see how many credits a family has remaining:
   </Accordion>
 
   <Accordion title="What if a parent wants separate tracking per child?">
-    CoachIQ's current model uses one account per family. For completely separate tracking, they would need separate accounts—but then they can't share credits.
-
-    **Workaround**: Use booking notes or tags to track which child attended which sessions.
+    Add the children as family members under **Settings → Family** in the athlete portal. Bookings then go through a **Select Athlete** step, so each one is tied to a specific child while still sharing one Family Credits balance — no need for separate accounts or manual tracking.
   </Accordion>
 
   <Accordion title="How do refunds work for family bookings?">
