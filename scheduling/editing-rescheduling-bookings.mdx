@@ -70,7 +70,7 @@ Move a booking to a different date or time.
     Click **Confirm** to finalize the reschedule.
 
     <Check>
-    Athletes automatically receive a notification with the new date and time.
+    Athletes automatically receive a notification with the original date and time and the new one.
     </Check>
   </Step>
 </Steps>
@@ -107,15 +107,29 @@ Drag-and-drop rescheduling bypasses availability checks. Make sure the new time 
 
 ## What athletes see
 
-When a session is booked or rescheduled, athletes automatically receive a confirmation email:
+When a session is booked, athletes automatically receive a confirmation email:
 
-<Frame caption="The email athletes receive when a session is booked or rescheduled. The 'Re-schedule Here' link lets them move the session themselves when self-rescheduling is enabled.">
+<Frame caption="The email athletes receive when a session is booked. The 'Re-schedule Here' link lets them move the session themselves when self-rescheduling is enabled.">
   ![Session confirmation email titled 'Your Session is Coming Up' showing date, time, location, description, and a re-schedule link](/images/session-confirmation-email.png)
 </Frame>
 
-When you reschedule a booking:
+When you **Move Session**, the announcement includes the original date and time and the new one by default. You can edit it to add a personal note. **Notify participants** is available, with **In-app** pre-checked.
 
-- **Email notification** — Athletes receive an email with the new date/time
+The announcement follows this pattern:
+
+`[session name] moved from [day, date] at [start - end] to [day, date] at [start - end].`
+
+<Frame>
+  ![Move Session on the calendar session detail](/images/scheduling-move-session-modal.png)
+</Frame>
+
+<Frame>
+  ![In-app announcement after a move, naming the original time and the new time](/images/inbox-reschedule-moved-from-to.png)
+</Frame>
+
+When you move a booking:
+
+- **In-app announcement** — Names the original date/time and the new date/time
 - **Portal update** — The updated session appears in their Athlete Portal immediately
 - **Calendar sync** — Any linked calendar invites are automatically updated
 
