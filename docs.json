@@ -67,7 +67,8 @@
                   "website/pages-navigation/pages-navigation",
                   "website/pages-navigation/page-templates",
                   "website/pages-navigation/url-slugs-page-management",
-                  "website/pages-navigation/legal-pages"
+                  "website/pages-navigation/legal-pages",
+                  "website/blog"
                 ]
               },
               {
@@ -182,7 +183,8 @@
                   "scheduling/create-your-availability",
                   "scheduling/seasonal-schedule-transition",
                   "scheduling/setting-black-out-dates",
-                  "scheduling/managing-availability-for-multiple-coaches"
+                  "scheduling/managing-availability-for-multiple-coaches",
+                  "scheduling/overlapping-slots"
                 ]
               },
               {
@@ -341,7 +343,8 @@
           {
             "group": "Settings",
             "pages": [
-              "settings/index"
+              "settings/index",
+              "settings/change-organization-group-name"
             ]
           },
           {
@@ -357,6 +360,7 @@
             "group": "Quick Guides",
             "icon": "book-bookmark",
             "pages": [
+              "flows/index",
               {
                 "group": "Coach Guides",
                 "pages": [
@@ -373,7 +377,8 @@
                   "help-center/helping-your-athlete/cancel-subscription",
                   "help-center/helping-your-athlete/login-issues",
                   "help-center/helping-your-athlete/new-athlete-password-email",
-                  "help-center/helping-your-athlete/credit-issues"
+                  "help-center/helping-your-athlete/credit-issues",
+                  "help-center/payments/update-payment-method"
                 ]
               }
             ]
@@ -1124,6 +1129,10 @@
     {
       "source": "/help-center/helping-your-athlete/untitled-page",
       "destination": "/help-center/helping-your-athlete/video-upload-issues"
+    },
+    {
+      "source": "/guides/growing-your-coaching-business",
+      "destination": "/guides/index"
     }
   ],
   "metadata": {
