@@ -1,57 +1,68 @@
 ---
 title: "How SMS credits work"
-description: "Understand how SMS credits are used, check your balance, and buy more so your text messages keep sending."
+description: "What a credit pays for, how long messages and emojis change the cost, why credits are separate from 10DLC approval, and what to do when texts don't send."
 sidebarTitle: "SMS Credits"
 icon: "comment-dollar"
+keywords: ["sms credits", "text message credits", "segments", "emoji sms cost", "buy credits", "top up", "org credits", "texts not sending", "10dlc"]
 ---
 
-SMS credits are how you pay for text messaging in CoachIQ. Every text you send or receive draws from your credit balance, and you top it up whenever you need more.
+SMS credits are how text messaging is paid for in CoachIQ. Every text you send draws from your group's credit balance.
 
 <Info>
-**Where to find this:** **Settings** → **Credits**
+  **Which credits?** These are your business's **SMS credits**. They are completely separate from the **session credits** athletes buy and redeem for bookings. See [Credit system overview](/payments/credits/credit-system-overview) for those.
 </Info>
 
-## What uses a credit
+## What a credit is
 
-Each SMS message uses credits, whether you send it or an athlete texts you back. Longer messages that split into multiple segments use a credit per segment, so keeping texts short stretches your balance further.
+A credit is a prepaid unit of usage. At the standard rate, **$1 buys 100 credits**, and a short plain-text message costs **about 1 credit**.
+
+## What uses credits
+
+Credits are spent on **outbound** texts: messages you send from the Inbox, mass SMS to a tag, automation SMS actions, and Zapier SMS actions. Incoming replies do not use credits.
+
+The cost is per **segment**, and one message can be several segments:
+
+| Message | Segments | Approximate cost |
+|---|---|---|
+| Plain text, up to about 160 characters | 1 | 1 credit |
+| Plain text, 161 to about 300 characters | 2 | 2 credits |
+| Any message containing an emoji or special character | 1 per ~70 characters | 2 to 3 credits for a typical text |
+| A mass text to 200 athletes | 1 per recipient | 200 credits or more |
 
 <Tip>
-Avoid emojis in SMS. They switch the message to a different encoding that shortens each segment, which means one text can use several credits.
+  Keep texts short and skip emojis. An emoji switches the whole message to a different encoding that cuts each segment to about 70 characters, so one friendly 🎉 can double or triple the cost of a broadcast.
 </Tip>
 
-## Check your balance and buy more
+## How you get credits
 
-<Steps>
-  <Step title="Open your credit balance">
-    Go to **Settings** → **Credits**. Your **Current Balance** shows at the top of the page.
+- **Monthly allotment** — your plan may include a monthly grant of credits. It is added to whatever balance you have left; it does not reset it.
+- **Top-ups** — buy more at any time, either a preset package (some include bonus credits) or a custom dollar amount. Payment goes through Stripe and the credits are applied automatically.
 
-    <Frame>
-      ![The Credits page in Settings showing the current balance, Buy more credits button, and recent activity](/images/sms-credits-settings.png)
-    </Frame>
-  </Step>
+<Note>
+  A self-serve **Credits** page under **Settings → Communication** is rolling out to coaches. If you do not see it yet, [contact support](mailto:info@coachiq.io) to check your balance or top up.
+</Note>
 
-  <Step title="Review your recent activity">
-    The **Activity** list shows each credit change: messages sent, top-ups, and any manual adjustments. Use the filters (**All**, **SMS sent**, **Top-ups**, **Grants**) to narrow the view, and the **Balance** column to see your running total after each entry.
-  </Step>
+## Texts aren't sending?
 
-  <Step title="Buy more credits">
-    Click **Buy more credits** and follow the prompts to add credits to your account. Your new balance is available right away.
-  </Step>
-</Steps>
+Two independent things must be true for a business text to deliver: your number must be **registered** with the carriers, and you must have **credits**. They fail differently.
+
+1. **Check 10DLC registration first.** US carriers do not deliver business SMS until your brand and campaign are approved. This is the most common reason texts do not arrive, and it has nothing to do with your balance. See [Setting up SMS messaging](/inbox/sms-messages#setting-up-sms-messaging).
+2. **Then check credits.** If your balance has run out, top up. Having credits does not make an unregistered number deliver, and being registered does not send texts you cannot pay for.
 
 ## Common questions
 
 <AccordionGroup>
-  <Accordion title="What happens if my balance hits zero?">
-    Once you run out of credits, outgoing texts stop sending until you top up. Buy more credits from **Settings** → **Credits** to start sending again.
+  <Accordion title="Do incoming texts use credits?">
+    No. Only messages you send are metered.
   </Accordion>
-
-  <Accordion title="Do incoming texts use credits too?">
-    Yes. Both messages you send and replies you receive draw from your credit balance.
+  <Accordion title="Does a message to a tag cost one credit?">
+    No. A broadcast is one segment per recipient. 150 athletes means at least 150 credits.
   </Accordion>
-
   <Accordion title="Are SMS credits the same as athlete session credits?">
-    No. SMS credits pay for text messaging and live under **Settings** → **Credits**. Session credits are what athletes use to book sessions and are managed on each athlete's profile. The two are completely separate.
+    No. Session credits are what athletes redeem for bookings and are managed on each athlete's profile. SMS credits pay for your text messaging. Different balances, different pages.
+  </Accordion>
+  <Accordion title="Where do I see how many credits a campaign used?">
+    Your credit activity log lists each send with the credits deducted and the balance after. While the Credits page is rolling out, support can send you the log.
   </Accordion>
 </AccordionGroup>
 
@@ -59,9 +70,15 @@ Avoid emojis in SMS. They switch the message to a different encoding that shorte
 
 <CardGroup cols={2}>
   <Card title="Setting up SMS messaging" icon="comment-sms" href="/inbox/sms-messages">
-    Complete 10DLC registration and get your business number.
+    Get your number and complete 10DLC registration
+  </Card>
+  <Card title="Using tags for group messages" icon="tags" href="/inbox/using-tags-for-group-messages">
+    Mass texts, and how to keep them affordable
+  </Card>
+  <Card title="Communication settings" icon="bell" href="/settings/communication">
+    Your SMS number and call forwarding
   </Card>
   <Card title="Inbox overview" icon="inbox" href="/inbox/inbox-overview">
-    See how In-App, SMS, and Announcements compare.
+    In-App, SMS, and Announcements compared
   </Card>
 </CardGroup>

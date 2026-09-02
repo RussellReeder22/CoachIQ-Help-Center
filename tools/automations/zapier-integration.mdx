@@ -33,10 +33,10 @@ Connect CoachIQ to the tools you already use. Zapier lets you send data out of C
     The API Keys page shows **two** copy buttons — **Org ID** and **Group ID**. Zapier requires the **Group ID**. Copying the Org ID by mistake will cause an "Unauthorized" error when connecting.
     </Warning>
 
-    **API Key:** Click **+ New API Key**, give it a name (e.g. "Zapier"), then copy the key immediately.
+    **API Key:** Click **+ New API Key**, then click **Copy** on the key's row.
 
     <Info>
-    Your API Key is **128 characters long** and is shown **only once** — when you leave the page, it's gone. If you lose it, create a new one. You can have up to 10 keys per group.
+    Your API Key is **128 characters long**. You can re-copy it at any time from its row on the API Keys page, so it is not lost if you navigate away. You can have up to 10 keys per group; delete an old one if you hit the limit. Treat each key like a password and paste it only into the Zapier connection dialog.
     </Info>
   </Step>
 
@@ -55,6 +55,12 @@ Connect CoachIQ to the tools you already use. Zapier lets you send data out of C
     Zapier automatically runs an authorization check. A green check means you're connected. If you see **Unauthorized**, re-copy both values from CoachIQ and try again — the most common cause is accidentally pasting the Org ID instead of the Group ID.
   </Step>
 </Steps>
+
+---
+
+<Warning>
+**Zapier may show a CoachIQ step as successful even when it failed.** CoachIQ returns "OK" at the network level and reports problems in an `error` field inside the response. If a Zap "worked" but nothing happened, open the step's Data Out and look for `error`. Every message is listed in [Zapier troubleshooting](/tools/automations/zapier-troubleshooting).
+</Warning>
 
 ---
 
@@ -148,7 +154,7 @@ Use these to create records or send messages inside CoachIQ from an external tri
   </Accordion>
 
   <Accordion title="My API Key looks too short or the connection won't save">
-    A real CoachIQ API Key is 128 characters. If Zapier rejects it for being too short, you likely pasted a partial key. Re-copy the full key from CoachIQ. If you can no longer see the key (it's shown only once), create a **+ New API Key** and use the new one.
+    A real CoachIQ API Key is 128 characters. If Zapier rejects it for being too short, you likely pasted a partial key. Re-copy the full key using the **Copy** button on the key's row under **Settings → Developer → API Keys**. You only need a new key if the old one was deleted.
   </Accordion>
 
   <Accordion title="My Zap isn't firing">
@@ -183,6 +189,9 @@ Use these to create records or send messages inside CoachIQ from an external tri
   </Card>
   <Card title="Triggers and actions reference" icon="list" href="/tools/automations/triggers-actions-reference">
     Full reference for every CoachIQ automation trigger and action
+  </Card>
+  <Card title="Zapier troubleshooting" icon="bug" href="/tools/automations/zapier-troubleshooting">
+    Every error message and what to do about it
   </Card>
   <Card title="API Keys" icon="key" href="/settings/developer#api-keys">
     Find your Group ID and generate API keys

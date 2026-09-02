@@ -1,0 +1,93 @@
+---
+title: "Zapier Troubleshooting & Error Reference"
+description: "Every error message CoachIQ can return to a Zap, what it means, and how to fix it, plus the questions we get most about Zaps that don't fire."
+sidebarTitle: "Zapier Troubleshooting"
+icon: "bug"
+keywords: ["zapier error", "unauthorized", "zap not firing", "create user error", "message max length", "no user exists", "admin profile must exist", "zapier faq"]
+---
+
+If a Zap is misbehaving, start here. The first half is the exact error text CoachIQ sends back and what to do about each one; the second half answers the common questions. Setup itself is covered in [Zapier integration](/tools/automations/zapier-integration).
+
+<Warning>
+  **Zapier can show a step as successful when CoachIQ reported a problem.** With one exception, CoachIQ's Zapier endpoints reply "OK" at the network level and put the real outcome in an `error` field in the response body. When in doubt, open the step's **Data Out** in Zap History and look for `error`. The exception is the initial connection test, which fails outright with **Unauthorized** if your credentials are wrong.
+</Warning>
+
+## Error catalog
+
+| Error message | What it means | How to fix it |
+|---|---|---|
+| `Unauthorized` | Your API Key and Group ID could not be authorised. This is the one that fails the connection itself. | Re-copy both from **Settings → Developer → API Keys**. The usual cause is pasting the **Org ID** instead of the **Group ID**. |
+| `Unauthorized request...` | The request was not authorised. | Same as above: verify both values and reconnect the account in Zapier. |
+| `Send the group_id with your request.` | The Group ID was missing. | Reconnect your CoachIQ account in Zapier and make sure **Group ID** is filled in. |
+| `Event type not found` | A trigger tried to subscribe to an event CoachIQ does not recognise. | Remove and re-add the CoachIQ trigger. If it persists, contact support. |
+| `Webhook trigger already exists` | This Zap's trigger was already subscribed. | Harmless. Common after editing and re-saving a Zap. The trigger still works. |
+| `A valid email must be passed with your request.` | **Create User** got a missing or invalid email. | Check the field mapped into **Email** actually holds an address. |
+| `A user is already connected to your group with that email.` | **Create User**: that email is already in your group. | Not a failure. CoachIQ returns the existing user instead of a duplicate. |
+| `Phone not added, invalid` | **Create User** made the user but the phone was not a valid format. | The user exists without a phone. Fix the number and re-run if you need it saved. |
+| `Phone not added, user exists with phone number already.` | **Create User** made the user but that phone belongs to someone else. | The user exists without a phone. Use a different number if needed. |
+| `A message must exist` | A messaging action had no text. | Fill in **Message**. If you mapped a field that came through empty, add fallback text. |
+| `The message can have a max length of 600` | An **SMS** was over 600 characters. | Shorten to 600 or fewer. Aim for 160. |
+| `The message can have a max length of 15000` | An **In-App** or **Announcement** message was over 15,000 characters. | Shorten it. |
+| `The heading can have a max length of 5000` | An **Announcement** heading was over 5,000 characters. | Shorten the heading. |
+| `No user exists with this email` | No one in your group has that email. | Confirm the email, or add a **Create User** step first. |
+| `No user exists with this phone` | No one in your group has that phone. | Confirm the phone. For Announcements, identifying by phone needs **Use phone → yes**. |
+| `This user is not connected to this group` | The person exists in CoachIQ but is not in your group. | Add them (for example with **Create User**) before messaging. |
+| `An admin profile must exist in the group connected.` | A messaging action needs an admin to send from and found none. | Make sure your group has at least one admin, then re-run. |
+| `Request was unsuccessful` | A generic failure. | Re-run. If it keeps failing, check your inputs, then contact support with the step's Data In and Data Out. |
+| `There was a problem with your submission...` | A generic submission problem. | Re-check the mapped fields and re-run. |
+
+**Hard failure or warning?** If the response has an `error` and no result fields, the step failed. If it has an `error` plus a result (such as a created user record), the main thing worked and the error is a side note. The two `Phone not added...` messages and `A user is already connected...` are warnings; the rest are hard failures.
+
+## FAQ
+
+### My Zap didn't fire
+
+Check in this order:
+
+1. **Is the Zap turned on?** CoachIQ triggers only receive events while the Zap is on. The **Test** button pulls a past sample even when it is off, but that is for building only.
+2. **Did the event happen after you turned it on?** Triggers fire on new events, not history.
+3. **Did the right event happen?** A New Form Zap only fires on form submissions, New Purchase only on purchases.
+4. **Check Zap History** in Zapier for whether the event arrived and whether a later step errored.
+5. **Look for `error` in the step output.** CoachIQ reports problems inside the response, not as a failed request.
+
+Retries, delivery timing, and request signing are not documented. If a Zap depends on them, treat them as unverified and ask support rather than assuming.
+
+### "Create User" said the user already exists
+
+Expected, and not a failure. CoachIQ returned the existing user so your later steps still have someone to work with. To branch on it, add a Zapier Filter on the presence of that `error`.
+
+### My SMS keeps getting rejected for length
+
+SMS is capped at 600 characters. Keep to 160 or fewer for a single segment. For long text, use **Send an In-App Message** or **Send an Announcement** instead (up to 15,000 characters).
+
+### How do I send to everyone?
+
+Use **Send an Announcement** with **Send to everyone → yes**. In-App and SMS always go to one person.
+
+The yes/no fields are literal text. **Send to everyone** and **Use phone** expect `yes` or `no`, and anything other than `no` (or `false`) is treated as yes. Type `no` when you mean no.
+
+### I manage more than one CoachIQ group
+
+Each Zapier connection is one Group ID plus one API Key. Add a separate CoachIQ connection per group, name them clearly, and pick the right one in each Zap.
+
+### What data comes through a trigger?
+
+| Trigger | You get | Watch out for |
+|---|---|---|
+| **New User** | `id`, `email`, `phone`, `firstName`, `lastName` | — |
+| **New Form** | the `form` (label and each field's question, type, required flag, and answer) and the `user` | the user can be empty for a guest submission |
+| **New Purchase** | the `product` (label plus `price`, or an `accessCode` flag), the `order` (`via` Form / Booking / Product, and `amount`), and the `user` | the user can be empty for an anonymous purchase; amounts are text like `"49.99"` |
+| **New Booking** | the `booking` (session title, `day`/`month`/`year`, `start`/`end`, `tz`, `notes`, `recurring`) and the `user` | — |
+
+Money comes through as text. Add a Zapier **Formatter** step before doing math.
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Zapier integration" icon="bolt" href="/tools/automations/zapier-integration">
+    Connect CoachIQ and build your first Zap
+  </Card>
+  <Card title="Developer settings" icon="code" href="/settings/developer">
+    Where your Group ID and API keys live
+  </Card>
+</CardGroup>

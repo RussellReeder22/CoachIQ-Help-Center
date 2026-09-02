@@ -1,0 +1,115 @@
+---
+title: "Automation Templates"
+description: "Start from a ready-made automation for conversion, retention, or operations, then adjust the message and conditions to fit your business."
+sidebarTitle: "Templates"
+icon: "layer-group"
+keywords: ["automation templates", "use template", "template library", "conversion", "retention", "operations", "prebuilt automations", "trial to paid"]
+---
+
+<Info>
+  **Where to find this**: **Tools → Automations → Templates**
+</Info>
+
+## Why start from a template
+
+A template is a complete automation: trigger, conditions, and actions already wired, with a message written for the situation. Pick one, swap in your product and your wording, turn it on. It is the fastest way to get value from automations without learning the builder first.
+
+<Note>
+  Screenshots of the Templates modal are being captured. Names and descriptions were checked against the live app on 2026-09-02; the library grows over time, so you may see more.
+</Note>
+
+## The library
+
+Click **Templates** on the Automations page. The **Automation Templates** modal ("Choose from pre-built templates to quickly set up common automations") groups templates into three categories, with **All Templates** showing everything. There are 13 today.
+
+### Conversion
+
+Turn leads and trials into paying members.
+
+| Template | What it does |
+|---|---|
+| **Trial to Paid Member Journey** | Welcome trial users and guide them through their first booking |
+| **Website Lead → Trial Booking** | Convert website form submissions into trial bookings |
+| **New Member Welcome** | Welcome new subscribers with onboarding information |
+
+### Retention
+
+Keep current members engaged and paying.
+
+| Template | What it does |
+|---|---|
+| **Trial Users Who Haven't Converted** | Re-engage trial attendees who haven't booked again |
+| **Weekly Credit Expiration Reminder** | Alert users when their credits are about to expire |
+| **Monthly Subscription Check-In (3-Month Milestone)** | Celebrate the 3-month milestone and gather feedback |
+| **Weekly Inactive Member Check** | Re-engage members who haven't booked in 2+ weeks |
+
+### Operations
+
+Run the week without remembering to send things.
+
+| Template | What it does |
+|---|---|
+| **Weekly Schedule Release Message** | Notify active members when the new weekly schedule is available |
+| **Camp Registration Confirmation** | Send camp details and the waiver after registration |
+| **Camp Week Prep Reminder** | Send the packing list 7 days before camp starts |
+| **Grant Product Purchase from Trigger** | Automatically grant the purchased product to the user (useful for access codes or manual processing) |
+| **Add Credits on Subscription Renewal** | Grant credits from the purchased subscription product when the subscription renews |
+| **Daily Trial Bookings Summary (Coach Alert)** | Notify the coach of trial sessions scheduled for today |
+
+## Using a template
+
+<Steps>
+  <Step title="Open the library">
+    Go to **Tools → Automations** and click **Templates**. Use the category tabs to narrow the list.
+  </Step>
+  <Step title="Click Use Template">
+    The template opens in the automation builder as a new, **inactive** automation. Nothing runs yet.
+  </Step>
+  <Step title="Point it at your products and people">
+    Check the **Triggers** and **Conditions** sections. A conversion template may reference "a trial product" or "a membership"; select yours. See [Builder reference](/tools/automations/builder-reference) for what each section does.
+  </Step>
+  <Step title="Rewrite the message in your voice">
+    Open each action under **Actions**. Keep the dynamic fields (the `@` CoachIQ fields such as the athlete's first name) and change the rest. For SMS, watch the 160-character counter.
+  </Step>
+  <Step title="Test Run">
+    Click **Test Run** to send the automation to yourself and confirm the message reads well and the fields fill in.
+  </Step>
+  <Step title="Turn it on">
+    In **Settings**, switch **Enabled** on and click **Update**. The automation now appears under **Active** on the Automations page.
+  </Step>
+</Steps>
+
+<Tip>
+  The [Automation playbook](/tools/automations/automation-playbook) walks through the thinking behind each of these templates, with example messages you can borrow.
+</Tip>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I edit a template after I've turned it on?">
+    Yes. It is a normal automation once created. Open it from the Automations list, change anything, and click **Update**.
+  </Accordion>
+  <Accordion title="Will using a template again create a duplicate?">
+    Yes, each **Use Template** creates a new automation. Archive the ones you do not need from the Automations list.
+  </Accordion>
+  <Accordion title="Do templates send anything when I click Use Template?">
+    No. Every template starts inactive. Nothing goes out until you enable it, and scheduled templates only run at their next scheduled time after that.
+  </Accordion>
+</AccordionGroup>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Builder reference" icon="wrench" href="/tools/automations/builder-reference">
+    Every section of the automation builder explained
+  </Card>
+  <Card title="Automation playbook" icon="book" href="/tools/automations/automation-playbook">
+    Strategy and example messages for each scenario
+  </Card>
+  <Card title="Build your first automation" icon="play" href="/tools/automations/build-your-first-automation">
+    Start from scratch instead
+  </Card>
+  <Card title="Scheduled automations" icon="clock" href="/tools/automations/scheduled-automations">
+    How the weekly and monthly templates run
+  </Card>
+</CardGroup>

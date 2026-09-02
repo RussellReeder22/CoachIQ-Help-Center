@@ -1,0 +1,89 @@
+---
+title: "Locations"
+description: "Save the places you coach, attach them to schedulers, and let athletes see exactly where to show up."
+sidebarTitle: "Locations"
+icon: "map-pin"
+keywords: ["locations", "address", "facility", "where sessions happen", "multiple locations", "scheduler location", "setup locations"]
+---
+
+<Info>
+  **Where to find this**: **Scheduling → Setup → Locations**
+</Info>
+
+## What locations are
+
+A location is a saved address: the field, gym, cage, or park where a session happens. Save it once, attach it to any scheduler, and every booking confirmation, reminder, and calendar entry carries the right address without you retyping it.
+
+Locations also anchor [Resources](/scheduling/resources). A court or cage belongs to a location, so athletes and coaches always know which building "Cage 2" is in.
+
+<Note>
+  Screenshots for the Setup tabs are being captured. Labels were checked against the live app on 2026-09-02.
+</Note>
+
+## Adding a location
+
+<Steps>
+  <Step title="Open Setup → Locations">
+    Go to **Scheduling → Setup** and click the **Locations** tab, then **Add location**.
+  </Step>
+  <Step title="Enter the address">
+    Give the location a short **title** athletes will recognise ("Main Gym", "Field 3 at Riverside Park") and fill in the street address. The title shows on bookings; the address powers map links.
+  </Step>
+  <Step title="Set hours">
+    Each location carries its own hours per weekday (for example Mon–Thu 9:00 AM – 1:00 PM and 5:00 PM – 9:00 PM). They show on the card alongside the location's schedulers; the actual bookable windows come from your [availability templates](/scheduling/how-availability-works).
+  </Step>
+  <Step title="Save">
+    The location appears as a card showing its address, hours, and **USED BY n SCHEDULERS**.
+  </Step>
+</Steps>
+
+## Attaching a location to a scheduler
+
+Open the scheduler from **Scheduling → Schedulers**, scroll to the **Location** section, and pick a saved location. You can also type a new address there; it is saved to Setup → Locations automatically so you can reuse it.
+
+A scheduler has one location. If you run the same session at two sites, create two schedulers (duplicate the first) and give each its own location. That keeps the address on every booking correct and lets you compare the two sites in [Calendar analytics](/scheduling/calendar-analytics).
+
+## What athletes see
+
+The location title and address appear:
+
+- On the session card in the athlete portal before booking
+- In the booking confirmation and reminder messages
+- On the calendar event if the athlete adds it to their phone
+
+## Editing and removing
+
+Click a location card to edit the title, address, or hours. Changes apply to every scheduler that uses it, including sessions already booked.
+
+You cannot delete a location while schedulers use it. The **USED BY** list on the card tells you which ones to move first.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="I coach at the athlete's home or a different park each time">
+    Create a location called "Travel session" with your base address and explain in the scheduler description that the exact spot is confirmed by message. Use the booking **Notes** field to record the address per booking.
+  </Accordion>
+  <Accordion title="Do locations affect what time slots are shown?">
+    No. Availability comes from your templates, and conflicts come from coaches and resources. A location is a label and address, not a calendar.
+  </Accordion>
+  <Accordion title="Can two schedulers at different locations overlap?">
+    Yes, unless they share a coach or a resource. That is the point of resources: attach "Court A" to both and CoachIQ prevents the double-booking. See [Resources](/scheduling/resources).
+  </Accordion>
+</AccordionGroup>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Resources" icon="location-dot" href="/scheduling/resources">
+    Courts, cages, and rooms that belong to a location
+  </Card>
+  <Card title="Coaches" icon="user-tie" href="/scheduling/setup-coaches">
+    Who takes bookings, and when
+  </Card>
+  <Card title="Scheduler defaults" icon="sliders" href="/scheduling/setup-defaults">
+    The settings every new scheduler starts with
+  </Card>
+  <Card title="Creating your first scheduler" icon="calendar-plus" href="/scheduling/creating-your-first-scheduler">
+    Put a location on a bookable session
+  </Card>
+</CardGroup>
