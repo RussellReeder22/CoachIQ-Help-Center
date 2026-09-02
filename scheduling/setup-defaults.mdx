@@ -12,10 +12,10 @@ keywords: ["defaults", "scheduler defaults", "buffer", "minimum notice", "cancel
 
 ## What defaults do
 
-Every scheduler carries the same set of timing and booking rules. The **Defaults** tab is where you set the starting values, so each new scheduler you create is already right for how you run your business. You can still override any of them on an individual scheduler under its **Advanced settings**.
+Every scheduler carries the same set of timing and booking rules. The **Defaults** tab ("Defaults for every new scheduler") is where you set the starting values, so each new scheduler you create is already right for how you run your business. **Create scheduler** preloads these settings, and you can still override any of them on an individual scheduler under its **Advanced settings**. Click **Save defaults** to apply your changes.
 
 <Note>
-  Defaults apply to schedulers you create **after** you change them. Existing schedulers keep their own values. Screenshots for this tab are being captured; labels below match the app as of September 2026.
+  Defaults apply to schedulers you create **after** you change them. Existing schedulers keep their own values. Screenshots for this tab are being captured; labels were checked against the live app on 2026-09-02.
 </Note>
 
 ## The four groups
@@ -24,9 +24,9 @@ Every scheduler carries the same set of timing and booking rules. The **Defaults
 
 | Setting | What it does |
 |---|---|
-| **Duration** | Session length: 15, 30, 45, 60 minutes, or **Custom** |
-| **Buffer before** | Minutes blocked before each session, for setup or travel |
-| **Buffer after** | Minutes blocked after each session, for notes or cleanup |
+| **Duration** | Session length: **15 min**, **30 min**, **45 min**, **60 min**, or **Custom** with a **Duration (minutes)** field |
+| **Buffer before (minutes)** | Minutes blocked before each session, for setup or travel |
+| **Buffer after (minutes)** | Minutes blocked after each session, for notes or cleanup |
 
 Buffers reduce how many slots fit in a day. A 60-minute lesson with a 15-minute buffer after it uses 75 minutes of availability.
 
@@ -35,23 +35,23 @@ Buffers reduce how many slots fit in a day. A 60-minute lesson with a 15-minute 
 | Setting | What it does |
 |---|---|
 | **Minimum notice (hours)** | How close to the start time an athlete can still book. 24 means nothing can be booked less than a day ahead |
-| **Book up to N days ahead** | How far into the future athletes can see and book slots |
+| **Book up to (days ahead)** | How far into the future athletes can see and book slots |
 | **Cancellation notice (hours)** | How long before a session an athlete can still cancel themselves. Inside this window, cancel and reschedule are blocked for the athlete |
 
 ### Booking rules
 
 | Setting | What it does |
 |---|---|
-| **Allow cancel** | Athletes can cancel their own bookings (outside the cancellation notice window) |
+| **Allow athletes to cancel** | Athletes can cancel their own bookings (outside the cancellation notice window) |
 | **Refund credits on cancellation** | When a credit-paid booking is canceled in time, the credit goes back to the athlete |
-| **Allow reschedule** | Athletes can move their booking to another open slot |
+| **Allow athletes to reschedule** | Athletes can move their booking to another open slot |
 | **Show booked slots to other athletes** | Other athletes can see that a slot is taken (and, on group sessions, who is in it). Turn off for private lessons |
 
 ### Limits
 
 | Setting | What it does |
 |---|---|
-| **Max bookings per week** | Cap on how many sessions one athlete can book per week on this scheduler |
+| **Max bookings per week** | Cap on how many sessions one athlete can book per week on this scheduler. **0** means unlimited |
 | **Max athletes per timeslot** | Capacity of each slot. 1 for private lessons, higher for groups |
 
 ## Recommended starting points

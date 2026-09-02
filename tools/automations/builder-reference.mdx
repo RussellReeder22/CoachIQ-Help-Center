@@ -12,10 +12,10 @@ keywords: ["automation builder", "data sources", "conditions", "and/or groups", 
 
 ## The builder, top to bottom
 
-The builder is one long page with a section for each part of the automation. The header holds **Test Run** and **Update** (labelled **Create** for a new automation). Nothing you change is saved until you click Update.
+The builder is one long page with a section for each part of the automation, and a side menu (**Details · Triggers · Data Sources · Conditions · Actions · Logs · Settings**) that jumps to each. The header holds **Test Run** and **Update** (labelled **Create** for a new automation). Nothing you change is saved until you click Update.
 
 <Note>
-  Screenshots of the builder are being refreshed. Section names below match the app as of September 2026. For the full list of triggers, actions, and dynamic fields see the [Triggers and actions reference](/tools/automations/triggers-actions-reference).
+  Screenshots of the builder are being refreshed. Section names and labels were checked against the live app on 2026-09-02. For the full list of triggers, actions, and dynamic fields see the [Triggers and actions reference](/tools/automations/triggers-actions-reference).
 </Note>
 
 ### Details
@@ -34,12 +34,12 @@ Extra information fetched **before** the conditions run. Use a data source when 
 
 Filters that decide whether the automation continues. Each rule compares a field to a value: **Product Label · Equal To · "Summer Camp"**, **Interval · Equal To · month**, and so on.
 
-Rules sit inside groups, and you choose how a group combines them:
+Click **Add Rule** for another rule. Rules sit inside groups, and you choose how a group combines them:
 
 - **And** — every rule in the group must be true
 - **Or** — any one rule is enough
 
-Nest groups to express things like "(bought a membership **or** a credit pack) **and** has no future booking". If there are no conditions, the automation runs for every trigger event.
+**Add And/Or** creates a nested group, so you can express things like "(bought a membership **or** a credit pack) **and** has no future booking". If there are no conditions, the automation runs for every trigger event.
 
 ### Actions
 
@@ -47,10 +47,10 @@ What happens when the conditions pass. Click **Add Action** for each step. The t
 
 | Action | Fields |
 |---|---|
-| **Send an Announcement** | Target user, heading, message, and **Change From** to pick which admin it appears to come from |
-| **Send an SMS Message** | Target user and message, with a **160-character counter** so you can see when a text splits into a second segment |
+| **Send an Announcement** | **Target User** (defaults to *User from trigger*; click **Change** to pick someone else), **From** (*Default*, or **Set** to choose which admin it appears to come from), **Title**, and **Message** |
+| **Send an SMS Message** | **Target User**, **From**, and **Message**, with a live counter such as **180 / 160** so you can see when a text splits into a second segment. The hint reads "Keep it under 160 characters for SMS" |
 
-Inside any message field, type `#` to insert a **field option** from the trigger or a data source, or `@` to insert a **CoachIQ field** such as the athlete's first name, the session title, or the booking time. Fields fill in per person when the automation runs.
+Inside any message field, type `#` to insert a **field option** from the trigger or a data source, or `@` to insert a **CoachIQ field** such as the athlete's first name, the session title, or the booking time (the field hint says exactly that: "Use # for field options, and @ for CoachIQ fields"). Fields fill in per person when the automation runs.
 
 Actions run in order. Put the message you most want delivered first.
 
@@ -60,7 +60,7 @@ A record of every time the automation ran: when it fired, for whom, which condit
 
 ### Settings
 
-The **Enabled** toggle. Off means the automation is saved but never runs. There is no separate delete button: **disable the automation, then delete it** from here, or **Archive** it from the Automations list if you may want it back.
+The **Enabled** toggle. Off means the automation is saved but never runs. There is no separate delete button; the section says "Disable above to delete this automation", so switch Enabled off first and the delete option appears. Prefer **Archive** from the Automations list if you may want it back.
 
 ### Test Run
 
