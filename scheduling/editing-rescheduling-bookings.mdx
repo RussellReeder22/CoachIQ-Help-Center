@@ -3,7 +3,7 @@ title: 'Editing & Rescheduling Bookings'
 description: 'How to modify booking details or move sessions to a different time'
 sidebarTitle: 'Edit & Reschedule'
 icon: 'pen-to-square'
-keywords: ["edit booking", "reschedule", "change booking", "move session", "change time", "modify booking"]
+keywords: ["edit booking", "reschedule", "change booking", "move session", "change time", "modify booking", "edit duration", "duration in minutes"]
 ---
 
 <Info>
@@ -12,38 +12,31 @@ keywords: ["edit booking", "reschedule", "change booking", "move session", "chan
 
 ## Editing a booking
 
-Update booking details like notes, assigned coach, or location without changing the time.
+On **Schedule** → **Calendar**, click a session. The click view shows **Duration**, **Time Slot**, **Location**, **Coaches**, and participants.
+
+**Duration**, **Location**, and **Coaches** each have **Edit**. **Time Slot** does not. The header includes **Move Session**. Footer: **Add Participants** and **Send Message to All**.
+
+<Frame>
+  ![Calendar session click view with Duration, Time Slot, Location, and Coaches](/images/scheduling-calendar-click-duration.png)
+</Frame>
+
+## Edit duration from the calendar
 
 <Steps>
-  <Step title="Click on the booking">
-    Go to **Schedule** → **Calendar** and click on the booking you want to edit.
+  <Step title="Click Edit next to Duration">
+    On the session click view, **Duration** shows the current length (for example **60 min**). Click **Edit**.
+  </Step>
+  <Step title="Edit Duration">
+    That opens **Edit Duration**. The field is **Duration in minutes**.
 
-    The session detail modal appears showing participants and booking info.
+    Helper: the end time is named, and the change does not change the session date or start time.
+  </Step>
+  <Step title="Save Duration or Cancel">
+    Click **Save Duration**, or **Cancel**.
 
     <Frame>
-      ![Session detail modal showing booking information and participants](/images/session-detail-modal.png)
+      ![Edit Duration with Duration in minutes, Cancel, and Save Duration](/images/scheduling-edit-duration.png)
     </Frame>
-  </Step>
-
-  <Step title="Click Edit">
-    In the booking detail panel, click **Edit** to open the full booking editor.
-  </Step>
-
-  <Step title="Make your changes">
-    Update any of the following:
-
-    - **Notes** — Add session notes or special instructions
-    - **Coach assignment** — Change which coach is assigned
-    - **Location** — Update where the session takes place
-    - **Participants** — Add or remove athletes
-  </Step>
-
-  <Step title="Save your changes">
-    Click **Save** to apply the updates.
-
-    <Check>
-    Changes are saved immediately. Athletes are notified if relevant details changed.
-    </Check>
   </Step>
 </Steps>
 
