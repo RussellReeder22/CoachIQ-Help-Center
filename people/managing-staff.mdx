@@ -7,7 +7,7 @@ keywords: ["staff", "coaches", "admin", "team", "add coach", "permissions", "acc
 ---
 
 <Info>
-  **Where to find this**: People → Staff tab (Admin only)
+  **Where to find this**: **People** → **Staff** (Admin only). Settings does not have a Staff entry.
 </Info>
 
 ## What you'll accomplish
@@ -20,7 +20,7 @@ CoachIQ has two staff roles with different permission levels:
 
 <Tabs>
   <Tab title="Admin">
-    **Full platform access** - No restrictions
+    **Full platform access** — staff cards can show **Full Access**. No restrictions.
 
     **What Admins can do:**
 
@@ -110,114 +110,44 @@ CoachIQ has two staff roles with different permission levels:
 
 ## Managing staff access (blocking pages)
 
-Control which platform features ALL coaches can access with universal page blocking.
+From **People** → **Staff**, use **Manage Staff Access** (next to **Add Staff**) to set default page blocks for coaches.
 
-<Warning>
-  **Important**: Page blocks apply to ALL coaches equally, not individual staff members. Admins always have full access regardless of blocks.
-</Warning>
+Staff cards can show **Admin** with **Full Access**.
+
+<Frame>
+  ![People Staff list with Manage Staff Access and Add Staff](/images/people-staff-list.png)
+</Frame>
 
 <Steps>
-  <Step title="Open Staff Settings">
-    From the Staff tab, click **⚙️ Manage Staff Access** in the top-right corner.
+  <Step title="Open Manage Staff Access">
+    On **People** → **Staff**, click **Manage Staff Access**.
+
+    That opens **Default Coach Access**.
+  </Step>
+  <Step title="Review who it applies to">
+    The banner reads **Managing access for: Coaches without custom access**.
+  </Step>
+  <Step title="Block Access">
+    Under **Block Access**:
+
+    "Select pages that should be blocked by default. Coach-specific settings override this fallback. Admins can view all pages."
+
+    Use **Select pages to block**. If nothing is blocked, status is **All Pages Accessible**.
+  </Step>
+  <Step title="Save or cancel">
+    Click **Update Settings** to save, or **Cancel**.
 
     <Frame>
-      ![CoachIQ Manage Staff Access settings button](/images/manage-staff-button.png)
+      ![Default Coach Access: Coaches without custom access, Block Access](/images/people-staff-default-coach-access.png)
     </Frame>
-  </Step>
-  <Step title="Select pages to block">
-    In the "Block Access" dropdown, select pages you want to hide from all coaches.
-
-    **Available pages to block:**
-
-    - Website & App
-    - Inbox
-    - Schedule - Calendar
-    - Schedule - Schedulers
-    - Payments - Products
-    - Payments - Transactions
-    - Payments - Subscriptions
-    - Payments - Coupons
-    - People - Clients
-    - Content - Media
-    - Content - Programs
-    - Tools - Forms
-    - Tools - Automations
-
-    <Frame>
-      ![CoachIQ staff page blocking dropdown with available pages to restrict](/images/staff-permissions.png)
-    </Frame>
-  </Step>
-  <Step title="Save changes">
-    Click **Update Settings** to apply the blocks.
-
-    **What coaches see:**
-
-    - Blocked pages **completely disappear** from their navigation menu
-    - No grayed-out items, no error messages - just hidden
-    - They can only access pages you haven't blocked
   </Step>
 </Steps>
 
-### Common blocking scenarios
+An **Admin** staff profile shows **User Details** with **Role** set to **Admin**. There is no blocked-pages control on that Admin profile — Admins can view all pages.
 
-<Tabs>
-  <Tab title="Starter Coach (Jake) - First Assistant">
-    **Scenario**: Hiring first assistant coach who only delivers sessions
-
-    **Block:**
-
-    - ✅ Payments (all sections)
-    - ✅ Tools - Automations
-    - ✅ Website & App
-    - ✅ Tools - Forms
-
-    **Leave open:**
-
-    - ✅ Schedule (Calendar & Schedulers)
-    - ✅ People - Clients
-    - ✅ Inbox
-    - ✅ Content
-
-    **Why**: Assistant can book sessions, message clients, and access training content, but can't see revenue or change business settings.
-  </Tab>
-  <Tab title="Scaling Coach (Chris) - Multi-Coach Team">
-    **Scenario**: 3 coaches with different specialties, want them focused on delivery
-
-    **Block:**
-
-    - ✅ Payments - Transactions
-    - ✅ Payments - Subscriptions
-    - ✅ Payments - Coupons
-    - ✅ Tools - Automations
-    - ✅ Website & App
-
-    **Leave open:**
-
-    - ✅ Schedule (full access for availability management)
-    - ✅ People - Clients (view athlete details)
-    - ✅ Inbox (client communication)
-    - ✅ Content (program delivery)
-    - ✅ Payments - Products (see pricing, but not revenue)
-
-    **Why**: Coaches manage their own schedules and communicate with athletes, but don't see financial data or configure automations.
-  </Tab>
-  <Tab title="Facility Owner (Mike) - Tiered Staff">
-    **Scenario**: Lead coaches need more access than assistant coaches
-
-    **Option 1 - Make lead coaches Admins:**
-
-    - Lead coaches = Admin role (full access)
-    - Assistant coaches = Coach role with blocks
-
-    **Option 2 - Use minimal blocks:**
-
-    - Block only: Payments - Transactions, Payments - Subscriptions
-    - Leave everything else open
-    - Trust-based system for experienced staff
-
-    **Why**: At scale, having trusted lead coaches with Admin access simplifies operations. Block only sensitive financial data.
-  </Tab>
-</Tabs>
+<Frame>
+  ![Admin staff User Details with Role Admin and no blocked-pages control](/images/people-staff-admin-detail.png)
+</Frame>
 
 ---
 
@@ -312,7 +242,7 @@ Staff members have the same profile structure as clients with all the same tabs.
 
 <AccordionGroup>
   <Accordion title="Can I give different coaches different permissions?">
-    No - page blocks apply to ALL coaches universally. If you need different permission levels, promote trusted coaches to Admin or use a trust-based system where everyone has similar access.
+    **Default Coach Access** manages access for **Coaches without custom access**. The settings copy says coach-specific settings override this fallback. Admins can view all pages.
   </Accordion>
   <Accordion title="What if my coach already has a CoachIQ account?">
     No problem. When they log in, CoachIQ automatically connects them to your organization. They'll see your org in their account switcher (if they work for multiple orgs).
