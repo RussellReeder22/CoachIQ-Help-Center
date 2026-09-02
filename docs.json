@@ -379,34 +379,6 @@
               "settings/data",
               "settings/change-organization-group-name"
             ]
-          },
-          {
-            "group": "Quick Guides",
-            "pages": [
-              "quick-guides/index",
-              "quick-guides/onboarding-new-athletes",
-              "quick-guides/running-camps",
-              {
-                "group": "Helping Your Athletes",
-                "pages": [
-                  "quick-guides/athletes/sessions-not-showing",
-                  "quick-guides/athletes/login-issues",
-                  "quick-guides/athletes/new-athlete-password-email",
-                  "quick-guides/athletes/video-upload-issues",
-                  "quick-guides/athletes/credit-issues",
-                  "quick-guides/athletes/cancel-subscription"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "FAQ",
-            "pages": [
-              "faq/general",
-              "faq/getting-started",
-              "faq/scheduling",
-              "faq/payments"
-            ]
           }
         ]
       },
@@ -1293,6 +1265,58 @@
     {
       "source": "/payments/checkout-terms-waivers",
       "destination": "/tools/waivers/waivers"
+    },
+    {
+      "source": "/faq/general",
+      "destination": "/"
+    },
+    {
+      "source": "/faq/getting-started",
+      "destination": "/quick-guides/first-week-setup-checklist"
+    },
+    {
+      "source": "/faq/scheduling",
+      "destination": "/scheduling/overview"
+    },
+    {
+      "source": "/faq/payments",
+      "destination": "/payments/getting-started"
+    },
+    {
+      "source": "/quick-guides/index",
+      "destination": "/"
+    },
+    {
+      "source": "/quick-guides/onboarding-new-athletes",
+      "destination": "/people/adding-editing-clients"
+    },
+    {
+      "source": "/quick-guides/running-camps",
+      "destination": "/payments/product-types"
+    },
+    {
+      "source": "/quick-guides/athletes/sessions-not-showing",
+      "destination": "/scheduling/how-availability-works"
+    },
+    {
+      "source": "/quick-guides/athletes/login-issues",
+      "destination": "/athlete-portal/understanding-your-athlete-portal"
+    },
+    {
+      "source": "/quick-guides/athletes/new-athlete-password-email",
+      "destination": "/people/adding-editing-clients"
+    },
+    {
+      "source": "/quick-guides/athletes/video-upload-issues",
+      "destination": "/content/media-overview"
+    },
+    {
+      "source": "/quick-guides/athletes/credit-issues",
+      "destination": "/payments/credits/managing-athlete-credits"
+    },
+    {
+      "source": "/quick-guides/athletes/cancel-subscription",
+      "destination": "/payments/manage-subscriptions"
     }
   ],
   "metadata": {
