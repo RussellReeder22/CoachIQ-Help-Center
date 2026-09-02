@@ -52,7 +52,9 @@
             "group": "Getting Started",
             "pages": [
               "index",
-              "quick-guides/first-week-setup-checklist"
+              "quick-guides/first-week-setup-checklist",
+              "getting-started/dashboard",
+              "getting-started/copilot"
             ]
           },
           {
@@ -200,6 +202,7 @@
                 "group": "Schedulers",
                 "pages": [
                   "scheduling/what-are-schedulers",
+                  "scheduling/organizing-schedulers",
                   "scheduling/creating-your-first-scheduler",
                   "scheduling/scheduler-settings-limits-and-permissions",
                   "scheduling/advanced-scheduler-settings",
@@ -218,7 +221,10 @@
                   "scheduling/seasonal-schedule-transition",
                   "scheduling/setting-black-out-dates",
                   "scheduling/managing-availability-for-multiple-coaches",
-                  "scheduling/resources"
+                  "scheduling/resources",
+                  "scheduling/setup-locations",
+                  "scheduling/setup-coaches",
+                  "scheduling/setup-defaults"
                 ]
               }
             ]
@@ -244,8 +250,7 @@
                   "payments/product-types",
                   "payments/attach-products",
                   "payments/processing-fee",
-                  "payments/guest-checkout",
-                  "payments/checkout-terms-waivers"
+                  "payments/guest-checkout"
                 ]
               },
               {
@@ -302,7 +307,8 @@
                   "people/client-profiles/client-profiles-messages",
                   "people/client-profiles/client-profiles-products",
                   "people/client-profiles/client-profiles-subscriptions",
-                  "people/client-profiles/client-profiles-transactions"
+                  "people/client-profiles/client-profiles-transactions",
+                  "people/client-profiles/client-profiles-waivers"
                 ]
               },
               {
@@ -310,7 +316,8 @@
                 "pages": [
                   "people/managing-staff"
                 ]
-              }
+              },
+              "people/sign-up-and-profile"
             ]
           },
           {
@@ -343,10 +350,19 @@
                 "pages": [
                   "tools/automations/what-are-automations",
                   "tools/automations/build-your-first-automation",
+                  "tools/automations/automation-templates",
                   "tools/automations/triggers-actions-reference",
+                  "tools/automations/builder-reference",
                   "tools/automations/scheduled-automations",
                   "tools/automations/zapier-integration",
+                  "tools/automations/zapier-troubleshooting",
                   "tools/automations/automation-playbook"
+                ]
+              },
+              {
+                "group": "Waivers",
+                "pages": [
+                  "tools/waivers/waivers"
                 ]
               }
             ]
@@ -1273,6 +1289,10 @@
     {
       "source": "/automations/what-are-automations",
       "destination": "/tools/automations/what-are-automations"
+    },
+    {
+      "source": "/payments/checkout-terms-waivers",
+      "destination": "/tools/waivers/waivers"
     }
   ],
   "metadata": {

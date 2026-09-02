@@ -1,0 +1,83 @@
+---
+title: "Coaches"
+description: "Connect coaches to your schedulers, give each their own availability, and see at a glance who covers what."
+sidebarTitle: "Coaches"
+icon: "user-tie"
+keywords: ["coaches", "connect coaches", "coach availability", "assign coach", "multi-coach", "coach schedule", "setup coaches"]
+---
+
+<Info>
+  **Where to find this**: **Scheduling → Setup → Coaches**
+</Info>
+
+## What the Coaches tab does
+
+The **Coaches** tab is the scheduling view of your staff. It lists every coach who is connected to at least one scheduler, shows their availability, and tells you which schedulers each one covers (**USED BY n SCHEDULERS**).
+
+Adding someone to your team happens in **People → Staff** (see [Managing Staff](/people/managing-staff)). This tab is where you decide *when* they take bookings and *which* sessions they can be booked for.
+
+<Note>
+  Screenshots for the Setup tabs are being captured. Labels below match the app as of September 2026.
+</Note>
+
+## Connecting a coach
+
+<Steps>
+  <Step title="Add them as staff first">
+    In **People → Staff → Add Staff**, create the coach with the **Coach** (or **Admin**) role. They need a staff role to appear here.
+  </Step>
+  <Step title="Connect them">
+    In **Scheduling → Setup → Coaches**, click **Connect coaches** and select the person. They now appear as a card.
+  </Step>
+  <Step title="Set their availability">
+    Give each coach their own weekly availability. This is separate from the scheduler's availability template: an athlete can only book a slot that is open on **both**. Details in [Managing availability for multiple coaches](/scheduling/managing-availability-for-multiple-coaches).
+  </Step>
+  <Step title="Put them on schedulers">
+    Open a scheduler, go to its **Coaches** section, and pick the coaches who can run it. Choose specific coaches, or **all coaches** for open sessions any staff member can take.
+  </Step>
+</Steps>
+
+## How coach conflicts work
+
+A coach can be in one place at a time. When a coach is booked on any session, that time is blocked for every other scheduler they are attached to. This is what stops a 4 pm private lesson and a 4 pm group clinic landing on the same person.
+
+If you want two sessions to run simultaneously, attach different coaches to each, or use **all coaches** on neither.
+
+## Choosing a coach at booking
+
+When a scheduler has more than one coach, the athlete picks a coach as part of booking, or you pick for them when [booking manually](/scheduling/manually-booking-athletes). The available slots update to that coach's availability.
+
+## What a coach sees
+
+Coaches log in to the same admin app and see the calendar filtered to their sessions. Admins control which pages a coach can open from **People → Staff**. See [Managing Staff](/people/managing-staff).
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="A coach isn't showing on this tab">
+    They have not been connected to a scheduler yet. Use **Connect coaches**, or open a scheduler's **Coaches** section and add them there.
+  </Accordion>
+  <Accordion title="Can a coach set their own availability?">
+    Yes, if they can access Scheduling → Setup. Otherwise an admin sets it. Either way it lives on the coach's card.
+  </Accordion>
+  <Accordion title="I'm a solo coach. Do I need this tab?">
+    No. Leave schedulers on **all coaches** and your personal availability is the scheduler's availability template.
+  </Accordion>
+</AccordionGroup>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Managing availability for multiple coaches" icon="users" href="/scheduling/managing-availability-for-multiple-coaches">
+    The full multi-coach availability model with examples
+  </Card>
+  <Card title="Managing Staff" icon="users-gear" href="/people/managing-staff">
+    Add coaches and control what they can access
+  </Card>
+  <Card title="Locations" icon="map-pin" href="/scheduling/setup-locations">
+    Where sessions happen
+  </Card>
+  <Card title="Scheduler defaults" icon="sliders" href="/scheduling/setup-defaults">
+    Settings every new scheduler starts with
+  </Card>
+</CardGroup>

@@ -1,0 +1,102 @@
+---
+title: "Automation Builder Reference"
+description: "What each section of the automation builder does: Details, Triggers, Data Sources, Conditions, Actions, Execution Logs, Settings, and Test Run."
+sidebarTitle: "Builder Reference"
+icon: "wrench"
+keywords: ["automation builder", "data sources", "conditions", "and/or groups", "execution logs", "test run", "enabled toggle", "delete automation", "dynamic fields", "@ fields"]
+---
+
+<Info>
+  **Where to find this**: **Tools → Automations**, then click any automation or **Create Automation**
+</Info>
+
+## The builder, top to bottom
+
+The builder is one long page with a section for each part of the automation. The header holds **Test Run** and **Update** (labelled **Create** for a new automation). Nothing you change is saved until you click Update.
+
+<Note>
+  Screenshots of the builder are being refreshed. Section names below match the app as of September 2026. For the full list of triggers, actions, and dynamic fields see the [Triggers and actions reference](/tools/automations/triggers-actions-reference).
+</Note>
+
+### Details
+
+The automation's **label**. This is what you see in the Automations list and in Execution Logs, so make it specific: "Trial → membership nudge, day 3" rather than "Follow-up".
+
+### Triggers
+
+The event that starts the automation, such as **Purchase Made**, **Booking Made**, **Form Submitted**, or a schedule. One trigger per automation. When the event fires, the person it happened to becomes the **user** every later section can reference.
+
+### Data Sources
+
+Extra information fetched **before** the conditions run. Use a data source when your condition or message needs something the trigger alone does not carry: the athlete's current credit balance, their active subscription, their upcoming bookings. Add the source here and its fields become available in Conditions and Actions.
+
+### Conditions
+
+Filters that decide whether the automation continues. Each rule compares a field to a value: **Product Label · Equal To · "Summer Camp"**, **Interval · Equal To · month**, and so on.
+
+Rules sit inside groups, and you choose how a group combines them:
+
+- **And** — every rule in the group must be true
+- **Or** — any one rule is enough
+
+Nest groups to express things like "(bought a membership **or** a credit pack) **and** has no future booking". If there are no conditions, the automation runs for every trigger event.
+
+### Actions
+
+What happens when the conditions pass. Click **Add Action** for each step. The two most used:
+
+| Action | Fields |
+|---|---|
+| **Send an Announcement** | Target user, heading, message, and **Change From** to pick which admin it appears to come from |
+| **Send an SMS Message** | Target user and message, with a **160-character counter** so you can see when a text splits into a second segment |
+
+Inside any message field, type `#` to insert a **field option** from the trigger or a data source, or `@` to insert a **CoachIQ field** such as the athlete's first name, the session title, or the booking time. Fields fill in per person when the automation runs.
+
+Actions run in order. Put the message you most want delivered first.
+
+### Execution Logs
+
+A record of every time the automation ran: when it fired, for whom, which conditions passed, and what each action returned. Click **Check for events** to refresh. This is the first place to look when someone says they did not get a message.
+
+### Settings
+
+The **Enabled** toggle. Off means the automation is saved but never runs. There is no separate delete button: **disable the automation, then delete it** from here, or **Archive** it from the Automations list if you may want it back.
+
+### Test Run
+
+**Test Run** in the header runs the automation once against a sample, so you can read the filled-in message before real athletes do. Use it after every edit to a message or condition.
+
+## A note on the older screenshots
+
+Some pages in this section show an earlier version of the builder with a blank canvas and a **Select Trigger** button. The sections above are the current layout; the concepts are the same.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="My automation ran but nobody got the message">
+    Open **Execution Logs**. If the run shows conditions failing, the person did not match. If an action shows an error, check the target user has a phone (for SMS) or a portal login (for announcements).
+  </Accordion>
+  <Accordion title="Can one automation have two triggers?">
+    No. Create a second automation with the other trigger. Templates make that quick: see [Automation templates](/tools/automations/automation-templates).
+  </Accordion>
+  <Accordion title="What is the difference between # and @ fields?">
+    `#` fields come from the event that fired or a data source you added (the product bought, the form answers). `@` fields are CoachIQ's standard fields about the person and your business (first name, session title, your group name).
+  </Accordion>
+</AccordionGroup>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Triggers and actions reference" icon="list" href="/tools/automations/triggers-actions-reference">
+    Every trigger, action, and dynamic field
+  </Card>
+  <Card title="Automation templates" icon="layer-group" href="/tools/automations/automation-templates">
+    Prebuilt automations to start from
+  </Card>
+  <Card title="Scheduled automations" icon="clock" href="/tools/automations/scheduled-automations">
+    Automations that run on a timer instead of an event
+  </Card>
+  <Card title="Build your first automation" icon="play" href="/tools/automations/build-your-first-automation">
+    A guided first build
+  </Card>
+</CardGroup>
