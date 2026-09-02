@@ -47,113 +47,118 @@
     "tabs": [
       {
         "tab": "Help Center",
-        "icon": "book-open",
         "groups": [
           {
-            "group": "CoachIQ Help Center",
+            "group": "Getting Started",
             "pages": [
-              "index"
+              "index",
+              "quick-guides/first-week-setup-checklist"
             ]
           },
           {
-            "group": "Website Builder",
+            "group": "Website & App",
             "pages": [
-              "website/overview",
-              "website/settings-and-design",
               {
-                "group": "Pages & Navigation",
-                "icon": "file-lines",
+                "group": "Website Builder",
                 "pages": [
-                  "website/pages-navigation/pages-navigation",
-                  "website/pages-navigation/page-templates",
-                  "website/pages-navigation/url-slugs-page-management",
-                  "website/pages-navigation/legal-pages",
-                  "website/blog"
+                  "website/overview",
+                  "website/settings-and-design",
+                  {
+                    "group": "Pages & Navigation",
+                    "icon": "file-lines",
+                    "pages": [
+                      "website/pages-navigation/pages-navigation",
+                      "website/pages-navigation/page-templates",
+                      "website/pages-navigation/url-slugs-page-management",
+                      "website/pages-navigation/legal-pages",
+                      "website/blog"
+                    ]
+                  },
+                  {
+                    "group": "Sections",
+                    "icon": "table-cells-large",
+                    "pages": [
+                      "website/sections/sections",
+                      "website/sections/working-with-sections",
+                      "website/sections/header-footer-navigation",
+                      "website/sections/backgrounds-styling",
+                      "website/sections/buttons-ctas"
+                    ]
+                  },
+                  {
+                    "group": "Section Types",
+                    "icon": "layer-group",
+                    "pages": [
+                      "website/section-types/section-types",
+                      "website/section-types/content-media",
+                      "website/section-types/credibility",
+                      "website/section-types/features",
+                      "website/section-types/forms",
+                      "website/section-types/gallery",
+                      "website/section-types/numbered-steps",
+                      "website/section-types/pricing",
+                      "website/section-types/scheduling",
+                      "website/section-types/testimonials"
+                    ]
+                  },
+                  {
+                    "group": "Domain Setup",
+                    "icon": "globe",
+                    "pages": [
+                      "website/domain-setup/domain-setup",
+                      "website/domain-setup/purchasing-domain",
+                      "website/domain-setup/connecting-godaddy",
+                      "website/domain-setup/connecting-namecheap",
+                      "website/domain-setup/connecting-squarespace",
+                      "website/domain-setup/connecting-wix",
+                      "website/domain-setup/dns-permissions"
+                    ]
+                  },
+                  {
+                    "group": "Analytics & Tracking",
+                    "icon": "chart-line",
+                    "pages": [
+                      "website/analytics-tracking/analytics-tracking",
+                      "website/analytics-tracking/google-analytics",
+                      "website/analytics-tracking/facebook-pixel",
+                      "website/analytics-tracking/clarity-microsoft"
+                    ]
+                  },
+                  {
+                    "group": "SEO & Marketing",
+                    "icon": "magnifying-glass-chart",
+                    "pages": [
+                      "website/seo-marketing/seo-marketing",
+                      "website/seo-marketing/google-my-business",
+                      "website/seo-marketing/additional-business-listings",
+                      "website/seo-marketing/website-seo-basics",
+                      "website/seo-marketing/meta-titles-descriptions",
+                      "website/seo-marketing/favicon-share-images",
+                      "website/seo-marketing/sitemap-builder",
+                      "website/seo-marketing/pages-hidden-from-google",
+                      "website/seo-marketing/url-redirects",
+                      "website/seo-marketing/seo-google-search-console"
+                    ]
+                  }
                 ]
               },
               {
-                "group": "Sections",
-                "icon": "table-cells-large",
+                "group": "Athlete Portal",
                 "pages": [
-                  "website/sections/sections",
-                  "website/sections/working-with-sections",
-                  "website/sections/header-footer-navigation",
-                  "website/sections/backgrounds-styling",
-                  "website/sections/buttons-ctas"
-                ]
-              },
-              {
-                "group": "Section Types",
-                "icon": "layer-group",
-                "pages": [
-                  "website/section-types/section-types",
-                  "website/section-types/content-media",
-                  "website/section-types/credibility",
-                  "website/section-types/features",
-                  "website/section-types/forms",
-                  "website/section-types/gallery",
-                  "website/section-types/numbered-steps",
-                  "website/section-types/pricing",
-                  "website/section-types/scheduling",
-                  "website/section-types/testimonials"
-                ]
-              },
-              {
-                "group": "Domain Setup",
-                "icon": "globe",
-                "pages": [
-                  "website/domain-setup/domain-setup",
-                  "website/domain-setup/purchasing-domain",
-                  "website/domain-setup/connecting-godaddy",
-                  "website/domain-setup/connecting-namecheap",
-                  "website/domain-setup/connecting-squarespace",
-                  "website/domain-setup/connecting-wix",
-                  "website/domain-setup/dns-permissions"
-                ]
-              },
-              {
-                "group": "Analytics & Tracking",
-                "icon": "chart-line",
-                "pages": [
-                  "website/analytics-tracking/analytics-tracking",
-                  "website/analytics-tracking/google-analytics",
-                  "website/analytics-tracking/facebook-pixel",
-                  "website/analytics-tracking/clarity-microsoft"
-                ]
-              },
-              {
-                "group": "SEO & Marketing",
-                "icon": "magnifying-glass-chart",
-                "pages": [
-                  "website/seo-marketing/seo-marketing",
-                  "website/seo-marketing/google-my-business",
-                  "website/seo-marketing/additional-business-listings",
-                  "website/seo-marketing/website-seo-basics",
-                  "website/seo-marketing/meta-titles-descriptions",
-                  "website/seo-marketing/favicon-share-images",
-                  "website/seo-marketing/sitemap-builder",
-                  "website/seo-marketing/pages-hidden-from-google",
-                  "website/seo-marketing/url-redirects",
-                  "website/seo-marketing/seo-google-search-console"
+                  "athlete-portal/understanding-your-athlete-portal",
+                  "athlete-portal/app-builder-navigation-and-interface",
+                  "athlete-portal/design-settings",
+                  "athlete-portal/menu-and-links",
+                  "athlete-portal/channels",
+                  "athlete-portal/schedule",
+                  "athlete-portal/content",
+                  "athlete-portal/products",
+                  "athlete-portal/paywall-settings",
+                  "athlete-portal/hidden-products-paywall",
+                  "athlete-portal/family-accounts",
+                  "athlete-portal/scripts-and-analytics"
                 ]
               }
-            ]
-          },
-          {
-            "group": "Athlete Portal",
-            "pages": [
-              "athlete-portal/understanding-your-athlete-portal",
-              "athlete-portal/app-builder-navigation-and-interface",
-              "athlete-portal/design-settings",
-              "athlete-portal/menu-and-links",
-              "athlete-portal/channels",
-              "athlete-portal/schedule",
-              "athlete-portal/content",
-              "athlete-portal/products",
-              "athlete-portal/paywall-settings",
-              "athlete-portal/hidden-products-paywall",
-              "athlete-portal/family-accounts",
-              "athlete-portal/scripts-and-analytics"
             ]
           },
           {
@@ -165,9 +170,9 @@
               "inbox/sms-credits",
               "inbox/announcements",
               "inbox/email-marketing",
+              "inbox/professional-email",
               "inbox/attaching-forms-schedulers-and-products",
-              "inbox/using-tags-for-group-messages",
-              "help-center/inbox/professional-email"
+              "inbox/using-tags-for-group-messages"
             ]
           },
           {
@@ -176,33 +181,7 @@
               "scheduling/overview",
               "scheduling/quick-setup",
               {
-                "group": "Availability",
-                "icon": "clock",
-                "pages": [
-                  "scheduling/how-avaliability-works",
-                  "scheduling/create-your-availability",
-                  "scheduling/seasonal-schedule-transition",
-                  "scheduling/setting-black-out-dates",
-                  "scheduling/managing-availability-for-multiple-coaches",
-                  "scheduling/overlapping-slots"
-                ]
-              },
-              {
-                "group": "Schedulers",
-                "icon": "calendar-plus",
-                "pages": [
-                  "scheduling/what-are-schedulers",
-                  "scheduling/creating-your-first-scheduler",
-                  "scheduling/scheduler-settings-limits-and-permissions",
-                  "scheduling/advanced-scheduler-settings",
-                  "scheduling/resources",
-                  "scheduling/google-calendar-sync",
-                  "scheduling/sharing-schedulers"
-                ]
-              },
-              {
                 "group": "Calendar & Bookings",
-                "icon": "calendar-days",
                 "pages": [
                   "scheduling/calendar-overview-and-navigation",
                   "scheduling/calendar-analytics",
@@ -218,17 +197,30 @@
                 ]
               },
               {
-                "group": "Credit System",
-                "icon": "coins",
+                "group": "Schedulers",
                 "pages": [
-                  "scheduling/credit-system-overview",
+                  "scheduling/what-are-schedulers",
+                  "scheduling/creating-your-first-scheduler",
+                  "scheduling/scheduler-settings-limits-and-permissions",
+                  "scheduling/advanced-scheduler-settings",
+                  "scheduling/setting-up-payment-options",
                   "scheduling/credit-based-scheduling",
-                  "scheduling/credit-usage-limits-restrictions",
-                  "scheduling/managing-athlete-credits",
-                  "scheduling/recurring-credit-memberships"
+                  "scheduling/google-calendar-sync",
+                  "scheduling/sharing-schedulers"
                 ]
               },
-              "scheduling/setting-up-payment-options"
+              {
+                "group": "Setup",
+                "pages": [
+                  "scheduling/how-availability-works",
+                  "scheduling/create-your-availability",
+                  "scheduling/overlapping-slots",
+                  "scheduling/seasonal-schedule-transition",
+                  "scheduling/setting-black-out-dates",
+                  "scheduling/managing-availability-for-multiple-coaches",
+                  "scheduling/resources"
+                ]
+              }
             ]
           },
           {
@@ -237,7 +229,6 @@
               "payments/getting-started",
               {
                 "group": "Stripe Setup",
-                "icon": "stripe-s",
                 "pages": [
                   "payments/connecting-stripe",
                   "payments/stripe-dashboard",
@@ -247,21 +238,28 @@
               },
               {
                 "group": "Products",
-                "icon": "box",
                 "pages": [
                   "payments/product-overview",
                   "payments/product-builder",
                   "payments/product-types",
                   "payments/attach-products",
-                  "payments/credits-products",
                   "payments/processing-fee",
                   "payments/guest-checkout",
                   "payments/checkout-terms-waivers"
                 ]
               },
               {
+                "group": "Credits",
+                "pages": [
+                  "payments/credits/credits-products",
+                  "payments/credits/credit-system-overview",
+                  "payments/credits/credit-usage-limits-restrictions",
+                  "payments/credits/managing-athlete-credits",
+                  "payments/credits/recurring-credit-memberships"
+                ]
+              },
+              {
                 "group": "Subscriptions",
-                "icon": "rotate",
                 "pages": [
                   "payments/subscriptions-dashboard",
                   "payments/manage-subscriptions",
@@ -272,14 +270,18 @@
               },
               {
                 "group": "Transactions & Refunds",
-                "icon": "money-bill-transfer",
                 "pages": [
                   "payments/transactions",
                   "payments/issuing-refunds",
                   "payments/failed-payments"
                 ]
               },
-              "payments/coupon-overview"
+              {
+                "group": "Coupons",
+                "pages": [
+                  "payments/coupon-overview"
+                ]
+              }
             ]
           },
           {
@@ -287,12 +289,10 @@
             "pages": [
               "people/overview",
               "people/adding-editing-clients",
-              "people/managing-staff",
               "people/tags-filters",
               "people/block-and-remove-athletes",
               {
                 "group": "Client Profiles",
-                "icon": "user",
                 "pages": [
                   "people/client-profiles/client-profiles",
                   "people/client-profiles/client-profiles-activity",
@@ -304,28 +304,13 @@
                   "people/client-profiles/client-profiles-subscriptions",
                   "people/client-profiles/client-profiles-transactions"
                 ]
+              },
+              {
+                "group": "Staff",
+                "pages": [
+                  "people/managing-staff"
+                ]
               }
-            ]
-          },
-          {
-            "group": "Forms",
-            "pages": [
-              "forms/overview",
-              "forms/creating-forms",
-              "forms/payments-and-bookings",
-              "forms/sharing-forms",
-              "forms/responses-and-automations"
-            ]
-          },
-          {
-            "group": "Automations",
-            "pages": [
-              "automations/what-are-automations",
-              "automations/build-your-first-automation",
-              "automations/triggers-actions-reference",
-              "automations/scheduled-automations",
-              "automations/zapier-integration",
-              "automations/automation-playbook"
             ]
           },
           {
@@ -341,96 +326,115 @@
             ]
           },
           {
+            "group": "Tools",
+            "pages": [
+              {
+                "group": "Forms",
+                "pages": [
+                  "tools/forms/overview",
+                  "tools/forms/creating-forms",
+                  "tools/forms/payments-and-bookings",
+                  "tools/forms/sharing-forms",
+                  "tools/forms/responses-and-automations"
+                ]
+              },
+              {
+                "group": "Automations",
+                "pages": [
+                  "tools/automations/what-are-automations",
+                  "tools/automations/build-your-first-automation",
+                  "tools/automations/triggers-actions-reference",
+                  "tools/automations/scheduled-automations",
+                  "tools/automations/zapier-integration",
+                  "tools/automations/automation-playbook"
+                ]
+              }
+            ]
+          },
+          {
             "group": "Settings",
             "pages": [
               "settings/index",
+              "settings/general",
+              "settings/developer",
+              "settings/communication",
+              "settings/billing",
+              "settings/billing-invoices",
+              "settings/data",
               "settings/change-organization-group-name"
             ]
           },
           {
-            "group": "Power-Ups Setup",
-            "icon": "bolt",
-            "pages": [
-              "power-ups-setup/personalized-app-setup",
-              "power-ups-setup/grant-meta-ads-access",
-              "power-ups-setup/grant-mindbody-access"
-            ]
-          },
-          {
             "group": "Quick Guides",
-            "icon": "book-bookmark",
             "pages": [
-              "flows/index",
-              {
-                "group": "Coach Guides",
-                "pages": [
-                  "flows/first-week-setup-checklist",
-                  "flows/onboarding-new-athletes",
-                  "flows/running-camps"
-                ]
-              },
+              "quick-guides/index",
+              "quick-guides/onboarding-new-athletes",
+              "quick-guides/running-camps",
               {
                 "group": "Helping Your Athletes",
                 "pages": [
-                  "help-center/helping-your-athlete/sessions-not-showing",
-                  "help-center/helping-your-athlete/video-upload-issues",
-                  "help-center/helping-your-athlete/cancel-subscription",
-                  "help-center/helping-your-athlete/login-issues",
-                  "help-center/helping-your-athlete/new-athlete-password-email",
-                  "help-center/helping-your-athlete/credit-issues",
-                  "help-center/payments/update-payment-method"
+                  "quick-guides/athletes/sessions-not-showing",
+                  "quick-guides/athletes/login-issues",
+                  "quick-guides/athletes/new-athlete-password-email",
+                  "quick-guides/athletes/video-upload-issues",
+                  "quick-guides/athletes/credit-issues",
+                  "quick-guides/athletes/cancel-subscription"
                 ]
               }
             ]
           },
           {
             "group": "FAQ",
-            "icon": "circle-question",
             "pages": [
               "faq/general",
+              "faq/getting-started",
               "faq/scheduling",
-              "faq/payments",
-              "faq/getting-started"
+              "faq/payments"
             ]
           }
         ]
       },
       {
         "tab": "Power-Ups",
-        "icon": "bolt",
         "groups": [
           {
             "group": "Power-Ups",
             "pages": [
               "power-ups/index",
-              "power-ups/additional-app-and-site",
-              "power-ups/custom-feature-request",
               "power-ups/done-for-you-paid-ads",
-              "power-ups/personalized-app"
+              "power-ups/personalized-app",
+              "power-ups/additional-app-and-site",
+              "power-ups/custom-feature-request"
+            ]
+          },
+          {
+            "group": "Setup",
+            "pages": [
+              "power-ups/setup/personalized-app-setup",
+              "power-ups/setup/grant-meta-ads-access",
+              "power-ups/setup/grant-mindbody-access"
             ]
           }
         ]
       },
       {
         "tab": "Business Guides",
-        "icon": "book-open",
         "groups": [
           {
             "group": "Guides",
             "pages": [
               "guides/index",
               "guides/getting-found-online-seo",
+              "guides/pricing-your-services",
               "guides/building-your-training-facility",
-              "business-guides/guides/hiring-onboarding-trainers",
-              "business-guides/guides/legal-risk-management",
-              "guides/pricing-your-services"
+              "guides/hiring-onboarding-trainers",
+              "guides/legal-risk-management"
             ]
           }
         ]
       },
       {
         "tab": "Change log",
-        "icon": "clock-rotate-left",
         "groups": [
           {
             "group": "Updates",
@@ -724,7 +728,7 @@
     },
     {
       "source": "/scheduling/credits-system",
-      "destination": "/scheduling/credit-system-overview"
+      "destination": "/payments/credits/credit-system-overview"
     },
     {
       "source": "/scheduling/add-auto-reminders",
@@ -744,7 +748,7 @@
     },
     {
       "source": "/scheduling/schedule-avaliability",
-      "destination": "/scheduling/how-avaliability-works"
+      "destination": "/scheduling/how-availability-works"
     },
     {
       "source": "/inbox/client-communication-overview",
@@ -808,7 +812,7 @@
     },
     {
       "source": "/people/add-waivers-and-liability-forms",
-      "destination": "/forms/overview"
+      "destination": "/tools/forms/overview"
     },
     {
       "source": "/people/managing-customers-faq",
@@ -816,43 +820,43 @@
     },
     {
       "source": "/tools/forms-overview",
-      "destination": "/forms/overview"
+      "destination": "/tools/forms/overview"
     },
     {
       "source": "/tools/forms-overview/leveraging-forms-for-camps",
-      "destination": "/forms/overview"
+      "destination": "/tools/forms/overview"
     },
     {
       "source": "/tools/forms-overview/athlete-onboarding-wavier-form",
-      "destination": "/forms/overview"
+      "destination": "/tools/forms/overview"
     },
     {
       "source": "/tools/forms-overview/sharing-form-options",
-      "destination": "/forms/sharing-forms"
+      "destination": "/tools/forms/sharing-forms"
     },
     {
       "source": "/tools/forms-overview/add-payments-to-forms",
-      "destination": "/forms/payments-and-bookings"
+      "destination": "/tools/forms/payments-and-bookings"
     },
     {
       "source": "/tools/forms-overview/require-login-sign-up-to-forms",
-      "destination": "/forms/overview"
+      "destination": "/tools/forms/overview"
     },
     {
       "source": "/tools/how-to-create-automations-in-coachiq",
-      "destination": "/automations/what-are-automations"
+      "destination": "/tools/automations/what-are-automations"
     },
     {
       "source": "/tools/how-to-create-automations-in-coachiq/using-webhooks-in-coachiq",
-      "destination": "/automations/triggers-actions-reference"
+      "destination": "/tools/automations/triggers-actions-reference"
     },
     {
       "source": "/tools/how-to-create-automations-in-coachiq/integrate-with-zapier",
-      "destination": "/automations/zapier-integration"
+      "destination": "/tools/automations/zapier-integration"
     },
     {
       "source": "/tools/qr-codes-in-coachiq",
-      "destination": "/forms/overview"
+      "destination": "/tools/forms/overview"
     },
     {
       "source": "/video/gallery",
@@ -976,7 +980,7 @@
     },
     {
       "source": "/advanced/how-to-warm-up-your-email-with-coachiq-leads",
-      "destination": "/guides/growing-your-coaching-business"
+      "destination": "/guides/index"
     },
     {
       "source": "/advanced/personalized-ios-app-benefits",
@@ -984,11 +988,11 @@
     },
     {
       "source": "/advanced/personalized-ios-app-set-up",
-      "destination": "/power-ups-setup/personalized-app-setup"
+      "destination": "/power-ups/setup/personalized-app-setup"
     },
     {
       "source": "/advanced/personalized-ios-app-set-up/update-apple-agreements",
-      "destination": "/power-ups-setup/personalized-app-setup"
+      "destination": "/power-ups/setup/personalized-app-setup"
     },
     {
       "source": "/advanced/billing-info",
@@ -1008,7 +1012,7 @@
     },
     {
       "source": "/schedule/credits",
-      "destination": "/scheduling/credit-system-overview"
+      "destination": "/payments/credits/credit-system-overview"
     },
     {
       "source": "/schedule/first-session",
@@ -1064,7 +1068,7 @@
     },
     {
       "source": "/scheduling/credit-system-explained",
-      "destination": "/scheduling/credit-system-overview"
+      "destination": "/payments/credits/credit-system-overview"
     },
     {
       "source": "/payments/products-overview",
@@ -1120,19 +1124,155 @@
     },
     {
       "source": "/help-center/website-builder/seo-and-marketing/meta-ads-account",
-      "destination": "/power-ups-setup/grant-meta-ads-access"
+      "destination": "/power-ups/setup/grant-meta-ads-access"
     },
     {
       "source": "/help-center/helping-your-athlete/untitled-page-1",
-      "destination": "/help-center/helping-your-athlete/sessions-not-showing"
+      "destination": "/quick-guides/athletes/sessions-not-showing"
     },
     {
       "source": "/help-center/helping-your-athlete/untitled-page",
-      "destination": "/help-center/helping-your-athlete/video-upload-issues"
+      "destination": "/quick-guides/athletes/video-upload-issues"
     },
     {
       "source": "/guides/growing-your-coaching-business",
       "destination": "/guides/index"
+    },
+    {
+      "source": "/flows/index",
+      "destination": "/quick-guides/index"
+    },
+    {
+      "source": "/flows/first-week-setup-checklist",
+      "destination": "/quick-guides/first-week-setup-checklist"
+    },
+    {
+      "source": "/flows/onboarding-new-athletes",
+      "destination": "/quick-guides/onboarding-new-athletes"
+    },
+    {
+      "source": "/flows/running-camps",
+      "destination": "/quick-guides/running-camps"
+    },
+    {
+      "source": "/help-center/inbox/professional-email",
+      "destination": "/inbox/professional-email"
+    },
+    {
+      "source": "/help-center/payments/update-payment-method",
+      "destination": "/settings/billing-invoices"
+    },
+    {
+      "source": "/business-guides/guides/hiring-onboarding-trainers",
+      "destination": "/guides/hiring-onboarding-trainers"
+    },
+    {
+      "source": "/business-guides/guides/legal-risk-management",
+      "destination": "/guides/legal-risk-management"
+    },
+    {
+      "source": "/power-ups-setup/personalized-app-setup",
+      "destination": "/power-ups/setup/personalized-app-setup"
+    },
+    {
+      "source": "/power-ups-setup/grant-meta-ads-access",
+      "destination": "/power-ups/setup/grant-meta-ads-access"
+    },
+    {
+      "source": "/power-ups-setup/grant-mindbody-access",
+      "destination": "/power-ups/setup/grant-mindbody-access"
+    },
+    {
+      "source": "/scheduling/credit-system-overview",
+      "destination": "/payments/credits/credit-system-overview"
+    },
+    {
+      "source": "/scheduling/credit-usage-limits-restrictions",
+      "destination": "/payments/credits/credit-usage-limits-restrictions"
+    },
+    {
+      "source": "/scheduling/managing-athlete-credits",
+      "destination": "/payments/credits/managing-athlete-credits"
+    },
+    {
+      "source": "/scheduling/recurring-credit-memberships",
+      "destination": "/payments/credits/recurring-credit-memberships"
+    },
+    {
+      "source": "/payments/credits-products",
+      "destination": "/payments/credits/credits-products"
+    },
+    {
+      "source": "/scheduling/how-avaliability-works",
+      "destination": "/scheduling/how-availability-works"
+    },
+    {
+      "source": "/help-center/helping-your-athlete/sessions-not-showing",
+      "destination": "/quick-guides/athletes/sessions-not-showing"
+    },
+    {
+      "source": "/help-center/helping-your-athlete/video-upload-issues",
+      "destination": "/quick-guides/athletes/video-upload-issues"
+    },
+    {
+      "source": "/help-center/helping-your-athlete/cancel-subscription",
+      "destination": "/quick-guides/athletes/cancel-subscription"
+    },
+    {
+      "source": "/help-center/helping-your-athlete/login-issues",
+      "destination": "/quick-guides/athletes/login-issues"
+    },
+    {
+      "source": "/help-center/helping-your-athlete/new-athlete-password-email",
+      "destination": "/quick-guides/athletes/new-athlete-password-email"
+    },
+    {
+      "source": "/help-center/helping-your-athlete/credit-issues",
+      "destination": "/quick-guides/athletes/credit-issues"
+    },
+    {
+      "source": "/forms/overview",
+      "destination": "/tools/forms/overview"
+    },
+    {
+      "source": "/forms/payments-and-bookings",
+      "destination": "/tools/forms/payments-and-bookings"
+    },
+    {
+      "source": "/forms/responses-and-automations",
+      "destination": "/tools/forms/responses-and-automations"
+    },
+    {
+      "source": "/forms/sharing-forms",
+      "destination": "/tools/forms/sharing-forms"
+    },
+    {
+      "source": "/forms/creating-forms",
+      "destination": "/tools/forms/creating-forms"
+    },
+    {
+      "source": "/automations/triggers-actions-reference",
+      "destination": "/tools/automations/triggers-actions-reference"
+    },
+    {
+      "source": "/automations/build-your-first-automation",
+      "destination": "/tools/automations/build-your-first-automation"
+    },
+    {
+      "source": "/automations/automation-playbook",
+      "destination": "/tools/automations/automation-playbook"
+    },
+    {
+      "source": "/automations/scheduled-automations",
+      "destination": "/tools/automations/scheduled-automations"
+    },
+    {
+      "source": "/automations/zapier-integration",
+      "destination": "/tools/automations/zapier-integration"
+    },
+    {
+      "source": "/automations/what-are-automations",
+      "destination": "/tools/automations/what-are-automations"
     }
   ],
   "metadata": {

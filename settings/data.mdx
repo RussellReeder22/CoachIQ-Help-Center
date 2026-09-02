@@ -1,0 +1,124 @@
+---
+title: "Data Settings: Shared Calendar, Logs & Imports"
+description: "Link group calendars so bookings share busy time, review 30 days of account activity, and bulk-import people or bookings from a CSV."
+sidebarTitle: "Data"
+icon: "database"
+keywords: ["shared calendar", "logs", "audit log", "import people", "import bookings", "CSV", "migrate"]
+---
+
+<Info>
+**Where to find this**: **Settings → Data**, which holds **Shared Calendar**, **Logs**, **Import People**, and **Import Bookings**.
+</Info>
+
+## Shared Calendar
+
+If your organization runs more than one group out of the same facility, organization owners can link two groups' calendars so a booking in one blocks that same time slot in the other — no more double-booked cages or rooms.
+
+Choose what kind of busy time crosses between calendars: **all busy time**, or **resources only**, which shares bookings only when both calendars have a resource with a matching name, type, and location.
+
+<Note>
+Only an organization owner can update this setting.
+</Note>
+
+For the full walkthrough, see [Share a Calendar Across Two Groups](/scheduling/shared-calendar-across-groups).
+
+---
+
+## Logs
+
+Monitor all activity across your CoachIQ account for the last 30 days.
+
+### What's tracked
+
+Logs capture actions across your platform, including:
+
+- User logins and profile changes
+- Admin actions (settings changes, automation edits)
+- Booking activity
+- SMS and notification events
+- Membership changes
+
+### Log details
+
+Each log entry shows:
+
+| Column | Description |
+|--------|-------------|
+| **Action** | What happened |
+| **Category** | Type of activity (Users, Admin, Phone, etc.) |
+| **IP** | IP address of the user |
+| **Time** | When it occurred |
+| **OS, Device, Browser** | Technical details |
+
+### Filtering logs
+
+Use the tabs at the top to filter by role: **All**, **Admin**, **Coach**, **Parent**, or **Athlete**.
+
+<Note>
+Logs are retained for **30 days**. If you need records beyond this period for compliance purposes, export them regularly.
+</Note>
+
+---
+
+## Import People
+
+Bulk upload athletes and clients using a CSV file.
+
+<Steps>
+<Step title="Navigate to Import People">
+Go to **Settings → Import People**.
+</Step>
+
+<Step title="Download the template">
+Click **Download our formatted CSV** to get the correct file format with required columns.
+</Step>
+
+<Step title="Fill in your data">
+Open the CSV in Excel or Google Sheets and add your people's information following the template format.
+</Step>
+
+<Step title="Upload your file">
+Drag and drop your completed CSV file into the upload area, or click to browse.
+</Step>
+</Steps>
+
+<Tip>
+Click **Need help?** in the top-right corner of the Import People page for additional guidance on formatting your CSV file.
+</Tip>
+
+---
+
+## Import Bookings
+
+Migrate existing appointments from another platform using a CSV file.
+
+<Steps>
+<Step title="Navigate to Import Bookings">
+Go to **Settings → Import Bookings**.
+</Step>
+
+<Step title="Download the template">
+Click **Download our formatted CSV** to get the correct file format.
+</Step>
+
+<Step title="Format your dates correctly">
+<Warning>
+**Important**: Don't use timezone abbreviations (PST, EST, etc.) in your dates. The system will use the timezone of your target scheduler.
+</Warning>
+</Step>
+
+<Step title="Upload your file">
+Drag and drop your completed CSV file, then click **Import X New Bookings** to process.
+</Step>
+</Steps>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Adding & Editing Clients" icon="user-plus" href="/people/adding-editing-clients">
+    One at a time, or by import
+  </Card>
+  <Card title="Share a Calendar Across Two Groups" icon="calendar-days" href="/scheduling/shared-calendar-across-groups">
+    The full shared-calendar setup
+  </Card>
+</CardGroup>
