@@ -1,0 +1,108 @@
+---
+title: "Developer Settings: API Keys & Webhooks"
+description: "Find your Org ID and Group ID, create API keys for Zapier and other integrations, and set up webhooks that push CoachIQ events to external URLs."
+sidebarTitle: "Developer"
+icon: "code"
+keywords: ["API key", "Org ID", "Group ID", "webhooks", "Zapier", "integrations", "developer"]
+---
+
+<Info>
+**Where to find this**: **Settings → Developer**, which holds **Api Keys** and **Webhooks**.
+</Info>
+
+## API Keys
+
+Connect CoachIQ to external tools like Zapier to automate your workflows.
+
+### Available identifiers
+
+| Field | Description |
+|-------|-------------|
+| **Org ID** | Your unique organization identifier |
+| **Group ID** | Your unique group identifier |
+| **API Keys** | Generated keys for authentication |
+
+<Steps>
+<Step title="Navigate to API Keys">
+Go to **Settings → Api Keys**.
+</Step>
+
+<Step title="Copy your IDs">
+Click **Copy** next to your Org ID or Group ID to copy them to your clipboard.
+</Step>
+
+<Step title="Create an API key">
+Click **+ New API Key** in the top-right corner to generate a new key for integrations.
+</Step>
+</Steps>
+
+<Tip>
+Use API keys to connect CoachIQ with Zapier. This enables automations like adding new CoachIQ users to your email list or syncing bookings with Google Sheets. Step-by-step: [Zapier Integration](/tools/automations/zapier-integration).
+</Tip>
+
+---
+
+## Webhooks
+
+Set up real-time data triggers for advanced automations and custom integrations.
+
+### What webhooks do
+
+Webhooks send data to external URLs whenever specific events happen in CoachIQ. This is useful for connecting to custom applications or services not available through standard integrations.
+
+### Creating a webhook
+
+<Steps>
+<Step title="Navigate to Webhooks">
+Go to **Settings → Webhooks**.
+</Step>
+
+<Step title="Click New Webhook">
+Click **+ New Webhook** in the top-right corner.
+</Step>
+
+<Step title="Configure your webhook">
+Fill in the following:
+
+| Field | Description |
+|-------|-------------|
+| **Webhook Name** | A descriptive name for this webhook |
+| **Method** | HTTP method (typically POST) |
+| **URL** | The endpoint URL that will receive the data |
+| **Headers** | Optional headers (Content-Type is pre-filled) |
+| **Triggers** | Events that fire this webhook |
+</Step>
+
+<Step title="Add triggers">
+Click **+ Add Trigger** and select which events should send data. Options include: New User, and more.
+</Step>
+
+<Step title="Create the webhook">
+Click **+ Create** to save and activate your webhook.
+</Step>
+</Steps>
+
+<Note>
+Webhooks are an advanced feature typically used by developers or when connecting to custom systems. If you're looking for simpler automations, check out the [Automations](/tools/automations/what-are-automations) feature instead.
+</Note>
+
+---
+
+## Common questions
+
+<AccordionGroup>
+<Accordion title="What's the difference between Org ID and Group ID?">
+Your **Org ID** identifies your overall CoachIQ organization. Your **Group ID** identifies a specific group within that organization. Most integrations need the Group ID.
+</Accordion>
+</AccordionGroup>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Zapier Integration" icon="bolt" href="/tools/automations/zapier-integration">
+    Connect CoachIQ to 5,000+ apps
+  </Card>
+  <Card title="Automations" icon="wand-magic-sparkles" href="/tools/automations/what-are-automations">
+    Create automated workflows without webhooks
+  </Card>
+</CardGroup>
