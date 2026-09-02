@@ -3,7 +3,7 @@ title: "How to Manually Book Athletes into Sessions"
 description: "Step-by-step guide to using the Booking Builder for direct athlete scheduling, including credit handling and booking outside normal availability"
 sidebarTitle: "Manual Booking"
 icon: "user-plus"
-keywords: ["manual booking", "book athlete", "add booking", "booking builder", "book for athlete", "coach book session"]
+keywords: ["manual booking", "book athlete", "add booking", "booking builder", "book for athlete", "coach book session", "book by tag", "tags"]
 ---
 
 ## What you'll accomplish
@@ -11,7 +11,7 @@ keywords: ["manual booking", "book athlete", "add booking", "booking builder", "
 Learn how to book athletes directly into sessions using CoachIQ's Booking Builder—perfect for VIP clients, makeup sessions, and special scheduling situations that require your direct involvement.
 
 <Info>
-  **Where to find this**: Schedule → Calendar → "Book Session" button, or direct URL: `/schedule/booking/builder/new`
+  **Where to find this**: **Schedule** → **Calendar** → **+ Book Session**. That opens **New Booking**.
 </Info>
 
 ---
@@ -56,8 +56,8 @@ There are three ways to access the manual booking interface:
     **Best for**: Booking at a specific time you can see on calendar
 
     1. Go to **Schedule → Calendar**
-    2. Click the **"Book Session"** button (top right)
-    3. Booking Builder opens
+    2. Click **+ Book Session** (top right)
+    3. **New Booking** opens
 
     <Frame>
       ![Calendar week view showing Book Session button in top right](/images/calendar-week-view.png)
@@ -85,7 +85,7 @@ There are three ways to access the manual booking interface:
 
 ## Step-by-step: Creating a manual booking
 
-The Booking Builder has four main sections you'll complete in order:
+New Booking has these sections: **Client**, **Scheduler**, **Date & Time**, **Recurring**, and **Notes**.
 
 <Frame>
   ![CoachIQ Booking Builder interface with client, scheduler, and date selection](/images/manual-booking.png)
@@ -93,25 +93,17 @@ The Booking Builder has four main sections you'll complete in order:
 
 <Steps>
   <Step title="Select the client">
-    Search for and select the athlete you're booking for.
+    On **Client**, the field placeholder is **Search users**. The dropdown is grouped into **Tags** and **People**.
 
-    **How to find clients**:
+    You can pick a person under **People**, or pick a tag under **Tags**. Clicking a tag adds a removable chip above the field. People in your group who have that tag show a checkmark. There is no expand modal and no athlete-count copy.
 
-    - **Search by name**: Start typing athlete/parent name
-    - **Search by email**: Type their email address
+    <Frame>
+      ![New Booking Client dropdown grouped into Tags and People](/images/scheduling-new-booking-tags.png)
+    </Frame>
 
-    **What you'll see**:
-
-    - Client name
-    - Email address
-    - Associated tags
-    - Profile picture (if set)
-
-    **Select the athlete** by clicking on their name.
-
-    <Note>
-      Can't find the client? They may not be in your system yet. Go to **People → Clients → Add Client** to create their profile first.
-    </Note>
+    <Frame>
+      ![Selected tag chip above Search users, with a checkmark on a matching person](/images/scheduling-new-booking-tag-selected.png)
+    </Frame>
   </Step>
   <Step title="Choose the scheduler">
     Select which type of session you're booking.
