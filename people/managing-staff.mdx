@@ -41,7 +41,7 @@ CoachIQ has two staff roles with different permission levels:
     </Tip>
   </Tab>
   <Tab title="Coach">
-    **Restricted access based on page blocks**
+    **Coach role** — staff cards can show **Coach** with **Full Access**.
 
     **What Coaches can do:**
 
@@ -50,18 +50,13 @@ CoachIQ has two staff roles with different permission levels:
     - Book and manage sessions
     - Message clients
     - View assigned athletes
-    - **Limited by**: Page blocks set by Admin
+    - **Limited by**: default page blocks in **Default Coach Access**
 
     **When to use:**
 
     - Assistant coaches
     - Part-time trainers
     - Staff who only need session delivery access
-
-    **Access badge:**
-
-    - "Limited Access" = Coach with blocked pages
-    - Can't see or use blocked features at all
   </Tab>
 </Tabs>
 
@@ -94,7 +89,7 @@ CoachIQ has two staff roles with different permission levels:
 
     - Staff member is immediately added to your organization
     - They'll appear in both Staff tab AND Clients tab
-    - Default role: **Coach** (with Limited Access)
+    - Default role: **Coach** (staff cards can show **Full Access**)
     - No email is sent - you'll need to tell them they've been added
   </Step>
   <Step title="Tell them to log in">
@@ -112,10 +107,10 @@ CoachIQ has two staff roles with different permission levels:
 
 From **People** → **Staff**, use **Manage Staff Access** (next to **Add Staff**) to set default page blocks for coaches.
 
-Staff cards can show **Admin** with **Full Access**.
+Staff cards can show **Admin** or **Coach** with **Full Access**. A gear on a **Coach** card opens that person's profile, not a custom-access panel.
 
 <Frame>
-  ![People Staff list with Manage Staff Access and Add Staff](/images/people-staff-list.png)
+  ![People Staff list with a Coach and an Admin, both Full Access](/images/people-staff-list-coach.png)
 </Frame>
 
 <Steps>
@@ -149,6 +144,17 @@ An **Admin** staff profile shows **User Details** with **Role** set to **Admin**
   ![Admin staff User Details with Role Admin and no blocked-pages control](/images/people-staff-admin-detail.png)
 </Frame>
 
+A **Coach** staff profile also has **User Details** with **Role** set to **Coach**. There is no page-restriction editor there. The per-person access UI is **Block or Remove**:
+
+- **Block User** — Prevent this user from joining this group or the entire organization. You can specify a reason for your records. Button: **Block User**.
+- **Remove from Group** — Remove this user from the current group. They will lose access to all group content. Button: **Remove User**.
+
+<Frame>
+  ![Coach profile Block or Remove: Block User and Remove from Group](/images/people-staff-coach-block-or-remove.png)
+</Frame>
+
+See also [Block or remove an athlete](/people/block-and-remove-athletes).
+
 ---
 
 ## Changing staff roles
@@ -177,8 +183,8 @@ Promote coaches to admins or demote admins to coaches as your team evolves.
     </Frame>
     **Effect is immediate:**
 
-    - **Coach → Admin**: Gains full access, bypasses all page blocks, "Limited Access" badge removed
-    - **Admin → Coach**: Subject to page blocks, "Limited Access" badge applied if blocks exist
+    - **Coach → Admin**: Gains full access. Admins can view all pages.
+    - **Admin → Coach**: Subject to **Default Coach Access** (coaches without custom access)
   </Step>
 </Steps>
 
@@ -242,7 +248,7 @@ Staff members have the same profile structure as clients with all the same tabs.
 
 <AccordionGroup>
   <Accordion title="Can I give different coaches different permissions?">
-    **Default Coach Access** manages access for **Coaches without custom access**. The settings copy says coach-specific settings override this fallback. Admins can view all pages.
+    Default page blocks apply to **Coaches without custom access**. Admins can view all pages. Opening a Coach from Staff opens their profile — **Block or Remove** is **Block User** / **Remove User**, not a page-restriction editor.
   </Accordion>
   <Accordion title="What if my coach already has a CoachIQ account?">
     No problem. When they log in, CoachIQ automatically connects them to your organization. They'll see your org in their account switcher (if they work for multiple orgs).
