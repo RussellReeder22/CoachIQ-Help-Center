@@ -142,7 +142,8 @@
                       "website/seo-marketing/seo-google-search-console"
                     ]
                   }
-                ]
+                ],
+                "icon": "browser"
               },
               {
                 "group": "Athlete Portal",
@@ -159,7 +160,8 @@
                   "athlete-portal/hidden-products-paywall",
                   "athlete-portal/family-accounts",
                   "athlete-portal/scripts-and-analytics"
-                ]
+                ],
+                "icon": "mobile-screen"
               }
             ]
           },
@@ -196,7 +198,8 @@
                   "scheduling/editing-rescheduling-bookings",
                   "scheduling/checking-in-athletes",
                   "scheduling/canceling-bookings"
-                ]
+                ],
+                "icon": "calendar-days"
               },
               {
                 "group": "Schedulers",
@@ -210,7 +213,8 @@
                   "scheduling/credit-based-scheduling",
                   "scheduling/google-calendar-sync",
                   "scheduling/sharing-schedulers"
-                ]
+                ],
+                "icon": "sliders"
               },
               {
                 "group": "Setup",
@@ -225,7 +229,8 @@
                   "scheduling/setup-locations",
                   "scheduling/setup-coaches",
                   "scheduling/setup-defaults"
-                ]
+                ],
+                "icon": "screwdriver-wrench"
               }
             ]
           },
@@ -240,7 +245,8 @@
                   "payments/stripe-dashboard",
                   "payments/disconnect-stripe",
                   "payments/sharing-rev"
-                ]
+                ],
+                "icon": "stripe"
               },
               {
                 "group": "Products",
@@ -251,7 +257,8 @@
                   "payments/attach-products",
                   "payments/processing-fee",
                   "payments/guest-checkout"
-                ]
+                ],
+                "icon": "box"
               },
               {
                 "group": "Credits",
@@ -261,7 +268,8 @@
                   "payments/credits/credit-usage-limits-restrictions",
                   "payments/credits/managing-athlete-credits",
                   "payments/credits/recurring-credit-memberships"
-                ]
+                ],
+                "icon": "coins"
               },
               {
                 "group": "Subscriptions",
@@ -271,7 +279,8 @@
                   "payments/upgrade-membership",
                   "payments/stripe-coachiq-reconciliation",
                   "payments/grandfather-pricing"
-                ]
+                ],
+                "icon": "repeat"
               },
               {
                 "group": "Transactions & Refunds",
@@ -279,13 +288,15 @@
                   "payments/transactions",
                   "payments/issuing-refunds",
                   "payments/failed-payments"
-                ]
+                ],
+                "icon": "receipt"
               },
               {
                 "group": "Coupons",
                 "pages": [
                   "payments/coupon-overview"
-                ]
+                ],
+                "icon": "tag"
               }
             ]
           },
@@ -309,13 +320,15 @@
                   "people/client-profiles/client-profiles-subscriptions",
                   "people/client-profiles/client-profiles-transactions",
                   "people/client-profiles/client-profiles-waivers"
-                ]
+                ],
+                "icon": "id-card"
               },
               {
                 "group": "Staff",
                 "pages": [
                   "people/managing-staff"
-                ]
+                ],
+                "icon": "briefcase"
               },
               "people/sign-up-and-profile"
             ]
@@ -343,7 +356,8 @@
                   "tools/forms/payments-and-bookings",
                   "tools/forms/sharing-forms",
                   "tools/forms/responses-and-automations"
-                ]
+                ],
+                "icon": "file-pen"
               },
               {
                 "group": "Automations",
@@ -357,13 +371,15 @@
                   "tools/automations/zapier-integration",
                   "tools/automations/zapier-troubleshooting",
                   "tools/automations/automation-playbook"
-                ]
+                ],
+                "icon": "wand-magic-sparkles"
               },
               {
                 "group": "Waivers",
                 "pages": [
                   "tools/waivers/waivers"
-                ]
+                ],
+                "icon": "file-signature"
               }
             ]
           },
