@@ -352,7 +352,7 @@ Credit-based sessions are the most powerful but require understanding CoachIQ's 
   **Prerequisites**: Read the [Credits Overview](/payments/credits/credit-system-overview) first to understand credit concepts and types (Master Credits vs Scheduler-Specific Credits) before implementing.
 </Info>
 
-Credit-based scheduling is a **two-step setup** that links together: create credit-issuing products on the Payment side (**Payments → Products**), then configure schedulers to accept those credits on the Schedule side (**Schedule → Schedulers**). Both halves are covered below.
+Credit-based scheduling is a **two-step setup** that links together: create credit-issuing products on the Payment side (**Payments → Products**), then configure schedulers to accept those credits on the Schedule side (**Schedule → Schedulers**). Both halves are covered below. For every setting on each side and what happens when they interact, see [Product Builder → Credits](/payments/product-builder#section-3-credits) and [How credits work on a scheduler](/scheduling/credits-and-schedulers).
 
 <Warning>
   **Critical linkage**: Products and schedulers must be linked! Configure **"Redeemable Schedulers"** in the product to specify which sessions accept those credits. If not linked, athletes can buy credits but can't use them.
@@ -873,6 +873,9 @@ Advanced coaches use multiple schedulers with different payment types for strate
   </Card>
   <Card title="Credits Overview" icon="ticket" href="/payments/credits/credit-system-overview">
     Credit concepts, types, and business benefits (prerequisite for Option 3)
+  </Card>
+  <Card title="Credits on a Scheduler" icon="coins" href="/scheduling/credits-and-schedulers">
+    Scheduler-side credit settings and every edge case
   </Card>
   <Card title="Cancellation Policies" icon="times-circle" href="/scheduling/canceling-bookings">
     Credit refund rules and cancellation policy configuration
