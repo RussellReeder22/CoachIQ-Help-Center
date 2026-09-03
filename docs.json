@@ -338,9 +338,9 @@
               "content/content-overview",
               "content/media-overview",
               "content/programs-overview",
-              "content/sharing-programs",
               "content/lesson-overview",
               "content/lesson-components",
+              "content/sharing-programs",
               "content/video-analysis"
             ]
           },
@@ -391,7 +391,6 @@
               "settings/developer",
               "settings/communication",
               "settings/billing",
-              "settings/billing-invoices",
               "settings/data",
               "settings/change-organization-group-name"
             ]
@@ -1164,7 +1163,7 @@
     },
     {
       "source": "/help-center/payments/update-payment-method",
-      "destination": "/settings/billing-invoices"
+      "destination": "/settings/billing"
     },
     {
       "source": "/business-guides/guides/hiring-onboarding-trainers",
@@ -1337,6 +1336,10 @@
     {
       "source": "/inbox/email-marketing",
       "destination": "/inbox/inbox-overview#email"
+    },
+    {
+      "source": "/settings/billing-invoices",
+      "destination": "/settings/billing"
     }
   ],
   "metadata": {
