@@ -1,0 +1,73 @@
+---
+title: "What Returning Visitors See: The Sign-In Prompt"
+description: "When a form requires login and someone enters an email that already has an account, CoachIQ asks them to sign in mid-form. Here is exactly what they see, why, and what to tell them."
+sidebarTitle: "Returning Visitor Sign-In"
+icon: "right-to-bracket"
+---
+
+When a form has **Login/Signup** required in its Connections, CoachIQ needs to know who is submitting it. New visitors create an account as part of the flow. Returning visitors, most often parents who registered a child last season, are asked to **sign in** the moment they enter an email that already has an account.
+
+This is expected behavior, not a bug. Coaches have reported it as a bug more than once, so it helps to know what the athlete or parent actually sees.
+
+<Info>
+This applies to forms on your **website** and forms in the **athlete app**. The prompt looks the same in both.
+</Info>
+
+## What a new visitor sees
+
+Someone whose email is not in your organization goes straight through:
+
+1. They answer your form questions.
+2. On the Login/Signup page they create an account (name, email, password).
+3. They continue to any product or scheduler pages you attached, then submit.
+
+## What a returning visitor sees
+
+Someone whose email already has an account with you sees a sign-in prompt appear as soon as they enter that email:
+
+- The prompt has their email **pre-filled** and asks for their password.
+- A **Forgot password?** link lets them reset it without leaving the form.
+- If they close the prompt, their form answers are **kept**, and a **Member Login** option stays available so they can sign in when ready.
+
+Once signed in, they continue through the rest of the form exactly as a new visitor would.
+
+## Why it works this way
+
+Form responses attach to a person's profile in [People](/people/overview). CoachIQ cannot attach a response to an account without confirming the person submitting owns that email, so it asks them to prove it by signing in. This is what keeps a returning parent's new registration, payment, and bookings on the same profile as last year's.
+
+## What to tell a parent who asks
+
+Copy and paste this if someone emails you about the prompt:
+
+> That sign-in box means you already have an account with us from a previous registration. Enter the password you set up before, or click "Forgot password?" to reset it. Your answers on the form are saved while you sign in.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I turn the prompt off?">
+    Only by removing the Login/Signup requirement from the form's Connections. Without it, responses are collected but are not attached to a profile, and Contact Info fields will not sync to People. See [Creating Forms](/tools/forms/creating-forms).
+  </Accordion>
+  <Accordion title="A parent says they never made an account">
+    Someone in the family probably did, often the other parent or the athlete. Search the email in [People](/people/overview) to confirm, then have them use **Forgot password?**.
+  </Accordion>
+  <Accordion title="Does this happen on forms without a login requirement?">
+    No. Forms without Login/Signup in their Connections never prompt anyone to sign in.
+  </Accordion>
+</AccordionGroup>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Creating Forms" icon="file-pen" href="/tools/forms/creating-forms">
+    Where the Login/Signup connection lives and what it does to profile sync
+  </Card>
+  <Card title="Sharing Forms" icon="share-nodes" href="/tools/forms/sharing-forms">
+    Put your form on your website or in the athlete app
+  </Card>
+  <Card title="Adding & Editing Clients" icon="user-plus" href="/people/adding-editing-clients">
+    How accounts and profiles are created in People
+  </Card>
+  <Card title="Family Accounts" icon="users" href="/athlete-portal/family-accounts">
+    How parents and children share one login
+  </Card>
+</CardGroup>
