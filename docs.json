@@ -205,7 +205,6 @@
                   "scheduling/advanced-scheduler-settings",
                   "scheduling/overlapping-slots",
                   "scheduling/setting-up-payment-options",
-                  "scheduling/credit-based-scheduling",
                   "scheduling/organizing-schedulers",
                   "scheduling/sharing-schedulers"
                 ]
@@ -269,7 +268,6 @@
                 "group": "Credits",
                 "icon": "coins",
                 "pages": [
-                  "payments/credits/credits-products",
                   "payments/credits/credit-system-overview",
                   "payments/credits/credit-usage-limits-restrictions",
                   "payments/credits/managing-athlete-credits",
@@ -1203,7 +1201,7 @@
     },
     {
       "source": "/payments/credits-products",
-      "destination": "/payments/credits/credits-products"
+      "destination": "/payments/credits/credit-system-overview"
     },
     {
       "source": "/scheduling/how-avaliability-works",
@@ -1340,6 +1338,14 @@
     {
       "source": "/settings/billing-invoices",
       "destination": "/settings/billing"
+    },
+    {
+      "source": "/payments/credits/credits-products",
+      "destination": "/payments/credits/credit-system-overview"
+    },
+    {
+      "source": "/scheduling/credit-based-scheduling",
+      "destination": "/scheduling/setting-up-payment-options#option-3-setting-up-credit-based-sessions"
     }
   ],
   "metadata": {
