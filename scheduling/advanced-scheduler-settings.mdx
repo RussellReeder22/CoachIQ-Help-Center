@@ -202,13 +202,13 @@ If someone tries to book:
 Purpose: Prevents Sarah from being double-booked
 ```
 
-**Optional override**: There's a setting "Allow double-booking" (checkbox)
+**Optional override**: In the **Connected Coaches** section there's a checkbox labeled "Check this box to allow bookings for this session even if the connected coaches are already scheduled for other sessions at the same time."
 
 - **Unchecked** (default): System prevents double-booking ✅
-- **Checked**: System allows double-booking (NOT recommended)
+- **Checked**: The connected coach can be booked for this session even when already scheduled elsewhere at the same time (NOT recommended)
 
 <Warning>
-  **Leave "Allow double-booking" unchecked** unless you have a specific reason. Allowing double-booking defeats the purpose of coach assignment and leads to scheduling conflicts.
+  **Leave this box unchecked** unless you have a specific reason. Allowing the same coach to be booked in two places at once defeats the purpose of coach assignment and leads to scheduling conflicts.
 </Warning>
 
 ### Configuration steps
@@ -233,7 +233,7 @@ Purpose: Prevents Sarah from being double-booked
     </Note>
   </Step>
   <Step title="Configure double-booking setting">
-    1. Locate "Allow double-booking" checkbox
+    1. In the **Connected Coaches** section, locate the checkbox "Check this box to allow bookings for this session even if the connected coaches are already scheduled for other sessions at the same time"
     2. **Leave unchecked** (recommended) to prevent conflicts
     3. Only check if you have specific business need for double-booking
 
@@ -1173,7 +1173,7 @@ Before launching a scheduler, verify all advanced settings are configured:
 
     - Correct coach(es) assigned to scheduler
     - If multiple coaches, confirmed they're interchangeable for this service
-    - "Allow double-booking" is UNCHECKED (unless specific need)
+    - The Connected Coaches same-time booking checkbox is UNCHECKED (unless specific need)
     - Tested that coach availability prevents conflicts
 
     **Test**: Try booking overlapping sessions to confirm double-booking prevention works
@@ -1244,11 +1244,11 @@ Before launching a scheduler, verify all advanced settings are configured:
 
 **Fix**: Create separate schedulers per location, each with specific address
 
-### 3. "Allow double-booking" accidentally checked
+### 3. Same-time double-booking accidentally allowed
 
 **Symptom**: Same coach booked in two places at once, scheduling conflicts
 
-**Fix**: Edit scheduler → Uncheck "Allow double-booking" → Save
+**Fix**: Edit scheduler → **Connected Coaches** section → uncheck "Check this box to allow bookings for this session even if the connected coaches are already scheduled for other sessions at the same time" → Update
 
 ### 4. Reminders not configured
 
