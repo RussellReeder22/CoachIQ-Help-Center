@@ -3,7 +3,7 @@ title: "Scheduled Automations"
 description: "Run automations on a schedule to catch expiring credits, inactive members, and more"
 sidebarTitle: "Scheduled Automations"
 icon: "calendar"
-keywords: ["scheduled automation", "recurring automation", "daily automation", "expiring credits", "inactive members", "timed automation", "cron"]
+keywords: ["scheduled automation", "recurring automation", "daily automation", "specific date", "expiring credits", "inactive members", "timed automation", "cron"]
 ---
 
 Most automations react to something happening—a purchase, a booking, a [form](/tools/forms/overview) submission. Scheduled automations are different. They run on a schedule and **proactively find people** who match your criteria.
@@ -25,6 +25,7 @@ This is how you build credit expiration reminders, inactive member outreach, wee
 | You want to catch people who _didn't_ do something | Haven't booked in 2 weeks  |
 | You want recurring announcements                   | Weekly schedule release    |
 | You need to celebrate milestones                   | 3-month member check-in    |
+| You need a one-time send on a known date           | Camp prep email, 7 days out |
 
 <Tip>
   **Rule of thumb**: If you're checking _status_ rather than reacting to an _event_, use a scheduled automation.
@@ -34,16 +35,19 @@ This is how you build credit expiration reminders, inactive member outreach, wee
 
 ## Setting Your Schedule
 
-You have three timing options:
+Choose the **Scheduled Check** trigger. You have four timing options:
 
-| Schedule                             | Best For              | Example                                          |
-| ------------------------------------ | --------------------- | ------------------------------------------------ |
-| **Every day at [time]**              | Time-sensitive checks | Credit expiration reminders, daily trial alerts  |
-| **Once a week on [day] at [time]**   | Weekly operations     | Inactive member outreach, schedule announcements |
-| **Once a month on [date] at [time]** | Monthly milestones    | Subscription anniversaries, monthly check-ins    |
+| Schedule          | What You Set                                          | Best For              | Example                                          |
+| ----------------- | ----------------------------------------------------- | --------------------- | ------------------------------------------------ |
+| **Daily**         | Time                                                  | Time-sensitive checks | Credit expiration reminders, daily trial alerts  |
+| **Weekly**        | Day of week + time                                    | Weekly operations     | Inactive member outreach, schedule announcements |
+| **Monthly**       | Day of month (1–31, or the last day) + time           | Monthly milestones    | Subscription anniversaries, monthly check-ins    |
+| **Specific Date** | One date + time. Runs once on that date, then is done | One-off sends         | Prep email a week before camp                    |
+
+Time is entered as a time of day. Every scheduled trigger also has its own **timezone** setting, so "Monday at 9:00 AM" means 9:00 AM in the timezone you pick on the trigger—not necessarily your account's timezone. Check it when you set up automations for a location in another time zone.
 
 <Note>
-  Scheduled automations use your timezone from **Settings**. If you're in Eastern Time, "Monday at 9am" means 9am Eastern.
+  A **Specific Date** automation runs once. After that date passes it stays in your list but never fires again, so disable it or reuse it with a new date.
 </Note>
 
 ---
@@ -53,7 +57,7 @@ You have three timing options:
 Scheduled automations require at least one condition. This prevents the automation from running for every single user in your system.
 
 <Warning>
-  **Required**: You must set at least one condition on scheduled automations. The builder won't let you activate without one.
+  **Required**: You must set at least one condition on scheduled automations. The builder won't let you save a Scheduled Check without one.
 </Warning>
 
 ### Available Conditions
@@ -71,15 +75,25 @@ Scheduled automations require at least one condition. This prevents the automati
 | **Credit count is X**                    | User's credits are less than / greater than / equal to X    |
 | **Has upcoming booking**                 | User has a booking today / this week / no upcoming bookings |
 
+You can also filter on the standard user fields (email, phone, first name, last name), and on anything a [data source](/tools/automations/triggers-actions-reference#data-sources) fetches.
+
 ### Combining Conditions
 
-You can add multiple conditions to get more specific. All conditions must be true for a user to be included.
+Rules live inside **And**/**Or** groups. In an **And** group every rule must be true; in an **Or** group any one rule is enough. Click **Add And/Or** to nest a group inside another, which lets you mix the two.
 
-**Example**: Find members who are at risk of churning
+**Example**: Find members who are at risk of churning (one **And** group)
 
 - Has active subscription = Yes
 - Days since last booking \> 14
 - Doesn't have tag "On Vacation"
+
+**Example**: Nudge anyone on a paid plan who has gone quiet (nested groups)
+
+- **And**
+  - Days since last booking \> 14
+  - **Or**
+    - Has active subscription = Yes
+    - Has available credits = Yes
 
 ---
 
@@ -89,9 +103,9 @@ Here's what happens when your scheduled automation fires:
 
 1. **CoachIQ finds all users** matching your conditions (up to 1,000 per run)
 2. **Executes your actions** once for each user found
-3. **Logs the results** so you can see who was contacted
+3. **Logs the results** in **Execution Logs** so you can see who was contacted
 
-**Built-in spam prevention**: CoachIQ won't message the same person repeatedly. If someone matches your conditions two weeks in a row, they'll only get the message once—unless their status changes (like booking a session, then going inactive again).
+**Once or every time?** Each scheduled trigger has a send mode. The default sends to a matching person **only the first time** that condition state is seen—so someone who still has 3 credits expiring next week doesn't get the same reminder two runs in a row. If their situation changes (they book, use credits, then match again) they can be messaged again. Switch the mode to send on **every run** when you want a repeat every time someone matches, such as a weekly "schedule is live" announcement. **Test Run** ignores this setting and always sends.
 
 <Info>
   **Example in action**: Every Monday at 9am, find everyone whose credits expire in less than 7 days → Send each of them a personalized reminder with their credit count and expiration date.
@@ -101,7 +115,7 @@ Here's what happens when your scheduled automation fires:
 
 ## Dynamic Fields for Scheduled Automations
 
-These personalization fields are **only available** in scheduled automations. They let you include real-time data about each user's credits, bookings, and activity.
+Scheduled automations can personalize messages with each person's credit and booking status. In the message field, type `@` to insert a CoachIQ field or `#` to insert a field option from a data source; the builder inserts the token in the exact `{{field...}}` syntax shown below.
 
 <Frame>
   ![CoachIQ scheduled automation condition and dynamic field options](/images/scheduled-conditons.png)
@@ -109,39 +123,48 @@ These personalization fields are **only available** in scheduled automations. Th
 
 ### Credit Fields
 
-| Field                        | What It Inserts                 |
-| ---------------------------- | ------------------------------- |
-| `@User.CreditCount`          | Total available credits         |
-| `@User.CreditsExpiring`      | Number of credits expiring soon |
-| `@User.CreditExpirationDate` | Next expiration date            |
-| `@User.DaysUntilExpiration`  | Days until credits expire       |
+| Field                               | What It Inserts                |
+| ----------------------------------- | ------------------------------ |
+| `{{field.user.credits.count}}`        | Total available credits        |
+| `{{field.user.credits.expire_days}}`  | Days until credits expire      |
+| `{{field.user.credits.has_available}}`| Whether they have any credits  |
 
 **Example message**:
 
 ```
-You have @User.CreditsExpiring credits expiring in @User.DaysUntilExpiration days! 
+You have {{field.user.credits.count}} credits expiring in {{field.user.credits.expire_days}} days! 
 Book now before you lose them.
 ```
 
 ### Booking Fields
 
-| Field                         | What It Inserts               |
-| ----------------------------- | ----------------------------- |
-| `@User.LastBookingDate`       | Date of their last booking    |
-| `@User.DaysSinceLastBooking`  | Days since last booking       |
-| `@User.NextBookingDate`       | Their next upcoming booking   |
-| `@User.BookingCountThisMonth` | Number of bookings this month |
+| Field                                     | What It Inserts                        |
+| ----------------------------------------- | -------------------------------------- |
+| `{{field.user.booking.days_since_last}}`  | Days since last booking                |
+| `{{field.user.booking.upcoming}}`         | Whether they have an upcoming booking  |
 
 **Example message**:
 
 ```
-We miss you! It's been @User.DaysSinceLastBooking days since your last session. 
+We miss you! It's been {{field.user.booking.days_since_last}} days since your last session. 
 Come back this week?
 ```
 
 <Note>
-  Standard fields like `@User.FirstName`, `@User.LastName`, and `@User.Email` work in all automations, not just scheduled ones.
+  Standard fields like `{{field.user.firstName}}`, `{{field.user.lastName}}`, and `{{field.user.email}}` work in all automations, not just scheduled ones. For the date of someone's next or last booking, or an exact credit balance in a specific bank, add a **User bookings** or **User credits** [data source](/tools/automations/triggers-actions-reference#data-sources) and insert its output with `#`.
 </Note>
+
+---
+
+## Testing Safely
+
+Scheduled automations reach everyone who matches, so test before you enable:
+
+1. Leave **Enabled** off in **Settings** while you build.
+2. Add a condition like **Has a specific tag → "Test"** and tag only yourself (or a test account).
+3. Click **Test Run** and read the filled-in message. Test Run sends real messages to whoever matches, so keep that test tag in place.
+4. Check **Execution Logs** to confirm who matched and what each action returned.
+5. Remove the test condition, then switch **Enabled** on.
 
 ---
 
@@ -166,15 +189,11 @@ These are the most popular scheduled automations coaches use. Full setup instruc
 </Tip>
 
 <Tip>
-  **Use tags to control frequency**. For milestone messages, add a tag like "3-Month Member" when someone hits that milestone, then remove it after the automation runs. This prevents repeat messages.
+  **Use tags to control frequency**. For milestone messages, add a tag like "3-Month Celebrated" as the last action and exclude anyone who has it. Then the message can never go out twice, whichever send mode you pick.
 </Tip>
 
 <Tip>
   **Start weekly, go daily only if needed**. Weekly checks work for most use cases. Daily checks are best for time-sensitive things like credit expirations or trial session alerts.
-</Tip>
-
-<Tip>
-  **Test with a tag filter first**. When setting up a new scheduled automation, add a condition like "Has tag = Test" and only tag yourself. Run it once to make sure it works before removing the filter.
 </Tip>
 
 ---
@@ -186,13 +205,16 @@ These are the most popular scheduled automations coaches use. Full setup instruc
     Ready-to-copy scheduled automations for credits, retention, announcements, and more.
   </Card>
   <Card title="Triggers & Actions Reference" icon="list" href="/tools/automations/triggers-actions-reference">
-    Complete list of all triggers, conditions, actions, and dynamic fields.
+    Complete list of all triggers, conditions, data sources, actions, and dynamic fields.
   </Card>
 </CardGroup>
 
 ## Related articles
 
 <CardGroup cols={2}>
+  <Card title="Builder Reference" icon="wrench" href="/tools/automations/builder-reference">
+    What each section of the automation builder does, including Test Run and Execution Logs
+  </Card>
   <Card title="Inbox Overview" icon="inbox" href="/inbox/inbox-overview">
     Where automated in-app messages and emails are delivered to members
   </Card>
