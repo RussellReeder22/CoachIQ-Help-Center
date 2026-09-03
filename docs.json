@@ -184,53 +184,59 @@
             "pages": [
               "scheduling/overview",
               "scheduling/quick-setup",
+              "scheduling/book-your-first-session",
+              {
+                "group": "Availability",
+                "icon": "calendar-week",
+                "pages": [
+                  "scheduling/how-availability-works",
+                  "scheduling/create-your-availability",
+                  "scheduling/setting-black-out-dates",
+                  "scheduling/seasonal-schedule-transition",
+                  "scheduling/managing-availability-for-multiple-coaches"
+                ]
+              },
+              {
+                "group": "Schedulers",
+                "icon": "sliders",
+                "pages": [
+                  "scheduling/what-are-schedulers",
+                  "scheduling/creating-your-first-scheduler",
+                  "scheduling/scheduler-settings-limits-and-permissions",
+                  "scheduling/advanced-scheduler-settings",
+                  "scheduling/overlapping-slots",
+                  "scheduling/setting-up-payment-options",
+                  "scheduling/credit-based-scheduling",
+                  "scheduling/organizing-schedulers",
+                  "scheduling/sharing-schedulers"
+                ]
+              },
+              {
+                "group": "Setup & Defaults",
+                "icon": "screwdriver-wrench",
+                "pages": [
+                  "scheduling/setup-coaches",
+                  "scheduling/setup-locations",
+                  "scheduling/resources",
+                  "scheduling/setup-defaults"
+                ]
+              },
               {
                 "group": "Calendar & Bookings",
+                "icon": "calendar-days",
                 "pages": [
                   "scheduling/calendar-overview-and-navigation",
                   "scheduling/calendar-analytics",
                   "scheduling/shared-calendar-across-groups",
+                  "scheduling/google-calendar-sync",
                   "scheduling/understanding-booking-types",
                   "scheduling/manually-booking-athletes",
-                  "scheduling/book-your-first-session",
                   "scheduling/booking-for-multiple-athletes",
                   "scheduling/recurring-bookings",
                   "scheduling/editing-rescheduling-bookings",
                   "scheduling/checking-in-athletes",
                   "scheduling/canceling-bookings"
-                ],
-                "icon": "calendar-days"
-              },
-              {
-                "group": "Schedulers",
-                "pages": [
-                  "scheduling/what-are-schedulers",
-                  "scheduling/organizing-schedulers",
-                  "scheduling/creating-your-first-scheduler",
-                  "scheduling/scheduler-settings-limits-and-permissions",
-                  "scheduling/advanced-scheduler-settings",
-                  "scheduling/setting-up-payment-options",
-                  "scheduling/credit-based-scheduling",
-                  "scheduling/google-calendar-sync",
-                  "scheduling/sharing-schedulers"
-                ],
-                "icon": "sliders"
-              },
-              {
-                "group": "Setup",
-                "pages": [
-                  "scheduling/how-availability-works",
-                  "scheduling/create-your-availability",
-                  "scheduling/overlapping-slots",
-                  "scheduling/seasonal-schedule-transition",
-                  "scheduling/setting-black-out-dates",
-                  "scheduling/managing-availability-for-multiple-coaches",
-                  "scheduling/resources",
-                  "scheduling/setup-locations",
-                  "scheduling/setup-coaches",
-                  "scheduling/setup-defaults"
-                ],
-                "icon": "screwdriver-wrench"
+                ]
               }
             ]
           },
@@ -240,63 +246,63 @@
               "payments/getting-started",
               {
                 "group": "Stripe Setup",
+                "icon": "stripe",
                 "pages": [
                   "payments/connecting-stripe",
                   "payments/stripe-dashboard",
                   "payments/disconnect-stripe",
                   "payments/sharing-rev"
-                ],
-                "icon": "stripe"
+                ]
               },
               {
                 "group": "Products",
+                "icon": "box",
                 "pages": [
                   "payments/product-overview",
-                  "payments/product-builder",
                   "payments/product-types",
+                  "payments/product-builder",
                   "payments/attach-products",
                   "payments/processing-fee",
                   "payments/guest-checkout"
-                ],
-                "icon": "box"
+                ]
               },
               {
                 "group": "Credits",
+                "icon": "coins",
                 "pages": [
                   "payments/credits/credits-products",
                   "payments/credits/credit-system-overview",
                   "payments/credits/credit-usage-limits-restrictions",
                   "payments/credits/managing-athlete-credits",
                   "payments/credits/recurring-credit-memberships"
-                ],
-                "icon": "coins"
+                ]
               },
               {
                 "group": "Subscriptions",
+                "icon": "repeat",
                 "pages": [
                   "payments/subscriptions-dashboard",
                   "payments/manage-subscriptions",
                   "payments/upgrade-membership",
-                  "payments/stripe-coachiq-reconciliation",
-                  "payments/grandfather-pricing"
-                ],
-                "icon": "repeat"
+                  "payments/grandfather-pricing",
+                  "payments/stripe-coachiq-reconciliation"
+                ]
               },
               {
                 "group": "Transactions & Refunds",
+                "icon": "receipt",
                 "pages": [
                   "payments/transactions",
                   "payments/issuing-refunds",
                   "payments/failed-payments"
-                ],
-                "icon": "receipt"
+                ]
               },
               {
                 "group": "Coupons",
+                "icon": "tag",
                 "pages": [
                   "payments/coupon-overview"
-                ],
-                "icon": "tag"
+                ]
               }
             ]
           },
