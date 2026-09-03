@@ -348,6 +348,16 @@ Before starting:
 
 Credit-based sessions are the most powerful but require understanding CoachIQ's credit system.
 
+<Info>
+  **Prerequisites**: Read the [Credits Overview](/payments/credits/credit-system-overview) first to understand credit concepts and types (Master Credits vs Scheduler-Specific Credits) before implementing.
+</Info>
+
+Credit-based scheduling is a **two-step setup** that links together: create credit-issuing products on the Payment side (**Payments → Products**), then configure schedulers to accept those credits on the Schedule side (**Schedule → Schedulers**). Both halves are covered below.
+
+<Warning>
+  **Critical linkage**: Products and schedulers must be linked! Configure **"Redeemable Schedulers"** in the product to specify which sessions accept those credits. If not linked, athletes can buy credits but can't use them.
+</Warning>
+
 ### How credits work in CoachIQ
 
 Before configuring, understand the credit flow:
@@ -474,26 +484,55 @@ Now configure your scheduler to accept credits as payment:
 
 ### Testing the credit-based flow
 
-Complete end-to-end testing before going live:
+Complete end-to-end testing before going live. The first four steps are the core flow; the rest apply only if you use that feature.
 
 <Steps>
   <Step title="Create test athlete account">
-    Use a test email address or have a real athlete help test.
+    Set up a dummy athlete by creating an account through your athlete portal:
+
+    - **Name**: Test Athlete
+    - **Email**: A second personal email (different from your admin email)
+    - **Tag**: "TEST" for easy filtering
   </Step>
-  <Step title="Purchase credits as athlete">
-    1. Share your Products page link or use "Buy Credits" flow
-    2. Find your credit package product
+  <Step title="Get credits onto the test athlete">
+    **Option A: Complete purchase flow** (comprehensive test)
+
+    1. Get the product purchase link from the Products page (admin)
+    2. Open it in an incognito window and log in as the test athlete
     3. Complete purchase using Stripe test card (4242 4242 4242 4242)
-    4. Verify credits added to account
-    5. Check email receipt mentions credit quantity
+    4. Verify credits added to account and the email receipt mentions credit quantity
+
+    **Option B: Manual credit grant** (faster)
+
+    1. Open Test Athlete's profile in **People → Clients**
+    2. Navigate to the **Credits** tab → **Master Credits** tab
+    3. Enter `10` in **Credit Balance** and save
+
+    <Tip>
+      **Stripe test mode**: Use test credit cards to avoid real charges. Test card: `4242 4242 4242 4242`
+    </Tip>
+  </Step>
+  <Step title="Verify credit display in athlete view">
+    Log in as Test Athlete and open **Settings → Billing** in the athlete portal.
+
+    **Verify athlete sees**:
+
+    - ✅ "Available Credits" section with the correct balance (10 credits)
+    - ✅ Product name listed (e.g., "10-Credit Package")
+    - ✅ "Redeemable Sessions" list (if scheduler-specific credits), with usage notation (0/∞ or numeric)
+    - ✅ Credit Renewals date (if subscription)
+    - ✅ Credit Expirations tracking (if expiration set)
+
+    **Red flag**: If the athlete can't see credits or the product name, a configuration issue exists.
   </Step>
   <Step title="Book session using credits">
     1. Navigate to scheduler booking page
-    2. Verify it shows credit amount instead of dollar amount
-    3. Select time slot
-    4. Confirm booking flow doesn't request payment
-    5. Verify credit deducted from balance after booking
-    6. Check booking appears on calendar
+    2. Verify it shows credit amount instead of dollar amount ("Use 1 Credit", or your configured amount)
+    3. If hybrid: verify both credit and payment options are visible
+    4. Select time slot and choose **Use Credit**
+    5. Confirm booking flow doesn't request payment
+    6. Verify credit deducted from balance after booking (10 → 9)
+    7. Check booking appears on calendar and the confirmation notification (email/SMS) went out
 
     <Tip>
       **What athletes see**: Booking page shows "1 Credit" or "2 Credits" where price normally displays. After booking, their credit balance updates (10 credits → 9 credits).
@@ -508,7 +547,143 @@ Complete end-to-end testing before going live:
     4. Confirm balance shows correctly (purchased - redeemed)
     5. Verify transaction history logs the booking redemption
   </Step>
+  <Step title="Test insufficient credits">
+    Deplete Test Athlete's credits to 0, then attempt to book one more credit-only session.
+
+    - **Verify** the system prevents the booking with a "Not enough credits" message
+    - **(Optional) Verify** a link to purchase more credits appears (if the credit renew link is enabled)
+    - If hybrid scheduler: **verify** the athlete can still book via direct payment
+  </Step>
+  <Step title="Test scheduler-specific restrictions (if configured)">
+    With a product whose credits are restricted to "Rising Stars Class" only:
+
+    1. Attempt to book "Rising Stars Class" → **should work**
+    2. Attempt to book "Elite Class" → **should fail**, with clear messaging that the athlete lacks sufficient credits
+    3. In Billing settings, confirm "Redeemable Sessions" lists the correct schedulers
+
+    **What this tests**: Scheduler restrictions and the credit priority system (scheduler-specific used first)
+  </Step>
+  <Step title="Test credit refund on cancellation (if enabled)">
+    1. Book a session (balance = 9), then cancel it within the allowed cancellation window
+    2. **Verify** the credit is refunded immediately (balance = 10) and logged as refunded for that session
+    3. Book again, wait until past the cancellation deadline, and attempt to cancel
+    4. **Verify** the system prevents cancellation OR does not refund the credit (per your policy)
+  </Step>
+  <Step title="Test subscription renewal (if using subscriptions)">
+    **Active subscription**: use all of this month's credits, then trigger renewal (wait for the date or trigger it in the Stripe dashboard). **Verify** fresh credits arrive, unused credits expire or carry over per your settings, and the "Credit Renewals" date advances.
+
+    **Cancelled subscription**: cancel the test subscription in Stripe. **Verify** the athlete can no longer book with subscription credits and "Redeemable Sessions" no longer shows them as active.
+  </Step>
+  <Step title="Test unlimited credits display (if configured)">
+    1. In Billing settings, **verify** "Credit Balance: ∞" and "Redeemable Sessions: [Schedulers] (0/∞)"
+    2. Book 1-2 sessions → balance still shows ∞, usage shows "2/∞"
+    3. Trigger next month's billing → usage resets to 0/∞
+  </Step>
 </Steps>
+
+<Check>
+  **All tests passed?** Your credit system is production-ready. Document any issues and retest after fixes before launching to real athletes.
+</Check>
+
+### Troubleshooting credit setup
+
+<AccordionGroup>
+  <Accordion title="Athlete purchased credits but they didn't appear">
+    **Possible causes:**
+
+    1. Payment didn't complete (declined card, Stripe error)
+    2. Product not configured with "Add credits once purchased" enabled
+    3. Credit granting system error
+
+    **How to fix:**
+
+    1. Check payment transaction status: Payments → Products
+    2. Verify product configuration: Product → Credits section → "Add credits once purchased" toggled ON
+    3. Check credit amount field is set (not blank)
+    4. Manually grant credits to athlete if payment succeeded: People → Athlete → Credits tab
+    5. If system error: Contact CoachIQ support with customer and order info
+  </Accordion>
+  <Accordion title="Athlete has credits but can't use them to book">
+    **Possible causes:**
+
+    1. Scheduler not configured to accept credits (payment-only)
+    2. Scheduler-specific credits don't match this scheduler (wrong product/scheduler linkage)
+    3. Athlete has 0 credits (all used)
+    4. Product's "Redeemable Schedulers" doesn't include this scheduler
+
+    **How to fix:**
+
+    1. Verify scheduler has credit payment enabled: Scheduler Settings → Payment → Credit Charge
+    2. Check athlete's credit balance: Should show in their profile Credits tab
+    3. Verify product configuration: Product Builder → Usage Limits → "Redeemable Schedulers" includes this scheduler
+    4. Check credit type: If scheduler-specific, athlete needs credits from correct product
+    5. Test booking yourself to replicate issue
+  </Accordion>
+  <Accordion title="Credit balance showing incorrect number">
+    **Possible causes:**
+
+    1. Recent booking/cancellation still processing
+    2. Manual credit adjustment not saved properly
+    3. Multiple packages purchased close together (timing)
+    4. Subscription renewal timing issue
+
+    **How to fix:**
+
+    1. Review athlete's credit transaction history: Credits tab → Credit Logs
+    2. Check for pending bookings that haven't deducted yet
+    3. Look for recent cancellations that should have refunded credits
+    4. If system error confirmed: Manually adjust balance with note
+    5. Document issue and report to CoachIQ support if recurring
+  </Accordion>
+  <Accordion title="Hybrid scheduler not showing both payment options">
+    **Possible causes:**
+
+    1. Scheduler set to "Credit-Only" instead of "Hybrid"
+    2. Athlete viewing has 0 credits (only payment option shows)
+    3. Credit payment not enabled on scheduler
+    4. Browser cache issue
+
+    **How to fix:**
+
+    1. Verify scheduler payment settings: Should show BOTH credit amount AND direct payment amount
+    2. Test as athlete with credits: Both options should appear
+    3. Test as athlete with 0 credits: Only payment option should appear
+    4. Clear browser cache and retry
+    5. Check scheduler "Pricing Model" dropdown is set to correct option
+  </Accordion>
+  <Accordion title="Subscription credits not renewing automatically">
+    **Possible causes:**
+
+    1. Subscription inactive in Stripe (payment failed, cancelled)
+    2. Product configuration error
+    3. "Add credits once purchased" not enabled for recurring
+    4. Stripe webhook issues
+
+    **How to fix:**
+
+    1. Check subscription status in Stripe dashboard: Should be "Active"
+    2. Verify product is subscription type (not one-time)
+    3. Check Product Builder → Credits → "Add credits once purchased" is ON
+    4. Test: Manually trigger renewal in Stripe → Verify credits issued
+    5. Check webhook connectivity: Payments → Settings → Webhooks
+    6. If webhooks failing: Contact CoachIQ support
+  </Accordion>
+  <Accordion title="Unlimited credits (∞) not displaying correctly">
+    **Possible causes:**
+
+    1. Product "Unlimited credits" checkbox not enabled
+    2. Display formatting issue
+    3. Browser rendering problem
+
+    **How to fix:**
+
+    1. Verify product configuration: Product Builder → Credits → "Unlimited credits" checkbox ON
+    2. Check athlete's view in Billing settings: Should show ∞ symbol
+    3. Verify per-scheduler display: "0/∞" notation under Redeemable Sessions
+    4. Test with different browser if rendering issue suspected
+    5. Educate athlete: ∞ means unlimited THIS PERIOD, not forever
+  </Accordion>
+</AccordionGroup>
 
 ## Option 4: Hybrid payment models
 
@@ -695,6 +870,12 @@ Advanced coaches use multiple schedulers with different payment types for strate
   </Card>
   <Card title="Manually Booking Athletes" icon="user-plus" href="/scheduling/manually-booking-athletes">
     Book athletes into sessions with payment handling
+  </Card>
+  <Card title="Credits Overview" icon="ticket" href="/payments/credits/credit-system-overview">
+    Credit concepts, types, and business benefits (prerequisite for Option 3)
+  </Card>
+  <Card title="Cancellation Policies" icon="times-circle" href="/scheduling/canceling-bookings">
+    Credit refund rules and cancellation policy configuration
   </Card>
 </CardGroup>
 
