@@ -12,27 +12,35 @@ keywords: ["billing", "CoachIQ subscription", "invoices", "payment method", "Str
 
 ## Billing
 
-Manage the payment methods on file for your CoachIQ subscription, view invoices, and download receipts.
+Manage the payment method on file for your CoachIQ subscription, view invoices, and download receipts.
 
 <Frame>
   ![CoachIQ billing page showing card on file, invoices, and billing history](/images/billing-update.png)
 </Frame>
 
-### What you can do
+### Update your card on file
 
-- View saved credit/debit cards and set a default
-- Add new payment methods or remove old cards
-- See your active CoachIQ subscriptions (for example your plan and any Personalized App add-on)
-- View and download invoices from **Billing History**
-- Request subscription cancellation
+<Steps>
+  <Step title="Open Billing">
+    Click **Settings** in the bottom-left corner, then **Billing**.
+  </Step>
+  <Step title="Add a new card">
+    In the **Card(s) on File** section, click **Add Card** and enter the card number, expiration date, CVV, and billing ZIP code.
+  </Step>
+  <Step title="Set as default">
+    Click **Set as Default** next to the new card. Remove old cards with the trash icon. The new card is charged from your next billing date; the current cycle is not affected.
+  </Step>
+</Steps>
 
-For the full walkthrough, see [Manage Your Billing & Invoices](/settings/billing-invoices).
+### View and download invoices
+
+Below your card and subscription details, **Billing History** lists every past invoice with date, amount, and status. Click any invoice to view or download it as a PDF for your records.
+
+You'll also see your active CoachIQ subscriptions here, such as your plan and any Personalized App add-on.
 
 <Warning>
 If you need to cancel your subscription, click **Contact us** in the Billing section. A team member will assist you with the cancellation process.
 </Warning>
-
----
 
 ## Stripe Portal
 
@@ -63,6 +71,12 @@ Click the link icon next to any product to copy its direct URL for sharing.
 ## Common questions
 
 <AccordionGroup>
+<Accordion title="What if my subscription payment fails?">
+You'll get an email if a payment fails. Update your card within 7 days to avoid a temporary loss of access.
+</Accordion>
+<Accordion title="Can I pay by bank account instead of card?">
+Not currently. CoachIQ subscriptions support credit and debit cards only.
+</Accordion>
 <Accordion title="Why can't I see the Stripe Portal?">
 The Stripe Portal only appears after you've connected a Stripe account. Go to **Payments** in the main navigation to set up your Stripe connection.
 </Accordion>
