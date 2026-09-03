@@ -311,32 +311,26 @@
             "pages": [
               "people/overview",
               "people/adding-editing-clients",
+              "people/sign-up-and-profile",
               "people/tags-filters",
               "people/block-and-remove-athletes",
               {
                 "group": "Client Profiles",
+                "icon": "id-card",
                 "pages": [
                   "people/client-profiles/client-profiles",
                   "people/client-profiles/client-profiles-activity",
+                  "people/client-profiles/client-profiles-messages",
                   "people/client-profiles/client-profiles-bookings",
                   "people/client-profiles/client-profiles-credits",
-                  "people/client-profiles/client-profiles-media",
-                  "people/client-profiles/client-profiles-messages",
                   "people/client-profiles/client-profiles-products",
-                  "people/client-profiles/client-profiles-subscriptions",
                   "people/client-profiles/client-profiles-transactions",
+                  "people/client-profiles/client-profiles-subscriptions",
+                  "people/client-profiles/client-profiles-media",
                   "people/client-profiles/client-profiles-waivers"
-                ],
-                "icon": "id-card"
+                ]
               },
-              {
-                "group": "Staff",
-                "pages": [
-                  "people/managing-staff"
-                ],
-                "icon": "briefcase"
-              },
-              "people/sign-up-and-profile"
+              "people/managing-staff"
             ]
           },
           {
@@ -361,6 +355,7 @@
                   "tools/forms/creating-forms",
                   "tools/forms/payments-and-bookings",
                   "tools/forms/sharing-forms",
+                  "tools/forms/returning-visitor-sign-in",
                   "tools/forms/responses-and-automations"
                 ],
                 "icon": "file-pen"

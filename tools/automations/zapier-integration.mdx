@@ -88,12 +88,16 @@ Use these to create records or send messages inside CoachIQ from an external tri
 
 | Action | What it does | Required | Notes |
 |--------|--------------|----------|-------|
-| **Create User** | Adds a new athlete to your group | Email (valid format) | If that email already exists, returns the existing athlete — no duplicate is created |
-| **Send an In-App Message** | Sends an in-app message to one athlete | Message + email or phone | Optional: `From Email` — must be an admin's email in your group |
+| **Create User** | Adds a new athlete to your group | Email (valid format) | If that email already exists, returns the existing athlete — no duplicate is created. A genuinely **new** user receives a set-your-password email from CoachIQ immediately; there is no way to suppress it |
+| **Send an In-App Message** | Sends an in-app message to one athlete | Message + email or phone | Max 15,000 characters. Optional: `From Email` — must be an admin's email in your group |
 | **Send an SMS Message** | Texts one athlete | Message + email or phone | Max 600 characters; aim for 160 for single-segment delivery |
-| **Send an Announcement** | Posts an announcement to one athlete or everyone | Message | Set **Send to everyone → yes** to broadcast to the whole group |
+| **Send an Announcement** | Posts an announcement to one athlete or everyone | Message | Message up to 15,000 characters, heading up to 5,000. Set **Send to everyone → yes** to broadcast to the whole group |
 
 **A note on the "From Email" field:** this sets who the message appears to be from in the athlete's inbox. It must be the email address of an admin in your group. If you leave it blank, CoachIQ sends from your most-recently-created admin automatically.
+
+<Warning>
+**Zapier's Test button sends for real.** Testing Send an In-App Message, Send an SMS Message, or Send an Announcement delivers an actual message, and testing Create User creates an actual athlete (and emails them). Test with your own email or phone number, and never test an Announcement with **Send to everyone** set to yes against a real group.
+</Warning>
 
 ---
 
@@ -137,7 +141,7 @@ Use these to create records or send messages inside CoachIQ from an external tri
 2. **Action:** CoachIQ → **Create User**.
    - **Email** (required): map the lead's email from your trigger.
    - **First Name / Last Name / Phone:** map them if you have them (all optional).
-3. Test — you'll see the athlete's record returned. If that email is already in your group, CoachIQ returns the existing athlete instead of creating a duplicate. That's expected behavior.
+3. Test — you'll see the athlete's record returned. If that email is already in your group, CoachIQ returns the existing athlete instead of creating a duplicate. That's expected behavior. If the email is new, that person gets a set-your-password email right away, so test with an address you control.
 4. Turn the Zap **On**.
 
 ---
