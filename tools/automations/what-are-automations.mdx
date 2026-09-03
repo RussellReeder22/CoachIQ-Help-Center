@@ -19,16 +19,17 @@ Automations handle these tasks for you, automatically, in the background.
 Every automation follows a simple formula:
 
 <Card title="When THIS happens → Do THAT" icon="arrow-right">
-  A member signs up, so CoachIQ sends them a welcome email. A booking gets cancelled, so CoachIQ follows up. You set it up once, and it runs forever.
+  A member signs up, so CoachIQ sends them a welcome email. A booking gets cancelled, so CoachIQ follows up. You set it up once, and it runs every time the event happens, for as long as it's enabled.
 </Card>
 
-Each automation has three parts:
+Each automation has three core parts, plus an optional fourth:
 
 | Part | What It Does | Example |
 |------|--------------|---------|
 | **Trigger** | The event that starts it | Someone purchases a [membership](/payments/product-overview) |
 | **Conditions** | Optional filters to target the right people | Only if it's their first purchase |
 | **Actions** | What happens automatically | Send a welcome email + add a "New Member" [tag](/people/tags-filters) |
+| **Data Sources** | Optional extra information fetched before the conditions run | Their current credit balance, so the message can say "you have 3 credits left" |
 
 ## What This Looks Like in Practice
 
@@ -40,18 +41,20 @@ Here are automations CoachIQ coaches use every day:
 | A member hasn't trained in 2 weeks | Sends a "we miss you" message |
 | Credits are expiring in 7 days | Sends a reminder to book sessions |
 | Someone submits a trial request form | Sends them a link to book their free session |
-| A new member finishes their first session | Sends a follow-up asking how it went |
+| A new member's first session ends | Sends a follow-up asking how it went |
 
 ## What Can Start an Automation?
 
 Automations can trigger when:
 
+- A new user is added to your account
 - Someone makes a [purchase](/payments/product-overview) or starts a subscription
-- Someone [books or cancels a session](/scheduling/overview)
+- Someone [books a session](/scheduling/overview), a booking starts, a booking ends, or a booking is cancelled
 - A [form](/tools/forms/overview) gets submitted
-- A session is completed (including no-shows)
+- A [tag](/people/tags-filters) is added to or removed from someone
 - A subscription is cancelled
-- On a schedule—daily, weekly, or monthly
+- On a schedule—daily, weekly, monthly, or once on a specific date
+- An outside tool sends data to the automation's webhook URL
 
 ## What Can Automations Do?
 
@@ -59,9 +62,12 @@ Once triggered, automations can:
 
 - Send emails, SMS messages, [in-app messages](/inbox/inbox-overview), or [announcements](/inbox/announcements)
 - Add or remove [tags](/people/tags-filters) from members
+- Update a custom profile field
 - Add or redeem credits
+- Add or remove a product purchase
 - Grant or revoke program access
 - Book or remove someone from a session
+- Wait for a set time before continuing
 - Send data to external tools via webhooks
 
 <Tip>
@@ -71,11 +77,15 @@ Once triggered, automations can:
 - Time-sensitive alerts (credit expirations, camp prep reminders)
 </Tip>
 
+<Warning>
+Automations do real things to real people: a message action sends the message, a booking action books the seat, a credit action changes the balance. Build with **Enabled** off, check the result with **Test Run** and **Execution Logs**, and only then switch it on. See [Build Your First Automation](/tools/automations/build-your-first-automation#test-before-you-enable) for the checklist.
+</Warning>
+
 ## Disabling or deleting automations
 
-If you want an automation to stop running, open it and switch **Enabled** off in the **Settings** section. A disabled automation keeps all of its triggers, conditions, and messages, so you can turn it back on later without rebuilding it. Disabling is the right choice for seasonal automations or anything you might want again.
+If you want an automation to stop running, open it and switch **Enabled** off in the **Settings** section. A disabled automation keeps all of its triggers, conditions, and messages, so you can turn it back on later without rebuilding it. Disabling is the right choice for seasonal automations or anything you might want again. A **Specific Date** scheduled automation also stops on its own after its one run.
 
-Deleting is permanent. The delete option only appears after the automation is disabled, and there is no archive or restore — once deleted, the automation and its execution history are gone.
+Deleting is permanent. The delete option only appears after the automation is disabled, and there is no restore — once deleted, the automation and its execution history are gone.
 
 <Note>
 Not sure? Disable it. You lose nothing, and you can delete it later if it's still unused.
@@ -97,6 +107,12 @@ Ready to build your first automation? It takes about 5 minutes.
 ## Related articles
 
 <CardGroup cols={2}>
+  <Card title="Builder Reference" icon="wrench" href="/tools/automations/builder-reference">
+    What each section of the automation builder does
+  </Card>
+  <Card title="Triggers & Actions Reference" icon="list" href="/tools/automations/triggers-actions-reference">
+    Every trigger, condition, data source, action, and dynamic field
+  </Card>
   <Card title="Forms Overview" icon="file-lines" href="/tools/forms/overview">
     Create forms that can trigger automations when submitted
   </Card>

@@ -1,9 +1,9 @@
 ---
 title: "Triggers & Actions Reference"
-description: "Complete list of all automation triggers, conditions, actions, and dynamic fields"
+description: "Complete list of all automation triggers, conditions, data sources, actions, and dynamic fields"
 sidebarTitle: "Triggers & Actions Reference"
 icon: "list"
-keywords: ["triggers", "actions", "conditions", "dynamic fields", "automation triggers", "automation actions", "trigger reference"]
+keywords: ["triggers", "actions", "conditions", "data sources", "dynamic fields", "automation triggers", "automation actions", "trigger reference", "incoming webhook", "update custom field"]
 ---
 
 <Info>
@@ -13,14 +13,23 @@ keywords: ["triggers", "actions", "conditions", "dynamic fields", "automation tr
 This is your complete reference for building automations in CoachIQ. Use it to look up available options when you're in the automation builder.
 
 <Note>
-**New to automations?** Start with [Build Your First Automation](/tools/automations/build-your-first-automation) for a hands-on walkthrough.
+**New to automations?** Start with [Build Your First Automation](/tools/automations/build-your-first-automation) for a hands-on walkthrough, and see the [Builder Reference](/tools/automations/builder-reference) for what each section of the builder does.
 </Note>
+
+An automation has up to four parts. The builder shows them as sections on one page:
+
+| Part | What It Does |
+|------|--------------|
+| **Trigger** | The event (or schedule) that starts the automation. One per automation. |
+| **Data Sources** | Optional. Extra information fetched before the conditions run, such as the person's credit balance or upcoming bookings. |
+| **Conditions** | Optional filters. Each rule compares a field to a value; rules sit in **And**/**Or** groups that can be nested. |
+| **Actions** | What happens, in order, when the conditions pass. |
 
 ---
 
 ## All Triggers
 
-Triggers determine **when** your automation runs. Each trigger has different conditions available to filter who it applies to.
+Triggers determine **when** your automation runs. There are 12. Each trigger has different condition fields available to filter who it applies to, and every trigger also exposes the **user fields** (ID, email, phone, first name, last name) of the person the event happened to.
 
 <AccordionGroup>
 
@@ -36,7 +45,7 @@ Fires when a new user is added to your account.
 
 </Accordion>
 
-<Accordion title="New Purchase">
+<Accordion title="Purchase Made">
 
 Fires when someone purchases any [product](/payments/product-overview).
 
@@ -50,10 +59,12 @@ Fires when someone purchases any [product](/payments/product-overview).
 | User has a specific tag | Dropdown | User must have this tag |
 | User doesn't have a specific tag | Dropdown | User must not have this tag |
 | User's first purchase ever | Boolean | This is the user's first purchase |
+| Product fields | Various | Product ID, label, type, and other product details |
+| Order fields | Various | Details of the order that was placed |
 
 </Accordion>
 
-<Accordion title="New Booking">
+<Accordion title="Booking Created">
 
 Fires when someone [books a session](/scheduling/overview).
 
@@ -63,42 +74,45 @@ Fires when someone [books a session](/scheduling/overview).
 | User has a specific tag | Dropdown | User must have this tag |
 | User doesn't have a specific tag | Dropdown | User must not have this tag |
 | User's first booking ever | Boolean | This is the user's first booking |
+| Booking fields | Various | Occurrence, start, end, and recurrence details of the booking |
 
 </Accordion>
 
-<Accordion title="New Form">
+<Accordion title="Booking Started">
 
-Fires when someone submits a [form](/tools/forms/overview).
+Fires at the scheduled start time of a booking.
 
 | Condition | Type | Description |
 |-----------|------|-------------|
-| Is a specific form | Dropdown | Only submissions from this form |
+| Is for a specific session | Dropdown | Only this session/scheduler |
 | User has a specific tag | Dropdown | User must have this tag |
 | User doesn't have a specific tag | Dropdown | User must not have this tag |
+| Session fields | Various | Session ID and title |
+
+<Note>
+This trigger executes at the booking's scheduled start time, not when someone checks in.
+</Note>
 
 </Accordion>
 
-<Accordion title="New User Tag Connection">
+<Accordion title="Booking Ended">
 
-Fires when a [tag](/people/tags-filters) is added to a user.
+Fires when a booked session ends.
 
 | Condition | Type | Description |
 |-----------|------|-------------|
-| Tag added is | Dropdown | Only fires for this specific tag |
+| Is for a specific session | Dropdown | Only this session/scheduler |
+| User has a specific tag | Dropdown | User must have this tag |
+| User doesn't have a specific tag | Dropdown | User must not have this tag |
+| Session fields | Various | Session ID and title |
+
+<Note>
+This trigger fires at the booking's scheduled end time. It is the trigger to use for "after the session" follow-ups, such as tagging someone who has finished a trial.
+</Note>
 
 </Accordion>
 
-<Accordion title="User Tag Connection Removed">
-
-Fires when a tag is removed from a user.
-
-| Condition | Type | Description |
-|-----------|------|-------------|
-| Tag removed is | Dropdown | Only fires for this specific tag |
-
-</Accordion>
-
-<Accordion title="New Booking Cancellation">
+<Accordion title="Booking Cancelled">
 
 Fires when someone cancels a booking.
 
@@ -107,23 +121,43 @@ Fires when someone cancels a booking.
 | Was for a specific session | Dropdown | Only cancellations for this session |
 | User has a specific tag | Dropdown | User must have this tag |
 | User doesn't have a specific tag | Dropdown | User must not have this tag |
+| Cancellation fields | Various | Details of the cancelled booking |
 
 </Accordion>
 
-<Accordion title="Booking Completed">
+<Accordion title="Form Submitted">
 
-Fires when a booked session ends.
+Fires when someone submits a [form](/tools/forms/overview).
 
 | Condition | Type | Description |
 |-----------|------|-------------|
-| Was for a specific session | Dropdown | Only this session/scheduler |
+| Is a specific form | Dropdown | Only submissions from this form |
 | User has a specific tag | Dropdown | User must have this tag |
 | User doesn't have a specific tag | Dropdown | User must not have this tag |
-| Attendance status | Dropdown | Attended, No-show, or Late cancellation |
+| Form fields | Various | Form ID and label |
+| Answer fields | Various | One field per question on the selected form (layout-only blocks such as headings and media are excluded). Checkbox, terms, and waiver questions default to **Contains**; other questions default to **Equal to** |
 
-<Tip>
-Use the attendance status condition to send different messages to no-shows vs. attendees.
-</Tip>
+</Accordion>
+
+<Accordion title="User Tag Added">
+
+Fires when a [tag](/people/tags-filters) is added to a user.
+
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Tag added is | Dropdown | Only fires for this specific tag |
+| Tag fields | Various | Tag ID, label, parent tag, and who applied it |
+
+</Accordion>
+
+<Accordion title="User Tag Removed">
+
+Fires when a tag is removed from a user.
+
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Tag removed is | Dropdown | Only fires for this specific tag |
+| Tag fields | Various | Tag ID, label, parent tag, and who removed it |
 
 </Accordion>
 
@@ -136,22 +170,7 @@ Fires when someone cancels their [subscription](/payments/product-overview).
 | Was for a specific product | Dropdown | Only this subscription product |
 | User has a specific tag | Dropdown | User must have this tag |
 | User doesn't have a specific tag | Dropdown | User must not have this tag |
-
-</Accordion>
-
-<Accordion title="Booking Started">
-
-Fires at the exact start time of a booking.
-
-| Condition | Type | Description |
-|-----------|------|-------------|
-| Is for a specific session | Dropdown | Only this session/scheduler |
-| User has a specific tag | Dropdown | User must have this tag |
-| User doesn't have a specific tag | Dropdown | User must not have this tag |
-
-<Note>
-This trigger executes at the booking's scheduled start time, not when someone checks in.
-</Note>
+| Product fields | Various | Product ID and label |
 
 </Accordion>
 
@@ -161,11 +180,14 @@ Runs on a schedule and finds all users matching your conditions. See [Scheduled 
 
 **Schedule Options**:
 
-| Schedule | Format |
-|----------|--------|
-| Every day | Select time (e.g., 9:00 AM) |
-| Once a week | Select day + time (e.g., Monday at 9:00 AM) |
-| Once a month | Select date + time (e.g., 1st at 10:00 AM) |
+| Schedule | What You Set |
+|----------|--------------|
+| Daily | Time |
+| Weekly | Day of week + time |
+| Monthly | Day of month (1–31, or the last day of the month) + time |
+| Specific Date | A single date + time. Runs once, on that date |
+
+Every schedule also has a **timezone**, set on the trigger itself, and a send mode that controls whether a matching person is messaged only the first time they match or on every run. See [How Scheduled Automations Run](/tools/automations/scheduled-automations#how-scheduled-automations-run).
 
 **Available Conditions** (minimum 1 required):
 
@@ -188,13 +210,159 @@ At least one condition is required for scheduled automations.
 
 </Accordion>
 
+<Accordion title="Incoming Webhook">
+
+Fires when an external system sends a request to this automation's webhook URL. Use it to start an automation from another tool (a website form builder, a CRM, a payment platform).
+
+Once the automation has been created, the builder displays the webhook URL to send to. Treat that URL as a secret.
+
+| Condition | Type | Description |
+|-----------|------|-------------|
+| Payload field | Text path | Any field in the incoming payload, written as a path such as `field.payload.type` or `field.payload.order.id` |
+
+The payload's fields are also available as dynamic fields in your actions, for example `{{payload.userId}}`.
+
+</Accordion>
+
 </AccordionGroup>
+
+---
+
+## Conditions
+
+Conditions decide whether the automation continues for a given event. Each **rule** has three parts: a **field** (from the trigger, the user, or a data source), an **operator**, and a **value**. Some curated rules, such as **Is a subscription** or **User's first booking ever**, fix the operator and value for you.
+
+### Operators
+
+| Operator | Meaning |
+|----------|---------|
+| Equal to | Field exactly matches the value |
+| Not equal to | Field does not match the value |
+| Contains | Field includes the value (text) |
+| Does not contain | Field does not include the value |
+| Greater than | Field is larger than the value (numbers, days) |
+| Less than | Field is smaller than the value |
+| Starts with | Text begins with the value |
+| Ends with | Text ends with the value |
+| In list | Field matches any item in a list |
+| Not in list | Field matches none of the items |
+| Is empty | Field has no value |
+| Is not empty | Field has a value |
+
+The builder narrows the operator menu to what makes sense for the field: numbers get equality, greater/less than, and empty checks; dropdowns get equality, contains, and empty checks.
+
+### And / Or groups
+
+Rules live inside groups. Each group is either:
+
+- **And** — every rule in the group must be true
+- **Or** — any one rule in the group is enough
+
+Click **Add Rule** to add a rule to the current group, and **Add And/Or** to nest a new group inside it. Nesting lets you express things like "(bought a membership **or** a credit pack) **and** has no future booking".
+
+If an automation has no conditions at all, it runs for every trigger event. Scheduled Check is the exception: it requires at least one condition.
+
+---
+
+## Data Sources
+
+Data sources fetch extra information **before** the conditions run, so you can filter on it and use it in messages. Add one when the trigger alone doesn't carry what you need. There are six. Unless you pick a specific person, each one looks up the user from the trigger.
+
+<AccordionGroup>
+
+<Accordion title="Available slots">
+
+Finds open slots on a session.
+
+| Input | Required | Options |
+|-------|----------|---------|
+| Session | Yes | The session/scheduler to search |
+| Search range | No | Next 24 Hours, Next 3 Days, Next 7 Days (default), Next 14 Days, Next 30 Days |
+
+**Outputs**: the list of slots, the slot count, and the first available slot.
+
+</Accordion>
+
+<Accordion title="User bookings">
+
+Fetches a person's bookings.
+
+| Input | Required | Options |
+|-------|----------|---------|
+| Target user | No | User from trigger (default) or a specific user |
+| Status | No | Upcoming, past, or all |
+| Limit | No | 1–100 |
+
+**Outputs**: the list of bookings, the count, the next booking, and the last booking.
+
+</Accordion>
+
+<Accordion title="User credits">
+
+Fetches a person's credit balance in one credit bank.
+
+| Input | Required | Options |
+|-------|----------|---------|
+| Credit bank | Yes | Master Credits or a specific product's bank |
+| Target user | No | User from trigger (default) or a specific user |
+
+**Outputs**: the balance, the credit bank ID, and the credit bank label.
+
+</Accordion>
+
+<Accordion title="User purchases">
+
+Fetches a person's purchases.
+
+| Input | Required | Options |
+|-------|----------|---------|
+| Target user | No | User from trigger (default) or a specific user |
+| Status | No | Active, expired, or all |
+| Type | No | Subscription, one-time, or all |
+
+**Outputs**: the list of purchases, the count, active subscriptions, one-time purchases, whether they have an active subscription, and whether they own a given product.
+
+</Accordion>
+
+<Accordion title="User tags">
+
+Fetches a person's tags.
+
+| Input | Required | Options |
+|-------|----------|---------|
+| Target user | No | User from trigger (default) or a specific user |
+
+**Outputs**: the list of tags, the count, the tag IDs, and the tag labels.
+
+</Accordion>
+
+<Accordion title="Form responses">
+
+Fetches responses to a form.
+
+| Input | Required | Options |
+|-------|----------|---------|
+| Form | Yes | The form to read |
+| Target user | No | User from trigger, a specific user, or all respondents |
+| Limit | No | 1–50 |
+
+**Outputs**: the list of responses, the count, and the latest response (its answer, question, form, and date).
+
+</Accordion>
+
+</AccordionGroup>
+
+<Tip>
+Data source outputs appear as **field options** in Conditions and in any message field. In a message, type `#` to pick one from the list rather than typing it by hand.
+</Tip>
 
 ---
 
 ## All Actions
 
-Actions determine **what happens** when your automation runs. You can add multiple actions to a single automation.
+Actions determine **what happens** when your automation runs. There are 17. You can add multiple actions to a single automation; they run in order.
+
+Most actions have a **Target User**. It defaults to **User from trigger**; click **Change** to pick a specific person instead. The messaging and tag actions also offer **trigger user and their guardians**, which runs the action once for the athlete and once for each linked parent in your group. (A parent who triggers an automation is always a single target; the expansion never adds children.)
 
 <AccordionGroup>
 
@@ -204,13 +372,14 @@ Sends an email to a user.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| To | Auto/Dropdown | User from trigger or select specific user |
+| Target User | Auto/Dropdown | User from trigger, trigger user and their guardians, or a specific user |
 | Subject | Text | Supports dynamic fields |
 | Message | Rich text | Supports dynamic fields and formatting |
-| Attach Product | Dropdown | Optional - adds purchase link |
-| Attach Session | Dropdown | Optional - adds booking link |
-| Attach Form | Dropdown | Optional - adds form link |
-| Attach Media | Dropdown | Optional - adds file from Media Hub |
+| CC / BCC | Text | Optional additional recipients |
+
+<Note>
+Send an Email has no attachment picker. To send someone a booking, product, or form link by email, paste the link into the message. The in-app, SMS, and announcement actions below can attach a session, product, or form directly.
+</Note>
 
 </Accordion>
 
@@ -220,14 +389,15 @@ Sends a text message to a user's phone.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| To | Auto/Dropdown | User from trigger or select specific user |
-| Message | Text | Supports dynamic fields (160 character limit) |
+| Target User | Auto/Dropdown | User from trigger, trigger user and their guardians, or a specific user |
+| From | Dropdown | Default, or **Set** to choose which admin it appears to come from |
+| Message | Text | Supports dynamic fields. A live counter (for example **180 / 160**) shows when the text will split into a second segment |
 | Attach Product | Dropdown | Optional - adds short purchase link |
 | Attach Session | Dropdown | Optional - adds short booking link |
 | Attach Form | Dropdown | Optional - adds short form link |
 
 <Note>
-SMS attachments are text links only—no images or files. A character counter shows remaining space.
+SMS attachments are text links only—no images or files. Keep the message under 160 characters to stay in one segment.
 </Note>
 
 </Accordion>
@@ -238,7 +408,8 @@ Sends a message to the user's [inbox](/inbox/inbox-overview) within CoachIQ.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| To | Auto/Dropdown | User from trigger or select specific user |
+| Target User | Auto/Dropdown | User from trigger, trigger user and their guardians, or a specific user |
+| From | Dropdown | Default, or **Set** to choose which admin it appears to come from |
 | Message | Text | Supports dynamic fields |
 | Attach Product | Dropdown | Optional - adds purchase link |
 | Attach Session | Dropdown | Optional - adds booking link |
@@ -248,11 +419,12 @@ Sends a message to the user's [inbox](/inbox/inbox-overview) within CoachIQ.
 
 <Accordion title="Send an Announcement">
 
-Posts an [announcement](/inbox/announcements) visible to a group of users.
+Posts an [announcement](/inbox/announcements) to one person or a group of users.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| To | Dropdown | All users, specific tag, or specific role |
+| Target User | Dropdown | User from trigger (default), trigger user and their guardians, all users, specific tags, or specific roles |
+| From | Dropdown | Default, or **Set** to choose which admin it appears to come from |
 | Title | Text | Announcement headline |
 | Message | Rich text | Supports dynamic fields |
 | Attach Product | Dropdown | Optional - adds purchase link |
@@ -271,7 +443,7 @@ Adds a tag to the user for organization and targeting.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| User | Auto/Dropdown | User from trigger or select specific user |
+| Target User | Auto/Dropdown | User from trigger, trigger user and their guardians, or a specific user |
 | Tag | Dropdown | Tag to add (select existing or create new) |
 
 </Accordion>
@@ -282,8 +454,24 @@ Removes a tag from the user.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| User | Auto/Dropdown | User from trigger or select specific user |
+| Target User | Auto/Dropdown | User from trigger, trigger user and their guardians, or a specific user |
 | Tag | Dropdown | Tag to remove |
+
+</Accordion>
+
+<Accordion title="Update Custom Field">
+
+Sets the value of a custom profile field on the user.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| Target User | Auto/Dropdown | User from trigger or select specific user |
+| Custom Field | Dropdown | Which custom field to update |
+| Value | Text | The new value. Supports dynamic fields |
+
+<Tip>
+Useful for stamping a date ("Trial completed on…") or a status ("Onboarding: done") onto the profile so you can filter on it later.
+</Tip>
 
 </Accordion>
 
@@ -293,9 +481,10 @@ Adds session credits to the user's account.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| User | Auto/Dropdown | User from trigger or select specific user |
+| Target User | Auto/Dropdown | User from trigger or select specific user |
 | Number of credits | Number | How many credits to add (minimum 1) |
 | Credit Bank Target | Radio | Master Credits (works for any session) or Specific Product Bank |
+| Product | Dropdown | Which product's bank, when Specific Product Bank is selected |
 
 <Note>
 If you select a specific product bank and the user doesn't own that product, credits are added to Master Credits instead.
@@ -309,33 +498,32 @@ Removes session credits from the user's account.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| User | Auto/Dropdown | User from trigger or select specific user |
+| Target User | Auto/Dropdown | User from trigger or select specific user |
 | Number of credits | Number | How many credits to redeem (minimum 1) |
-| Credit source | Dropdown | Master Credits or specific product bank |
+| Credit Bank Target | Radio | Master Credits or Specific Product Bank |
+| Product | Dropdown | Which product's bank, when Specific Product Bank is selected |
 
 </Accordion>
 
 <Accordion title="Add a Product Purchase to a User">
 
-Grants a user access to a product without payment.
+Grants a user a product without payment.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| User | Auto/Dropdown | User from trigger or select specific user |
+| Target User | Auto/Dropdown | User from trigger or select specific user |
 | Product | Dropdown | Product to grant |
-| Send confirmation | Boolean | Whether to send purchase confirmation email |
 
 </Accordion>
 
 <Accordion title="Remove Product Purchase from a User">
 
-Revokes a user's access to a product.
+Removes a product from a user's account.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| User | Auto/Dropdown | User from trigger or select specific user |
+| Target User | Auto/Dropdown | User from trigger or select specific user |
 | Product | Dropdown | Product to remove |
-| Refund | Boolean | Whether to issue a refund |
 
 </Accordion>
 
@@ -345,9 +533,9 @@ Gives a user access to a program.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| User | Auto/Dropdown | User from trigger or select specific user |
+| Target User | Auto/Dropdown | User from trigger or select specific user |
 | Program | Dropdown | Program to grant access to |
-| Access duration | Dropdown | Permanent, until specific date, or for X days |
+| Access duration | Dropdown | Permanent, until a specific date, or for a number of days |
 
 </Accordion>
 
@@ -357,43 +545,48 @@ Removes a user's access to a program.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| User | Auto/Dropdown | User from trigger or select specific user |
+| Target User | Auto/Dropdown | User from trigger or select specific user |
 | Program | Dropdown | Program to revoke |
 | Send notification | Boolean | Whether to notify the user |
 
 </Accordion>
 
-<Accordion title="Book User for Session">
+<Accordion title="Add Booking to User">
 
-Automatically books a user into a [session](/scheduling/creating-your-first-scheduler).
+Books a user into a [session](/scheduling/creating-your-first-scheduler). This is a staff-managed booking: it works even when the session is not self-bookable, but it still respects the scheduler's booking window, athlete limits, slot capacity, and coach conflicts.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| User | Auto/Dropdown | User from trigger or select specific user |
+| Target User | Auto/Dropdown | User from trigger or select specific user |
 | Session | Dropdown | Session/scheduler to book |
-| Date/Time | Date/time picker | When to book the session |
+| Booking time | Radio | **Next available** slot, a **specific** slot, or a **recurring** series |
+| Specific slot | Date, time, duration | When Booking time is Specific |
+| Recurring | Various | Interval (daily, weekly, monthly) and how often; weekdays for weekly; how the series ends (never, after a number of occurrences, or on an end date); optional per-occurrence time or location changes |
+| Redemption | Radio + number | Use the session's credit settings, or redeem a specific number of credits |
 
 </Accordion>
 
-<Accordion title="Remove User from Session/Booking">
+<Accordion title="Remove Booking from User">
 
 Cancels a user's booking.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| Booking | Auto/Dropdown | Booking from trigger or select specific booking |
+| Target User | Auto/Dropdown | User from trigger or select specific user |
+| Booking source | Radio | The booking from the trigger, the user's booking on a chosen session, or a specific booking |
 | Refund credits | Boolean | Whether to refund credits used |
 
 </Accordion>
 
-<Accordion title="Wait / Delay">
+<Accordion title="Wait/Delay">
 
 Pauses the automation before continuing to the next action.
 
 | Field | Type | Description |
 |-------|------|-------------|
+| Wait type | Radio | A duration, or until a date/time |
 | Duration | Number + Unit | Minutes, hours, days, or weeks |
-| Wait until | Date/time | Alternative: wait until specific date/time |
+| Wait until | Date/time | When Wait type is a date |
 
 **Continuation Conditions** (optional):
 
@@ -419,11 +612,10 @@ Sends data to an external URL for integrations.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| Webhook URL | Text | Must be HTTPS |
-| Method | Dropdown | POST or PUT |
+| Webhook URL | Text | Use an HTTPS URL you control or have verified |
+| Method | Dropdown | GET, POST (default), PUT, PATCH, or DELETE |
 | Headers | Key-value pairs | Optional custom headers |
-| Body | JSON editor | Supports dynamic fields |
-| Retry on failure | Boolean | Whether to retry if request fails |
+| Body | JSON editor | Must be valid JSON. Supports dynamic fields |
 
 <Note>
 The webhook payload automatically includes full trigger context (user data, event details, etc.).
@@ -437,15 +629,15 @@ The webhook payload automatically includes full trigger context (user data, even
 
 ## Dynamic Fields
 
-Dynamic fields let you personalize messages with real data from your automations. Use the exact syntax shown below in any text field that supports dynamic fields.
+Dynamic fields let you personalize messages with real data from your automations. In any message field, type `#` to insert a **field option** from the trigger or a data source, or `@` to insert a **CoachIQ field** such as the athlete's first name. The builder inserts the token in the exact syntax shown below.
 
 <Note>
-Copy and paste these fields exactly as shown, including the double curly braces `{{` and `}}`.
+If you copy and paste a field instead of inserting it, include the double curly braces `{{` and `}}` exactly as shown.
 </Note>
 
 ### User Fields
 
-Available in **all automations**:
+Available in **all automations**, for the person the event happened to:
 
 | Field | What It Inserts | Example Output |
 |-------|-----------------|----------------|
@@ -454,9 +646,23 @@ Available in **all automations**:
 | `{{field.user.lastName}}` | User's last name | Smith |
 | `{{field.user.phone}}` | User's phone number | (555) 123-4567 |
 
+### Trigger Fields
+
+Each trigger adds the fields of the thing that happened. Insert them with `#` to see the exact list for your trigger:
+
+| Trigger | Fields available |
+|---------|------------------|
+| Purchase Made, Subscription Cancelled | Product (ID, label, type) and order details |
+| Booking Created | Session title, occurrence, start, end, and recurrence details |
+| Booking Started, Booking Ended | Session ID and title |
+| Booking Cancelled | The cancelled booking's details |
+| Form Submitted | Form ID and label, plus one field per question |
+| User Tag Added, User Tag Removed | Tag ID, label, parent tag, and who applied it |
+| Incoming Webhook | Any field from the payload, for example `{{payload.userId}}` |
+
 ### Booking Fields
 
-Available in **booking-related automations**:
+Available in **booking-related and Scheduled Check automations**:
 
 | Field | What It Inserts | Example Output |
 |-------|-----------------|----------------|
@@ -479,8 +685,21 @@ Available in **automations that check credit status**:
 | `{{field.user.credits.count}}` | Total number of credits user has | 5 |
 
 <Warning>
-Credit fields are primarily available in **Scheduled Check** automations. Using them in other automation types may return empty values.
+Credit fields are primarily available in **Scheduled Check** automations. Using them in other automation types may return empty values. For an exact balance in any automation, add a **User credits** data source instead.
 </Warning>
+
+### Data Source Fields
+
+Each [data source](#data-sources) you add contributes its outputs as field options. Insert them with `#`. The most useful ones:
+
+| Data source | Outputs |
+|-------------|---------|
+| Available slots | Slot list, count, first available slot |
+| User bookings | Booking list, count, next booking, last booking |
+| User credits | Balance, credit bank label |
+| User purchases | Purchase list, count, whether they have an active subscription |
+| User tags | Tag labels, tag IDs, count |
+| Form responses | Latest response and its answer, question, and date |
 
 ### Example Usage
 
@@ -529,8 +748,11 @@ Book your next session soon!
 ## Related articles
 
 <CardGroup cols={2}>
+  <Card title="Builder Reference" icon="wrench" href="/tools/automations/builder-reference">
+    What each section of the automation builder does
+  </Card>
   <Card title="Forms Overview" icon="file-lines" href="/tools/forms/overview">
-    Build forms that power the New Form trigger
+    Build forms that power the Form Submitted trigger
   </Card>
   <Card title="Responses and Automations" icon="file-lines" href="/tools/forms/responses-and-automations">
     See how form responses connect to automation triggers
@@ -539,13 +761,13 @@ Book your next session soon!
     Set up products that power purchase and subscription triggers
   </Card>
   <Card title="Attach Products" icon="credit-card" href="/payments/attach-products">
-    Attach products to emails and messages sent by automations
+    Attach products to messages sent by automations
   </Card>
   <Card title="Scheduling Overview" icon="calendar" href="/scheduling/overview">
     Manage sessions referenced by booking triggers and actions
   </Card>
   <Card title="Creating Your First Scheduler" icon="calendar" href="/scheduling/creating-your-first-scheduler">
-    Set up schedulers used in Book User for Session actions
+    Set up schedulers used in Add Booking to User actions
   </Card>
   <Card title="Inbox Overview" icon="inbox" href="/inbox/inbox-overview">
     Where automated in-app messages are delivered
