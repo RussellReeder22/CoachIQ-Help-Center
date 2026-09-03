@@ -253,108 +253,148 @@ Configure pricing frequency and processing fees.
 
 ## Section 3: Credits
 
-Configure session credits issued with purchase.
+This section turns a product into a **credit package**. Credits are issued here and spent on schedulers, so every choice below has a matching setting on the scheduler side. Read this section together with [How credits work on a scheduler](/scheduling/credits-and-schedulers).
+
+### Who controls what
+
+| You want to… | Set it on the | Where |
+|---|---|---|
+| Decide how many credits an athlete receives | **Product** (this page) | Credits → **Number of credits** |
+| Decide when credits expire | **Product** (this page) | Credits → **Credit expiration** |
+| Decide which schedulers accept the credits | **Product** (this page) | Usage Limits → **Which schedulers accept these credits** |
+| Cap credits spent on one scheduler per billing cycle | **Product** (this page) | Usage Limits → **Limit credits per scheduler per billing cycle** |
+| Make a session cost credits instead of dollars | **Scheduler** | Payment → **Credit Charge** |
+| Change how many credits one booking costs | **Scheduler** | Payment → credit cost |
+| Return or forfeit the credit on cancellation | **Scheduler** | Settings → **Refund credits used on cancelation** |
+| Send athletes somewhere to buy more | **Scheduler** | Payment → **Add a credit renew link** |
+
+<Warning>
+  **A product with credits but no credit-based scheduler sells credits nobody can spend.** Before publishing, confirm at least one scheduler is set to **Credit Charge** and is allowed under Usage Limits below.
+</Warning>
+
+### Settings
 
 <AccordionGroup>
   <Accordion title="Add credits once purchased">
     **Toggle ON or OFF**
 
-    Turn this on to issue credits when clients purchase this product.
+    **OFF (default):** Payment-only product. The athlete pays and receives nothing they can redeem on a scheduler. Use for merchandise, event fees, or sessions sold through a scheduler's own direct payment.
 
-    **OFF (default):** Product is payment-only. No credits issued.
-
-    **ON:** Product issues specified number of credits to client's account.
+    **ON:** Every purchase (or every billing period for a subscription) adds the number of credits you set to the buyer's account. The Credits and Usage Limits fields appear.
 
     <Note>
-      Credits require additional configuration in Schedule → Schedulers. [Learn about credits →](/payments/credits/credit-system-overview)
+      Credits land on the **buyer's** account. A parent who buys for a child holds the credits and books from a shared family balance. See [Booking for multiple athletes](/scheduling/booking-for-multiple-athletes).
     </Note>
   </Accordion>
   <Accordion title="Number of credits">
     **Appears when credits are ON**
 
-    How many credits to issue per purchase or billing period.
+    How many credits each purchase, or each billing period, issues.
 
-    **Examples:**
+    **Typical values:**
 
-    - 1 credit for single session products
-    - 10 credits for multi-session packages
-    - 4 credits per month for subscriptions
-    - ∞ credits for "unlimited" access
+    - 1 credit for a single-session product
+    - 5 or 10 credits for a package
+    - 4 credits per month for a weekly-session subscription
+    - 999 for an "unlimited" membership (shown to athletes as ∞)
 
-    <Tip>
-      For unlimited monthly memberships, set credits to 999. Functionally unlimited for most coaches.
-    </Tip>
+    Match the number to the credit cost on your schedulers. If sessions cost 1 credit, 10 credits is 10 sessions. If a premium scheduler costs 2 credits, a 10-credit package covers 5 of those.
   </Accordion>
   <Accordion title="Credit expiration">
     **Appears when credits are ON**
 
-    When credits expire and become unusable.
+    When unused credits stop being usable. The options depend on the product type.
 
-    **Options:**
+    **One Time products**
 
-    **Days since purchase (One Time product only)**
+    | Option | Behavior |
+    |---|---|
+    | **Days since purchase** | 30, 60, 90, 120, or a custom number of days after the purchase date |
+    | **Specific date** | A calendar date, for example the end of a season |
+    | **Don't expire** | Credits stay until spent |
 
-    - 30 days
-    - 60 days
-    - 90 days
-    - 120 days
-    - Custom number of days
+    **Subscription products**
 
-    **Specific date (One Time Product Only)**
+    | Option | Behavior |
+    |---|---|
+    | **Carry over unused credits** | Leftover credits roll into the next billing cycle and keep accumulating |
+    | **Subscription expiration** | Unused credits are cleared at each renewal, and all credits end when the subscription is cancelled |
 
-    - Calendar picker
-    - Set exact expiration (e.g., end of season)
+    <Tip>
+      90 days is the most common setting for one-time packages. It creates urgency without feeling punitive. Whatever you choose, state it on the product's confirmation page and in your first message to the buyer.
+    </Tip>
 
-    **Don't expire (One Time Product Only)**
-
-    - Master Credits (never expire)
-    - Client keeps credits indefinitely
-
-    **Carry Over Unsed Credits (Subscription Product Only)**
-
-    - Credits carry over from one billing cycle to the next
-
-    **Subscription expiration (Subscription Product Only)**
-
-    - Credits expire when subscription cancels
-    - New credits issued each billing period
+    <Warning>
+      Some jurisdictions regulate stored-value expiration. Check local rules before setting short expirations.
+    </Warning>
   </Accordion>
 </AccordionGroup>
 
 ## Section 4: Usage Limits
 
-Restrict where credits can be redeemed.
+Restrict **where** and **how fast** this product's credits can be spent. Both settings appear only when credits are ON.
 
 <AccordionGroup>
   <Accordion title="Which schedulers accept these credits">
-    **Appears when credits are ON**
+    Choose the schedulers that will accept credits from this product.
 
-    Select specific schedulers that accept this product's credits.
+    **Blank or all selected (default):** Credits work on every credit-based scheduler, now and in the future.
 
-    **Universal Credits (default):** Leave blank or select all. Credits work for any scheduler.
-
-    **Restricted Credits:** Select specific schedulers only.
+    **Specific schedulers:** Credits work only there. Any other scheduler tells the athlete they have no usable credits, even if their balance is positive.
 
     **Examples:**
 
-    - "Youth Package" credits → Only youth training schedulers
-    - "Pitching Credits" → Only pitching lesson scheduler
-    - "Group Session Package" → Only group class schedulers
+    - "Youth Package" → only the youth training schedulers
+    - "Pitching Credits" → only the pitching lesson scheduler
+    - "Group Session Package" → only group class schedulers
 
     <Tip>
-      Use restricted credits to create specialized packages that don't accidentally get used for wrong session types.
+      Restricted credits stop a cheap group package from being spent on expensive private sessions. They are also the number one cause of "I have credits but can't book" tickets, so name the product after what it unlocks.
     </Tip>
   </Accordion>
   <Accordion title="Limit credits per scheduler per billing cycle">
-    **Advanced feature**
+    **Advanced, subscription products**
 
-    Override how many credits can be used per billing cycle for a partcular scheduler
+    Cap how many of the product's credits can be spent on a particular scheduler in one billing cycle.
 
-    **Example:**
+    **Example:** A membership grants 8 credits a month. You cap 4 on "Group Training" and 4 on "Private Training". An athlete cannot burn all 8 on private sessions. Once they reach 4 on a scheduler they are blocked there until the next cycle, even though credits remain.
 
-    - Product awards client 8 credits
-      - 4 credits can be used for a "Group Training" Scheduler
-      - 4 credits can be used for a "Private Training" Scheduler
+    The athlete sees a limit message rather than an out-of-credits message. The order in which CoachIQ checks restrictions, balance, limits, and capacity is in [Credit usage limits and restrictions](/payments/credits/credit-usage-limits-restrictions#limit-priority-hierarchy).
+  </Accordion>
+</AccordionGroup>
+
+### Credit edge cases to plan for
+
+<AccordionGroup>
+  <Accordion title="You change Number of credits after people have bought">
+    Existing buyers keep exactly what they were issued. Only future purchases and future subscription renewals get the new amount. To top up existing buyers, grant credits from each athlete's Credits tab.
+  </Accordion>
+  <Accordion title="You change expiration after people have bought">
+    Credits already issued keep the expiration they were issued with. The new rule applies to new purchases only.
+  </Accordion>
+  <Accordion title="You add or remove a scheduler under Which schedulers accept these credits">
+    This one **does** apply to credits already issued. Adding a scheduler immediately lets every holder book there. Removing one immediately blocks them, including athletes who bought the product expecting it. Announce removals before you make them.
+  </Accordion>
+  <Accordion title="You archive a scheduler the product points at">
+    Credits restricted to only that scheduler become unspendable. Edit this product first and add a replacement scheduler to the list.
+  </Accordion>
+  <Accordion title="Athlete has credits from two products that both allow the scheduler">
+    Product-specific credits are spent before Master Credits. Between two products, check the athlete's Credits tab after booking to see which pool was used; the log names the product.
+  </Accordion>
+  <Accordion title="Subscription payment fails">
+    Renewal credits stop. Credits already issued follow the product's expiration rule, so under **Subscription expiration** they are cleared, and under **Carry over** they remain until spent. Existing bookings are not cancelled. See [Recurring credit memberships](/payments/credits/recurring-credit-memberships#payment-failure-involuntary-churn).
+  </Accordion>
+  <Accordion title="Athlete cancels a session booked with these credits">
+    Whether the credit comes back is decided by the **scheduler's** refund setting and cancellation window, not by the product. A returned credit keeps its original expiration.
+  </Accordion>
+  <Accordion title="You refund the purchase in Stripe">
+    Refunding money does not remove credits. Open the athlete's Credits tab and deduct them, or they can keep booking on a refunded package.
+  </Accordion>
+  <Accordion title="Coupon applied to a credit package">
+    The athlete pays less but receives the full number of credits. Discount the price, never the credits.
+  </Accordion>
+  <Accordion title="Product is archived">
+    Buyers keep their credits and can still spend them. No new purchases are possible, so update any scheduler that uses this product as its **credit renew link**.
   </Accordion>
 </AccordionGroup>
 
@@ -560,4 +600,5 @@ Products don't have an Active/Inactive toggle like schedulers. Instead, you cont
 
 - [Product Types Explained](/payments/product-types)
 - [Credits Overview](/payments/credits/credit-system-overview)
+- [How credits work on a scheduler](/scheduling/credits-and-schedulers)
 - [Products Overview](/payments/product-overview) - Understand product visibility and archiving

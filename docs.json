@@ -170,8 +170,14 @@
             "pages": [
               "inbox/inbox-overview",
               "inbox/in-app-messages",
-              "inbox/sms-messages",
-              "inbox/sms-credits",
+              {
+                "group": "SMS",
+                "icon": "comment-sms",
+                "pages": [
+                  "inbox/sms-messages",
+                  "inbox/sms-credits"
+                ]
+              },
               "inbox/announcements",
               "inbox/professional-email",
               "inbox/attaching-forms-schedulers-and-products",
@@ -205,6 +211,7 @@
                   "scheduling/advanced-scheduler-settings",
                   "scheduling/overlapping-slots",
                   "scheduling/setting-up-payment-options",
+                  "scheduling/credits-and-schedulers",
                   "scheduling/organizing-schedulers",
                   "scheduling/sharing-schedulers"
                 ]
@@ -1345,7 +1352,7 @@
     },
     {
       "source": "/scheduling/credit-based-scheduling",
-      "destination": "/scheduling/setting-up-payment-options#option-3-setting-up-credit-based-sessions"
+      "destination": "/scheduling/credits-and-schedulers"
     }
   ],
   "metadata": {
