@@ -28,7 +28,7 @@ The automation's **label**. This is what you see in the Automations list and in 
 
 ### Triggers
 
-The event that starts the automation, such as **Purchase Made**, **Booking Made**, **Form Submitted**, or a schedule. One trigger per automation. When the event fires, the person it happened to becomes the **user** every later section can reference.
+The event that starts the automation, such as **Purchase Made**, **Booking Created**, **Form Submitted**, or a schedule. One trigger per automation. When the event fires, the person it happened to becomes the **user** every later section can reference.
 
 ### Data Sources
 
@@ -38,7 +38,7 @@ Extra information fetched **before** the conditions run. Use a data source when 
 
 Filters that decide whether the automation continues. Each rule compares a field to a value: **Product Label · Equal To · "Summer Camp"**, **Interval · Equal To · month**, and so on.
 
-Click **Add Rule** for another rule. Rules sit inside groups, and you choose how a group combines them:
+Click **Add Condition** to create the first group and rule, then **Add Rule** for another rule. Rules sit inside groups, and you choose how a group combines them:
 
 - **And** — every rule in the group must be true
 - **Or** — any one rule is enough
@@ -64,7 +64,7 @@ A record of every time the automation ran: when it fired, for whom, which condit
 
 ### Settings
 
-The **Enabled** toggle. Off means the automation is saved but never runs. There is no separate delete button; the section says "Disable above to delete this automation", so switch Enabled off first and the delete option appears. Deleting is permanent — there is no archive or restore, so leave it disabled if you may want it back.
+The **Enabled** toggle. Off means the automation is saved but never runs. There is no separate delete button; the section says "Disable above to delete this automation", so switch Enabled off first and the delete option appears. Deleting is permanent, so if you may want it back, leave it disabled or archive it from the Automations list instead.
 
 ### Test Run
 
