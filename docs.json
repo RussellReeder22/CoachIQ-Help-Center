@@ -173,7 +173,6 @@
               "inbox/sms-messages",
               "inbox/sms-credits",
               "inbox/announcements",
-              "inbox/email-marketing",
               "inbox/professional-email",
               "inbox/attaching-forms-schedulers-and-products",
               "inbox/using-tags-for-group-messages"
@@ -1334,6 +1333,10 @@
     {
       "source": "/quick-guides/athletes/cancel-subscription",
       "destination": "/payments/manage-subscriptions"
+    },
+    {
+      "source": "/inbox/email-marketing",
+      "destination": "/inbox/inbox-overview#email"
     }
   ],
   "metadata": {
