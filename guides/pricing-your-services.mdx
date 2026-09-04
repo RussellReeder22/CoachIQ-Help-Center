@@ -33,7 +33,7 @@ Pricing is the most important decision in your business. Get it wrong, and you'l
 </Frame>
 
 <Note>
-**Not sure if your pricing is right?** CoachIQ reviews pricing with every new coach. We benchmark your rates against our database of hundreds of facilities across the United States to make sure you're positioned competitively for your market.
+**Not sure if your pricing is right?** Pricing comes up in almost every onboarding call. Bring your packages to [Office Hours](https://cal.com/team/coach-iq/office-hours) and we'll compare them to what similar facilities in the CoachIQ community charge.
 </Note>
 
 ---
@@ -158,7 +158,7 @@ The most common commitment is **monthly**, but many facilities have great succes
 </Frame>
 
 <Tip>
-**Automate failed payment recovery**: CoachIQ automatically retries failed payments and sends reminder emails to parents. No more chasing down expired cards or awkward conversations about missed payments.
+**Failed payments don't mean chasing parents**: When a subscription card declines, Stripe retries it on a schedule and the subscription shows as Past Due in CoachIQ until it clears. You see who's behind without asking anyone. See [Failed Payments](/payments/failed-payments) for what to do next.
 </Tip>
 
 ---
@@ -187,9 +187,9 @@ That's it. The parent picks a frequency, commits monthly (or longer), and you ha
 </Frame>
 
 <Info>
-**How CoachIQ handles this**: Each package automatically assigns credits to the athlete's account. 1x/week = 4 credits/month. 2x/week = 8 credits/month. Athletes see their balance in the app and can book sessions until credits run out. No spreadsheets, no manual tracking.
+**How CoachIQ handles this**: Build each package as a subscription product that grants credits every billing cycle. 1x/week = 4 credits/month. 2x/week = 8 credits/month. Unlimited = ∞ credits. Athletes see their balance in the app and book sessions until credits run out. No spreadsheets, no manual tracking.
 
-Learn more: [Credit System Overview](/payments/credits/credit-system-overview)
+Learn more: [Recurring Credit Memberships](/payments/credits/recurring-credit-memberships)
 </Info>
 
 ### The pitch
@@ -319,13 +319,34 @@ Total: $275/month for training + video analysis. Clean, simple, valuable.
 
 ---
 
+## Camps, Clinics, and Team Training
+
+Most facilities run more than weekly training. Camps and clinics are the second most common revenue line among CoachIQ facilities, and team training fills the floor on nights the memberships don't. They follow different rules than your core packages.
+
+| Offer | Price it as | Why |
+|-------|-------------|-----|
+| **Camp** (multi-day, school break) | One-time, paid in full at registration, capacity-capped | Fixed dates, fixed costs. Collecting up front is what makes the camp real |
+| **Clinic** (single session, one skill) | One-time, priced above a single package session | It's a sampling event. Price it so a member never feels like they overpaid |
+| **Team training** (a club or school team books you) | Per-team block, invoiced to the organization | The payer is the program, not the parent |
+
+Two rules carry over from your core pricing:
+
+- **Members get first access, not a discount.** Open camp registration to current families a week early. That rewards commitment without undercutting your monthly price.
+- **Every camp is an onboarding session at scale.** Collect parent contact and athlete details at registration, then follow up with the frequency pitch. The camp roster is your best lead list of the year.
+
+<Info>
+**How CoachIQ handles this**: Camps and clinics are one-time products attached to a scheduler with a capacity limit. Attach your waiver so registration collects the signature, and use the intake form to capture the details you'll need for the follow-up. See [Product Types](/payments/product-types).
+</Info>
+
+---
+
 ## Raising Prices
 
 If you've been undercharging, raising prices is uncomfortable but necessary.
 
 ### The safest approach
 
-**Grandfather existing clients** at their current rate and raise prices only for new clients. This protects your relationships with loyal customers—who are likely your best source of referrals.
+**Grandfather existing clients** at their current rate and raise prices only for new clients. This protects your relationships with loyal families—who are likely your best source of referrals. In CoachIQ, existing subscribers keep their price when you change a product's price; see [Grandfathering Client Pricing](/payments/grandfather-pricing).
 
 ### Timing matters
 
@@ -337,9 +358,9 @@ Your existing clients built your business. They refer new families and strengthe
 
 ---
 
-## Not Every Customer is a Good Customer
+## Not Every Client is a Good Client
 
-As you grow, you'll learn that some customers aren't worth the headache.
+As you grow, you'll learn that some families aren't worth the headache.
 
 <Warning>
 **Red flags to watch for:**
@@ -351,7 +372,7 @@ As you grow, you'll learn that some customers aren't worth the headache.
 - Wants to negotiate on everything
 - Badmouths other coaches or facilities
 
-Taking every customer when you're starting out makes sense. But as you grow, protecting your time and your business model matters more than filling every slot.
+Taking every client when you're starting out makes sense. But as you grow, protecting your time and your business model matters more than filling every slot.
 </Warning>
 
 ---
@@ -406,25 +427,25 @@ Taking every customer when you're starting out makes sense. But as you grow, pro
 
 ## Ready to Set Up Your Pricing?
 
-CoachIQ makes it easy to implement everything in this guide:
+Everything in this guide maps to a part of CoachIQ:
 
 <CardGroup cols={2}>
-  <Card title="Pricing Page Builder" icon="browser">
-    Create beautiful pricing pages that convert visitors to trial sessions
+  <Card title="Pricing Page" icon="browser" href="/website/overview">
+    Put your packages on your website with a trial-session button as the only call to action
   </Card>
-  <Card title="Subscription Management" icon="rotate">
-    Auto-billing, failed payment recovery, and churn prevention built in
+  <Card title="Subscriptions" icon="rotate" href="/payments/manage-subscriptions">
+    Cards on file, automatic billing, Past Due visibility
   </Card>
-  <Card title="Credit System" icon="coins">
-    Automatic session tracking so you never lose revenue
+  <Card title="Credits" icon="coins" href="/payments/credits/credit-system-overview">
+    Each package grants credits; athletes book against them
   </Card>
-  <Card title="Pricing Review" icon="comments">
-    Our team benchmarks your rates against similar facilities nationwide
+  <Card title="Products" icon="box" href="/payments/product-builder">
+    Build the trial session, the packages, and your camps
   </Card>
 </CardGroup>
 
 <Info>
-**Get personalized pricing advice**: [Book an Office Hours call](https://cal.com/team/coach-iq/office-hours) with our team. We'll review your current pricing, compare it to similar facilities in our network, and help you optimize for your market.
+**Want a second opinion on your numbers?** [Book an Office Hours call](https://cal.com/team/coach-iq/office-hours). We'll look at your packages next to what comparable facilities in the CoachIQ community charge and tell you where you sit.
 </Info>
 
 ---
@@ -432,16 +453,14 @@ CoachIQ makes it easy to implement everything in this guide:
 ## What's Next?
 
 <CardGroup cols={2}>
-  <Card title="Setting Up Subscriptions" icon="rotate" href="/payments/manage-subscriptions">
-    Learn how to manage recurring billing in CoachIQ
+  <Card title="Adding Clients" icon="user-plus" href="/people/adding-editing-clients">
+    Get a new family into CoachIQ after their onboarding session
   </Card>
-  <Card title="Credit System Overview" icon="coins" href="/payments/credits/credit-system-overview">
-    Understand how credits work with your packages
-  </Card>
-  <Card title="Creating Products" icon="box" href="/payments/product-builder">
-    Build your training packages in CoachIQ
-  </Card>
-  <Card title="Onboarding New Athletes" icon="route" href="/quick-guides/onboarding-new-athletes">
-    The complete workflow for new client intake
+  <Card title="Getting Found Online (SEO)" icon="magnifying-glass" href="/guides/getting-found-online-seo">
+    Now that the offer is right, make sure parents can find it
   </Card>
 </CardGroup>
+
+---
+
+*Last reviewed: September 2026.*

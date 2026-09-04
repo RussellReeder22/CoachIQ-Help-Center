@@ -432,11 +432,11 @@
             "group": "Guides",
             "pages": [
               "guides/index",
-              "guides/getting-found-online-seo",
               "guides/pricing-your-services",
+              "guides/getting-found-online-seo",
               "guides/building-your-training-facility",
-              "guides/hiring-onboarding-trainers",
-              "guides/legal-risk-management"
+              "guides/legal-risk-management",
+              "guides/hiring-onboarding-trainers"
             ]
           }
         ]
