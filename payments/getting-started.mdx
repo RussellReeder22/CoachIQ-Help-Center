@@ -3,7 +3,7 @@ title: "Understanding CoachIQ Payments"
 description: "Learn how CoachIQ Payments works and how money flows from your clients to your bank account"
 sidebarTitle: "Payments Overview"
 icon: "circle-dollar"
-keywords: ["payments", "money", "revenue", "get paid", "how payments work", "payment processing"]
+keywords: ["payments", "money", "revenue", "get paid", "how payments work", "payment processing", "payment methods", "ACH", "bank account", "Apple Pay", "Afterpay"]
 ---
 
 <Info>
@@ -81,6 +81,31 @@ All payment processing runs through Stripe, which deposits funds directly into y
 **Subscription billing** Client subscribes → Card charged monthly → Receives credits/access automatically
 
 **Access code** Client enters code → Discount applied (or free) → Access granted
+
+## Payment methods at checkout
+
+Checkout is powered by Stripe, so your clients can pay with more than a card. The methods a client sees are the ones that are active for your organization:
+
+| Method | What the client sees | Works on |
+| --- | --- | --- |
+| **Card** | Credit or debit card form | Everything: products, subscriptions, scheduler bookings, guest checkout |
+| **Apple Pay / Google Pay** | Wallet button on a supported device or browser | Same as cards, including athlete portals on a custom domain |
+| **US Bank Account (ACH)** | "Bank" option; the client connects their bank account | One-time products and recurring memberships |
+| **Afterpay / Klarna** | Buy-now-pay-later option where Stripe offers it | One-time purchases, where the method is enabled |
+
+**Where to turn methods on and off**
+
+Once Stripe is connected, your admin settings include a **Payment Methods** list (**Settings → Payment Methods**). Each method is labeled **Active** or **Inactive**, and the label reflects what clients can actually use at checkout. A method has to be enabled on your Stripe account as well; if a method you expect is missing, check it in Stripe from **Settings → Stripe Portal**, then confirm it shows as Active here.
+
+**ACH in practice**
+
+- ACH is the lower-fee option for larger camp, team, and membership payments. You can pass on a different processing fee for ACH than for cards; see [Fees for ACH payments](/payments/processing-fee#fees-for-ach-payments).
+- New recurring memberships offer every active method, including bank account. Memberships bought through athlete checkout between late April and early September 2026 were created card-only; see [Payment methods on recurring memberships](/payments/manage-subscriptions#payment-methods-on-recurring-memberships).
+- A client who has already paid once has their saved methods, and which one is default, listed on the **Payment Methods** tab of their [client profile](/people/client-profiles/client-profiles-subscriptions#payment-methods-on-file).
+
+<Note>
+  Checkout follows your athlete portal's theme, so a dark-mode portal gets a dark checkout with matching contrast. Coupons, waivers, and processing fees behave the same whichever method the client picks.
+</Note>
 
 ## Your first three steps
 

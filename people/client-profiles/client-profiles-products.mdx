@@ -3,7 +3,7 @@ title: "Products: Purchase History"
 description: "View everything a client has purchased and manually add products to their account"
 sidebarTitle: "Products"
 icon: "box"
-keywords: ["products", "purchase history", "what did they buy", "add product", "assign product", "client purchases"]
+keywords: ["products", "purchase history", "what did they buy", "add product", "assign product", "client purchases", "configure purchases", "cash", "check", "offline payment", "stripe subscription id"]
 ---
 
 <Info>
@@ -49,7 +49,7 @@ Narrow the view to specific product types:
 
 ## Manually adding products
 
-Give a client access to a product without them paying:
+Give a client a product they didn't buy through checkout, and record how (or whether) you were paid:
 
 <Steps>
   <Step title="Click + Add Product">
@@ -59,21 +59,39 @@ Give a client access to a product without them paying:
     Type product name in the search bar.
   </Step>
   <Step title="Select product">
-    Click the product you want to grant them.
+    Click the product you want to grant them. The **Configure Purchases** step opens.
+  </Step>
+  <Step title="Configure the purchase">
+    **Configure Purchases** shows the product and price, then asks:
+
+    - **Stripe Subscription ID** (optional) - for a subscription product, paste the athlete's existing Stripe subscription ID to link the purchase to real billing, so renewals and credits follow Stripe. Leave blank for a complimentary grant.
+    - **Credits** - **Award now** or **Award upon cycle renew**, for credit-bearing products.
+    - **How the purchase was collected** - record offline money: cash, check, or other, and whether it is paid or still being collected. Use this when a family paid you in person or by check, so the roster and the client's entitlements match reality without the payment going through Stripe.
+
+    The collection details are saved with the purchase for your records. They don't create a Stripe charge or a Transactions entry.
   </Step>
   <Step title="Confirm">
     Client now has access to that product (appears in their Products tab).
   </Step>
 </Steps>
 
+<Frame>
+  ![Configure Purchases step with the optional Stripe Subscription ID field](/images/athlete-profile-add-product-subscription-id.png)
+</Frame>
+
 <Note>
-  **No payment collected** when you manually add products. Use this for:
+  **No card is charged** when you manually add products. CoachIQ never initiates a charge from this screen; it either links an existing Stripe subscription or records what you collected yourself. Use this for:
 
   - Complimentary memberships
   - Staff/family member access
   - Makeup sessions after issues
   - Trial period access
+  - Cash, check, or bank-transfer payments taken outside CoachIQ
 </Note>
+
+<Warning>
+  **Credit-bearing products can't be deleted once their credits have been used.** If you add the wrong credit product and the athlete books with it, you can't remove the product from the profile; instead, turn off its credits from the **Credits** tab. See [Turning off a product's credits](/people/client-profiles/client-profiles-credits#turning-off-a-products-credits).
+</Warning>
 
 ---
 
@@ -123,6 +141,8 @@ The Products tab is primarily **view-only**. To take action:
 | **Refund purchase**      | Stripe                               |
 | **Change product price** | Payments → Products → Edit product   |
 | **See payment history**  | Transactions tab (financial details) |
+| **Turn off a product's credits** | Credits tab → toggle on the product's credit tab |
+| **See cards on file**    | Payment Methods tab                  |
 
 <Note>
   Think of Products tab as **"What they own"**, not **"How they paid"**. For payment details, use Transactions tab.
