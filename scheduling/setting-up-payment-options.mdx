@@ -27,7 +27,9 @@ Understanding your options helps you choose the right payment model:
 - **Free sessions** - No payment required (trials, assessments, complimentary)
 - **Direct payment** - Athletes pay per session via Stripe (one-time purchases)
 - **Credit-based** - Athletes purchase credit packs, redeem credits to book
-- **Hybrid models** - Combine free trials with paid ongoing sessions
+- **Hybrid models** - Combine free trials with paid ongoing sessions, or let one scheduler take either a credit or a card payment
+
+**How the Payment section is laid out**: every scheduler's **Payment** section starts with a **Free** / **Paywalled** toggle ("Free to book, or families pay with money, a credit, or either"). Choosing **Paywalled** reveals **How they pay** with three options: **Price**, **Credit**, or **Either**. That is the whole model; the sections below walk through each choice.
 
 **Prerequisites for paid sessions**:
 
@@ -42,7 +44,7 @@ Understanding your options helps you choose the right payment model:
 
 ## Understanding the three payment types
 
-Before configuring, understand what each payment type means for your business:
+Before configuring, understand what each payment type means for your business. In the builder these map to **Free**, **Paywalled → Price**, and **Paywalled → Credit**:
 
 <Tabs>
   <Tab title="Free Sessions">
@@ -178,30 +180,17 @@ Use this framework to decide which payment model fits your business:
 
 ## Option 1: Setting up FREE sessions
 
-Free sessions require no special configuration—just don't connect any payment method.
+Free sessions require no special configuration—leave the scheduler on **Free**.
 
 <Steps>
   <Step title="Create or edit your scheduler">
     Navigate to **Schedule → Schedulers** and create a new scheduler or edit an existing one.
   </Step>
-  <Step title="Find the Payment section">
-    Scroll to the **Payment** or **Pricing** section in your scheduler configuration.
-
-    This section may be labeled:
-
-    - "Payment Settings"
-    - "Pricing"
-    - "How should athletes pay?"
-    - "Session cost"
+  <Step title="Open the Payment section">
+    Click **Payment** in the scheduler builder's left rail.
   </Step>
-  <Step title="Select 'Free' option">
-    Choose the **Free** or **No payment required** option.
-
-    You may see:
-
-    - Radio button for "Free"
-    - Toggle for "Charge for this session" (set to OFF)
-    - Dropdown with "Free" as an option
+  <Step title="Leave the toggle on Free">
+    The section opens on a **Free** / **Paywalled** toggle. Keep **Free** selected. No price, product, or credit fields appear.
 
     <Frame>
       ![Free session payment setting](/images/free-payment-option.png)
@@ -266,21 +255,15 @@ Before starting:
 
 <Steps>
   <Step title="Navigate to your scheduler payment section">
-    In your scheduler configuration, go to the **Payment** section.
-
-    Look for options like:
-
-    - "How should athletes pay?"
-    - "Payment type"
-    - "Pricing configuration"
+    In the scheduler builder, click **Payment** in the left rail.
   </Step>
-  <Step title="Select direct payment option">
-    Choose the option for **Paywall**.
+  <Step title="Switch to Paywalled, then choose Price">
+    Set the toggle to **Paywalled**. Under **How they pay**, choose **Price**.
 
-    This tells CoachIQ that athletes will pay at time of booking rather than using credits.
+    This tells CoachIQ that athletes pay at the time of booking rather than using credits.
 
     <Frame>
-      ![Direct payment option selected](/images/paywall-ui.png)
+      ![Paywalled scheduler with Price selected](/images/paywall-ui.png)
     </Frame>
   </Step>
   <Step title="Connect to a Product (or create new)">
@@ -449,11 +432,11 @@ Now configure your scheduler to accept credits as payment:
   <Step title="Select credit-based payment">
     In the **Payment** section:
 
-    1. Choose **Credit Charge** option
-    2. This changes the payment model from direct payment to credit redemption
+    1. Set the toggle to **Paywalled**
+    2. Under **How they pay**, choose **Credit** ("credit from a package they already bought")
 
     <Frame>
-      ![CoachIQ credit charge interface showing per-session credit deduction](/images/credit-charge-ui.png)
+      ![Paywalled scheduler with Credit selected](/images/credit-charge-ui.png)
     </Frame>
   </Step>
   <Step title="Set credit cost">
@@ -469,9 +452,7 @@ Now configure your scheduler to accept credits as payment:
     </Note>
   </Step>
   <Step title="Link to credit-issuing product (optional but recommended)">
-    You can link a specific product that issues compatible credits for renew.
-
-    Enter the product url in the text box once the \*\*Add a credit renew link \*\*setting is toggled on
+    Under **Buy more credits** (optional), paste the URL of the product that issues compatible credits. If an athlete doesn't have enough credits, they are sent there to buy more.
   </Step>
   <Step title="Save scheduler">
     Click **Create** or **Update**.
@@ -551,7 +532,7 @@ Complete end-to-end testing before going live. The first four steps are the core
     Deplete Test Athlete's credits to 0, then attempt to book one more credit-only session.
 
     - **Verify** the system prevents the booking with a "Not enough credits" message
-    - **(Optional) Verify** a link to purchase more credits appears (if the credit renew link is enabled)
+    - **(Optional) Verify** a link to purchase more credits appears (if a **Buy more credits** link is set)
     - If hybrid scheduler: **verify** the athlete can still book via direct payment
   </Step>
   <Step title="Test scheduler-specific restrictions (if configured)">
@@ -613,7 +594,7 @@ Complete end-to-end testing before going live. The first four steps are the core
 
     **How to fix:**
 
-    1. Verify scheduler has credit payment enabled: Scheduler Settings → Payment → Credit Charge
+    1. Verify scheduler has credit payment enabled: Scheduler → Payment → **Paywalled** → **How they pay: Credit**
     2. Check athlete's credit balance: Should show in their profile Credits tab
     3. Verify product configuration: Product Builder → Usage Limits → "Redeemable Schedulers" includes this scheduler
     4. Check credit type: If scheduler-specific, athlete needs credits from correct product
@@ -686,6 +667,10 @@ Complete end-to-end testing before going live. The first four steps are the core
 </AccordionGroup>
 
 ## Option 4: Hybrid payment models
+
+<Note>
+  **One scheduler, credit or card.** The simplest hybrid is a single scheduler set to **Paywalled → How they pay: Either**. You set both a price and a credit cost; athletes with usable credits are taken straight to credit redemption, and athletes without credits choose to pay the price. The patterns below combine *separate* schedulers instead.
+</Note>
 
 Advanced coaches use multiple schedulers with different payment types for strategic business design.
 
@@ -792,6 +777,10 @@ Advanced coaches use multiple schedulers with different payment types for strate
     - Standard member → Run low on credits → Upsell to larger package
   </Step>
 </Steps>
+
+## Booking without an account (guest checkout)
+
+A paid or free scheduler can also be opened to guest checkout, so a prospect from an ad or your website can reserve an intro call or trial session with just their contact and payment details and no login. Where the toggle is, what a guest provides, and how the booking appears without a client record: [Guest checkout](/payments/guest-checkout).
 
 ## Troubleshooting common payment issues
 

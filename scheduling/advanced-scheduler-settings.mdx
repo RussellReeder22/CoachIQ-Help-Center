@@ -211,6 +211,8 @@ Purpose: Prevents Sarah from being double-booked
   **Leave this box unchecked** unless you have a specific reason. Allowing the same coach to be booked in two places at once defeats the purpose of coach assignment and leads to scheduling conflicts.
 </Warning>
 
+Resources have the same override: **Allow resource double booking** in the scheduler's **Resources** section. See [Resources](/scheduling/resources#allow-resource-double-booking).
+
 ### Configuration steps
 
 <Frame>
@@ -346,7 +348,7 @@ Set where sessions take place.
 
 **Location setting** specifies the physical address where sessions from this scheduler occur. This helps athletes know where to show up and provides clarity for logistics planning.
 
-**Critical limitation**: **One location per scheduler**. If you train at multiple locations, you'll need separate schedulers for each.
+The location you pick in the scheduler's **Location** section (**Select Location** or **Add Location**) is the **default** for every date. If you train at more than one site with the same session, you do not need a scheduler per site: give the individual dates their own venue in the scheduler's availability, and each falls back to this default until you change it. How to do that: [A different venue for each date](/scheduling/setup-locations#a-different-venue-for-each-date).
 
 ### Configuration options
 
@@ -1095,14 +1097,16 @@ Additional settings you might encounter in scheduler builder.
 
 ### Duration settings
 
-**What it is**: Session length configuration
+**What it is**: Session length configuration, at the top of **Advanced settings**
 
 **Already covered**: Duration is configured during scheduler creation ([Creating Your First Scheduler](/scheduling/creating-your-first-scheduler))
 
 **Options**:
 
-- Preset durations: 15, 30, 45, 60, 90 minutes
-- Custom duration: Enter any minute value
+- Preset durations: **15 / 30 / 45 / 60 mins**
+- **Custom**: enter an exact duration in hours and minutes
+
+Two related controls sit next to Duration: **New sessions can start** (how often a start time is offered) and **Allow overlapping sessions**. They are explained in [Duration, start times, and overlapping sessions](/scheduling/overlapping-slots).
 
 **When to adjust**: If you need to change session length after creation
 
@@ -1114,8 +1118,31 @@ Additional settings you might encounter in scheduler builder.
 - Quick sessions: 15-30 minutes typical
 
 <Note>
-  **Note**: Changing duration ONLY affects future bookings. Existing bookings retain their original duration.
+  **Note**: Changing duration ONLY affects future bookings. Existing bookings retain their original duration. To change the length of one already-booked occurrence, use **Duration → Edit** on the session's calendar click view; see [Edit duration from the calendar](/scheduling/editing-rescheduling-bookings#edit-duration-from-the-calendar).
 </Note>
+
+### A different duration on one date
+
+A single scheduler can run a 90-minute indoor practice on Tuesday and a 150-minute field practice on Saturday. Instead of a scheduler per length, give the date its own duration:
+
+<Steps>
+  <Step title="Open Availability → Specific-date settings">
+    In the scheduler builder, go to **Availability**. Below the availability pickers is **Specific-date settings** ("Adjust resources or duration for one configured date").
+  </Step>
+  <Step title="Pick the date">
+    The list shows the specific dates on the availability templates connected to this scheduler. If it reads "No specific dates are connected", add specific-date availability to a connected template first (see [Create your availability](/scheduling/create-your-availability#method-2-specific-dates-availability)), then refresh the scheduler.
+  </Step>
+  <Step title="Set the duration for that date">
+    Enter the duration for that date only. Every other date keeps the scheduler's default. You can change the date's resources on the same screen; see [Resources](/scheduling/resources#different-resources-on-different-dates).
+  </Step>
+  <Step title="Update">
+    Click **Update**. Slots for that date are generated with its own length, and coach and resource conflict checks for that date use it too.
+  </Step>
+</Steps>
+
+<Warning>
+  **"Window shorter than duration" save error.** A date's time window must be at least as long as the duration that applies to it. A 5:30–7:00 PM date (90 minutes) on a 120-minute scheduler is rejected when you save, with an error naming the problem, instead of silently producing a date with no bookable slots. Fix it by shortening the duration for that date or widening the window on the availability template.
+</Warning>
 
 ### Scheduler description
 
@@ -1238,11 +1265,11 @@ Before launching a scheduler, verify all advanced settings are configured:
 
 **Fix**: Edit scheduler → Connected Coaches → Add coach → Save
 
-### 2. Multiple locations in one scheduler
+### 2. Wrong venue on some dates
 
-**Symptom**: Athletes confused about where to go
+**Symptom**: Athletes show up at the default location on a date that runs somewhere else
 
-**Fix**: Create separate schedulers per location, each with specific address
+**Fix**: Set the venue on each date that differs from the scheduler's default (see [Locations](/scheduling/setup-locations#a-different-venue-for-each-date)), and check the athlete's schedule shows the per-date venue. Only split into separate schedulers if you want to compare the sites in Calendar analytics
 
 ### 3. Same-time double-booking accidentally allowed
 

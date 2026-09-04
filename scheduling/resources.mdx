@@ -1,8 +1,9 @@
 ---
 title: "Resources"
-description: "Track courts, rooms, and equipment — and attach them to schedulers to prevent double-booking."
+description: "Track courts, rooms, and equipment; attach them to schedulers; choose whether a booking reserves all of them or one open one; and prevent (or allow) double-booking."
 icon: "cube"
 sidebarTitle: "Resources"
+keywords: ["resources", "courts", "cages", "equipment", "reserve all", "use first available", "resource pool", "allow resource double booking", "per-date resources", "double-booking prevention"]
 ---
 
 ## What are Resources?
@@ -19,7 +20,7 @@ Resources are physical assets your facility uses to run sessions — courts, bat
 
 ## Creating a resource
 
-Go to **Scheduling → Setup → Resources** and click **+ Add resource**. Fill in:
+Go to **Scheduling → Setup → Resources** and click **Add setup**. Fill in:
 
 - **Title** (required) — e.g. "Half Court A"
 - **Description** (optional) — internal notes for staff
@@ -36,7 +37,7 @@ Go to **Scheduling → Setup → Resources** and click **+ Add resource**. Fill 
 Two paths, same result:
 
 - **From Setup → Resources**: click **Attach to scheduler** on the resource card
-- **From inside a scheduler**: scroll to the **Resources** section and select the resource from the available list
+- **From inside a scheduler**: open the **Resources** section and pick a resource under **Add a resource**
 
 <Frame>
   ![Resources panel inside scheduler settings showing attached resources](/images/scheduling/resources-in-scheduler-settings.png)
@@ -44,24 +45,87 @@ Two paths, same result:
 
 A resource can be attached to multiple schedulers at once. When a resource is exclusive to one scheduler, you'll see "Not shared with other schedulers" in the scheduler view. To remove it, click **Detach**.
 
+You can also add a resource to a single booked session from the calendar: click the session and use the resource control in the click view. That reserves the resource for that occurrence only and does not change the scheduler. See [Calendar overview](/scheduling/calendar-overview-and-navigation#click-session-for-details).
+
 ## Attach multiple resources to one scheduler
 
-A single scheduler can hold more than one resource at a time — useful when a session needs several spaces at once, like a team practice that reserves multiple batting cages.
+A single scheduler can hold more than one resource at a time — useful when a session needs several spaces at once, like a team practice that reserves multiple batting cages, or when several interchangeable spaces could host the session.
 
-In the scheduler's **Resources** tab, each attached resource appears as a card with a **Detach** option. If a resource is also used by other schedulers, the card shows **Shared with X schedulers** and lists them. To attach another, click a resource under **Add Resource**.
+In the scheduler's **Resources** section, each attached resource appears as a card with a **Detach** option under **Attached resources**. If a resource is also used by other schedulers, the card shows **Shared with X schedulers** and lists them. To attach another, pick it under **Add a resource**.
 
-When a session from that scheduler is booked, every attached resource is reserved for that time slot, so none of them can be double-booked elsewhere.
+What happens when a session is booked depends on the **Reservation behavior** you choose (next section).
 
-### Example
+## Reservation behavior: Reserve all or Use first available
 
-A softball facility attaches **Cage 1**, **Cage 2**, and **Cage 3** to a "Team Practice" scheduler. Each booked practice reserves all three cages for its window, and they free up together when the session ends.
+Once more than one resource is attached, the **Resources** section asks how a booking should pick a space:
+
+| Reservation behavior | What a booking does | Use it for |
+|---|---|---|
+| **Reserve all** — *Every attached resource is required* | Reserves every attached resource for the time slot. A time is available only when every attached resource is open. | Sessions that need the whole space: a team practice across Cage 1, 2, and 3 |
+| **Use first available** — *Assign one open resource at booking* | Takes one free resource from the attached list and reserves only that one. The rest of the pool stays open for other bookings. | Interchangeable spaces: two hitting lessons at 4:00 that each need *a* cage, not a specific one |
+
+**Reserve all** is the default and matches how resources worked before this option existed. Existing schedulers with several resources attached are unchanged.
+
+### How Use first available plays out
+
+A facility attaches **Cage 1** and **Cage 2** to a "Hitting Lesson" scheduler set to **Use first available**:
+
+- The first 4:00 booking takes Cage 1.
+- A second 4:00 booking takes Cage 2, so both lessons can run.
+- A third 4:00 request finds no open cage, so 4:00 is no longer offered.
+- A "Pitching" scheduler that only uses **Turf** is unaffected either way, because it never competes for a cage.
+
+Families do not pick a cage. Staff see which resource was reserved on the booking in the calendar click view, and the allocated resource is what conflict checks use from then on: another scheduler that needs Cage 1 loses that hour, while Cage 2 stays free until someone takes it.
+
+<Tip>
+  Pair **Use first available** with one scheduler per skill or coach rather than one scheduler per cage. You keep the booking flow families already know, and the pool sorts out which space is used.
+</Tip>
+
+## Allow resource double booking
+
+By default an attached resource blocks a booking when it is already reserved at that time. The **Allow resource double booking** checkbox in the scheduler's **Resources** section turns that protection off for this scheduler, the same way the connected-coaches checkbox lets a coach be booked in two places at once.
+
+- **Off** (default): a time slot is unavailable when an attached resource is already reserved by any session.
+- **On**: bookings from this scheduler go through even when the resource is in use elsewhere.
+
+Turn it on only for a resource that genuinely supports more than one session at a time (a large turf that hosts two small groups) or for a scheduler where you accept the overlap deliberately. Leave it off everywhere else, because it disables the very thing resources are for.
+
+## Different resources on different dates
+
+A resource attached to a scheduler applies to every date. If one date needs different equipment (the Tuesday indoor practice uses Cage 1, the Saturday field practice uses the turf mound), give that date its own resources instead of building a second scheduler:
+
+1. Open the scheduler and go to **Availability**.
+2. Under **Specific-date settings**, pick the configured date you want to change. Dates come from the specific-date availability on the connected availability template; if the list is empty, add specific dates to the template first, then refresh the scheduler.
+3. Set the resources for that date. Every other date keeps the scheduler's attached resources.
+
+Conflict checks for that date use the date's own resources, not the scheduler default, so a per-date override never blocks or frees a cage on any other date. Duration can be changed on the same screen; see [A different duration on one date](/scheduling/advanced-scheduler-settings#a-different-duration-on-one-date).
 
 ## How double-booking prevention works
 
-Once a resource is attached to a scheduler, CoachIQ locks that resource for the duration of each booked session. If that time slot is already filled by another session using the same resource, it becomes unavailable — even if the second scheduler still has open capacity.
+Once a resource is attached to a scheduler, CoachIQ locks that resource for the duration of each booked session. If that time slot is already filled by another session using the same resource, it becomes unavailable — even if the second scheduler still has open capacity. With **Use first available**, the lock applies to the one resource that was assigned to the booking.
+
+If two groups in your organization share a building, link them under **Settings → Shared Calendar** with the **Resources only** share mode so a cage booked in either group blocks it for the other. See [Sharing a calendar across groups](/scheduling/shared-calendar-across-groups).
 
 ## Example use cases
 
-- **Basketball facility**: "Half Court A" and "Half Court B" each attached to separate group training schedulers
+- **Basketball facility**: "Half Court A" and "Half Court B" attached to one group training scheduler with **Use first available**, so two groups can run side by side
 - **Training room**: "Speed & Agility Room" on a conditioning scheduler prevents two coaches from booking the same room at the same time
 - **Batting cage**: "Cage 1" on a hitting session scheduler ensures each session has a dedicated lane
+- **Team practice**: Cage 1, Cage 2, and Cage 3 on a "Team Practice" scheduler with **Reserve all**, so the whole facility is held for the practice
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Locations" icon="map-pin" href="/scheduling/setup-locations">
+    The building each resource belongs to, and per-date venues
+  </Card>
+  <Card title="Advanced scheduler settings" icon="sliders" href="/scheduling/advanced-scheduler-settings">
+    Connected coaches, locations, duration, and per-date duration
+  </Card>
+  <Card title="Shared calendar across groups" icon="calendar" href="/scheduling/shared-calendar-across-groups">
+    Share a resource list between two groups
+  </Card>
+  <Card title="Calendar overview" icon="calendar-days" href="/scheduling/calendar-overview-and-navigation">
+    See coach and resources on Day and Week view
+  </Card>
+</CardGroup>

@@ -1,9 +1,9 @@
 ---
 title: "Organizing Schedulers: Catalog, Tags & Team Visibility"
-description: "Sort schedulers into catalog types, tag them for filtering, and control which athletes can see each one."
+description: "Sort schedulers into catalog types, tag them for filtering, control which athletes can see each one, and archive the ones you are done with."
 sidebarTitle: "Catalog, Tags & Visibility"
 icon: "folder-tree"
-keywords: ["catalog", "scheduler type", "practices", "camps", "lessons", "rentals", "scheduler tags", "team visibility", "who can see scheduler", "roster"]
+keywords: ["catalog", "scheduler type", "practices", "camps", "lessons", "rentals", "scheduler tags", "team visibility", "who can see scheduler", "roster", "archive scheduler", "restore scheduler", "retire a scheduler"]
 ---
 
 <Info>
@@ -12,11 +12,12 @@ keywords: ["catalog", "scheduler type", "practices", "camps", "lessons", "rental
 
 ## Why organize schedulers
 
-Once you have more than a handful of schedulers, the list and the athlete portal both get noisy. Three tools keep them tidy:
+Once you have more than a handful of schedulers, the list and the athlete portal both get noisy. Four tools keep them tidy:
 
 - **Catalog type** groups schedulers by what they are
 - **Tags** let you filter by anything you like
 - **Team visibility** decides which athletes can see a scheduler at all
+- **Archive** takes a finished scheduler out of the way without deleting its history
 
 <Frame>
   ![Schedulers page with catalog type chips, the TAGS panel, and scheduler cards](/images/scheduling/schedulers-catalog-tags.png)
@@ -24,7 +25,7 @@ Once you have more than a handful of schedulers, the list and the athlete portal
 
 ## Catalog types
 
-Every scheduler has a **Type**, set in its **Catalog** section:
+Every scheduler has a **Type**, set in its **Catalog** section ("Choose how this scheduler is grouped in the catalog."):
 
 | Type | Use it for |
 |---|---|
@@ -40,7 +41,7 @@ Schedulers created before types existed default to **Other**. Open each one and 
 
 ## Scheduler tags
 
-Tags are free-form labels you attach to a scheduler. Use the **TAGS** panel on the left of the Schedulers page (**Add tag**) or the **Tags** field in the scheduler's Catalog section. The panel shows a count next to each tag, so "Freehold Skills 4" means four schedulers carry it.
+Tags are free-form labels you attach to a scheduler. Use the **TAGS** panel on the left of the Schedulers page (**Add tag**) or the optional **Tags** field in the scheduler's Catalog section, which groups the scheduler under one or more tags in the catalog. The panel shows a count next to each tag, so "Freehold Skills 4" means four schedulers carry it.
 
 Good tag ideas:
 
@@ -57,10 +58,10 @@ Click a tag on the Schedulers page to filter the list to that tag. Tags are inte
 
 ## Team visibility
 
-By default every active scheduler is visible to everyone in your athlete portal. The **Team visibility** section lets you restrict a scheduler to a roster:
+By default every active scheduler is visible to everyone in your athlete portal. The **Team visibility** section of the scheduler builder has one field, **Visible to**, which defaults to **Everyone in this group**. Leave it empty for everyone, or select team or roster tags to show this scheduler only to matching athletes and to parents of matching managed athletes:
 
-- **Everyone** — any athlete can see and book it
-- **Roster / team tags** — only athletes carrying the selected [client tags](/people/tags-filters) see it
+- **Everyone in this group** — any athlete can see and book it
+- **Team or roster tags** — only athletes carrying the selected [client tags](/people/tags-filters), and the parents of managed athletes who carry them, see it
 
 Use this for team-only practices, a private training block for a specific squad, or make-up sessions for one group. Athletes outside the roster never see the scheduler in the portal, and the direct link will not let them book.
 
@@ -70,7 +71,35 @@ Use this for team-only practices, a private training block for a specific squad,
 
 ## Copying a scheduler link
 
-Each card on the Schedulers page has a link icon. Hover it for **Copy scheduler link**, then paste the link into a message, your website, or a form. Details in [Sharing schedulers](/scheduling/sharing-schedulers).
+Each card on the Schedulers page has a link icon (**Copy link for** the scheduler's name). Click it, then paste the link into a message, your website, or a form. Details in [Sharing schedulers](/scheduling/sharing-schedulers).
+
+## Archiving a scheduler
+
+When a season's clinics are over or a camp has run its course, archive the scheduler instead of deleting it or leaving it in the active list.
+
+<Steps>
+  <Step title="Open the scheduler">
+    On **Scheduling → Schedulers**, open the scheduler you are finished with.
+  </Step>
+  <Step title="Click Archive">
+    In the builder's top bar, next to the **Active** status and the **Update** button, click **Archive**.
+  </Step>
+</Steps>
+
+What archiving does:
+
+- The scheduler leaves your active Schedulers list and is removed from the athlete portal and any booking links, so nobody can book it.
+- Past bookings, attendance, and payment history stay exactly as they were, on the calendar and on each athlete's profile.
+- Sessions already booked for future dates are not cancelled by archiving. Cancel them first if the sessions will not run; see [Canceling bookings](/scheduling/canceling-bookings#cancel-an-entire-session-from-the-calendar).
+- Availability templates, locations, resources, and coaches the scheduler used are untouched and stay available to other schedulers.
+
+An archived scheduler can be restored later. Filter the Schedulers page away from **Active** to find archived schedulers, open one, and reactivate it; its settings come back as they were, so a returning seasonal program is a one-click relaunch rather than a rebuild.
+
+<Warning>
+  If the scheduler is credit-based, check the products that issue its credits before archiving. Credits that were only valid on this scheduler have nowhere to go until you add a replacement scheduler to the product's **Which schedulers accept these credits** list. See [Credits and schedulers](/scheduling/credits-and-schedulers).
+</Warning>
+
+Archiving is different from **Inactive**. An inactive scheduler is hidden from athletes but still sits in your active list and can be switched back on in a second; use it for a short pause. Archive is for schedulers you do not expect to use again soon. Both keep history.
 
 ## Common questions
 
@@ -82,7 +111,10 @@ Each card on the Schedulers page has a link icon. Hover it for **Copy scheduler 
     No. Admins and coaches can book anyone into any scheduler from the calendar. Visibility only affects what athletes see in the portal.
   </Accordion>
   <Accordion title="An athlete on the roster can't see the scheduler">
-    Check that the athlete carries the exact tag selected in Team visibility, and that the scheduler is **Active**. Tag names must match; "Varsity" and "varsity " with a trailing space are different tags.
+    Check that the athlete carries the exact tag selected in Team visibility, and that the scheduler is **Active** and not archived. Tag names must match; "Varsity" and "varsity " with a trailing space are different tags.
+  </Accordion>
+  <Accordion title="Should I archive or delete a scheduler I no longer use?">
+    Archive. Deleting removes the scheduler's configuration for good; archiving keeps every booking record, can be reversed, and still takes the scheduler off the portal. There is rarely a reason to delete a scheduler that has ever been booked.
   </Accordion>
 </AccordionGroup>
 
