@@ -3,7 +3,7 @@ title: "Creating & Customizing Forms"
 description: "Build professional intake forms, registrations, and waivers using templates or from scratch — complete field type reference included."
 sidebarTitle: "Creating Forms"
 icon: "hammer"
-keywords: ["create form", "build form", "form builder", "form fields", "custom form", "form templates", "add fields", "edit form"]
+keywords: ["create form", "build form", "form builder", "form fields", "custom form", "form templates", "add fields", "edit form", "archive form", "restore form", "field label", "phone field"]
 ---
 
 This guide covers everything you need to build forms in CoachIQ — from quick template setups to fully custom builds.
@@ -95,7 +95,7 @@ Content elements that add structure and context to your form — not questions.
 | Field                | What it does                                      |
 | -------------------- | ------------------------------------------------- |
 | Media                | Embed an image or video                           |
-| Heading              | Add a section title                               |
+| Heading              | Add a section title (display only; it is not the label of the field below it) |
 | Plain Text           | Add instructions or descriptions                  |
 | Upload File          | Let respondents attach files (PDFs, images, etc.) |
 | Description of Terms | Display legal text (for waivers)                  |
@@ -116,7 +116,7 @@ Build your own questions with these input types:
 | Field         | Best for                       | Example                                               |
 | ------------- | ------------------------------ | ----------------------------------------------------- |
 | Text          | Short answers                  | "What position do you play?"                          |
-| Phone         | Phone number input             | Secondary contact number                              |
+| Phone         | Phone number input; accepts numbers typed with dashes or spaces, and validates them | Secondary contact number |
 | Text Area     | Long answers                   | "What are your training goals?"                       |
 | Checkbox      | Multiple selections            | "Which days work for you?" (Mon, Tue, Wed...)         |
 | Select Box    | Single selection (dropdown)    | "Experience level" (Beginner, Intermediate, Advanced) |
@@ -143,6 +143,10 @@ This shows the same template options from form creation — useful if you starte
     - Field type (Text, Select Box, etc.)
     - Label (the question text)
     - Default value (optional)
+
+    <Warning>
+      **The Label is what appears in responses.** The field's **Label** is the column title in Responses and exports and the name automations see. A **Heading** placed above a field is display-only and is not connected to it. If you put the question in a Heading and example text such as "EX: John" in the Label, your responses show "EX: John" as the question. Put the question in the Label and use the default value for example text.
+    </Warning>
   </Step>
   <Step title="Reorder fields">
     Drag fields in the left sidebar to change their order. The preview updates automatically.
@@ -151,7 +155,7 @@ This shows the same template options from form creation — useful if you starte
     Click a field to select it, then mark it as required. Required fields show an asterisk (\*) and must be completed to submit.
   </Step>
   <Step title="Add headings and instructions">
-    Use **Heading** fields to create sections (e.g., "Athlete Information", "Parent/Guardian Details"). Use **Plain Text** to add instructions or context.
+    Use **Heading** fields to create sections (e.g., "Athlete Information", "Parent/Guardian Details"). Use **Plain Text** to add instructions or context. Neither is a question: headings and plain text never appear in responses, and they do not label the field beneath them.
   </Step>
   <Step title="Preview your form">
     Click the preview button to see exactly what respondents will see. Test the flow before publishing.
@@ -192,6 +196,30 @@ Use cases:
 - **ON**: Feedback forms, session check-ins
 - **OFF**: Registration forms, waivers (one per athlete)
 
+## Archiving and restoring a form
+
+When a form has run its course (last season's registration, a closed camp), archive it instead of deleting it. Archiving keeps every past submission and takes the form out of circulation.
+
+<Steps>
+  <Step title="Archive it">
+    Go to **Tools → Forms**, hover over the form's row, and click the **archive** icon on the right (next to the share and edit icons).
+  </Step>
+  <Step title="Find it later">
+    Switch the **Show** filter at the top of the list from **Active** to **Archived**. Archived forms can be opened, viewed, and edited from there.
+  </Step>
+  <Step title="Restore it">
+    Open the archived form and restore it. It moves back to the **Active** list and its links and embeds work again.
+  </Step>
+</Steps>
+
+What archiving does:
+
+- Stops the form from accepting submissions on any live page or link, so an old form cannot keep quietly collecting responses
+- Keeps the form, its settings, and all of its responses
+- Is reversible at any time
+
+Full details, including what happens to shared links, are in [Sharing forms → Archiving a form](/tools/forms/sharing-forms#archiving-a-form). Deleting a form is permanent and removes its responses; export first if you must delete (see [Responses & Automations](/tools/forms/responses-and-automations#exporting-responses)).
+
 ## How connections add pages
 
 When you add Products, Schedulers, or Login/Signup via the **Connections** menu, each becomes a separate page in the form flow:
@@ -215,6 +243,10 @@ Complete
 <Tip>
   With Login/Signup enabled, anyone who enters an email that already has an account is asked to sign in mid-form. That is expected. See [What Returning Visitors See](/tools/forms/returning-visitor-sign-in) for exactly what they see and what to tell them.
 </Tip>
+
+<Note>
+  The phone field on the Login/Signup page defaults to **+1** with a country selector, so a US number typed without a country code is saved correctly. Numbers typed with dashes are accepted.
+</Note>
 
 ## Form building tips
 

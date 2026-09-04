@@ -3,7 +3,7 @@ title: "SMS Messages - Setup and Best Practices"
 description: "Set up your business phone number and send text messages through CoachIQ. Learn SMS best practices, costs, and how to manage text conversations."
 sidebarTitle: "SMS Messages"
 icon: "message"
-keywords: ["SMS", "text message", "texting", "business phone number", "10DLC", "SMS cost", "send text", "mass text", "text athletes", "urgent message"]
+keywords: ["SMS", "text message", "texting", "business phone number", "10DLC", "SMS cost", "send text", "mass text", "text athletes", "urgent message", "push notification", "privacy policy", "terms", "10DLC rejected"]
 ---
 
 <Info>
@@ -49,6 +49,11 @@ CoachIQ provides you with a dedicated business phone number for professional tex
     - **Business**: Established coaching businesses, academies, facilities
 
     Enter your preferred area codes (primary and backup).
+  </Step>
+  <Step title="Check your athlete portal legal pages">
+    Carriers review your **Privacy Policy** and **Terms** during 10DLC approval. CoachIQ generates both for your athlete portal automatically; they load publicly (no login) at your portal address followed by `/privacy-policy` and `/terms-of-condition`, and they include the clauses carriers require for SMS: message frequency, "message and data rates may apply", STOP/HELP instructions, and that consent is not a condition of purchase.
+
+    You do not have to write these yourself. If a reviewer asks for your policy links, these are the pages to send. They are separate from any legal pages you build on your website (see [Legal pages](/website/pages-navigation/legal-pages)).
   </Step>
   <Step title="Submit your application">
     Click **Begin** to submit your application. The information goes through verification to ensure compliance with business messaging regulations.
@@ -162,6 +167,12 @@ Longer messages and emojis cost more because they split into more segments. Full
 - Full conversation threading maintained
 - Incoming replies do not use credits
 
+### Push notifications for incoming texts
+
+When someone texts your business number, the push notification on the CoachIQ admin app shows the **sender's name** rather than the raw phone number, so you can tell who is texting from the lock screen and decide whether to reply now or later. The name comes from the person's profile in [People](/people/overview): the number must be saved on their profile for it to resolve. A text from a number that is not on any profile shows the number itself.
+
+Push alerts for the Inbox are controlled under **Settings → Communication → Notifications** (the **Inbox** row). See [Communication settings](/settings/communication#notifications).
+
 ### Call handling
 
 <Info>
@@ -212,6 +223,8 @@ Longer messages and emojis cost more because they split into more segments. Full
 <AccordionGroup>
   <Accordion title="What if my application is denied?">
     This is rare but can happen if information is incomplete. Contact support to understand the issue and resubmit with corrected information.
+
+    The most common carrier rejection used to be the policy pages themselves (missing SMS clauses, a login prompt, or garbled characters). Your athlete portal's auto-generated Privacy Policy and Terms pages now pass these checks by default, so if a rejection names your Terms or Privacy page, ask support to re-submit rather than editing anything.
   </Accordion>
   <Accordion title="Can I change my business number later?">
     Yes, but you'll need to go through the approval process again. Your conversation history remains intact.

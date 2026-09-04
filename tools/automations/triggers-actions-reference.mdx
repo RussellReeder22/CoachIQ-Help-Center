@@ -121,7 +121,11 @@ Fires when someone cancels a booking.
 | Was for a specific session | Dropdown | Only cancellations for this session |
 | User has a specific tag | Dropdown | User must have this tag |
 | User doesn't have a specific tag | Dropdown | User must not have this tag |
-| Cancellation fields | Various | Details of the cancelled booking |
+| Cancellation fields | Various | Details of the cancelled booking: the session's title, and the date and start time of the cancelled occurrence |
+
+<Note>
+The cancelled session's title and the occurrence date and time are available as field options in every action on this trigger. Type `#` in a message field and pick them from the list so the token is inserted in the exact form the trigger provides; a cancellation notice such as "Your [session] on [date] was cancelled" then fills in per booking.
+</Note>
 
 </Accordion>
 
@@ -136,6 +140,10 @@ Fires when someone submits a [form](/tools/forms/overview).
 | User doesn't have a specific tag | Dropdown | User must not have this tag |
 | Form fields | Various | Form ID and label |
 | Answer fields | Various | One field per question on the selected form (layout-only blocks such as headings and media are excluded). Checkbox, terms, and waiver questions default to **Contains**; other questions default to **Equal to** |
+
+<Tip>
+Answer fields do two jobs. In **Conditions** they let you branch on what someone answered ("How did you hear about us?" **Equal to** "Instagram" → add the tag "Instagram Lead"). In **Actions** the same answers are available as field options: type `#` in a message field and pick the question to drop that person's answer into the email or text. See [Form answers in messages](#form-answers-in-messages).
+</Tip>
 
 </Accordion>
 
@@ -391,13 +399,13 @@ Sends a text message to a user's phone.
 |-------|------|-------------|
 | Target User | Auto/Dropdown | User from trigger, trigger user and their guardians, or a specific user |
 | From | Dropdown | Default, or **Set** to choose which admin it appears to come from |
-| Message | Text | Supports dynamic fields. A live counter (for example **180 / 160**) shows when the text will split into a second segment |
+| Message | Text | Supports dynamic fields. Not capped at 160 characters: a live counter (for example **180 / 160**) shows when the text will split into a second segment |
 | Attach Product | Dropdown | Optional - adds short purchase link |
 | Attach Session | Dropdown | Optional - adds short booking link |
 | Attach Form | Dropdown | Optional - adds short form link |
 
 <Note>
-SMS attachments are text links only—no images or files. Keep the message under 160 characters to stay in one segment.
+SMS attachments are text links only—no images or files. Longer messages are allowed; they are sent as multiple segments and each segment is billed from your SMS credits, so keep the message under 160 characters when you want it to cost one credit per recipient. Emojis shrink a segment to about 70 characters. See [How SMS credits work](/inbox/sms-credits).
 </Note>
 
 </Accordion>
@@ -559,10 +567,15 @@ Books a user into a [session](/scheduling/creating-your-first-scheduler). This i
 |-------|------|-------------|
 | Target User | Auto/Dropdown | User from trigger or select specific user |
 | Session | Dropdown | Session/scheduler to book |
-| Booking time | Radio | **Next available** slot, a **specific** slot, or a **recurring** series |
+| Booking time | Radio | **Next available** slot, a **specific** slot, a **recurring** series, or **All future session times** |
 | Specific slot | Date, time, duration | When Booking time is Specific |
 | Recurring | Various | Interval (daily, weekly, monthly) and how often; weekdays for weekly; how the series ends (never, after a number of occurrences, or on an end date); optional per-occurrence time or location changes |
+| All future session times | None | Books the person into every upcoming occurrence already on the selected session's calendar, in one action |
 | Redemption | Radio + number | Use the session's credit settings, or redeem a specific number of credits |
+
+<Tip>
+**All future session times** is built for teams. Pair it with a **Purchase Made** trigger on the team registration product and a new player is on the whole season's practice schedule the moment the family pays, with no per-practice booking. It books the dates that exist when the automation runs, so add the season's practices to the scheduler first.
+</Tip>
 
 </Accordion>
 
@@ -656,9 +669,28 @@ Each trigger adds the fields of the thing that happened. Insert them with `#` to
 | Booking Created | Session title, occurrence, start, end, and recurrence details |
 | Booking Started, Booking Ended | Session ID and title |
 | Booking Cancelled | The cancelled booking's details |
-| Form Submitted | Form ID and label, plus one field per question |
+| Form Submitted | Form ID and label, plus one field per question (see [Form answers in messages](#form-answers-in-messages)) |
 | User Tag Added, User Tag Removed | Tag ID, label, parent tag, and who applied it |
 | Incoming Webhook | Any field from the payload, for example `{{payload.userId}}` |
+
+### Form answers in messages
+
+On a **Form Submitted** automation, each question on the selected form is a field option. Type `#` in any message field (email, SMS, in-app, announcement, or a webhook body) and choose the question; the builder inserts a token that fills in with that person's answer when the automation runs. Layout-only blocks (headings, media, plain text) have no answer and are not offered.
+
+Insert these with `#` rather than typing them: the token names the specific question on the specific form, so it is not a fixed string you can copy from one automation to another. If you change or delete a question on the form, re-insert the field in your messages.
+
+Example, on a "Free evaluation request" form with a "Preferred position" question:
+
+```
+Hi {{field.user.firstName}}, thanks for requesting an evaluation.
+We'll set you up at [Preferred position] and be in touch within a day.
+```
+
+Replace `[Preferred position]` by inserting the question with `#`; the coach who submitted "Goalkeeper" gets "at Goalkeeper". Pair it with an **Answer fields** condition to branch, so a "Goalkeeper" answer sends one message and "Striker" another.
+
+<Note>
+For a person's most recent answers outside a Form Submitted trigger (for example in a Scheduled Check), add the **Form responses** data source instead.
+</Note>
 
 ### Booking Fields
 

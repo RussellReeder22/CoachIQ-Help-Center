@@ -3,7 +3,7 @@ title: "Announcements - Broadcasting to Your Team"
 description: "Send professional team-wide announcements that appear as emails, push notifications, and in the athlete portal. Perfect for schedules, updates, and important news."
 sidebarTitle: "Announcements"
 icon: "megaphone"
-keywords: ["announcements", "broadcast", "team communication", "email blast", "push notification", "group message", "mass communication", "notify all", "send announcement", "pinned", "pin announcement"]
+keywords: ["announcements", "broadcast", "team communication", "email blast", "push notification", "group message", "mass communication", "notify all", "send announcement", "pinned", "pin announcement", "reactions", "recipient limit"]
 ---
 
 <Info>
@@ -28,7 +28,7 @@ Announcements are your broadcast system for team-wide communication. Think of th
     Instant alert on their mobile device
   </Card>
   <Card title="Channels" icon="hashtag" iconType="regular">
-    Permanent record in the app's Announcements channel
+    Permanent record in the app's Announcements channel and in the athlete portal
   </Card>
 </CardGroup>
 
@@ -68,7 +68,7 @@ Common uses:
     - Select specific individuals if needed
 
     <Note>
-      **Recipient limit**: 400 contacts per announcement by default. Contact support if you need to increase this limit.
+      **Recipient limit**: 400 contacts per announcement by default. Larger organizations raise it with the [User Limit Expansion Power-Up](/power-ups/user-limit-expansion).
     </Note>
   </Step>
   <Step title="Add announcement heading">
@@ -166,13 +166,16 @@ Common uses:
 ### Channels section
 
 - Permanent record in Announcements channel
-- Chronological list of all announcements
+- Chronological list of all announcements, with the pinned announcement (if any) first
 - Athletes can reference anytime
 - Never expires or disappears
+- Athletes and parents can react to an announcement (see [Reactions](#reactions))
 
 ## Pin an announcement
 
 Pin one existing announcement so it shows first for everyone who could already see it. Pinning does not change who can see it, and it does not send it to anyone new.
+
+A pinned announcement sits at the top of the Announcements feed in both the mobile app and the athlete portal, so a schedule change or a deadline is not buried by newer posts.
 
 Open the announcement in your Inbox (the **Announcements** channel filters to them), click the **⋯** menu at the top right of the conversation, and choose **Pin Announcement**. The same menu holds **Edit Announcement** and **Delete Announcement**.
 
@@ -181,6 +184,25 @@ Open the announcement in your Inbox (the **Announcements** channel filters to th
 | Pin | That announcement appears first for its existing audience |
 | Pin a different one | Replaces the current pin. A group has only one pinned announcement at a time |
 | Clear the pin | Nothing is pinned |
+
+## Reactions
+
+Athletes and parents can acknowledge an announcement with a reaction. Under each announcement they see a fixed row of four chips:
+
+| Chip | Meaning |
+| ---- | ------- |
+| 👍 | Got it |
+| ❤️ | Love it |
+| 🙏 | Thanks |
+| 🔥 | Hype |
+
+Tapping a chip adds it to the announcement as a **count pill** showing how many people picked it. Tapping the same chip again removes their reaction. There is no full emoji picker on announcements, and no reply thread; reactions are a quick acknowledgement, not a conversation.
+
+On your side, open the announcement in the Inbox and the same pills appear under the body (for example **❤️ 1**, **🔥 3**), alongside the **Archive** button and the **⋯** menu in the header.
+
+<Tip>
+  Reactions are the closest thing announcements have to a read receipt. If you need a firm head count, ask people to react 👍 and compare the pill to your recipient count.
+</Tip>
 
 
 ## Managing announcements
@@ -205,7 +227,8 @@ Unlike messages, announcements CAN be deleted. Open the announcement, click **�
 ### Tracking engagement
 
 - No read receipts available
-- Consider adding "Reply to confirm" for important updates
+- Reaction count pills show how many people acknowledged the announcement (see [Reactions](#reactions))
+- Consider adding "React 👍 to confirm" for important updates
 
 ## Best practices
 
@@ -266,7 +289,10 @@ Unlike messages, announcements CAN be deleted. Open the announcement, click **�
     Athletes can reply via email, which goes to your configured reply-to address. These replies do NOT appear in your CoachIQ Inbox.
   </Accordion>
   <Accordion title="How do I increase the 400 recipient limit?">
-    Contact CoachIQ support to increase your announcement recipient limit for larger organizations.
+    The [User Limit Expansion Power-Up](/power-ups/user-limit-expansion) raises the cap on athletes and on announcement, SMS, and email recipients. It appears in **Power-Ups** for organizations approaching the limit.
+  </Accordion>
+  <Accordion title="Can athletes reply with any emoji?">
+    No. Reactions are limited to the four chips (👍 ❤️ 🙏 🔥), and each person can add or remove their own reaction. There is no comment thread on announcements.
   </Accordion>
   <Accordion title="Can I schedule announcements for later?">
     Currently, announcements send immediately. For scheduled sends, prepare your content and send manually at the desired time.
@@ -281,7 +307,7 @@ Unlike messages, announcements CAN be deleted. Open the announcement, click **�
     No. Pinning does not change who can see it. It only shows first for people who could already see that announcement.
   </Accordion>
   <Accordion title="Can I edit an announcement after sending?">
-    No, sent announcements cannot be edited. You can send a follow-up announcement with corrections if needed.
+    Yes. Open it, click **⋯**, and choose **Edit Announcement**. The edit updates what athletes see in the app and portal; emails and push notifications that already went out are not recalled, so send a follow-up if the change matters.
   </Accordion>
 </AccordionGroup>
 

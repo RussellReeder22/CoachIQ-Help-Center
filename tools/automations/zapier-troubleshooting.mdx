@@ -58,7 +58,9 @@ Expected, and not a failure. CoachIQ returned the existing user so your later st
 
 ### My SMS keeps getting rejected for length
 
-SMS is capped at 600 characters. Keep to 160 or fewer for a single segment. For long text, use **Send an In-App Message** or **Send an Announcement** instead (up to 15,000 characters).
+The Zapier **Send an SMS Message** action is capped at 600 characters. Keep to 160 or fewer for a single segment; longer texts within the cap are sent as multiple segments and billed per segment from your [SMS credits](/inbox/sms-credits). For long text, use **Send an In-App Message** or **Send an Announcement** instead (up to 15,000 characters).
+
+This cap is specific to the Zapier action. The **Send an SMS Message** action inside CoachIQ's own [automation builder](/tools/automations/triggers-actions-reference#all-actions) has no 160-character cap; its counter only shows where the text splits into a second segment.
 
 ### How do I send to everyone?
 
