@@ -3,7 +3,7 @@ title: "Subscriptions: Recurring Billing Status"
 description: "Track active memberships, canceled subscriptions, trial periods, and monthly recurring revenue per client"
 sidebarTitle: "Subscriptions"
 icon: "rotate"
-keywords: ["subscriptions", "membership status", "recurring billing", "active subscription", "canceled subscription", "monthly revenue"]
+keywords: ["subscriptions", "membership status", "recurring billing", "active subscription", "canceled subscription", "monthly revenue", "cards on file", "default card", "payment methods"]
 ---
 
 <Info>
@@ -146,9 +146,23 @@ Each subscription shows:
 
     Or navigate to their subscription management in their Portal settings.
 
-    [Learn how to cancel subscriptions →](/payments/managing-subscriptions)
+    [Learn how to cancel subscriptions →](/payments/manage-subscriptions)
   </Accordion>
 </AccordionGroup>
+
+---
+
+## Payment methods on file
+
+Next to Subscriptions, the profile's **Payment Methods** tab lists every card the client has saved with you and marks which one is the **default**. The default is the card Stripe charges on the next renewal.
+
+**Use it to:**
+
+- Confirm a new card landed after the client updated it in their portal (**Billing**). A newly added card becomes the default automatically, so if the old card is still marked default, they haven't finished the update.
+- Check an expiring card before a renewal fails, instead of opening Stripe.
+- Answer "which card are you charging?" from the profile.
+
+The tab reads **No payment methods on file** until the client has paid once or saved a card through a [card-on-file product](/payments/product-builder#section-2-payment-options). Clients change or add cards themselves from **Billing** in the athlete portal; see [Updating client payment methods](/payments/manage-subscriptions#updating-client-payment-methods).
 
 ---
 
@@ -162,6 +176,7 @@ Subscriptions tab is **view-only**. To take action:
 | **Change subscription price** | Payments → Products → Edit product       |
 | **Retry failed payment**      | Payments → Subscriptions → Retry billing |
 | **Refund past charges**       | Transactions tab → Refund                |
+| **See cards on file / default card** | Payment Methods tab              |
 
 ---
 

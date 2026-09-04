@@ -3,7 +3,7 @@ title: "Credits: Balance & Transaction History"
 description: "Track credit balances, redemptions, expirations, and purchases across Master Credits and product-specific credits"
 sidebarTitle: "Credits"
 icon: "coins"
-keywords: ["credits", "credit balance", "credit history", "credit transactions", "how many credits", "expiring credits", "master credits"]
+keywords: ["credits", "credit balance", "credit history", "credit transactions", "how many credits", "expiring credits", "master credits", "deactivate credits", "turn off credits", "revoke credits", "remove product"]
 ---
 
 <Info>
@@ -151,6 +151,50 @@ Each credit transaction shows:
     [Learn how to add credits →](/payments/credits/credit-system-overview)
   </Accordion>
 </AccordionGroup>
+
+---
+
+## Turning off a product's credits
+
+Each product-specific credit tab has a toggle that controls whether that product's credits count toward the athlete's spendable balance. Use it to move an athlete off an old plan without deleting anything.
+
+**When you need it:**
+
+- The athlete moved to a new membership and the old one should stop granting bookings
+- A coupon zeroed out a membership and left a $0 product on the account that keeps renewing credits
+- You granted the wrong credit product and they've already booked with it
+
+**What the toggle does**
+
+| | Credits ON (default) | Credits OFF |
+| --- | --- | --- |
+| Athlete can book with these credits | Yes | No |
+| Stored balance | Kept | Kept, shown as revoked with 0 redeemable |
+| Credit log history | Kept | Kept |
+| Other credit tabs | Unaffected | Unaffected |
+| Reversible | - | Yes, turn it back on to restore use |
+
+Turning credits off overrides everything else: even if the underlying purchase or Stripe subscription is still active, the athlete can't spend these credits until you turn them back on. Nothing is granted, deducted, or erased either way.
+
+<Steps>
+  <Step title="Open the product's credit tab">
+    Client Profile → **Credits** → click the tab for the product (not Logs or Master Credits).
+  </Step>
+  <Step title="Switch credit use off">
+    Use the toggle on that tab to deactivate the credits. The balance stays visible but is no longer redeemable.
+  </Step>
+  <Step title="Add the replacement, if any">
+    Grant the new product from the **Products** tab. The athlete books from the new credits only.
+  </Step>
+</Steps>
+
+<Warning>
+  **Why you can't just delete the product.** A credit-bearing product whose credits have been used can't be removed from the profile; you'll see a message that it is linked to credit history and to contact Support. That protects the booking and credit records behind it. The toggle is the supported way to retire the product's credits. Products that never issued credits, or whose credits were never used, can still be removed from the Products tab.
+</Warning>
+
+<Note>
+  If the old product is a paid Stripe subscription, turning off its credits doesn't stop billing. Cancel the subscription as well; see [Managing subscriptions](/payments/manage-subscriptions).
+</Note>
 
 ---
 

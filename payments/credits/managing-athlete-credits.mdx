@@ -3,7 +3,7 @@ title: "Managing Athlete Credits: Balance Tracking and Manual Operations"
 description: "Master daily credit management—view balances, grant credits, read logs, troubleshoot issues, and handle athlete credit requests efficiently"
 sidebarTitle: "Managing Credits"
 icon: "hand-holding-usd"
-keywords: ["manage credits", "add credits", "grant credits", "credit balance", "credit log", "remove credits", "master credits"]
+keywords: ["manage credits", "add credits", "grant credits", "credit balance", "credit log", "remove credits", "master credits", "deactivate credits", "configure purchases", "cash", "check"]
 ---
 
 <Info>
@@ -357,12 +357,15 @@ For adding credits tied to specific products/subscriptions.
   <Step title="Manually add product to athlete (if needed)">
     If athlete doesn't have the product yet:
 
-    1. Click **\+ Add Product** (or similar button in athlete profile)
-    2. Select the product from dropdown
-    3. Choose whether to charge athlete or add without payment
+    1. Open the **Products** tab and click **\+ Add Product**
+    2. Search for and select the product
+    3. In **Configure Purchases**, fill in what applies:
+       - **Stripe Subscription ID** (optional) to link a subscription product to an existing Stripe subscription so renewals drive the credits
+       - **Credits**: **Award now** or **Award upon cycle renew**
+       - How the purchase was collected, if you took payment outside CoachIQ: cash, check, or other, and whether it is paid or still being collected
 
     <Warning>
-      **Payment consideration**: Adding product manually can give you the ability to 1.) optionally charge the athlete via Stripe, or 2.) add without charging (credits stay live until you remove product)
+      **Payment consideration**: Adding a product manually never charges a card. It either links an existing Stripe subscription or records a complimentary or offline (cash/check) purchase. Credits from a complimentary grant stay live until you turn them off from the product's credit tab; see [Turning off a product's credits](/people/client-profiles/client-profiles-credits#turning-off-a-products-credits).
     </Warning>
   </Step>
   <Step title="Adjust credit balance">
@@ -377,7 +380,7 @@ For adding credits tied to specific products/subscriptions.
 </Steps>
 
 <Note>
-  **Edge case**: Manually adding a product to an athlete WITHOUT charging them keeps those credits live indefinitely (until you remove the product). This is useful for:
+  **Edge case**: Manually adding a product to an athlete WITHOUT charging them keeps those credits live indefinitely (until you turn the product's credits off, or remove the product while its credits are still unused). This is useful for:
 
   - Staff/family complimentary access
   - Long-term sponsorships
@@ -443,7 +446,7 @@ Managing credits for multiple athletes at once.
 
     - Trackable via product
     - Clean credit logs
-    - Can remove product later to revoke credits if needed
+    - Can turn the product's credits off later from each athlete's credit tab if needed (the product itself can't be deleted once its credits have been used)
 
     <Tip>
       **Most scalable**: For large athlete bases, this method provides best tracking and control
@@ -609,7 +612,8 @@ Common problems and solutions.
     **What you CAN do**:
 
     - Remove credits from athlete's balance (sets to 0)
-    - Delete the product from their account
+    - Turn the product's credits off from its credit tab (keeps the history, stops redemption)
+    - Delete the product from their account, if none of its credits have been used
     - Issue refunds via Stripe
 
     **What you CANNOT do**:

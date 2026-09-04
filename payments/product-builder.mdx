@@ -3,7 +3,7 @@ title: "Product Builder: Complete Reference"
 description: "Field-by-field guide to every option in the CoachIQ Product Builder"
 sidebarTitle: "Product Builder Reference"
 icon: "book"
-keywords: ["product builder", "create product", "product settings", "product options", "price", "credits", "confirmation page", "archive product", "hide product", "deactivate product"]
+keywords: ["product builder", "create product", "product settings", "product options", "price", "credits", "confirmation page", "archive product", "hide product", "deactivate product", "purchase limit", "member discount", "ACH", "managed athlete", "buyer"]
 ---
 
 <Info>
@@ -12,7 +12,7 @@ keywords: ["product builder", "create product", "product settings", "product opt
 
 ## Product Builder overview
 
-The Product Builder has 7 sections. Only Section 1 is required. Configure additional sections based on your needs.
+The Product Builder has 7 sections. Only Section 1 is required. Configure additional sections based on your needs. The [Buyer or Managed Athlete](#who-the-purchase-is-for) option sits at the bottom of the builder, below the numbered sections.
 
 <Frame>
   ![CoachIQ Product Builder interface showing all configuration sections](/images/product-builder.png)
@@ -156,9 +156,20 @@ Configure pricing frequency and processing fees.
     - Percentage: Add percentage on top (e.g., 3%)
     - Both: Combine fixed + percentage
 
+    **Different fee for ACH (bank) payments**
+
+    If your organization accepts US bank account (ACH) payments, the processing-fee settings also let you set a separate fee for ACH payments. Bank payments cost less to process than cards, so you can pass on a lower fee (or none) for ACH while keeping the card fee, instead of building a second copy of every product for bank payers. Details and examples: [Fees for ACH payments](/payments/processing-fee#fees-for-ach-payments).
+
     <Warning>
       Some states restrict credit card surcharges. Check local regulations before passing fees to clients.
     </Warning>
+  </Accordion>
+  <Accordion title="Payment methods at checkout">
+    **All product types**
+
+    Products don't choose their own payment methods. Buyers see every method that is active for your organization: cards by default, plus Apple Pay and Google Pay, US bank account (ACH), and buy-now-pay-later options such as Afterpay where you have enabled them. ACH is offered on one-time products and on recurring memberships.
+
+    Which methods are active, and where to turn them on, is covered in [Payment methods at checkout](/payments/getting-started#payment-methods-at-checkout).
   </Accordion>
   <Accordion title="Add an initial down payment">
     **Subscription products only**
@@ -178,6 +189,10 @@ Configure pricing frequency and processing fees.
     <Tip>
       Example: $50 setup fee + $200/month recurring. The client pays $250 on day one, then $200 each month after.
     </Tip>
+
+    <Note>
+      **Coupons discount the down payment too.** A coupon applied to a month-to-month membership reduces the initial fee as well as the recurring charge, so a 100%-off code makes the first payment genuinely free. See [Coupons and subscriptions](/payments/coupon-overview#coupons-and-subscriptions).
+    </Note>
   </Accordion>
   <Accordion title="Enable access codes">
     **All product types**
@@ -249,6 +264,18 @@ Configure pricing frequency and processing fees.
     - Getting parents' cards on file before a season or program starts
     - Securing a card for future manual or scheduled charges
   </Accordion>
+  <Accordion title="Member discounts">
+    **Subscription (membership) products**
+
+    Give everyone who holds this membership an automatic discount on your other products. The discount is set on the membership product itself, and you choose which products it applies to: a hand-picked list, or **all products**. It covers both other memberships and one-time products, and applies automatically at checkout for anyone with the membership active - no coupon code to enter.
+
+    **Use cases:**
+
+    - Team members get member pricing on camps, clinics, and rentals
+    - A base membership unlocks a discount on private-lesson packages
+
+    How member discounts compare with coupons, and how to decide between them: [Member discounts](/payments/coupon-overview#member-discounts).
+  </Accordion>
 </AccordionGroup>
 
 ## Section 3: Credits
@@ -263,13 +290,13 @@ This section turns a product into a **credit package**. Credits are issued here 
 | Decide when credits expire | **Product** (this page) | Credits → **Credit expiration** |
 | Decide which schedulers accept the credits | **Product** (this page) | Usage Limits → **Which schedulers accept these credits** |
 | Cap credits spent on one scheduler per billing cycle | **Product** (this page) | Usage Limits → **Limit credits per scheduler per billing cycle** |
-| Make a session cost credits instead of dollars | **Scheduler** | Payment → **Credit Charge** |
-| Change how many credits one booking costs | **Scheduler** | Payment → credit cost |
+| Make a session cost credits instead of dollars | **Scheduler** | Payment → **Paywalled** → How they pay: **Credit** (or **Either**) |
+| Change how many credits one booking costs | **Scheduler** | Payment → **Paywalled** → credit cost |
 | Return or forfeit the credit on cancellation | **Scheduler** | Settings → **Refund credits used on cancelation** |
-| Send athletes somewhere to buy more | **Scheduler** | Payment → **Add a credit renew link** |
+| Send athletes somewhere to buy more | **Scheduler** | Payment → **Buy more credits** |
 
 <Warning>
-  **A product with credits but no credit-based scheduler sells credits nobody can spend.** Before publishing, confirm at least one scheduler is set to **Credit Charge** and is allowed under Usage Limits below.
+  **A product with credits but no credit-based scheduler sells credits nobody can spend.** Before publishing, confirm at least one scheduler is **Paywalled** with **Credit** (or **Either**) under **How they pay**, and is allowed under Usage Limits below.
 </Warning>
 
 ### Settings
@@ -388,13 +415,13 @@ Restrict **where** and **how fast** this product's credits can be spent. Both se
     Whether the credit comes back is decided by the **scheduler's** refund setting and cancellation window, not by the product. A returned credit keeps its original expiration.
   </Accordion>
   <Accordion title="You refund the purchase in Stripe">
-    Refunding money does not remove credits. Open the athlete's Credits tab and deduct them, or they can keep booking on a refunded package.
+    Refunding money does not remove credits. Open the athlete's Credits tab and deduct them, or turn off credit use for that product with the toggle on its credit tab, or they can keep booking on a refunded package. See [Turning off a product's credits](/people/client-profiles/client-profiles-credits#turning-off-a-products-credits).
   </Accordion>
   <Accordion title="Coupon applied to a credit package">
     The athlete pays less but receives the full number of credits. Discount the price, never the credits.
   </Accordion>
   <Accordion title="Product is archived">
-    Buyers keep their credits and can still spend them. No new purchases are possible, so update any scheduler that uses this product as its **credit renew link**.
+    Buyers keep their credits and can still spend them. No new purchases are possible, so update any scheduler whose **Buy more credits** field points at this product.
   </Accordion>
 </AccordionGroup>
 
@@ -457,13 +484,28 @@ Special configurations for specific business needs.
 
     **When to keep OFF:**
 
-    - Session bookings (need account to schedule)
+    - Credit packages (credits need an account to be spent)
     - Memberships (need account to access)
     - Programs (need account for content)
 
     <Note>
-      Guest checkouts don't create client profiles. Use for one-off sales to people who won't need ongoing access.
+      Guest checkouts don't create client profiles. Use for one-off sales to people who won't need ongoing access. Schedulers have their own guest checkout setting for intro calls and trial sessions; see [Guest checkout](/payments/guest-checkout#guest-checkout-for-schedulers).
     </Note>
+  </Accordion>
+  <Accordion title="Purchase limits">
+    **All product types**
+
+    Cap how many times a product can be sold, so it stops selling on its own instead of overselling.
+
+    **Total purchase limit:** The number of purchases available across your whole group. Once reached, the product shows as no longer available at checkout. Use it for camp registrations, team spots, or anything with a fixed roster size.
+
+    **Per-customer limit:** How many times one person can buy the product. Set it to 1 to keep an intro offer or trial session genuinely one-time.
+
+    Leave either field empty (or 0) for no limit. The product's current purchase count is tracked against the total limit, so you can see how many spots remain.
+
+    <Tip>
+      A total limit of 24 on "Summer Camp Week 1" plus a per-customer limit of 1 gives you a 24-athlete roster where no parent can accidentally register the same child twice.
+    </Tip>
   </Accordion>
   <Accordion title="Revenue sharing">
     **Split revenue with partners**
@@ -575,6 +617,22 @@ Special configurations for specific business needs.
     </Warning>
   </Accordion>
 </AccordionGroup>
+
+## Who the purchase is for: Buyer or Managed Athlete
+
+At the bottom of the Product Builder, below the numbered sections, you choose whether a purchase of this product is recorded against the **Buyer** or a **Managed Athlete**.
+
+**Buyer:** The purchase, its credits, and any tag your automations add all attach to the account that pays. This is the default and matches how products always worked: a parent buying for a child holds the purchase on the parent profile, and the family books from a shared credit balance (see [Booking for multiple athletes](/scheduling/booking-for-multiple-athletes)).
+
+**Managed Athlete:** Checkout asks **Who are you registering?** so the parent picks which athlete the purchase is for, and the purchase, credits, and team tag attach to that athlete rather than the parent. Date of birth is collected for that athlete. Use it for team registrations, seasonal programs, and anything where you need a roster of athletes (not payers) or per-athlete credits.
+
+<Note>
+  **Adults buying for themselves are unaffected.** A college or pro athlete with no managed athletes on their account is both the buyer and the athlete, so checkout doesn't ask the question and the purchase lands on their own profile either way.
+</Note>
+
+**Why it matters for families with more than one athlete**
+
+Without athlete selection, two team registrations by one parent land on the parent as two purchases and two tags with nothing saying which child belongs to which team, and an automation that books "the trigger user" onto the team's practice schedule has no way to tell the children apart. With **Managed Athlete**, each registration names the child, so rosters, credits, refunds, and booking automations follow the right athlete. Parents add athletes from the athlete portal under **Settings → Family**; see [Family accounts](/athlete-portal/family-accounts).
 
 ## Archiving products
 

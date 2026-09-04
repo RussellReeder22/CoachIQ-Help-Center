@@ -3,7 +3,7 @@ title: "Processing Fees Configuration"
 description: "Configure who pays Stripe transaction fees - absorb costs or pass them to clients"
 sidebarTitle: "Processing Fees"
 icon: "percent"
-keywords: ["processing fees", "stripe fees", "transaction fees", "who pays fees", "pass fees to client", "2.9%"]
+keywords: ["processing fees", "stripe fees", "transaction fees", "who pays fees", "pass fees to client", "2.9%", "ACH fee", "bank payment fee"]
 ---
 
 <Info>
@@ -191,6 +191,26 @@ Fee = (Transaction amount × 0.039) + \$0.50 (Stripe's 2.9% + \$0.30, plus Coach
   These calculations use the combined 3.9% + \$0.50 rate (Stripe 2.9% + \$0.30, CoachIQ 1% + \$0.20). Your actual Stripe rate may differ based on your account; CoachIQ's 1% + \$0.20 applies uniformly.
 </Note>
 
+## Fees for ACH payments
+
+If your organization accepts **US Bank Account (ACH)** payments, the Processing Fee settings on each product include a separate fee for ACH. Bank payments cost less to process than cards, so this lets you pass on a lower fee (or no fee) to clients who pay by bank while still charging the card fee to clients who pay by card, on the same product.
+
+**Why this exists:** Before this option, the only way to offer a cheaper bank-payment price was a second copy of every product. Now one product carries both a card fee and an ACH fee, and checkout applies whichever matches the method the client picks.
+
+**Setting it up:**
+
+1. Turn on ACH for your organization (see [Payment methods at checkout](/payments/getting-started#payment-methods-at-checkout)).
+2. In the product's **Section 2: Payment Options → Processing Fee**, set the card fee as usual.
+3. Set the ACH fee. Stripe's published US rate for ACH Direct Debit is lower than its card rate and capped per transaction; check your own Stripe pricing and enter a fixed amount and percentage that cover what a bank payment actually costs you, or leave it at zero to absorb the fee for bank payers.
+
+<Tip>
+  Many coaches pass the full card fee to card payers and charge nothing extra for ACH. The lower total nudges families toward bank payments for large registrations without changing the product price.
+</Tip>
+
+<Note>
+  The ACH fee option only appears when ACH is enabled for your organization. Products created before you enabled ACH pick up the option the next time you edit them.
+</Note>
+
 ## Custom fee structures
 
 Some coaches configure custom fee amounts:
@@ -340,3 +360,4 @@ You receive: $100
 1. [Revenue sharing](/payments/sharing-rev) - Split revenue with partners or contractors
 2. [Guest checkout](/payments/guest-checkout) - Allow purchases without accounts
 3. [Product Builder reference](/payments/product-builder) - Complete Product Builder guide
+4. [Payment methods at checkout](/payments/getting-started#payment-methods-at-checkout) - Cards, wallets, ACH, and where to enable them

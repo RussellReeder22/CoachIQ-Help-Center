@@ -3,7 +3,7 @@ title: "Coupons"
 description: "Create and manage discount codes for promotions, partnerships, and special offers"
 sidebarTitle: "Coupons Overview"
 icon: "tag"
-keywords: ["coupons", "discount codes", "promo codes", "discounts", "create coupon", "percentage off", "free coupon"]
+keywords: ["coupons", "discount codes", "promo codes", "discounts", "create coupon", "percentage off", "free coupon", "member discount", "membership discount", "initial fee"]
 ---
 
 <Info>
@@ -75,7 +75,7 @@ Navigate to **Payments → Coupons** to view all discount codes.
     - Promotional campaigns (25% off sale)
     - Referral rewards (20% off for referrals)
     - Seasonal discounts
-    - Member benefits (10% member discount)
+    - Member benefits (for an automatic discount tied to a membership, use [Member discounts](#member-discounts) instead)
 
     **Examples:**
 
@@ -248,9 +248,37 @@ Navigate to **Payments → Coupons** to view all discount codes.
 
 When a coupon is applied to a subscription product, the discount applies to every billing cycle for as long as the athlete remains subscribed.
 
+**Initial fees are discounted too.** If the membership has an [initial down payment](/payments/product-builder#section-2-payment-options), the coupon reduces that up-front fee as well as the recurring charge. A 100%-off code on a month-to-month membership therefore makes the first payment genuinely free, rather than free on the recurring price only.
+
 <Info>
   To remove the coupon after the initial purchase, find the athlete's subscription in Stripe and remove the coupon from there.
 </Info>
+
+## Member discounts
+
+Member discounts are automatic: anyone who holds a specific membership pays less for your other products, with no code to enter. Set them up when facilities want team members to get member pricing on camps, clinics, rentals, or add-on memberships.
+
+**How it works**
+
+1. Open the membership product in the Product Builder (**Payments → Products**). The membership you edit is the qualifying membership: whoever has it active gets the discount.
+2. In the product's settings, turn on member discounts and set the discount.
+3. Choose which products it applies to: a hand-picked list, or **all products**. The list can include other memberships and one-time products.
+4. Save. From then on, when an active member checks out on one of those products, the discount is applied automatically and shown in the price breakdown.
+
+**Coupon or member discount?**
+
+| | Coupon | Member discount |
+| --- | --- | --- |
+| Who gets it | Anyone with the code | Anyone with the qualifying membership active |
+| How it's applied | Client types the code at checkout | Automatically at checkout |
+| Scope | Any product you allow on the coupon | Products you select on the membership, or all products |
+| Ends when | You deactivate the coupon or it hits its limit | The membership lapses or is cancelled |
+
+<Tip>
+  Use a coupon for a time-limited promotion anyone can share. Use a member discount for a standing perk that should follow the membership without you handing out codes.
+</Tip>
+
+The member discount setting is described field-by-field in the [Product Builder reference](/payments/product-builder#section-2-payment-options).
 
 ## Creating your first coupon
 

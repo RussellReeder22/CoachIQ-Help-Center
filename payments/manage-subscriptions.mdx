@@ -3,7 +3,7 @@ title: "Managing Subscriptions"
 description: "Cancel, pause, or modify active subscriptions and handle subscription changes"
 sidebarTitle: "Manage Subscriptions"
 icon: "sliders"
-keywords: ["cancel subscription", "manage subscription", "pause subscription", "subscription status", "end membership", "subscription changes"]
+keywords: ["cancel subscription", "manage subscription", "pause subscription", "subscription status", "end membership", "subscription changes", "update card", "ACH subscription", "bank account membership"]
 ---
 
 <Info>
@@ -149,9 +149,17 @@ Issue full or partial refund for subscription charges.
 
 [Complete refund guide →](/payments/issuing-refunds)
 
+## Payment methods on recurring memberships
+
+At checkout for a recurring membership, athletes see every payment method that is active for your organization: card, Apple Pay and Google Pay, and **US Bank Account (ACH)**. Bank account is the lower-fee option for higher-priced memberships, and you can set a separate [processing fee for ACH](/payments/processing-fee#fees-for-ach-payments). Where methods are enabled: [Payment methods at checkout](/payments/getting-started#payment-methods-at-checkout).
+
+<Note>
+  Subscriptions bought through the athlete checkout between late April and early September 2026 were created card-only, even where ACH was enabled, so an athlete on one of those memberships could not switch it to a bank account. New memberships bought since then offer every active method. If an athlete on an older membership wants to pay by bank, contact support with the subscription.
+</Note>
+
 ## Updating client payment methods
 
-Client needs to update their card for future charges.
+A client needs to update their card for future charges, or you want to see what they have on file.
 
 **Client updates from their portal**
 
@@ -162,7 +170,11 @@ Instruct client:
 3. Navigate to **Billing**
 4. Add or update card
 
-No action needed from you.
+No action needed from you. When a client adds a new card it becomes their default and is used on the next renewal; the old card is no longer charged.
+
+**You check what's on file**
+
+Open the client's profile and click the **Payment Methods** tab. It lists every saved card with the default marked, so you can confirm a new card landed (or that an expiring one is still the default) without opening Stripe. Details: [Payment methods on file](/people/client-profiles/client-profiles-subscriptions#payment-methods-on-file).
 
 ## Handling failed subscription payments
 
