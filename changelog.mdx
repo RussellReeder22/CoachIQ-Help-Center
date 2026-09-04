@@ -8,29 +8,53 @@ icon: "clock-rotate-left"
 
 ## Scheduling
 
-**Book by tag in New Booking**
+**Move an entire session**
 
-On **Schedule** → **Calendar** → **+ Book Session**, the **Client** field lists **Tags** and **People**. Picking a tag adds a chip and checks people in your group who have that tag. [Learn more →](/scheduling/manually-booking-athletes)
-
-**Shared Calendar share modes**
-
-When linking two groups under **Settings → Shared Calendar**, choose **All busy time** or **Resources only**. Resources only gives both groups one shared resource list, so a booking on a court or cage in either group blocks it for the other; busy time without a resource stays private. [Learn more →](/scheduling/shared-calendar-across-groups)
+On a session click view on **Schedule** → **Calendar**, the header has **Move Session**. It moves the occurrence — every participant booking, coach, and resource together — to a new date and time in one action instead of rebooking each athlete. The move announcement names the original date and time and the new one, and you can edit it to add a personal note. [Learn more →](/scheduling/editing-rescheduling-bookings)
 
 **Cancel entire session from the calendar**
 
 On a session click view, the red trash next to **Move Session** opens **Cancel Session**. That closes the occurrence, cancels every current participant booking, and lets you notify with Announcement, SMS, or In-app message. [Learn more →](/scheduling/canceling-bookings)
 
-**Copy scheduler link**
-
-On **Schedule → Schedulers**, each card has a link icon with tooltip **Copy scheduler link**. [Learn more →](/scheduling/sharing-schedulers)
-
 **Edit duration from the calendar**
 
 From a session on the calendar, **Duration** → **Edit** opens **Edit Duration**. Change **Duration in minutes** without changing the session date or start time. [Learn more →](/scheduling/editing-rescheduling-bookings)
 
-**Move announcement includes original and new times**
+**Per-date duration and resources on a session**
 
-When you move a session, the announcement names the original date and time and the new one. You can edit it to add a personal note. [Learn more →](/scheduling/editing-rescheduling-bookings)
+A single session can now carry a different length and different equipment on different dates — a 90-minute indoor practice on Tuesday and a 150-minute field practice on Saturday under one session, each with its own cage, mound, or turf. A date window shorter than the duration is now rejected on save instead of silently producing no bookable slots.
+
+**Book by tag in New Booking**
+
+On **Schedule** → **Calendar** → **+ Book Session**, the **Client** field lists **Tags** and **People**. Picking a tag adds a chip and checks people in your group who have that tag. [Learn more →](/scheduling/manually-booking-athletes)
+
+**Allow resources to be double-booked on a scheduler**
+
+In the scheduler builder, resources now have the same checkbox that connected coaches have: allow the attached resources to be booked at the same time by more than one session. Leave it off to keep double-booking prevention. [Learn more →](/scheduling/resources)
+
+**Shared Calendar share modes**
+
+When linking two groups under **Settings → Shared Calendar**, choose **All busy time** or **Resources only**. Resources only gives both groups one shared resource list, so a booking on a court or cage in either group blocks it for the other; busy time without a resource stays private. [Learn more →](/scheduling/shared-calendar-across-groups)
+
+**Coach and resources in Day and Week view**
+
+The calendar's **Day** and **Week** views now show the same session details as Month view — coach and attached resources — so you can see who is running a session and where without clicking into it. [Learn more →](/scheduling/calendar-overview-and-navigation)
+
+**Copy scheduler link**
+
+On **Schedule → Schedulers**, each card has a link icon with tooltip **Copy scheduler link**. [Learn more →](/scheduling/sharing-schedulers)
+
+---
+
+## Payments
+
+**ACH processing fee option**
+
+If your organization accepts ACH bank payments, a product's payment settings now let you pass on a different processing fee for ACH than for cards, so you no longer need a second copy of every product to offer a lower bank-payment price. [Learn more →](/payments/processing-fee)
+
+**ACH and wallets back on recurring memberships**
+
+Subscriptions bought through the athlete checkout had been card-only since late April. New recurring memberships once again offer every payment method enabled on your Stripe account, including bank account. [Learn more →](/payments/manage-subscriptions)
 
 ---
 
@@ -46,51 +70,422 @@ A URL you send in an In-App thread appears as a blue, underlined hyperlink in th
 
 ---
 
+## Automations
+
+**Target the athlete and their parents**
+
+An action's **Target User** now offers **trigger user and their guardians** alongside **User from trigger** and a specific person. Use it so a welcome announcement, tag, or reminder reaches the parent as well as a managed child who has no email or login. [Learn more →](/tools/automations/triggers-actions-reference)
+
+---
+
 ## People
 
 **Connect children from a client profile**
 
 On a client's **Family** section you can connect an existing athlete or create a managed child (no login until you enable it). [Learn more →](/people/client-profiles/client-profiles#connect-children)
 
-**Default Coach Access**
+**Per-coach access and Default Coach Access**
 
-On **People** → **Staff**, **Manage Staff Access** opens **Default Coach Access**. It manages access for **Coaches without custom access**. Coach-specific settings override this fallback. Admins can view all pages. [Learn more →](/people/managing-staff)
-
-</Update>
-
-<Update label="July 2026">
-
-## Forms
-
-**Archive Forms**
-
-You can now archive a form to take it out of circulation while keeping all of its past submissions and data — no need to delete it or strip every link. Archived forms stop accepting submissions and can be restored later.
-
-**Form Responses in Coach Emails**
-
-The email you get when someone submits a form now lists their answers inline, so you can read a new submission at a glance without opening the dashboard.
+Each coach can now have their own page restrictions instead of one set shared by every coach. On **People** → **Staff**, **Manage Staff Access** opens **Default Coach Access**, which applies to **Coaches without custom access**; open a coach from Staff to set custom access that overrides the default. Admins can view all pages. [Learn more →](/people/managing-staff)
 
 ---
 
-## Inbox
+## Native App
 
-**Pinned announcements**
+**Athlete and admin apps updated**
 
-Pin one announcement so it shows first for everyone who could already see it. Pinning another one replaces the current pin. Pinning does not change who can see it. [Learn more →](/inbox/announcements)
-
----
-
-## Scheduling
-
-**Quick Add from the Calendar**
-
-Add a coach or resource to a session directly from the calendar's click view — one less trip into the scheduler editor.
+The iOS athlete and admin apps were brought up to date with the web release. Parents now see the session location in the **Bookings** tab. When a scheduler accepts both payment and credits, the app now asks whether to pay or use a credit, matching the web flow, and the client profile **Products** view has its **+** button back for adding a product.
 
 ---
 
 ## Bug Fixes & Stability
 
-We shipped a round of fixes this cycle across scheduling, payments, credits, forms, the website builder, the inbox, and the native app.
+We shipped 22 coach-visible fixes this cycle across checkout, scheduling, the inbox, forms, the website builder, video analysis, and automations.
+
+**Payments & checkout**
+- Athlete-app checkout no longer fails with "Checkout details could not be verified," "Unable to complete checkout," or "Authentication is required to continue" on valid cards and bank accounts.
+- A checkout error no longer charges the card without recording the purchase, so a retry cannot double-charge a parent.
+- Checkout no longer blocks an active product with no limits as "no longer available for purchase."
+- Checkout no longer reports a failure after the payment was captured, so post-purchase confirmation redirects and the "payment received" email fire again.
+- Canceling a membership from the athlete portal **Billing** screen now actually cancels it instead of confirming success while it stays active.
+
+**Scheduling**
+- Saving a scheduler no longer fails with a generic "Unable to save this scheduler" toast, and a session whose date window equals its duration no longer trips "This duration does not fit specific date-window."
+- **+ Create scheduler** always opens the builder instead of sometimes landing on the **Add scheduler setup** modal, and that modal now closes with **X** or **Escape**.
+- A scheduler connected to **All Coaches** no longer offers times already booked in another scheduler.
+- Searching availability from the admin works again.
+- Calendar spacing was tightened.
+
+**Athlete portal & family**
+- The **Select Athlete** step, with **Family Credits available**, appears again in booking checkout for parents with connected athletes.
+
+**Inbox**
+- **Share Media** in a Direct Message opens your Media Hub library and accepts uploads and drag-and-drop instead of showing an empty, unclickable picker.
+- Parents and athletes on the desktop portal can attach a photo or video in a Direct Message again; the media button no longer lands on a blank screen.
+- Emails sent from the new **Create New → Email** composer are delivered.
+
+**Forms**
+- Archived forms can be viewed, edited, and restored from the **Archived** filter instead of returning "no form found."
+- Radio and choice labels on website-embedded forms are fully readable on phones instead of clipped to the first few characters.
+
+**Website Builder**
+- Section colors update correctly when the same pricing-grid template is placed more than once on a page, and the **Compact Split Text With Button CTA** and **Three Column Responsive Pricing Grid** templates now follow your site theme colors instead of a stale hardcoded color.
+
+**Content**
+- In Video Analysis, pressing **F** adds an annotation instead of blanking the video, and clips no longer show "Unable to load this media" or "This video is still processing" on already-processed videos until you restart the app.
+
+**Automations**
+- **Add a Product Purchase** no longer fails with `AUTOMATION_ACTION_FAILED` when the target is a newly created Parent profile.
+
+</Update>
+
+<Update label="August 2026">
+
+## Scheduling
+
+**Schedulers catalog and Setup area**
+
+**Schedule** is now **Calendar / Schedulers / Setup**. **Schedulers** is a searchable catalog: type chips (**Practices & games**, **Camps & events**, **Lessons**, **Rentals**, **Other**), a tag rail on the left, and cards showing type, duration, free/paid, and next availability. **Setup** holds the shared assets every scheduler attaches — **Availability**, **Locations**, **Resources**, **Coaches**, **Defaults** — each as a card grid with an **Add** control and **Edit / Duplicate**. The scheduler builder gains an **Organization** block (type plus tags) under **Details**. [Learn more →](/scheduling/organizing-schedulers)
+
+**Scheduler Defaults**
+
+**Setup → Defaults** pre-loads duration, buffers, scheduling window, booking rules, limits, reminders, and confirmations onto every new scheduler. Editing defaults does not rewrite schedulers you already created. [Learn more →](/scheduling/setup-defaults)
+
+**Start cadence is separate from duration**
+
+In a scheduler's **Advanced settings**, **Duration** and **New sessions can start** are independent, so a 60-minute lesson can offer a start every 30 minutes (9:00–10:00 or 9:30–10:30). **Allow overlapping sessions** is its own checkbox: leave it off and once 9:00 is booked, 9:30 drops out as a collision instead of putting two athletes in the same hour. [Learn more →](/scheduling/overlapping-slots)
+
+**Free or Paywalled payment block**
+
+The scheduler builder's **Payment** block starts with **Free** or **Paywalled**. Paywalled then lets families pay with a **price**, **credits**, or **either**. No new payment types — the same options, laid out so the choice is obvious. [Learn more →](/scheduling/setting-up-payment-options)
+
+**A different venue for each session date**
+
+Each date in a scheduler's availability can carry its own location, defaulting to the scheduler's location until you change it, so a team that practices Tuesdays at one field and Thursdays at another no longer needs a duplicate scheduler per venue. Athletes and parents see the per-date venue on their schedule, in the athlete portal, and in reminders. [Learn more →](/scheduling/setup-locations)
+
+**Resources: Fixed or Any open**
+
+In a scheduler's **Resources** block, choose how a space is picked: **Fixed** (every attached resource is required, the previous behavior) or **Any open** (the booking takes one free resource from the pool). Two hitting lessons at 4:00 can now each take a free cage without you building a scheduler per cage; staff see which resource was reserved. [Learn more →](/scheduling/resources)
+
+**Connect coaches to individual sessions**
+
+**Setup → Coaches → Connect coaches** lets you pick one or more coaches and one or more sessions in one step, so the coach on a practice or lesson can differ session to session instead of being fixed for the whole scheduler. [Learn more →](/scheduling/setup-coaches)
+
+**Share a calendar across two groups**
+
+Organization owners can link two groups under the same organization from **Settings → Shared Calendar** so a booking in one group blocks the same time in the other, in both directions. Built for facilities that run, say, a baseball group and a softball group out of one building. Unlink at any time. [Learn more →](/scheduling/shared-calendar-across-groups)
+
+**Conflict warning on manual recurring bookings**
+
+When you add a recurring booking from the admin calendar and it overlaps another booking on the same session, CoachIQ now tells you which booking it collides with and lets you confirm or back out, instead of silently double-booking a capacity-1 session. [Learn more →](/scheduling/manually-booking-athletes)
+
+---
+
+## Payments
+
+**Record cash, check, or other when adding a product to a client**
+
+On a client profile, **Products → + Add Product → Configure Purchases** now captures how the purchase was collected (cash, check, other, paid vs. still collecting) alongside the optional Stripe subscription ID and credit timing, so offline money stops living in a spreadsheet. [Learn more →](/people/client-profiles/client-profiles-products)
+
+**Turn off a product's credits without deleting it**
+
+Credit-bearing products that have been used can't be deleted, which used to leave an old membership stuck active on a client. The client's **Credits** view now has a toggle to deactivate credit use for that product, so you can move an athlete to a new plan without support. [Learn more →](/people/client-profiles/client-profiles-credits)
+
+**Registration asks which athlete**
+
+On team-registration checkout, a parent with more than one athlete on the account is asked **Who are you registering?** before paying, and the purchase, team tag, and credits attach to that athlete rather than the parent. Date of birth is collected per athlete. [Learn more →](/athlete-portal/family-accounts)
+
+---
+
+## People
+
+**Family tab in the athlete portal**
+
+Parents can add and manage family members themselves from **Settings → Family** in the athlete portal, instead of only at sign-up. [Learn more →](/athlete-portal/family-accounts)
+
+**Parents get their athletes' reminders and bookings**
+
+The parent–athlete link is now stored and used. Practice reminders and notifications for a managed child go to the parent, a parent's own profile lists every athlete's bookings grouped by athlete, and a coach opening that parent in **People** sees the same view. Parents also see their athletes' bookings in the native app. [Learn more →](/athlete-portal/family-accounts)
+
+---
+
+## Inbox
+
+**Announcement reactions**
+
+Athletes and parents react to an announcement with a fixed row of four chips — 👍 got it, ❤️ love it, 🙏 thanks, 🔥 hype — that land as count pills on the announcement. Tap again to take it back. The full emoji picker is gone from announcements. [Learn more →](/inbox/announcements)
+
+**Pinned announcements**
+
+Pin an announcement from its ⋯ menu to keep it at the top of the feed. A pinned announcement shows first in the app and in the athlete portal, so a schedule change or a deadline is not buried by newer posts. [Learn more →](/inbox/announcements)
+
+**SMS push shows the sender's name**
+
+When an athlete texts you, the push notification on the admin app shows the athlete's name instead of the raw phone number, so you can triage from the lock screen. [Learn more →](/inbox/sms-messages)
+
+---
+
+## Automations
+
+**Send mode on scheduled automations**
+
+Each scheduled (daily/weekly/specific date) trigger has a send mode: **Once, until they match again after a change** (the default — right for credit-expiry and inactive-member checks) or **Every time they match** (right for a weekly check-in or schedule drop to the same tagged group). Weekly check-ins no longer fall silent after the first run. [Learn more →](/tools/automations/scheduled-automations)
+
+---
+
+## Website Builder
+
+**New Add Section gallery with published sections**
+
+**Add Section** is now a visual gallery: large previews in a grid, a left sidebar to filter by source (**Published sections**, **Previous pages**, **Default templates**) and section category, one highlighted selection, and a single **Add to page** action. Published (custom) sections are available to every coach, not just legacy sections. Preview cards were regenerated in one consistent dark, brand-color style and the Banner previews are no longer pixelated. [Learn more →](/website/sections/working-with-sections)
+
+---
+
+## Native App
+
+**Stay signed in through updates**
+
+Athletes and coaches are no longer kicked out of the app when a platform update is pushed while they're using it; the app signs them back in once the update completes.
+
+---
+
+## Content
+
+**Program checkpoint limit raised**
+
+The 50-checkpoint cap per program has been lifted, so long programs no longer have to be split to keep adding checkpoints. [Learn more →](/content/programs-overview)
+
+---
+
+## Settings
+
+**More customizable names in the athlete portal**
+
+The athlete portal's page labels can be renamed beyond just the header, so the portal uses your language for what you sell. [Learn more →](/athlete-portal/menu-and-links)
+
+---
+
+## Bug Fixes & Stability
+
+89 coach- or athlete-visible fixes shipped this month, concentrated on checkout, credits, recurring bookings, and the native app.
+
+**Scheduling**
+- Coaches can create, update, skip, and reschedule recurring bookings again, on desktop and in the app.
+- Scheduler and session edits now save when athletes are already booked into them.
+- The availability conflict check no longer blocks a session because an unrelated session with no shared resource, coach, or location overlaps it, and adding a date to a recurring clinic no longer fails with a generic "Unable to create this recurring schedule."
+- The calendar's month view and day view agree on how many sessions are scheduled.
+- Entering specific dates in the availability Copilot populates them onto the schedule.
+- Google Calendar invites and the native admin app show the correct session time for organizations in time zones without daylight saving.
+- Fixed clipped layout in the scheduler builder and the spacing of the location picker.
+
+**Payments and checkout**
+- ACH bank payments complete checkout instead of linking a bank account and charging nothing.
+- Checkout no longer stops after the waiver step, and no longer shows a false "Checkout changed while the payment form was open" warning on an unchanged order.
+- A 100% coupon that brings the total to $0.00 completes the order without waiting on a card form that never loads.
+- Guest checkout no longer returns "Authentication Required" or "We could not start payment."
+- Fixed "Unable to confirm payment," blank Cost Summary totals, and "Unable to complete checkout" on the public storefront.
+- Athletes can add a card to file, and a card used at purchase stays saved.
+- Payment-plan (recurring) purchases now write the order to CoachIQ, a double-click or retry no longer charges twice or creates two subscriptions, and checkout no longer creates duplicate Stripe customers for one person.
+- An athlete with zero credits is asked to pay with credits or pay directly rather than seeing both a credit shortfall and a card error at once.
+- Payment options show on payment links and product pages.
+- A pay-later or free-trial purchase shows as deferred rather than charged, and "schedule charges for later" no longer charges immediately.
+- Members can no longer cancel a subscription when **Allow users to cancel** is off.
+- The Transactions **Filter by products** dropdown lists every product and applies a searched selection.
+- Creating a one-time product no longer fails with "Unable to save this payment type."
+- A payment that succeeds now finalizes its booking instead of stranding the athlete on "Complete booking / Retry."
+- Logged-in users without a profile in the purchasing group get a real checkout instead of "Unable to load checkout details."
+- Clicking the edit pencil on a form-connected booking returns to the session selection instead of exiting checkout and losing answers, and the edit button no longer breaks the layout.
+- The waiver checkbox on checkout and on forms has a visible, higher-contrast border.
+- Coupons can be created again.
+- A client's **Orders** shows their full purchase history, not just recent orders.
+- Your CoachIQ subscription's Stripe customer carries your email, so Stripe receipts and failed-payment notices reach you.
+- Claim links no longer fail with "Unable to claim organization" or "This organization is linked to another account," and the email entered at claim reaches Stripe.
+
+**Credits**
+- Credits are granted on subscription renewal after the charge succeeds.
+- Cancelling a subscription revokes its unlimited (∞) credits instead of leaving them redeemable.
+- A credit bank's link to its purchase no longer detaches and needs manual re-granting.
+- Credits limited to one scheduler can only be spent on that scheduler in the athlete portal.
+- A managed athlete's booking deducts the parent's credits, credits a parent buys are spendable for their athlete, and signing up two athletes grants both athletes' monthly credits.
+- Remaining credits expire at package expiration and membership renewal as configured.
+- Rescheduling a booked session can no longer be used to keep an expired credit alive indefinitely.
+
+**People**
+- Sub-tags show on the client UI, and the **Untagged** filter actually filters athletes.
+- A client's **All Activity** shows everything added to the profile, and clicking a row on **People → Clients** opens the person.
+- The **Required** toggle for the built-in **Phone number** sign-up field can be turned on.
+- Editing a profile name in Settings no longer throws an "admin only" error, and the reset-password link opens a reset form instead of the login screen.
+- A user changed to the Parent role sees the **Family** tab on their profile.
+- The SMS consent checkbox and disclosure appear on the athlete portal sign-up form for every organization.
+- Add Athlete / Parent flow tidied, with Parent preselected as the default account type at sign-up, and select-all delete behaves.
+
+**Inbox**
+- The announcement composer shows the full recipient name and the emoji picker can be dismissed without picking an emoji.
+- Announcements sort correctly from first to last.
+
+**Automations**
+- Purchase-triggered automations book the athlete when a parent buys for a managed child (including parents with more than one athlete), instead of silently skipping the booking step.
+- Granting a $0 credit-bearing product through an automation issues its credits.
+
+**Forms**
+- The form builder makes it clear that a field's **Label** — not the heading above it — is what appears in responses, so responses stop showing placeholder text as field names.
+- People-connected public forms get past email confirmation instead of "We couldn't confirm your submission," and shared standalone forms open instead of "Form not found."
+
+**Website Builder**
+- Adding a new page and publishing no longer fails with "Could not save page. Please retry."
+- The builder preview respects custom header and footer logo sizing, and Camp Grid template field edits propagate to the public page.
+
+**Content**
+- Program links open the program instead of a group picker.
+- Video analysis saves reliably, and the **Content → Video Analysis** route no longer bounces to the dashboard.
+
+**Native app and athlete portal**
+- The app shows the correct booked count for a session, matching the web.
+- Booking with credits stays in the app instead of redirecting to the web portal.
+- Parents see their athletes' bookings on iOS and Android.
+- **Available** is hidden in the iOS menu when it is turned off in the app builder, and session colors match the scheduler colors on desktop.
+- The desktop athlete portal renders the per-date venue and address for a session.
+
+</Update>
+
+<Update label="July 2026">
+
+## Scheduling
+
+**Archive Schedulers**
+
+You can now archive a scheduler from **Schedule → Schedulers** to take it out of your active list and off the athlete portal without deleting it. Past bookings and history stay intact, and an archived scheduler can be restored later — handy for retiring a season's clinics or a camp that has run its course. [Learn more →](/scheduling/organizing-schedulers)
+
+**Per-Athlete Booking Limits**
+
+**Scheduler → Settings → Limits** now lets you cap how many times a *single* athlete can book a session per day and per week, separate from the existing facility-wide **Max bookings per day / week** caps. Great for unlimited memberships and rentals, where one athlete could otherwise grab every open slot. [Learn more →](/scheduling/scheduler-settings-limits-and-permissions)
+
+---
+
+## Payments
+
+**Member Discounts**
+
+Give athletes who hold a specific membership an automatic discount on your other products. From the product's settings, choose which products the discount applies to — a hand-picked list or **all products** — and it covers both memberships and one-time purchases. Built for facilities where team members get member pricing on camps, clinics, and rentals. [Learn more →](/payments/coupon-overview)
+
+**ACH (Bank Account) on One-Time Products**
+
+When **US Bank Account (ACH)** is enabled under **Settings → Payment Methods**, it now appears at checkout for one-time products, not just subscriptions — a lower-fee option for larger camp and team registrations.
+
+---
+
+## Inbox
+
+**SMS Credits Page for Your Organization**
+
+The **Credits** page (**Settings → Communication → Credits**) is now available to organizations on SMS credits, not just to CoachIQ staff. See your balance, buy top-ups, and review the activity log for every send. [Learn more →](/inbox/sms-credits)
+
+**SMS Credit Auto-Refill**
+
+On the same **Credits** page, turn on auto-refill once a card is on file and your balance tops itself up when it runs low — no more discovering at send time that a mass text has no credits behind it. [Learn more →](/inbox/sms-credits)
+
+**Legal Pages Built for SMS Approval**
+
+The auto-generated **Privacy Policy** and **Terms** pages on your athlete portal now load publicly (no login prompt), render special characters correctly, and include the carrier-required SMS clauses (message frequency, data rates, STOP/HELP, consent not a condition of purchase). Carriers check these pages during 10DLC review, so this removes the most common reason a campaign was rejected. [Learn more →](/inbox/sms-messages)
+
+---
+
+## Forms
+
+**Archive Forms**
+
+You can now archive a form to take it out of circulation while keeping all of its past submissions and data — no need to delete it or strip every link. Archived forms stop accepting submissions on live pages and can be restored later from the **Show** filter in **Tools → Forms**. [Learn more →](/tools/forms/sharing-forms)
+
+---
+
+## Automations
+
+**Book Every Future Session in One Action**
+
+The **Add Booking to User** action has a new **All future session times** option alongside Next available, Specific, and Recurring. Pick it to enroll someone into every upcoming occurrence of a session at once — for example, adding a new team member to the whole season's practice schedule the moment they purchase. [Learn more →](/tools/automations/triggers-actions-reference)
+
+**Archive Automations**
+
+Archive automations you no longer run to keep the **Tools → Automations** list focused on what is live. Archived automations keep their history and can be restored. [Learn more →](/tools/automations/builder-reference)
+
+---
+
+## Website Builder
+
+**Icon Library in Sections**
+
+Sections that use icons — Features & Benefits, Numbered Steps, and similar — now let you pick from a built-in icon library instead of downloading and uploading icon files yourself. [Learn more →](/website/section-types/features)
+
+---
+
+## Bug Fixes & Stability
+
+We shipped roughly 90 coach-visible fixes (91 Linear issues) this cycle across scheduling, payments and credits, forms, inbox and notifications, the website builder, the athlete portal, content and media, and the native app.
+
+**Scheduling**
+- The live booking page now shows every open time slot that the admin scheduler preview shows, instead of hiding some of them.
+- Availability edits and specific-date blackouts save reliably — the "Unable to save availability" and 500 errors when blocking off days are fixed, and scheduler settings no longer revert after submit.
+- Days with no open times are greyed out and un-clickable again on the public booking calendar.
+- Parents can book the same time slot for more than one child when **Allow athletes to book a timeslot more than once** is on.
+- **Use Credits & Book** no longer fails with a raw error when the booking day is missing from the request.
+- Manually booking an athlete from a desktop browser no longer redirects you to the mobile view.
+
+**Payments & Credits**
+- Guest checkout shows the product description, matching what logged-in buyers see.
+- **Settings → Payment Methods** now matches checkout: ACH shows up when it is enabled and stays hidden when it is not, and enabling Afterpay no longer blanks out the payment box.
+- Apple Pay works on athlete portals that use a custom domain.
+- Subscriptions bought with **Schedule charges for later** activate on their start date, and their credits are available at booking.
+- Membership credit renewals fire every cycle, expired credits zero out on schedule, and credits from a cancelled subscription are no longer shown to athletes as Active or available.
+- In the credit log, a cycle's renewal now appears above the matching expiration, so new credits no longer look immediately expired.
+- Subscription payments appear in **Payments → Transactions** and in Dashboard revenue, and each transaction links to the right client and product.
+- The **Subscriptions** tab shows every coach's subscriptions — with dollar amounts — on accounts that share a Stripe connection, instead of zeros or "No subscriptions found."
+- Renewals are no longer counted as **New Orders** on the Dashboard.
+- A checkout lock-up that caused athletes to retry and get charged more than once is fixed, along with the clinic-signup error that showed a raw serialization message; subscriptions no longer get stuck Incomplete with an unpaid first invoice.
+- A duplicate, cancelled purchase of the same plan no longer grants a second set of credits.
+- Creating your first payment type no longer fails with a database error.
+- Connecting Stripe no longer shows an error when you are redirected back to CoachIQ.
+- When an athlete cancels their own subscription it now runs through the paid period instead of ending immediately.
+- The product **Copy link** icon is back in the three-dot menu on desktop.
+- Your CoachIQ plan shows correctly under **Billing**.
+
+**Forms**
+- Form responses show the real answers under your custom field titles in the Responses feed and in exports, instead of empty "Text" columns.
+- The embed/HTML code option appears for every form, and embedded forms no longer ask visitors to fill the form twice.
+- Phone fields accept numbers with dashes, respect the optional setting on sign-up templates, and the sign-up modal now has a country code selector so US numbers are saved as +1.
+- Saving a form no longer fails with "Unable to update form."
+
+**Inbox & Notifications**
+- In-app scheduler reminders send again, and a new **Show booking reminders in inbox** toggle (**Settings → Communication → Inbox Settings**) controls whether they appear as threads in your Inbox.
+- Staff coaches no longer receive copies of the owner's conversations as separate threads.
+- In-app messages and announcements sent to tags or roles reach everyone in the selected audience.
+- Submitting a valid US address on **Settings → SMS Number** no longer fails with "Please add a valid address."
+
+**Website Builder & Checkout**
+- Section alignment, advanced-editor spacing, and description line breaks and bullets render on the live site the way they do in the builder.
+- The "missing asset" call-to-action no longer appears when the asset is present, and favicons render correctly.
+- Editing your logo or header no longer detaches a custom header site-wide.
+- The website checkout modal scrolls on short screens so the card form and Pay button are always reachable; guest checkout no longer shows "requires a CoachIQ account" wording or flashes an email error before you type; the account step always shows its email field; and booking checkouts complete again after an outage that returned an empty response.
+- Entering an email that already has a CoachIQ account in a website funnel no longer freezes the form on "Processing…".
+
+**Athlete Portal & Accounts**
+- Athlete sign-up and password reset no longer fail with a 429 or "unknown error," and reset emails arrive.
+- The admin login screen shown when claiming an organization now has a **Forgot password** link.
+- The **Still show Bookings to athletes** option (hide self-booking but keep the Bookings tab) is back in **Menu & Links**.
+- Programs shared directly with an athlete stay visible even when a Pages Paywall gates the Programs page, opening a program no longer shows a group picker, and program activity lists every athlete who is training, not just one.
+
+**Content & Media**
+- Media Hub uploads no longer hang at 0%, iPhone videos upload for video analysis, the video analysis tool loads and saves, athletes can upload to a video analysis invitation, and playback no longer buffers indefinitely.
+
+**People**
+- A new member's profile photo saves when you click **Update User**.
+
+**Native App**
+- iOS: the Upcoming list is sorted chronologically without duplicate rows, the booking modal scrolls to the recurring and time options, and the daily calendar view shows every session with readable (not black) session blocks.
+- Android: frequent crashes are fixed, push and SMS notifications arrive again, and clearing notifications no longer spawns new "New message" alerts.
+- The **Copy link** action for products and schedulers is back in the app.
+
+**Automations**
+- Webhook actions no longer intermittently send empty form-field values on guest submissions, and the new **All future session times** booking option no longer errors with "try again later."
 
 </Update>
 
@@ -105,6 +500,14 @@ You can now attach more than one resource to a single scheduler. When a session 
 **Overlapping Session Slots**
 
 A new **Allow overlapping slots within this session** option lets a scheduler offer start times that overlap a session already in progress, with a **Slot Cadence** control for how often start times appear (every 5–60 minutes or custom). Great for staggered starts and rolling sessions. [Learn more →](/scheduling/scheduler-settings-limits-and-permissions)
+
+**Guest Checkout for Schedulers**
+
+Schedulers can now be booked without an account. Turn on guest checkout on a scheduler and anyone landing on your booking page or website can reserve an intro call or trial session with just their contact and payment details — no login wall in your marketing funnel. [Learn more →](/payments/guest-checkout)
+
+**Quick Add from the Calendar**
+
+Add a coach or resource to a session directly from the calendar's click view — one less trip into the scheduler editor. [Learn more →](/scheduling/calendar-overview-and-navigation)
 
 ---
 
@@ -142,101 +545,182 @@ You can now add a one-time down payment on top of a subscription. Turn on **Add 
 
 Forms can now write directly to your organization's People custom fields. Add a **Custom Field** from the Contact Info category, pick which custom field it maps to, and (with login required) submissions populate that field on the athlete's profile automatically. [Learn more →](/tools/forms/creating-forms)
 
----
+**Form Responses in Coach Emails**
 
-## Inbox
-
-**Mark Conversations as Unread**
-
-Right-click any conversation in your Inbox and choose **Mark as unread** to flag it for follow-up. It resurfaces under the Unread filter until you reopen it. (Desktop only.) [Learn more →](/inbox/inbox-overview)
-
-</Update>
-
-<Update label="May 2026">
-
-## People
-
-**Block and Remove Athletes**
-
-You can now block or remove athletes directly from their profile. Go to any athlete's profile and click **Block or Remove** in the left sidebar to choose between removing them from a group or blocking them from your entire organization. Blocked athletes are tracked under **Settings** → **Blocklist**, where you can manage or undo blocks at any time. You can also pre-emptively block someone by email before they join. [Learn more →](/people/block-and-remove-athletes)
+The **Form Submitted** email you receive now lists the submitter's answers inline, so you can read and reply to a new submission from your inbox without opening the dashboard to find it. [Learn more →](/tools/forms/responses-and-automations)
 
 ---
 
-## Inbox
+## Automations
 
-**Unread Filter**
+**CC on Send an Email**
 
-A new Unread filter in the [Inbox](/inbox/inbox-overview) lets you surface conversations with unread messages instantly — no more scanning the full list to find what needs a response.
+The **Send an Email** action now has a **CC / BCC** field, so a second coach, a parent, or your own inbox can be copied on any automated email — an easy way to confirm your automations are actually going out. [Learn more →](/tools/automations/triggers-actions-reference)
 
----
+**Use Form Answers in Automations**
 
-## Website Builder
-
-**Map Embed**
-
-Add an interactive map to any page using the new Map section type. Great for facility pages, directions, or coaches with multiple locations.
-
-**Per-Page SEO Controls**
-
-You can now set a custom meta title and description on any individual website page, giving you full control over how each page appears in search results and when shared on social media. Find it in the page settings when editing any page.
-
----
-
-## Scheduling
-
-**Skip or Edit Past Recurring Occurrences**
-
-Coaches can now skip or modify individual past occurrences in a recurring booking series without affecting future sessions — useful for correcting historical records without disrupting upcoming bookings.
-
-**Clearer Credit Messaging**
-
-Athletes now see a clear explanation in the booking flow when they have credits but those credits aren't valid for the selected scheduler, reducing confusion and inbound questions around credit eligibility.
-
-**Calendar Defaults to First Available Date**
-
-The booking calendar now opens to the month containing your next available slot instead of the current month. Athletes spend less time clicking forward to find open times.
-
----
-
-## Payments
-
-**Subscription Length Controls**
-
-You can now define exactly when a subscription ends, directly in the [product builder](/payments/product-builder#section-2-payment-options). Choose from three options: ongoing with no end date (default), automatic cancellation after a set number of billing cycles, or cancellation on a specific calendar date. The initial purchase counts as the first billing cycle. Use billing cycle limits for finite training packages like a 12-week program billed monthly, or set a hard end date for season-based memberships.
-
-**Payment Method Reliability**
-
-Cards now sync accurately with Stripe, validation catches issues before they reach checkout, and default card selection works correctly throughout the payment flow.
-
-**Checkout Matches Your Branding**
-
-The checkout experience now respects your athlete portal's dark mode theme for a consistent look end-to-end.
-
-**Active/Inactive Payment Method Labels**
-
-The payment methods list now uses "Active" and "Inactive" labels instead of "Available," making card status immediately clear at a glance.
-
-**Coupon Codes in Embedded Checkout**
-
-Athletes can now enter coupon codes directly in the product payment pop-up and embedded checkout — no redirect to a separate page required. Promotions work seamlessly wherever you've embedded a product.
-
-**Credits-First Checkout**
-
-Athletes with applicable credits no longer see a credit card entry field at checkout. The booking flows straight to credit redemption, eliminating the common scenario where athletes accidentally pay with a card when credits were available.
-
----
-
-## Power-Ups
-
-**User Limit Expansion**
-
-Coaches with more than 400 athletes can now unlock additional capacity through a User Limit Expansion Power-Up. Reach out to the team to get set up.
+The **Form Submitted** trigger now exposes each question on the selected form as an **Answer field**, so you can branch on what someone answered — route a "yes" to one message and a "no" to another — and pull their responses into the emails and texts you send. [Learn more →](/tools/automations/triggers-actions-reference)
 
 ---
 
 ## Bug Fixes & Stability
 
-We shipped 55+ fixes this cycle across credits, scheduling, payments, automations, forms, the website builder, and the native app.
+We closed 28 coach-facing fixes this month across scheduling, payments, the website builder, forms, content, and the apps.
+
+**Scheduling**
+- Specific-date availability now shows correctly in the availability preview and on the live scheduler, and dates no longer reorder while you edit them.
+- Editing an existing scheduler saves your changes instead of creating a duplicate scheduler.
+- Session reminders no longer go out for a session the athlete has already rescheduled.
+- Booking a time outside a scheduler's availability now says there is no availability instead of the misleading "Coach booked elsewhere" message.
+- Session and purchase deep links open the booking calendar directly instead of stopping at the account/group selector.
+- Google Calendar sync fixes: automation-created bookings now sync, bookings push reliably to the coach's calendar, and group bookings and removals sync more cleanly.
+
+**Payments & Credits**
+- A 100% discount coupon at website checkout no longer asks for card details on a $0.00 total.
+- Unlimited-credit products no longer display a fixed credit count in the **Configure Purchases** modal.
+- Fixed a credit-renewal issue where a subscription bought through CoachIQ could lose its product link, leaving athletes without credits to book; added diagnostics so this is caught earlier.
+- Coaches are now notified when a client cancels a subscription.
+- Website checkout no longer blocks a purchase with a "valid email" error when no email field was shown.
+
+**Automations**
+- The **Booking Ended** trigger now fires when the session actually ends, not hours early.
+
+**Forms**
+- Fixed a form incorrectly requiring an email response.
+
+**Website Builder**
+- Section buttons render consistently on live sites again.
+- Logos that appear in the builder now display on the published site.
+- **Create a Tag** in the website builder opens the tag dialog instead of disappearing.
+- **Call** and **Email** buttons (tel: and mailto: links) work on published pages.
+- The horizontal scrollable gallery no longer leaves dead space on the right when a section has only a few images.
+
+**Athlete Portal & Native App**
+- Athletes no longer get stuck on the account selection screen when entering a portal.
+- Portals with the app paywall on but no active page selected no longer error out; you are prompted to pick a page.
+- Android push notifications now arrive consistently without a manual sync from settings.
+
+**Content**
+- Video uploads no longer disappear or sit at "processing" after reaching 100% in Media Hub.
+- Program start dates for newly enrolled athletes anchor to their enrollment date instead of jumping to the wrong month.
+
+**Inbox**
+- Emojis sent from the Inbox arrive as emojis in SMS instead of question marks.
+
+</Update>
+
+<Update label="May 2026">
+
+## Scheduling
+
+**Redesigned calendar for busy facilities**
+
+All four views on **Schedule → Calendar** (Month, Week, Day, List) were reworked for large schedules. The date bar and time column stay pinned while you scroll in Week and Day view, each day in Month view shows a session count, and when a Week cell holds more sessions than fit, hovering reveals the rest. The **List** view was rebuilt with **Upcoming**, **Canceled**, and **Past** tabs, a fixed header, today highlighted, and a day header that pins to the top as you scroll — and it now works down to phone and tablet widths. [Learn more →](/scheduling/calendar-overview-and-navigation)
+
+**Calendar defaults to first available date**
+
+The athlete booking calendar now opens on the month containing your next available slot instead of the current month, so athletes stop clicking forward to find open times. [Learn more →](/scheduling/how-availability-works)
+
+**Past bookings survive edits to a recurring series**
+
+Editing or deleting a recurring booking series no longer wipes the past occurrences that already happened. Historical sessions stay on the calendar and on the athlete's profile, so your attendance and billing records are intact. [Learn more →](/scheduling/recurring-bookings)
+
+---
+
+## Payments
+
+**Coupon codes in embedded checkout**
+
+Athletes can now enter a coupon code directly in the product payment pop-up and in checkout embedded on your website — no redirect to a separate page. Promotions work anywhere you've embedded a product. [Learn more →](/payments/coupon-overview)
+
+**Credits-first checkout**
+
+When an athlete has credits that a scheduler accepts, checkout no longer shows a credit card field. The booking goes straight to credit redemption, ending the common case where an athlete paid by card while holding usable credits. [Learn more →](/scheduling/credits-and-schedulers)
+
+**Coupons apply to a membership's initial fee**
+
+A coupon attached to a month-to-month membership now discounts the up-front initial fee as well as the recurring charge, so a 100%-off code can genuinely make the first payment free. [Learn more →](/payments/coupon-overview)
+
+**Subscription length controls**
+
+You can now define exactly when a subscription ends, directly in the [product builder](/payments/product-builder#section-2-payment-options). Choose ongoing with no end date (default), automatic cancellation after a set number of billing cycles, or cancellation on a specific calendar date. The initial purchase counts as the first billing cycle. Use billing-cycle limits for finite training packages like a 12-week program billed monthly, or set a hard end date for season-based memberships.
+
+---
+
+## Inbox
+
+**Mark conversations as unread**
+
+Right-click any conversation in your Inbox and choose **Mark as unread** to flag it for follow-up. It stays under the **Unread** filter until you reopen it. (Desktop only.) [Learn more →](/inbox/inbox-overview#mark-a-conversation-as-unread)
+
+---
+
+## Automations
+
+**Longer SMS messages in automations**
+
+The **Send an SMS Message** action is no longer capped at 160 characters. Longer texts are sent as multiple segments and billed per segment from your SMS credits, so the builder's live counter (for example **180 / 160**) shows when a message will split. [Learn more →](/tools/automations/triggers-actions-reference)
+
+---
+
+## Forms
+
+**Returning visitors sign in with their password**
+
+When someone enters an email that already has a CoachIQ account on a form with login required, the form now prompts for that account's password (with a **Forgot password?** link) instead of creating a duplicate or letting them through unauthenticated. New emails still create an account as before. [Learn more →](/tools/forms/returning-visitor-sign-in)
+
+---
+
+## Website Builder
+
+**Drag-and-drop navigation reordering**
+
+You can now reorder the links in your site's navigation bar by dragging them into place and saving, the same way you reorder pages — no more deleting and re-adding items to change their order. [Learn more →](/website/sections/header-footer-navigation)
+
+**Reuse your custom sections**
+
+Custom sections that were built for your site now appear in the section picker so you can add them to other pages yourself, instead of the picker showing them as unavailable. [Learn more →](/website/sections/working-with-sections)
+
+**Already logged in? Your site knows**
+
+If a visitor to your website is already signed in to CoachIQ, the header's login button takes them straight into their account instead of showing the login screen again.
+
+---
+
+## People
+
+**Block and remove athletes**
+
+You can now block or remove athletes directly from their profile. Open any athlete's profile and click **Block or Remove** in the left sidebar to choose between removing them from a group or blocking them from your entire organization. Blocked athletes are tracked under **Settings → Blocklist**, where you can manage or undo blocks at any time, and you can pre-emptively block an email before that person joins. [Learn more →](/people/block-and-remove-athletes)
+
+---
+
+## Athlete Portal
+
+**Live phone preview in the App Builder**
+
+The **App Builder** on desktop now shows a phone-sized preview that updates as you edit, so you can see exactly what athletes will see in the app while you build it. [Learn more →](/athlete-portal/app-builder-navigation-and-interface)
+
+**Pages Paywall only gates the Schedule page**
+
+A **Pages Paywall** on your Schedule page now restricts only the schedulers you added to that page. Schedulers you link from a form, a button, or a direct link stay bookable without the paywalled product, so intake forms and evaluation links keep working for prospects. [Learn more →](/athlete-portal/paywall-settings)
+
+---
+
+## Bug Fixes & Stability
+
+We shipped more than 60 coach-facing fixes this cycle:
+
+- **Scheduling** — Athletes could no longer book the same slot across two schedulers sharing a location, or double-book a session capped at one athlete; a confirmed booking that never appeared on the athlete or admin calendar now shows correctly; the 2-hour minimum-notice setting no longer hides bookable slots in the branded app; the scheduler builder's preview now reflects attached availabilities, lets you switch months, and matches the live date and slot count; a failed reschedule no longer deletes the original booking; cancelling and refunding a credit now frees the redeemed-session count on the scheduler; siblings booked into the same group session each show in the athletes-booked row and count toward capacity; a class hidden from the schedule now displays; duplicate locations created during the new Locations & Resources setup were cleaned up; and Copilot no longer errors when generating availability on the Specific Dates tab.
+- **Credits** — Credits are refunded when athletes cancel on time, awarded after a product purchase, and renewed each cycle on weekly memberships; a purchase no longer triggers an immediate renewal that awarded credits twice; the credit bank shows on the athlete side again; and the **Force credit redemption** toggle now saves in automations.
+- **Payments** — Fixed a checkout error some athletes hit when purchasing, the Transactions page and dashboard showing $0.00 or missing recent orders, and Stripe payments not syncing into CoachIQ; the processing-fee display now updates in the product builder and is styled less prominently; archived products can no longer be purchased; the **Schedule charges for later** builder shows its price and schedule settings and no longer charges customers before the scheduled date; embedded form + scheduler flows now collect payment before booking; product pop-up embeds open on pricing sections; and a checkout layout issue was cleaned up.
+- **Forms** — Forms connected to a scheduler complete the booking after submission; the submit button no longer spins indefinitely; checkbox answers (including waiver acceptances) now save and work on the live site, not just in preview; field labels no longer show a trailing "0"; **Contact Info** custom fields appear on the live link; a scheduler on a quiz form's last step displays; radio buttons render correctly in embedded forms; a legacy website form block was repaired; and you can select a form in the web builder again.
+- **Website Builder** — Navigation links, button destinations, and edited content no longer reset or fail to save on publish (including for web-editor users); background images on new sections persist after publishing; removing a button's link actually removes the button; heading fonts no longer fall back to the paragraph font; the **CoachIQ Login** button destination, homepage and logo links, and page URLs resolve correctly; the mobile hamburger menu opens on custom headers; a tiny-header layout bug was fixed; and em dashes paste correctly into builder fields.
+- **Inbox** — Incoming SMS messages land in the Inbox on desktop and mobile, and in-app announcements to all buckets reach every member.
+- **People & Staff** — You can update a client's name again, and staff accounts can use the sidebar navigation and log out.
+- **Athlete Portal** — Fixed a portal link that prompted for login but never proceeded into the group.
+- **Native App** — Fixed UI overlapping the status bar on Android foldables, inability to scroll to available slots on Android, and available slots not displaying in personalized apps.
+- **Content** — The **Reset** button in Video Analysis no longer shrinks the media.
 
 </Update>
 
@@ -246,11 +730,19 @@ We shipped 55+ fixes this cycle across credits, scheduling, payments, automation
 
 **AI-Powered Sections**
 
-Your website builder now uses AI to generate complete sections from a text prompt. Describe what you need — a testimonials grid, a pricing table, a team showcase — and AI builds it for you. No more starting from a blank canvas or tweaking templates to fit your brand.
+In the **Website Builder**, **Add Section** now includes AI-generated sections. Describe what you need — a hero with stats, a testimonials grid, a program card grid, an FAQ — and the section is built for you with your copy and images, then editable like any other section. Headers and footers can be generated the same way. [Learn more →](/website/sections/working-with-sections)
 
-**Connected Scheduling & Checkout**
+**Embedded Products, Forms, and Schedulers**
 
-Schedulers and products now embed directly into your website as native sections. Athletes can browse sessions, book, and purchase without ever leaving your site. Rolling out now across all CoachIQ websites.
+Products, forms, and schedulers now embed directly into your website pages as inline sections. Athletes browse sessions, book, fill out a form, or check out without leaving your site or being redirected to the athlete portal. [Learn more →](/website/section-types/scheduling)
+
+**Map Section**
+
+Add an interactive map to any page with the new **Map** section — paste a map embed link into the **Map source** field and it renders on the live site. Useful for facility pages, directions, and coaches with more than one location.
+
+**Meta Title and Description When Creating a Page**
+
+The **Create New Page** dialog now has **Meta Title** and **Meta Description** fields, so you can set how a page appears in Google and on social shares at creation time instead of editing **Page Settings** afterward. [Learn more →](/website/seo-marketing/meta-titles-descriptions)
 
 ---
 
@@ -258,10 +750,18 @@ Schedulers and products now embed directly into your website as native sections.
 
 **Reschedule & Cancellation Controls**
 
-Two new permission toggles in your [scheduler settings](/scheduling/scheduler-settings-limits-and-permissions) give you full control over athlete rescheduling:
+Two new toggles under **Scheduler Settings → Booking Rules** give you control over athlete-initiated rescheduling: [Learn more →](/scheduling/scheduler-settings-limits-and-permissions#setting-7-booking-rules-athlete-permissions)
 
-- **Allow athletes to reschedule** — Enable or disable athlete-initiated rescheduling per scheduler. Useful for locking in camps, evaluations, or any session type where changes shouldn't be allowed after booking.
-- **Block rescheduling within cancellation window** — Prevents athletes from rescheduling once they're inside the cancellation notice window, closing the loophole where a reschedule could bypass your cancellation policy and leave you with an unfillable slot.
+- **Allow athletes to reschedule** — turn athlete rescheduling on or off per scheduler. Useful for camps, evaluations, or any session where changes shouldn't be allowed after booking.
+- **Block rescheduling within cancellation window** — prevents rescheduling once an athlete is inside your cancellation notice window, closing the loophole where a reschedule bypasses your cancellation policy and leaves you with an unfillable slot.
+
+**Check In Athletes**
+
+Mark athletes as checked in when they arrive, from the session view on the calendar. Attendance is recorded on the booking and on the athlete's profile, so no-shows and late cancellations are easy to spot later. [Learn more →](/scheduling/checking-in-athletes)
+
+**Skip or Change Past Recurring Occurrences**
+
+In a recurring booking's **Occurrences** view, **Skip** and **Change** now work on past dates as well as future ones, so you can correct the record for a session that didn't happen without touching upcoming sessions. [Learn more →](/scheduling/recurring-bookings#skipping-one-occurrence)
 
 ---
 
@@ -269,44 +769,119 @@ Two new permission toggles in your [scheduler settings](/scheduling/scheduler-se
 
 **Waiver Management & Compliance Tracking**
 
-A brand new [Waivers tool](/tools/waivers/waivers) gives you centralized control over liability waivers and terms:
+A new [Waivers tool](/tools/waivers/waivers) gives you centralized control over liability waivers and terms:
 
-- **Create and manage waivers** from Tools → Waivers with a label, URL, and active/archived status
+- **Create and manage waivers** from **Tools → Waivers** with a label, URL, and active/archived status
 - **Attach waivers to products** — require agreement at checkout before purchase
 - **Attach waivers to forms** — add a waiver checkbox to any registration or intake form
 - **Compliance Report** — see exactly who has accepted and who's missing, filter by status, and export to CSV for your records
 
-No more guessing who signed what. Every acceptance is logged with the client, date, and method (purchase or form).
+Every acceptance is logged with the client, date, and method (purchase or form).
 
-**Updated Billing Page**
+**Payment Method Management**
 
-The [billing page](/settings/billing) has a refreshed design. Coaches can now update their card on file, view all past invoices, and download receipts — all from Settings → Billing.
+Cards now stay in sync with Stripe: when an athlete adds a new card it becomes the default and is used on the next renewal, card validation catches problems before checkout, and default-card selection behaves consistently through the payment flow. Coaches can also see the cards on file for a client and which one is default from the client's profile. [Learn more →](/payments/manage-subscriptions#updating-client-payment-methods)
 
----
+**Clearer Credit Messaging at Booking**
 
-## Subscriptions
+Athletes now see their remaining credit count during booking and after confirmation, and the error when a booking can't use credits says why — no credits left, credits not valid for this scheduler, or membership expired — instead of a generic "Not enough credits." When a scheduler accepts both credits and card payment, athletes choose which to use before seeing the payment step. [Learn more →](/scheduling/credits-and-schedulers)
+
+**Checkout Matches Your Athlete Portal Theme**
+
+The new checkout now follows your athlete portal's dark mode setting, fixing the low-contrast look coaches reported on dark-themed portals.
+
+**Payment Methods Labeled Active / Inactive**
+
+The payment methods list under **Payments** now reads **Active** and **Inactive** instead of "Available," and the labels reflect what athletes can actually use at checkout (Google Pay, Klarna, Afterpay, and bank account were previously mislabeled).
 
 **Unsynced Subscription Filter**
 
-A new [Unsynced filter](/payments/subscriptions-dashboard#check-for-unsynced-subscriptions) on the Subscriptions dashboard lets you quickly find subscriptions that aren't connected to Stripe. Essential for catching billing gaps after transfers or bulk imports.
+A new [Unsynced filter](/payments/subscriptions-dashboard#check-for-unsynced-subscriptions) on the Subscriptions dashboard lets you quickly find subscriptions that aren't connected to Stripe. Essential for catching billing gaps after transfers or bulk imports, since an unsynced subscription also won't distribute credits.
+
+**Updated Billing Page**
+
+The [billing page](/settings/billing) has a refreshed design. Coaches can update their card on file, view all past invoices, and download receipts from **Settings → Billing**.
+
+---
+
+## Inbox
+
+**Unread Filter**
+
+An **Unread** tab now sits alongside **All**, **Announcements**, **In-App**, and **SMS** at the top of the [Inbox](/inbox/inbox-overview#mark-a-conversation-as-unread), so conversations that still need a response surface instantly.
+
+**Sub-Tags as Announcement and SMS Recipients**
+
+When you pick recipients for an **Announcement** or **SMS** from the Inbox, sub-tags now appear under their parent tags, so you can message a nested group (e.g. one team inside a program) directly instead of only the parent tag. [Learn more →](/inbox/using-tags-for-group-messages)
+
+---
+
+## Settings
+
+**Show Booking Reminders in Inbox**
+
+A new **Show booking reminders in inbox** checkbox under **Settings → Communication → Inbox Preferences** controls whether the automated session reminders CoachIQ sends to athletes also appear as threads in your Inbox. It's off by default, so reminders no longer crowd your conversations unless you want them there. [Learn more →](/settings/communication)
+
+**Reply-To Email Defaults to Your Admin Email**
+
+If **ReplyTo Email** in **Settings → General** is left blank, replies to your emails now go to your admin account's email instead of a CoachIQ address, so athlete replies reach you. [Learn more →](/settings/general)
+
+---
+
+## Native App
+
+**Account Deletion Requests**
+
+Athletes can now request deletion of their account from within the CoachIQ and personalized apps. The request lands in your Inbox for you to action, meeting Apple's App Store requirement for in-app account deletion.
+
+---
+
+## Power-Ups
+
+**User Limit Expansion**
+
+Organizations approaching the 400-athlete limit now see a **User Limit Expansion** Power-Up that raises the cap on athletes and on announcement, SMS, and email recipients. Reach out to the team to get set up. [Learn more →](/power-ups/index)
+
+---
+
+## Bug Fixes & Stability
+
+We shipped 60+ coach- and athlete-visible fixes this month:
+
+- **Website Builder** — Fixed AI section values (stats, FAQs, schedules, rosters) not rendering on the live site; buttons and CTA links on new sections not opening products, pages, or scroll targets; forms on new-builder pages that couldn't be submitted; pages disappearing from the editor after being set as a parent page (still live, but unreachable in the builder); purchase buttons unclickable on class listing pages; duplicate listicle groups rendering identical content; generated headers dropping nav links and resetting on save; testimonial text cut off on client sites; footer social icons prompting for image uploads instead of icons; header icon delete not working; map source not updating; a false "publish" notice on every page; and the section builder's "Failed to fetch" error and ignored prompt copy on create.
+- **Scheduling** — Fixed recurring booking day/time edits not updating the schedule view; recurring bookings defaulting to one hour when a custom duration was set; recurring booking end date not editable on mobile; a reschedule error athletes saw on future bookings; athletes booking paywalled schedulers without an active subscription; credits from inactive memberships being accepted for booking; the overlapping-slots toggle and cadence not saving; the unreadable "more info" hover on overlapping bookings; and availability turning on extra days after an update.
+- **Credits** — Fixed credits not expiring at the end of a billing cycle; credits not refunded after a booking cancellation; credits not issued after a subscription purchase; awarded credits showing as 0 available ("Short by 1 credit") in the athlete portal; coaches unable to add a credit bank when creating a manual purchase; manual credit adjustments not applying immediately; and a blank Credits tab in personalized apps.
+- **Payments** — Fixed the checkout button not disabling after the first click, which allowed duplicate charges; coupon codes not applying at checkout; Stripe transactions showing "---" instead of the product name; and the Subscriptions and Transactions pages returning no results when filtered by product.
+- **Inbox & Automations** — Fixed mass in-app messages with a video attached not sending; purchase-announcement emails not showing in the admin Inbox; Wait/Delay continuation conditions in automations not saving; automation webhooks not sending data to external URLs; and Meta Pixel not firing on the athlete portal.
+- **Forms** — Fixed form submissions not registering users (and not appearing in automation logs) and missing field data on multi-step funnels mapped to CoachIQ forms.
+- **Native App** — Fixed frequent Android crashes, including when scheduling a session; Android UI overlapping the system status bar and bottom buttons; the keyboard covering messages; the dashboard "+" button; the calendar not scrolling to show additional sessions; time not saving on manual and recurring bookings; inability to book outside normal availability; an occasional error on launch; a missing Send button in messages; SMS notifications not arriving on Android; a sign-up loop after entering an email in personalized apps; new personalized-app accounts landing in the wrong group; and an "incorrect password" error that only occurred in a personalized app.
+- **Login** — Fixed password reset errors and reset emails that never arrived.
 
 </Update>
 
 <Update label="March 2026">
 
+## Scheduling
+
+**Availability check when saving a scheduler**
+
+In **Schedule → Schedulers**, saving a new or edited scheduler without an availability selected now shows an error instead of silently saving a scheduler that can never be booked, and the builder previews what athletes will see. This removes the most common reason a new scheduler showed no open slots. [Learn more →](/scheduling/creating-your-first-scheduler)
+
+---
+
 ## Payments
 
 **Purchase Limits**
 
-You can now set purchase limits on products like camp registrations and training packages. Cap the number of available spots so products automatically stop selling once they're full — no more manually tracking inventory or turning athletes away.
+You can now set purchase limits on products like camp registrations and training packages. Cap the number of available spots so products automatically stop selling once they're full, or limit how many times one customer can buy a product, so a one-time intro offer stays one-time. [Learn more →](/payments/product-builder)
 
 ---
 
-## People & Staff
+## People
 
 **Staff Role Permissions**
 
-Coaches and staff members now have role-based access restrictions across the admin dashboard. Assign the Coach role to limit what staff can see and edit, keeping sensitive business data visible only to admins.
+Coaches and staff members now have role-based access restrictions across the admin dashboard. Assign the Coach role to limit what staff can see and edit, keeping sensitive business data visible only to admins. [Learn more →](/people/managing-staff)
 
 ---
 
@@ -318,16 +893,49 @@ System reminders (booking confirmations, session alerts) now appear separately f
 
 ---
 
+## Website Builder
+
+**Unsaved-changes warning**
+
+Leaving a page in the **Website Builder** with unsaved edits now shows a confirmation prompt before you navigate away. Previously, switching pages without clicking **Publish** discarded everything since your last save. [Learn more →](/website/overview)
+
+**AI-generated sections follow your global Design settings**
+
+New sections you generate now inherit the **Design** panel — your primary color on buttons, highlights, and badges; your font choices; one consistent button shape, heading scale, card radius, and light/dark section background across the site. You can still override any style on an individual section. [Learn more →](/website/settings-and-design)
+
+**Footer layout and legal links**
+
+The generated **Footer** now places smaller social icons under your logo and description, adds a divider and "All Rights Reserved" line above the bottom bar, and gives you fields in the section panel for bottom-bar links such as Terms & Conditions and Privacy Policy. [Learn more →](/website/sections/header-footer-navigation)
+
+---
+
+## Native App
+
+**Personalized Apps prompt new athletes to create an account**
+
+In a coach's branded iOS app, an athlete who has never created an account is now prompted to sign up on their first login attempt instead of being bounced back to the login screen. No more sending new athletes to a browser to register first. [Learn more →](/power-ups/personalized-app)
+
+---
+
 ## Bug Fixes & Stability
 
-We shipped 25+ bug fixes this month across the platform:
+We shipped 25+ bug fixes this month across the platform, including:
 
-- **Credits** — Fixed issues with credit awarding, deductions, refunds, expiration display, and duplicate credit banks
-- **Scheduling** — Resolved bugs with athlete cancellations, availability display, time slot population, and the calendar "Upcoming" tab
-- **Native App** — Fixed login crashes, UI cutoff issues, and message creation errors
-- **Inbox** — Fixed iOS search crash and native filter display
+- **Website Builder** — Fixed button links in new AI-generated sections being wiped on publish, bullet-point text disappearing on mobile, section background colors not showing on the live site, the footer phone number not being editable, and a page being selectable as its own parent page
 - **Website Builder** — Resolved publishing, form integration, product display, and live site sync issues
+- **Inbox** — Fixed an outage where messages were not sending, and a bug where a message you were composing jumped into a different athlete's conversation when their reply arrived at the same moment
+- **Inbox** — Fixed iOS search crash and native filter display
+- **Automations** — Fixed an error when saving an automation with the **Add booking to user** action, and session-cancellation variables that rendered as `[object Object]` or `undefined` in notifications
+- **Payments** — Fixed subscription counts on the **Subscriptions** page for organizations using revenue sharing, which were mixing partner-organization subscriptions into the parent view
+- **Athlete Portal** — Fixed products that could not be clicked on the paywall page, and the Meta Pixel from **Scripts & Analytics** not firing on the web edition of the athlete portal
+- **Scheduling** — Fixed a rescheduling glitch, and resolved bugs with athlete cancellations, availability display, time slot population, and the calendar "Upcoming" tab
+- **Credits** — Fixed issues with credit awarding, deductions, refunds, expiration display, and duplicate credit banks
+- **Native App** — Fixed login crashes, UI cutoff issues, and message creation errors
 - **Login** — Fixed a loop where the Continue button redirected back to the login screen
+
+**Earlier this year**
+
+Fixes that shipped in January and February: past session dates now display on a client's profile, private shared programs open correctly from the athlete portal, the **Products** filter no longer shows only cancelled subscriptions, and sales data for a product with revenue sharing enabled now appears in the organization that created it.
 
 </Update>
 
