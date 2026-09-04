@@ -29,8 +29,20 @@ Toggling a page off hides it for all athletes. The page's content isn't deleted 
 
 Click **Update Settings** to save any changes.
 
+## Renaming portal pages
+
+The labels athletes see in their navigation are yours to change, so the portal can say "Training" instead of "Programs" or "Book a Lesson" instead of "Sessions". The rename lives on each page, not in Menu & Links:
+
+| Page | Where to rename it |
+|------|--------------------|
+| **Programs** | App Builder → **Content** → gear icon → **Page Name**. See [Programs page settings](/athlete-portal/content#page-settings) |
+| **Products** | App Builder → **Products** → gear icon → **Page Name**. See [Products page settings](/athlete-portal/products#configuring-page-settings) |
+| **Sessions** | App Builder → **Schedule** → gear icon → page display name. See [Schedule page settings](/athlete-portal/schedule#page-settings) |
+
+Each of those Settings panels also has a **Slug** field for the URL path, so you can move `/sessions` to `/schedule` at the same time if you want the link to match the new name. Click **Update Page** on that page to save; the new label shows in **Menu & Links** and in the athlete navigation immediately.
+
 <Note>
-Page labels like "Programs" and "Sessions" can be customized per org. Your portal may show different names, but the URL paths (/programs, /products, /sessions) stay the same.
+Renaming is per organization. If you run several groups, each group's portal has its own labels.
 </Note>
 
 ## Still show Bookings to athletes
@@ -68,6 +80,10 @@ The **Active Domains** section shows the URLs athletes can use to access your po
 
   <Accordion title="Why don't I see the 'Still show Bookings to athletes' option?">
     This option only appears when **Sessions** is toggled off. Toggle **Sessions** off first and the option will appear below it.
+  </Accordion>
+
+  <Accordion title="Can I rename the pages athletes see?">
+    Yes. Open the page in the App Builder (Content, Products, or Schedule), click the gear icon, and change the page name and, if you like, the slug. See [Renaming portal pages](#renaming-portal-pages).
   </Accordion>
 </AccordionGroup>
 

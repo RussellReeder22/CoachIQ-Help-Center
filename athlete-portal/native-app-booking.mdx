@@ -1,0 +1,90 @@
+---
+title: "Booking in the native athlete app"
+description: "What athletes and parents see when they book from the iOS or Android app: the pay-or-credit prompt, purchases that open in the browser, and session location in Bookings"
+sidebarTitle: "Native App Booking"
+icon: "mobile-screen"
+keywords: ["native app", "iOS app", "Android app", "book in app", "pay or credit", "use a credit", "purchases in browser", "session location", "bookings tab", "parent bookings", "mobile booking"]
+---
+
+<Info>
+  **Where this applies**: the CoachIQ athlete app on iOS and Android, and any branded [Personalized App](/power-ups/personalized-app). The web portal is covered in [Understanding your Athlete Portal](/athlete-portal/understanding-your-athlete-portal).
+</Info>
+
+The native app is where most athletes and parents live day to day: they check tonight's practice, book next week's lesson, and read your announcements from their phone. Booking works the same way it does on the web, with one difference you should be able to explain to a parent: anything that needs a card finishes in the browser.
+
+## Booking a session
+
+<Steps>
+  <Step title="Pick a scheduler and a time">
+    The athlete opens your Schedule page in the app and picks a scheduler and a time slot, exactly as they would in the browser. The credit cost you set on the scheduler ("1 Credit") shows on the card.
+  </Step>
+  <Step title="Choose who the session is for">
+    A parent with more than one connected athlete is asked which athlete the booking is for, with the shared **Family Credits available** balance shown. See [Family accounts](/athlete-portal/family-accounts#booking-for-a-specific-family-member).
+  </Step>
+  <Step title="Pay or use a credit">
+    What happens next depends on how the scheduler is set to be paid:
+
+    - **Credits only**: the app deducts the credit and confirms the booking. Nothing leaves the app.
+    - **Payment only**: the app opens the browser so the athlete can complete payment, then returns them to the app with the booking confirmed.
+    - **Payment or credits**: the app asks whether to **pay** or **use a credit**, the same choice athletes get on the web. Choosing a credit finishes in the app; choosing to pay opens the browser.
+
+    An athlete whose credits are paused (for example, a membership marked inactive) is treated as having no usable credit and is offered payment instead. Fix the membership on the client's **Credits** tab if that is not what you intended.
+  </Step>
+  <Step title="Find the booking under Bookings">
+    The confirmed session appears in the app's **Bookings** tab with its date, time, and **location**. If you set a different venue on a specific date of the session, the per-date venue is what shows here, so the parent sees the right field for that day.
+  </Step>
+</Steps>
+
+## Why purchases open in the browser
+
+Apple classifies CoachIQ as a reader app: content bought elsewhere can be used in the app, but the purchase itself cannot happen in the app. That is why a paid booking, a product, or a membership opens the browser to finish checkout. Credits are not a purchase, so using one stays in the app.
+
+Tell parents this up front so a jump to the browser does not read as an error:
+
+> "If you pay by card, the app will open your browser to finish payment, then bring you back. If you use a credit, it all happens in the app."
+
+<Tip>
+  If athletes book with credits far more often than with a card, set your schedulers to accept credits (or credits and payment) so the everyday booking never leaves the app. See [Credits and schedulers](/scheduling/credits-and-schedulers).
+</Tip>
+
+## What parents see
+
+A parent's **Bookings** tab lists every connected athlete's sessions, grouped by athlete, with the session location on each. The parent does not need to switch into each child to check who has practice tonight. Reminders for a managed child go to the parent's device. Details in [Family accounts](/athlete-portal/family-accounts).
+
+## Staying signed in
+
+If a platform update is pushed while someone is using the app, the app signs them back in once the update completes rather than dropping them at the login screen. An athlete who is still logged out should update the app from the App Store or Google Play and sign in once.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="An athlete says the app sent them to the website to book">
+    That is the paid path: the scheduler needs payment (or the athlete has no usable credit), so the app opened the browser to complete checkout. Check two things on the athlete's profile: the **Credits** tab, to confirm they have an active credit that works for this scheduler, and the scheduler's payment settings, to confirm it accepts credits at all. If both look right and the app still redirects, make sure the athlete has the current app version, then contact support.
+  </Accordion>
+  <Accordion title="Can athletes buy a membership or credit pack inside the app?">
+    They can browse products in the app, but the purchase itself opens the browser. After paying they return to the app with the product and any credits already on their account.
+  </Accordion>
+  <Accordion title="Why does the location differ between two dates of the same session?">
+    Because you set a per-date venue on the scheduler. Each date can carry its own location, and the app shows the location for that date. See [Setup: locations](/scheduling/setup-locations).
+  </Accordion>
+  <Accordion title="Can athletes request account deletion in the app?">
+    Yes. The request lands in your **Inbox** for you to action; nothing is deleted automatically. See [Understanding your Athlete Portal](/athlete-portal/understanding-your-athlete-portal#common-questions).
+  </Accordion>
+</AccordionGroup>
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Understanding your Athlete Portal" icon="mobile" href="/athlete-portal/understanding-your-athlete-portal">
+    Web portal, iOS restrictions, and how athletes get access
+  </Card>
+  <Card title="Family Accounts" icon="people-roof" href="/athlete-portal/family-accounts">
+    Parents, managed children, and who receives reminders
+  </Card>
+  <Card title="Credits and schedulers" icon="coins" href="/scheduling/credits-and-schedulers">
+    Which credits work for which schedulers
+  </Card>
+  <Card title="Personalized App" icon="mobile-screen" href="/power-ups/personalized-app">
+    Your own branded app in the App Store
+  </Card>
+</CardGroup>

@@ -53,9 +53,13 @@ A page paywall is a monetization feature that restricts athlete access to entire
 
     - **Programs** - Training content, certifications, and courses
     - **Products** - Your product catalog and purchase options
-    - **Schedulers** - Session booking and calendar access
+    - **Schedulers** - The Schedule page and the schedulers you have added to it
 
     ![CoachIQ page selection checkboxes for choosing which pages to paywall](/images/selectwhichpagesyouwishtopaywall.png)
+
+    <Note>
+      Paywalling **Schedulers** restricts only the schedulers listed on your portal's Schedule page. A scheduler you link from a form, a website button, or a direct link stays bookable without the paywalled product, so intake forms and evaluation links keep working for prospects. To gate one of those schedulers too, attach a product to it directly — see [Attach products to schedulers](/payments/attach-products).
+    </Note>
   </Step>
   <Step title="Add qualifying products">
     Click **\+ Add Product** under the page section you want to paywall. This opens a product selection modal.
@@ -82,6 +86,10 @@ A page paywall is a monetization feature that restricts athlete access to entire
     1. The page is set to **Active** in Menu & Links settings
     2. Click **Update Paywall** to save your changes
     3. The paywall takes effect immediately for all athletes
+
+    <Warning>
+      A paywall needs an active page to sit in front of. If you turn the paywall on but no paywalled page is active, athletes are prompted to pick a page instead of seeing your content. Activate the page in **Menu & Links**, then save the paywall again.
+    </Warning>
   </Step>
 </Steps>
 
@@ -98,6 +106,10 @@ When an athlete without the required product tries to access a paywalled page, t
 - Description of what's included
 - "Purchase Now" or "Learn More" buttons
 - Professional branded appearance matching your portal
+
+<Note>
+  The paywall only stands in front of the page itself. An athlete who reaches a scheduler through a form, a button, or a direct link (rather than the Schedule page) can book it without the paywalled product, and a program you shared directly with an athlete stays visible even when the Programs page is paywalled.
+</Note>
 
 ## Managing multiple products on paywalls
 
@@ -188,6 +200,9 @@ Ensure your product descriptions clearly communicate:
 5. **Page not active**
    - Check: Menu & Links settings for page toggle
    - Solution: Activate the page in settings
+6. **Paywall on, but no active page selected**
+   - Symptom: athletes see a prompt to pick a page instead of the paywall or the content
+   - Solution: Activate at least one paywalled page in Menu & Links, then click **Update Paywall** again
 
 <Warning>
   **iOS App Limitation**: Due to Apple's Reader App policy, athletes cannot purchase products directly through the iOS app. They must use the web portal to purchase access to paywalled content.
@@ -241,6 +256,9 @@ Ensure your product descriptions clearly communicate:
 ## Common questions about paywalls
 
 <AccordionGroup>
+  <Accordion title="Does the Schedulers paywall block every scheduler I own?">
+    No. It blocks the schedulers you added to the portal's Schedule page. Schedulers reached through a form, a website button, or a direct link are not gated by the Pages Paywall. If you want one of those gated as well, attach a product to that scheduler in its own settings.
+  </Accordion>
   <Accordion title="Can I paywall individual programs instead of the whole Programs page?">
     No, paywalls work at the page level only. To restrict individual programs, use the program sharing settings in Content → Programs → [Program] → Share Settings instead.
   </Accordion>

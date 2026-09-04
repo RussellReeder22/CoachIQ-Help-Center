@@ -3,7 +3,7 @@ title: "Managing Your Coaching Staff"
 description: "Add coaches and admins to your team, control their access to platform features, and manage permissions for multi-coach operations"
 sidebarTitle: "Managing Staff"
 icon: "users-gear"
-keywords: ["staff", "coaches", "admin", "team", "add coach", "permissions", "access control", "staff roles", "multi-coach", "block pages"]
+keywords: ["staff", "coaches", "admin", "team", "add coach", "permissions", "access control", "staff roles", "multi-coach", "block pages", "custom access", "default coach access", "per-coach permissions"]
 ---
 
 <Info>
@@ -50,7 +50,7 @@ CoachIQ has two staff roles with different permission levels:
     - Book and manage sessions
     - Message clients
     - View assigned athletes
-    - Subject to default page blocks in **Default Coach Access**
+    - Subject to the page blocks in **Default Coach Access**, or to their own custom access if you set one
 
     **When to use:**
 
@@ -105,9 +105,12 @@ CoachIQ has two staff roles with different permission levels:
 
 ## Managing staff access (blocking pages)
 
-From **People** → **Staff**, use **Manage Staff Access** (next to **Add Staff**) to set default page blocks for coaches.
+Coach access works on two levels:
 
-Staff cards can show **Admin** or **Coach** with **Full Access**. A gear on a **Coach** card opens that person's profile, not a custom-access panel.
+- **Default Coach Access** is the fallback every coach inherits. Set it from **People** → **Staff** → **Manage Staff Access** (next to **Add Staff**).
+- **Custom access** is a per-coach set of page blocks that overrides the default for that one person. Set it by opening the coach from **Staff**.
+
+Each row on **Staff** shows the person's name, their role (**Admin** or **Coach**), and an access column. A coach on the default reads **Full Access** when nothing is blocked; a coach with their own restrictions reads **Custom**. Admins always show **Full Access**: they can view all pages and cannot be restricted.
 
 <Frame>
   ![People Staff list with a Coach and an Admin, both Full Access](/images/people-staff-list-coach.png)
@@ -144,7 +147,31 @@ An **Admin** staff profile shows **User Details** with **Role** set to **Admin**
   ![Admin staff User Details with Role Admin and no blocked-pages control](/images/people-staff-admin-detail.png)
 </Frame>
 
-A **Coach** staff profile also has **User Details** with **Role** set to **Coach**. There is no page-restriction editor there. The per-person access UI is **Block or Remove**:
+### Custom access for one coach
+
+Since September 2026 each coach can carry their own page restrictions instead of sharing one list with every other coach.
+
+<Steps>
+  <Step title="Open the coach from Staff">
+    On **People** → **Staff**, click the coach's card to open their profile. **User Details** shows **Role** set to **Coach**.
+  </Step>
+  <Step title="Set their custom access">
+    Use the coach's access settings to choose which pages this person is blocked from. Anything you set here overrides **Default Coach Access** for this coach only; the banner on the default screen ("Coach-specific settings override this fallback") is describing exactly this.
+  </Step>
+  <Step title="Save">
+    Save the change. Back on **Staff**, the coach's access column now reads **Custom** instead of **Full Access**, and the change applies the next time the coach loads a page.
+  </Step>
+</Steps>
+
+A coach with no custom access keeps following **Default Coach Access**, so you can leave most coaches on the default and only customize the exceptions (a front-desk coach who should see **Payments**, or a part-time trainer who should not see **People**).
+
+<Tip>
+  Keep the default as the *most* restrictive set you are comfortable with, then open up individual coaches. That way a newly added coach starts locked down until you decide otherwise.
+</Tip>
+
+### Blocking or removing a coach
+
+Separate from page access, a coach profile also has **Block or Remove**:
 
 - **Block User** — Prevent this user from joining this group or the entire organization. You can specify a reason for your records. Button: **Block User**.
 - **Remove from Group** — Remove this user from the current group. They will lose access to all group content. Button: **Remove User**.
@@ -184,7 +211,7 @@ Promote coaches to admins or demote admins to coaches as your team evolves.
     **Effect is immediate:**
 
     - **Coach → Admin**: Gains full access. Admins can view all pages.
-    - **Admin → Coach**: Subject to **Default Coach Access** (coaches without custom access)
+    - **Admin → Coach**: Subject to **Default Coach Access** until you give them custom access
   </Step>
 </Steps>
 
@@ -248,7 +275,7 @@ Staff members have the same profile structure as clients with all the same tabs.
 
 <AccordionGroup>
   <Accordion title="Can I give different coaches different permissions?">
-    Default page blocks apply to **Coaches without custom access**. Admins can view all pages. Opening a Coach from Staff opens their profile — **Block or Remove** is **Block User** / **Remove User**, not a page-restriction editor.
+    Yes. **Default Coach Access** applies to every coach without custom access. To give one coach a different set of page blocks, open that coach from **People** → **Staff** and set their custom access; it overrides the default for that person only. Admins can view all pages and cannot be restricted. See [Custom access for one coach](#custom-access-for-one-coach).
   </Accordion>
   <Accordion title="What if my coach already has a CoachIQ account?">
     No problem. When they log in, CoachIQ automatically connects them to your organization. They'll see your org in their account switcher (if they work for multiple orgs).
@@ -276,7 +303,7 @@ Staff members have the same profile structure as clients with all the same tabs.
 
 **Start restrictive, then open up**: When hiring your first assistant coach, block most pages initially. As they prove themselves, gradually grant more access rather than taking access away later.
 
-**Document your page blocks**: Keep a note of which pages you've blocked and why. This helps when onboarding new staff or troubleshooting access issues.
+**Document your page blocks**: Keep a note of which pages you've blocked by default and which coaches have custom access, and why. This helps when onboarding new staff or troubleshooting "why can't I see this page" questions.
 
 **Admin role for partners only**: Only make someone an Admin if they're a true business partner. Assistant coaches rarely need Admin access.
 

@@ -116,6 +116,13 @@ Track conversions and build retargeting audiences with Facebook Pixel.
   <Step title="Save your changes">
     Click **Update Analytics** to activate tracking.
   </Step>
+  <Step title="Verify the pixel fires on the portal">
+    In Meta **Events Manager**, open **Test Events** and load a portal page (your sign-up link, a form link, or the Schedule page) in a browser. A PageView from the portal should appear within a few seconds.
+
+    <Note>
+      Portal pages fire the pixel independently of your public website. If your website shows events in Test Events but portal pages do not, confirm the Pixel ID is saved here in the App Builder's **Scripts & Analytics**, not only in the Website Builder; the two are configured separately.
+    </Note>
+  </Step>
 </Steps>
 
 ## Adding External Scripts
@@ -187,6 +194,8 @@ document.addEventListener('click', function(e) {
     - **Ad blocker active** - Disable ad blockers when testing
     - **Wrong ID format** - Google Analytics IDs start with `G-`, Pixel IDs are numeric only
     - **Caching** - Try a hard refresh (Ctrl+Shift+R or Cmd+Shift+R)
+    - **Meta Pixel set only on the website** - The Website Builder and the App Builder each have their own Scripts & Analytics. Add the Pixel ID here for portal pages and check Meta **Test Events** while loading a portal URL
+    - **Testing in the mobile app** - Scripts only run in the web edition; open the portal in a browser to test
   </Accordion>
   <Accordion title="Do I need to add the full Google Analytics script?">
     No. Just paste your Measurement ID (e.g., `G-ABC123XYZ`) into the Google Analytics field. CoachIQ automatically loads and configures the tracking script for you.
