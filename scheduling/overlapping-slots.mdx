@@ -1,82 +1,102 @@
 ---
-title: "Set Up Overlapping Slots"
-description: "Offer sessions on a rolling cadence so athletes have more start times to choose from within your availability window."
-sidebarTitle: "Overlapping Slots"
+title: "Duration, Start Times, and Overlapping Sessions"
+description: "Set how long a session runs, how often a new one can start, and whether two bookings may share the same window."
+sidebarTitle: "Start Times & Overlap"
 icon: "layer-group"
+keywords: ["overlapping slots", "overlapping sessions", "start cadence", "new sessions can start", "slot cadence", "start every 30 minutes", "rolling start times", "duration", "advanced settings"]
 ---
 
-By default, CoachIQ generates booking slots back-to-back based on your session duration. Overlapping slots let you offer sessions on a rolling cadence instead — so athletes see more start time options on the same day.
+By default, CoachIQ offers start times back-to-back based on your session duration: a 60-minute session offers 9:00, 10:00, 11:00. The **Advanced settings** section of a scheduler lets you separate three things that used to be tied together:
+
+- **Duration** — how long one booked session runs
+- **New sessions can start** — how often a start time is offered
+- **Allow overlapping sessions** — whether two bookings of this session may occupy the same window
 
 <Info>
-**Where to find this:** Scheduling → Schedulers → open a scheduler → **Settings** tab
+**Where to find this:** Scheduling → Schedulers → open a scheduler → **Advanced settings**
 </Info>
 
-## How it works
+## The three controls
 
-When you enable overlapping slots, you choose a **Slot Cadence** — how frequently a new slot starts. Each slot is independently bookable and has its own capacity.
+| Control | What it does | Example |
+|---|---|---|
+| **Duration** | Length of one session. Presets **15 / 30 / 45 / 60 mins** or **Custom** (exact hours and minutes). | 60 min |
+| **New sessions can start** | The start-time grid: how often a family can grab a start time. Usually the same as duration. Presets 15 / 30 / 45 / 60 or Custom. | Every 30 min offers 9:00–10:00 *or* 9:30–10:30 |
+| **Allow overlapping sessions** | Checkbox. When **off**, a booking removes every later start time that would collide with it. When **on**, two bookings may occupy the same window. | Off: once 9:00 is booked, 9:30 disappears. On: 9:00 and 9:30 can both be booked. |
 
-**Example:** A 60-minute session with a 30-minute cadence generates three slots at 5:00 PM, 5:30 PM, and 6:00 PM — all available on the same day.
+The three are independent. Setting a start cadence shorter than the duration does **not** turn overlap on; it just gives families more start times to choose from, and the first booking clears the ones that would collide.
 
-This works well for:
-- Drop-in group training where athletes pick their own entry time
-- Long sessions where you want frequent start points throughout your availability window
-- Formats where multiple athletes can be in overlapping windows simultaneously
+## Common setups
 
-## Enable overlapping slots
+<Tabs>
+  <Tab title="Flexible starts, no overlap">
+    **Duration 60 · New sessions can start 30 · Allow overlapping sessions off**
+
+    Athletes see 9:00, 9:30, 10:00, 10:30. When someone books 9:30–10:30, the 9:00 and 10:00 starts drop out because they would collide; 10:30 stays. One athlete at a time, but nobody is forced onto the hour.
+
+    Best for private lessons where you want to fill gaps without ever double-booking yourself.
+  </Tab>
+  <Tab title="Rolling drop-in">
+    **Duration 60 · New sessions can start 15 · Allow overlapping sessions on**
+
+    Start times at 9:00, 9:15, 9:30 and so on, each a full 60-minute session that overlaps the next. Every start time keeps its own capacity.
+
+    Best for open gym, drop-in conditioning, or any format where athletes can enter while others are mid-session.
+  </Tab>
+  <Tab title="Classic back-to-back">
+    **Duration 60 · New sessions can start 60 · Allow overlapping sessions off**
+
+    The default. 9:00, 10:00, 11:00, one session per hour.
+  </Tab>
+</Tabs>
+
+## Set it up
 
 <Steps>
   <Step title="Open your scheduler">
-    Go to **Scheduling** in the left sidebar, then open the scheduler you want to edit.
+    Go to **Scheduling → Schedulers** and open the scheduler you want to edit.
   </Step>
 
-  <Step title="Go to the Settings tab">
-    Click **Settings** in the left nav of the scheduler editor.
-  </Step>
-
-  <Step title="Enable the toggle">
-    Under **Duration**, check **Allow overlapping slots within this session**. The **Slot Cadence** options will appear once the box is checked.
+  <Step title="Go to Advanced settings">
+    Click **Advanced settings** in the left rail of the scheduler builder.
 
     <Frame>
-      ![Slot cadence options appear after enabling the Allow overlapping slots toggle](/images/scheduling/overlapping-session-cadence.png)
+      ![Advanced settings with Duration, New sessions can start, and Allow overlapping sessions](/images/scheduling/overlapping-session-cadence.png)
     </Frame>
   </Step>
 
-  <Step title="Choose a slot cadence">
-    Select how often you want a new slot to start:
+  <Step title="Set Duration">
+    Pick **15**, **30**, **45**, or **60 mins**, or **Custom** for an exact length.
+  </Step>
 
-    | Cadence | Best for |
-    |---------|----------|
-    | **Every hour (on the hour)** | Long sessions with wide availability windows |
-    | **Every 30 minutes** | 60-min sessions with moderate flexibility |
-    | **Every 20 minutes** | Mid-length sessions with frequent entry points |
-    | **Every 15 minutes** | Short sessions or high-demand time blocks |
-    | **Every 10 minutes** | Very short sessions or fitness drop-ins |
-    | **Every 5 minutes** | Maximum flexibility |
-    | **Custom minute marks** | Any specific cadence not listed above |
+  <Step title="Set New sessions can start">
+    Choose how often a start time is offered. Leave it equal to the duration for back-to-back slots, or make it shorter to offer more start times.
+  </Step>
+
+  <Step title="Decide on Allow overlapping sessions">
+    Leave the box **unchecked** to keep one booking per window. Check it only when athletes really can be in the space at the same time.
   </Step>
 
   <Step title="Save">
-    Click **Update** in the top right to save your changes.
+    Click **Update** in the top right.
   </Step>
 </Steps>
 
-<Note>
-Buffers do not apply when a slot cadence is set. If you rely on buffer time between sessions, overlapping slots may not be the right fit for that scheduler.
-</Note>
-
 ## What athletes see
 
-Athletes will see each available start time listed as a separate slot on the booking calendar, along with how many spots are still open for each.
+Athletes see each offered start time as a separate slot on the booking calendar, with how many spots are still open for each. With overlap off, start times that would collide with an existing booking simply stop appearing.
 
 <Frame>
-  ![Athlete booking view showing overlapping time slots listed separately with available spots](/images/scheduling/overlapping-sessions-athlete-side.png)
+  ![Athlete booking view showing start times listed separately with available spots](/images/scheduling/overlapping-sessions-athlete-side.png)
 </Frame>
 
 ## Things to know
 
-- Each slot has its own capacity — booking one slot does not affect availability on overlapping slots.
-- This setting is per-scheduler, so you can enable it on some session types and leave others unchanged.
-- Overlapping slots work the same way whether athletes are paying by card or using credits.
+- **Allow overlapping sessions** only concerns bookings of *this* scheduler. Coach and resource conflicts with other schedulers are still enforced unless you turn those off separately (the connected-coaches checkbox and **Allow resource double booking**).
+- Capacity is per start time. With overlap on, each start time fills independently; see [Session capacity](/scheduling/scheduler-settings-limits-and-permissions#setting-1-session-capacity).
+- These settings are per scheduler, so you can offer rolling starts on drop-ins and leave lessons on the hour.
+- Card and credit payments behave the same way; the payment method does not change which start times are offered.
+- **Buffers** (before and after, in the same Advanced settings section) still add time around each session. If you use a short start cadence together with buffers, test the booking page to make sure the start times you expect are the ones offered.
 
 ## Related articles
 
@@ -84,5 +104,5 @@ Athletes will see each available start time listed as a separate slot on the boo
   <Card title="Creating Your First Scheduler" href="/scheduling/creating-your-first-scheduler" />
   <Card title="Scheduler Settings: Limits and Permissions" href="/scheduling/scheduler-settings-limits-and-permissions" />
   <Card title="Advanced Scheduler Settings" href="/scheduling/advanced-scheduler-settings" />
-  <Card title="Setting Up Credit-Based Sessions" href="/scheduling/setting-up-payment-options#option-3-setting-up-credit-based-sessions" />
+  <Card title="Setting Up Payment Options" href="/scheduling/setting-up-payment-options" />
 </CardGroup>

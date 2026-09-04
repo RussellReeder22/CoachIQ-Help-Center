@@ -3,7 +3,7 @@ title: "Calendar: Your Scheduling Command Center"
 description: "Master calendar views, filtering, and navigation to manage all your sessions, bookings, and athletes efficiently."
 sidebarTitle: "Calendar Overview"
 icon: "calendar"
-keywords: ["calendar", "calendar view", "schedule view", "see bookings", "daily view", "weekly view", "list view"]
+keywords: ["calendar", "calendar view", "schedule view", "see bookings", "daily view", "weekly view", "list view", "month view", "coach on calendar", "resources on calendar", "quick add coach", "quick add resource", "sticky header", "mobile calendar"]
 ---
 
 <Info>
@@ -48,7 +48,9 @@ Before diving in, clarify the distinction between schedulers and the calendar:
 
 ## The four calendar views
 
-CoachIQ offers four distinct views, each optimized for different tasks.
+CoachIQ offers four distinct views, each optimized for different tasks. All four were rebuilt for large schedules: the date bar and time column stay pinned while you scroll in Week and Day view, session cards carry the same details in every view, and the calendar works down to phone and tablet widths.
+
+Every session card, in every view, shows the same details: session name, time, participant initials, the **coach** running it, and any attached **resources** (the cage, court, or room), so you can see who is running a session and where without clicking into it.
 
 ### Day View
 
@@ -56,10 +58,10 @@ CoachIQ offers four distinct views, each optimized for different tasks.
 
 **What you see**:
 
-- Hour-by-hour grid for selected day
-- All sessions with time blocks
+- Hour-by-hour grid for the selected day, with the time column pinned on the left as you scroll
+- All sessions as fixed-width cards; sessions at the same time sit side by side and the grid scrolls horizontally when they do not fit
 - Participant initials in each session
-- Session names and scheduler types
+- Session names, coach, and resources
 - Color-coded by scheduler
 
 **When to use**:
@@ -90,9 +92,10 @@ CoachIQ offers four distinct views, each optimized for different tasks.
 
 **What you see**:
 
-- 7-day grid (Sunday - Saturday)
-- All sessions across the week
-- Participant initials per session
+- 7-day grid (Sunday - Saturday) with the date bar pinned at the top and the time column pinned on the left while you scroll in either direction
+- All sessions across the week as cards; columns are fixed-width and scroll horizontally so long session names and several participants still fit
+- Participant initials, coach, and resources per session
+- When a time cell holds more sessions than fit, hover it to reveal the rest
 - Visual distribution of workload
 - Color patterns by scheduler type
 
@@ -130,9 +133,9 @@ CoachIQ offers four distinct views, each optimized for different tasks.
 
 **What you see**:
 
-- 30-day calendar grid
-- Session count per day
-- First few participant initials
+- Full-month calendar grid, with the trailing and leading days of the neighbouring months shown faintly for context
+- Session count circle on each day
+- Session cards with participant initials, coach, and resources
 - High-level booking patterns
 - Busy vs. slow periods
 
@@ -167,13 +170,17 @@ CoachIQ offers four distinct views, each optimized for different tasks.
 
 **What you see**:
 
-- Chronological list of all bookings
-- Three tabs: **Upcoming**, **Canceled**, **Past**
+- Chronological list of all bookings, grouped under a header row for each day
+- Three filter tabs: **Upcoming**, **Canceled**, **Past**
+- A fixed table header, and the current day's header pins to the top as you scroll (Monday pins, then Tuesday takes over)
+- Today highlighted
 - Detailed information per session:
-  - Athlete name and email
-  - Date and time
+  - Athletes (stacked avatars for group sessions)
+  - Time (the date is in the day header)
   - Duration
-  - Session/scheduler name
+  - Session/scheduler name, coach, and resources
+
+The List view works down to phone and tablet widths, so it is the view to use on a mobile browser.
 
 **When to use**:
 
@@ -256,6 +263,10 @@ The calendar uses visual indicators to convey information quickly.
 </Tip>
 
 ---
+
+### Coach and resources
+
+Each session card names the coach assigned to that occurrence and lists its attached resources, in Month, Week, and Day view alike. Use them to answer "who has the 4 pm?" and "is Cage 2 free at 5?" without opening the session. With a scheduler on **Use first available**, the card shows the specific resource that booking reserved. Details on how resources are assigned: [Resources](/scheduling/resources).
 
 ### Participant initials
 
@@ -594,7 +605,10 @@ Perform common tasks directly from the calendar interface.
 - Date, time, duration
 - Participants (with capacity: 4/10)
 - Coach assigned
+- Resources reserved
 - Location
+
+**Quick Add a coach or resource**: if the occurrence has no coach or is missing a resource, add one right here from the click view. The coach or resource is attached to this occurrence only, so a one-off cover coach or an extra cage for a busy night does not change the scheduler. To change every future occurrence, edit the scheduler's **Coaches** or **Resources** section instead.
 
 **Available actions**:
 
@@ -643,21 +657,21 @@ Perform common tasks directly from the calendar interface.
       **Group communication**: This is the fastest way to message all athletes in a specific session without manually selecting each one.
     </Tip>
   </Tab>
-  <Tab title="Edit/Cancel Session">
-    **Function**: Modify session details or cancel entirely
+  <Tab title="Move / Edit / Cancel Session">
+    **Function**: Change the occurrence or cancel it entirely
 
     **Edit options**:
 
-    - Change time
-    - Change duration
+    - **Move Session** (header): move the whole occurrence, with every booking, coach, and resource, to a new date and time. See [Move an entire session](/scheduling/editing-rescheduling-bookings#move-an-entire-session)
+    - **Duration → Edit**: change the length of this occurrence without changing its start
+    - **Location → Edit** and **Coaches → Edit**
     - Add/remove participants
-    - Update notes
 
-    **Cancel options**:
+    **Cancel options** (red trash icon in the header, opens **Cancel Session**):
 
-    - Cancel entire session
+    - Cancel the entire occurrence and every booking on it
     - Choose whether to refund credits
-    - Send cancellation notification to participants
+    - Notify participants by Announcement, SMS, or In-app message. See [Cancel an entire session](/scheduling/canceling-bookings#cancel-an-entire-session-from-the-calendar)
 
     **Use case**: "I need to reschedule Tuesday's session to Thursday"
 
@@ -719,7 +733,7 @@ Perform common tasks directly from the calendar interface.
     - `7` = 7 sessions scheduled that day
     - No number = No sessions
 
-    **Additional info**: Below the number, you'll see participant initials for first few sessions
+    **Additional info**: Below the number, the day's session cards show participant initials, coach, and resources
 
     **Click the day** to see full session details in Day View
   </Accordion>
@@ -750,6 +764,9 @@ Perform common tasks directly from the calendar interface.
     4. Contact support - this is a potential conflict needing resolution
 
     **Prevention**: System typically blocks overlapping bookings for same athlete
+  </Accordion>
+  <Accordion title="Can I use the calendar on my phone?">
+    Yes. The calendar, including the **List** view with its pinned day headers, works at phone and tablet widths in a mobile browser. For the fastest check-ins and day-of changes on a phone, use List view for today and open sessions from there.
   </Accordion>
 </AccordionGroup>
 
@@ -803,7 +820,7 @@ Perform common tasks directly from the calendar interface.
 - Use List View for detailed participant information
 - Filter by specific athlete to see their sessions clearly
 
-**"+X more" indicator**: Click session to see all participants
+**More sessions than fit in a Week cell**: hover the cell to reveal the rest, or switch to Day view for that date
 
 ---
 

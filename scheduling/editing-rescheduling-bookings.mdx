@@ -12,9 +12,9 @@ keywords: ["edit booking", "reschedule", "change booking", "move session", "chan
 
 ## Editing a booking
 
-On **Schedule** → **Calendar**, click a session. The click view shows **Duration**, **Time Slot**, **Location**, **Coaches**, and participants.
+On **Schedule** → **Calendar**, click a session. The click view shows **Duration**, **Time Slot**, **Location**, **Coaches**, resources, and participants.
 
-**Duration**, **Location**, and **Coaches** each have **Edit**. **Time Slot** does not. The header includes **Move Session**. Footer: **Add Participants** and **Send Message to All**.
+**Duration**, **Location**, and **Coaches** each have **Edit**. **Time Slot** does not; to change the date or time, use **Move Session** in the header (below). You can also add a coach or a resource to this one occurrence from the click view without opening the scheduler. Footer: **Add Participants** and **Send Message to All**.
 
 <Frame>
   ![Calendar session click view with Duration, Time Slot, Location, and Coaches](/images/scheduling-calendar-click-duration.png)
@@ -42,31 +42,57 @@ On **Schedule** → **Calendar**, click a session. The click view shows **Durati
 
 ---
 
-## Rescheduling a booking
+## Move an entire session
 
-Move a booking to a different date or time.
+Use **Move Session** when the whole occurrence has to change date or time: a coach is sick, the facility is closed, a practice shifts from Tuesday to Wednesday. It moves the occurrence with everything attached to it in one action, instead of rebooking each athlete.
+
+Where to find this: **Schedule → Calendar → click the session**
+
+### What moves with the session
+
+- Every participant booking on that occurrence
+- The assigned coach or coaches
+- The attached resources
+
+Nothing about the scheduler changes. Other dates of the same session stay where they are, and the moved occurrence keeps its duration, location, price, and payment status.
+
+### Move the session
 
 <Steps>
-  <Step title="Open the booking">
-    Go to **Schedule** → **Calendar** and click on the booking you want to move.
+  <Step title="Open the session">
+    Go to **Schedule** → **Calendar** and click the session you want to move. **Move Session** is in the header of the click view, next to the red trash icon that opens [Cancel Session](/scheduling/canceling-bookings#cancel-an-entire-session-from-the-calendar).
   </Step>
 
   <Step title="Click Move Session">
-    In the booking detail, click **Move Session**.
+    The **Move Session** dialog opens with the current date and time shown.
   </Step>
 
-  <Step title="New Date & Time">
-    Set **New Date & Time**.
+  <Step title="Set New Date & Time">
+    Pick the new date and start time under **New Date & Time**. The session keeps its current duration, so the end time follows.
+
+    Moving a session does not check the new time against your availability template, so confirm the coach and any resources are actually free before you move it.
   </Step>
 
-  <Step title="Move Session">
-    Click **Move Session**.
+  <Step title="Choose how to notify participants">
+    **Notify participants** is on by default, with **In-app** pre-checked. The message is prefilled with the original date and time and the new one; edit it to add a personal note (why it moved, what to bring).
+  </Step>
+
+  <Step title="Confirm">
+    Click **Move Session**. The occurrence and all its bookings appear at the new time immediately; the old time is freed.
 
     <Check>
-    Athletes automatically receive a notification with the original date and time and the new one.
+    Every participant receives the move announcement with the original date and time and the new one.
     </Check>
   </Step>
 </Steps>
+
+<Frame>
+  ![Move Session on the calendar session detail](/images/scheduling-move-session-modal.png)
+</Frame>
+
+### Moving one athlete, not the whole session
+
+**Move Session** always moves every participant. To move a single athlete out of a group session, cancel that athlete's booking and book them into the new time (see [Canceling bookings](/scheduling/canceling-bookings) and [Manually booking athletes](/scheduling/manually-booking-athletes)). For one date of a recurring booking, use **Change** in the [Occurrences view](/scheduling/recurring-bookings#changing-one-occurrence) instead.
 
 ---
 
@@ -111,10 +137,6 @@ When you **Move Session**, the announcement includes the original date and time 
 The announcement follows this pattern:
 
 `[session name] moved from [day, date] at [start - end] to [day, date] at [start - end].`
-
-<Frame>
-  ![Move Session on the calendar session detail](/images/scheduling-move-session-modal.png)
-</Frame>
 
 <Frame>
   ![In-app announcement after a move, naming the original time and the new time](/images/inbox-reschedule-moved-from-to.png)

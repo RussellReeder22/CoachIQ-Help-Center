@@ -271,6 +271,10 @@ Recurring bookings allow you to schedule multiple sessions for an athlete automa
     3. All sessions appear on your calendar
     4. Athlete receives notification (if notifications enabled)
 
+    <Note>
+      **Conflict warning.** If any occurrence in the series overlaps another booking on the same session, CoachIQ stops and tells you which booking it collides with before creating anything. You can confirm and proceed (a deliberate double-up for a special arrangement) or back out and adjust the pattern. On a capacity-1 session, proceeding puts two athletes in the same slot, so treat the warning as a real one unless you meant it.
+    </Note>
+
     **What happens next**:
 
     - Each session appears as individual booking on calendar
@@ -355,6 +359,7 @@ Once recurring bookings are created, you have full control over each individual 
 - No impact on other sessions in the series
 - Athlete receives notification of the time change
 - Calendar reflects the updated time
+- **Past dates can be changed too.** If a session actually ran at a different time than the record shows, open the past occurrence and **Change** it so attendance and billing history are accurate. Upcoming sessions are not affected.
 
 ---
 
@@ -392,6 +397,10 @@ Once recurring bookings are created, you have full control over each individual 
 - Athlete receives cancellation notification
 - Cannot "un-skip" later—you'd need to manually book that date if athlete wants it back
 
+<Note>
+  **Skip works on past dates as well as future ones.** If a session in the past did not happen (snow day, athlete no-show you agreed to waive), skip that occurrence to correct the record without touching the upcoming sessions.
+</Note>
+
 ---
 
 ## Making changes to the entire recurring pattern
@@ -424,11 +433,15 @@ Once recurring bookings are created, you have full control over each individual 
   <Step title="Delete the pattern">
     Look for the **"Delete"** option within the Occurrences view.
 
-    **What happens**: Deletes the entire recurring booking pattern—all future sessions removed.
+    **What happens**: Deletes the recurring booking pattern—all remaining future sessions are removed.
 
     <Warning>
-      **This action is permanent**: All remaining sessions are deleted. Cannot be undone.
+      **This action is permanent**: All remaining future sessions are deleted. Cannot be undone.
     </Warning>
+
+    <Note>
+      **Past occurrences are kept.** Deleting or editing a series does not remove the sessions that already happened. They stay on the calendar and on the athlete's profile, so attendance and billing records are intact.
+    </Note>
   </Step>
   <Step title="Confirm deletion">
     System asks for confirmation—click **"Delete All"** to proceed.
@@ -439,6 +452,7 @@ Once recurring bookings are created, you have full control over each individual 
 
 **After deletion**:
 
+- Past sessions from the series remain in the athlete's history
 - Create a new recurring pattern if needed
 - Or switch to manual booking going forward
 - Or athlete stops training entirely

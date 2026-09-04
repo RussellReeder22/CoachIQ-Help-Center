@@ -1,9 +1,9 @@
 ---
 title: "Locations"
-description: "Save the places you coach, attach them to schedulers, and let athletes see exactly where to show up."
+description: "Save the places you coach, attach them to schedulers, give individual dates their own venue, and let athletes see exactly where to show up."
 sidebarTitle: "Locations"
 icon: "map-pin"
-keywords: ["locations", "address", "facility", "where sessions happen", "multiple locations", "scheduler location", "setup locations"]
+keywords: ["locations", "address", "facility", "where sessions happen", "multiple locations", "scheduler location", "setup locations", "per-date venue", "different location each date", "venue per date"]
 ---
 
 <Info>
@@ -24,7 +24,7 @@ Locations also anchor [Resources](/scheduling/resources). A court or cage belong
 
 <Steps>
   <Step title="Open Setup → Locations">
-    Go to **Scheduling → Setup** and click the **Locations** tab, then **Add location**.
+    Go to **Scheduling → Setup** and click the **Locations** tab, then **Add setup**.
   </Step>
   <Step title="Enter the address">
     Give the location a short **title** athletes will recognise ("Main Gym", "Field 3 at Riverside Park") and fill in the street address. The title shows on bookings; the address powers map links.
@@ -39,21 +39,38 @@ Locations also anchor [Resources](/scheduling/resources). A court or cage belong
 
 ## Attaching a location to a scheduler
 
-Open the scheduler from **Scheduling → Schedulers**, scroll to the **Location** section, and pick a saved location. You can also type a new address there; it is saved to Setup → Locations automatically so you can reuse it.
+Open the scheduler from **Scheduling → Schedulers**, go to the **Location** section, and use **Select Location** to pick a saved location. **Add Location** lets you type a new address there; it is saved to Setup → Locations automatically so you can reuse it.
 
-A scheduler has one location. If you run the same session at two sites, create two schedulers (duplicate the first) and give each its own location. That keeps the address on every booking correct and lets you compare the two sites in [Calendar analytics](/scheduling/calendar-analytics).
+The location you pick here is the scheduler's **default** venue. Every date uses it unless you give that date its own location (next section).
+
+## A different venue for each date
+
+A team that practices Tuesdays at one field and Thursdays at another does not need two schedulers. Each date in the scheduler's availability can carry its own location:
+
+- Every date starts on the scheduler's default location, shown as the session default until you change it.
+- Open the specific date in the availability template the scheduler uses and pick a different saved location for that date only. Other dates are not affected.
+- Clear the override and the date falls back to the scheduler's default again.
+- Changing the scheduler's default location updates every date that has not been given its own venue.
+
+Set the venue on each date at the time you add it, so the schedule athletes see is correct from the start. If you later move the whole team to a new field, change the default on the scheduler rather than each date.
+
+<Tip>
+  A scheduler can still be split by venue if you want to compare sites in [Calendar analytics](/scheduling/calendar-analytics), but it is no longer required. One scheduler with per-date venues keeps one roster, one set of reminders, and one automation to maintain.
+</Tip>
 
 ## What athletes see
 
-The location title and address appear:
+The location title and address for the specific date appear:
 
 - On the session card in the athlete portal before booking
-- In the booking confirmation and reminder messages
+- On the athlete's schedule and in the booking confirmation and reminder messages
 - On the calendar event if the athlete adds it to their phone
+
+When a date has its own venue, athletes see that venue, not the scheduler default, in each of these places.
 
 ## Editing and removing
 
-Click a location card to edit the title, address, or hours. Changes apply to every scheduler that uses it, including sessions already booked.
+Click a location card to edit the title, address, or hours. Changes apply to every scheduler and date that uses it, including sessions already booked.
 
 You cannot delete a location while schedulers use it. The **USED BY** list on the card tells you which ones to move first.
 
@@ -61,13 +78,16 @@ You cannot delete a location while schedulers use it. The **USED BY** list on th
 
 <AccordionGroup>
   <Accordion title="I coach at the athlete's home or a different park each time">
-    Create a location called "Travel session" with your base address and explain in the scheduler description that the exact spot is confirmed by message. Use the booking **Notes** field to record the address per booking.
+    If the venues are known in advance, save each one and give each date its own location as described above. If the exact spot is confirmed by message, create a location called "Travel session" with your base address, explain in the scheduler description that the exact spot is confirmed by message, and use the booking **Notes** field to record the address per booking.
   </Accordion>
   <Accordion title="Do locations affect what time slots are shown?">
     No. Availability comes from your templates, and conflicts come from coaches and resources. A location is a label and address, not a calendar.
   </Accordion>
   <Accordion title="Can two schedulers at different locations overlap?">
     Yes, unless they share a coach or a resource. That is the point of resources: attach "Court A" to both and CoachIQ prevents the double-booking. See [Resources](/scheduling/resources).
+  </Accordion>
+  <Accordion title="Does a per-date venue change the resources for that date?">
+    Not on its own. Resources and duration can also be set per date, from the scheduler's **Availability → Specific-date settings**. See [Resources](/scheduling/resources#different-resources-on-different-dates) and [Advanced scheduler settings](/scheduling/advanced-scheduler-settings#a-different-duration-on-one-date).
   </Accordion>
 </AccordionGroup>
 

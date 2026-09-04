@@ -200,8 +200,8 @@ This is where you define WHEN this scheduler can be booked.
       ![CoachIQ scheduler start and end date configuration for availability](/images/current-avaliabilty.png)
     </Frame>
   </Step>
-  <Step title="Add an Additional Availablity (optional)">
-    If you need to attach another availability to your scheduler, you can select one from the Addtional Availability tab.
+  <Step title="Add an Additional Availability (optional)">
+    If you need to attach another availability to your scheduler, click **Add Additional Availability** and select one.
 
     **Good to use if you're:**
 
@@ -211,7 +211,14 @@ This is where you define WHEN this scheduler can be booked.
       ![CoachIQ additional availability tab for attaching a second schedule](/images/additional-availability.png)
     </Frame>
   </Step>
+  <Step title="Adjust individual dates (optional)">
+    Below the availability pickers, **Specific-date settings** lets you give one configured date its own duration or resources, and each date can carry its own venue. You will only need this for sessions that vary by date, such as a team that practices indoors for 90 minutes on Tuesdays and on the field for 150 minutes on Saturdays. Details: [A different duration on one date](/scheduling/advanced-scheduler-settings#a-different-duration-on-one-date), [Different resources on different dates](/scheduling/resources#different-resources-on-different-dates), [A different venue for each date](/scheduling/setup-locations#a-different-venue-for-each-date).
+  </Step>
 </Steps>
+
+<Warning>
+  **Availability is required to save.** If you click **Create** or **Update** without an availability selected, the builder shows an error and does not save, instead of creating a scheduler that can never be booked. Pick an availability template (or create one) and save again. The builder also previews what athletes will see once availability is connected, so you can confirm slots appear before you publish.
+</Warning>
 
 ## Step 4: Configure payment settings
 
@@ -228,8 +235,8 @@ Decide how athletes will pay for this scheduler.
 
     **How to set up**:
 
-    1. Find payment section
-    2. Select **Free**
+    1. Open the **Payment** section
+    2. Leave the toggle on **Free**
 
     <Check>
       **Result**: Athletes can book without any payment or credits.
@@ -249,7 +256,7 @@ Decide how athletes will pay for this scheduler.
 
     <Steps>
       <Step title="Select payment type">
-        Find payment options and select **Paywall**
+        In the **Payment** section, set the toggle to **Paywalled**, then under **How they pay** choose **Price**
       </Step>
       <Step title="Connect or create product">
         You need a payment product:
@@ -279,7 +286,7 @@ Decide how athletes will pay for this scheduler.
 
     <Steps>
       <Step title="Enable credit payment">
-        Find payment settings and select **Credit Charge**
+        In the **Payment** section, set the toggle to **Paywalled**, then under **How they pay** choose **Credit**
       </Step>
       <Step title="Set credit cost">
         Enter how many credits this session costs:
@@ -859,8 +866,9 @@ Final checks before activating your scheduler.
     3. Most common missing items:
        - Scheduler name
        - Duration
-       - Availability (no days/times set)
+       - Availability (none selected — the builder shows an explicit error for this and will not save until one is connected)
        - Payment configuration incomplete
+       - A specific date whose time window is shorter than the duration that applies to it (the error names the date; widen the window or shorten that date's duration)
     4. Complete all required fields marked with \* or red indicators
     5. Try saving again
   </Accordion>
@@ -874,6 +882,8 @@ Final checks before activating your scheduler.
     3. **Availability in past** - End date already passed
     4. **All dates blocked** - Blackout days covering everything
     5. **Buffer time too long** - Consuming entire availability window
+
+    **Read the message the athlete sees**: a time that is simply outside your availability now shows a plain "no availability" message. A coach-conflict message only appears when a connected coach really is booked at that time, so if an athlete reports one, check the calendar for that coach; if they report no availability, check the availability template and date range instead.
 
     **How to fix**:
 

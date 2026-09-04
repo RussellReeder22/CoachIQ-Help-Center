@@ -22,7 +22,7 @@ From a session on the calendar, **Duration** → **Edit** opens **Edit Duration*
 
 **Per-date duration and resources on a session**
 
-A single session can now carry a different length and different equipment on different dates — a 90-minute indoor practice on Tuesday and a 150-minute field practice on Saturday under one session, each with its own cage, mound, or turf. A date window shorter than the duration is now rejected on save instead of silently producing no bookable slots.
+A single session can now carry a different length and different equipment on different dates — a 90-minute indoor practice on Tuesday and a 150-minute field practice on Saturday under one session, each with its own cage, mound, or turf. Set it under **Availability → Specific-date settings** in the scheduler builder. A date window shorter than the duration is now rejected on save instead of silently producing no bookable slots. [Learn more →](/scheduling/advanced-scheduler-settings#a-different-duration-on-one-date)
 
 **Book by tag in New Booking**
 
@@ -30,7 +30,7 @@ On **Schedule** → **Calendar** → **+ Book Session**, the **Client** field li
 
 **Allow resources to be double-booked on a scheduler**
 
-In the scheduler builder, resources now have the same checkbox that connected coaches have: allow the attached resources to be booked at the same time by more than one session. Leave it off to keep double-booking prevention. [Learn more →](/scheduling/resources)
+In the scheduler builder, resources now have the same checkbox that connected coaches have: **Allow resource double booking** lets the attached resources be booked at the same time by more than one session. Leave it off to keep double-booking prevention. [Learn more →](/scheduling/resources#allow-resource-double-booking)
 
 **Shared Calendar share modes**
 
@@ -157,15 +157,15 @@ In a scheduler's **Advanced settings**, **Duration** and **New sessions can star
 
 **Free or Paywalled payment block**
 
-The scheduler builder's **Payment** block starts with **Free** or **Paywalled**. Paywalled then lets families pay with a **price**, **credits**, or **either**. No new payment types — the same options, laid out so the choice is obvious. [Learn more →](/scheduling/setting-up-payment-options)
+The scheduler builder's **Payment** block starts with **Free** or **Paywalled**. Paywalled then asks **How they pay**: **Price**, **Credit**, or **Either**. No new payment types — the same options, laid out so the choice is obvious. [Learn more →](/scheduling/setting-up-payment-options)
 
 **A different venue for each session date**
 
-Each date in a scheduler's availability can carry its own location, defaulting to the scheduler's location until you change it, so a team that practices Tuesdays at one field and Thursdays at another no longer needs a duplicate scheduler per venue. Athletes and parents see the per-date venue on their schedule, in the athlete portal, and in reminders. [Learn more →](/scheduling/setup-locations)
+Each date in a scheduler's availability can carry its own location, defaulting to the scheduler's location until you change it, so a team that practices Tuesdays at one field and Thursdays at another no longer needs a duplicate scheduler per venue. Athletes and parents see the per-date venue on their schedule, in the athlete portal, and in reminders. [Learn more →](/scheduling/setup-locations#a-different-venue-for-each-date)
 
-**Resources: Fixed or Any open**
+**Resources: Reserve all or Use first available**
 
-In a scheduler's **Resources** block, choose how a space is picked: **Fixed** (every attached resource is required, the previous behavior) or **Any open** (the booking takes one free resource from the pool). Two hitting lessons at 4:00 can now each take a free cage without you building a scheduler per cage; staff see which resource was reserved. [Learn more →](/scheduling/resources)
+In a scheduler's **Resources** block, **Reservation behavior** decides how a space is picked: **Reserve all** (every attached resource is required, the previous behavior) or **Use first available** (the booking takes one open resource from the pool). Two hitting lessons at 4:00 can now each take a free cage without you building a scheduler per cage; staff see which resource was reserved. [Learn more →](/scheduling/resources#reservation-behavior-reserve-all-or-use-first-available)
 
 **Connect coaches to individual sessions**
 
@@ -354,11 +354,11 @@ The athlete portal's page labels can be renamed beyond just the header, so the p
 
 **Archive Schedulers**
 
-You can now archive a scheduler from **Schedule → Schedulers** to take it out of your active list and off the athlete portal without deleting it. Past bookings and history stay intact, and an archived scheduler can be restored later — handy for retiring a season's clinics or a camp that has run its course. [Learn more →](/scheduling/organizing-schedulers)
+You can now archive a scheduler with the **Archive** button in the scheduler builder to take it out of your active list and off the athlete portal without deleting it. Past bookings and history stay intact, and an archived scheduler can be restored later — handy for retiring a season's clinics or a camp that has run its course. [Learn more →](/scheduling/organizing-schedulers#archiving-a-scheduler)
 
 **Per-Athlete Booking Limits**
 
-**Scheduler → Settings → Limits** now lets you cap how many times a *single* athlete can book a session per day and per week, separate from the existing facility-wide **Max bookings per day / week** caps. Great for unlimited memberships and rentals, where one athlete could otherwise grab every open slot. [Learn more →](/scheduling/scheduler-settings-limits-and-permissions)
+**Per-athlete booking limits** in a scheduler's **Advanced settings** cap how many times a *single* athlete can book a session per day and per week (**Max bookings per athlete per day / week**), separate from the **Session-wide booking limits** that cap total bookings across all athletes. Great for unlimited memberships and rentals, where one athlete could otherwise grab every open slot. [Learn more →](/scheduling/scheduler-settings-limits-and-permissions#setting-2-booking-limits)
 
 ---
 
@@ -499,7 +499,7 @@ You can now attach more than one resource to a single scheduler. When a session 
 
 **Overlapping Session Slots**
 
-A new **Allow overlapping slots within this session** option lets a scheduler offer start times that overlap a session already in progress, with a **Slot Cadence** control for how often start times appear (every 5–60 minutes or custom). Great for staggered starts and rolling sessions. [Learn more →](/scheduling/scheduler-settings-limits-and-permissions)
+A new **Allow overlapping slots within this session** option lets a scheduler offer start times that overlap a session already in progress, with a **Slot Cadence** control for how often start times appear (every 5–60 minutes or custom). Great for staggered starts and rolling sessions. *Superseded in August 2026 by the separate **Duration** / **New sessions can start** / **Allow overlapping sessions** controls.* [Learn more →](/scheduling/overlapping-slots)
 
 **Guest Checkout for Schedulers**
 
@@ -507,7 +507,7 @@ Schedulers can now be booked without an account. Turn on guest checkout on a sch
 
 **Quick Add from the Calendar**
 
-Add a coach or resource to a session directly from the calendar's click view — one less trip into the scheduler editor. [Learn more →](/scheduling/calendar-overview-and-navigation)
+Add a coach or resource to a session directly from the calendar's click view — one less trip into the scheduler editor. [Learn more →](/scheduling/calendar-overview-and-navigation#click-session-for-details)
 
 ---
 
@@ -619,11 +619,11 @@ All four views on **Schedule → Calendar** (Month, Week, Day, List) were rework
 
 **Calendar defaults to first available date**
 
-The athlete booking calendar now opens on the month containing your next available slot instead of the current month, so athletes stop clicking forward to find open times. [Learn more →](/scheduling/how-availability-works)
+The athlete booking calendar now opens on the month containing your next available slot instead of the current month, so athletes stop clicking forward to find open times. [Learn more →](/scheduling/how-availability-works#what-athletes-see-vs-what-you-manage)
 
 **Past bookings survive edits to a recurring series**
 
-Editing or deleting a recurring booking series no longer wipes the past occurrences that already happened. Historical sessions stay on the calendar and on the athlete's profile, so your attendance and billing records are intact. [Learn more →](/scheduling/recurring-bookings)
+Editing or deleting a recurring booking series no longer wipes the past occurrences that already happened. Historical sessions stay on the calendar and on the athlete's profile, so your attendance and billing records are intact. [Learn more →](/scheduling/recurring-bookings#deleting-the-entire-recurring-pattern)
 
 ---
 
@@ -635,7 +635,7 @@ Athletes can now enter a coupon code directly in the product payment pop-up and 
 
 **Credits-first checkout**
 
-When an athlete has credits that a scheduler accepts, checkout no longer shows a credit card field. The booking goes straight to credit redemption, ending the common case where an athlete paid by card while holding usable credits. [Learn more →](/scheduling/credits-and-schedulers)
+When an athlete has credits that a scheduler accepts, checkout no longer shows a credit card field. The booking goes straight to credit redemption, ending the common case where an athlete paid by card while holding usable credits. [Learn more →](/scheduling/credits-and-schedulers#what-the-athlete-sees)
 
 **Coupons apply to a membership's initial fee**
 
@@ -784,7 +784,7 @@ Cards now stay in sync with Stripe: when an athlete adds a new card it becomes t
 
 **Clearer Credit Messaging at Booking**
 
-Athletes now see their remaining credit count during booking and after confirmation, and the error when a booking can't use credits says why — no credits left, credits not valid for this scheduler, or membership expired — instead of a generic "Not enough credits." When a scheduler accepts both credits and card payment, athletes choose which to use before seeing the payment step. [Learn more →](/scheduling/credits-and-schedulers)
+Athletes now see their remaining credit count during booking and after confirmation, and the error when a booking can't use credits says why — no credits left, credits not valid for this scheduler, or membership expired — instead of a generic "Not enough credits." When a scheduler accepts both credits and card payment, athletes choose which to use before seeing the payment step. [Learn more →](/scheduling/credits-and-schedulers#what-the-athlete-sees)
 
 **Checkout Matches Your Athlete Portal Theme**
 
