@@ -3,7 +3,7 @@ title: "How SMS credits work"
 description: "What a credit pays for, how long messages and emojis change the cost, why credits are separate from 10DLC approval, and what to do when texts don't send."
 sidebarTitle: "SMS Credits"
 icon: "comment-dollar"
-keywords: ["sms credits", "text message credits", "segments", "emoji sms cost", "buy credits", "top up", "org credits", "texts not sending", "10dlc"]
+keywords: ["sms credits", "text message credits", "segments", "emoji sms cost", "buy credits", "top up", "org credits", "texts not sending", "10dlc", "auto-refill", "auto refill"]
 ---
 
 SMS credits are how text messaging is paid for in CoachIQ. Every text you send draws from your group's credit balance.
@@ -37,10 +37,23 @@ The cost is per **segment**, and one message can be several segments:
 
 - **Monthly allotment** — your plan may include a monthly grant of credits. It is added to whatever balance you have left; it does not reset it.
 - **Top-ups** — buy more at any time, either a preset package (some include bonus credits) or a custom dollar amount. Payment goes through Stripe and the credits are applied automatically.
+- **Auto-refill** — turn it on and your balance tops itself up when it runs low, so a mass text never fails at send time for lack of credits. See below.
 
 <Note>
-  Your balance, top-ups, and the credit activity log all live on the **Credits** page. Open it from **Settings → Communication → Credits**. It is the same page whether you get there from Settings or from the SMS setup flow in the Inbox.
+  Your balance, top-ups, auto-refill, and the credit activity log all live on the **Credits** page. Open it from **Settings → Communication → Credits**. It is the same page whether you get there from Settings or from the SMS setup flow in the Inbox, and it appears for every organization that pays for texts with credits.
 </Note>
+
+## Auto-refill
+
+Auto-refill is the set-and-forget option. Once a card is on file, switch it on from the **Credits** page and CoachIQ buys more credits automatically whenever your balance drops low, charging the card on file and logging the purchase in the activity log like any other top-up.
+
+- **Needs a card on file.** The control is unavailable until a payment method is saved, so add one first if you do not see it.
+- **Turn it off any time** from the same page. Your remaining balance stays.
+- **Check the activity log** if you are unsure whether a refill ran; each automatic purchase appears there with the credits added.
+
+<Tip>
+  Turn on auto-refill before a season of automated reminders or a big registration push. Running out mid-broadcast means part of the group gets the text and part does not.
+</Tip>
 
 ## Texts aren't sending?
 
@@ -60,6 +73,9 @@ Two independent things must be true for a business text to deliver: your number 
   </Accordion>
   <Accordion title="Are SMS credits the same as athlete session credits?">
     No. Session credits are what athletes redeem for bookings and are managed on each athlete's profile. SMS credits pay for your text messaging. Different balances, different pages.
+  </Accordion>
+  <Accordion title="Why don't I see the auto-refill option?">
+    It needs a card on file. Add a payment method on the **Credits** page first, then the auto-refill control becomes available.
   </Accordion>
   <Accordion title="Where do I see how many credits a campaign used?">
     Open the **Credits** page. The activity log lists each send with the credits deducted and the balance after.

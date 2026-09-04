@@ -3,7 +3,7 @@ title: "Responses & Automations"
 description: "View form submissions, export data, and trigger automated actions when athletes complete your forms."
 sidebarTitle: "Responses & Automations"
 icon: "bolt"
-keywords: ["form responses", "submissions", "export responses", "form automations", "trigger on form", "form data", "view submissions"]
+keywords: ["form responses", "submissions", "export responses", "form automations", "trigger on form", "form data", "view submissions", "form submitted email", "answer fields", "branch on answer"]
 ---
 
 After athletes submit your forms, you need to see that data and act on it. This guide covers viewing responses, exporting data, and connecting forms to automations.
@@ -64,6 +64,14 @@ Export your form data to CSV for analysis, reporting, or backup.
   **Export regularly for important forms.** Camp registrations, waivers, and lead lists are worth backing up outside CoachIQ.
 </Tip>
 
+## Email notifications for new submissions
+
+When the **Forms** notification is on under **Settings → Communication → Notifications**, every submission sends you a **Form Submitted** email. The email lists the submitter's answers inline, question by question, so you can read a camp registration or jersey order and reply from your own inbox without opening CoachIQ to find it. A link into the form's Responses is still included for the full record.
+
+- Turn the email on or off per channel (**Email** / **Push**) in [Communication settings](/settings/communication#notifications).
+- Answers are shown under each field's **Label**, so name your fields clearly when you build the form (see [Creating forms](/tools/forms/creating-forms#build-a-form-step-by-step)).
+- File uploads appear as links rather than attachments.
+
 ## How responses connect to People
 
 When you require Login/Signup on a form, submissions link to athlete profiles.
@@ -102,20 +110,20 @@ Forms can trigger [automations](/tools/automations/what-are-automations) when su
 | Trigger        | What happens                                                               |
 | -------------- | -------------------------------------------------------------------------- |
 | Form submitted | Automation runs when any submission comes in                               |
-| Send message   | Auto-send SMS or in-app message to the respondent                          |
+| Branch on an answer | Add a condition on an **Answer field** so the automation only continues for a given answer |
+| Send message   | Auto-send email, SMS, or in-app message to the respondent, with their answers merged in |
 | Add tag        | Automatically tag the athlete (e.g., "Lead", "Camp 2025", "Waiver Signed") |
 | Remove tag     | Remove a tag (e.g., remove "Needs Waiver" after waiver submitted)          |
 | Add credits    | Assign session credits to the athlete                                      |
 
-### What you can't do
+### Using the answers
 
-<Warning>
-  **Automations can't read specific field answers.** You can trigger an automation when a form is submitted, but you cannot create conditions based on what someone answered.
+Once you pick the form on a **Form Submitted** trigger, every question on it appears as an **Answer field**:
 
-  For example, you can't build: "If they selected 'Instagram' for 'How did you hear about us?', then add tag 'Instagram Lead'."
+- **In Conditions**, compare an answer to a value. "How did you hear about us?" **Equal to** "Instagram" → add the tag "Instagram Lead". Checkbox, terms, and waiver questions default to **Contains**.
+- **In Actions**, type `#` in any message field and choose the question to insert that person's answer into the email or text.
 
-  The trigger is submission — not field values.
-</Warning>
+Headings, media, and plain-text blocks are layout only and are not offered as Answer fields. The exact controls are in the [Triggers and actions reference](/tools/automations/triggers-actions-reference#form-answers-in-messages).
 
 ## Setting up a form automation
 
@@ -220,6 +228,8 @@ For deeper analysis, export your data and use external tools (Excel, Google Shee
 | Export data                      | Responses tab → Export button                |
 | See responses on athlete profile | Requires Login/Signup enabled                |
 | Trigger automation on submit     | Tools → Automations → Form Submitted trigger |
+| Branch on a specific answer      | Condition on an Answer field                 |
+| Get answers by email             | Settings → Communication → Notifications → Forms |
 | Auto-tag new submissions         | Automation with "Add Tag" action             |
 | Auto-message new submissions     | Automation with "Send Message" action        |
 

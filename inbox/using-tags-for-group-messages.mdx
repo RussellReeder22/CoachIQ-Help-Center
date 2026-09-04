@@ -3,7 +3,7 @@ title: "Using Tags for Group Messages"
 description: "Save time by messaging groups of athletes using tags. Learn how to create, apply, and use tags for efficient team communication in CoachIQ."
 sidebarTitle: "Group Messaging with Tags"
 icon: "tags"
-keywords: ["group messages", "tags", "bulk message", "message group", "send to tag", "mass message", "message multiple", "segment", "targeted message"]
+keywords: ["group messages", "tags", "bulk message", "message group", "send to tag", "mass message", "message multiple", "segment", "targeted message", "sub-tags", "nested tags", "parent tag"]
 ---
 
 <Info>
@@ -121,6 +121,16 @@ You can message athletes who have ANY of several tags:
   **Overlap handling**: If an athlete has both tags, they still only receive one message.
 </Note>
 
+### Sub-tags
+
+Tags can be nested: a parent tag such as "Travel Program" with sub-tags for each team inside it ("U12 Travel", "U14 Travel"). You create the hierarchy in [People → Tags](/people/tags-filters).
+
+When you pick recipients for an **Announcement** or **SMS** in the Inbox, sub-tags appear nested under their parent tag in the recipient list. Select the sub-tag to message just that nested group, or the parent tag for the wider one; you do not have to pick the parent and then trim people by hand.
+
+<Tip>
+  Nest by season or program, then team: "Fall 2026 → U12 → Blue". A schedule change for one team goes to that sub-tag; a facility closure goes to the parent.
+</Tip>
+
 ## Strategic tagging for different message types
 
 ### For In-App messages
@@ -161,6 +171,9 @@ Broad tags for announcements:
   </Accordion>
   <Accordion title="What happens if I delete a tag?">
     The tag is removed from all athletes, but it doesn't delete the athletes themselves. Past messages sent using that tag remain unchanged.
+  </Accordion>
+  <Accordion title="Can I send to a sub-tag without messaging the whole parent group?">
+    Yes. In the Announcement or SMS recipient picker, sub-tags are listed under their parent tag. Choose the sub-tag on its own and only people with that sub-tag receive the message.
   </Accordion>
   <Accordion title="Can I message athletes who DON'T have a tag?">
     Not directly, but you can filter for athletes without specific tags in the People section, then select them manually for messaging.

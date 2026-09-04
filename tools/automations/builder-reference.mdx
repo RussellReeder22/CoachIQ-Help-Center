@@ -3,7 +3,7 @@ title: "Automation Builder Reference"
 description: "What each section of the automation builder does: Details, Triggers, Data Sources, Conditions, Actions, Execution Logs, Settings, and Test Run."
 sidebarTitle: "Builder Reference"
 icon: "wrench"
-keywords: ["automation builder", "data sources", "conditions", "and/or groups", "execution logs", "test run", "enabled toggle", "delete automation", "dynamic fields", "@ fields"]
+keywords: ["automation builder", "data sources", "conditions", "and/or groups", "execution logs", "test run", "enabled toggle", "delete automation", "archive automation", "restore automation", "guardians", "dynamic fields", "@ fields"]
 ---
 
 <Info>
@@ -54,6 +54,10 @@ What happens when the conditions pass. Click **Add Action** for each step. The t
 | **Send an Announcement** | **Target User** (defaults to *User from trigger*; click **Change** to pick someone else), **From** (*Default*, or **Set** to choose which admin it appears to come from), **Title**, and **Message** |
 | **Send an SMS Message** | **Target User**, **From**, and **Message**, with a live counter such as **180 / 160** so you can see when a text splits into a second segment. The hint reads "Keep it under 160 characters for SMS" |
 
+**Target User** has three choices on the messaging and tag actions: **User from trigger** (the person the event happened to), **trigger user and their guardians**, or a specific person you pick after clicking **Change**. Choose the guardians option when the triggering athlete may be a managed child with no email or login of their own: a welcome announcement, team tag, or practice reminder then reaches the parent as well, instead of landing on a profile nobody checks. A parent who triggers the automation is a single target; the option never adds children.
+
+The **180 / 160** counter is a cost hint, not a limit. Texts longer than 160 characters still send; they go out as more than one segment and each segment is billed from your SMS credits (see [How SMS credits work](/inbox/sms-credits)).
+
 Inside any message field, type `#` to insert a **field option** from the trigger or a data source, or `@` to insert a **CoachIQ field** such as the athlete's first name, the session title, or the booking time (the field hint says exactly that: "Use # for field options, and @ for CoachIQ fields"). Fields fill in per person when the automation runs.
 
 Actions run in order. Put the message you most want delivered first.
@@ -64,7 +68,19 @@ A record of every time the automation ran: when it fired, for whom, which condit
 
 ### Settings
 
-The **Enabled** toggle. Off means the automation is saved but never runs. There is no separate delete button; the section says "Disable above to delete this automation", so switch Enabled off first and the delete option appears. Deleting is permanent, so if you may want it back, leave it disabled or archive it from the Automations list instead.
+The **Enabled** toggle. Off means the automation is saved but never runs. There is no separate delete button; the section says "Disable above to delete this automation", so switch Enabled off first and the delete option appears. Deleting is permanent, so if you may want it back, leave it disabled or archive it from the Automations list instead (see below).
+
+## Archiving an automation
+
+Archiving is the middle ground between disabling and deleting. Use it for automations you are done with (last season's registration flow, a one-off campaign) so the **Tools → Automations** list shows only what is live.
+
+- **Where**: from the automations list at **Tools → Automations**, not from inside the builder. Archive the automation from its row.
+- **What happens**: the automation stops running and leaves the active list. Its Execution Logs and configuration are kept.
+- **Getting it back**: switch the list to show archived automations, open the one you want, and restore it. It returns to the active list with its history intact; check the **Enabled** toggle before relying on it again.
+
+<Note>
+  Archive rather than delete when there is any chance you will run the same flow next season. A deleted automation and its logs are gone; an archived one is a click away.
+</Note>
 
 ### Test Run
 
