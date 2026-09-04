@@ -62,7 +62,9 @@ The **Sign-up fields** table lists every field a new account can carry. Each row
 
 ### Built-in fields
 
-**First name**, **Last name**, **Email**, and **Phone number** are built in (each row shows its type, for example "Text · built-in"). Email is the login credential, so it always stays on the form. Turn phone on and make it required if you rely on SMS reminders; a profile with no phone number cannot receive texts.
+**First name**, **Last name**, **Email**, and **Phone number** are built in (each row shows its type, for example "Text · built-in"). Email is the login credential, so it always stays on the form. Turn phone on and switch its **REQUIRED** toggle on if you rely on SMS reminders; a profile with no phone number cannot receive texts.
+
+The phone field on the sign-up form has a country selector that defaults to **+1** (United States). People outside the US pick their country from the selector; numbers are saved with the country code, so a US number is stored as +1 and not misread as another country's code. Dashes and spaces in the number are accepted.
 
 Toggling a field off at sign-up does not delete it. It still lives on the profile, where you or the client can fill it in later.
 

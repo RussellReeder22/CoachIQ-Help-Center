@@ -233,7 +233,16 @@ The App Builder is where you shape the entire athlete experience. Located in you
     All purchases for iOS users happen on your website. They can browse products in the app but clicking "purchase" redirects them to the web portal to complete payment.
   </Accordion>
   <Accordion title="Should I direct people to web or app first?">
-    Always direct new users to your website first to create accounts and handle initial payments. After that, they can use the mobile app for daily access.
+    Always direct new users to your website first to create accounts and handle initial payments. After that, they can use the mobile app for daily access. The exception is a branded [Personalized App](/power-ups/personalized-app), which prompts an athlete with no account to sign up on their first login attempt.
+  </Accordion>
+  <Accordion title="How do athletes book and pay in the mobile app?">
+    Booking happens in the app. If a scheduler accepts both payment and credits, the app asks the athlete whether to pay or use a credit, the same choice as on the web. Anything that needs a card (a product, a membership, a paid booking without credits) opens in the browser to finish checkout, then the athlete returns to the app. See [Booking in the native app](/athlete-portal/native-app-booking).
+  </Accordion>
+  <Accordion title="Do athletes get logged out when CoachIQ pushes an update?">
+    No. If a platform update lands while an athlete or coach is using the app, the app signs them back in once the update completes instead of dropping them at the login screen. An athlete who still ends up logged out should update the app from the App Store or Google Play and sign in once.
+  </Accordion>
+  <Accordion title="What happens when an athlete requests account deletion?">
+    Athletes can request deletion of their account from inside the CoachIQ app or your Personalized App (Apple requires this of every app with sign-up). The request arrives in your **Inbox** as a message from that athlete; nothing is deleted automatically. Action it the way you would any other request: confirm with the athlete, then remove them from your organization from their profile. See [Block or remove an athlete](/people/block-and-remove-athletes).
   </Accordion>
 </AccordionGroup>
 
@@ -276,6 +285,12 @@ Now that you understand how the Athlete Portal works, you're ready to start buil
   </Card>
   <Card title="Page Paywalls" icon="lock" href="/athlete-portal/paywall-settings">
     Restrict page access until athletes purchase a qualifying product
+  </Card>
+  <Card title="Booking in the native app" icon="mobile-screen" href="/athlete-portal/native-app-booking">
+    What athletes and parents see when they book from the iOS or Android app
+  </Card>
+  <Card title="Family Accounts" icon="people-roof" href="/athlete-portal/family-accounts">
+    Parents, managed children, and who gets the reminders
   </Card>
   <Card title="Scheduling Overview" icon="calendar" href="/scheduling/overview">
     Set up session types, availability, and booking rules
