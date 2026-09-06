@@ -1,9 +1,9 @@
 ---
 title: "Locations"
-description: "Save the places you coach, attach them to schedulers, give individual dates their own venue, and let athletes see exactly where to show up."
+description: "Save the places you coach, including Google Meet and Zoom links, attach them to schedulers, give individual dates their own venue, and let athletes see exactly where to show up."
 sidebarTitle: "Locations"
 icon: "map-pin"
-keywords: ["locations", "address", "facility", "where sessions happen", "multiple locations", "scheduler location", "setup locations", "per-date venue", "different location each date", "venue per date"]
+keywords: ["locations", "address", "facility", "where sessions happen", "multiple locations", "scheduler location", "setup locations", "per-date venue", "different location each date", "venue per date", "virtual location", "Google Meet", "Zoom", "online sessions", "video call sessions"]
 ---
 
 <Info>
@@ -12,7 +12,7 @@ keywords: ["locations", "address", "facility", "where sessions happen", "multipl
 
 ## What locations are
 
-A location is a saved address: the field, gym, cage, or park where a session happens. Save it once, attach it to any scheduler, and every booking confirmation, reminder, and calendar entry carries the right address without you retyping it.
+A location is a saved place: the field, gym, cage, or park where a session happens, or a **Google Meet** or **Zoom** link for sessions run over video. Save it once, attach it to any scheduler, and every booking confirmation, reminder, and calendar entry carries the right address without you retyping it.
 
 Locations also anchor [Resources](/scheduling/resources). A court or cage belongs to a location, so athletes and coaches always know which building "Cage 2" is in.
 
@@ -36,6 +36,24 @@ Locations also anchor [Resources](/scheduling/resources). A court or cage belong
     The location appears as a card showing its address, hours, and **USED BY n SCHEDULERS**.
   </Step>
 </Steps>
+
+## Virtual locations (Google Meet and Zoom)
+
+A session that happens on a video call gets a location too. Instead of a street address, save the meeting link:
+
+<Steps>
+  <Step title="Add a location with a meeting link">
+    In **Scheduling → Setup → Locations**, add a location and enter your **Google Meet** or **Zoom** link in place of the address. Give it a title athletes will recognise ("Remote film review", "Online strength check-in").
+  </Step>
+  <Step title="Save">
+    CoachIQ recognises the provider and labels the location as Google Meet or Zoom. A link that is not a valid Google Meet or Zoom meeting link is blocked when you save, so an athlete can never be sent to a dead link.
+  </Step>
+  <Step title="Attach it to the scheduler">
+    Pick it under the scheduler's **Location** section like any other location. Physical locations stay available alongside it.
+  </Step>
+</Steps>
+
+Athletes and parents see the provider label, joining instructions, and a join action on the booking in the athlete portal, on your website, and in the native app. Use one reusable meeting link per scheduler; if you generate a fresh link for a call, update the location before the session starts.
 
 ## Attaching a location to a scheduler
 
@@ -66,6 +84,8 @@ The location title and address for the specific date appear:
 - On the athlete's schedule and in the booking confirmation and reminder messages
 - On the calendar event if the athlete adds it to their phone
 
+For a virtual location, the join action and joining instructions appear in the same places instead of an address.
+
 When a date has its own venue, athletes see that venue, not the scheduler default, in each of these places.
 
 ## Editing and removing
@@ -79,6 +99,9 @@ You cannot delete a location while schedulers use it. The **USED BY** list on th
 <AccordionGroup>
   <Accordion title="I coach at the athlete's home or a different park each time">
     If the venues are known in advance, save each one and give each date its own location as described above. If the exact spot is confirmed by message, create a location called "Travel session" with your base address, explain in the scheduler description that the exact spot is confirmed by message, and use the booking **Notes** field to record the address per booking.
+  </Accordion>
+  <Accordion title="Can I run sessions over Zoom or Google Meet?">
+    Yes. Save the meeting link as a location and attach it to the scheduler; see [Virtual locations](#virtual-locations-google-meet-and-zoom). Other video services are not recognised as providers; for those, use a location titled "Online" and put the link in the scheduler description.
   </Accordion>
   <Accordion title="Do locations affect what time slots are shown?">
     No. Availability comes from your templates, and conflicts come from coaches and resources. A location is a label and address, not a calendar.

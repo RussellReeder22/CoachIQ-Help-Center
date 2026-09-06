@@ -24,6 +24,18 @@ From a session on the calendar, **Duration** → **Edit** opens **Edit Duration*
 
 A single session can now carry a different length and different equipment on different dates — a 90-minute indoor practice on Tuesday and a 150-minute field practice on Saturday under one session, each with its own cage, mound, or turf. Set it under **Availability → Specific-date settings** in the scheduler builder. A date window shorter than the duration is now rejected on save instead of silently producing no bookable slots. [Learn more →](/scheduling/advanced-scheduler-settings#a-different-duration-on-one-date)
 
+**Two session lengths on one scheduler**
+
+A scheduler can now offer more than one session length, such as **30 or 60 minutes**, instead of a separate scheduler per length. The athlete picks the length first, then sees the dates and times that fit it; switching lengths clears the earlier pick. Works on the web and in the native app. [Learn more →](/scheduling/advanced-scheduler-settings#duration-settings)
+
+**Google Meet and Zoom as a scheduler location**
+
+A scheduler's location can be a **Google Meet** or **Zoom** link. The provider is labeled, joining instructions and a join action show on booking screens in the athlete portal, your website, and the native app, and an invalid meeting link is blocked when you save. Physical locations work as before. [Learn more →](/scheduling/setup-locations)
+
+**Specific Dates are easier to review and edit**
+
+The **Specific Dates** availability editor no longer shows a stack of near-identical cards. On desktop it is a compact table; on a phone each date is a card with its date, hours, availability, location, and resources, with no sideways scrolling. A filter and **Select dates** control handle bulk edits, selecting a date opens its editor in a popup, and **Add date** sits beside the section heading. A blank or incomplete date now shows a warning and cannot be saved. [Learn more →](/scheduling/create-your-availability#method-2-specific-dates-availability)
+
 **Book by tag in New Booking**
 
 On **Schedule** → **Calendar** → **+ Book Session**, the **Client** field lists **Tags** and **People**. Picking a tag adds a chip and checks people in your group who have that tag. [Learn more →](/scheduling/manually-booking-athletes)
@@ -55,6 +67,14 @@ If your organization accepts ACH bank payments, a product's payment settings now
 **ACH and wallets back on recurring memberships**
 
 Subscriptions bought through the athlete checkout had been card-only since late April. New recurring memberships once again offer every payment method enabled on your Stripe account, including bank account. [Learn more →](/payments/manage-subscriptions#payment-methods-on-recurring-memberships)
+
+**Credits can require the session to happen before they expire**
+
+Credit products have a new toggle, **Sessions must occur by expiration**. With it on, a credit from a billing cycle can only be used for a session that takes place inside that cycle, including a reschedule, so a week-3 booking can no longer land a session past the next renewal. A cancelled booking returns the credit with its original expiration. Leave it off to keep the current rule, where the credit only has to be booked before it expires. [Learn more →](/payments/product-builder#section-3-credits)
+
+**Attach a form to a product**
+
+In the Product Builder's **Advanced** settings, **Add a form** attaches a form that a buyer completes as a registration step before paying. Checkout shows three steps: registration, review, purchase. A parent or athlete who has already completed the form for that product skips it on a repeat purchase and sees that registration is on file. [Learn more →](/payments/product-builder#section-6-advanced-settings)
 
 ---
 
@@ -88,6 +108,14 @@ On a client's **Family** section you can connect an existing athlete or create a
 
 Each coach can now have their own page restrictions instead of one set shared by every coach. On **People** → **Staff**, **Manage Staff Access** opens **Default Coach Access**, which applies to **Coaches without custom access**; open a coach from Staff to set custom access that overrides the default. Admins can view all pages. [Learn more →](/people/managing-staff)
 
+**Archive a product on a client's profile**
+
+On a client's **Products** tab you can now **Archive** an individual product. Archiving removes its remaining credits and stops bookings on it while keeping the purchase history on the profile, replacing the old "Unable to delete product. Please contact support." dead end. An active subscription has to be set to end before its product can be archived. [Learn more →](/people/client-profiles/client-profiles-products)
+
+**Save a card on a client's profile**
+
+From a client's **Payment Methods** tab, an admin can **Add card** for a parent standing at the front desk. The card is saved for future payments with the client's consent, a declined card leaves existing cards unchanged, and you can set which saved card is the default. [Learn more →](/people/client-profiles/client-profiles-subscriptions#payment-methods-on-file)
+
 ---
 
 ## Native App
@@ -100,7 +128,7 @@ The iOS athlete and admin apps were brought up to date with the web release. Par
 
 ## Bug Fixes & Stability
 
-We shipped 22 coach-visible fixes this cycle across checkout, scheduling, the inbox, forms, the website builder, video analysis, and automations.
+We shipped 29 coach-visible fixes this cycle across checkout, credits, scheduling, the athlete portal, the inbox, forms, the website builder, video analysis, automations, and the native admin app.
 
 **Payments & checkout**
 - Athlete-app checkout no longer fails with "Checkout details could not be verified," "Unable to complete checkout," or "Authentication is required to continue" on valid cards and bank accounts.
@@ -109,15 +137,23 @@ We shipped 22 coach-visible fixes this cycle across checkout, scheduling, the in
 - Checkout no longer reports a failure after the payment was captured, so post-purchase confirmation redirects and the "payment received" email fire again.
 - Canceling a membership from the athlete portal **Billing** screen now actually cancels it instead of confirming success while it stays active.
 
+**Credits**
+- A credit bank on an actively billing subscription no longer reads inactive with 0 redeemable after a renewal because an older record said the purchase was canceled.
+- Connected children can spend a parent's family-membership credits at checkout instead of being stopped with "Short by 1 credit" while the parent's profile shows the credits.
+
 **Scheduling**
 - Saving a scheduler no longer fails with a generic "Unable to save this scheduler" toast, and a session whose date window equals its duration no longer trips "This duration does not fit specific date-window."
 - **+ Create scheduler** always opens the builder instead of sometimes landing on the **Add scheduler setup** modal, and that modal now closes with **X** or **Escape**.
 - A scheduler connected to **All Coaches** no longer offers times already booked in another scheduler.
 - Searching availability from the admin works again.
 - Calendar spacing was tightened.
+- An athlete rescheduling into an open recurring weekly slot no longer gets "Please select an available date and time before booking" with the booking left in place; the booking moves.
+- Updating an availability with many specific dates no longer fails with "An unknown error has occurred! Please try again later."
 
 **Athlete portal & family**
 - The **Select Athlete** step, with **Family Credits available**, appears again in booking checkout for parents with connected athletes.
+- On a Managed Athlete product, **Who are you registering?** lists connected athletes who have their own login again, so a parent no longer has to create a duplicate child to buy for them.
+- **Settings** in the athlete portal app opens your organization's athlete settings instead of sending parents and athletes to admin.coachiq.io and "Unauthorized, only admins can be here."
 
 **Inbox**
 - **Share Media** in a Direct Message opens your Media Hub library and accepts uploads and drag-and-drop instead of showing an empty, unclickable picker.
@@ -136,6 +172,9 @@ We shipped 22 coach-visible fixes this cycle across checkout, scheduling, the in
 
 **Automations**
 - **Add a Product Purchase** no longer fails with `AUTOMATION_ACTION_FAILED` when the target is a newly created Parent profile.
+
+**Native admin app**
+- The calendar refreshes to the current day, with that day's bookings, when you return to the app after the date has changed, instead of staying on yesterday.
 
 </Update>
 

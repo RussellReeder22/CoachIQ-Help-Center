@@ -346,18 +346,18 @@ Set where sessions take place.
 
 ### What it does
 
-**Location setting** specifies the physical address where sessions from this scheduler occur. This helps athletes know where to show up and provides clarity for logistics planning.
+**Location setting** specifies where sessions from this scheduler occur: a physical address, or a **Google Meet** or **Zoom** meeting link for sessions run over video. Athletes see the address or the join link on the booking, so everyone knows where to show up.
 
 The location you pick in the scheduler's **Location** section (**Select Location** or **Add Location**) is the **default** for every date. If you train at more than one site with the same session, you do not need a scheduler per site: give the individual dates their own venue in the scheduler's availability, and each falls back to this default until you change it. How to do that: [A different venue for each date](/scheduling/setup-locations#a-different-venue-for-each-date).
 
 ### Configuration options
 
-**Location field accepts**: Physical street addresses only
+**A location can be**:
 
 - ✅ Full street address (123 Main St, City, State, ZIP)
 - ✅ Facility name + address
 - ✅ Landmark or building name
-- ❌ No virtual meeting links (can't add Zoom URLs here)
+- ✅ A **Google Meet** or **Zoom** meeting link (see [Virtual locations](/scheduling/setup-locations#virtual-locations-google-meet-and-zoom))
 
 ### When location settings matter
 
@@ -452,29 +452,16 @@ The location you pick in the scheduler's **Location** section (**Select Location
     </Tip>
   </Tab>
   <Tab title="Virtual/Online Training">
-    **Your setup**: Sessions via video call (Zoom, Google Meet, etc.)
+    **Your setup**: Sessions via video call (Zoom or Google Meet)
 
-    **Problem**: Location field doesn't accept virtual links
+    **Configuration**:
 
-    **Solutions**:
+    - Save a location whose address is your Google Meet or Zoom link, and attach it to the scheduler
+    - CoachIQ labels the provider and shows joining instructions and a join action on the booking in the athlete portal, on your website, and in the native app
+    - An invalid meeting link is blocked when you save, so athletes never get a dead link
+    - Use one reusable meeting link per scheduler; if you generate a fresh link per call, update the location before the session
 
-    **Option 1: Generic virtual indicator**
-
-    ```
-    Location: Virtual Session
-    (Add Zoom link in booking confirmation email)
-    ```
-
-    **Option 2: Leave location blank**
-
-    - Add in description: "Virtual training via Zoom"
-    - Send meeting link after booking
-
-    **Option 3: Use "Online" as location**
-
-    ```
-    Location: Online Training
-    ```
+    How to set it up: [Virtual locations](/scheduling/setup-locations#virtual-locations-google-meet-and-zoom)
 
     **Best practice**:
 
@@ -584,21 +571,20 @@ The location you pick in the scheduler's **Location** section (**Select Location
     - "Private Training - West Facility" (789 West Rd)
     ```
   </Accordion>
-  <Accordion title="Virtual links in location field">
-    **Mistake**: Pasting `https://zoom.us/j/123456789` in location field
+  <Accordion title="Virtual link buried in the description">
+    **Mistake**: Setting the location to "Online" and pasting `https://zoom.us/j/123456789` into the scheduler description or a reminder
 
     **Problem**:
 
-    - Field not designed for URLs
-    - May not format or clickable
-    - Looks unprofessional
+    - Athletes hunt for the link at session time
+    - A changed link means editing every message that carried the old one
+    - Nothing checks that the link is valid
 
     **Fix**:
 
-    - Location field: "Virtual Session" or "Online Training"
-    - Send Zoom link via booking confirmation email
-    - Include in automated reminders
-    - Add to session details after booking
+    - Save the Google Meet or Zoom link as a location and attach it to the scheduler
+    - The provider label, joining instructions, and join action then appear on every booking automatically
+    - See [Virtual locations](/scheduling/setup-locations#virtual-locations-google-meet-and-zoom)
   </Accordion>
 </AccordionGroup>
 
