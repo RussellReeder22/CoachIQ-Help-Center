@@ -33,7 +33,7 @@ Pricing is the most important decision in your business. Get it wrong, and you'l
 </Frame>
 
 <Note>
-**Not sure if your pricing is right?** CoachIQ reviews pricing with every new coach. We benchmark your rates against our database of hundreds of facilities across the United States to make sure you're positioned competitively for your market.
+**Not sure if your pricing is right?** Pricing comes up in almost every onboarding call. Bring your packages to [Office Hours](https://cal.com/team/coach-iq/office-hours) and we'll compare them to what similar facilities in the CoachIQ community charge.
 </Note>
 
 ---
@@ -63,6 +63,18 @@ Parents don't know you. They don't trust you yet. Asking them to commit to a tra
 <Frame>
   ![Trial session options on a coaching website](/images/pricing-trial-session-options.png)
 </Frame>
+
+<Note>
+**Charge something.** Brandon Evans at Pro Standard Basketball Academy in Fort Wayne ran a free trial for years and watched no-show rates stay high no matter how many reminder calls and texts went out. He moved the trial to \$10 with a card on file, and the no-shows stopped. His explanation: "They already have skin in the game. They're invested. Even \$10. Like, you put your card in and it's on file now. You are invested." The trial can be nearly free. It should never be nothing.
+</Note>
+
+<Accordion title="Three entry points from the CoachIQ community">
+  - **Coach Stefano Soccer (Freehold and Middletown, NJ)** sold a \$1 one-week all-access pass behind a Facebook ad. Every new family got a full week of small-group sessions, speed classes, and strength work for a dollar, then hit the monthly membership wall.
+  - **Elite Baseball and Softball Training (Grand Rapids, MI)** charges \$250 for a one-on-one assessment with HitTrax and TrackMan, and the athlete leaves with a written report and a training plan. Athletes who join a team get the assessment credited back inside their package. The entry point costs more than a trial because the report is worth more than a trial.
+  - **Schmidt Performance (Northern Colorado)** does the opposite: the first in-person session is free, and Jeff filters hard on fit before and after it. "I've turned clients down before that weren't good fits."
+
+  Three different prices, one principle: every new family walks through the same door.
+</Accordion>
 
 ### What happens during the session
 
@@ -149,6 +161,21 @@ The most common commitment is **monthly**, but many facilities have great succes
   ![Membership pricing tiers with commitment structure](/images/pricing-membership-tiers-example.png)
 </Frame>
 
+<Accordion title="Real-world example: how four facilities structure commitment">
+  | Facility | What they sell | Commitment |
+  |----------|----------------|------------|
+  | **Schmidt Performance**, basketball, Northern Colorado | Starter \$249.99/mo (1-month), Pro \$225/mo (3-month), Elite \$199.99/mo (6-month), Unlimited \$375/mo | Longer commitment buys a lower monthly rate |
+  | **Coach Stefano Soccer**, two NJ locations | Auto-renewing monthly membership, 4 skills sessions a month, credits expire monthly, no refunds | Month to month, but the credits reset so nobody banks sessions |
+  | **Elite Baseball and Softball Training**, Grand Rapids | Offseason program 5x/week at \$600/mo or 2x/week at \$320/mo; pay 12 months up front for \$5,700 | The 12-month prepay is priced as the anchor |
+  | **CG Hoops**, basketball, Chesterfield, MO | Memberships from 4 sessions a month to unlimited, six days a week year-round; private training requires a minimum of 10 sessions inside 90 days | Even the private option carries a commitment |
+
+  Jeff Schmidt's reason for moving off prepaid session banks and onto subscriptions is the whole argument in one sentence: "I wanted to get rid of the upfront pricing. I think it allows parents to think that they have so many sessions and they can use them whenever they want."
+</Accordion>
+
+<Warning>
+**Say "subscription" where the parent can't miss it.** Coach Stefano's team saw parents buy the membership a second time, then ask why they were double charged: "they're like, I don't know what happened. You double charge me, and I go, no, you purchased it twice. And they go, well, I didn't know it's a subscription." Put "billed monthly, cancels anytime with 7 days notice" in the product name or the first line of the description, not the fine print.
+</Warning>
+
 <Note>
 **CoachIQ makes this easy**: Subscription management auto-charges cards on file, and the credit system automatically tracks each athlete's sessions, cancellations, and rescheduling—all visible in their app.
 </Note>
@@ -158,7 +185,7 @@ The most common commitment is **monthly**, but many facilities have great succes
 </Frame>
 
 <Tip>
-**Automate failed payment recovery**: CoachIQ automatically retries failed payments and sends reminder emails to parents. No more chasing down expired cards or awkward conversations about missed payments.
+**Failed payments don't mean chasing parents**: When a subscription card declines, Stripe retries it on a schedule and the subscription shows as Past Due in CoachIQ until it clears. You see who's behind without asking anyone. See [Failed Payments](/payments/failed-payments) for what to do next.
 </Tip>
 
 ---
@@ -186,10 +213,16 @@ That's it. The parent picks a frequency, commits monthly (or longer), and you ha
   ![Frequency-based training packages example](/images/pricing-frequency-packages-example.png)
 </Frame>
 
-<Info>
-**How CoachIQ handles this**: Each package automatically assigns credits to the athlete's account. 1x/week = 4 credits/month. 2x/week = 8 credits/month. Athletes see their balance in the app and can book sessions until credits run out. No spreadsheets, no manual tracking.
+<Accordion title="Real-world example: Pro Standard's two-tier menu">
+  Pro Standard Basketball Academy runs exactly two tiers. **Standard** is unlimited access to every class, shooting lab, camp, weekend league, and open gym for \$250 a month. Pay three months ahead and it's \$230 a month; six months, \$210; twelve months, \$175. A **Credit** membership, five sessions for \$125 or nine for \$200, exists for athletes who live far away or play multiple sports. Brandon pushes Standard every time, because frequency is what gets players better.
 
-Learn more: [Credit System Overview](/payments/credits/credit-system-overview)
+  The unlimited tier came from a real problem: families kept saying they wanted to train three or four times a week and couldn't afford it per session. "Even the \$250 a month, we focus a lot on providing as much value as we possibly can, to where they feel like that \$250 is just a steal."
+</Accordion>
+
+<Info>
+**How CoachIQ handles this**: Build each package as a subscription product that grants credits every billing cycle. 1x/week = 4 credits/month. 2x/week = 8 credits/month. Unlimited = ∞ credits. Athletes see their balance in the app and book sessions until credits run out. No spreadsheets, no manual tracking.
+
+Learn more: [Recurring Credit Memberships](/payments/credits/recurring-credit-memberships)
 </Info>
 
 ### The pitch
@@ -246,6 +279,8 @@ This is a trap that destroys coaching businesses. Avoid it.
 A small group of 4-10 athletes at similar skill levels is how you maximize development. Athletes feed off each other. You can run competitive drills and game-like scenarios. The energy is higher.
 
 And for your business? You're making 4-10x more per hour than one-on-one would generate.
+
+Lee Taft, who built speed-training facilities to 150 athletes within a year and has consulted for nine NBA teams, rejected one-on-one from the start: "My hourly rate was tremendous, but each person wasn't paying that much. As where if I ever did privates, I had to charge a lot and people couldn't do it for very long." Brandon Evans at Pro Standard went further and removed individual sessions from the menu entirely: "I don't believe in individual workouts as a concept for getting people better." He calls it the biggest operational improvement he's made.
 
 <Note>
 If a parent insists on one-on-one training, that's a red flag. Protect your time and your business model. The right response: *"We've found athletes develop faster in our small group environment. That's how we structure all our training."*
@@ -319,13 +354,42 @@ Total: $275/month for training + video analysis. Clean, simple, valuable.
 
 ---
 
+## Camps, Clinics, and Team Training
+
+Most facilities run more than weekly training. Camps and clinics are the second most common revenue line among CoachIQ facilities, and team training fills the floor on nights the memberships don't. They follow different rules than your core packages.
+
+| Offer | Price it as | Why |
+|-------|-------------|-----|
+| **Camp** (multi-day, school break) | One-time, paid in full at registration, capacity-capped | Fixed dates, fixed costs. Collecting up front is what makes the camp real |
+| **Clinic** (single session, one skill) | One-time, priced above a single package session | It's a sampling event. Price it so a member never feels like they overpaid |
+| **Team training** (a club or school team books you) | Per-team block, invoiced to the organization | The payer is the program, not the parent |
+
+Two rules carry over from your core pricing:
+
+- **Members get first access, not a discount.** Open camp registration to current families a week early. That rewards commitment without undercutting your monthly price.
+- **Every camp is an onboarding session at scale.** Collect parent contact and athlete details at registration, then follow up with the frequency pitch. The camp roster is your best lead list of the year.
+
+<Accordion title="Real-world examples: camps, clinics, and team packages">
+  **CG Hoops** in Chesterfield, Missouri runs the camp side the way the guide describes. Most of the top local players train there, the camps sell out at capacity every time, and the business posted its three best revenue months ever this year. The camps feed the memberships, not the other way around.
+
+  **Elite Baseball and Softball Training** sells 90-minute drop-in clinics at \$100 as an upsell to members and an on-ramp for new families, and prices its travel-team packages by age group: \$750 for 8U-9U up to \$1,450 for the top 15U-18U tier, each bundling a facility membership, a set number of team practices, the one-on-one assessment, and pro-shop discounts. Families pay in full or in four monthly payments, and the fee is non-refundable except for a verified season-ending injury. On tryout night, Elite sends a link to collect a commitment fee before families can shop other programs.
+
+  If you run teams out of your building, that last move is the one to copy.
+</Accordion>
+
+<Info>
+**How CoachIQ handles this**: Camps and clinics are one-time products attached to a scheduler with a capacity limit. Attach your waiver so registration collects the signature, and use the intake form to capture the details you'll need for the follow-up. See [Product Types](/payments/product-types).
+</Info>
+
+---
+
 ## Raising Prices
 
 If you've been undercharging, raising prices is uncomfortable but necessary.
 
 ### The safest approach
 
-**Grandfather existing clients** at their current rate and raise prices only for new clients. This protects your relationships with loyal customers—who are likely your best source of referrals.
+**Grandfather existing clients** at their current rate and raise prices only for new clients. This protects your relationships with loyal families—who are likely your best source of referrals. In CoachIQ, existing subscribers keep their price when you change a product's price; see [Grandfathering Client Pricing](/payments/grandfather-pricing).
 
 ### Timing matters
 
@@ -337,9 +401,9 @@ Your existing clients built your business. They refer new families and strengthe
 
 ---
 
-## Not Every Customer is a Good Customer
+## Not Every Client is a Good Client
 
-As you grow, you'll learn that some customers aren't worth the headache.
+As you grow, you'll learn that some families aren't worth the headache.
 
 <Warning>
 **Red flags to watch for:**
@@ -351,8 +415,12 @@ As you grow, you'll learn that some customers aren't worth the headache.
 - Wants to negotiate on everything
 - Badmouths other coaches or facilities
 
-Taking every customer when you're starting out makes sense. But as you grow, protecting your time and your business model matters more than filling every slot.
+Taking every client when you're starting out makes sense. But as you grow, protecting your time and your business model matters more than filling every slot.
 </Warning>
+
+Two owners who've earned the right to say no. Jeff Schmidt at Schmidt Performance: "I don't want just anyone coming into the program. It's not a revolving door. I want to make sure we're getting the right kids and it's the right fit on both sides, not just their side." Elite Baseball and Softball Training puts it in the membership guide every family reads: "We are not a recreational program, and we are not for everyone."
+
+The flip side is rewarding the families who are the right fit. Schmidt's referral program gives a member 10% off for every family they bring in, for as long as that family stays. The discount leaves when the referral does.
 
 ---
 
@@ -406,25 +474,25 @@ Taking every customer when you're starting out makes sense. But as you grow, pro
 
 ## Ready to Set Up Your Pricing?
 
-CoachIQ makes it easy to implement everything in this guide:
+Everything in this guide maps to a part of CoachIQ:
 
 <CardGroup cols={2}>
-  <Card title="Pricing Page Builder" icon="browser">
-    Create beautiful pricing pages that convert visitors to trial sessions
+  <Card title="Pricing Page" icon="browser" href="/website/overview">
+    Put your packages on your website with a trial-session button as the only call to action
   </Card>
-  <Card title="Subscription Management" icon="rotate">
-    Auto-billing, failed payment recovery, and churn prevention built in
+  <Card title="Subscriptions" icon="rotate" href="/payments/manage-subscriptions">
+    Cards on file, automatic billing, Past Due visibility
   </Card>
-  <Card title="Credit System" icon="coins">
-    Automatic session tracking so you never lose revenue
+  <Card title="Credits" icon="coins" href="/payments/credits/credit-system-overview">
+    Each package grants credits; athletes book against them
   </Card>
-  <Card title="Pricing Review" icon="comments">
-    Our team benchmarks your rates against similar facilities nationwide
+  <Card title="Products" icon="box" href="/payments/product-builder">
+    Build the trial session, the packages, and your camps
   </Card>
 </CardGroup>
 
 <Info>
-**Get personalized pricing advice**: [Book an Office Hours call](https://cal.com/team/coach-iq/office-hours) with our team. We'll review your current pricing, compare it to similar facilities in our network, and help you optimize for your market.
+**Want a second opinion on your numbers?** [Book an Office Hours call](https://cal.com/team/coach-iq/office-hours). We'll look at your packages next to what comparable facilities in the CoachIQ community charge and tell you where you sit.
 </Info>
 
 ---
@@ -432,16 +500,14 @@ CoachIQ makes it easy to implement everything in this guide:
 ## What's Next?
 
 <CardGroup cols={2}>
-  <Card title="Setting Up Subscriptions" icon="rotate" href="/payments/manage-subscriptions">
-    Learn how to manage recurring billing in CoachIQ
+  <Card title="Adding Clients" icon="user-plus" href="/people/adding-editing-clients">
+    Get a new family into CoachIQ after their onboarding session
   </Card>
-  <Card title="Credit System Overview" icon="coins" href="/payments/credits/credit-system-overview">
-    Understand how credits work with your packages
-  </Card>
-  <Card title="Creating Products" icon="box" href="/payments/product-builder">
-    Build your training packages in CoachIQ
-  </Card>
-  <Card title="Onboarding New Athletes" icon="route" href="/quick-guides/onboarding-new-athletes">
-    The complete workflow for new client intake
+  <Card title="Getting Found Online (SEO)" icon="magnifying-glass" href="/guides/getting-found-online-seo">
+    Now that the offer is right, make sure parents can find it
   </Card>
 </CardGroup>
+
+---
+
+*Last reviewed: September 2026.*
