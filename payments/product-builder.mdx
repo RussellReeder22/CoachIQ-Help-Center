@@ -310,7 +310,7 @@ This section turns a product into a **credit package**. Credits are issued here 
     **ON:** Every purchase (or every billing period for a subscription) adds the number of credits you set to the buyer's account. The Credits and Usage Limits fields appear.
 
     <Note>
-      Credits land on the **buyer's** account. A parent who buys for a child holds the credits and books from a shared family balance. See [Booking for multiple athletes](/scheduling/booking-for-multiple-athletes).
+      For a **Buyer** product, credits land on the buyer's account and a parent books from the shared family balance. For a **Managed Athlete** product, the selected athlete receives the purchase and credits. See [Booking for multiple athletes](/scheduling/booking-for-multiple-athletes).
     </Note>
   </Accordion>
   <Accordion title="Number of credits">
@@ -356,6 +356,17 @@ This section turns a product into a **credit package**. Credits are issued here 
     </Warning>
   </Accordion>
 </AccordionGroup>
+
+### Require sessions to happen before credits expire
+
+Enable **Sessions must occur by expiration** when a credit should only pay for sessions inside its credit period. First choose an expiration policy: a specific date, days since purchase, or subscription expiration.
+
+- **On:** The session date must fall inside the credit's validity period, including its expiration day. Rescheduling must stay inside that same period. Recurring bookings need an end date, and every occurrence must fit.
+- **Off:** Credits need to be valid when the booking is made; the session can take place later.
+
+For a membership cycle running September 1–28, turning this on lets those credits cover a September 28 session but not an October 2 session, even if the athlete books in September. Athletes still see the normal booking calendar; a visible date does not guarantee that this credit can pay for it.
+
+If a cancellation qualifies for a credit refund, the returned credit keeps its original expiration. Cancelling does not extend the credit period. See [Recurring credit memberships](/payments/credits/recurring-credit-memberships).
 
 ## Section 4: Usage Limits
 
@@ -560,6 +571,16 @@ Special configurations for specific business needs.
     [Full guide to checkout terms & waivers →](/tools/waivers/waivers)
   </Accordion>
 </AccordionGroup>
+
+### Attach a registration form to a product
+
+In **Advanced**, choose **Add a form**, select a form from your group, and save the product. The form must contain at least one block. Use this when a package or membership needs registration questions before payment.
+
+Checkout takes the buyer through **registration → review → purchase**. Required answers must be completed before proceeding. When the parent or athlete already has completed registration on file for that product, a repeat checkout skips the form and indicates that registration is on file.
+
+The product's **Buyer / Managed Athlete** setting still determines who receives the purchase and credits. Adding a form does not change that setting.
+
+You can also start with a form and connect a product from its **Connections** menu. See [Forms with payments and bookings](/tools/forms/payments-and-bookings) for that flow.
 
 ## Section 7: Access Codes
 

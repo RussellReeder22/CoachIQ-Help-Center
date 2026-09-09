@@ -4,6 +4,36 @@ description: "New updates and improvements"
 icon: "clock-rotate-left"
 ---
 
+<Update label="September 9, 2026">
+
+## Staff notifications
+
+**Pause staff emails for a group**
+
+Admins can pause staff notification emails for every admin and coach in the selected group, including future staff. Personal Email and Push preferences stay saved, and customer receipts and invitations continue to work. Resume delivery from the same setting. [Manage staff emails →](/settings/communication#pause-staff-emails-for-your-group)
+
+## Native calendar
+
+**Calendar and session details match desktop**
+
+The current native app includes Day, Week, Month, and List views with matching session details. Open a session to see its time, duration, location, coaches, and participants, and update attendance. [Use the native calendar →](/scheduling/calendar-overview-and-navigation#calendar-in-the-native-admin-app)
+
+## Fixes and improvements
+
+- **Inbox:** Older conversation history loads past the previous cutoff on web and the current Android app. Deselecting the last video attachment no longer crashes the parent or athlete inbox.
+- **Family accounts:** Managed athletes without login emails can see assigned purchases and transaction history. Eligible parent credits can pay for their sessions; cancellation restores credits when the booking qualifies for a refund.
+- **People:** Search finds full names and first names containing spaces. Name edits no longer fail because an optional phone field contains only a country code or an unchanged phone has a formatting conflict. Unsupported managed-athlete name characters show an error and leave the name editable instead of silently replacing characters.
+- **Staff permissions:** Coaches receive clear admin-only guidance when adding a new client or creating a reusable form field. Existing form fields remain selectable.
+- **Forms:** Required answers reject spaces-only text. Response dates and CSV exports follow the selected timezone, CSV quoting handles quotation marks, and date filters and export controls remain reachable on phones. Registration review's **Edit your details** preserves the selected athlete and answers. The Accepted waiver filter finds records beyond the first page of clients.
+- **Availability:** Reversed weekly hours cannot be saved. Availability Copilot applies dated blackouts and preserves existing blocks during other edits.
+- **Payments:** Product-filtered transaction revenue includes processing fees correctly. Removing a displayed saved card removes its duplicate copies without affecting unrelated cards. Saved-card details and actions remain readable on phones, and new access-code products can save their first code.
+- **Client products:** Subscription IDs are visible and editable again, and saved changes persist after refresh.
+- **Content:** Program viewer names no longer overlap timestamps. Lesson size controls retain valid values. Unsupported lesson text now shows an error and preserves the draft and saved lesson; previously replaced text is not recovered. Fullscreen video keeps the playback position and mute setting, and media-detail controls remain reachable on phones.
+- **Website:** Mobile booking calendars keep the selected date and weekday aligned. New Default pages show **Publish** until their sections are published. Featured-image selection rejects unsupported text files and keeps the image replacement control available.
+- **Calendar settings:** Parents can reach the private-link reset and turn-off controls on narrow phone screens.
+
+</Update>
+
 <Update label="September 2026">
 
 ## Scheduling
@@ -80,6 +110,10 @@ In the Product Builder's **Advanced** settings, **Add a form** attaches a form t
 
 ## Inbox
 
+**Unsend an In-App message**
+
+Use the actions menu beside a message's time, choose **Unsend**, and confirm removal. Admins can remove any In-App message in their group; coaches, parents, and athletes can remove their own. Available in Admin, the web athlete portal, and the current native app. [Learn more →](/inbox/in-app-messages#unsend-an-in-app-message)
+
 **Send an email from the Inbox**
 
 **Create New → Email** in the Inbox writes a single formatted email to a person in your group or any typed address. Add a subject, pick a **Blank**, **Branded**, or **Spotlight** design, or start from the **Client check-in** or **Session follow-up** draft. [Learn more →](/inbox/inbox-overview#email)
@@ -128,7 +162,7 @@ The iOS athlete and admin apps were brought up to date with the web release. Par
 
 ## Bug Fixes & Stability
 
-We shipped 29 coach-visible fixes this cycle across checkout, credits, scheduling, the athlete portal, the inbox, forms, the website builder, video analysis, automations, and the native admin app.
+This cycle includes fixes across checkout, credits, scheduling, the athlete portal, the inbox, forms, the website builder, video analysis, automations, and the native admin app.
 
 **Payments & checkout**
 - Athlete-app checkout no longer fails with "Checkout details could not be verified," "Unable to complete checkout," or "Authentication is required to continue" on valid cards and bank accounts.
@@ -139,7 +173,7 @@ We shipped 29 coach-visible fixes this cycle across checkout, credits, schedulin
 
 **Credits**
 - A credit bank on an actively billing subscription no longer reads inactive with 0 redeemable after a renewal because an older record said the purchase was canceled.
-- Connected children can spend a parent's family-membership credits at checkout instead of being stopped with "Short by 1 credit" while the parent's profile shows the credits.
+- Family-credit checkout received fixes. The September 9 update covers verified booking with eligible parent credits for managed athletes without a login. Some connected-child credit cases remain under investigation.
 
 **Scheduling**
 - Saving a scheduler no longer fails with a generic "Unable to save this scheduler" toast, and a session whose date window equals its duration no longer trips "This duration does not fit specific date-window."
@@ -171,7 +205,7 @@ We shipped 29 coach-visible fixes this cycle across checkout, credits, schedulin
 - In Video Analysis, pressing **F** adds an annotation instead of blanking the video, and clips no longer show "Unable to load this media" or "This video is still processing" on already-processed videos until you restart the app.
 
 **Automations**
-- **Add a Product Purchase** no longer fails with `AUTOMATION_ACTION_FAILED` when the target is a newly created Parent profile.
+- **Add a Product Purchase** received a fix for newly created Parent profiles. Follow-up failures remain under investigation; contact support if the action fails in your automation log.
 
 **Native admin app**
 - The calendar refreshes to the current day, with that day's bookings, when you return to the app after the date has changed, instead of staying on yesterday.
@@ -221,6 +255,10 @@ When you add a recurring booking from the admin calendar and it overlaps another
 ---
 
 ## Payments
+
+**See ACH payments while they process**
+
+Open **Payments → Transactions → Processing** to find bank payments awaiting confirmation. Parents see a processing message while they wait; product access and purchase automations follow confirmation. [Learn more →](/payments/transactions#find-an-ach-payment-that-is-still-processing)
 
 **Record cash, check, or other when adding a product to a client**
 
@@ -398,6 +436,14 @@ You can now archive a scheduler with the **Archive** button in the scheduler bui
 **Per-Athlete Booking Limits**
 
 **Per-athlete booking limits** in a scheduler's **Advanced settings** cap how many times a *single* athlete can book a session per day and per week (**Max bookings per athlete per day / week**), separate from the **Session-wide booking limits** that cap total bookings across all athletes. Great for unlimited memberships and rentals, where one athlete could otherwise grab every open slot. [Learn more →](/scheduling/scheduler-settings-limits-and-permissions#setting-2-booking-limits)
+
+---
+
+## Athlete Portal
+
+**Subscribe to bookings in your calendar**
+
+Parents and athletes can enable a private booking calendar from **Settings → Calendar**, then subscribe using Google, Apple, or Outlook. Reset the private link or turn it off from the same screen. [Learn more →](/athlete-portal/schedule#subscribe-to-bookings-in-google-apple-or-outlook)
 
 ---
 
@@ -769,7 +815,7 @@ We shipped more than 60 coach-facing fixes this cycle:
 
 **AI-Powered Sections**
 
-In the **Website Builder**, **Add Section** now includes AI-generated sections. Describe what you need — a hero with stats, a testimonials grid, a program card grid, an FAQ — and the section is built for you with your copy and images, then editable like any other section. Headers and footers can be generated the same way. [Learn more →](/website/sections/working-with-sections)
+The **Website Builder** supports AI-generated custom sections, including heroes, testimonials grids, program cards, FAQs, headers, and footers. Once published to the section library or used on your site, these sections can be added through **Add Section** and customized through their editable fields. [Learn more →](/website/sections/working-with-sections)
 
 **Embedded Products, Forms, and Schedulers**
 
