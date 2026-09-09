@@ -158,11 +158,20 @@ Next to Subscriptions, the profile's **Payment Methods** tab lists every card th
 
 **Use it to:**
 
-- Confirm a new card landed after the client updated it in their portal (**Billing**). A newly added card becomes the default automatically, so if the old card is still marked default, they haven't finished the update.
+- Confirm a new card landed after the client updated it in their portal (**Billing**). Check the **default** label separately from whether the new card is listed. Adding a card through the admin flow preserves the existing default.
 - Check an expiring card before a renewal fails, instead of opening Stripe.
 - Answer "which card are you charging?" from the profile.
 
-The tab reads **No payment methods on file** until the client has paid once or saved a card through a [card-on-file product](/payments/product-builder#section-2-payment-options). Clients change or add cards themselves from **Billing** in the athlete portal; see [Updating client payment methods](/payments/manage-subscriptions#updating-client-payment-methods).
+### Add a card for a client
+
+1. Open **People → Clients**, select the client, and open **Payment Methods**.
+2. Choose **Add card** and enter the card details with the client's permission.
+3. Confirm the consent to save the card for future payments and save it.
+4. Check that the card appears in the list. If it should become the default, choose **Set as default** separately.
+
+Saving a card does not charge it and preserves the existing default. Cancelling the form leaves saved cards unchanged. If the card is declined, correct the details or use another card; existing saved cards stay in place.
+
+The tab reads **No payment methods on file** when no cards have been saved. Clients can also manage cards from **Billing** in the athlete portal, or save one through a [card-on-file product](/payments/product-builder#section-2-payment-options). See [Updating client payment methods](/payments/manage-subscriptions#updating-client-payment-methods).
 
 ---
 

@@ -709,6 +709,12 @@ What happens at each stage of a subscription's life.
 
 ---
 
+### Keep credit-funded sessions inside the billing cycle
+
+For a membership whose credits expire each cycle, turn on **Sessions must occur by expiration** in the [Product Builder](/payments/product-builder#require-sessions-to-happen-before-credits-expire). Credits from that cycle can only cover sessions occurring within their validity period, including the expiration day. Rescheduling and every occurrence of a recurring booking must stay within the same period.
+
+Leaving the setting off keeps the book-before-expiration rule. If a cancellation refunds a credit, it retains the original expiration; it does not gain a new cycle.
+
 ### Voluntary cancellation (Athlete initiated)
 
 **What triggers it**: Athlete cancels subscription themselves
