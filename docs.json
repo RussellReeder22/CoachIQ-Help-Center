@@ -180,6 +180,7 @@
                 ]
               },
               "inbox/announcements",
+              "inbox/email",
               "inbox/professional-email",
               "inbox/attaching-forms-schedulers-and-products",
               "inbox/using-tags-for-group-messages"

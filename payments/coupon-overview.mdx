@@ -24,9 +24,6 @@ Clients enter coupon codes during checkout to apply discounts automatically.
 
 Navigate to **Payments → Coupons** to view all discount codes.
 
-<Frame>
-  ![CoachIQ coupons page showing discount codes list with status and redemptions](/images/coupons-page.png)
-</Frame>
 
 **Page displays:**
 
@@ -34,14 +31,13 @@ Navigate to **Payments → Coupons** to view all discount codes.
 - Discount type (Free, Percentage, Amount)
 - Value off
 - Redemption count
-- Date created
-- Active/Inactive status
+- Membership discount duration
+- Eligibility and selected products
 
 **Available actions:**
 
 - Create new coupon
-- Delete/archive coupon
-- View redemption details
+- Delete a coupon using its row action
 
 ## Three coupon types
 
@@ -198,9 +194,7 @@ Navigate to **Payments → Coupons** to view all discount codes.
 
 **Code**: Exact text client must enter
 
-- Case sensitive by default
-- No spaces allowed
-- Letters, numbers, and hyphens OK
+Enter or share the code exactly as created.
 
 **Type**: Free, Percentage Off, or Amount Off
 
@@ -216,11 +210,11 @@ Navigate to **Payments → Coupons** to view all discount codes.
 - Compares against limit (if set)
 - Example: 15/100 = 15 uses out of 100 limit
 
-**Date Created**: When you created the coupon
+**Membership duration**: Shown beneath the discount type, such as Every payment.
 
-**Status**: Active (clients can use) or Inactive (disabled)
+**Eligibility / Products**: Shows product restrictions or automatic member-discount requirements. Review these alongside redemption limits.
 
-## Filter and search coupons
+## Filter coupons
 
 **Filter by type:**
 
@@ -229,11 +223,7 @@ Navigate to **Payments → Coupons** to view all discount codes.
 - Percentage off only
 - Amount off only
 
-**Search:** Type code name to find specific coupon
-
-<Frame>
-  ![CoachIQ coupons page with filter and search options](/images/coupons-page.png)
-</Frame>
+Use the type filters beside the coupon list to narrow the table.
 
 ## Coupon limitations and controls
 
@@ -242,10 +232,16 @@ Navigate to **Payments → Coupons** to view all discount codes.
 - Unlimited uses (default)
 - Limited total uses (50, 100, 500, etc.)
 - One use per client (requires sign-in)
-- First purchase only
+- First purchase only (no previous purchases in this business, including free orders)
 - An expiration date for new redemptions
 - A minimum order amount
 - Selected products only
+
+<Frame caption="Use Limits to control redemption, then choose whether the coupon applies to all products or selected products.">
+
+![New coupon builder showing use limits, expiry, minimum order, automatic member discount and product restrictions](/images/coupon-limits-products-2026-09.png)
+
+</Frame>
 
 ## Coupons and subscriptions
 
@@ -254,7 +250,7 @@ Choose how long the discount applies when creating the coupon:
 | Duration | Effect |
 | --- | --- |
 | First payment only | Discounts the first invoice, then renews at the regular price |
-| Limited months | Discounts invoices within the selected number of calendar months; this is not a count of sessions or payments |
+| A set number of months | Discounts invoices within 1–36 calendar months from signup; this is not a count of sessions or payments |
 | Every payment | Keeps the discount on future payments |
 
 One-time products receive their discount once. Checkout shows the introductory amount and later renewal price. An expiration date controls when a code can be redeemed; it is separate from the duration of a discount already applied to a membership.
@@ -285,7 +281,7 @@ Member discounts are automatic: anyone who holds a specific membership pays less
 | Who gets it | Anyone with the code | Anyone with the qualifying membership active |
 | How it's applied | Client types the code at checkout | Automatically at checkout |
 | Scope | Any product you allow on the coupon | Products you select on the membership, or all products |
-| Ends when | You deactivate the coupon or it hits its limit | The membership lapses or is cancelled |
+| Redemption eligibility | The code must meet its expiry, usage, product, and client rules | The qualifying membership must be active |
 
 <Tip>
   Use a coupon for a time-limited promotion anyone can share. Use a member discount for a standing perk that should follow the membership without you handing out codes.
@@ -295,15 +291,18 @@ The member discount setting is described field-by-field in the [Product Builder 
 
 ## Creating your first coupon
 
-Ready to create a discount code?
+1. Open **Payments → Coupons → Create coupon**.
+2. Enter the **Coupon code**, then choose **Free**, **Percentage off**, or **Amount off**. Enter the percentage or amount when required.
+3. Under **On memberships, this discount applies to**, choose **First payment only**, **A set number of months**, or **Every payment**. Enter 1–36 months for a limited duration.
+4. Under **Limits**, leave **Unlimited use** on or turn it off to set a total use limit. Add any per-client, first-purchase, expiry, or minimum-order restrictions.
+5. Under **Products**, leave **Limit to selected products** off for all products, or turn it on and choose the eligible products. Use **Automatic member discount** only for a membership-based offer.
+6. Review the code, discount, duration, and restrictions, then click **Create coupon**. **Cancel** closes an unsaved example.
 
-1. Go to Payments → Coupons
-2. Click + Create Coupon
-3. Choose coupon type (Free, Percentage, Amount)
-4. Set code name (what clients enter)
-5. Configure discount value
-6. Choose membership duration and optional eligibility, expiry, product, and redemption limits
-7. Save coupon
+<Frame caption="Example: WELCOME25 gives 25% off during the first three calendar months. This screenshot shows an unsaved example, not an active promotional code.">
+
+![Create coupon with Percentage off selected, 25 percent discount, and a three-month membership duration](/images/coupon-discount-duration-2026-09.png)
+
+</Frame>
 
 ## Tracking coupon performance
 
