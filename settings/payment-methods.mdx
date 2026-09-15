@@ -7,6 +7,24 @@ icon: "credit-card"
 
 Organization Admins can open **Settings → Payment Methods**. This setting is available to regular Admin accounts, not just CoachIQ staff.
 
+<Frame>
+
+![Checkout payment methods showing available, requires-action, and unavailable states](/images/payment-methods-2026-09.png)
+
+</Frame>
+
+## Read the status before changing a method
+
+| What you see | What it means |
+| --- | --- |
+| Available | Stripe supports the method for this account. Check the switch to see whether you have enabled it. |
+| Requires action | Read **How to enable** and complete the displayed setup before relying on the method. |
+| Unavailable | The account cannot currently use the method; its switch is disabled. |
+
+For example, **Link** is available but switched off in the screenshot. Card is required and cannot be switched off. Your account's available methods can differ from this example.
+
+If you see **Connect Stripe to configure payment methods**, connect your account through [Stripe settings](/payments/connecting-stripe) first.
+
 ## Change an available method
 
 1. Open Payment Methods in the correct organization.
