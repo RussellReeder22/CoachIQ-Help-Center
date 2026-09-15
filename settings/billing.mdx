@@ -29,7 +29,7 @@ Manage the payment method on file for your CoachIQ subscription, view invoices, 
 
   </Step>
   <Step title="Add a new card">
-    Under **Payment Method**, click **+ Add another card** and enter the card number, expiration date, CVV, and billing ZIP code.
+    Under **Payment Method**, click **+ Add a card** (or **+ Add another card** when a card is already saved). Enter the required card details and click **Add Card**. Leave this screen open until the save succeeds.
   </Step>
   <Step title="Set as default">
 
@@ -37,6 +37,19 @@ Manage the payment method on file for your CoachIQ subscription, view invoices, 
 
   </Step>
 </Steps>
+
+<Frame>
+
+![Empty Add Card form for the CoachIQ subscription](/images/billing-add-card-2026-09.png)
+
+</Frame>
+
+### Check your replacement card
+
+1. Confirm the new card appears in **Payment Method**.
+2. Set it as the default and confirm that the default indicator moves to it.
+3. Remove the old card only after the replacement is saved and selected.
+4. If an invoice is overdue, complete the payment retry as well. A saved card and a paid invoice are separate results.
 
 ### View and download invoices
 
@@ -51,6 +64,13 @@ To change or cancel your plan, click **Contact us** next to **Need an upgrade?**
 ## Restore access after a failed payment
 
 When your organization's CoachIQ membership payment fails, staff may see a billing screen instead of the admin platform, including during an existing session.
+
+| Your situation | Next step |
+| --- | --- |
+| You can open Settings and want to replace a card | Use **Billing → Payment Method**. |
+| A failed-payment screen blocks the admin platform | An Admin must complete the payment retry there. |
+| You are a Coach | Ask an organization Admin to resolve membership billing. |
+| A parent cannot pay for training | Check that client's purchase and your connected Stripe account; this is separate from your CoachIQ plan. |
 
 - **Admins:** use the billing screen to retry payment with a saved card or add a new card and complete payment. Access returns after payment succeeds. Adding a card alone does not restore access.
 - **Coaches:** ask an organization Admin to resolve billing. The screen explains that an Admin needs to act.

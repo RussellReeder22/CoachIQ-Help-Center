@@ -6,6 +6,10 @@ icon: "credit-card"
 keywords: ["payment options", "session payment", "credit-based sessions", "free sessions", "paid sessions", "Stripe integration", "attach product"]
 ---
 
+## Set a price for each session length
+
+Offer 30-minute and 60-minute sessions with separate prices or credit costs. Follow [Price by session length](/scheduling/pricing-by-session-length) for the current setup screens, default behavior, and booking checks.
+
 ## What you'll accomplish
 
 By the end of this guide, you'll understand all payment options for your schedulers and know exactly how to configure each one. You'll be able to accept payments, issue credits, or offer free sessions based on your business model.
@@ -829,7 +833,7 @@ A paid or free scheduler can also be opened to guest checkout, so a prospect fro
     Always explain pricing before athlete books. Include price in scheduler name, description, and any promotional materials. Surprise costs destroy trust.
   </Card>
   <Card title="Test Every Change" icon="vial">
-    After any payment configuration change, complete a test booking yourself. Use Stripe test cards (4242...) to verify the flow without real money.
+    After any payment configuration change, complete a test booking yourself. Only use Stripe test cards in a confirmed Stripe test environment. For a live account, review the checkout summary without submitting a payment.
   </Card>
   <Card title="Strategic Pricing Psychology" icon="brain">
     Price packages to incentivize commitment: 750 for 10 singles vs 650 for 10-pack (13% discount). Make the package obviously better value.
@@ -875,15 +879,3 @@ A paid or free scheduler can also be opened to guest checkout, so a prospect fro
   **Need help choosing the right payment model?** Our support team can review your business model and recommend the optimal payment configuration. [Contact Support](https://support.coachiq.com)
 
 </Info>
-
-## Set a price for each session length
-
-When your scheduler offers multiple lengths, its **Payment** section includes **Price by session length**.
-
-1. Choose the lengths in **Advanced settings → Session lengths**.
-2. In **Payment → Price by session length**, choose a cash-price product and/or credit cost for each length, matching the payment methods your scheduler accepts.
-3. Save the scheduler and check each length in the booking preview.
-
-For example, 30 minutes can cost $50 or 1 credit, while 60 minutes costs $100 or 2 credits. These are separate settings; CoachIQ does not assume an hourly rate. A blank length override uses the scheduler's normal product and credit cost.
-
-Changing the selected length clears the previous time, refreshes availability, and updates the price and credit requirement. Existing bookings retain what was charged. A reschedule cannot switch to a differently priced length without a new purchase: cancel under your cancellation policy and book the new length instead.
