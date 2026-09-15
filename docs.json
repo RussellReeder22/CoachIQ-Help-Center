@@ -394,9 +394,11 @@
             "pages": [
               "settings/index",
               "settings/general",
+              "settings/connections",
               "settings/developer",
               "settings/communication",
               "settings/billing",
+              "settings/payment-methods",
               "settings/data",
               "settings/change-organization-group-name"
             ]

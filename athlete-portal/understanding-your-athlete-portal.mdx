@@ -84,20 +84,9 @@ Think of it as the athlete-facing side of your coaching business - the polished,
 
 ### Platform differences
 
-<CardGroup cols={2}>
-  <Card title="iOS (iPhone/iPad)" icon="apple">
-    - **Sign-up**: Web only (cannot register in app)
-    - **Purchases**: Web only (no in-app purchases)
-    - **Login**: Full app access after web registration
-    - **Features**: All viewing/booking features available
-  </Card>
-  <Card title="Android" icon="android">
-    - **Sign-up**: More flexible options
-    - **Purchases**: Can process through app (market-dependent)
-    - **Login**: Standard app access
-    - **Features**: Full functionality
-  </Card>
-</CardGroup>
+Your portal is available on the web and in supported iOS and Android apps. [Personalized Apps](/power-ups/personalized-app) are now available for both stores; each business's listing and update is released separately.
+
+A personalized app can prompt a new athlete to register on their first login attempt. Purchases depend on the installed app version and enabled checkout: eligible native purchases can stay in the app, while other purchases open the browser. The website remains a useful starting point for account creation and purchasing.
 
 ## What athletes can do in your portal
 
@@ -143,7 +132,7 @@ Athletes can view their credit balance, renewal dates, and which schedulers thei
   ![Athlete mobile view showing credit balances and redeemable schedulers](/images/athlete-portal-credit-balance-mobile.png)
 </Frame>
 
-✅ **Purchases** (Web portal for iOS users)
+✅ **Purchases** (web, or supported native checkout)
 
 - Buy memberships and subscriptions
 - Purchase session credits
@@ -153,12 +142,6 @@ Athletes can view their credit balance, renewal dates, and which schedulers thei
 ## What athletes CANNOT do
 
 Understanding limitations helps set proper expectations:
-
-❌ **Cannot in iOS app**:
-
-- Create new accounts
-- Make any purchases or payments
-- Add payment methods
 
 ❌ **Cannot anywhere**:
 
@@ -208,15 +191,20 @@ The App Builder is where you shape the entire athlete experience. Located in you
     Your monetization boundary. Set which pages or content require payment to access. Non-members see a preview with payment options.
   </Accordion>
   <Accordion title="Reader App">
-    Apple's classification for apps that display content purchased elsewhere. This is why iOS users must sign up and pay through your website, not the app.
+
+    A term for apps that display content purchased elsewhere. Do not use it as a blanket description of current CoachIQ checkout; check the installed app and enabled features.
+
   </Accordion>
 </AccordionGroup>
 
 ## Common questions
 
 <AccordionGroup>
-  <Accordion title="Why can't athletes sign up in the iOS app?">
-    Apple requires "reader apps" like CoachIQ to handle sign-ups and payments outside the app. This protects you from Apple's 30% commission but means iOS users must start on your website.
+
+  <Accordion title="How do athletes create an account?">
+
+    Athletes can create an account on your website. Personalized apps also prompt new athletes to register on their first login attempt, using your configured sign-up fields.
+
   </Accordion>
   <Accordion title="What's the best way to onboard new athletes?">
     For smoothest onboarding:
@@ -230,13 +218,17 @@ The App Builder is where you shape the entire athlete experience. Located in you
     It's best practice to have separate accounts for tracking and communication, but parents can create accounts to manage younger athletes' bookings. Parents can now add and switch between family members themselves from **Settings → Family** in the portal — see [Family Accounts](/athlete-portal/family-accounts).
   </Accordion>
   <Accordion title="Where do iOS users make purchases?">
-    All purchases for iOS users happen on your website. They can browse products in the app but clicking "purchase" redirects them to the web portal to complete payment.
+
+    Use the checkout offered by the released app. Eligible purchases can use native checkout where enabled; otherwise complete the purchase on the web.
+
   </Accordion>
   <Accordion title="Should I direct people to web or app first?">
     Always direct new users to your website first to create accounts and handle initial payments. After that, they can use the mobile app for daily access. The exception is a branded [Personalized App](/power-ups/personalized-app), which prompts an athlete with no account to sign up on their first login attempt.
   </Accordion>
   <Accordion title="How do athletes book and pay in the mobile app?">
-    Booking happens in the app. If a scheduler accepts both payment and credits, the app asks the athlete whether to pay or use a credit, the same choice as on the web. Anything that needs a card (a product, a membership, a paid booking without credits) opens in the browser to finish checkout, then the athlete returns to the app. See [Booking in the native app](/athlete-portal/native-app-booking).
+
+    Booking happens in the app. If a scheduler accepts both payment and credits, the app asks the athlete whether to pay or use a credit, the same choice as on the web. Card checkout can stay in the app where enabled for the purchase, or open the browser on other versions. See [Booking in the native app](/athlete-portal/native-app-booking).
+
   </Accordion>
   <Accordion title="Do athletes get logged out when CoachIQ pushes an update?">
     No. If a platform update lands while an athlete or coach is using the app, the app signs them back in once the update completes instead of dropping them at the login screen. An athlete who still ends up logged out should update the app from the App Store or Google Play and sign in once.
@@ -263,7 +255,9 @@ The App Builder is where you shape the entire athlete experience. Located in you
 </Tip>
 
 <Tip>
-  **Set clear expectations**: Add a FAQ to your website explaining why iOS users must sign up via web. Frame it as "avoiding Apple's fees keeps your costs lower."
+
+  **Set clear expectations**: Share the correct App Store or Google Play link for your business and explain the checkout available in that app.
+
 </Tip>
 
 ## What's next?
@@ -304,4 +298,5 @@ Now that you understand how the Athlete Portal works, you're ready to start buil
   <Card title="Content Overview" icon="video" href="/content/content-overview">
     Manage programs, lessons, and media for your athletes
   </Card>
+
 </CardGroup>
