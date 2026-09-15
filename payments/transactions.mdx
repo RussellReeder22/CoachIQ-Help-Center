@@ -289,3 +289,9 @@ Click **Open** under the Source column of the transaction to view on Stripe:
 - [Issuing Refunds](/payments/issuing-refunds)
 - [Failed Payments](/payments/failed-payments)
 - [Subscriptions Dashboard](/payments/subscriptions-dashboard)
+
+## Distinguish successful, pending, and failed bank payments
+
+**Success** includes succeeded payments, not terminally failed ACH attempts. Use **Processing** for bank payments that have not settled. Failed attempts can appear under **Past Due**, **Blocked**, or **All**, with related failure refunds under Blocked. Check the transaction status rather than assuming a started bank transfer was paid.
+
+If a bank payment fails during checkout, the client can return to payment selection and retry. Reloading should not leave a terminally failed attempt stuck on Processing. No purchase is granted for the failed attempt.

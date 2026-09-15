@@ -1,117 +1,61 @@
 ---
-title: "Connecting Stripe to CoachIQ"
-description: "Connect your Stripe account to CoachIQ to start accepting payments, processing subscriptions, and managing transactions"
+title: "Connect and Manage Stripe"
+description: "Connect Stripe, check payment and payout status, and see which Stripe products are configured in CoachIQ."
 sidebarTitle: "Connect Stripe"
 icon: "credit-card"
-keywords: ["connect stripe", "stripe setup", "link stripe", "stripe account", "payment setup", "accept payments"]
 ---
 
-<Info>
-  **Where to find this**: Settings → Billing → Stripe
-</Info>
+Open **Settings → Stripe**, or **Settings → Connections → Stripe → Manage**.
 
-## What you need
-
-- Admin access in CoachIQ
-- A Stripe account (you can create one during this process)
-
-<Warning>
-  Only CoachIQ admins can connect payment processing.
-</Warning>
-
-## Connect Stripe
+## Connect your account
 
 <Steps>
-  <Step title="Navigate to Stripe settings">
-    From your CoachIQ dashboard:
 
-    1. Click **Settings** in the left sidebar
-    2. Select **Stripe Portal**
+<Step title="Open Stripe settings as an Admin">
 
-    <Frame>
-      ![Stripe Settings Location](/images/stripe-settings-location.png)
-    </Frame>
-  </Step>
-  <Step title="Click Connect Stripe">
-    Click the blue **Connect Stripe** button.
+Choose the correct CoachIQ organization. Only Admins can connect or disconnect Stripe; Coach-role staff see guidance to ask an administrator.
 
-    <Frame>
-      ![Connect Stripe Button](/images/Connectstripe.png)
-    </Frame>
+</Step>
 
-    You'll be redirected to Stripe. If you already have a Stripe account, sign in. If not, you'll create one now.
+<Step title="Choose Connect Stripe">
 
-    <Tip>
-      Have multiple Stripe accounts? Make sure you're logged into the correct one before authorizing.
-    </Tip>
-  </Step>
-  <Step title="Authorize CoachIQ">
-    Stripe will ask you to authorize CoachIQ to access your account.
+Sign in to the Stripe account you want to use, or create one through Stripe's flow. If you have several accounts, check the business before authorizing.
 
-    CoachIQ needs this access to:
+</Step>
 
-    - Process payments on your behalf
-    - Create and manage products
-    - Handle subscription billing
-    - Issue refunds
-    - Sync transaction data
+<Step title="Authorize and return to CoachIQ">
 
-    Click **Connect** to authorize.
-  </Step>
-  <Step title="Confirm connection">
-    After authorization, you'll return to CoachIQ.
+Complete the Stripe flow and return to the integration page. Check the business name, masked account ID, and live/test label.
 
-    The Stripe settings page now shows:
+</Step>
 
-    - **Status**: Connected (green)
-    - **Account**: Your Stripe email
-    - **Mode**: Test or Live
-
-    <Check>
-      **Connected.** You can now accept payments.
-    </Check>
-  </Step>
 </Steps>
 
-## Test mode vs. live mode
+## Check account health
 
-Stripe provides two environments:
+The account card separates **Connected to CoachIQ**, **Payments enabled/paused**, and **Payouts enabled/paused**. A connected account is not necessarily ready to take payments or receive payouts.
 
-<Tabs>
-  <Tab title="Test Mode">
-    **Use for setup and testing**
+If Stripe needs more information, use **Review in Stripe** and follow its requirements. A verification notice does not mean you should reconnect. If account status is unavailable, retry instead of treating the account as healthy or disconnected.
 
-    - No real money processes
-    - Use Stripe's test card numbers
-    - Test booking flows, subscriptions, refunds
-    - Safe environment for experimenting
+**Open Stripe dashboard** opens the connected account. The live/test label identifies the connected environment; switching a view in Stripe's dashboard does not switch CoachIQ's payment environment.
 
-    Switch to Test Mode in your Stripe dashboard to test payments without charging real cards.
-  </Tab>
-  <Tab title="Live Mode">
-    **Real payments with real money**
+## Understand product relationships
 
-    - Production environment
-    - Charges actual credit cards
-    - Money deposits to your bank
-    - Switch to Live Mode when ready to accept real payments
+**Products in this Stripe account** shows Stripe products, pricing, and their relationship to CoachIQ. Use Previous/Next for longer lists.
 
-    Your first payout takes 7-10 days. After that, payouts follow your Stripe schedule (typically daily or weekly).
-  </Tab>
-</Tabs>
+| Label | Meaning |
+| --- | --- |
+| In CoachIQ | The Stripe product has a saved relationship to at least one CoachIQ product. Use **Open in CoachIQ** to view it. |
+| Stripe only | The product has not been added to CoachIQ. This is informational, not a failed payment or import request. |
+| Status unavailable | CoachIQ could not confirm the relationship. Retry rather than assuming it is unlinked. |
+| Archived | The Stripe product is archived; an existing relationship does not make it purchasable. |
 
-<Info>
-  CoachIQ automatically syncs with whichever mode is active in Stripe. Toggle between modes in your Stripe dashboard.
-</Info>
+Connecting Stripe does not automatically add all Stripe products to CoachIQ. Use **Manage CoachIQ products** to open **Payments → Products** for product setup, prices, credits, and access. Matching is based on saved Stripe identifiers, not matching product names.
 
-Once Stripe is connected:
+The old Products/Invoices tabs and import button in Stripe settings have been replaced by this view. Manage invoices in the appropriate billing area or Stripe dashboard.
 
-- **Payments section activates**: Create products, view transactions, manage subscriptions
-- **Real-time sync**: All transactions, refunds, and subscription changes sync automatically
-- **Customer data flows**: Payment methods and billing information sync between platforms
+## Disconnect
 
-## Related articles
+**Disconnect Stripe** is at the bottom of the page and requires confirmation. Disconnecting does not cancel existing Stripe subscriptions or delete your CoachIQ product setup. If the attempt fails, the confirmation shows the error with **Try again** and **Keep connected**; the connection remains intact. See [Disconnect Stripe](/payments/disconnect-stripe).
 
-- [Understanding CoachIQ Payments](/payments/getting-started)
-- [Stripe Dashboard Basics](/payments/stripe-dashboard)
-- [Creating Your First Product](/payments/product-builder)
+Demo Stripe connections managed by CoachIQ cannot be disconnected here.

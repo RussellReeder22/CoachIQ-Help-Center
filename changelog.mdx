@@ -4,6 +4,58 @@ description: "New updates and improvements"
 icon: "clock-rotate-left"
 ---
 
+<Update label="September 15, 2026">
+
+## Features & improvements
+
+**Personalized Android apps are here**
+
+Your coaching business can now have a branded Android app as well as an iOS app. Request Android through Personalized App, or ask the team to add Android if you already have an iOS app. Each store has its own build, review, and launch; share your Google Play link once the team confirms it is live. [Personalized apps →](/power-ups/personalized-app) · [Set up Android →](/power-ups/setup/personalized-app-setup#android-setup)
+
+**Charge by session length**
+
+Offer different cash prices and credit costs for different lengths on the same scheduler. In **Payment → Price by session length**, choose the product and credit cost for each length; blank overrides use the scheduler's normal settings. Changing length updates the price and available times. Existing bookings keep their original charge. [Set duration pricing →](/scheduling/setting-up-payment-options#set-a-price-for-each-session-length)
+
+**More control over coupons**
+
+Choose whether a membership discount applies to the first invoice, a set number of calendar months, or every payment. Add an expiry for new redemptions, one-use-per-client or first-purchase restrictions, minimum order value, and product eligibility. Expiring a code does not end an already-applied recurring discount. [Create coupons →](/payments/coupon-overview)
+
+**Save calendar views and find openings**
+
+Use **Show → Open availability only** to see unbooked times, narrow the types of openings, and save a named view for later. Return to All sessions when you need your bookings. Large date ranges may ask you to select fewer schedulers or a shorter range. [Calendar views →](/scheduling/calendar-overview-and-navigation#saved-views-and-open-availability)
+
+**Connections and clearer Stripe settings**
+
+Find Stripe, linked Google Calendars, and the ChatGPT entry point under **Settings → General → Connections**. Stripe settings now distinguish connection, payment, and payout status, link to the correct Stripe business, and show which Stripe products have a matching CoachIQ product. Upcoming integrations are labeled as unavailable. [Connections →](/settings/connections) · [Stripe settings →](/payments/connecting-stripe)
+
+**Manage payment methods and your CoachIQ billing**
+
+Admins can manage available checkout payment methods, including Stripe Link. For your business's own CoachIQ subscription, accepted Admins can add a card, make it the default, and remove an old card. If failed billing blocks access, an Admin can retry payment to restore access; saving a card alone does not settle the invoice. [Checkout payment methods →](/settings/payment-methods) · [CoachIQ billing →](/settings/billing)
+
+**Branded Inbox emails**
+
+Branded Inbox emails use the group's logo when one is set, falling back to the organization logo. A logo you choose in the composer takes precedence. [Inbox email →](/inbox/inbox-overview)
+
+<Accordion title="Fixes in this release">
+
+- **Forms and registration:** Guest submissions save again. Required booking-registration answers save only after payment or booking confirmation, so abandoned or declined checkout does not create a completed response. Sibling registrations can complete as separate purchases. Signing in through one website form updates other forms on the page. [Booking forms →](/tools/forms/payments-and-bookings)
+- **Form text and files:** New responses preserve international text, emoji, and curly quotes through Responses and CSV export. Plain Text content retains multilingual text and line breaks. File-upload failures show an error and allow retry instead of reporting success; this does not restore previously lost answers.
+- **Accessible forms and calendars:** Required checkboxes work with the keyboard. Website Week/Month controls and date navigation, People role filters, and program-type choices also support keyboard navigation. Booking registration respects dark-mode styling.
+- **Coupons and checkout:** Eligible signed-in buyers can redeem an unused one-use coupon; reuse is rejected. Fixed discounts apply with card or bank processing fees. Free-trial orders distinguish the trial from the later recurring payment.
+- **Bank payments and transactions:** Failed bank payments recover to a retry flow after reload. The Success filter excludes terminal failures. Managed-athlete totals and parent product filters include parent-paid purchases, and scheduled charge dates respect the selected timezone. [Transaction statuses →](/payments/transactions)
+- **Family credits and client details:** Eligible manual and refunded parent credits can fund a managed athlete's booking, with qualifying cancellations restoring the same pack. Paused packs remain blocked. Phone Credits View keeps balances readable, product rows show active/inactive/archive status dots, whitespace-only names are rejected, and row tag pickers respond on the first click.
+- **Moving a session:** An athlete's other booking now gives a heads-up instead of blocking the whole-session move. Sharing a location is not a conflict; occupied resources and another occurrence of the same session still block the move with a clear explanation. [Move a session →](/scheduling/editing-rescheduling-bookings)
+- **Availability:** A shared date window saves if at least one linked session length fits; longer sessions offer no times in that window. Past dates no longer block saving. Start dates no longer hide valid early slots, connected dates appear in Specific-date settings, and switching athletes clears stale date/time selections. [Availability rules →](/scheduling/create-your-availability)
+- **Booking details:** Credit-priced schedulers no longer display Free. Name-only locations no longer show an empty address separator. Virtual joining instructions preserve international text.
+- **Video analysis and Media Hub:** Upload, save, and re-record flows support retry; re-recording preserves the media item and share link. Saved recordings play in the completion preview, M toggles mute both ways, and changing aspect ratio asks before discarding slides. Media Hub combines uploader and tag filters. [Video analysis →](/content/video-analysis)
+- **Programs and lessons:** Sharing previews count lessons correctly; stats show the saved quiz answer; private assigned programs stay under Shared with you. Resume and direct links respect drip release dates. Saved lesson line breaks remain visible, and mobile lesson previews can be closed.
+- **Inbox and settings:** Unread indicators remain until you open the conversation. Settings navigation remains scrollable on shorter screens.
+- **Assistant connections:** OAuth consent loads correctly, new connections can request supported write access, and compatible clients can renew their connection. Older read-only connectors may need removal and re-addition. This does not enable every planned assistant integration. [Connection access →](/settings/connections#manage-or-remove-access)
+
+</Accordion>
+
+</Update>
+
 <Update label="September 11, 2026">
 
 ## Features & improvements

@@ -40,7 +40,6 @@ Navigate to **Payments → Coupons** to view all discount codes.
 **Available actions:**
 
 - Create new coupon
-- Edit existing coupon
 - Delete/archive coupon
 - View redemption details
 
@@ -242,16 +241,30 @@ Navigate to **Payments → Coupons** to view all discount codes.
 
 - Unlimited uses (default)
 - Limited total uses (50, 100, 500, etc.)
-- One use per customer (coming soon)
+- One use per client (requires sign-in)
+- First purchase only
+- An expiration date for new redemptions
+- A minimum order amount
+- Selected products only
 
 ## Coupons and subscriptions
 
-When a coupon is applied to a subscription product, the discount applies to every billing cycle for as long as the athlete remains subscribed.
+Choose how long the discount applies when creating the coupon:
 
-**Initial fees are discounted too.** If the membership has an [initial down payment](/payments/product-builder#section-2-payment-options), the coupon reduces that up-front fee as well as the recurring charge. A 100%-off code on a month-to-month membership therefore makes the first payment genuinely free, rather than free on the recurring price only.
+| Duration | Effect |
+| --- | --- |
+| First payment only | Discounts the first invoice, then renews at the regular price |
+| Limited months | Discounts invoices within the selected number of calendar months; this is not a count of sessions or payments |
+| Every payment | Keeps the discount on future payments |
+
+One-time products receive their discount once. Checkout shows the introductory amount and later renewal price. An expiration date controls when a code can be redeemed; it is separate from the duration of a discount already applied to a membership.
+
+**Initial fees are discounted too.** If the membership has an [initial down payment](/payments/product-builder#section-2-payment-options), the coupon can reduce that up-front fee as well as eligible recurring charges within its discount duration. A 100%-off code on a month-to-month membership therefore makes the first payment genuinely free, rather than free on the recurring price only.
 
 <Info>
-  To remove the coupon after the initial purchase, find the athlete's subscription in Stripe and remove the coupon from there.
+
+  Use **First payment only** for an introductory offer instead of planning to remove a recurring discount manually. Automatic member discounts keep their ongoing membership rules.
+
 </Info>
 
 ## Member discounts
@@ -289,7 +302,7 @@ Ready to create a discount code?
 3. Choose coupon type (Free, Percentage, Amount)
 4. Set code name (what clients enter)
 5. Configure discount value
-6. Set redemption limits (optional)
+6. Choose membership duration and optional eligibility, expiry, product, and redemption limits
 7. Save coupon
 
 ## Tracking coupon performance

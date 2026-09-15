@@ -3,7 +3,7 @@ title: "Display Products & Payments in Your Athlete Portal"
 description: "Learn how to add products and payment options to your Athlete Portal. Understand platform restrictions and optimize your sales strategy across web and mobile."
 sidebarTitle: "Products & Payments"
 icon: "credit-card"
-keywords: ["products in portal", "athlete portal payments", "iOS restrictions", "sell products", "membership sales", "product display"]
+keywords: ["products in portal", "athlete portal payments", "native checkout", "sell products", "membership sales", "product display"]
 ---
 
 <Info>
@@ -13,7 +13,9 @@ keywords: ["products in portal", "athlete portal payments", "iOS restrictions", 
 ![CoachIQ Athlete Portal Products page displaying memberships and packages](/images/athlete-portal-product-page.png)
 
 <Warning>
-  **Critical Platform Restriction**: The Products page is **NOT visible** on iOS and Android mobile apps due to Apple App Store and Google Play Store policies. Athletes can only purchase products through your web portal or mobile browser.
+
+  **App availability varies**: Products and checkout depend on your released native app version and enabled features. Configure product visibility intentionally. The web portal remains available for purchases when an app does not offer the required checkout.
+
 </Warning>
 
 ## What you'll accomplish
@@ -26,16 +28,13 @@ Set up your products page to display memberships, packages, and services for pur
 
 <Tabs>
   <Tab title="⚠️ Mobile Apps">
-    **iOS & Android Apps - Products NOT Available**
 
-    Due to App Store policies:
+    **iOS and Android apps**
 
-    - Products page is completely hidden
-    - No in-app purchases allowed
-    - Athletes cannot see or buy products
-    - This is NOT a bug - it's a platform requirement
+    Supported app versions can display configured products and offer eligible native checkout. Other app versions or purchases use browser checkout. Check your actual released app; a new native payment capability does not automatically make every product visible.
 
-    **Alternative**: Direct athletes to your web portal & website for purchases
+    See [Native app booking](/athlete-portal/native-app-booking).
+
   </Tab>
   <Tab title="✅ Web Portal">
     **Web Browser - Full Access**
@@ -59,7 +58,7 @@ The Products page displays your payment options, memberships, and packages that 
 
 - **Purpose**: Payment collection vs. content delivery
 - **Access**: Purchase required vs. content access rules
-- **Platform availability**: Web-only vs. all platforms
+- **Platform availability**: Web plus supported native app versions and configuration
 - **Primary action**: Buy button vs. view content
 
 ## Before you begin
@@ -116,7 +115,9 @@ The Products page displays your payment options, memberships, and packages that 
     - **OFF**: Products hidden everywhere
 
     <Info>
-      Remember: Even when Active is ON, products remain hidden on iOS/Android apps due to platform restrictions.
+
+      Check both the page configuration and the installed app version when verifying mobile visibility.
+
     </Info>
   </Step>
   <Step title="Save your changes">
@@ -221,7 +222,7 @@ Use the Settings panel to rename the Products tab and update the page URL.
 
 ## Working around platform restrictions
 
-Since products don't appear on mobile apps, you need alternative strategies to drive sales.
+Share direct web purchase links when athletes cannot access the required checkout in their installed app.
 
 ### Recommended workarounds
 
@@ -267,7 +268,9 @@ Since products don't appear on mobile apps, you need alternative strategies to d
     - Sections organized properly
   </Step>
   <Step title="Confirm mobile app behavior">
-    Check iOS/Android apps to verify products are properly hidden (expected behavior).
+
+    Check the released iOS/Android apps to verify the intended product visibility and checkout.
+
   </Step>
 </Steps>
 
@@ -281,7 +284,9 @@ Since products don't appear on mobile apps, you need alternative strategies to d
     Click **Update Page** to publish changes.
 
     <Check>
-      Changes apply immediately to web portal. Mobile apps continue to hide products page as required.
+
+      Changes apply to your published portal. Native visibility also depends on the installed app version and enabled purchase experience.
+
     </Check>
   </Step>
 </Steps>
@@ -290,14 +295,9 @@ Since products don't appear on mobile apps, you need alternative strategies to d
 
 <AccordionGroup>
   <Accordion title="Why can't my athletes see products on the mobile app?">
-    **This is not a bug.** Apple App Store and Google Play Store policies prohibit in-app purchases that bypass their payment systems. CoachIQ must hide the Products page on mobile apps to comply with these requirements.
 
-    **Solution**: Direct athletes to purchase through:
+    Check that the Products page is enabled and published, then check the athlete’s installed app version and supported payment experience. Native payments do not automatically turn on your Products page. If checkout is unavailable in that app, share the product’s web purchase link.
 
-    - Web browser on their phone
-    - Desktop computer
-    - Tablet browser
-    - Any web-based access
   </Accordion>
   <Accordion title="How do I sell to athletes who only use the app?">
     Best practices:
@@ -309,22 +309,27 @@ Since products don't appear on mobile apps, you need alternative strategies to d
     5. **Share QR codes** that link to your web products page
   </Accordion>
   <Accordion title="Can I accept payments through the app at all?">
-    No direct payment processing is possible within iOS/Android apps. However, you can:
+
+    Native payment availability depends on the released app and eligible purchase. When it is unavailable, you can:
 
     - Use credits (pre-purchased on web)
     - Book sessions that require payment later
     - Send payment links through in-app messaging
   </Accordion>
-  <Accordion title="Will this restriction ever change?">
-    This is an App Store/Play Store policy, not a CoachIQ limitation. Unless Apple and Google change their policies, this restriction will remain in place.
-  </Accordion>
+
   <Accordion title="How do I explain this to frustrated athletes?">
+
     Sample message:
-    "To keep our app free and avoid Apple/Google's 30% fees, purchases must be made through our web portal. Visit [your-portal-url] on any browser to buy memberships and packages. This helps us keep prices lower for you!"
+    "If you do not see the purchase option in your app, use our web portal to buy your membership or package. Then return to the app to use it."
+
   </Accordion>
+
   <Accordion title="Do credits purchased on web work in the app?">
+
     Yes! Once athletes purchase credits through the web portal, they can use them to book sessions within the mobile app. The restriction only applies to the purchase process, not credit usage.
+
   </Accordion>
+
 </AccordionGroup>
 
 ## Troubleshooting
@@ -338,9 +343,7 @@ Since products don't appear on mobile apps, you need alternative strategies to d
 
 ### Athletes report they can't find products
 
-1. **First question**: Are they using the mobile app?
-   - If yes → Direct them to web browser
-   - If no → Continue troubleshooting
+1. Check the athlete’s app version and whether it supports the intended purchase; offer the web purchase link when needed.
 2. Check Products page Active toggle is ON
 3. Verify their account has access
 4. Test the web portal link yourself
@@ -433,4 +436,5 @@ Since products don't appear on mobile apps, you need alternative strategies to d
   <Card title="Communicating with Athletes" icon="inbox" href="/inbox/inbox-overview">
     Send messages and announcements through your Inbox
   </Card>
+
 </CardGroup>
