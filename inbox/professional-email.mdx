@@ -1,307 +1,85 @@
 ---
 title: "Set Up Your Professional Business Email"
-description: "Create a professional email like coach@yourbusiness.com using Google Workspace. Step-by-step guide for sports coaches and training businesses."
+description: "Set up a custom business mailbox and understand how it differs from sending a branded email through CoachIQ's Inbox."
 sidebarTitle: "Professional Email"
 icon: "at"
 keywords: ["business email", "professional email", "custom email", "Google Workspace", "domain email", "branded email", "email setup"]
 ---
 
-A professional email address builds credibility with athletes and parents. This guide walks you through setting up `coach@yourbusiness.com` using Google Workspace in about 30 minutes.
+A professional email address uses your domain, such as `coach@yourbusiness.com`. Use it for the business mailbox you check for client questions and replies.
 
-<Info>
-  **Why does this matter?** Parents and athletes trust businesses with professional emails. A custom domain email like `coach@smithtraining.com` looks more credible than `coach_smith_2019@gmail.com` on your website, invoices, and business cards.
-</Info>
+## Professional Email or Inbox Email?
+
+| You want to… | Use… |
+| --- | --- |
+| Write and send a formatted message from CoachIQ | [Inbox → Create New → Email](/inbox/email) |
+| Add a logo, colors, header, and footer to that message | Branded or Spotlight in the email composer's **Design** menu |
+| Create an address such as coach@yourbusiness.com | A business email provider, such as Google Workspace, connected to your domain |
+
+A branded design changes the message's appearance. It does not create a mailbox, connect your Gmail account, or authenticate a custom sending domain.
 
 ## What you'll need
 
-Before starting, make sure you have:
+- Your business domain and access to its DNS settings
+- An administrator for your email service
+- A plan for any existing mailboxes before changing where incoming email is delivered
 
-- A domain name (like `smithtraining.com`) — we'll help you get one if needed
-- A credit card for Google Workspace (\$6/month per user)
-- About 30 minutes
+If you already receive business email at your domain, keep that service in place unless you intend to migrate it. Setting up a CoachIQ website or choosing a branded email design does not require replacing your working mail service.
+
+## Set up a mailbox with Google Workspace
 
 <Steps>
-  <Step title="Get your domain name">
-    Your domain is your business address on the internet (example: `smithtraining.com`).
 
-    <Tabs>
-      <Tab title="Buy through Google (Easiest)">
-        Google walks you through purchasing a domain during Workspace signup. This is the simplest option—everything stays in one place and DNS records are configured automatically.
+<Step title="Create or use your Workspace account">
 
-        **Cost:** ~\$12/year for most `.com` domains
-      </Tab>
-      <Tab title="Buy from Namecheap">
-        1. Go to [namecheap.com](https://namecheap.com)
-        2. Search for your desired domain
-        3. Add to cart and complete purchase
-        4. You'll configure DNS settings later in this guide
+Start with [Google Workspace](https://workspace.google.com/) and review the plan and local pricing shown during signup. Use your existing domain, or register one through a domain provider. Choose a mailbox name such as coach, hello, or your own name.
 
-        **Cost:** ~\$10-15/year
-      </Tab>
-      <Tab title="Buy from GoDaddy">
-        1. Go to [godaddy.com](https://godaddy.com)
-        2. Search for your desired domain
-        3. Add to cart and complete purchase
-        4. You'll configure DNS settings later in this guide
+</Step>
 
-        **Cost:** ~\$15-20/year
-      </Tab>
-    </Tabs>
-    <Tip>
-      **Domain name tips:**
+<Step title="Verify domain ownership">
 
-      - Keep it short and easy to spell
-      - Use `.com` if available (most trusted)
-      - Match your business name when possible
-      - Avoid hyphens and numbers
-    </Tip>
-  </Step>
-  <Step title="Sign up for Google Workspace">
-    Google Workspace gives you professional email plus Google Drive, Calendar, and Meet—all connected to your domain.
+Follow the Google Admin setup instructions for your domain. The person managing your DNS may need to add a verification record before you can activate Gmail.
 
-    ### Go to Google Workspace
+</Step>
 
-    1. Visit [workspace.google.com](https://workspace.google.com)
-    2. Click **Get Started** or **Start Free Trial**
+<Step title="Route email to the correct provider">
 
-    ### Enter your business info
+Follow Google's current [MX-record and Gmail activation instructions](https://support.google.com/a/answer/6156494). Use the values shown for your setup. Working older Workspace configurations may use legacy MX records and do not need replacement just because a newer setup guide shows different values.
 
-    - **Business name:** Your coaching business name
-    - **Number of employees:** Select "Just you" or your team size
-    - **Country:** United States
+MX changes affect incoming email for your domain. Coordinate them with whoever manages your existing email service. DNS changes can take time to take effect.
 
-    ### Choose your plan
+</Step>
 
-    For most coaches, **Business Starter (\$6/user/month)** is perfect:
+<Step title="Configure email authentication">
 
-    | Feature                            | Included |
-    | ---------------------------------- | -------- |
-    | Professional email @yourdomain.com | ✓        |
-    | 30 GB storage per user             | ✓        |
-    | Video meetings (100 participants)  | ✓        |
-    | Standard security                  | ✓        |
+Follow Google's [SPF guidance](https://support.google.com/a/answer/33786) and [DKIM guidance](https://support.google.com/a/answer/174124). Include the services that actually send email for your domain, then follow the provider's DMARC rollout guidance. Avoid replacing an existing authentication record without checking its other senders.
 
-    <Info>
-      You can upgrade to Business Standard (\$12/month) later if you need more storage or features.
-    </Info>
-    ### Enter your domain
+</Step>
 
-    - **Already own a domain?** Enter it here
-    - **Need to buy one?** Google will help you search and purchase
+<Step title="Test the mailbox">
 
-    ### Create your admin account
+Sign in to Gmail, send a test message to an address you control, and reply from that address. Confirm both directions work before sharing the mailbox with clients. Add the mailbox to the devices your staff use and make sure someone monitors replies.
 
-    Choose a professional email address:
+</Step>
 
-    | Good examples                                             | Avoid                                                                           |
-    | --------------------------------------------------------- | ------------------------------------------------------------------------------- |
-    | [coach@smithtraining.com](mailto:coach@smithtraining.com) | [coachj2019@smithtraining.com](mailto:coachj2019@smithtraining.com)             |
-    | [john@smithtraining.com](mailto:john@smithtraining.com)   | [john_smith_coach@smithtraining.com](mailto:john_smith_coach@smithtraining.com) |
-    | [info@smithtraining.com](mailto:info@smithtraining.com)   | [thebestcoach123@smithtraining.com](mailto:thebestcoach123@smithtraining.com)   |
-
-    ### Complete payment
-
-    Enter your payment info. Google typically offers a 14-day free trial.
-  </Step>
-  <Step title="Verify your domain">
-    <Info>
-      **Skip this step** if you bought your domain through Google—verification is automatic.
-    </Info>
-    Google needs to confirm you own your domain. This sounds technical, but just follow these steps:
-
-    ### Get your verification code
-
-    Google provides a verification code that looks like:
-
-    ```
-    google-site-verification=ABC123xyz...
-    ```
-
-    ### Add the code to your domain settings
-
-    <Tabs>
-      <Tab title="Namecheap">
-        1. Log into Namecheap → **Domain List** → **Manage**
-        2. Click **Advanced DNS**
-        3. Click **Add New Record**
-        4. Configure the record:
-           - **Type:** TXT
-           - **Host:** @
-           - **Value:** Paste the Google verification code
-           - **TTL:** Automatic
-        5. Click **Save All Changes**
-      </Tab>
-      <Tab title="GoDaddy">
-        1. Log into GoDaddy → **My Products** → **DNS**
-        2. Click **Add** under Records
-        3. Configure the record:
-           - **Type:** TXT
-           - **Name:** @
-           - **Value:** Paste the Google verification code
-           - **TTL:** 1 Hour
-        4. Click **Save**
-      </Tab>
-      <Tab title="Google Domains">
-        1. Log into [domains.google.com](https://domains.google.com)
-        2. Click your domain → **DNS**
-        3. Scroll to **Custom records**
-        4. Add a TXT record with the verification code
-        5. Click **Save**
-      </Tab>
-    </Tabs>
-    ### Complete verification
-
-    Click **Verify** in Google Workspace. Wait 5-10 minutes if it doesn't work immediately—DNS changes take time to propagate.
-
-    <Warning>
-      DNS changes can take up to 1 hour to propagate. If verification fails, wait and try again.
-    </Warning>
-  </Step>
-  <Step title="Set up email routing (MX records)">
-    <Info>
-      **Skip this step** if you bought your domain through Google—MX records are configured automatically.
-    </Info>
-    MX records tell the internet where to deliver your emails. You need to point them to Google's mail servers.
-
-    ### Delete existing MX records
-
-    First, remove any existing MX records in your domain settings.
-
-    ### Add Google's MX records
-
-    Add these five records exactly as shown:
-
-    | Priority | Mail Server             |
-    | -------- | ----------------------- |
-    | 1        | ASPMX.L.GOOGLE.COM      |
-    | 5        | ALT1.ASPMX.L.GOOGLE.COM |
-    | 5        | ALT2.ASPMX.L.GOOGLE.COM |
-    | 10       | ALT3.ASPMX.L.GOOGLE.COM |
-    | 10       | ALT4.ASPMX.L.GOOGLE.COM |
-
-    <Tabs>
-      <Tab title="Namecheap">
-        1. Go to **Advanced DNS** → **Mail Settings**
-        2. Select **Custom MX**
-        3. Add each record from the table above
-        4. Click **Save All Changes**
-      </Tab>
-      <Tab title="GoDaddy">
-        1. Go to **DNS** → **MX Records**
-        2. Delete any existing MX records
-        3. Add each record from the table above
-        4. Click **Save**
-      </Tab>
-    </Tabs>
-    <Warning>
-      MX record changes can take up to 48 hours, but usually work within 1-2 hours. Test by sending an email from a different account.
-    </Warning>
-  </Step>
-  <Step title="Access your new email">
-    Once setup is complete, access your professional email:
-
-    ### On the web
-
-    1. Go to [gmail.com](https://gmail.com)
-    2. Sign in with your new email (`coach@yourdomain.com`)
-    3. Use the password you created during signup
-
-    ### On your phone
-
-    1. Download the **Gmail app** (if you don't have it)
-    2. Tap **Add Account** → **Google**
-    3. Sign in with your new business email
-
-    <Check>
-      Send a test email to yourself from a personal account to confirm everything works!
-    </Check>
-  </Step>
-  <Step title="Set up your profile">
-    Complete these important first steps to look professional:
-
-    ### Add a profile photo
-
-    1. Go to [gmail.com](https://gmail.com) → Click your initials (top right)
-    2. Click **Manage your Google Account**
-    3. Select **Personal info** → **Photo**
-    4. Upload a professional headshot
-
-    ### Create your email signature
-
-    1. In Gmail: Click the **gear icon** → **See all settings**
-    2. Scroll to **Signature** → Click **Create new**
-    3. Add your professional signature:
-
-    ```
-    John Smith
-    Head Coach, Smith Training Academy
-    📞 (555) 123-4567
-    🌐 smithtraining.com
-    📍 Chicago, IL
-    ```
-
-    <Tip>
-      Keep signatures simple. Include your name, title, phone, website, and location. Avoid quotes, images, and excessive formatting.
-    </Tip>
-    ### Forward your old email (optional)
-
-    If people still email your old personal address:
-
-    1. Log into your **old** Gmail account
-    2. Go to **Settings** → **Forwarding and POP/IMAP**
-    3. Click **Add a forwarding address**
-    4. Enter your new business email
-    5. Verify and enable forwarding
-  </Step>
 </Steps>
 
-## Cost summary
+## Use it alongside CoachIQ
 
-| Item                                | Cost               |
-| ----------------------------------- | ------------------ |
-| Domain name                         | ~\$12/year         |
-| Google Workspace (Business Starter) | \$6/month per user |
-| **Total for 1 person**              | **~\$84/year**     |
+Use your business address in the contact details you share with athletes and parents. For announcement replies, review your organization's configured reply-to address and make sure it is a mailbox your team checks; see [Announcements](/inbox/announcements).
+
+To compose a branded message, follow the [Inbox Email guide](/inbox/email). Check the current group, recipients, message links, and design before sending. Editing the visible footer text is not the same as changing the actual reply-to configuration.
 
 ## Troubleshooting
 
-<AccordionGroup>
-  <Accordion title="Domain verification failed">
-    - **Wait and retry:** DNS changes can take up to 1 hour. Try again later.
-    - **Check for typos:** Verify you pasted the complete verification code.
-    - **Remove extra spaces:** Ensure no spaces before or after the code.
-    - **Correct record type:** Make sure you created a TXT record, not another type.
-  </Accordion>
-  <Accordion title="Not receiving emails">
-    - **Wait for propagation:** MX records can take up to 48 hours (usually 1-2 hours).
-    - **Verify MX records:** Double-check all five records are entered correctly.
-    - **Test from external account:** Send a test email from Gmail or another provider.
-    - **Check spam folder:** Your first emails might land in spam.
-  </Accordion>
-  <Accordion title="Forgot my password">
-    1. Go to [accounts.google.com](https://accounts.google.com)
-    2. Click **Forgot password**
-    3. Follow the recovery steps using your backup email or phone
-  </Accordion>
-  <Accordion title="Can't sign in on mobile">
-    - **Check credentials:** Use your full email address (`coach@domain.com`)
-    - **Enable less secure apps:** Some older phones need this setting (not recommended long-term)
-    - **Update Gmail app:** Make sure you have the latest version
-  </Accordion>
-</AccordionGroup>
+- **Incoming email stopped after a DNS change:** have your domain/email administrator check the MX records against the intended provider.
+- **Domain verification is pending:** follow the status and record requirements shown in Google Admin; contact your domain provider if you cannot edit DNS.
+- **Mail arrives in spam:** check authentication and use the email provider's delivery troubleshooting. Branding alone does not guarantee inbox placement.
+- **You only need to send a CoachIQ email:** open **Inbox → Create New → Email**. You do not need to complete a mailbox migration to use the composer.
 
-## Quick reference
+## Related articles
 
-| Task                    | Where to go                                          |
-| ----------------------- | ---------------------------------------------------- |
-| Check your email        | [gmail.com](https://gmail.com)                       |
-| Manage Google Workspace | [admin.google.com](https://admin.google.com)         |
-| Add more email users    | admin.google.com → **Users**                         |
-| View your billing       | admin.google.com → **Billing**                       |
-| Get help from Google    | [support.google.com/a](https://support.google.com/a) |
-
----
-
-<Card title="Need help?" icon="headset" href="mailto:info@coachiq.io">
-  Our team is here to help you get set up. Reach out if you run into any issues.
-</Card>
+- [Send email from the Inbox](/inbox/email)
+- [Inbox overview](/inbox/inbox-overview)
+- [Announcements](/inbox/announcements)
+- [Domain setup](/website/domain-setup/domain-setup)
