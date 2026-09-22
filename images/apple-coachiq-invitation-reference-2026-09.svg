@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="690" viewBox="0 0 1100 690" role="img" aria-labelledby="title desc">
+<title id="title">Invite CoachIQ: Apple account checklist</title>
+<desc id="desc">Confirm an active Organization membership. In App Store Connect, use Users and Access, People, plus. Invite dev@coachiq.io with Admin and Certificates, Identifiers and Profiles access. Confirm acceptance with CoachIQ.</desc>
+<rect width="1100" height="690" rx="24" fill="#f8fafc"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="48" y="49" font-size="15" font-weight="700" letter-spacing="2" fill="#64748b">COACHIQ • SETUP QUICK REFERENCE</text>
+<text x="48" y="98" font-size="34" font-weight="700" fill="#0f172a">Invite CoachIQ to your Apple team</text>
+<rect x="48" y="126" width="1004" height="72" rx="12" fill="#fff8d6" stroke="#e5bd35"/>
+<text x="72" y="155" font-size="19" font-weight="700" fill="#59480a">Before you invite: active Organization membership</text>
+<text x="72" y="180" font-size="17" fill="#59480a">An Individual membership does not provide the developer-team access we need.</text>
+<text x="48" y="239" font-size="18" fill="#475569">App Store Connect → Users and Access → People → +</text>
+<rect x="48" y="265" width="1004" height="260" rx="14" fill="white" stroke="#dbe2ea"/>
+<path d="M72 352H1028M72 432H1028" stroke="#e2e8f0"/>
+<text x="76" y="300" font-size="15" font-weight="700" fill="#64748b">EMAIL</text>
+<text x="76" y="331" font-size="26" font-weight="700" fill="#0f172a">dev@coachiq.io</text>
+<text x="76" y="383" font-size="15" font-weight="700" fill="#64748b">ROLE</text>
+<text x="76" y="414" font-size="26" font-weight="700" fill="#0f172a">Admin</text>
+<text x="76" y="466" font-size="15" font-weight="700" fill="#64748b">CONFIRM ACCESS</text>
+<text x="76" y="498" font-size="25" font-weight="700" fill="#0f172a">Certificates, Identifiers &amp; Profiles</text>
+<text x="48" y="566" font-size="19" font-weight="700" fill="#0f172a">Send the invitation, then confirm acceptance with CoachIQ.</text>
+<text x="48" y="596" font-size="17" fill="#475569">Use the correct business team. Keep your Apple password and verification codes private.</text>
+<text x="48" y="649" font-size="15" fill="#64748b">Illustrated checklist • Not an Apple interface screenshot</text>
+</g></svg>
