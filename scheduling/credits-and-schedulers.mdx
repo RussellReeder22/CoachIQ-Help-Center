@@ -100,7 +100,7 @@ When you cancel a credit booking from the calendar, the confirmation dialog asks
     The booking is blocked. Credits are not split across bookings and there is no partial payment. Either the athlete buys more, or you grant the difference as a Master Credit. Keep multi-credit sessions rare for this reason.
   </Accordion>
   <Accordion title="Credits expire after the booking is made but before the session date">
-    The booking stands. Credits are spent at booking time, so expiration only affects credits still sitting in the balance. If that booking is later cancelled with refunds on, the returned credit follows the original product's expiration and may already be expired.
+    It depends on **Sessions must occur by expiration** on the product. With it on, the session date must fall within the credit period, including when rescheduling. With it off, credits need to be valid when booked, and the session may happen later. A qualifying cancellation refund keeps the original expiration date; canceling does not extend it. See [Require sessions to happen before credits expire](/payments/product-builder#require-sessions-to-happen-before-credits-expire).
   </Accordion>
   <Accordion title="You set up a recurring booking for the athlete">
     Recurring bookings you create from the calendar do **not** deduct credits when the series is created, and skipping an occurrence does not refund one. If an athlete is on a standing weekly slot, collect payment directly and skip credits for them. Details in [Recurring bookings](/scheduling/recurring-bookings#credit-handling-with-recurring-bookings).

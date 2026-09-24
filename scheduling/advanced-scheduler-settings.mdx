@@ -382,7 +382,7 @@ The location you pick in the scheduler's **Location** section (**Select Location
     **Best practice**: Include parking instructions, entrance details in scheduler description (not location field)
 
     <Tip>
-      **Add helpful details**: In your scheduler description, mention parking, which entrance to use, or check-in procedures. Location field is for address only.
+      **Add helpful details**: In your scheduler description, mention parking, which entrance to use, or check-in procedures. Location field is for the address or meeting link only.
     </Tip>
   </Tab>
   <Tab title="Mobile Training (You Travel)">
@@ -469,9 +469,9 @@ The location you pick in the scheduler's **Location** section (**Select Location
     - Include link in automated reminders
     - Add backup contact method in case of tech issues
 
-    <Warning>
-      **Don't add meeting links in location field** - they may not format correctly. Use confirmation emails and reminders to deliver virtual meeting links instead.
-    </Warning>
+    <Tip>
+      Save Google Meet or Zoom links as virtual locations, then attach the location to the scheduler. Confirm the joining details in the athlete-facing booking view before sharing the session.
+    </Tip>
   </Tab>
 </Tabs>
 
@@ -499,7 +499,7 @@ The location you pick in the scheduler's **Location** section (**Select Location
     - `Downtown Training Facility, 789 Wellness Way, Austin, TX 78701`
   </Step>
   <Step title="Add contextual details (optional)">
-    While the location field is for addresses only, use your **scheduler description** to add helpful context:
+    While the location field holds only the address or meeting link, use your **scheduler description** to add helpful context:
 
     ```
     Description example:
@@ -598,7 +598,7 @@ Configure automatic notifications that remind athletes about upcoming sessions.
 
 **Automated reminders** send notifications to athletes before their scheduled sessions. This reduces no-shows and helps athletes remember their commitments.
 
-**Important note**: Reminder settings in CoachIQ are **account-wide**, not scheduler-specific. When you configure reminders, they apply to all schedulers across your account.
+**Important note**: Reminders are set **per scheduler**. Configure reminders on the scheduler you are editing, and check each scheduler you use. Editing one scheduler's reminders does not change the others.
 
 ### Reminder configuration options
 
@@ -606,15 +606,14 @@ Configure automatic notifications that remind athletes about upcoming sessions.
   <Step title="Timing options">
     **Pre-set timing choices**:
 
-    - 1 week before session
-    - 1 day before session
-    - 6 hours before session
-    - 1 hour before session
-    - 30 minutes before session
+    - 30 mins before
+    - 1 hour before
+    - 1 day before
+    - 2 days before
 
-    **Custom timing**: You can also set custom reminder windows (e.g., 2 days before, 3 hours before, etc.)
+    **Custom**: Set any number of days, hours, and minutes before the session (e.g., 2 hours before)
 
-    **Multiple reminders**: You can enable multiple reminders per session
+    **Multiple reminders**: You can add more than one reminder to a scheduler
 
     **Example configuration**:
 
@@ -623,19 +622,19 @@ Configure automatic notifications that remind athletes about upcoming sessions.
     - Result: Athletes get two reminders for each session
   </Step>
   <Step title="Delivery methods">
-    **Available channels**:
+    **Available methods**:
 
-    - ✅ SMS (text message)
-    - ✅ Email
-    - ✅ In-app notification (push notification if athlete has app)
+    - ✅ **SMS** (text message)
+    - ✅ **Announcement** (sent like an Announcement, by email and push notification)
+    - ✅ **In-App** (in-app message)
 
     **You can choose**:
 
-    - Single channel (SMS only)
-    - Multiple channels (SMS + Email)
-    - All three channels (SMS + Email + Push)
+    - A single method (SMS only)
+    - Multiple methods (SMS + Announcement)
+    - All three methods (SMS + Announcement + In-App)
 
-    **Recommendation**: Use at least two channels (SMS + Email) for maximum reach
+    **Recommendation**: Use at least two methods (SMS + Announcement) for maximum reach
 
     <Tip>
       **SMS is most effective**: Text messages have ~98% open rates compared to ~20% for emails. If you can only choose one, choose SMS.
@@ -765,27 +764,27 @@ Configure automatic notifications that remind athletes about upcoming sessions.
     - ❌ Cost per message (SMS fees)
     - ❌ Character limits
 
-    **Email only**:
+    **Announcement only** (email and push):
 
     - ✅ No per-message cost
     - ✅ Can include more detail/formatting
     - ❌ Lower open rates
     - ❌ May end up in spam
 
-    **SMS + Email** (Recommended):
+    **SMS + Announcement** (Recommended):
 
     - ✅ Maximum reach
     - ✅ Redundancy if one channel fails
     - ✅ Athletes can choose preference
     - ❌ Slightly higher costs
 
-    **SMS + Email + Push**:
+    **SMS + Announcement + In-App**:
 
     - ✅ Covers all bases
-    - ✅ Athletes with app get push notifications
+    - ✅ Athletes also see the reminder in their in-app messages
     - ❌ May feel like overkill to some athletes
 
-    **Recommended**: Start with SMS + Email for critical reminders (24hr before), add push notifications if your athletes use the app
+    **Recommended**: Start with SMS + Announcement for critical reminders (24hr before), and add In-App if your athletes use the app
   </Tab>
 </Tabs>
 
@@ -797,18 +796,14 @@ Configure automatic notifications that remind athletes about upcoming sessions.
 
 <Steps>
   <Step title="Access reminder settings">
-    **Navigation**: Settings → Notifications → Automated Reminders
+    **Navigation**: Schedule → Schedulers → edit the scheduler → **Reminders** (toward the bottom of the scheduler settings)
 
-    (Note: This is account-wide, not per-scheduler)
-  </Step>
-  <Step title="Enable reminders">
-    1. Toggle **Automated Reminders** to ON
-    2. System will now send reminders for all bookings
+    (Note: Reminders are per scheduler. Repeat these steps on each scheduler that needs them.)
   </Step>
   <Step title="Set timing">
-    1. Click **Add Reminder**
-    2. Select timing from dropdown (or choose custom)
-    3. Repeat to add additional reminders
+    1. Add a reminder in the **Reminders** section
+    2. Under **Time Before**, pick 30 mins, 1 hour, 1 day, 2 days, or **Custom** (set days, hours, and minutes)
+    3. Add another reminder to send more than one
 
     **Example setup**:
 
@@ -816,13 +811,13 @@ Configure automatic notifications that remind athletes about upcoming sessions.
     - Reminder 2: 1 hour before
   </Step>
   <Step title="Choose delivery channels">
-    For each reminder, select:
+    Under **Method**, select one or more for each reminder:
 
+    - In-App
+    - Announcement
     - SMS
-    - Email
-    - Push notification
 
-    **Recommendation**: Check SMS and Email for both reminders
+    **Recommendation**: Check SMS and Announcement for both reminders
   </Step>
   <Step title="Customize message">
     1. Click **Edit Message** for each reminder
@@ -835,7 +830,7 @@ Configure automatic notifications that remind athletes about upcoming sessions.
     </Warning>
   </Step>
   <Step title="Save and test">
-    1. Click **Save** to apply reminder settings
+    1. Save your changes to the scheduler
     2. Test by booking yourself for a session
     3. Verify you receive reminders at configured times
 
@@ -1223,9 +1218,9 @@ Before launching a scheduler, verify all advanced settings are configured:
   <Accordion title="✅ Reminders Configured">
     **Check**:
 
-    - Automated reminders enabled account-wide
+    - Reminders added on each scheduler that needs them
     - At least 2 reminders configured (24hr + 1hr recommended)
-    - SMS and/or email channels enabled
+    - SMS and/or Announcement methods selected
     - Custom message written with your brand voice
     - Template variables correctly formatted: `{athlete_name}`, `{time}`, etc.
     - Test reminder sent and received successfully
@@ -1285,7 +1280,7 @@ Before launching a scheduler, verify all advanced settings are configured:
 
 **Symptom**: High no-show rates, athletes forgetting sessions
 
-**Fix**: Settings → Notifications → Enable automated reminders with 24hr + 1hr timing
+**Fix**: Schedule → Schedulers → edit each scheduler → **Reminders** → add 1 day and 1 hour reminders
 
 ### 5. Scheduler Active but not added to portal/website
 
@@ -1340,7 +1335,7 @@ Before launching a scheduler, verify all advanced settings are configured:
 - Wrong location showing → Update location field
 - Wrong coach name → Update connected coaches
 - Outdated description → Update scheduler description
-- Missing reminders → Configure account-wide reminder settings
+- Missing reminders → Add reminders on that scheduler
 
 **Fix**: Edit scheduler, update specific field, save, verify on athlete-facing booking page
 
