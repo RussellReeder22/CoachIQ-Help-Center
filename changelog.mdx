@@ -12,17 +12,9 @@ icon: "clock-rotate-left"
 
 Emails sent from **Create New → Email** now appear in a new **Email** channel in the Inbox, and under **All**. Each shows the subject, recipients, preview, and send time, and opens to a read-only copy of what went out. Sent emails can be archived and never count as unread. Emails sent before this release are not listed. [Find sent emails →](/inbox/email#find-emails-youve-sent)
 
-**Parent replies reach you, not CoachIQ**
+**Choose whether an "All coaches" session needs every coach**
 
-If your organization's reply-to email was blank, replies to your announcements and emails went to CoachIQ's support inbox. They now go to your organization's main admin email. We filled this in for every organization that had it blank; any reply-to you had already set is unchanged. Update it any time in **Settings → Organization → Reply-to Email**. [Reply settings →](/inbox/announcements)
-
-**Clearer double-booking rules for "All coaches" sessions**
-
-Two sessions with **Connected Coaches** set to **All** can no longer be booked on top of each other, including sessions created by the CoachIQ team or imported. A new checkbox under Connected Coaches decides whether an "All" session needs every coach (blocking named-coach sessions at the same time) or can be run by any one coach. When you book on a client's behalf into a taken time, you now see "Timeslot is not available." instead of a generic error. [Multiple coaches →](/scheduling/managing-availability-for-multiple-coaches)
-
-**Open availability works on large schedules**
-
-**Show → Open availability only** now loads for schedules with many schedulers across Month, Week, and Day. Openings fill in as they load, with a progress line across the top. Calendar cards across Day, Week, Month, and List share one cleaner layout: time first, then session, then status. [Calendar views →](/scheduling/saved-calendar-views)
+When **Connected Coaches** is set to **All**, a new checkbox decides whether the session needs every coach, blocking named-coach sessions at the same time, or can be run by any one coach alongside individual lessons. [Multiple coaches →](/scheduling/managing-availability-for-multiple-coaches)
 
 **Preview specific dates in the scheduler**
 
@@ -30,14 +22,15 @@ The scheduler's Specific Dates section uses the same table as the Availability p
 
 **Easier booking for athletes and parents**
 
-After booking, **Add to Calendar** offers Google Calendar, Apple Calendar, Outlook.com, and a calendar file. On your website calendar, busy time blocks with many sessions show one readable "N available" card that opens a list of every option, instead of unreadable slivers. Copied scheduler links now offer credit purchases to an athlete who is short on credits, and return them to the same time after buying.
-
-**More complete waiver reports and safer booking imports**
-
-Waiver report **Export CSV** now includes everyone in the selected view (All, Accepted, or Missing), not just the rows loaded on screen. On phones, each person's full name and email are readable. **Settings → Data → Import Bookings** now warns when a CSV can't be read, and lists and skips rows missing an email or start/end time while importing the valid ones. [Waivers →](/tools/waivers/waivers) · [Import Bookings →](/settings/data#import-bookings)
+After booking, **Add to Calendar** offers Google Calendar, Apple Calendar, Outlook.com, and a calendar file. On your website calendar, busy time blocks with many sessions show one readable "N available" card that opens a list of every option, instead of unreadable slivers.
 
 <Accordion title="Fixes in this release">
 
+- **Email replies:** If your reply-to email was blank, replies to announcements and emails now go to your organization's main admin email. Change it in **Settings → Organization → Reply-to Email**. [Reply settings →](/inbox/announcements)
+- **Double-booking:** Two "All coaches" sessions can no longer be booked on top of each other, including sessions created by the CoachIQ team or imported. Booking on a client's behalf into a taken time now says "Timeslot is not available."
+- **Open availability:** **Show → Open availability only** now loads on large schedules, filling in as it loads. Calendar cards share one cleaner layout. [Calendar views →](/scheduling/saved-calendar-views)
+- **Credit purchases from copied links:** Athletes short on credits now see purchase options on copied scheduler links and return to the same time after buying.
+- **Waiver reports and booking imports:** Waiver **Export CSV** includes everyone in the selected view, not just loaded rows. Import Bookings warns when a CSV can't be read and skips incomplete rows. [Waivers →](/tools/waivers/waivers) · [Import Bookings →](/settings/data#import-bookings)
 - **Team reminders:** Editing a practice's length, or moving it by less than an hour, no longer resends a reminder that already went out. A parent with several children on the same practice gets one reminder instead of one per booking. Moving a practice by an hour or more still sends one fresh reminder for the new time.
 - **Scheduled cancellations:** Members who cancel at period end keep booking access and credits through their paid-through date instead of losing them at cancellation. [Manage subscriptions →](/payments/manage-subscriptions)
 - **Video analysis:** Parent videos that play in Media Hub open in Video Analysis again without restarting. The Shortcuts panel fits on phones.
