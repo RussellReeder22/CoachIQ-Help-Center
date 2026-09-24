@@ -4,6 +4,59 @@ description: "New updates and improvements"
 icon: "clock-rotate-left"
 ---
 
+<Update label="September 23, 2026">
+
+## Features & improvements
+
+**See the emails you've sent from Inbox**
+
+Emails sent from **Create New → Email** now appear in a new **Email** channel in the Inbox, and under **All**. Each shows the subject, recipients, preview, and send time, and opens to a read-only copy of what went out. Sent emails can be archived and never count as unread. Emails sent before this release are not listed. [Find sent emails →](/inbox/email#find-emails-youve-sent)
+
+**Parent replies reach you, not CoachIQ**
+
+If your organization's reply-to email was blank, replies to your announcements and emails went to CoachIQ's support inbox. They now go to your organization's main admin email. We filled this in for every organization that had it blank; any reply-to you had already set is unchanged. Update it any time in **Settings → Organization → Reply-to Email**. [Reply settings →](/inbox/announcements)
+
+**Clearer double-booking rules for "All coaches" sessions**
+
+Two sessions with **Connected Coaches** set to **All** can no longer be booked on top of each other, including sessions created by the CoachIQ team or imported. A new checkbox under Connected Coaches decides whether an "All" session needs every coach (blocking named-coach sessions at the same time) or can be run by any one coach. When you book on a client's behalf into a taken time, you now see "Timeslot is not available." instead of a generic error. [Multiple coaches →](/scheduling/managing-availability-for-multiple-coaches)
+
+**Open availability works on large schedules**
+
+**Show → Open availability only** now loads for schedules with many schedulers across Month, Week, and Day. Openings fill in as they load, with a progress line across the top. Calendar cards across Day, Week, Month, and List share one cleaner layout: time first, then session, then status. [Calendar views →](/scheduling/saved-calendar-views)
+
+**Preview specific dates in the scheduler**
+
+The scheduler's Specific Dates section uses the same table as the Availability page, with hours, session length, and resources for each date, and All / Upcoming / Past filters. Selecting a date jumps the preview to that day and shows its bookable times, or explains why it has none.
+
+**Easier booking for athletes and parents**
+
+After booking, **Add to Calendar** offers Google Calendar, Apple Calendar, Outlook.com, and a calendar file. On your website calendar, busy time blocks with many sessions show one readable "N available" card that opens a list of every option, instead of unreadable slivers. Copied scheduler links now offer credit purchases to an athlete who is short on credits, and return them to the same time after buying.
+
+**More complete waiver reports and safer booking imports**
+
+Waiver report **Export CSV** now includes everyone in the selected view (All, Accepted, or Missing), not just the rows loaded on screen. On phones, each person's full name and email are readable. **Settings → Data → Import Bookings** now warns when a CSV can't be read, and lists and skips rows missing an email or start/end time while importing the valid ones. [Waivers →](/tools/waivers/waivers) · [Import Bookings →](/settings/data#import-bookings)
+
+<Accordion title="Fixes in this release">
+
+- **Team reminders:** Editing a practice's length, or moving it by less than an hour, no longer resends a reminder that already went out. A parent with several children on the same practice gets one reminder instead of one per booking. Moving a practice by an hour or more still sends one fresh reminder for the new time.
+- **Scheduled cancellations:** Members who cancel at period end keep booking access and credits through their paid-through date instead of losing them at cancellation. [Manage subscriptions →](/payments/manage-subscriptions)
+- **Video analysis:** Parent videos that play in Media Hub open in Video Analysis again without restarting. The Shortcuts panel fits on phones.
+- **Forms:** Typed text is readable in forms on dark website sections. Optional file uploads have a Remove button before you submit. Checkbox and radio outlines are easier to see, and required Yes/No questions work with the keyboard. Response columns stay aligned when scrolling on phones, and the Share tab stacks readably on phones.
+- **Automations:** Emoji in automation emails save correctly. A message that is too long now asks you to shorten it and keeps your draft, instead of showing an unknown error. Condition rows show the full comparison on phones.
+- **Programs:** Finishing a free preview lesson says "Lesson Complete" with a purchase option, not "Program Complete". Story cards from a private program no longer show to people who aren't assigned. Locked lessons show as compact rows on phones and tablets, and quiz text stays readable in landscape.
+- **Payments:** Coaches no longer see a retry error on Coupons; the page and menu explain that coupons are for Admins. Subscription dates show the full date, time, and timezone, with the billing period on hover. Transactions and Subscriptions scroll to the last row and Load more on phones, and the product filter's Apply button stays visible.
+- **Profiles and people:** Deleting a custom field now names the field and warns that it is removed for everyone in the organization. Family and Waivers sections no longer cover User Details on phones. Staff names are no longer hidden behind the access gear on tablets. Parents' Family and Profile settings have clear headings.
+- **Inbox and messages:** Unsent attachments can be removed with the keyboard. Announcement and message attachments (schedulers, forms, products, media) open with the keyboard.
+- **Scheduling:** The Connect coaches to sessions dialog has search for long coach and session lists. Scheduler Preview dates are readable on phones and tablets and show all times for the day. Reminder timing fields no longer overlap on narrow phones. Booking Rules and other on/off switches across the admin work with the keyboard.
+- **Mobile app:** Media Hub downloads documents and full-quality images. Form activity shows Purchase completed after a successful checkout, attachment answers show a "Tap to download" cue, and long responses stay clear of the status bar. Product previews show the selected waiver's name. Empty activity filters name what's empty.
+- **Website and athlete portal:** Website calendar Week/Month tabs show which is selected, and footer text stays readable on tablets. Booking cards keep their actions on screen at tablet widths. Dark-mode insufficient-credit messages are easier to read. Product categories stay highlighted in landscape.
+- **Settings and website builder:** Settings → Logs keeps filters and column headings separate on compact screens. Website redirect and sitemap controls are labeled for screen readers.
+- **AI assistant connections:** Connected assistants can now work with website pages, blog posts and SEO, session availability and blackouts, one-to-one messages, waivers, and draft automations. They can't enable automations, remove legal pages, or send bulk messages, and every change is logged under the assistant and coach. [Connection access →](/settings/connections#manage-or-remove-access)
+
+</Accordion>
+
+</Update>
+
 <Update label="September 15, 2026">
 
 ## Features & improvements
