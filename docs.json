@@ -175,12 +175,12 @@
                 "group": "SMS",
                 "icon": "comment-sms",
                 "pages": [
-                  "inbox/sms-messages",
-                  "inbox/sms-credits"
+                  "inbox/sms-messages"
                 ]
               },
               "inbox/announcements",
               "inbox/email",
+              "inbox/sms-credits",
               "inbox/professional-email",
               "inbox/attaching-forms-schedulers-and-products",
               "inbox/using-tags-for-group-messages"

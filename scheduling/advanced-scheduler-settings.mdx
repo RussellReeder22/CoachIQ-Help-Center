@@ -1120,6 +1120,14 @@ Set a cash-price product and/or credit cost for each length in **Payment → Pri
 
 This gives the athlete a choice of length. To set a fixed length for just one practice date, use the per-date setting below.
 
+### Preview a specific date
+
+In the scheduler builder's **Availability** section, the specific-dates table shows each connected date's hours, session length, and resources. Use **All**, **Upcoming**, or **Past** to narrow the list.
+
+Select a date to move the booking preview to that month and day. If it has no open times, the preview stays on your selection and shows **No bookable times on this date**. Check the date's hours and any blocks before sharing the scheduler.
+
+To add or change dates, select **Open availability** on the row. It opens the availability template on that exact date in a new tab, keeping your unsaved scheduler work in place. Date-level **Session length** and **Resources** controls each have their own **Save** button.
+
 ### A different duration on one date
 
 A single scheduler can run a 90-minute indoor practice on Tuesday and a 150-minute field practice on Saturday. Instead of a scheduler per length, give the date its own duration:
@@ -1132,10 +1140,10 @@ A single scheduler can run a 90-minute indoor practice on Tuesday and a 150-minu
     The list shows the specific dates on the availability templates connected to this scheduler. If it reads "No specific dates are connected", add specific-date availability to a connected template first (see [Create your availability](/scheduling/create-your-availability#method-2-specific-dates-availability)), then refresh the scheduler.
   </Step>
   <Step title="Set the duration for that date">
-    Enter the duration for that date only. Every other date keeps the scheduler's default. You can change the date's resources on the same screen; see [Resources](/scheduling/resources#different-resources-on-different-dates).
+    Enter the minutes under **Session length** and click its **Save** button. Use **Restore default** to remove the override. Every other date keeps the scheduler's default. You can change the date's resources on the same screen; see [Resources](/scheduling/resources#different-resources-on-different-dates).
   </Step>
-  <Step title="Update">
-    Click **Update**. Slots for that date are generated with its own length, and coach and resource conflict checks for that date use it too.
+  <Step title="Check the preview">
+    Confirm the saved duration in the selected date's preview. Slots and coach/resource conflict checks for that date use its own length. Save any other scheduler changes with **Update** before leaving.
   </Step>
 </Steps>
 
