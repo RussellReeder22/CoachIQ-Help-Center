@@ -386,6 +386,10 @@ Sends an email to a user.
 | CC / BCC | Text | Optional additional recipients |
 
 <Note>
+Each email uses 0.1 credit per address, including CC and BCC. If your balance can't cover it, the action fails with "Not enough credits to send this email", nothing is sent, and the automation log shows the failure. See [How credits work](/inbox/sms-credits).
+</Note>
+
+<Note>
 Send an Email has no attachment picker. To send someone a booking, product, or form link by email, paste the link into the message. The in-app, SMS, and announcement actions below can attach a session, product, or form directly.
 </Note>
 
