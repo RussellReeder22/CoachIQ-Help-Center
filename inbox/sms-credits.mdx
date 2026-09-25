@@ -1,15 +1,15 @@
 ---
-title: "How SMS credits work"
-description: "What a credit pays for, how long messages and emojis change the cost, why credits are separate from 10DLC approval, and what to do when texts don't send."
-sidebarTitle: "SMS Credits"
+title: "How messaging credits work"
+description: "Understand SMS and email costs, check your shared messaging balance, top up credits, and troubleshoot messages that do not send."
+sidebarTitle: "Messaging Credits"
 icon: "comment-dollar"
-keywords: ["sms credits", "text message credits", "segments", "emoji sms cost", "buy credits", "top up", "org credits", "texts not sending", "10dlc", "auto-refill", "auto refill"]
+keywords: ["messaging credits", "email credits", "announcement cost", "email not sending", "sms credits", "text message credits", "segments", "emoji sms cost", "buy credits", "top up", "org credits", "texts not sending", "10dlc", "auto-refill", "auto refill"]
 ---
 
-SMS credits are how text messaging is paid for in CoachIQ. Every text you send draws from your group's credit balance.
+Messaging credits pay for outbound SMS and coach-written emails in CoachIQ. Both use your organization's shared credit balance, including the email copies of announcements.
 
 <Info>
-  **Which credits?** These are your business's **SMS credits**. They are completely separate from the **session credits** athletes buy and redeem for bookings. See [Credit system overview](/payments/credits/credit-system-overview) for those.
+  **Which credits?** These are your business's **messaging credits**, also called SMS credits. They are completely separate from the **session credits** athletes buy and redeem for bookings. See [Credit system overview](/payments/credits/credit-system-overview) for those.
 </Info>
 
 ## What a credit is
@@ -22,7 +22,9 @@ Credits are spent on **outbound** texts: messages you send from the Inbox, mass 
 
 Coach-written emails use the same balance at **0.1 credit per email address**: Inbox emails, announcement email copies, and automation **Send an Email** actions, including CC and BCC. Automatic notifications such as booking confirmations and receipts are free. See [Email](/inbox/email#what-email-costs).
 
-The cost is per **segment**, and one message can be several segments:
+### SMS costs
+
+SMS costs are per **segment**, and one text can be several segments:
 
 | Message | Segments | Approximate cost |
 |---|---|---|
@@ -35,11 +37,17 @@ The cost is per **segment**, and one message can be several segments:
   Keep texts short and skip emojis. An emoji switches the whole message to a different encoding that cuts each segment to about 70 characters, so one friendly 🎉 can double or triple the cost of a broadcast.
 </Tip>
 
+### Email costs
+
+At the default rate, **10 emails use 1 credit**. A send to 37 email addresses uses **3.7 credits**; fractions carry forward, so each email is not rounded up to a whole credit. CC and BCC addresses count too.
+
+On the **Credits** page, **Used this month** includes an **Email** line. The activity log shows each send and its credit use. This helps explain a balance change even when you have not sent any texts.
+
 ## How you get credits
 
 - **Monthly allotment** — your plan may include a monthly grant of credits. It is added to whatever balance you have left; it does not reset it.
 - **Top-ups** — buy more at any time, either a preset package (some include bonus credits) or a custom dollar amount. Payment goes through Stripe and the credits are applied automatically.
-- **Auto-refill** — turn it on and your balance tops itself up when it runs low, so a mass text never fails at send time for lack of credits. See below.
+- **Auto-refill** — turn it on and your balance tops itself up when it runs low, to help keep enough credits available for messaging. See below.
 
 <Note>
   Your balance, top-ups, auto-refill, and the credit activity log all live on the **Credits** page. Open it from **Settings → Communication → Credits**. It is the same page whether you get there from Settings or from the SMS setup flow in the Inbox, and it appears for every organization that pays for texts with credits.
@@ -64,6 +72,14 @@ Two independent things must be true for a business text to deliver: your number 
 1. **Check 10DLC registration first.** US carriers do not deliver business SMS until your brand and campaign are approved. This is the most common reason texts do not arrive, and it has nothing to do with your balance. See [Setting up SMS messaging](/inbox/sms-messages#setting-up-sms-messaging).
 2. **Then check credits.** If your balance has run out, top up. Having credits does not make an unregistered number deliver, and being registered does not send texts you cannot pay for.
 
+## Emails or announcement copies did not arrive?
+
+1. Check the balance in **Settings → Communication → Credits**. If a send is blocked with **Not enough credits to send this email**, add credits before trying again. An automation email blocked for this reason sends nothing and records the error in its execution log.
+2. For an Inbox email, open **Channels → Email** and review the recipient addresses and delivery status. See [Find emails you've sent](/inbox/email#find-emails-youve-sent).
+3. For an announcement, check the email delivery separately from the in-app post. If insufficient credits block its email copies, the announcement can still appear in the app. See [Announcement costs](/inbox/announcements#what-announcements-cost).
+
+SMS carrier registration applies to texts. Email delivery has its own checks; a credit balance alone does not guarantee that a message reaches someone's inbox.
+
 ## Common questions
 
 <AccordionGroup>
@@ -74,7 +90,7 @@ Two independent things must be true for a business text to deliver: your number 
     No. A broadcast is one segment per recipient. 150 athletes means at least 150 credits.
   </Accordion>
   <Accordion title="Are SMS credits the same as athlete session credits?">
-    No. Session credits are what athletes redeem for bookings and are managed on each athlete's profile. SMS credits pay for your text messaging. Different balances, different pages.
+    No. Session credits are what athletes redeem for bookings and are managed on each athlete's profile. Messaging credits pay for outbound texts and coach-written emails. Different balances, different pages.
   </Accordion>
   <Accordion title="Why don't I see the auto-refill option?">
     It needs a card on file. Add a payment method on the **Credits** page first, then the auto-refill control becomes available.
@@ -97,6 +113,6 @@ Two independent things must be true for a business text to deliver: your number 
     Your SMS number and call forwarding
   </Card>
   <Card title="Inbox overview" icon="inbox" href="/inbox/inbox-overview">
-    In-App, SMS, and Announcements compared
+    In-App, SMS, Announcements, and Email compared
   </Card>
 </CardGroup>
