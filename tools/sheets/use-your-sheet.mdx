@@ -1,0 +1,61 @@
+---
+title: "Filter, Export, and Use Your Sheet"
+description: "Find the rows you need, understand totals and selection, open source records, and review message recipients."
+sidebarTitle: "Filter, Export & Actions"
+icon: "filter"
+---
+
+Once your sheet has rows, use its controls to focus on the work you need to do. Start in **Tools → Sheets** and open your saved sheet.
+
+## Search, filter, and sort
+
+Use **Search this sheet** to narrow the visible rows. Open a column's menu for sorting and filters. Text filters include **Contains**, **Equals**, **Is empty**, and **Is not empty**; use the options available for the selected column type.
+
+For a client follow-up sheet, you might filter your custom Status column to **Not started**, then sort by a target date. Clearing the filter brings the other rows back; filtering does not remove them from the sheet.
+
+If you see no matching rows, clear the search and check active filters before assuming records are missing. Use column visibility controls when you want a simpler view without deleting columns.
+
+## Read the Totals row
+
+The footer sums numeric columns and counts other columns. Totals reflect the current filtered view, so narrowing the rows can change the figures. Check the active filters before using a total in a report.
+
+<Frame caption="In this example sheet, the text column shows Count 1 and the Number column shows Sum 12.5.">
+  ![Manual sheet with one example row and a numeric sum in the Totals footer](/images/sheets/column-totals.png)
+</Frame>
+
+A count is not automatically a count of unique athletes or families. A sum is not automatically profit, revenue, or a currency conversion. Use the source and column meaning to interpret the result; review payment records in [Payments](/payments/transactions) when reconciling money.
+
+## Select the right rows
+
+Select individual rows using their checkboxes. Review the selected count before using a bulk action. If you choose **Select all matches**, check that you intend to include all matching rows rather than only the rows currently visible.
+
+The selection bar can offer **Message**, **Export selected**, **Remove**, and **Clear**. Available actions depend on the sheet and source. Clear the selection when you finish so your next action starts with the intended audience.
+
+## Open the original record
+
+For a connected row, use its menu and choose **Open in CoachIQ**. Make changes in the original area, then refresh your sheet to check the current values. A manual row has no source record to open.
+
+## Message selected rows
+
+1. Select the rows relevant to your message.
+2. Choose **Message**.
+3. Review the recipient list, unique-recipient counts, guardian handling, and any ineligible or missing contacts.
+4. Continue to Inbox to compose and send the message.
+
+Selecting sheet rows does not send anything. A selected row is not necessarily one reachable recipient: an athlete may have guardian contacts, and some records may have no eligible contact. Review the actual audience before sending.
+
+Use the existing [Inbox guidance](/inbox/inbox-overview) for delivery channels and [messaging credits](/inbox/sms-credits) for metered usage.
+
+## Export your work
+
+Use **Export current view** in the sheet's actions menu, or **Export selected** for a selection. Check filters and selected counts first. The export downloads directly; it is a snapshot, not a continuing connection to CoachIQ.
+
+## Remove rows or delete a sheet
+
+Read the confirmation for **Remove** before continuing. Removing a linked row from the sheet is different from deleting its underlying CoachIQ record. Deleting the sheet removes the sheet and its custom information, while source records remain in CoachIQ.
+
+If the goal is only to stop live updates, use [Unlink live data](/tools/sheets/connect-live-data#unlink-live-data) instead.
+
+## A useful first workflow
+
+Connect People, add a single-select Follow-up status and a Text note, and work through a small list. Filter to the rows that need attention, open profiles for context, and review the messaging audience. Update your custom status after completing the follow-up so the sheet remains useful next time.
