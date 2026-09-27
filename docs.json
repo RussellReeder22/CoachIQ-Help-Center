@@ -338,6 +338,16 @@
                   "people/client-profiles/client-profiles-waivers"
                 ]
               },
+              {
+                "group": "Teams",
+                "icon": "people-group",
+                "pages": [
+                  "people/teams/overview",
+                  "people/teams/roster-and-staff",
+                  "people/teams/practices-and-games",
+                  "people/teams/registration-and-messaging"
+                ]
+              },
               "people/managing-staff"
             ]
           },
@@ -389,6 +399,16 @@
                   "tools/waivers/waivers"
                 ],
                 "icon": "file-signature"
+              },
+              {
+                "group": "Sheets",
+                "icon": "table",
+                "pages": [
+                  "tools/sheets/overview",
+                  "tools/sheets/create-and-edit",
+                  "tools/sheets/connect-live-data",
+                  "tools/sheets/use-your-sheet"
+                ]
               }
             ]
           },
