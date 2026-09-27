@@ -1,0 +1,142 @@
+---
+title: "Connect CoachIQ to ChatGPT"
+description: "Connect ChatGPT to your coaching business, confirm its access, and create a Project with business context and practical workflows."
+sidebarTitle: "Connect to ChatGPT"
+icon: "plug"
+keywords: ["ChatGPT", "MCP", "connect ChatGPT", "ChatGPT Project", "developer mode", "CoachIQ app", "business context"]
+---
+
+Connect ChatGPT to CoachIQ, confirm it works, then use one setup prompt to create a personal Project around your business and the way you work.
+
+<Tip>
+  **Already connected?** [Confirm the connection](#2-confirm-the-connection), then [paste the Project setup prompt](#3-set-up-your-personal-project). You can skip the initial connection steps.
+</Tip>
+
+<Note>
+  Start on **ChatGPT in a desktop web browser**. The connection is added through ChatGPT's app/plugin setup, followed by CoachIQ authorization. The setup prompt later in this guide helps build your business context; it does not replace those account setup steps.
+</Note>
+
+## Before you begin
+
+Have your CoachIQ staff login ready and choose the group this connection should use. ChatGPT's current developer-mode documentation lists Plus, Pro, Business, Enterprise, and Education web accounts. Managed workspaces may also require administrator access or approval. Check your account's available controls before purchasing or changing a plan. [ChatGPT developer mode](https://developers.openai.com/api/docs/guides/developer-mode).
+
+CoachIQ's MCP server address is:
+
+```text
+https://mcp.coachiq.io/mcp
+```
+
+Use **OAuth** for sign-in. You do not need to paste a CoachIQ API key into ChatGPT.
+
+## 1. Connect CoachIQ
+
+Open ChatGPT **Settings → Security and login** and turn on **Developer mode**. Then open [ChatGPT Plugins](https://chatgpt.com/plugins), use the **+** control, and add a connection with these details:
+
+| Field | Enter |
+| --- | --- |
+| Name | CoachIQ |
+| MCP server URL | `https://mcp.coachiq.io/mcp` |
+| Authentication | OAuth |
+| OAuth registration, if asked | Automatic/dynamic registration; no custom client ID or secret |
+
+Complete the connection details. If it appears in your personal plugins but is not installed, open it and use its install control. OpenAI's current walkthrough shows installing the personal plugin and using it in a new **Work** chat. [Official connection walkthrough](https://developers.openai.com/plugins/quickstart).
+
+### Choose your group and access
+
+Sign in through the CoachIQ page that opens. Confirm the organization, group, and role before approving access.
+
+A CoachIQ connection covers **one group**. To work with another group, use a separately named connection authorized for that group. Project names do not change the group a connector can reach.
+
+If you want supported changes, select **I allow this assistant to make supported changes in this group** on the CoachIQ approval screen. Leaving it unchecked grants read-only access. Read the final access summary and button before continuing.
+
+<Info>
+  Verify the access actually granted in the next step. A connected badge does not prove write access, and approval does not make every CoachIQ feature available through ChatGPT. Read-only access is enough for the business-brief setup below.
+</Info>
+
+## 2. Confirm the connection
+
+Start a new chat and select CoachIQ. The current developer-mode route uses the composer **+ → Developer mode** app selection. In **ChatGPT Work**, you can invoke an installed plugin with **@CoachIQ**. Use the controls available in your account; if CoachIQ is missing, return to its installation and workspace settings. [Using developer-mode apps](https://developers.openai.com/api/docs/guides/developer-mode).
+
+Ask ChatGPT to check the connection:
+
+> “Check my CoachIQ connection with a small live read. Confirm my business, group, and whether you can read only or make supported changes. Don’t change anything.”
+
+Once it confirms the correct business and a successful live read, continue below. If it cannot access CoachIQ, use the troubleshooting steps at the end of this guide.
+
+## 3. Set up your personal Project
+
+Once CoachIQ is connected, **copy and paste this prompt into the connected chat**. It will help ChatGPT learn your business through MCP, consult [help.coachiq.io](https://help.coachiq.io), and prepare a Project tailored to how you work.
+
+```text
+I'm a CoachIQ customer. Help me set up a personal Project that understands my business and makes you more effective at helping me work in CoachIQ.
+
+Use my connected CoachIQ MCP to confirm the business, group, and available access, then learn about my services, coaches, locations, scheduling, and products. Keep the review focused; don't pull my entire client list or message history. If the connection isn't working, help me fix it before continuing.
+
+Review https://help.coachiq.io to understand CoachIQ's capabilities and how its features work, starting with the guides relevant to my business. Check the available MCP tools to understand what you can actually do for me. If you can't access the Help Center, say so rather than guess.
+
+Ask up to three questions about my goals and how I like to work. After I answer, prepare:
+- A short Business Brief with verified business context, my priorities, and five useful requests tailored to me.
+- Ready-to-paste Project Instructions that reference https://help.coachiq.io for feature guidance and use the CoachIQ MCP for current business information and supported actions.
+
+Include these working rules in the instructions: check live data for current facts, stay within the connected group, and get my approval before making changes or sending messages. Confirm what actually succeeded. Keep private client details out of the saved brief. Only read CoachIQ data during this setup.
+
+Suggest a Project name and guide me through saving the brief and instructions in a private Project. If you can create and save them directly, do so; otherwise give me the finished content and the exact steps to save it. Finish by helping me confirm that a new Project chat can access both my business context and the live CoachIQ connection.
+```
+
+Answer its questions, then follow its directions to save your Project. It prepares the content for you; you may need to create the Project and paste or upload that content yourself.
+
+### Save your Project
+
+1. Create a private ChatGPT Project using the suggested name.
+2. Paste the generated instructions into the Project's instructions and add the Business Brief to **Sources**.
+3. Open a new chat inside the Project and select CoachIQ.
+
+[More about ChatGPT Projects](https://learn.chatgpt.com/docs/projects).
+
+In that new chat, ask it to summarize your priorities from the saved brief and check your CoachIQ connection. You're ready when it can use both your saved context and live business information.
+
+If CoachIQ is unavailable in your Project's current chat mode, use a supported connected chat until you can verify live access in the Project.
+
+### Start using it
+
+Try one of the five requests in your Business Brief, or ask: **“What can you help me with in CoachIQ this week, based on my goals?”**
+
+Use the same Project for ongoing work. The Help Center explains features; the MCP provides current business information and supported actions. Review proposed changes before approving them, and update your brief when your goals change.
+
+<Tip>
+  Keep each request focused on one outcome. Your assistant's usage limits are separate from CoachIQ, and actions such as SMS can use [messaging credits](/inbox/sms-credits).
+</Tip>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I cannot find Developer mode or add a custom connection">
+    Check that you are using ChatGPT on the web, in the correct account and workspace. Review its current eligibility and workspace controls. A workspace administrator may need to allow or configure the connection. The official instructions above are the reference for menus that differ from your account.
+  </Accordion>
+  <Accordion title="The prompt says CoachIQ is not available">
+    Finish adding and installing the connection, then select it in the current chat. If you are using Work, try invoking the installed CoachIQ plugin with @. The prompt cannot substitute for sign-in or tool selection.
+  </Accordion>
+  <Accordion title="I approved changes, but ChatGPT still says read-only">
+    Ask it to inspect the live connection's access rather than assume permissions from the approval screen. Reauthorize and check the changes option. If an older connection has no write choice, remove and add it again. If verification still fails, contact CoachIQ Support with the platform, group, redacted access screenshot, and the verification result. Continue with reads and drafts while it is investigated.
+  </Accordion>
+  <Accordion title="A browser error appears at the MCP URL">
+    Enter the full address in the MCP connection form, not as an ordinary webpage or a link for ChatGPT to browse. CoachIQ uses the authorization flow to grant access; opening the address directly is not a connection test.
+  </Accordion>
+  <Accordion title="I see the wrong business or group">
+    Stop before approving a change. Use a connection authorized for the intended group and verify it again. Keep separate business briefs for separate groups.
+  </Accordion>
+  <Accordion title="My new Project chat cannot access CoachIQ">
+    Check the selected app/plugin and chat mode in that new conversation. Project files can provide context even when live tools are unavailable; ask the assistant to distinguish the two. Check saved context and live access in the new chat before relying on live operations from the Project.
+  </Accordion>
+  <Accordion title="The assistant proposed a change, but CoachIQ did not update">
+    A proposal is not a completed write. Check whether you approved the tool action and whether it returned success. If the outcome is unclear, inspect the original record before retrying to avoid duplicate work.
+  </Accordion>
+</AccordionGroup>
+
+To stop using the connection, disconnect or remove CoachIQ from ChatGPT's app/plugin management. Previously saved files and conversations need to be managed separately.
+
+## Related guides
+
+- [Manage your connections](/settings/connections)
+- [Connect CoachIQ to Claude](/settings/connect-claude)
+- [Messaging credits](/inbox/sms-credits)

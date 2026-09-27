@@ -397,7 +397,15 @@
             "pages": [
               "settings/index",
               "settings/general",
-              "settings/connections",
+              {
+                "group": "Connections",
+                "icon": "link",
+                "pages": [
+                  "settings/connections",
+                  "settings/connect-chatgpt",
+                  "settings/connect-claude"
+                ]
+              },
               "settings/developer",
               "settings/communication",
               "settings/billing",
