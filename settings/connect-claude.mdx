@@ -8,6 +8,10 @@ keywords: ["Claude", "MCP", "connect Claude", "Claude Project", "AI assistant", 
 
 Connect Claude to CoachIQ, confirm it works, then use one setup prompt to create a personal Project around your business and the way you work.
 
+<Tip>
+  **Already connected?** [Confirm the connection](#2-confirm-the-connection), then [paste the Project setup prompt](#3-set-up-your-personal-project). You can skip the initial connection steps.
+</Tip>
+
 <Note>
   Start in Claude on the web. This guide uses Claude's hosted **custom connector**. Claude Code uses a different setup. A prompt alone does not install the connector or approve access to your CoachIQ account.
 </Note>
@@ -39,9 +43,6 @@ You do not need a CoachIQ API key or a local server.
 
 On Team or Enterprise, the owner starts in **Organization settings → Connectors → Add → Custom → Web**. After they add it, members find it in their own connector list and connect. [Claude's setup instructions](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
 
-{/* Screenshot C1: Customize → Connectors, Add custom connector. Capture pending. */}
-{/* Screenshot C2: Name and complete MCP URL in connector form; no credentials. Capture pending. */}
-
 ### Choose your group and access
 
 The connection opens CoachIQ's sign-in and approval flow. Sign in normally, then check the organization, group, and role shown on the approval page.
@@ -57,8 +58,6 @@ Choose the access you want:
 
 Read the access summary and the final button before connecting. For supported changes, the approval button should reflect that choice. If it still says **Connect with read-only access**, you are approving reads only.
 
-{/* Screenshot C3: Fresh demo-group consent screen with the group, checked changes option, and final button visible. Capture pending. */}
-
 Supported changes have limits. The connector is not permission to do everything available in the admin app. For example, automation drafts remain off for you to review in CoachIQ, and the assistant cannot use this connection to charge or refund a client. Ask it to check its current tools before planning a task.
 
 ## 2. Confirm the connection
@@ -70,9 +69,6 @@ Ask Claude to check the connection:
 > “Check my CoachIQ connection with a small live read. Confirm my business, group, and whether you can read only or make supported changes. Don’t change anything.”
 
 Once it confirms the correct business and a successful live read, continue below. If it cannot access CoachIQ, use the troubleshooting steps at the end of this guide.
-
-{/* Screenshot C4: CoachIQ enabled in the chat's connector menu. Capture pending. */}
-{/* Screenshot C5: Successful read and access summary for the demo group. Capture pending. */}
 
 ## 3. Set up your personal Project
 
@@ -104,12 +100,7 @@ Answer its questions, then follow its directions to save your Project. It prepar
 
 [More about Claude Projects](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects).
 
-{/* Screenshot C6: Create a private business Project. Capture pending. */}
-{/* Screenshot C7: Saved Project instructions referencing help.coachiq.io and the Business Brief. Capture pending. */}
-
 In that new chat, ask it to summarize your priorities from the saved brief and check your CoachIQ connection. You're ready when it can use both your saved context and live business information.
-
-{/* Screenshot C8: New Project chat uses saved context and verifies live CoachIQ access. Capture pending. */}
 
 ### Start using it
 

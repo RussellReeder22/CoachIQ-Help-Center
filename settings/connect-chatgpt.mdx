@@ -8,6 +8,10 @@ keywords: ["ChatGPT", "MCP", "connect ChatGPT", "ChatGPT Project", "developer mo
 
 Connect ChatGPT to CoachIQ, confirm it works, then use one setup prompt to create a personal Project around your business and the way you work.
 
+<Tip>
+  **Already connected?** [Confirm the connection](#2-confirm-the-connection), then [paste the Project setup prompt](#3-set-up-your-personal-project). You can skip the initial connection steps.
+</Tip>
+
 <Note>
   Start on **ChatGPT in a desktop web browser**. The connection is added through ChatGPT's app/plugin setup, followed by CoachIQ authorization. The setup prompt later in this guide helps build your business context; it does not replace those account setup steps.
 </Note>
@@ -37,9 +41,6 @@ Open ChatGPT **Settings → Security and login** and turn on **Developer mode**.
 
 Complete the connection details. If it appears in your personal plugins but is not installed, open it and use its install control. OpenAI's current walkthrough shows installing the personal plugin and using it in a new **Work** chat. [Official connection walkthrough](https://developers.openai.com/plugins/quickstart).
 
-{/* Screenshot G1: Current web Settings and Developer mode control. Capture pending. */}
-{/* Screenshot G2: CoachIQ connection form with OAuth and full URL. Capture pending. */}
-
 ### Choose your group and access
 
 Sign in through the CoachIQ page that opens. Confirm the organization, group, and role before approving access.
@@ -47,8 +48,6 @@ Sign in through the CoachIQ page that opens. Confirm the organization, group, an
 A CoachIQ connection covers **one group**. To work with another group, use a separately named connection authorized for that group. Project names do not change the group a connector can reach.
 
 If you want supported changes, select **I allow this assistant to make supported changes in this group** on the CoachIQ approval screen. Leaving it unchecked grants read-only access. Read the final access summary and button before continuing.
-
-{/* Screenshot G3: CoachIQ consent reached specifically from ChatGPT, correct demo group and access choice. Capture pending. */}
 
 <Info>
   Verify the access actually granted in the next step. A connected badge does not prove write access, and approval does not make every CoachIQ feature available through ChatGPT. Read-only access is enough for the business-brief setup below.
@@ -63,9 +62,6 @@ Ask ChatGPT to check the connection:
 > “Check my CoachIQ connection with a small live read. Confirm my business, group, and whether you can read only or make supported changes. Don’t change anything.”
 
 Once it confirms the correct business and a successful live read, continue below. If it cannot access CoachIQ, use the troubleshooting steps at the end of this guide.
-
-{/* Screenshot G4: CoachIQ selected in the current chat composer. Capture pending. */}
-{/* Screenshot G5: Successful live read with the demo business/group and actual access. Capture pending. */}
 
 ## 3. Set up your personal Project
 
@@ -97,14 +93,9 @@ Answer its questions, then follow its directions to save your Project. It prepar
 
 [More about ChatGPT Projects](https://learn.chatgpt.com/docs/projects).
 
-{/* Screenshot G6: Create a private business Project. Capture pending. */}
-{/* Screenshot G7: Saved Project instructions referencing help.coachiq.io and the Business Brief. Capture pending. */}
-
 In that new chat, ask it to summarize your priorities from the saved brief and check your CoachIQ connection. You're ready when it can use both your saved context and live business information.
 
 If CoachIQ is unavailable in your Project's current chat mode, use a supported connected chat until you can verify live access in the Project.
-
-{/* Screenshot G8: New Project chat uses saved context and verifies live CoachIQ access. Capture pending. */}
 
 ### Start using it
 
