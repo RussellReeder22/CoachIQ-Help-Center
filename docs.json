@@ -52,14 +52,13 @@
             "group": "Getting Started",
             "pages": [
               "index",
-              "quick-guides/first-week-setup-checklist",
-              "getting-started/dashboard",
-              "getting-started/copilot"
+              "getting-started/use-coachiq-with-ai"
             ]
           },
           {
             "group": "Website & App",
             "pages": [
+              "getting-started/dashboard",
               {
                 "group": "Website Builder",
                 "pages": [
@@ -366,6 +365,7 @@
           {
             "group": "Tools",
             "pages": [
+              "getting-started/copilot",
               {
                 "group": "Forms",
                 "pages": [
@@ -1187,7 +1187,7 @@
     },
     {
       "source": "/flows/first-week-setup-checklist",
-      "destination": "/quick-guides/first-week-setup-checklist"
+      "destination": "/"
     },
     {
       "source": "/flows/onboarding-new-athletes",
@@ -1327,7 +1327,7 @@
     },
     {
       "source": "/faq/getting-started",
-      "destination": "/quick-guides/first-week-setup-checklist"
+      "destination": "/"
     },
     {
       "source": "/faq/scheduling",
@@ -1388,6 +1388,10 @@
     {
       "source": "/scheduling/credit-based-scheduling",
       "destination": "/scheduling/credits-and-schedulers"
+    },
+    {
+      "source": "/quick-guides/first-week-setup-checklist",
+      "destination": "/"
     }
   ],
   "metadata": {
