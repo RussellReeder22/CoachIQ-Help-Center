@@ -1,0 +1,76 @@
+---
+title: "Use CoachIQ with AI"
+sidebarTitle: "Use CoachIQ with AI"
+description: "Give ChatGPT or Claude CoachIQ documentation, a live business connection, and a Project tailored to how you work."
+icon: "plug"
+keywords: ["AI", "LLM", "ChatGPT", "Claude", "MCP", "llms.txt", "Project", "business context"]
+---
+
+Give your assistant three things: **CoachIQ's documentation**, **a connection to your business**, and **context about your goals**. Together, they help it give more useful answers and carry out supported work in CoachIQ.
+
+| What you provide | What it gives your assistant |
+| --- | --- |
+| Help Center | Instructions for how CoachIQ features work. |
+| CoachIQ MCP connection | Current information and supported tools for your authorized business group. |
+| Private Project | Your business brief, priorities, and working preferences across future chats. |
+
+## 1. Connect your business
+
+Choose the guide for your assistant. It walks you through adding CoachIQ, signing in, and selecting your group and access.
+
+<CardGroup cols={2}>
+  <Card title="Connect to ChatGPT" icon="plug" href="/settings/connect-chatgpt">
+    Connect CoachIQ, confirm access, and use it in your ChatGPT workflow.
+  </Card>
+  <Card title="Connect to Claude" icon="plug" href="/settings/connect-claude">
+    Add the CoachIQ connector, authorize it, and enable it in a conversation.
+  </Card>
+</CardGroup>
+
+**Already connected?** Ask your assistant:
+
+> Check my CoachIQ connection with a small live read. Confirm my business, group, and whether you can read only or make supported changes. Don't change anything.
+
+Continue once it confirms the intended business and a successful live read. Signing in and approving access happen through the connection flow; pasting a prompt or the Help Center URL does not complete those steps.
+
+## 2. Give it CoachIQ's feature knowledge
+
+Point your assistant to [help.coachiq.io](https://help.coachiq.io) and the [AI-readable guide index](https://help.coachiq.io/llms.txt). The index lists the available articles so it can choose the relevant guides instead of guessing how a feature works.
+
+For a specific question, give it the article's URL. A plain-text Markdown version is also available by adding **.md** to an article URL, for example [the Sheets overview as Markdown](https://help.coachiq.io/tools/sheets/overview.md).
+
+The [complete documentation text](https://help.coachiq.io/llms-full.txt) is available when your tool needs it, but it is large. Start with the index and relevant articles. If your assistant cannot open links, provide the relevant article text or file using its supported attachment controls. Saved copies need refreshing when the product changes.
+
+<Note>
+  Help Center access explains features; it does not grant access to your account. MCP access is limited to the tools and permissions actually available on your connection. A feature described here may still require you to use the CoachIQ app.
+</Note>
+
+## 3. Paste one Project setup prompt
+
+Once the connection is confirmed, paste this into the connected chat. It combines the documentation, live business context, and your goals into a reusable setup.
+
+```text
+I'm a CoachIQ customer. Help me set up a private Project that understands my business and how I work.
+
+First, use my connected CoachIQ MCP for a small live read. Confirm my business, group, and available access. If it isn't connected, guide me through the appropriate guide at https://help.coachiq.io/getting-started/use-coachiq-with-ai before continuing.
+
+Read https://help.coachiq.io/llms.txt to find the relevant CoachIQ guides, then read those pages to understand how the features work. Use the available MCP tools to learn about my services, coaches, locations, scheduling, and products. Keep this focused; don't pull my entire client list or message history. Tell me if you can't access a source.
+
+Ask up to three questions about my goals and working preferences. Then prepare a concise Business Brief, five useful requests tailored to me, and ready-to-paste Project Instructions.
+
+The instructions should use the Help Center for feature guidance and the MCP for current business facts and supported actions. Stay within the connected group, ask before making changes or sending messages, and verify results. Keep private client details out of saved context. Only read data during this setup.
+
+Suggest a Project name and help me save the brief and instructions. If you can save them directly, do so; otherwise give me the finished content and exact steps. Finish by checking that a new Project chat can use both the saved context and the live CoachIQ connection.
+```
+
+Answer its questions and follow the saving steps. Your assistant can prepare the content, but you may need to create the Project and save its instructions and files yourself. The [ChatGPT guide](/settings/connect-chatgpt#save-your-project) and [Claude guide](/settings/connect-claude#save-your-project) explain where to save them.
+
+## 4. Check a new Project chat
+
+Ask the new chat to summarize your priorities from the saved brief and perform a small live CoachIQ read. It should be able to identify both the saved context and the current business group. If the connector is unavailable in that chat or mode, return to the platform guide's troubleshooting steps.
+
+Start with one of the five requests from your Business Brief. Keep the brief current when your services, goals, or working preferences change; use live data for details that change day to day.
+
+## Looking for CoachIQ's built-in Copilot?
+
+[CoachIQ Copilot](/getting-started/copilot) is the assistant inside supported CoachIQ builders. This page covers connecting an external assistant such as ChatGPT or Claude. See [Connections](/settings/connections) to manage your integrations.
