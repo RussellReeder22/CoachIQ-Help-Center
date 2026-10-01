@@ -30,7 +30,7 @@ Use **OAuth** for sign-in. You do not need to paste a CoachIQ API key into ChatG
 
 ## 1. Connect CoachIQ
 
-Open ChatGPT **Settings → Security and login** and turn on **Developer mode**. Then open [ChatGPT Plugins](https://chatgpt.com/plugins), use the **+** control, and add a connection with these details:
+Open [ChatGPT Plugins](https://chatgpt.com/plugins), choose **Add → Create MCP App**, and enter these details. If your account uses the developer-mode app interface instead, follow [OpenAI's developer-mode setup](https://developers.openai.com/api/docs/guides/developer-mode) to enable that interface first. You do not need to look for a developer-mode switch when **Create MCP App** is already available.
 
 | Field | Enter |
 | --- | --- |
@@ -39,7 +39,15 @@ Open ChatGPT **Settings → Security and login** and turn on **Developer mode**.
 | Authentication | OAuth |
 | OAuth registration, if asked | Automatic/dynamic registration; no custom client ID or secret |
 
+<Frame caption="Create the CoachIQ plugin with the hosted MCP URL and OAuth. Review ChatGPT's connection notice before continuing.">
+  ![ChatGPT New Plugin form configured for CoachIQ with its MCP URL and OAuth](/images/walkthroughs-oct01/chatgpt-create-mcp.jpg)
+</Frame>
+
 Complete the connection details. If it appears in your personal plugins but is not installed, open it and use its install control. OpenAI's current walkthrough shows installing the personal plugin and using it in a new **Work** chat. [Official connection walkthrough](https://developers.openai.com/plugins/quickstart).
+
+<Frame caption="Continue to CoachIQ opens the separate sign-in and group-approval step. The plugin is not authenticated until that flow is complete.">
+  ![ChatGPT Connect CoachIQ dialog with Continue to CoachIQ](/images/walkthroughs-oct01/chatgpt-continue-coachiq.jpg)
+</Frame>
 
 ### Choose your group and access
 
@@ -108,6 +116,9 @@ Use the same Project for ongoing work. The Help Center explains features; the MC
 ## Troubleshooting
 
 <AccordionGroup>
+  <Accordion title="CoachIQ says No eligible groups">
+    Check the CoachIQ account shown on the approval page. MCP requires an **accepted Admin or Coach membership** in the intended group. An invitation that has not been accepted, a parent/athlete account, or access to a different group does not qualify. Sign in with the correct staff account, or ask your group administrator to check your membership, then retry the connection.
+  </Accordion>
   <Accordion title="I cannot find Developer mode or add a custom connection">
     Check that you are using ChatGPT on the web, in the correct account and workspace. Review its current eligibility and workspace controls. A workspace administrator may need to allow or configure the connection. The official instructions above are the reference for menus that differ from your account.
   </Accordion>

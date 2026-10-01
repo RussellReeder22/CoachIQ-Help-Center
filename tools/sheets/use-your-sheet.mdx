@@ -58,4 +58,44 @@ If the goal is only to stop live updates, use [Unlink live data](/tools/sheets/c
 
 ## A useful first workflow
 
-Connect People, add a single-select Follow-up status and a Text note, and work through a small list. Filter to the rows that need attention, open profiles for context, and review the messaging audience. Update your custom status after completing the follow-up so the sheet remains useful next time.
+Use a follow-up sheet to keep live client information beside your team's working notes. The screenshots below use two staff records in a CoachIQ test workspace; the statuses are examples, not actual client follow-up activity.
+
+<Steps>
+  <Step title="Connect a focused People list">
+    Create a sheet, choose **Connect CoachIQ data → People**, then choose **Choose records** for a fixed list whose values stay live. Use **All matching records** instead when you want new matching records to join on refresh.
+
+    <Frame caption="Choose records keeps this example to two test profiles while retaining live source values.">
+      ![People source dialog with two records selected for a live Sheet](/images/walkthroughs-oct01/sheets-choose-live-records.jpg)
+    </Frame>
+  </Step>
+  <Step title="Add your follow-up fields">
+    Add a **Single select** column named **Follow-up status**, with **Not started**, **In progress**, and **Done** as separate options. Add a **Text** column named **Next step**. Double-click a custom cell, enter its value, and choose **Save**.
+
+    <Frame caption="Custom columns hold your working information beside the read-only live records.">
+      ![Add a column dialog with Single select status options](/images/walkthroughs-oct01/sheets-custom-status.jpg)
+    </Frame>
+
+    Use **Hide column** for contact fields you do not need in this view. Hiding a column does not remove the source contact details.
+
+    <Frame caption="The populated example combines live People records with saved status and next-step fields.">
+      ![Live follow-up Sheet with two people, saved statuses, and an example next step](/images/walkthroughs-oct01/sheets-populated-example.jpg)
+    </Frame>
+  </Step>
+  <Step title="Filter and select the work that needs attention">
+    Open **Follow-up status → Filter column**, choose **Equals**, and enter **Not started**. Apply the filter, then select the intended rows. Check both the filter chip and selected count.
+
+    <Frame caption="The filter narrows the example to one row; the selection bar offers Message and Export selected.">
+      ![Filtered Sheet with one selected row and its bulk actions](/images/walkthroughs-oct01/sheets-filtered-selection.jpg)
+    </Frame>
+  </Step>
+  <Step title="Review the audience before composing">
+    Choose **Message → Review recipients**. Check the unique recipients, added guardians, and missing contact counts. Only continue to Inbox when that audience matches your intent. The review has a validity window, and eligibility is checked again when sending.
+
+    <Frame caption="This test selection resolves to one recipient and no added guardians. Reviewing recipients has not sent a message.">
+      ![Sheet recipient review showing one unique recipient, guardian count, and Continue to Inbox](/images/walkthroughs-oct01/sheets-recipient-review.jpg)
+    </Frame>
+  </Step>
+  <Step title="Export or complete the follow-up">
+    Choose **Export selected** for the selected rows, or use **Export current view** from the sheet actions menu for the filtered view. After completing a follow-up, update its custom status and next step. Clear the selection before starting a different task.
+  </Step>
+</Steps>

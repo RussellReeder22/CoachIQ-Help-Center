@@ -34,10 +34,21 @@ You do not need a CoachIQ API key or a local server.
 
 <Steps>
   <Step title="Open Claude's connector settings">
-    In Claude, go to **Customize → Connectors**. Use the **+** menu and choose **Add custom connector**.
+    In Claude, go to **Customize → Connectors**. Open **Add** and choose **Add custom connector**.
   </Step>
   <Step title="Enter the connection details">
-    Name it **CoachIQ** and paste the server address above. If asked for transport, use **HTTP / Streamable HTTP**. Use automatic OAuth registration; leave a custom client ID and secret blank unless CoachIQ Support specifically provides them. Add the connector, then choose **Connect** to sign in.
+    Name it **CoachIQ**, paste the server address above, and choose **Continue**.
+
+    <Frame caption="Add CoachIQ with its hosted MCP address.">
+      ![Claude Add custom connector dialog with the CoachIQ name and MCP server address](/images/walkthroughs-oct01/claude-add-connector.jpg)
+    </Frame>
+  </Step>
+  <Step title="Review authentication and connect">
+    Keep **Sign in now** and **Register automatically** when Claude detects them. You do not need a custom client ID, client secret, or request headers. Choose **Add**, then **Connect** on the CoachIQ connector page to open CoachIQ's sign-in and approval flow.
+
+    <Frame caption="Claude detects OAuth sign-in and automatic client registration.">
+      ![Claude OAuth settings with Sign in now and Register automatically selected](/images/walkthroughs-oct01/claude-oauth-settings.jpg)
+    </Frame>
   </Step>
 </Steps>
 
@@ -113,6 +124,9 @@ Use the same Project for ongoing work. The Help Center explains features; the MC
 ## Troubleshooting
 
 <AccordionGroup>
+  <Accordion title="CoachIQ says No eligible groups">
+    Check the CoachIQ account shown on the approval page. MCP requires an **accepted Admin or Coach membership** in the intended group. Sign in with the correct staff account, or ask your group administrator to check that the membership is accepted, then retry. Access to another group or an unaccepted invitation is not enough.
+  </Accordion>
   <Accordion title="I pasted the prompt, but Claude did not connect">
     Add the connector through **Customize → Connectors** first, complete CoachIQ authorization, and enable it in the chat. Pasting terminal commands or configuration JSON into a Claude chat does not install it.
   </Accordion>

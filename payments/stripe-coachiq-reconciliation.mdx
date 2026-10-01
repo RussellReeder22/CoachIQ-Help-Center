@@ -104,7 +104,7 @@ These systems sync automatically, but occasionally they can get out of alignment
     3. Compare the two subscriptions:
        - Which one has recent successful payments?
        - Which one is the client actually using?
-    4. Cancel the duplicate (the one without recent activity)
+    4. Confirm which subscription is linked to the athlete's CoachIQ purchase, whether it covers other family members, and which charges were intended. Cancel only the confirmed duplicate; low recent activity alone does not identify it.
     5. Verify only one Active subscription remains
 
     <Warning>
@@ -117,16 +117,16 @@ These systems sync automatically, but occasionally they can get out of alignment
 
     **Why this happens:**
 
-    The subscription was canceled directly in Stripe (not through CoachIQ), so CoachIQ didn't receive the cancellation webhook.
+    A cancellation scheduled for the end of the billing period can legitimately remain active until that date. If Stripe shows it has already ended but CoachIQ still shows active access, a synchronization issue or a different linked subscription may need investigation. Canceling in Stripe does not by itself prove that a webhook was missed.
 
     **How to fix:**
 
-    1. In CoachIQ, go to **Payments → Subscriptions**
-    2. Find the subscription
-    3. Click to view details
-    4. If status is wrong, contact CoachIQ support to resync
+    1. Check the subscription's actual status and end date in Stripe.
+    2. In CoachIQ, open the athlete's **Products** tab and compare its linked subscription and membership end date.
+    3. Check whether the purchase is part of a [shared family membership](/payments/shared-family-memberships).
+    4. If the same subscription has ended but access is still wrong, contact CoachIQ support with those details before canceling or replacing anything else.
 
-    **Prevent this**: Always cancel subscriptions through CoachIQ, not directly in Stripe.
+    For ordinary membership cancellations, use [Cancel membership in CoachIQ](/payments/manage-subscriptions) and review its timing. Shared family memberships require a separate removal workflow.
   </Accordion>
 
   <Accordion title="Client paid but subscription shows Incomplete">
