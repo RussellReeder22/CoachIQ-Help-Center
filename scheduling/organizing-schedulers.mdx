@@ -35,7 +35,7 @@ Every scheduler has a **Type**, set in its **Catalog** section ("Choose how this
 | **Rentals** | Booking a court, cage, or field without a coach |
 | **Other** | Anything that does not fit above |
 
-The **Schedulers** page shows these types as filter chips across the top (**All · Practices & games · Camps & events · Lessons · Rentals · Other**) next to a **Search schedulers** box, so you can jump straight to the schedulers you are looking for. Each card also shows its type, duration, price (or credits, or Free), and the next available occurrence. Athletes see the same grouping in the portal, which makes a long offering easier to browse.
+The **Schedulers** page shows these types as filter chips across the top (**All · Practices & games · Camps & events · Lessons · Rentals · Other**) next to a **Search schedulers** box, so you can jump straight to the schedulers you are looking for. Each card also shows its type, duration, price (or credits, or Free), and the next available occurrence. Customer-facing placement is configured separately in the [athlete portal or website](/scheduling/sharing-schedulers).
 
 Schedulers created before types existed default to **Other**. Open each one and set its type once; it takes a few seconds per scheduler and the filters become useful immediately.
 
@@ -58,9 +58,9 @@ Click a tag on the Schedulers page to filter the list to that tag. Tags are inte
 
 ## Team visibility
 
-By default every active scheduler is visible to everyone in your athlete portal. The **Team visibility** section of the scheduler builder has one field, **Visible to**, which defaults to **Everyone in this group**. Leave it empty for everyone, or select team or roster tags to show this scheduler only to matching athletes and to parents of matching managed athletes:
+An active scheduler still needs to be published on a page or shared by link. Team visibility determines which athletes can access it once they find it. The **Team visibility** section of the scheduler builder has one field, **Visible to**, which defaults to **Everyone in this group**. Leave it empty for everyone, or select team or roster tags to show this scheduler only to matching athletes and to parents of matching managed athletes:
 
-- **Everyone in this group** — any athlete can see and book it
+- **Everyone in this group** — no team-specific visibility restriction; normal availability, payment, and booking rules still apply
 - **Team or roster tags** — only athletes carrying the selected [client tags](/people/tags-filters), and the parents of managed athletes who carry them, see it
 
 Use this for team-only practices, a private training block for a specific squad, or make-up sessions for one group. Athletes outside the roster never see the scheduler in the portal, and the direct link will not let them book.
@@ -93,7 +93,7 @@ What archiving does:
 - Sessions already booked for future dates are not cancelled by archiving. Cancel them first if the sessions will not run; see [Canceling bookings](/scheduling/canceling-bookings#cancel-an-entire-session-from-the-calendar).
 - Availability templates, locations, resources, and coaches the scheduler used are untouched and stay available to other schedulers.
 
-An archived scheduler can be restored later. Filter the Schedulers page away from **Active** to find archived schedulers, open one, and reactivate it; its settings come back as they were, so a returning seasonal program is a one-click relaunch rather than a rebuild.
+An archived scheduler can be restored later. Filter the Schedulers page away from **Active** to find archived schedulers, open one, and reactivate it; its settings are retained. Review its dates, availability, pricing, and published placement before accepting new bookings.
 
 <Warning>
   If the scheduler is credit-based, check the products that issue its credits before archiving. Credits that were only valid on this scheduler have nowhere to go until you add a replacement scheduler to the product's **Which schedulers accept these credits** list. See [Credits and schedulers](/scheduling/credits-and-schedulers).
@@ -108,7 +108,7 @@ Archiving is different from **Inactive**. An inactive scheduler is hidden from a
     No, one type per scheduler. Use tags for anything that crosses types.
   </Accordion>
   <Accordion title="Does team visibility stop staff from booking athletes manually?">
-    No. Admins and coaches can book anyone into any scheduler from the calendar. Visibility only affects what athletes see in the portal.
+    Team visibility controls customer access. Staff use the calendar booking flow with their own permissions and booking checks; visibility is not a guarantee that every manual booking will succeed.
   </Accordion>
   <Accordion title="An athlete on the roster can't see the scheduler">
     Check that the athlete carries the exact tag selected in Team visibility, and that the scheduler is **Active** and not archived. Tag names must match; "Varsity" and "varsity " with a trailing space are different tags.
@@ -121,7 +121,7 @@ Archiving is different from **Inactive**. An inactive scheduler is hidden from a
 ## Related articles
 
 <CardGroup cols={2}>
-  <Card title="What are schedulers?" icon="calendar" href="/scheduling/what-are-schedulers">
+  <Card title="What are schedulers?" icon="calendar" href="/scheduling/overview">
     The building block of CoachIQ scheduling
   </Card>
   <Card title="Sharing schedulers" icon="share" href="/scheduling/sharing-schedulers">

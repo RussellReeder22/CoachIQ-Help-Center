@@ -8,7 +8,7 @@ keywords: ["resources", "courts", "cages", "equipment", "reserve all", "use firs
 
 ## What are Resources?
 
-Resources are physical assets your facility uses to run sessions — courts, batting cages, training rooms, or any space or equipment that can only support one session at a time. When you attach a resource to a scheduler, CoachIQ prevents that resource from being double-booked across overlapping time slots.
+Resources are physical assets your facility uses to run sessions — courts, batting cages, training rooms, or any space or equipment that can only support one session at a time. When you attach a resource to a scheduler, its reservation rules help prevent competing bookings. Leave **Allow resource double booking** off when the space must be exclusive.
 
 <Note>
   Resources are visible to admins and coaches only. Athletes do not see resource names or assignments during booking. A single scheduler can reserve more than one resource per session — see [Attach multiple resources to one scheduler](#attach-multiple-resources-to-one-scheduler).
@@ -45,7 +45,7 @@ Two paths, same result:
 
 A resource can be attached to multiple schedulers at once. When a resource is exclusive to one scheduler, you'll see "Not shared with other schedulers" in the scheduler view. To remove it, click **Detach**.
 
-You can also add a resource to a single booked session from the calendar: click the session and use the resource control in the click view. That reserves the resource for that occurrence only and does not change the scheduler. See [Calendar overview](/scheduling/calendar-overview-and-navigation#click-session-for-details).
+You can also add a resource to a single booked session from the calendar: click the session and use the resource control in the click view. That reserves the resource for that occurrence only and does not change the scheduler. See [Calendar overview](/scheduling/calendar-overview-and-navigation#manage-a-session).
 
 ## Attach multiple resources to one scheduler
 
@@ -75,6 +75,8 @@ A facility attaches **Cage 1** and **Cage 2** to a "Hitting Lesson" scheduler se
 - A third 4:00 request finds no open cage, so 4:00 is no longer offered.
 - A "Pitching" scheduler that only uses **Turf** is unaffected either way, because it never competes for a cage.
 
+This example assumes the scheduler's capacity, staffing, and other booking rules also permit the simultaneous lessons. A resource pool does not override those limits.
+
 Families do not pick a cage. Staff see which resource was reserved on the booking in the calendar click view, and the allocated resource is what conflict checks use from then on: another scheduler that needs Cage 1 loses that hour, while Cage 2 stays free until someone takes it.
 
 <Tip>
@@ -85,14 +87,14 @@ Families do not pick a cage. Staff see which resource was reserved on the bookin
 
 By default an attached resource blocks a booking when it is already reserved at that time. The **Allow resource double booking** checkbox in the scheduler's **Resources** section turns that protection off for this scheduler, the same way the connected-coaches checkbox lets a coach be booked in two places at once.
 
-- **Off** (default): a time slot is unavailable when an attached resource is already reserved by any session.
+- **Off** (default): required resources must be available. With **Reserve all**, every attached resource is required; with **Use first available**, one available resource is enough.
 - **On**: bookings from this scheduler go through even when the resource is in use elsewhere.
 
 Turn it on only for a resource that genuinely supports more than one session at a time (a large turf that hosts two small groups) or for a scheduler where you accept the overlap deliberately. Leave it off everywhere else, because it disables the very thing resources are for.
 
 ## Different resources on different dates
 
-A resource attached to a scheduler applies to every date. If one date needs different equipment (the Tuesday indoor practice uses Cage 1, the Saturday field practice uses the turf mound), give that date its own resources instead of building a second scheduler:
+A resource attached to a scheduler is the default for its dates unless overridden. If one date needs different equipment (the Tuesday indoor practice uses Cage 1, the Saturday field practice uses the turf mound), give that date its own resources instead of building a second scheduler:
 
 1. Open the scheduler and go to **Availability**.
 2. Under **Specific-date settings**, pick the configured date you want to change. Dates come from the specific-date availability on the connected availability template; if the list is empty, add specific dates to the template first, then refresh the scheduler.

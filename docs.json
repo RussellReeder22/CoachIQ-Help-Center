@@ -189,63 +189,62 @@
             "group": "Scheduling",
             "pages": [
               "scheduling/overview",
-              "scheduling/quick-setup",
-              "scheduling/book-your-first-session",
+              "scheduling/creating-your-first-scheduler",
               {
-                "group": "Availability",
+                "group": "Availability & Setup",
                 "icon": "calendar-week",
                 "pages": [
                   "scheduling/how-availability-works",
                   "scheduling/create-your-availability",
                   "scheduling/setting-black-out-dates",
                   "scheduling/seasonal-schedule-transition",
-                  "scheduling/managing-availability-for-multiple-coaches"
-                ]
-              },
-              {
-                "group": "Schedulers",
-                "icon": "sliders",
-                "pages": [
-                  "scheduling/what-are-schedulers",
-                  "scheduling/creating-your-first-scheduler",
-                  "scheduling/scheduler-settings-limits-and-permissions",
-                  "scheduling/advanced-scheduler-settings",
-                  "scheduling/overlapping-slots",
-                  "scheduling/setting-up-payment-options",
-                  "scheduling/pricing-by-session-length",
-                  "scheduling/credits-and-schedulers",
-                  "scheduling/organizing-schedulers",
-                  "scheduling/sharing-schedulers"
-                ]
-              },
-              {
-                "group": "Setup & Defaults",
-                "icon": "screwdriver-wrench",
-                "pages": [
                   "scheduling/setup-coaches",
+                  "scheduling/managing-availability-for-multiple-coaches",
                   "scheduling/setup-locations",
                   "scheduling/resources",
                   "scheduling/setup-defaults"
                 ]
               },
               {
-                "group": "Calendar & Bookings",
+                "group": "Pricing & Booking Rules",
+                "icon": "sliders",
+                "pages": [
+                  "scheduling/setting-up-payment-options",
+                  "scheduling/pricing-by-session-length",
+                  "scheduling/credits-and-schedulers",
+                  "scheduling/scheduler-settings-limits-and-permissions",
+                  "scheduling/overlapping-slots",
+                  "scheduling/advanced-scheduler-settings"
+                ]
+              },
+              {
+                "group": "Manage Sessions",
                 "icon": "calendar-days",
                 "pages": [
                   "scheduling/calendar-overview-and-navigation",
                   "scheduling/saved-calendar-views",
-                  "scheduling/calendar-analytics",
-                  "scheduling/shared-calendar-across-groups",
-                  "scheduling/google-calendar-sync",
-                  "scheduling/understanding-booking-types",
                   "scheduling/manually-booking-athletes",
                   "scheduling/booking-for-multiple-athletes",
                   "scheduling/recurring-bookings",
                   "scheduling/editing-rescheduling-bookings",
+                  "scheduling/canceling-bookings",
                   "scheduling/checking-in-athletes",
-                  "scheduling/canceling-bookings"
+                  "scheduling/calendar-analytics",
+                  "scheduling/changing-your-schedule"
                 ]
-              }
+              },
+              {
+                "group": "Publish & Communicate",
+                "icon": "share-nodes",
+                "pages": [
+                  "scheduling/sharing-schedulers",
+                  "scheduling/organizing-schedulers",
+                  "scheduling/session-reminders",
+                  "scheduling/google-calendar-sync",
+                  "scheduling/shared-calendar-across-groups"
+                ]
+              },
+              "scheduling/troubleshooting"
             ]
           },
           {
@@ -1061,7 +1060,7 @@
     },
     {
       "source": "/schedule/first-session",
-      "destination": "/scheduling/book-your-first-session"
+      "destination": "/scheduling/creating-your-first-scheduler"
     },
     {
       "source": "/clients/adding-editing-clients",
@@ -1097,7 +1096,7 @@
     },
     {
       "source": "/scheduling/first-bookable-session",
-      "destination": "/scheduling/book-your-first-session"
+      "destination": "/scheduling/creating-your-first-scheduler"
     },
     {
       "source": "/scheduling/calendar-and-navigation-overview",
@@ -1394,6 +1393,22 @@
     {
       "source": "/quick-guides/first-week-setup-checklist",
       "destination": "/"
+    },
+    {
+      "source": "/scheduling/quick-setup",
+      "destination": "/scheduling/creating-your-first-scheduler"
+    },
+    {
+      "source": "/scheduling/book-your-first-session",
+      "destination": "/scheduling/creating-your-first-scheduler"
+    },
+    {
+      "source": "/scheduling/what-are-schedulers",
+      "destination": "/scheduling/overview"
+    },
+    {
+      "source": "/scheduling/understanding-booking-types",
+      "destination": "/scheduling/manually-booking-athletes"
     }
   ],
   "metadata": {

@@ -7,12 +7,12 @@ keywords: ["edit booking", "reschedule", "change booking", "move session", "chan
 ---
 
 <Info>
-**Where to find this**: Schedule → Calendar → Click any booking
+**Where to find this**: Scheduling → Calendar → Click any booking
 </Info>
 
 ## Editing a booking
 
-On **Schedule** → **Calendar**, click a session. The click view shows **Duration**, **Time Slot**, **Location**, **Coaches**, resources, and participants.
+On **Scheduling** → **Calendar**, click a session. The click view shows **Duration**, **Time Slot**, **Location**, **Coaches**, resources, and participants.
 
 **Duration**, **Location**, and **Coaches** each have **Edit**. **Time Slot** does not; to change the date or time, use **Move Session** in the header (below). You can also add a coach or a resource to this one occurrence from the click view without opening the scheduler. Footer: **Add Participants** and **Send Message to All**.
 
@@ -70,7 +70,7 @@ The dialog shows the booked-athlete count and a suggested message. Choose **Anno
 
 Use **Move Session** when the whole occurrence has to change date or time: a coach is sick, the facility is closed, a practice shifts from Tuesday to Wednesday. It moves the occurrence with everything attached to it in one action, instead of rebooking each athlete.
 
-Where to find this: **Schedule → Calendar → click the session**
+Where to find this: **Scheduling → Calendar → click the session**
 
 ### What moves with the session
 
@@ -84,7 +84,7 @@ Nothing about the scheduler changes. Other dates of the same session stay where 
 
 <Steps>
   <Step title="Open the session">
-    Go to **Schedule** → **Calendar** and click the session you want to move. **Move Session** is in the header of the click view, next to the red trash icon that opens [Cancel Session](/scheduling/canceling-bookings#cancel-an-entire-session-from-the-calendar).
+    Go to **Scheduling** → **Calendar** and click the session you want to move. **Move Session** is in the header of the click view, next to the red trash icon that opens [Cancel Session](/scheduling/canceling-bookings#cancel-an-entire-session-from-the-calendar).
   </Step>
 
   <Step title="Click Move Session">
@@ -116,7 +116,7 @@ Nothing about the scheduler changes. Other dates of the same session stay where 
 
 ### Moving one athlete, not the whole session
 
-**Move Session** always moves every participant. To move a single athlete out of a group session, cancel that athlete's booking and book them into the new time (see [Canceling bookings](/scheduling/canceling-bookings) and [Manually booking athletes](/scheduling/manually-booking-athletes)). For one date of a recurring booking, use **Change** in the [Occurrences view](/scheduling/recurring-bookings#changing-one-occurrence) instead.
+**Move Session** moves every participant in that occurrence. To change one athlete's reservation, open that athlete's booking and use **Edit** to review its rescheduling options. The **Email [athlete] about this change** choice starts unchecked. If the new service or length requires a different payment, follow [canceling](/scheduling/canceling-bookings) and [rebooking](/scheduling/manually-booking-athletes) with the correct payment or credit handling. For one date of a recurring booking, use **Change** in the [Occurrences view](/scheduling/recurring-bookings#changing-one-occurrence) instead.
 
 ---
 
@@ -138,7 +138,7 @@ For quick rescheduling directly on the calendar:
   </Step>
 
   <Step title="Release to confirm">
-    Drop the booking on the desired time. The change saves automatically.
+    Drop the session on the desired time, review any warnings or confirmation, and verify the saved result. Treat this as a change to the occurrence, including its participants; use the individual booking editor when only one athlete is moving.
   </Step>
 </Steps>
 
@@ -150,7 +150,7 @@ Drag-and-drop rescheduling bypasses availability checks. Make sure the new time 
 
 ## What athletes see
 
-When a session is booked, athletes automatically receive a confirmation email:
+Booking confirmations can include a rescheduling link when athlete self-rescheduling is enabled. Check your notification settings and the booking recipient when troubleshooting delivery:
 
 <Frame caption="The email athletes receive when a session is booked. The 'Re-schedule Here' link lets them move the session themselves when self-rescheduling is enabled.">
   ![Session confirmation email titled 'Your Session is Coming Up' showing date, time, location, description, and a re-schedule link](/images/session-confirmation-email.png)
@@ -170,7 +170,7 @@ When you move a booking:
 
 - **Selected notifications** — When enabled, communicate the original and new details through the channels you chose
 - **Portal update** — The updated session appears in their Athlete Portal immediately
-- **Calendar sync** — Any linked calendar invites are automatically updated
+- **Calendar sync** — Check the connected Google calendar if you use [Google Calendar sync](/scheduling/google-calendar-sync)
 
 <Tip>
 **Best practice**: If making a significant time change, send a personal message through the Inbox to confirm the athlete can make the new time.
@@ -182,11 +182,11 @@ When you move a booking:
 
 You can configure athlete self-rescheduling on a per-scheduler basis in **Scheduler Settings → Booking Rules**. There are two related toggles:
 
-**Allow athletes to reschedule** — When on, athletes can move their booking to a different available time slot from the Athlete Portal or app. No additional payment is required; the original credit or payment carries over to the new time. When off, only coaches and admins can reschedule — athletes must contact you to make changes.
+**Allow athletes to reschedule** — When on, athletes can move their booking to a different available time slot from the Athlete Portal or app. An eligible reschedule retains its existing payment or credit arrangement; it does not collect a price difference. A differently priced length may require canceling and rebooking. Credit-paid sessions must still meet applicable expiration and session-date restrictions. When off, only coaches and admins can reschedule — athletes must contact you to make changes.
 
 **Block rescheduling within cancellation window** — When on, athletes cannot reschedule once they're inside your cancellation notice window. This prevents athletes from using reschedule as a workaround to avoid forfeiting a credit on a late cancellation. The blocking window matches your Cancellation Policy (e.g., if you require 24-hour notice, rescheduling is also blocked within that same 24 hours).
 
-[Configure rescheduling permissions →](/scheduling/scheduler-settings-limits-and-permissions#setting-7-booking-rules-athlete-permissions)
+[Configure rescheduling permissions →](/scheduling/scheduler-settings-limits-and-permissions#rescheduling-permissions)
 
 ---
 

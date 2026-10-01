@@ -1,0 +1,83 @@
+---
+title: "Troubleshoot Scheduling"
+sidebarTitle: "Troubleshooting"
+description: "Diagnose missing schedulers, unavailable times, credit issues, booking conflicts, and missing messages."
+icon: "life-ring"
+---
+
+Start with the symptom below. Keep the scheduler name, athlete, date, and timezone handy so you can compare the same booking throughout your checks.
+
+## The athlete cannot find the scheduler
+
+1. Confirm the scheduler is **Active** and not archived.
+2. Check that it was added to the intended app or website page and that the page was published. Creating a scheduler alone does not publish it.
+3. Open the actual link the athlete is using.
+4. Check **Team visibility** and the selected athlete's membership or matching tags. A parent's access may depend on the child selected.
+
+See [Publish and share schedulers](/scheduling/sharing-schedulers) and [Catalog, tags, and visibility](/scheduling/organizing-schedulers).
+
+## The scheduler opens, but a time is missing
+
+Work through these checks in order:
+
+| Check | What to inspect |
+| --- | --- |
+| Date and timezone | Confirm you and the athlete are looking at the same date and local time |
+| Availability | Correct template, weekday or specific date, start/end dates, and blackout intervals |
+| Session length | The selected duration must fit inside the available window; check date-specific length overrides |
+| Booking window | Minimum notice and how far ahead the scheduler accepts bookings |
+| Capacity and limits | Seats already booked, total limits, and the athlete's own daily or weekly limits |
+| Coaches | Working availability, assignments, existing commitments, and All-coaches conflict settings |
+| Resources | Required court, cage, room, or equipment and other reservations |
+
+Use [Open availability](/scheduling/saved-calendar-views) in the admin calendar to inspect a focused date range. An opening shown to staff is still subject to the customer's own eligibility and booking rules.
+
+If another client takes the last spot during checkout, the old choice can be cleared and the available times refreshed. Select a new available time rather than repeatedly submitting the stale one.
+
+## The athlete has credits but cannot book
+
+Check the selected athlete before changing the balance, especially for families.
+
+1. Identify the product that issued the credits.
+2. Check **Which schedulers accept these credits** on that product.
+3. Compare the eligible balance with the selected session length's credit cost.
+4. Check expiration, membership status, per-scheduler usage limits, and whether sessions must occur before the credits expire.
+5. For a child, check product ownership and family or shared membership links. Do not assume every parent's and child's balances are pooled.
+
+See [Credits and schedulers](/scheduling/credits-and-schedulers) and [Book for families](/scheduling/booking-for-multiple-athletes).
+
+## A staff or recurring booking fails
+
+Read the refusal or conflict warning before overriding anything. Confirm the athlete, scheduler, credit redemption choice, and the whole recurring date range.
+
+**Book anyway** permits the overlap described in the warning; it is not confirmation of payment or a universal bypass. For multiple athletes, check individual results and the processed count.
+
+If the native app reports a generic error, try the web admin to review the specific refusal or conflict prompt. See [Manual bookings](/scheduling/manually-booking-athletes) and [Recurring bookings](/scheduling/recurring-bookings).
+
+## A booking is missing from the calendar
+
+Return to **All sessions**, check the date and timezone, and clear restrictive coach or scheduler filters. **Open availability only** intentionally hides booked sessions.
+
+Check the athlete's booking history before creating a replacement. A failed multi-athlete request may have booked some participants successfully.
+
+## A schedule change did not do what I expected
+
+Check [What schedule changes affect](/scheduling/changing-your-schedule). Common causes include:
+
+- A changed default applies only to newly created schedulers.
+- A blackout closes availability but leaves existing bookings in place.
+- A shared template affects several schedulers.
+- **Move Session** changes all participants in one occurrence.
+- Archiving stops new bookings but does not cancel future sessions already booked.
+
+If an edit says the occurrence changed while it was open, refresh the calendar and review the latest details before retrying.
+
+## The athlete did not receive a message
+
+Identify whether you expected a booking confirmation, scheduled reminder, change notification, or automation. Each has different controls.
+
+For a move, duration change, or venue change, review the notification options you selected. For a scheduled reminder, check the scheduler's reminder rule, recipient, channel, and send time. See [Session reminders](/scheduling/session-reminders).
+
+## Get help with a specific example
+
+Contact support with the scheduler name or link, athlete, session date and timezone, the action attempted, and the exact error or unexpected result. Include the relevant booking or credit record when possible. Avoid changing multiple rules at once while investigating; it makes the cause harder to identify.

@@ -40,7 +40,7 @@ Buffers reduce how many slots fit in a day. A 60-minute lesson with a 15-minute 
 |---|---|
 | **Minimum notice (hours)** | How close to the start time an athlete can still book. 24 means nothing can be booked less than a day ahead |
 | **Book up to (days ahead)** | How far into the future athletes can see and book slots |
-| **Cancellation notice (hours)** | How long before a session an athlete can still cancel themselves. Inside this window, cancel and reschedule are blocked for the athlete |
+| **Cancellation notice (hours)** | How long before a session an athlete can still cancel themselves. Inside this window, self-cancellation is blocked; rescheduling has a separate lockout setting |
 
 ### Booking rules
 
@@ -49,13 +49,13 @@ Buffers reduce how many slots fit in a day. A 60-minute lesson with a 15-minute 
 | **Allow athletes to cancel** | Athletes can cancel their own bookings (outside the cancellation notice window) |
 | **Refund credits on cancellation** | When a credit-paid booking is canceled in time, the credit goes back to the athlete |
 | **Allow athletes to reschedule** | Athletes can move their booking to another open slot |
-| **Show booked slots to other athletes** | Other athletes can see that a slot is taken (and, on group sessions, who is in it). Turn off for private lessons |
+| **Show booked athletes to other athletes** | Controls whether other athletes can see participant names; separate from who can access the scheduler |
 
 ### Limits
 
 | Setting | What it does |
 |---|---|
-| **Max bookings per week** | Cap on how many sessions one athlete can book per week on this scheduler. **0** means unlimited |
+| **Max bookings per week** | Starting weekly booking limit. Review the scheduler's separate total and per-athlete limits before publishing |
 | **Max athletes per timeslot** | Capacity of each slot. 1 for private lessons, higher for groups |
 
 ## Recommended starting points
@@ -71,7 +71,7 @@ These are a place to begin. Tighten the cancellation notice if late cancels are 
 
 ## Overriding on one scheduler
 
-Open the scheduler and expand **Advanced settings**. The same fields appear, pre-filled with your defaults. Change what you need for that session only. Full detail in [Advanced scheduler settings](/scheduling/advanced-scheduler-settings) and [Scheduler settings, limits, and permissions](/scheduling/scheduler-settings-limits-and-permissions).
+Open the scheduler and expand **Advanced settings**. The scheduler keeps its own settings, originally copied from defaults when it was created. Change what you need for that session only. Full detail in [Advanced scheduler settings](/scheduling/advanced-scheduler-settings) and [Scheduler settings, limits, and permissions](/scheduling/scheduler-settings-limits-and-permissions).
 
 ## Common questions
 
@@ -83,7 +83,7 @@ Open the scheduler and expand **Advanced settings**. The same fields appear, pre
     The athlete cannot cancel from the portal. You can still cancel for them from the calendar, and decide whether to refund the credit. See [Canceling bookings](/scheduling/canceling-bookings).
   </Accordion>
   <Accordion title="Does 'book up to N days ahead' hide my whole calendar?">
-    It hides slots beyond that horizon from athletes only. You can still see and book any date from the admin calendar.
+    It hides slots beyond that horizon from athletes only. Staff can review dates in the admin calendar and use the available manual booking controls; other booking checks may still apply.
   </Accordion>
 </AccordionGroup>
 
@@ -93,7 +93,7 @@ Open the scheduler and expand **Advanced settings**. The same fields appear, pre
   <Card title="Advanced scheduler settings" icon="gear" href="/scheduling/advanced-scheduler-settings">
     Every per-scheduler override explained
   </Card>
-  <Card title="Credit-based scheduling" icon="coins" href="/scheduling/setting-up-payment-options#option-3-setting-up-credit-based-sessions">
+  <Card title="Credit-based scheduling" icon="coins" href="/scheduling/setting-up-payment-options#set-up-credit-booking">
     How refund-on-cancel interacts with credits
   </Card>
   <Card title="Locations" icon="map-pin" href="/scheduling/setup-locations">
