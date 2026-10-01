@@ -51,7 +51,7 @@ Each subscription shows:
 <Note>
   **Status colors matter:**
 
-  - **Green "Active"** = Billing normally, everything good
+  - **Green "Active"** = Currently active; check for a scheduled cancellation date
   - **Yellow "Past Due"** = Payment failed, needs attention
   - **Gray "Canceled"** = No longer subscribing
 </Note>
@@ -62,11 +62,9 @@ Each subscription shows:
 
 <Tabs>
   <Tab title="Active">
-    **Meaning**: Subscription is billing successfully every month.
+    **Meaning**: The membership is currently active.
 
-    **What happens**: Client retains access, auto-renews on billing date, credits replenish (if applicable).
-
-    **Your action**: None needed—everything is working.
+    **What happens**: It renews on its billing schedule unless it is set to end. Check for **Cancels [date]** before assuming another renewal is due.
   </Tab>
   <Tab title="Past Due">
     **Meaning**: Payment failed, subscription at risk of canceling.
@@ -78,7 +76,7 @@ Each subscription shows:
   <Tab title="Canceled">
     **Meaning**: Subscription ended (by them or you).
 
-    **What happens**: No more billing, client loses access at end of current billing period.
+    **What happens**: The subscription has ended. A membership still waiting for its scheduled end stays Active or Trialing until that date.
 
     **Your action**: None needed unless you want to win them back.
   </Tab>
@@ -99,6 +97,12 @@ Each subscription shows:
 </Tabs>
 
 ---
+
+## Scheduled endings and unmatched subscriptions
+
+A scheduled cancellation stays **Active** or **Trialing** and shows **Cancels [date]**. Its details show **Cancels on** and **Cancel requested**, without a next renewal. It joins the **Canceled** filter once it ends.
+
+**Not on a purchase** means the billing subscription has no matching purchase on the profile. Manage it from **Payment Methods → Active Subscriptions → Cancel subscription**. For a linked purchase, use **Products → Cancel membership**. [Cancellation and removal guide](/payments/manage-subscriptions).
 
 ## Common uses
 
@@ -138,15 +142,11 @@ Each subscription shows:
     **Pro tip**: Message them 2 days before trial ends: "Hey! Your trial ends in 2 days. You'll be charged \$125 unless you cancel. Let me know if you have questions!"
   </Accordion>
   <Accordion title="Manually canceling their subscription">
-    **You can't do it from this tab.** To cancel:
+    Open this client's **Products** tab and choose **Cancel membership** on the purchase. Choose the cancellation timing, confirm, and check the resulting status.
 
-    1. Go to main **Payments** → **Subscriptions**
-    2. Find this client's subscription
-    3. Click cancel button
+    For a subscription marked **Not on a purchase**, use **Payment Methods → Active Subscriptions → Cancel subscription** instead.
 
-    Or navigate to their subscription management in their Portal settings.
-
-    [Learn how to cancel subscriptions →](/payments/manage-subscriptions)
+    [Full cancellation steps →](/payments/manage-subscriptions)
   </Accordion>
 </AccordionGroup>
 
@@ -181,7 +181,8 @@ Subscriptions tab is **view-only**. To take action:
 
 | Action Needed                 | Where to Do It                           |
 | ----------------------------- | ---------------------------------------- |
-| **Cancel subscription**       | Payments → Subscriptions → Cancel        |
+| **Cancel membership** | Products → **Cancel membership** |
+| **Cancel an unmatched subscription** | Payment Methods → Active Subscriptions → **Cancel subscription** |
 | **Change subscription price** | Payments → Products → Edit product       |
 | **Retry failed payment**      | Payments → Subscriptions → Retry billing |
 | **Refund past charges**       | Transactions tab → Refund                |

@@ -272,7 +272,9 @@ Recurring bookings allow you to schedule multiple sessions for an athlete automa
     4. Athlete receives notification (if notifications enabled)
 
     <Note>
-      **Conflict warning.** If any occurrence in the series overlaps another booking on the same session, CoachIQ stops and tells you which booking it collides with before creating anything. You can confirm and proceed (a deliberate double-up for a special arrangement) or back out and adjust the pattern. On a capacity-1 session, proceeding puts two athletes in the same slot, so treat the warning as a real one unless you meant it.
+      **Conflict warning.** CoachIQ checks the selected athlete’s existing bookings across offerings, including overlaps on the first and later dates in a weekly or monthly series. The warning names the other session and time. **Go back** creates nothing; adjust the pattern and review it again. **Book anyway** explicitly allows the overlap, so use it only when that double booking is intentional.
+
+      When booking several athletes into the same series, the conflict check runs for the selected group before saving. Review the result for each athlete and the processed count instead of assuming every requested booking succeeded.
     </Note>
 
     **What happens next**:

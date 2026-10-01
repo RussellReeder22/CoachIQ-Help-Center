@@ -154,7 +154,7 @@ You select the product type when creating a new product. The type determines ava
     6. Client cancels when done
 
     <Info>
-      Clients can cancel subscriptions anytime. No penalties. Billing stops at end of current period.
+      Client cancellation depends on the membership settings. Staff can choose the supported cancellation timing; shared family memberships need special handling. See [Manage subscriptions](/payments/manage-subscriptions).
     </Info>
   </Tab>
   <Tab title="Examples">
@@ -193,7 +193,7 @@ You select the product type when creating a new product. The type determines ava
 
     Client enters a specific code during checkout to receive a discount or free access.
 
-    **Code required.** Without the code, this product doesn't appear as a purchase option.
+    **Code required.** A code-only offer can appear on your website, but clients need a valid access code to complete checkout.
   </Tab>
   <Tab title="When to use">
     **Best for special access scenarios:**
@@ -209,7 +209,7 @@ You select the product type when creating a new product. The type determines ava
     Use Access Code products when specific groups need special pricing or free access that shouldn't be publicly available.
 
     <Warning>
-      Access Code products are hidden from regular purchase flows. Only people with the code can access them.
+      A code-only product is not the same as an ordinary free product. Website pricing cards and expanded product-list rows show **Code** instead of a zero price. Paid offers that optionally accept a code keep their price, and **Hide Price** remains respected.
     </Warning>
   </Tab>
   <Tab title="Key settings">
@@ -249,7 +249,7 @@ You select the product type when creating a new product. The type determines ava
     **Sponsor discount:**
 
     - Name: "Sponsor Partnership - 50% Off"
-    - Price: $37.50 (50% off regular $75)
+    - Price: \$37.50 (50% off regular \$75)
     - Code: SPONSOR50
     - Redemption limit: 100 uses
     - Use: Sponsor's clients get half-price sessions
@@ -263,6 +263,16 @@ You select the product type when creating a new product. The type determines ava
     - Use: Team gets bulk discount
   </Tab>
 </Tabs>
+
+### Booking with a code on your website
+
+On the step-by-step website scheduler, choose the athlete, session, date, and time, then select **Reserve My Spot**. The checkout opens a labeled **Access code** field.
+
+- An empty field asks you to enter a code.
+- An invalid code shows feedback beside the field and does not create a booking or order.
+- After a valid code completes checkout, check the confirmation for the selected athlete, date, and time.
+
+Use the **Access code** field for a code-gated offer. Paid checkout can have a separate promo-code field for [coupons](/payments/coupon-overview).
 
 ## Product type comparison
 

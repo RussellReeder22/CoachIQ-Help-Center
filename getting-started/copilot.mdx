@@ -1,36 +1,58 @@
 ---
 title: "CoachIQ Copilot"
-description: "The AI assistant built into CoachIQ: where it appears, what it is good at today, and how to get useful answers from it."
+description: "Use CoachIQ's built-in assistant to look up records, prepare supported product and scheduling changes, and review the result before moving on."
 sidebarTitle: "Copilot"
 icon: "robot"
-keywords: ["copilot", "AI assistant", "ai", "natural language", "generate availability", "copilot beta", "ask coachiq"]
+keywords: ["copilot", "AI assistant", "approval", "availability", "products", "scheduler", "retry"]
 ---
 
 <Info>
-  **Where to find this**: the **Copilot** panel inside the availability and booking builders.
+  **Where to find this**: open **Tools → Assistant** when available in your organization. Copilot also appears inside supported availability and booking builders.
 </Info>
 
 ## What Copilot is
 
-Copilot is CoachIQ's built-in assistant. You describe what you want in plain English and it fills in the structured settings for you, or points you to the right place. It is in **Beta**, so expect it to get better and occasionally to need a second try.
+Copilot is CoachIQ's built-in assistant. Describe the record you want to find or the change you want to make. It can look up saved product and scheduling details and prepare supported changes for review.
 
-The main dashboard no longer has a Copilot prompt bar. Open the relevant builder to use Copilot.
+For an external assistant connected through MCP, follow [Use CoachIQ with AI](/getting-started/use-coachiq-with-ai) and [AI workflows](/settings/ai-workflows). The two experiences do not necessarily expose the same tools or controls.
+
+## Look up information before changing it
+
+Start with the exact product, scheduler, or availability name. If several records match, choose the intended one before continuing.
+
+> What are the saved price, payment type, and credits for [product name]? Do not change anything.
+
+For availability, ask for the saved weekly hours, timezone, and specific dates. A follow-up can refer to the record you just worked on, but check that the response still names the correct target.
+
+## Prepare a supported change
+
+| Task | Example request |
+| --- | --- |
+| Create a credit product | Create a one-time product named [name] for \$100 with four credits. Show the proposed settings before saving. |
+| Change only a price | Change [product] from \$25 to \$30. Keep its credits, description, and all other settings unchanged. |
+| Create a membership product | Create [name] at \$20 per month with no free trial. Do not subscribe or charge anyone. |
+| Update weekly hours | Change Monday hours on [availability] to 10–11 AM in [timezone]. Preserve its other days and specific dates. |
+| Add a specific date | Add [date] from 2–4 PM to [existing availability]. Preserve its weekly hours and do not create another template. |
+| Create a scheduler | Create a free 30-minute lesson scheduler named [name] using [existing availability]. Keep self-booking, reminders, and calendar sync off. |
+
+These are examples, not actions that run by reading this page. If information is missing, answer the clarification before approving a change.
+
+## Review and approve
+
+1. Read the proposed target and settings. For availability, check the dates, hours, and timezone; for products, check price, billing frequency, and credits.
+2. Approve only the intended change. Decline or cancel a proposal that does not match your request.
+3. Read the completion message and open the saved record to verify it. A conversational explanation alone is not proof that the change saved.
+4. Ask for a read-only summary if you need to confirm what changed and what stayed the same.
+
+Canceling a pending proposal does not undo something already saved. Check the record before requesting a correction.
 
 ## Inside builders
 
-The **Copilot** panel appears on the right of the availability builder and the booking builder. This is where it saves the most time:
+The **Copilot** panel in supported availability and booking builders helps fill structured settings from plain-language requests. Review the resulting fields and use that builder's **Save**, **Create**, or **Update** control to finish.
 
-| Where | Say something like | Copilot fills in |
-|---|---|---|
-| Availability builder | "Mondays and Wednesdays 4 to 8 pm, Saturdays 9 to noon" | The weekly day and time ranges |
-| Recurring booking | "Every Tuesday and Thursday at 6 pm for 8 weeks" | Days, time, and repeat count |
-| Manual booking | "Book Maya into Friday's 5 pm lesson" | Athlete, scheduler, and slot |
-
-<Frame>
+<Frame caption="Copilot inside a builder. This is separate from the full Assistant conversation.">
   ![CoachIQ Copilot panel inside a builder](/images/copilot-ui.png)
 </Frame>
-
-Detailed walkthroughs live with each feature:
 
 - [Create your availability](/scheduling/create-your-availability#method-3-using-copilot-to-generate-availability)
 - [Recurring bookings](/scheduling/recurring-bookings)
@@ -38,35 +60,23 @@ Detailed walkthroughs live with each feature:
 
 ## Getting good results
 
-- **Be specific with times and days.** "5 pm" beats "evening"; "next Tuesday" beats "soon".
-- **One request at a time.** Ask for the availability, review it, then ask for the next change.
-- **Review before you save.** Copilot drafts; you confirm. Nothing is booked or published until you click **Save** or **Update**.
-- **Rephrase if it misses.** A shorter sentence with the numbers first usually lands.
+Name the exact record, use concrete dates and times, and state what should remain unchanged. Work through one change at a time and check the saved result before building on it.
 
-## What Copilot does not do
-
-- It does not send messages to athletes or charge cards on its own.
-- It does not change settings outside the builder you are in.
-- It does not see anything you have not saved yet in another tab.
+For a blackout, specify the template, date, hours, and timezone. For a scheduler, distinguish the new scheduler's name from the existing availability it should use.
 
 ## Common questions
 
 <AccordionGroup>
-  <Accordion title="Can athletes use Copilot?">
-    No. It is an admin and coach tool. Athletes book through the portal as usual.
+  <Accordion title="The assistant asks me to choose a record">
+    Confirm the intended match. Give the exact name or record identifier if the available choices are ambiguous. Do not approve a change to a different record just because its name is similar.
   </Accordion>
-  <Accordion title="Copilot produced the wrong availability">
-    Click **Regenerate** with a clearer prompt, or edit the generated ranges by hand. Nothing is live until you save.
+  <Accordion title="I reached a request limit">
+    Follow the displayed retry countdown, then use **Try again**. Check the chat's outcome before sending the same change again; avoid duplicating work that already completed.
+  </Accordion>
+  <Accordion title="The saved result doesn't match my request">
+    Open the affected record and check its actual settings. State the specific difference and ask for a correction that preserves the rest. Review that proposal before approving.
+  </Accordion>
+  <Accordion title="Can athletes use Copilot?">
+    Copilot is a staff tool. Athletes continue to use the booking and account features provided to them in the portal or app.
   </Accordion>
 </AccordionGroup>
-
-## Related articles
-
-<CardGroup cols={2}>
-  <Card title="Your Dashboard" icon="gauge" href="/getting-started/dashboard">
-    Website, athlete portal, and activity shortcuts
-  </Card>
-  <Card title="How availability works" icon="clock" href="/scheduling/how-availability-works">
-    The model Copilot is filling in for you
-  </Card>
-</CardGroup>

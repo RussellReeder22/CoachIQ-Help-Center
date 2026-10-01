@@ -72,9 +72,7 @@ Click any row to view full subscription details.
   <Tab title="Active">
     **Green indicator - Running normally**
 
-    Subscription is active and payments are processing successfully.
-
-    Client's card charges automatically on schedule. Credits renew (if configured). Everything working as expected.
+    The membership is currently active. It renews on its billing schedule unless it is set to end. Check for **Cancels [date]** before assuming another payment is due.
   </Tab>
   <Tab title="Trialing">
     **Blue indicator - In trial period**
@@ -106,7 +104,7 @@ Click any row to view full subscription details.
 
     Client or you canceled the subscription.
 
-    No more charges. Access ends based on cancellation settings (immediate or end of period). Credits expire. Client can resubscribe by purchasing again.
+    The subscription has ended. A membership scheduled to cancel later remains Active or Trialing until its end date; it does not appear in this filter yet.
   </Tab>
   <Tab title="Incomplete Expired">
     **Gray indicator - Setup failed**
@@ -116,6 +114,18 @@ Click any row to view full subscription details.
     Client started subscription signup but payment failed and retry period expired. Subscription never became active.
   </Tab>
 </Tabs>
+
+## Scheduled cancellations
+
+A membership ending at period end shows **Active — Cancels [date]** or **Trialing — Cancels [date]**. It stays in its current filter and count while access continues. It moves to **Canceled** when it ends.
+
+Open the row to distinguish **Cancels on**, the membership's end date, from **Cancel requested**, when the cancellation was requested. The record does not show another renewal when it is scheduled to end.
+
+<Frame caption="A production test membership with a scheduled end. Names and amounts are test examples.">
+  ![Subscription details showing Active cancels at period end, Cancels on, and Cancel requested](/images/release-guides-sep30/scheduled-cancellation.png)
+</Frame>
+
+A **Not on a purchase** label means billing is not linked to a purchase on the client's profile. Use [Payment Methods to manage that subscription](/payments/manage-subscriptions#a-subscription-is-not-on-a-purchase).
 
 ## Filter and search subscriptions
 

@@ -1,0 +1,83 @@
+---
+title: "Shared Family Memberships"
+sidebarTitle: "Shared Family Memberships"
+description: "Link several athletes to one paid family subscription, check renewal credits, and remove one athlete without ending the others' memberships."
+icon: "people-group"
+keywords: ["family membership", "shared subscription", "siblings", "subscription quantity", "renewal credits", "remove child"]
+---
+
+One paid subscription can cover several athletes in the same family. Each athlete has a purchase for the same membership product, linked to that subscription. Its paid **quantity** limits how many eligible purchases it covers.
+
+This is separate from a parent using their own credit package to pay for a child's booking. See [Family Accounts](/athlete-portal/family-accounts) for family connections and booking permissions.
+
+## Before linking another athlete
+
+Confirm the payer, membership product, Stripe subscription, and number of athletes the subscription pays for. The linked purchases must belong to the same family arrangement and product.
+
+For example, a subscription with quantity **2** can cover two eligible athlete purchases. It is not permission to attach unrelated clients or extra copies of a purchase.
+
+## Link an athlete to the paid subscription
+
+<Steps>
+  <Step title="Check the paid quantity">
+    Open the existing subscription in Stripe and check how many athletes it covers. If no paid place is available, update the quantity before linking another athlete. Review the billing effect in Stripe before confirming that change.
+  </Step>
+  <Step title="Open the athlete's Products tab">
+    In CoachIQ, go to **People → Clients**, open the intended athlete, and choose **Products → Add Product**. Choose the same membership product.
+  </Step>
+  <Step title="Link the existing subscription">
+    In **Configure Purchases**, enter the existing **Stripe Subscription ID**. Review whether credits should be awarded now or upon cycle renewal, then confirm.
+
+    If the subscription already covers its paid number of purchases, CoachIQ refuses the extra link. Check the quantity and existing links rather than adding duplicate purchases.
+  </Step>
+  <Step title="Verify the athlete's membership">
+    Reopen the athlete's Products and Credits tabs. Confirm the correct product and billing link. Check the other athlete's membership too, so both match the intended family arrangement.
+  </Step>
+</Steps>
+
+[More about manually adding a product](/people/client-profiles/client-profiles-products#manually-adding-products).
+
+## Renewal credits and displayed prices
+
+Each eligible linked purchase receives its configured credits when the subscription renews, up to the number of purchases the payment covers. Reprocessing the same payment does not award the credits twice.
+
+The family-facing membership cards and Admin Products rows show each membership's share of the price. Two cards do not mean two separate charges for the full subscription amount. Compare the total billed subscription with its quantity when answering a family's billing question.
+
+If some links are inconsistent or there are more purchases than paid places, not every linked purchase will receive credits. Check the payer, billed product, quantity, and existing links before granting another purchase.
+
+<Note>
+  Missed historical renewal credits are not automatically added back. If a paid renewal did not supply the expected credits, contact support with the membership and payment details so the correct adjustment can be reviewed.
+</Note>
+
+## Remove one athlete
+
+Canceling the shared subscription would affect the other linked athletes. CoachIQ blocks canceling one shared membership as though it were an independent subscription. Families should contact the coach; the mobile app does not offer the ordinary cancellation control for these memberships.
+
+To remove just one athlete, follow the instructions shown in the admin:
+
+1. Open that athlete's purchase and remove its **Stripe Subscription ID** link.
+2. Deactivate that athlete's purchase.
+3. Reduce the subscription quantity in Stripe to match the remaining athletes, reviewing the billing effect before confirming.
+4. Check the remaining athletes' purchase links and the resulting subscription quantity. Confirm the removed athlete no longer has access through that purchase.
+
+Do not use the normal **Cancel membership** action to remove only one child from a shared subscription. If you intend to end the whole family's arrangement, review all linked purchases and contact support if the shared-membership safeguard prevents the intended change.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Why can't I link another child?">
+    The paid quantity may already be used. Review the existing linked purchases and increase the quantity only if the family is paying for another athlete. An extra duplicate purchase is not a solution.
+  </Accordion>
+  <Accordion title="Why does each child show a smaller price than the total charge?">
+    Each membership card shows its share. The subscription's total and quantity explain the family charge; use the payment record to confirm what was collected.
+  </Accordion>
+  <Accordion title="Does this combine all family credits into one balance?">
+    No. Each eligible athlete purchase receives its configured renewal credits. Parent-funded bookings and a child's own credits follow their separate booking rules.
+  </Accordion>
+</AccordionGroup>
+
+## Related guides
+
+- [Canceling and removing memberships](/payments/manage-subscriptions)
+- [Client products and billing links](/people/client-profiles/client-profiles-products)
+- [Family accounts and parent permissions](/athlete-portal/family-accounts)

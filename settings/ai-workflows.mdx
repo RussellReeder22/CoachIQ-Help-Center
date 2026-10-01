@@ -1,0 +1,92 @@
+---
+title: "Useful CoachIQ Workflows for Your AI Assistant"
+sidebarTitle: "AI Workflows"
+description: "Use a connected assistant to check availability, prepare booking changes, and organize media with clear review and verification steps."
+icon: "wand-magic-sparkles"
+keywords: ["MCP workflows", "AI prompts", "availability", "blackouts", "media", "ChatGPT", "Claude"]
+---
+
+Once your assistant is connected, start with a specific task and ask it to verify the result. These examples use the CoachIQ tools available to your connection; they do not give the assistant access to every feature in the Help Center.
+
+If you still need the connection or your business Project, follow [Use CoachIQ with AI](/getting-started/use-coachiq-with-ai). For the assistant inside CoachIQ, see [Copilot](/getting-started/copilot).
+
+## Confirm the business and access
+
+Paste this before working in a new chat or after reconnecting:
+
+```text
+Use a small live CoachIQ read to confirm my business and group, and tell me whether this connection is read-only or allows supported changes. Do not change anything.
+```
+
+Read-only access supports lookups. Changes require the supported tools and write permission on your connection. If a tool is unavailable, ask for the manual steps instead of treating a conversational answer as a saved change.
+
+## Find availability and the correct booking link
+
+Name the scheduler and the date range. Ask for the link returned by CoachIQ rather than a guessed URL.
+
+```text
+Check next week's availability for [scheduler name] in [timezone]. Show the available session times and return the exact public booking link from CoachIQ. Tell me if the session is inactive, archived, or closed to self-booking. Do not change anything.
+```
+
+Open the returned link and check that it points to the intended session. A link alone does not prove the session is currently bookable.
+
+## Block a date without changing weekly hours
+
+```text
+For [availability template name], prepare a blackout on [date] from [start] to [end] in [timezone]. Keep its weekly hours and other dates unchanged. Show me the target, date, and hours and wait for my approval before saving. After saving, read the template back and confirm the blackout.
+```
+
+Review the named template and exact timezone. Changing availability is separate from moving or canceling existing bookings; check any already-booked sessions before assuming they were affected.
+
+## Prepare a booking change for one athlete
+
+```text
+Find [athlete name]'s booking for [session name] on [date and time]. Prepare a move to [new date and time, timezone]. Confirm the athlete, current booking, and available destination. Tell me about any conflict or unsupported action and wait for my approval. After an approved change, read the booking back to verify it.
+```
+
+For a cancellation, name the exact booking and ask whether returning credits is allowed before approving. Do not assume the assistant can override a restriction or that changing a booking produces a payment refund. Check the saved booking and any permitted credit change separately.
+
+## Find and organize media
+
+Start with a search, then approve changes to the identified file:
+
+```text
+Find videos uploaded by [coach] during [date range] with the tag [tag]. List matching names and identifiers without changing them. For the file I select, prepare the new name [name] and tag [tag], then wait for approval before saving.
+```
+
+The media tools can search by file type, uploader, tag, and date; create or apply tags, including nested tags; and rename files. Ask the assistant to reread the file after a change.
+
+## Import a file from a public link
+
+```text
+Prepare to import this public file into CoachIQ Media Hub: [URL]. Check whether the type and size are supported and show me the planned filename. Wait for approval before importing, then confirm the saved media record.
+```
+
+The import tool supports images and PDFs up to **25 MB**, and MP4 or MOV video up to **100 MB**. These are limits for this AI import tool, not a promise about every upload path. A file requiring a login or private network access is not a public import link.
+
+## Attach media to a program or lesson
+
+```text
+Find [media filename] in CoachIQ. Prepare to attach it to [program name] as a media step, or to [lesson name and named slide] as a media block. Identify the exact file and destination and wait for approval. After saving, read the destination back and confirm the attachment.
+```
+
+Removing that program step or lesson block is different from deleting the source file. The media tools cannot delete files from Media Hub, change file visibility, or perform Video Analysis.
+
+## Check usage without assuming a file is unused
+
+```text
+Show which programs and lesson slides use [media filename]. Explain what locations this lookup does not cover. Do not remove any attachment or delete the file.
+```
+
+The lookup covers program media and files placed on lesson slides, including supported files shared into the organization. It does not cover every use as a cover image, inside rich text, or on websites, emails, and messages. An empty result does not prove the file is unused.
+
+## Check the outcome
+
+For each change, confirm:
+
+- The assistant used the intended business group and exact record.
+- You reviewed and approved the supported action.
+- A fresh read shows the saved result, including the relevant dates, amounts, or destination.
+- Anything the assistant could not verify is clearly identified.
+
+Keep using the same business Project for your goals and preferences; use live CoachIQ reads for facts that change. You do not need to repeat the Project setup prompt for every task.

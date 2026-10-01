@@ -54,7 +54,7 @@ The Product Builder has 7 sections. Only Section 1 is required. Configure additi
     **Free products:** Use Access Code type with \$0.00 price
 
     <Warning>
-      Double-check your price before publishing. $5.00 vs $50.00 mistakes are common.
+      Double-check your price before publishing. \$5.00 vs \$50.00 mistakes are common.
     </Warning>
   </Accordion>
   <Accordion title="Description">
@@ -142,13 +142,13 @@ Configure pricing frequency and processing fees.
 
     - Client pays product price
     - You receive product price minus the combined fee
-    - Example: $50 product = $47.55 to you
+    - Example: \$50 product = \$47.55 to you
 
     **Client pays the fee**
 
     - Combined fee added as separate line item at checkout
     - You receive full product price
-    - Example: $50 product + $2.45 fee = \$52.45 charged to client
+    - Example: \$50 product + \$2.45 fee = \$52.45 charged to client
 
     **Custom fee structure:**
 
@@ -187,7 +187,7 @@ Configure pricing frequency and processing fees.
     - Registration fees
 
     <Tip>
-      Example: $50 setup fee + $200/month recurring. The client pays $250 on day one, then $200 each month after.
+      Example: \$50 setup fee + \$200/month recurring. The client pays \$250 on day one, then \$200 each month after.
     </Tip>
 
     <Note>
@@ -215,7 +215,7 @@ Configure pricing frequency and processing fees.
     </Tip>
   </Accordion>
   <Accordion title="Schedule charges for later">
-    **All product types**
+    **Subscription products only**
 
     Collect the purchase now but delay the first charge to a future date. Turn the toggle ON and set a **First charge date** (MM/DD/YYYY).
 
@@ -233,7 +233,7 @@ Configure pricing frequency and processing fees.
     </Tip>
   </Accordion>
   <Accordion title="Enable free trial">
-    **All product types**
+    **Subscription products only**
 
     Give clients a trial period before any charge. Turn the toggle ON and set the **Trial period (days)** (for example, 7).
 
@@ -277,6 +277,18 @@ Configure pricing frequency and processing fees.
     How member discounts compare with coupons, and how to decide between them: [Member discounts](/payments/coupon-overview#member-discounts).
   </Accordion>
 </AccordionGroup>
+
+<Note>
+    **Older one-time products:** if an existing one-time product has a later charge or free trial configured, turn that unsupported setting off before saving. The editor explains **Only available for subscriptions** and blocks the unsupported configuration. Collecting a card on file below does not itself schedule a future charge.
+  </Note>
+
+### Understand the amounts clients see
+
+**Initial payment** is the amount paid at signup, including any initial down payment and applicable discount. The recurring amount describes renewal pricing. With a first-payment-only coupon, later renewals return to the regular rate; an ongoing coupon keeps its eligible discount.
+
+For example, a membership priced at \$15 per month with a \$5 initial down payment and a 50% coupon for two months has an initial payment of \$10 before any additional fees, followed by a discounted \$7.50 recurring charge during the coupon period. After that period, the regular recurring rate applies. Compare the actual checkout and payment record when reconciling fees or discounts.
+
+In member-facing Billing and Orders, a scheduled first charge shows **Scheduled** / **Billing starts [date]**. A genuine free trial keeps its trial label. Scheduling billing is not the same setting as offering a trial.
 
 ## Section 3: Credits
 

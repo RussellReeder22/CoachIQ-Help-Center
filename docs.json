@@ -290,6 +290,7 @@
                 "pages": [
                   "payments/subscriptions-dashboard",
                   "payments/manage-subscriptions",
+                  "payments/shared-family-memberships",
                   "payments/upgrade-membership",
                   "payments/grandfather-pricing",
                   "payments/stripe-coachiq-reconciliation"
@@ -423,7 +424,8 @@
                 "pages": [
                   "settings/connections",
                   "settings/connect-chatgpt",
-                  "settings/connect-claude"
+                  "settings/connect-claude",
+                  "settings/ai-workflows"
                 ]
               },
               "settings/developer",

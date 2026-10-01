@@ -1,6 +1,6 @@
 ---
 title: "Build Your First Automation"
-description: "Create a welcome email that sends automatically when someone joins—in under 5 minutes"
+description: "Create and test a welcome email for subscription purchases"
 sidebarTitle: "Build Your First Automation"
 icon: "play"
 keywords: ["create automation", "first automation", "welcome email", "new member email", "automation tutorial", "set up automation"]
@@ -10,7 +10,7 @@ keywords: ["create automation", "first automation", "welcome email", "new member
 **Where to find this**: Tools → Automations → Create Automation
 </Info>
 
-By the end of this guide, every new member will automatically receive a welcome email with instructions to [book their first session](/scheduling/overview). You'll also [tag](/people/tags-filters) them as an "Active Member" so you can easily find them later.
+By the end of this guide, qualifying subscription purchases will trigger a welcome email with instructions to [book their first session](/scheduling/overview). You'll also [tag](/people/tags-filters) them as an "Active Member" so you can easily find them later.
 
 No templates, no shortcuts—we're building from scratch so you understand how it works.
 
@@ -110,9 +110,9 @@ No templates, no shortcuts—we're building from scratch so you understand how i
     </Frame>
   </Step>
   <Step title="Create, Test, Then Enable">
-    Click **Create** in the header to save the automation. It is saved with **Enabled** off, so nothing runs yet.
+    Set **Enabled** off in **Settings**, then click **Create** in the header to save the automation without starting automatic runs.
 
-    Work through the [test checklist](#test-before-you-enable) below, then open **Settings** and switch **Enabled** on.
+    Work through the [test checklist](#test-before-you-enable) below, then open **Settings**, switch **Enabled** on, and click **Update** to save.
 
     <Check>
       **That's it!** Your automation is now live. The next person who purchases a subscription will automatically receive your welcome email and get tagged as an Active Member.
@@ -130,11 +130,11 @@ No templates, no shortcuts—we're building from scratch so you understand how i
 
 Message, SMS, booking, credit, and purchase actions have real effects the moment they run, so check your work before switching an automation on:
 
-1. **Build with Enabled off.** A new automation starts disabled; leave it that way while you edit.
+1. **Build with Enabled off.** Check **Settings**, switch it off, and save while you prepare the automation.
 2. **Use a test account.** Make sure the email will land somewhere you can read it—your own test profile, not a real member.
 3. **Click Test Run** in the header and read the filled-in email. Test Run really sends, so it will email whoever it targets.
 4. **Check Execution Logs** to see which conditions passed and what each action returned.
-5. **Then switch Enabled on** in **Settings**, deliberately, once you're happy.
+5. **Then switch Enabled on** in **Settings** and click **Update** to save once you have verified the results.
 
 ---
 
@@ -144,7 +144,7 @@ A few ways to confirm your automation is running:
 
 - **Check Execution Logs**: Open the automation and scroll to **Logs** for a record of every run, who it was for, and what each action did
 - **Make a test purchase**: Use a test account to subscribe and see if the email arrives
-- **Wait for your next signup**: You'll see it appear in the logs
+- **Check the next qualifying subscription purchase**: Find its run in [Execution Logs](/tools/automations/builder-reference#execution-logs). Creating an account alone does not match this trigger
 
 ---
 
