@@ -1,87 +1,47 @@
 ---
-title: "Coaches"
-description: "Connect coaches to your schedulers, give each their own availability, and see at a glance who covers what."
-sidebarTitle: "Coaches"
+title: "Set Up Coaches"
+sidebarTitle: "Set Up Coaches"
+description: "Connect staff to scheduling, set their availability, and assign them to the services they deliver."
 icon: "user-tie"
-keywords: ["coaches", "connect coaches", "coach availability", "assign coach", "multi-coach", "coach schedule", "setup coaches"]
 ---
 
-<Info>
-  **Where to find this**: **Scheduling → Setup → Coaches**
-</Info>
-
-## What the Coaches tab does
-
-The **Coaches** tab is the scheduling view of your staff. It lists every coach who is connected to at least one scheduler, shows their weekly availability, and tells you which schedulers each one covers (**USED BY n SCHEDULERS**).
-
-The first card is always **All Coaches**. It represents "any available coach" and carries its own availability; schedulers set to all coaches draw from it. Each named coach follows, with their email and their own weekly hours.
-
-Adding someone to your team happens in **People → Staff** (see [Managing Staff](/people/managing-staff)). This tab is where you decide *when* they take bookings and *which* sessions they can be booked for.
+Open **Scheduling → Setup → Coaches** to manage coach availability and see which schedulers use each coach. Add staff and manage their permissions under [People → Staff](/people/managing-staff).
 
 <Frame>
-  ![Scheduling › Setup › Coaches](/images/scheduling/setup-coaches.png)
+  ![Scheduling Setup Coaches with coach cards and connected schedulers](/images/scheduling/setup-coaches.png)
 </Frame>
 
-## Connecting a coach
+## Connect a coach
 
-<Steps>
-  <Step title="Add them as staff first">
-    In **People → Staff → Add Staff**, create the coach with the **Coach** (or **Admin**) role. They need a staff role to appear here.
-  </Step>
-  <Step title="Connect them">
-    In **Scheduling → Setup → Coaches**, click **Connect coaches** and select the person. They now appear as a card.
-  </Step>
-  <Step title="Set their availability">
-    Give each coach their own weekly availability. This is separate from the scheduler's availability template: an athlete can only book a slot that is open on **both**. Details in [Managing availability for multiple coaches](/scheduling/managing-availability-for-multiple-coaches).
-  </Step>
-  <Step title="Put them on schedulers">
-    Open a scheduler, go to its **Coaches** section, and pick the coaches who can run it under **Select Coaches**. Choose specific coaches, or **All** for open sessions any staff member can take.
-  </Step>
-</Steps>
+1. Confirm the person has the appropriate staff role in **People → Staff**.
+2. In **Scheduling → Setup → Coaches**, choose **Connect coaches** and select them.
+3. Set their working availability.
+4. Open the relevant scheduler, find **Coaches**, and select the coaches who deliver that service.
+5. Save and review the available times for that scheduler.
 
-To put a coach on a single booked session rather than the whole scheduler, click the session on **Schedule → Calendar** and add the coach from the click view. That assigns them to that occurrence only. **Connect coaches** on this tab can also attach one or more coaches to one or more sessions in one step, so the coach on a practice can differ session to session.
+The coach's availability and the scheduler's availability both matter. A service offered Tuesday afternoon cannot be booked with a coach who is unavailable then.
+
+## Assign a coach to one session
+
+To change staffing for a particular date, open the booked session on **Scheduling → Calendar** and edit its coach assignment. Check the date and participants so you change the intended occurrence rather than the service's default staffing.
 
 ## How coach conflicts work
 
-A coach can be in one place at a time. When a coach is booked on any session, that time is blocked for every other scheduler they are attached to. This is what stops a 4 pm private lesson and a 4 pm group clinic landing on the same person.
+Coach assignments help prevent bookings that require the same coach at the same time. The result also depends on the scheduler's overlap settings and whether it uses specific coaches or **All**.
 
-If you want two sessions to run simultaneously, attach different coaches to each, or use **all coaches** on neither.
+**All** is not a promise that CoachIQ will automatically choose and rotate through an available coach. Review its conflict setting and assign specific coaches when staffing needs to be explicit. See [Schedule multiple coaches](/scheduling/managing-availability-for-multiple-coaches).
 
-## Choosing a coach at booking
+## Help athletes book the right coach
 
-When a scheduler has more than one coach, the athlete picks a coach as part of booking, or you pick for them when [booking manually](/scheduling/manually-booking-athletes). The available slots update to that coach's availability.
+Review the customer booking flow for your scheduler's configured coach options. Adding several coaches alone does not establish how a coach will be selected at checkout.
 
-## What a coach sees
+If a service must always be with a particular coach, a clearly named coach-specific scheduler is one way to make that choice explicit. Use separate schedulers when coaches offer different services or need independent availability and pricing.
 
-Coaches log in to the same admin app and see the calendar filtered to their sessions. Admins control which pages a coach can open from **People → Staff**. See [Managing Staff](/people/managing-staff).
+## Troubleshooting
 
-## Common questions
+- **Coach missing:** Check the staff role and whether they have been connected to scheduling.
+- **Expected time unavailable:** Check coach hours, the scheduler's availability, and other bookings requiring that coach.
+- **Coach cannot edit scheduling:** Review their staff permissions.
+- **Two services conflict unexpectedly:** Check their specific-coach or All-coaches assignments and overlap rules.
 
-<AccordionGroup>
-  <Accordion title="A coach isn't showing on this tab">
-    They have not been connected to a scheduler yet. Use **Connect coaches**, or open a scheduler's **Coaches** section and add them there.
-  </Accordion>
-  <Accordion title="Can a coach set their own availability?">
-    Yes, if they can access Scheduling → Setup. Otherwise an admin sets it. Either way it lives on the coach's card.
-  </Accordion>
-  <Accordion title="I'm a solo coach. Do I need this tab?">
-    No. Leave schedulers on **all coaches** and your personal availability is the scheduler's availability template.
-  </Accordion>
-</AccordionGroup>
-
-## Related articles
-
-<CardGroup cols={2}>
-  <Card title="Managing availability for multiple coaches" icon="users" href="/scheduling/managing-availability-for-multiple-coaches">
-    The full multi-coach availability model with examples
-  </Card>
-  <Card title="Managing Staff" icon="users-gear" href="/people/managing-staff">
-    Add coaches and control what they can access
-  </Card>
-  <Card title="Locations" icon="map-pin" href="/scheduling/setup-locations">
-    Where sessions happen
-  </Card>
-  <Card title="Scheduler defaults" icon="sliders" href="/scheduling/setup-defaults">
-    Settings every new scheduler starts with
-  </Card>
-</CardGroup>
+[Scheduling troubleshooting](/scheduling/troubleshooting) covers the other conditions that can hide a booking time.

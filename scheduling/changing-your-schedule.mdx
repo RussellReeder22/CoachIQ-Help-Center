@@ -1,0 +1,46 @@
+---
+title: "What Schedule Changes Affect"
+sidebarTitle: "What Changes Affect"
+description: "Choose the right level of change: defaults, shared availability, a scheduler, one session, or one athlete."
+icon: "arrows-rotate"
+---
+
+Before changing a schedule, identify the scope: **new schedulers**, **a shared setup item**, **future booking options**, **one calendar session**, or **one athlete's booking**.
+
+| Change | What it affects | What to check separately |
+| --- | --- | --- |
+| [Scheduler defaults](/scheduling/setup-defaults) | Starting settings for schedulers created afterward | Existing schedulers keep their settings |
+| [Shared availability](/scheduling/how-availability-works) | Available times on schedulers using that template | Existing bookings do not move or cancel automatically |
+| [Blackout dates](/scheduling/setting-black-out-dates) | New availability during the blocked interval | Handle any bookings already on those dates |
+| [Seasonal start/end dates](/scheduling/seasonal-schedule-transition) | When each availability block offers times | Check both sides of the transition and existing bookings |
+| Scheduler pricing, duration choices, or booking rules | What new bookings can select or must satisfy | Do not assume existing bookings were repriced, moved, or refunded |
+| Scheduler's default location | The service's default venue | Review already-booked dates and any per-date venue overrides |
+| [Move Session](/scheduling/editing-rescheduling-bookings#move-an-entire-session) | The selected occurrence and all its participant bookings | Other dates stay where they are; review conflicts and notifications |
+| [Edit Duration or Change Location](/scheduling/editing-rescheduling-bookings) on the calendar | The selected occurrence | Review all affected participants and notification choices |
+| Edit one athlete's booking | That athlete's reservation | The other participants in a group session |
+| [Skip a recurring occurrence](/scheduling/recurring-bookings#skipping-one-occurrence) | One date in the athlete's recurring pattern | Other dates, credits, and payment records |
+| [Cancel Session](/scheduling/canceling-bookings#cancel-an-entire-session-from-the-calendar) | Everyone booked into that occurrence | Future availability and any separate card refunds |
+| Remove a scheduler from a portal section | Where the scheduler is displayed | Direct links, active status, and existing bookings |
+| [Deactivate or archive](/scheduling/organizing-schedulers#archiving-a-scheduler) | Availability for new customer bookings | Existing future sessions and credit products that use the scheduler |
+
+## Example: close for a holiday
+
+1. Block the holiday on the appropriate availability template.
+2. Review every scheduler using that template.
+3. Find bookings already made for that day.
+4. Move or cancel the affected sessions and review credit/payment handling.
+5. Choose the notification channels and verify the calendar afterward.
+
+The blackout closes future booking options. It does not do the rest of the steps for you.
+
+## Example: change one class venue
+
+Open the class on the calendar, edit **Location**, and review **Notify participants** before saving. Verify the location on that date afterward.
+
+Use the scheduler's default location when changing the service's normal venue, and review any existing bookings or date-specific overrides separately. See [Locations](/scheduling/setup-locations).
+
+## Verify a change
+
+Check both the customer booking page and the affected calendar records. Confirm the dates, participants, coach, resource, location, and payment or credit history that matter to the change.
+
+A successful save confirms the change. It does not establish that every participant received a message; review the selected notification channels and any [automations](/tools/automations/what-are-automations).

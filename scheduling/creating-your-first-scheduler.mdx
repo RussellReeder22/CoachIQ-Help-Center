@@ -1,1019 +1,110 @@
 ---
-title: "Creating Your First Scheduler"
-description: "Complete walkthrough of creating your first scheduler with duration, capacity, and booking settings"
-sidebarTitle: "Create a Scheduler"
-icon: "plus-circle"
-keywords: ["create scheduler", "new scheduler", "scheduler setup", "first scheduler", "bookable session", "session template"]
+title: "Create and Publish a Scheduler"
+sidebarTitle: "Create & Publish"
+description: "Build a bookable service, connect availability, choose payment and booking rules, then publish and check the result."
+icon: "calendar-plus"
 ---
 
-## What you'll accomplish
+Open **Scheduling → Schedulers → Create scheduler**. This guide follows one service from setup to a booking link families can use.
 
-By the end of this guide, you'll have a fully configured scheduler that athletes can book. This is where your availability templates become actual bookable services that generate revenue.
+Before starting, decide what you offer, which lengths families can choose, how many athletes can attend together, and how they pay. If you charge by card, [connect Stripe](/payments/connecting-stripe) and create the necessary [products](/payments/product-builder).
 
-<Check>
-  **Success criteria**: Your scheduler is created, connected to availability, configured with rules, and generating bookable time slots that athletes can see and book.
-</Check>
+## 1. Name the service
 
-<Info>
-  **New to schedulers?** Read [What Are Schedulers?](/scheduling/what-are-schedulers) first to understand the concepts. This article focuses on the practical creation steps.
-</Info>
+In **Details**, enter a **Title** and **Description**. Use a name such as “Private Hitting Lesson” and explain who it is for, what happens, and what to bring. Avoid putting one length in the title if you offer several lengths.
 
-## Before you begin
+Choose a **Catalog** type such as **Lessons**, **Camps & events**, or **Rentals**. Tags help staff find it later; they are separate from the client tags used for access.
 
-Preparation makes creation faster and reduces errors:
+<Frame>
+  ![Scheduler builder with Details, Catalog, and Team visibility](/images/create-scheduler-button.png)
+</Frame>
 
-**Have ready**:
+## 2. Choose lengths and capacity
 
-- Clear idea of what service you're offering
-- Decided on duration (30, 45, 60 minutes, or custom)
-- Decided on price (free, direct payment, or credits)
-- Availability already set up (or ready to create during this process)
-- 15-20 minutes of uninterrupted time
+Open **Advanced settings**:
 
-<Tip>
-  **First scheduler recommendation**: Start with your most common service type. For most coaches, this is a 60-minute private session at your standard rate. Get this working first before adding complexity.
-</Tip>
+- Choose the duration or **Session lengths** families can book.
+- Check **New sessions can start**. This sets the spacing between offered start times, not the length of a session.
+- Set **Max athletes per time slot** to the number who can attend together. Use 1 for a private lesson.
+- Add buffers if you need time before or after sessions.
 
-## The scheduler builder sections overview
+<Frame>
+  ![Advanced settings with multiple session lengths selected](/images/scheduler-session-lengths-2026-09.png)
+</Frame>
 
-Before diving in, understand what you'll configure:
+For example, a 60-minute lesson can offer starts every 30 minutes without allowing overlapping bookings. See [start times and overlap](/scheduling/overlapping-slots) before enabling overlap.
 
-**Required sections** (must complete):
+## 3. Connect availability
 
-1. **Basic Details** - Name, description, duration
-2. **Availability** - When this scheduler can be booked
-3. **Payment** - Free, paid, or credit-based
-4. **Capacity** - How many athletes per session
+In **Availability**, select the template containing this service's days and hours. Create one first under **Scheduling → Setup → Availability** if needed.
 
-**Optional sections** (can skip initially):
+<Frame>
+  ![Availability section with the connected template](/images/set-scheduler-availablity.png)
+</Frame>
 
- 5. **Booking Rules** - Limits, permissions, cancellation policies
- 6. **Buffer Time** - Breaks between sessions
- 7. **Scheduling Windows** - Minimum notice, maximum future booking
- 8. **Reminders** - Automated notifications
- 9. **Location** - Where sessions take place
-10. **Connected Coaches** - Who delivers this service
+Set start and end dates if this offering runs for a limited period. **Additional Availability** adds another template or seasonal block. Review both blocks' date ranges so they do not open unintended times.
 
-<Note>
-  **Phased approach**: Complete required sections first to get a working scheduler. Return later to add optional features as needed.
-</Note>
+Availability templates can be shared. Editing one affects the available times of other schedulers using it. See [Create availability](/scheduling/create-your-availability) and [seasonal transitions](/scheduling/seasonal-schedule-transition).
 
-## Step 1: Navigate to scheduler creation
+## 4. Choose how families pay
 
-<Steps>
-  <Step title="Access the Schedule section">
-    From your CoachIQ dashboard:
+Open **Payment**:
 
-    1. Click **Schedule**, then **Schedulers** in the main left navigation menu
-  </Step>
-  <Step title="Start creating new scheduler">
-    Click the **Create** \*\*New Scheduler \*\*button
+| Choice | Configure |
+| --- | --- |
+| **Free** | No payment or credits required |
+| **Paywalled → Price** | Select the product purchased to book |
+| **Paywalled → Credit** | Set the credit cost and optional Buy more credits link |
+| **Paywalled → Either** | Configure both the product and credit cost |
 
-    <Frame>
-      <img
-        src="/images/create-new-scheduler.png"
-        alt="Create button options"
-        title=""
-        style={{ width:"100%" }}
-      />
-    </Frame>
-  </Step>
-</Steps>
+<Frame>
+  ![Scheduler payment controls for price and credits](/images/credit-and-payment-options.png)
+</Frame>
 
-## Step 2: Configure basic session details
+If you offer several lengths, use **Price by session length** to override each length's product or credit cost. Otherwise it inherits the default. See [length pricing](/scheduling/pricing-by-session-length).
 
-Start with the fundamentals that define what athletes are booking.
+For credits, also check the issuing product's **Which schedulers accept these credits** setting. The scheduler's credit cost does not grant permission to use every product's credits.
 
-<Steps>
-  <Step title="Enter scheduler name">
-    **Field**: Session Name, Scheduler Name, or Title
+## 5. Add the people and space
 
-    **What athletes see**: This name appears prominently when they're choosing what to book.
+Set the **Location** families should attend. Use a saved Google Meet or Zoom location for online sessions.
 
-    **Good naming examples**:
+In **Coaches**, select the staff who run the service and review conflict settings. In **Resources**, attach the cages, courts, or rooms the session reserves. A location address alone does not prevent two sessions using the same space.
 
-    - "60-Minute Private Training"
-    - "Small Group Strength Class"
-    - "Free Initial Assessment"
-    - "45-Minute Speed & Agility Session"
+- [Coach setup and conflicts](/scheduling/managing-availability-for-multiple-coaches)
+- [Locations and per-date venues](/scheduling/setup-locations)
+- [Resources and reservation behavior](/scheduling/resources)
 
-    **Include in name**:
+## 6. Review booking rules and reminders
 
-    - ✅ Format (ex: Private, Group, Semi-Private)
-    - ✅ Key differentiator (ex: Skill Level)
-    - ✅ Location
+Before sharing, review **Advanced settings** for minimum booking notice, how far ahead families can book, cancellation notice, credit refunds, and rescheduling permissions. Set limits only where you need them; session-wide limits and per-athlete limits have different effects.
 
-    **Avoid in name**:
+Use **Team visibility** if only athletes with selected roster tags should book. Leave it unrestricted for your group's general offering. Configure **Reminders** for this scheduler.
 
-    - ❌ Internal codes (PT-60-A)
-    - ❌ Overly generic ("Training Session")
-    - ❌ Too long (save details for description)
-
-    <Frame>
-      ![CoachIQ scheduler builder name input field](/images/scheduler-name.png)
-    </Frame>
-    <Tip>
-      **Name testing**: If you showed just the name to a stranger, would they understand what they're booking? If not, make it clearer.
-    </Tip>
-  </Step>
-  <Step title="Add scheduler description">
-    **Field**: Description, Details, or About This Session
-
-    **Purpose**: Explain what happens in this session, who it's for, what athletes will learn/accomplish.
-
-    **What to include**:
-
-    - What happens during the session
-    - Who this session is for (skill level, age, goals)
-    - What athletes should bring or wear
-    - What makes this valuable
-    - Any prerequisites or requirements
-
-    **Example description**:
-
-    > "One-on-one personalized training focused on your specific goals. We'll work on technique, strength, conditioning, and sport-specific skills. Perfect for athletes of all levels looking to improve performance. Bring athletic shoes, water bottle, and workout clothes. Each session includes video analysis and personalized homework."
-
-    <Note>
-      **Length guideline**: 2-4 sentences is ideal. Enough to inform without overwhelming. Save very detailed information for your website or session materials.
-    </Note>
-  </Step>
-  <Step title="Set session duration">
-    **Field**: Duration, Session Length, or Time
-
-    **Options typically**:
-
-    - 60 minutes (standard training, most common)
-    - 90 minutes (extended training)
-    - 120+ minutes (one day clinics)
-    - Custom (enter any duration)
-
-    **For your first scheduler**: 60 minutes is the safe default choice for most private training.
-
-    <Tip>
-      **Duration impacts availability**: A 60-minute session in a 5-hour availability window = ~5 bookable slots (accounting for buffer). Shorter sessions = more slots per day.
-    </Tip>
-  </Step>
-  <Step title="Review basic details">
-    Before moving to next section, verify:
-
-    - ✅ Name clearly describes the service
-    - ✅ Description is compelling and informative
-    - ✅ Duration matches your intended session length
-
-    These three fields are what athletes primarily see when deciding to book.
-  </Step>
-</Steps>
-
-## Step 3: Connect availability
-
-This is where you define WHEN this scheduler can be booked.
-
-<Steps>
-  <Step title="Locate the Availability section">
-    Scroll down in the scheduler builder to find:
-
-    - **Availability**
-    - **Schedule**
-    - **When You're Available**
-    - Or similar section heading
-
-    <Frame>
-      ![CoachIQ scheduler availability section with dropdown to select availability template](/images/set-scheduler-availablity.png)
-    </Frame>
-  </Step>
-  <Step title="Choose availability">
-    Select the drop menu and choose the corresponding availablity to attach to your scheduler
-
-    <Tip>
-      **Reusability reminder**: The availability you set here can power multiple schedulers. Think about it as your general coaching hours, not specific to this one service.
-    </Tip>
-  </Step>
-  <Step title="Set Start and End Dates (optional)">
-    You can also customize start and end dates when clients can book with you
-
-    **Good to use if you're:**
-
-    - Launching a new program
-    - Switching to a new schedule after a certain date
-
-    <Frame>
-      ![CoachIQ scheduler start and end date configuration for availability](/images/current-avaliabilty.png)
-    </Frame>
-  </Step>
-  <Step title="Add an Additional Availability (optional)">
-    If you need to attach another availability to your scheduler, click **Add Additional Availability** and select one.
-
-    **Good to use if you're:**
-
-    - Switching to a new schedule at a later date
-
-    <Frame>
-      ![CoachIQ additional availability tab for attaching a second schedule](/images/additional-availability.png)
-    </Frame>
-  </Step>
-  <Step title="Adjust individual dates (optional)">
-    Below the availability pickers, **Specific-date settings** lets you give one configured date its own duration or resources, and each date can carry its own venue. You will only need this for sessions that vary by date, such as a team that practices indoors for 90 minutes on Tuesdays and on the field for 150 minutes on Saturdays. Details: [A different duration on one date](/scheduling/advanced-scheduler-settings#a-different-duration-on-one-date), [Different resources on different dates](/scheduling/resources#different-resources-on-different-dates), [A different venue for each date](/scheduling/setup-locations#a-different-venue-for-each-date).
-  </Step>
-</Steps>
-
-<Warning>
-  **Availability is required to save.** If you click **Create** or **Update** without an availability selected, the builder shows an error and does not save, instead of creating a scheduler that can never be booked. Pick an availability template (or create one) and save again. The builder also previews what athletes will see once availability is connected, so you can confirm slots appear before you publish.
-</Warning>
-
-<Tip>
-  **Preview a specific date before sharing.** Select a row in the connected specific-dates table to see that day's bookable times. **Open availability** opens the matching date in a new tab without losing unsaved scheduler work. See [Preview a specific date](/scheduling/advanced-scheduler-settings#preview-a-specific-date).
-</Tip>
-
-## Step 4: Configure payment settings
-
-Decide how athletes will pay for this scheduler.
-
-<Tabs>
-  <Tab title="Free Sessions">
-    **When to use**:
-
-    - Trial/assessment sessions
-    - Team practices
-    - Makeup sessions
-    - Building relationships
-
-    **How to set up**:
-
-    1. Open the **Payment** section
-    2. Leave the toggle on **Free**
-
-    <Check>
-      **Result**: Athletes can book without any payment or credits.
-    </Check>
-    <Tip>
-      **First scheduler tip**: If this is your very first scheduler and you're still learning, start with FREE. You can always change to paid later once you're comfortable with the system.
-    </Tip>
-  </Tab>
-  <Tab title="Direct Payment (One-Time Purchase)">
-    **When to use**:
-
-    - Drop-in sessions
-    - One-time bookings
-    - New athletes who haven't purchased packages
-
-    **How to set up**:
-
-    <Steps>
-      <Step title="Select payment type">
-        In the **Payment** section, set the toggle to **Paywalled**, then under **How they pay** choose **Price**
-      </Step>
-      <Step title="Connect or create product">
-        You need a payment product:
-
-        - Click **Select Product**
-        - Choose your session product from list
-
-        <Frame>
-          ![CoachIQ product selection dropdown for direct payment scheduler](/images/select-payment-scheduler.png)
-        </Frame>
-      </Step>
-    </Steps>
-    **Result**: Athletes must purchase the product (pay the price) to book this session.
-
-    <Note>
-      **Payment processing required**: Direct payment only works if you've connected a payment processor (Stripe) to your CoachIQ account. Set this up in Payments → Settings first.
-    </Note>
-  </Tab>
-  <Tab title="Credit-Based">
-    **When to use**:
-
-    - Ongoing client relationships
-    - Session packages or subscriptions
-    - Membership models
-
-    **How to set up**:
-
-    <Steps>
-      <Step title="Enable credit payment">
-        In the **Payment** section, set the toggle to **Paywalled**, then under **How they pay** choose **Credit**
-      </Step>
-      <Step title="Set credit cost">
-        Enter how many credits this session costs:
-
-        - 1 credit (most common)
-        - 2 credits (premium/longer sessions)
-
-        <Frame>
-          ![Credit cost input field](/images/credit-payment-scheduler.png)
-        </Frame>
-      </Step>
-      <Step title="Athletes must have credits">
-        For athletes to book:
-
-        - They need credits in their account
-        - Credits come from products (packages or subscriptions)
-        - You'll need to set up credit-issuing products separately
-
-        <Tip>
-          **Credit setup complexity**: Credit-based scheduling requires additional setup (creating products that award credits, understanding credit system). If this is your first scheduler, consider starting with free or direct payment.
-        </Tip>
-      </Step>
-    </Steps>
-    **Result**: Athletes redeem credits from their balance when booking.
-  </Tab>
-  <Tab title="Hybrid (Direct Payment OR Credits)">
-    **When to use**:
-
-    - Maximum flexibility
-    - Accommodate different athlete preferences
-    - Package holders and drop-ins both welcome
-
-    **How to set up**:
-
-    1. Enable BOTH payment options:
-       - Connect payment product (for direct payment)
-       - Enable credits with cost set
-    2. Athletes choose at booking time whether to pay or use credit
-
-    <Frame>
-      ![CoachIQ hybrid payment setup showing both credit and direct payment options](/images/credit-and-payment-options.png)
-    </Frame>
-    **Result**: Athletes can either pay the direct price or redeem a credit—their choice.
+- [Booking rules and limits](/scheduling/scheduler-settings-limits-and-permissions)
+- [Visibility and tags](/scheduling/organizing-schedulers#team-visibility)
+- [Session reminders](/scheduling/session-reminders)
 
-    <Frame>
-      ![Athlete booking view showing option to pay with credit or direct payment](/images/session-payment-flexibility.png)
-    </Frame>
-    <Note>
-      **Most flexible option**: Hybrid is great for established businesses but may be confusing for your very first scheduler. Start simpler, add flexibility later.
-    </Note>
-  </Tab>
-</Tabs>
-
-## Step 5: Set capacity and participant limits
-
-Control how many athletes can book.
-
-**Options:**
+## 7. Preview and save
 
-- Max booking per day: limit on the number of bookings in a day
-- Max bookings per week: limit on the number of bookings in a week
-- Max athletes per session (most common): limit on the number of athletes in a session
+Review the builder's **Preview** on an intended date. Change the selected length and confirm the available times. A capped slot shows its booked count against capacity; an unlimited slot shows the booked count without a one-person maximum.
 
-**Common settings for max athletes per session**:
+Choose **Create** for a new scheduler or **Update** when editing. Confirm **Active** is on when you are ready to accept bookings.
 
-- **1 athlete** = Private 1-on-1 sessions (most common for first scheduler)
-- **2 athletes** = Semi-private training
-- **3-6 athletes** = Small group sessions
-- **8-12 athletes** = Medium group classes
-- **15-20+ athletes** = Large group classes or team training
+If no times appear, follow [booking troubleshooting](/scheduling/troubleshooting) rather than widening your hours without checking the cause.
 
-<Tip>
-  **Capacity impacts pricing**: If setting capacity \>1, consider per-athlete pricing. 40 per athlete × 6 athletes = 40 \_per athlete \_×6 \_athletes \_= 240 per session (much more valuable than 1-on-1 at \$75).
-</Tip>
+## 8. Publish and verify
 
-## Step 6: Configure booking rules (optional but recommended)
+Copy the scheduler's link from its card. To display it in the athlete app, add it to **Athlete Portal → Edit → Schedule**, then choose **Update Page**. Website placement is configured separately. Follow [Share and publish schedulers](/scheduling/sharing-schedulers).
 
-These settings control how athletes can book and cancel.
+Check the actual booking page:
 
-<AccordionGroup>
-  <Accordion title="Cancellation Policy">
-    **Field**: Allow Cancellations, Cancellation Policy, or similar
+1. The intended athlete can see the service; restricted athletes cannot book it.
+2. Each offered length has the correct dates, times, and payment or credit requirement.
+3. The location and selected athlete are correct on the review screen.
+4. A controlled free or credit test appears in the calendar under the attending athlete, with the expected credit entry and confirmation.
+5. The booking page remains usable on a phone.
 
-    **Options**:
+You can inspect paid checkout without submitting a purchase. Test cards work only in a confirmed Stripe test environment; completing live checkout makes a real payment.
 
-    - **Allow anytime** - Athletes can cancel up until session start
-    - **Require 24-hour notice** - Can't cancel within 24 hours
-    - **Require 48-hour notice** - Can't cancel within 48 hours
-    - **No cancellations allowed** - Once booked, no cancellation
-
-    **Credit refund settings** (if using credits):
-
-    - **Refund credits on cancellation** - Credit returns to athlete balance
-    - **No refund** - Credit is consumed even if canceled
-
-    **Recommended for first scheduler**: "Allow cancellation with 24-hour notice, refund credits"
-
-    **Why**: Prevents last-minute cancellations while being fair to athletes with legitimate conflicts.
-
-    <Tip>
-      **Flexibility vs firmness**: More flexible policies attract bookings but risk no-shows. Stricter policies protect your time but may discourage booking. Find your balance.
-    </Tip>
-  </Accordion>
-  <Accordion title="Booking Limits">
-    **Purpose**: Prevent athletes from over-booking
-
-    **Options**:
-
-    - **Max bookings per day** - Athlete can book max 1 (or 2, 3) per day
-    - **Max bookings per week** - Athlete can book max 2 (or 3, 4, 5) per week
-    - **No limits** - Athletes can book as many as they want
-
-    **Recommended for first scheduler**: Start with no limits unless you have specific reason to restrict.
-
-    **When to use limits**:
-
-    - High-demand schedulers with limited slots
-    - Preventing single athlete from monopolizing schedule
-    - Encouraging distribution across athlete base
-
-    <Frame>
-      ![Booking limits configuration](/images/booking-limits-settings.png)
-    </Frame>
-  </Accordion>
-  <Accordion title="Allow Multiple Bookings">
-    **Setting**: Can athlete book multiple future sessions at once?
-
-    **Options**:
-
-    - **Yes** - Athlete can book Monday, Wednesday, Friday all at once
-    - **No** - Athlete must book one session at a time
-
-    **Recommended**: **Yes** (allow multiple bookings) for better athlete experience
-
-    **Why**: Athletes with regular training schedules want to book their week at once, not one session at a time.
-  </Accordion>
-  <Accordion title="Rescheduling">
-    **Settings**: Can athletes reschedule their own bookings?
-
-    **Allow athletes to reschedule** — When on, athletes can move their booking to a different available time slot from the Athlete Portal or app without contacting you. No additional payment is required; the original credit or payment carries over to the new time.
-
-    **Block rescheduling within cancellation window** — When on, athletes cannot reschedule once they are inside your cancellation notice window. This closes the loophole where an athlete avoids a credit forfeit by rescheduling instead of canceling. The window used is the same one set in your Cancellation Policy (e.g., if you require 24-hour notice, rescheduling is also blocked within that same 24 hours).
-
-    **Recommended**: Enable both for paid schedulers — allowing rescheduling reduces cancellations, while blocking rescheduling inside the cancellation window prevents athletes from using it to bypass your policy.
-  </Accordion>
-  <Accordion title="Permissions & Access">
-    **Settings**: Who can book this scheduler?
-
-    **Options available in some systems**:
-
-    - **All athletes** - Anyone with account can book
-    - **Specific groups** - Only athletes in certain programs
-    - **Invite only** - You must enable access per athlete
-    - **Access codes** - Athlete needs code to book
-
-    **Recommended for first scheduler**: **All athletes** (open access)
-
-    **When to restrict**: VIP services, specialty programs, beta testing new offerings
-  </Accordion>
-</AccordionGroup>
-
-## Step 7: Add buffer time
-
-Buffer time creates breathing room between back-to-back sessions.
-
-<Steps>
-  <Step title="Locate buffer time settings">
-    Look for:
-
-    - **Buffer**
-
-    <Frame>
-      ![CoachIQ buffer time settings for pre-session and post-session breaks](/images/buffer.png)
-    </Frame>
-  </Step>
-  <Step title="Set buffer before session (optional)">
-    **Pre-session buffer**: Time blocked before each session starts
-
-    **Use cases**:
-
-    - Setup time (equipment, training area)
-    - Review athlete notes
-    - Personal prep time
-
-    **Typical setting**: 5-10 minutes
-
-    **Most coaches skip this** for their first scheduler.
-  </Step>
-  <Step title="Set buffer after session (highly recommended)">
-    **Post-session buffer**: Time blocked after each session ends
-
-    **Use cases**:
-
-    - Cleanup time
-    - Bathroom break
-    - Notes and documentation
-    - Transition between athletes
-    - Sessions running slightly over
-
-    **Typical setting**: 10-15 minutes
-
-    **Recommended for first scheduler**: **15 minutes**
-
-    <Tip>
-      **Buffer is invisible to athletes**: They only see available booking times. The buffer time happens automatically between sessions but doesn't appear on their booking screen.
-    </Tip>
-  </Step>
-  <Step title="Understand buffer impact">
-    **Without buffer** (back-to-back):
-
-    - 3:00-4:00 PM (Session 1)
-    - 4:00-5:00 PM (Session 2)
-    - 5:00-6:00 PM (Session 3)
-
-    **With 15-min buffer**:
-
-    - 3:00-4:00 PM (Session 1)
-    - 4:15-5:15 PM (Session 2)
-    - 5:30-6:30 PM (Session 3)
-
-    **Result**: Proper spacing, no burnout, accommodation for sessions running over.
-
-    <Check>
-      **Verify**: Your availability end time accounts for buffer after last session. If last session starts at 7:00 PM (60 min) + 15 min buffer = need availability until 8:15 PM.
-    </Check>
-  </Step>
-</Steps>
-
-## Step 8: Set scheduling windows (optional)
-
-Control how far in advance (or how last-minute) athletes can book.
-
-<AccordionGroup>
-  <Accordion title="Minimum Booking Notice">
-    **Setting**: Earliest time before session when booking is allowed
-
-    **Options**:
-
-    - No minimum - Can book right up to start time
-    - 1 hour - Must book at least 1 hour before
-    - 4 hours - Must book at least 4 hours before
-    - 24 hours - Must book at least 24 hours before
-    - 48 hours - Must book at least 48 hours before
-
-    **Recommended for first scheduler**: **No minimum** OR **4 hours**
-
-    **Why use minimum notice**:
-
-    - Prevents last-minute bookings when you can't prepare
-    - Ensures you see bookings before they happen
-    - Reduces stress of surprise bookings
-
-    **Why skip minimum notice**:
-
-    - Maximizes booking flexibility
-    - Good for urgent/emergency sessions
-    - Simpler for athletes
-
-    <Tip>
-      **Start flexible, add restrictions later**: Begin with no minimum and add restrictions only if last-minute bookings become problematic.
-    </Tip>
-  </Accordion>
-  <Accordion title="Maximum Future Booking Window">
-    **Setting**: How far in the future athletes can book
-
-    **Options**:
-
-    - No limit - Can book months/years ahead
-    - 30 days - Can only book within next month
-    - 60 days - Can book up to 2 months ahead
-    - 90 days - Can book up to 3 months ahead
-
-    **Recommended for first scheduler**: **30-60 days** OR **No limit**
-
-    **Why use maximum window**:
-
-    - Prevents schedule from filling too far out
-    - Allows flexibility to adjust pricing/availability
-    - Keeps bookings manageable
-
-    **Why skip maximum window**:
-
-    - Accommodates athletes who plan far ahead
-    - Good for seasonal businesses
-    - Maximizes booking opportunities
-
-    <Note>
-      **Most coaches**: Either set no limit or 30-60 days. Very few use shorter windows unless there's specific reason.
-    </Note>
-  </Accordion>
-</AccordionGroup>
-
-## Step 9: Configure reminders (optional but valuable)
-
-Set up automated notifications before sessions to reduce no-shows.
-
-<Steps>
-  <Step title="Enable reminders">
-    Look for **Reminders** toward the bottom of the scheduler settings
-
-    <Frame>
-      ![CoachIQ reminder settings for automated session notifications](/images/Reminders-UI.png)
-    </Frame>
-  </Step>
-  <Step title="Set reminder timing">
-    Choose when reminder is sent before session:
-
-    - **30 minutes** - Last-minute reminder
-    - **1 hour** - Short-notice reminder
-    - **2 hours** - Moderate notice
-    - **1 day** - Day-before reminder (most common)
-    - **2 days** - Advance notice
-    - **Custom** - Any timing you specify
-
-    **Recommended for first scheduler**: **1 day before** (24 hours)
-
-    **Why**: Gives athletes enough time to cancel or prepare, without being too early to forget again.
-
-    <Tip>
-      **Multiple reminders**: Some coaches set both 1-day and 1-hour reminders for important sessions. Start with just one for simplicity.
-    </Tip>
-  </Step>
-  <Step title="Choose delivery method">
-    How athletes receive the reminder:
-
-    - **In-App** - Notification in CoachIQ app/portal and inbox
-    - **Announcement/Email** - Sent to athlete's email and in-app announcement feed
-    - **SMS** - Text message to athlete's phone (SMS rates apply)
-
-    **Recommended for first scheduler**: **Announcement/Email**
-
-    **Why**: Maximum reach without SMS costs, covers both app users and email checkers.
-  </Step>
-  <Step title="Customize reminder message (optional)">
-    Some systems let you customize the reminder text:
-
-    **Default message** works fine:
-
-    > "Reminder: You have a session tomorrow at 3:00 PM with Coach Mike"
-
-    **Custom message** example:
-
-    > "Your training session is tomorrow at 3:00 PM! Please bring your workout gear, water bottle, and be ready to work. See you soon!"
-
-    <Note>
-      **Start with default**: Custom messages are nice-to-have, not critical for first scheduler. Default messages work perfectly well.
-    </Note>
-  </Step>
-</Steps>
-
-## Step 10: Add location (optional)
-
-Specify where this session takes place.
-
-<Steps>
-  <Step title="Locate location section">
-    Find **Location:**
-
-    <Frame>
-      ![CoachIQ scheduler location settings with venue selection](/images/location-scheduler-ui.png)
-    </Frame>
-  </Step>
-  <Step title="Select or create location">
-    **If location exists**:
-
-    - Select from dropdown of existing locations
-
-    **If creating new location**:
-
-    1. Click **Add New Location**
-    2. Enter location name (ex: "Main Training Facility")
-    3. Enter address (optional but helpful for athletes)
-    4. Add notes (ex: "Use side entrance, check in at front desk")
-    5. Save location
-
-    <Tip>
-      **Virtual sessions**: If sessions are virtual, create location called "Virtual Session" or "Online via Zoom" with video link in notes.
-    </Tip>
-  </Step>
-  <Step title="Specify if location is required">
-    Some schedulers may not need location:
-
-    - Video analysis (you watch film together remotely)
-    - Programming consultation (virtual)
-    - Flexible location (meet at athlete's preferred gym)
-
-    Toggle "No specific location" if applicable.
-  </Step>
-</Steps>
-
-## Step 11: Assign coaches (if applicable)
-
-Specify which coach(es) deliver this scheduler.
-
-<Steps>
-  <Step title="Find connected coaches section">
-    Look for **Connected Coaches**
-
-    <Frame>
-      ![CoachIQ connected coaches section for assigning coaches to a scheduler](/images/connected-coaches-ui.png)
-    </Frame>
-  </Step>
-  <Step title="Select coach(es)">
-    **Solo coach**: Select yourself
-
-    **Multi-coach facility**:
-
-    - Select specific coach if this scheduler is coach-specific
-    - Select multiple coaches if any can deliver this session
-
-    <Note>
-      **If you're solo**: You can skip this section or select yourself. Most solo coaches leave this at default.
-    </Note>
-  </Step>
-  <Step title="Set same-time booking permission">
-    In the **Connected Coaches** section you'll find this checkbox: "Check this box to allow bookings for this session even if the connected coaches are already scheduled for other sessions at the same time."
-
-    - **Unchecked** (default, recommended) - Prevents the coach from being double-booked across sessions
-    - **Checked** - Allows the coach to be booked for this session even when already scheduled elsewhere at the same time (use for group sessions where one coach leads multiple)
-
-    **Recommended**: Leave unchecked unless you specifically need the coach to run overlapping sessions.
-  </Step>
-</Steps>
-
-## Step 12: Review and save
-
-Final checks before activating your scheduler.
-
-<Steps>
-  <Step title="Review all configuration">
-    Scroll through the entire scheduler and verify:
-
-    **Basic Details**:
-
-    - ✅ Name is clear and descriptive
-    - ✅ Description is compelling
-    - ✅ Duration is correct
-
-    **Availability**:
-
-    - ✅ Days and times match your schedule
-    - ✅ Blackout days added for known time off
-    - ✅ End time accounts for buffer after last session
-
-    **Payment**:
-
-    - ✅ Payment type matches intent (free/paid/credits)
-    - ✅ Price is correct
-    - ✅ Product connected (if direct payment)
-
-    **Capacity**:
-
-    - ✅ Max athletes setting matches session format
-    - ✅ Group vs private is correct
-
-    **Optional Settings**:
-
-    - ✅ Buffer time set (15 min recommended)
-    - ✅ Booking rules configured (if needed)
-    - ✅ Reminders enabled (1 day before recommended)
-    - ✅ Location added (if needed)
-  </Step>
-  <Step title="Save your scheduler">
-    Click \*\*Create \*\*in the top right hand corner
-
-    <Check>
-      **Success!** Your scheduler is now created and will start generating bookable time slots.
-    </Check>
-  </Step>
-  <Step title="Note your scheduler details">
-    After saving, you'll be taken to the Schedulers list.
-
-    Find your newly created scheduler and note:
-
-    - Scheduler name
-    - Duration (mins)
-    - Cost per session (free, price, credit charge)
-    - Booking link
-
-    <Frame>
-      ![CoachIQ schedulers list showing name, duration, and pricing for each scheduler](/images/schedulers-overview.png)
-    </Frame>
-  </Step>
-</Steps>
-
-## Step 13: Test your scheduler
-
-<Warning>
-  **Critical step**: Always test your scheduler before sharing with athletes. This catches configuration errors before they cause problems.
-</Warning>
-
-<Steps>
-  <Step title="Get your booking link">
-    From the Schedulers list:
-
-    1. Hover over your new scheduler
-    2. Look for **Copy Link** button
-    3. Copy the link
-
-    <Frame>
-      ![Copy booking link button on CoachIQ schedulers list](/images/scheduler-link.png)
-    </Frame>
-  </Step>
-  <Step title="Open booking link as athlete would">
-    Paste the link into a new browser tab (or incognito window to see unauthenicated view).
-
-    **What you should see**:
-
-    - Scheduler name and description
-    - Price or credit cost
-    - Duration clearly stated
-    - Available time slots listed
-    - Booking button or time selection
-
-    <Frame>
-      ![Athlete-facing scheduler booking page showing available time slots and pricing](/images/scheduler-athlete-view.png)
-    </Frame>
-  </Step>
-  <Step title="Verify available time slots appear">
-    Check that:
-
-    - ✅ Days match your availability configuration
-    - ✅ Times are correct (not AM when you meant PM)
-    - ✅ Proper number of slots appear
-    - ✅ Slots are spaced correctly (accounting for buffer time)
-    - ✅ No inappropriate times showing
-
-    <Warning>
-      **If no slots appear**: Your availability isn't configured correctly. Go back and verify availability days/times are set, and date range extends into the future.
-    </Warning>
-  </Step>
-  <Step title="Test booking a session (if possible)">
-    If you have a test athlete account:
-
-    1. Select an available time slot
-    2. Go through the booking process
-    3. Complete payment or credit redemption
-    4. Verify booking confirmation appears
-    5. Check that session appears on your calendar
-
-    **If you don't have test athlete**:
-
-    - At minimum, verify slot selection works
-    - Check that booking button appears
-    - Verify payment/credit information displays correctly
-  </Step>
-  <Step title="Check your calendar">
-    Navigate to **Schedule → Calendar**:
-
-    - ✅ Test booking appears (if you completed test)
-    - ✅ Time displays correctly
-    - ✅ Scheduler name shows on booking
-
-    <Frame>
-      ![Calendar showing scheduler availability and test booking](/images/calendar-view.png)
-    </Frame>
-    <Check>
-      **Testing complete**: Your scheduler is working correctly and ready for real athlete bookings.
-    </Check>
-  </Step>
-</Steps>
-
-## Troubleshooting common creation issues
-
-<AccordionGroup>
-  <Accordion title="I can't save my scheduler (save button disabled)">
-    **Possible causes**:
-
-    - Required fields not completed
-    - Invalid data in fields (negative numbers, etc.)
-    - System validation error
-
-    **How to fix**:
-
-    1. Scroll through entire form
-    2. Look for red error messages or highlighted fields
-    3. Most common missing items:
-       - Scheduler name
-       - Duration
-       - Availability (none selected — the builder shows an explicit error for this and will not save until one is connected)
-       - Payment configuration incomplete
-       - A specific date whose time window is shorter than the duration that applies to it (the error names the date; widen the window or shorten that date's duration)
-    4. Complete all required fields marked with \* or red indicators
-    5. Try saving again
-  </Accordion>
-  <Accordion title="No available slots showing when I test">
-    **Most common issue** for new schedulers!
-
-    **Possible causes**:
-
-    1. **Connected coach already booked elsewhere** - If the coach assigned to this scheduler has sessions booked through other schedulers at those times, slots won't appear (this is double-booking prevention working correctly)
-    2. **No availability set** - Forgot to add days/times
-    3. **Availability in past** - End date already passed
-    4. **All dates blocked** - Blackout days covering everything
-    5. **Buffer time too long** - Consuming entire availability window
-
-    **Read the message the athlete sees**: a time that is simply outside your availability now shows a plain "no availability" message. A coach-conflict message only appears when a connected coach really is booked at that time, so if an athlete reports one, check the calendar for that coach; if they report no availability, check the availability template and date range instead.
-
-    **How to fix**:
-
-    - **Check for coach conflicts first**: Go to Schedule → Calendar and check if the connected coach has existing sessions during the times you expect to see availability
-    - Edit scheduler → Availability section
-    - Verify days are checked
-    - Verify time ranges are set
-    - Verify date range includes future dates
-    - Check blackout days aren't blocking everything
-    - Calculate: (Availability hours) ÷ (Duration + Buffer) = Expected slots
-      - Example: 5 hours ÷ 1.25 hours (60 min + 15 min) = 4 slots expected
-
-    <Tip>
-      **Quick test**: Remove all buffer time temporarily. If slots appear, buffer was consuming availability. Adjust accordingly.
-    </Tip>
-
-    For detailed troubleshooting, see [How availability works](/scheduling/how-availability-works)
-  </Accordion>
-  <Accordion title="Wrong times showing (AM vs PM confusion)">
-    **Issue**: Slots showing 3:00 AM when you meant 3:00 PM
-
-    **Cause**: 12/24-hour time format confusion
-
-    **How to fix**:
-
-    - Edit scheduler → Availability
-    - Check all time fields
-    - Verify AM/PM selections
-    - Or switch to 24-hour format (15:00 instead of 3:00 PM) if available
-    - Save and re-test
-  </Accordion>
-  <Accordion title="Can't connect payment product">
-    **Issue**: Product dropdown is empty or not connecting
-
-    **Possible causes**:
-
-    1. No products exist yet
-    2. Product type mismatch (looking for one-time, only subscriptions exist)
-    3. Payment processor not connected
-
-    **How to fix**:
-
-    1. Go to **Payments → Products**
-    2. Verify products exist
-    3. Create new product if needed:
-       - Name: Match your scheduler name
-       - Type: One-time purchase (for direct payment)
-       - Price: Match your intended rate
-    4. Return to scheduler builder
-    5. Select newly created product
-  </Accordion>
-  <Accordion title="Athlete sees scheduler but can't book">
-    **Issue**: Booking button disabled or error when athlete tries to book
-
-    **Possible causes**:
-
-    1. Insufficient credits (if credit-based)
-    2. Payment processing error (if direct payment)
-    3. Capacity full (unlikely for brand new scheduler)
-    4. Booking limits reached (if configured)
-
-    **How to debug**:
-
-    - Test as athlete (what error message appears?)
-    - Verify payment processing is set up
-    - Check if test athlete has credits (if credit-based)
-    - Review booking limit settings
-    - Check scheduler status (Active/Published?)
-  </Accordion>
-</AccordionGroup>
-
-## What to do after creating your first scheduler
-
-<CardGroup cols={2}>
-  <Card title="Share with Athletes" icon="share-alt">
-    Copy your booking link and share via:
-
-    - Email to current athletes
-    - Social media
-    - Website embedding
-    - SMS/messaging apps
-  </Card>
-  <Card title="Create More Schedulers" icon="copy">
-    Now that you've created one, add more:
-
-    - Different durations (30 min, 90 min)
-    - Different formats (group sessions vs private sessions)
-    - Different services (assessments, consultations)
-  </Card>
-  <Card title="Set Up Payment" icon="credit-card">
-    If you started with FREE, add payment:
-
-    - Edit your scheduler
-    - Change to direct payment or credits
-    - Connect products
-    - Test purchase flow
-  </Card>
-  <Card title="Organize Schedulers" icon="folder">
-    As you add more schedulers, organize them:
-
-    - Use program groupings
-    - Create logical categories
-    - Improve athlete booking experience by keeping things simple and clean
-  </Card>
-</CardGroup>
-
-## Related articles
-
-<CardGroup cols={3}>
-  <Card title="What Are Schedulers?" icon="question-circle" href="/scheduling/what-are-schedulers">
-    Understand scheduler concepts before creating
-  </Card>
-  <Card title="Creating Availability" icon="calendar-check" href="/scheduling/create-your-availability">
-    Set up availability before creating schedulers
-  </Card>
-  <Card title="Calendar Overview" icon="calendar-alt" href="/scheduling/calendar-overview-and-navigation">
-    View and manage your booked sessions
-  </Card>
-  <Card title="Manual Booking" icon="user-plus" href="/scheduling/manually-booking-athletes">
-    Book athletes directly into sessions
-  </Card>
-  <Card title="Troubleshooting" icon="tools" href="/quick-guides/athletes/sessions-not-showing">
-    Fix scheduler and availability problems
-  </Card>
-</CardGroup>
-
-<Info>
-  **Questions about scheduler configuration?** Our support team can help you set up schedulers optimized for your coaching business. [Contact Support](https://coachiq.com/support)
-</Info>
+For later changes, see [Changing your schedule](/scheduling/changing-your-schedule).

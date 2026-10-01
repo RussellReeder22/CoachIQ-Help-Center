@@ -10,7 +10,7 @@ By default, CoachIQ offers start times back-to-back based on your session durati
 
 - **Duration** — how long one booked session runs
 - **New sessions can start** — how often a start time is offered
-- **Allow overlapping sessions** — whether two bookings of this session may occupy the same window
+- **Allow overlapping sessions** — whether separate start times on this scheduler may overlap
 
 <Info>
 **Where to find this:** Scheduling → Schedulers → open a scheduler → **Advanced settings**
@@ -24,6 +24,8 @@ By default, CoachIQ offers start times back-to-back based on your session durati
 | **New sessions can start** | The start-time grid: how often a family can grab a start time. Usually the same as duration. Presets 15 / 30 / 45 / 60 or Custom. | Every 30 min offers 9:00–10:00 *or* 9:30–10:30 |
 | **Allow overlapping sessions** | Checkbox. When **off**, a booking removes every later start time that would collide with it. When **on**, two bookings may occupy the same window. | Off: once 9:00 is booked, 9:30 disappears. On: 9:00 and 9:30 can both be booked. |
 
+Group capacity is a separate setting: allowing several athletes into one session is different from allowing two start times to overlap.
+
 The three are independent. Setting a start cadence shorter than the duration does **not** turn overlap on; it just gives families more start times to choose from, and the first booking clears the ones that would collide.
 
 ## Common setups
@@ -32,7 +34,7 @@ The three are independent. Setting a start cadence shorter than the duration doe
   <Tab title="Flexible starts, no overlap">
     **Duration 60 · New sessions can start 30 · Allow overlapping sessions off**
 
-    Athletes see 9:00, 9:30, 10:00, 10:30. When someone books 9:30–10:30, the 9:00 and 10:00 starts drop out because they would collide; 10:30 stays. One athlete at a time, but nobody is forced onto the hour.
+    Athletes see 9:00, 9:30, 10:00, 10:30. When someone books 9:30–10:30, the 9:00 and 10:00 starts drop out because they would collide; 10:30 stays. For a private lesson with capacity one, this means one athlete at a time without forcing every start onto the hour.
 
     Best for private lessons where you want to fill gaps without ever double-booking yourself.
   </Tab>
@@ -74,7 +76,7 @@ The three are independent. Setting a start cadence shorter than the duration doe
   </Step>
 
   <Step title="Decide on Allow overlapping sessions">
-    Leave the box **unchecked** to keep one booking per window. Check it only when athletes really can be in the space at the same time.
+    Leave the box **unchecked** to prevent overlapping start times. A group session can still accept multiple athletes at the same start time up to its capacity. Check it only when athletes really can be in the space at the same time.
   </Step>
 
   <Step title="Save">
@@ -93,7 +95,7 @@ Athletes see each offered start time as a separate slot on the booking calendar,
 ## Things to know
 
 - **Allow overlapping sessions** only concerns bookings of *this* scheduler. Coach and resource conflicts with other schedulers are still enforced unless you turn those off separately (the connected-coaches checkbox and **Allow resource double booking**).
-- Capacity is per start time. With overlap on, each start time fills independently; see [Session capacity](/scheduling/scheduler-settings-limits-and-permissions#setting-1-session-capacity).
+- Capacity is per start time. With overlap on, each start time fills independently; see [Session capacity](/scheduling/scheduler-settings-limits-and-permissions#capacity-and-booking-limits).
 - These settings are per scheduler, so you can offer rolling starts on drop-ins and leave lessons on the hour.
 - Card and credit payments behave the same way; the payment method does not change which start times are offered.
 - **Buffers** (before and after, in the same Advanced settings section) still add time around each session. If you use a short start cadence together with buffers, test the booking page to make sure the start times you expect are the ones offered.

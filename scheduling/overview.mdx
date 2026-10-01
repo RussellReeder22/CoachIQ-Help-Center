@@ -1,372 +1,62 @@
 ---
-title: "Understanding CoachIQ Scheduling: The Complete Overview"
-description: "Learn how CoachIQ's scheduling system works and the three building blocks that power your bookable sessions"
-sidebarTitle: "Scheduling Overview"
-icon: "book-open"
-keywords: ["scheduling", "bookings", "calendar", "sessions", "availability", "how scheduling works"]
+title: "Scheduling"
+sidebarTitle: "Scheduling"
+description: "Create bookable services, set availability, and manage sessions for athletes and families."
+icon: "calendar-days"
 ---
 
-## What scheduling does for your coaching business
+Use **Scheduling** to offer sessions and manage your calendar. Set up the service, choose when it is available, then share it with athletes and parents.
 
-CoachIQ's scheduling system transforms how you manage athlete bookings, freeing you from the back-and-forth of coordinating session times. Instead of juggling text messages, emails, and calendar conflicts, you'll have a professional booking system that works 24/7—athletes can book sessions whenever it's convenient for them, while you maintain complete control over your availability, pricing, and capacity.
-
-**The result?** More bookings, fewer no-shows, and hours saved every week on administrative work.
-
-<Info>
-  **Where to find scheduling**: Dashboard → Schedule (in main navigation)
-</Info>
-
-## The three building blocks of scheduling
-
-CoachIQ scheduling works like building blocks that stack together. Each layer has a specific purpose, and understanding how they connect will help you set up your scheduling system correctly the first time.
-
-Think of it like building a house: you need a foundation (Availability), a structure (Schedulers), and then people can move in (Sessions/Bookings).
-
-### Layer 1: Availability (Your Foundation)
-
-**What it is**: Availability defines _when you CAN coach_—the days and times you're potentially available to work with athletes.
-
-**Real-world example**: "I'm available Mondays, Wednesdays, and Fridays from 2:00 PM to 8:00 PM"
-
-**Why it matters**: This is your foundation. Without availability set, no sessions can be booked.
-
-<Tip>
-  **Key insight**: Availability templates are reusable. Create one availability pattern and use it across multiple session types. For example, your "Weekday Afternoons" availability can power both your 1-on-1 sessions and group classes.
-</Tip>
-
-**What you can do with availability**:
-
-- Create weekly recurring patterns (every Monday/Wednesday/Friday)
-- Set specific date availability (just July 15th and 22nd)
-- Block out time off with blackout days (vacation, holidays)
-- Manage multiple availability templates for different coaching scenarios
-- Use Copilot AI to generate availability patterns automatically
-
-### Layer 2: Schedulers (Your Configuration)
-
-**What it is**: Schedulers are your _bookable session types_. They pull from your availability and add pricing, capacity, duration, and booking rules.
-
-**Real-world example**: "60-Minute Hitting Lesson - \$75 - Max 1 athlete - Available for next 30 days"
-
-**Why it matters**: This is where you configure what athletes actually see and book. One availability template can power unlimited schedulers.
-
-<Note>
-  **Important distinction**: A scheduler isn't a booking—it's a _template_ for bookings. Think of it like a product listing. You create the scheduler once, and it generates available time slots athletes can book.
-</Note>
-
-**What you configure in schedulers**:
-
-- Session name and description (what athletes see)
-- Duration (15, 30, 45, 60 minutes, or custom)
-- Pricing (free, direct payment, or credit-based)
-- Capacity (1-on-1 or group sessions)
-- Booking limits (max bookings per athlete/day/week)
-- Scheduling window (how far in advance athletes can book)
-- Buffer time (breaks between back-to-back sessions)
-- Cancellation policies (can a session be canceled, minimum notice to cancel)
-- Automated reminders (in-app, sms, announcement/email)
-
-**Common scheduler examples by session type**:
-
-<CardGroup cols={3}>
-  <Card title="Personal Training" icon="dumbbell">
-    - 1-on-1 Sessions (30, 45, 60 min)
-  </Card>
-  <Card title="Group Training" icon="users">
-    Small Group Training
-
-    Large Group Training
-  </Card>
-  <Card title="Specialized Programs" icon="bullseye">
-    Position-Specific Clinics
-
-    8 Week Kids Program
-  </Card>
-</CardGroup>
-
-### Layer 3: Sessions & Bookings (Your Schedule)
-
-**What it is**: Sessions are the _actual bookable time slots_ or _confirmed bookings_ on your calendar—the end result of your availability and scheduler configuration.
-
-**Real-world example**: "Jake Smith - 60-Minute Hitting Lesson - Tuesday, Oct 3 at 4:00 PM"
-
-**Why it matters**: This is what athletes see when choosing a time, and what appears on your calendar once booked.
-
-**Session states**:
-
-- **Upcoming**: Future sessions not yet occurred
-- **Past**: Completed sessions
-- **Canceled**: Sessions that were canceled by coach or athlete
-
-<Info>
-  **How sessions are created**: Sessions are automatically generated based on your scheduler settings and availability. You don't manually create each time slot—CoachIQ does this for you based on your configuration.
-</Info>
-
-## How the layers work together
-
-Here's how the three layers connect when an athlete books a session:
-
-<Steps>
-  <Step title="You set your availability">
-    "I'm available Monday-Friday, 2-8 PM" _(Layer 1: Availability)_
-  </Step>
-  <Step title="You create a scheduler">
-    "60-Minute Hitting Lesson - \$75 - 1 athlete max" _(Layer 2: Scheduler)_
-
-    The scheduler pulls from your availability and adds pricing/rules.
-  </Step>
-  <Step title="CoachIQ generates available slots">
-    Athletes see bookable times: "Monday 2:00 PM, 3:00 PM, 4:00 PM..." _(Layer 3: Available Sessions)_
-
-    These slots are automatically created based on your availability, scheduler duration, and buffer time.
-  </Step>
-  <Step title="Athlete books a session">
-    Jake books "Monday, Oct 2 at 4:00 PM" _(Layer 3: Confirmed Booking)_
-
-    The booking appears on your calendar (made public on your website, athlete, or via link), Jake gets a confirmation, and that time slot is no longer available to other athletes.
-  </Step>
-</Steps>
-
-## Two ways sessions get booked
-
-Understanding how bookings happen helps you decide when to use each method:
-
-### Athlete Self-Booking (Most Common)
-
-Athletes visit your booking page (on your website or athlete portal/in the app), see available times, and book themselves.
-
-**When athletes can self-book**:
-
-- They have sufficient credits (if credit-based)
-- They can complete payment (if paid sessions)
-- Capacity isn't full
-- They meet any eligibility requirements you set
-
-**Best for**: Regular training sessions, open enrollment classes, drop-in sessions
-
-### Coach Manual Booking
-
-You book the athlete directly from your dashboard using the Booking Builder.
-
-**When you'd manually book**:
-
-- Private clients with standing appointments
-- Makeup sessions after cancellations
-- Special circumstances requiring override
-- Recurring booking patterns (coach-only feature)
-
-**Best for**: VIP clients, team schedules, recurring weekly appointments
-
-<Tip>
-  **Pro tip**: You can manually book athletes into times that aren't in your normal availability—perfect for accommodating special requests or one-off sessions.
-</Tip>
-
-## Payment & credit options explained
-
-One of the most powerful aspects of CoachIQ scheduling is flexible payment options:
-
-<Tabs>
-  <Tab title="Free Sessions">
-    **When to use**: Trials, assessments, team meetings, makeup sessions
-
-    **How it works**: Athletes book without any payment or credits required
-
-    **Perfect for**: Getting new athletes in the door or rewarding loyal clients
-  </Tab>
-  <Tab title="Direct Payment">
-    **When to use**: One-time purchases, event registrations, new client bookings
-
-    **How it works**: Athletes pay at the time of booking (one-time charge)
-
-    **Perfect for**: Drop-in sessions, workshops, first-time assessments
-  </Tab>
-  <Tab title="Credit-Based">
-    **When to use**: Session packages, monthly subscriptions, membership models
-
-    **How it works**: Athletes purchase credits (or receive them via subscription), then redeem credits to book sessions
-
-    **Perfect for**: Ongoing training relationships, encouraging pre-payment, reducing no-shows
-  </Tab>
-  <Tab title="Hybrid Model">
-    **When to use**: Maximum flexibility
-
-    **How it works**: Athletes can choose to pay directly OR use credits
-
-    **Perfect for**: Accommodating different athlete preferences and payment styles
-  </Tab>
-</Tabs>
-
-<Info>
-  **The ∞ symbol**: When you see infinity (∞) next to a scheduler or in credit displays, it means unlimited credits or a free session—no credit redemption required.
-</Info>
-
-## Beyond basic scheduling: Advanced features
-
-Once you master the basics, CoachIQ scheduling offers powerful features for scaling your business:
-
-### Automated Reminders
-
-Set up automatic notifications before sessions (30 minutes, 1 hour, 1 day, 2 days) via in-app notification, announcement, or SMS to reduce no-shows.
-
-### Multi-Coach Scheduling
-
-Assign multiple coaches to sessions for team training, co-coaching situations, or facility management with multiple trainers.
-
-### Recurring Bookings (Coach Only)
-
-Book athletes into weekly or custom recurring patterns—perfect for committed clients with standing appointments.
-
-### Copilot AI Assistance
-
-Use AI to generate availability patterns, suggest optimal booking times, and streamline your scheduling setup.
-
-### Program Groupings
-
-Organize your schedulers into logical categories so athletes see "Youth Development," "Private Training," and "Group Classes" instead of a jumbled list.
-
-### Advanced Credit Controls
-
-Set daily/weekly usage limits, restrict credits to specific schedulers, configure expiration dates, and prevent credit abuse.
-
-## Common scheduling scenarios
-
-<AccordionGroup>
-  <Accordion title="Solo Coach with Multiple Session Types">
-    **Setup**: Create one availability template for your working hours, then create multiple schedulers pulling from that same availability—one for "30-Min Quick Sessions," another for "60-Min Full Training," and perhaps a "Free Assessment."
-
-    **Why it works**: You only manage availability in one place, but offer athletes multiple session options at different price points and durations.
-  </Accordion>
-  <Accordion title="Facility Owner with Multiple Coaches">
-    **Setup**: Each coach has their own availability template. Create schedulers for different training types, assigning the appropriate coaches to each. Use program groupings to organize by training category.
-
-    **Why it works**: Athletes can book with specific coaches or any available coach, while you maintain central oversight of all bookings.
-  </Accordion>
-  <Accordion title="Team Coach with Regular Practice Schedule">
-    **Setup**: Create a scheduler for team practice. Manually book all team members into recurring weekly slots using the Booking Builder.
-
-    **Why it works**: You maintain attendance records, can track who's present/absent, and athletes receive automatic reminders before practice.
-  </Accordion>
-  <Accordion title="Hybrid Training Business (In-Person + Virtual)">
-    **Setup**: Create separate schedulers for "In-Person Training" and "Virtual Sessions" with different locations and possibly different pricing.
-
-    **Why it works**: Athletes clearly see which sessions are virtual vs. in-person, and you can manage capacity differently for each type.
-  </Accordion>
-</AccordionGroup>
-
-## What scheduling integrates with
-
-CoachIQ scheduling doesn't work in isolation—it connects with your entire coaching ecosystem:
-
-**Website & App**: Embed schedulers on your website, allow bookings through the athlete mobile app
-
-**Payment System**: Process payments, manage subscriptions, issue credits automatically
-
-**Communication**: Send booking confirmations, reminders, and updates via SMS, email, and in-app notifications
-
-**Calendar**: View all bookings in day/week/month views with filtering by athlete, coach, or session type
-
-**Programs**: Include scheduled sessions as part of training program curriculum
-
-**Analytics**: Track booking rates, popular session types, revenue by scheduler, and no-show patterns
-
-## When NOT to use scheduling
-
-While CoachIQ scheduling is powerful, it's not the right tool for every situation:
-
-❌ **Long-term programming with content delivery** → Use Programs feature instead
-
-❌ **Selling physical products or merchandise** → Use Products feature for e-commerce
-
-❌ **One-time events without specific time slots** → Use Products feature for event registration
-
-❌ **Open gym hours without appointments** → Consider membership Products instead
-
-✅ **Use scheduling when**: Athletes need to book specific time slots, capacity is limited, or you need appointment-style management
-
-## Getting started: Your next steps
-
-Now that you understand how scheduling works, here's your path forward:
+## What do you want to do?
 
 <CardGroup cols={2}>
-  <Card title="Create Your First Session" icon="rocket" href="/scheduling/book-your-first-session">
-    Follow our 10-minute guide to create your first bookable session and start accepting athlete bookings today.
-  </Card>
-  <Card title="Set Up Your Availability" icon="calendar-check" href="/scheduling/create-your-availability">
-    Learn how to create availability templates that become the foundation of your scheduling system.
-  </Card>
-  <Card title="Understand Schedulers" icon="sliders-h" href="/scheduling/what-are-schedulers">
-    Deep dive into schedulers—what they are, when to create multiple types, and how to configure them.
-  </Card>
-  <Card title="Configure Payments" icon="credit-card" href="/scheduling/setting-up-payment-options">
-    Choose the right payment model for your coaching business: free, paid, credit-based, or hybrid.
-  </Card>
+  <Card title="Create and publish a scheduler" icon="calendar-plus" href="/scheduling/creating-your-first-scheduler">Set up a lesson, class, practice, or rental and make it bookable.</Card>
+  <Card title="Change your availability" icon="clock" href="/scheduling/create-your-availability">Set weekly hours, add specific dates, or adjust a shared template.</Card>
+  <Card title="Book an athlete" icon="user-plus" href="/scheduling/manually-booking-athletes">Book from the calendar, including an exception outside normal hours.</Card>
+  <Card title="Move or cancel a session" icon="calendar-days" href="/scheduling/editing-rescheduling-bookings">Change one occurrence and choose whether to notify participants.</Card>
+  <Card title="Solve a booking problem" icon="magnifying-glass" href="/scheduling/troubleshooting">Find missing times, check visibility, or understand a refused booking.</Card>
+  <Card title="Manage today's sessions" icon="check" href="/scheduling/calendar-overview-and-navigation">Find participants, check attendance, and open session actions.</Card>
 </CardGroup>
 
-## Common questions
+## How scheduling fits together
 
-<AccordionGroup>
-  <Accordion title="Do I need to create separate schedulers for different price points?">
-    Yes. Each scheduler has one price/credit configuration. If you want to offer 30-minute sessions at $50 and 60-minute sessions at $90, you'll create two separate schedulers. However, both schedulers can pull from the same availability template—you only manage your hours in one place.
-  </Accordion>
-  <Accordion title="Can athletes book recurring sessions on their own?">
-    No. Recurring bookings are a coach-only feature. Athletes can only book individual sessions through self-service. If you want an athlete on a recurring weekly schedule, you'll need to manually book them using the Booking Builder.
-  </Accordion>
-  <Accordion title="What happens if I change my availability after sessions are already booked?">
-    Existing bookings are NOT automatically canceled when you change availability. However, changing availability affects future available slots. If you need to cancel existing bookings, you'll need to do that manually from your calendar.
-  </Accordion>
-  <Accordion title="How many schedulers can I create?">
-    Unlimited. Create as many scheduler types as your business needs. Some coaches have 3-5 schedulers (different durations and session types), while facilities might have 20+ schedulers across different coaches, locations, and training programs.
-  </Accordion>
-  <Accordion title="Can I use scheduling without credits or payment?">
-    Absolutely. You can create completely free schedulers where athletes book without any payment or credits. This is perfect for team practices, free assessments, or any scenario where you just need appointment management without monetization.
-  </Accordion>
-  <Accordion title="What's the difference between a scheduler and a session?">
-    A **scheduler** is the template/configuration (like a product listing), while a **session** is an actual bookable time slot or confirmed booking (like a shopping cart item). You create one scheduler, and it automatically generates many bookable sessions based on your availability.
-  </Accordion>
-</AccordionGroup>
+| Part | What it does | Example |
+| --- | --- | --- |
+| **Scheduler** | Defines the service, available lengths, payment, capacity, and booking rules | Hitting lessons with 30- and 60-minute options |
+| **Availability** | Supplies the days and hours the scheduler can use | Mondays and Wednesdays, 3–7 PM |
+| **Session** | A particular occurrence on the schedule | Wednesday at 4 PM |
+| **Booking** | Reserves a place for an athlete in that occurrence | Alex attending the 4 PM lesson |
 
-## Pro tips for scheduling success
+A group session can have several athlete bookings. One booking does not close the time unless capacity or another scheduling rule prevents further bookings.
 
-<CardGroup cols={2}>
-  <Card title="Start Simple" icon="seedling">
-    Begin with one or two schedulers and basic availability. Master the fundamentals before adding complexity like credits, multi-coach scheduling, or advanced automations.
-  </Card>
-  <Card title="Test as an Athlete" icon="user-check">
-    Before going live, test the booking experience yourself or ask a trusted athlete to try it. You'll catch confusing wording, pricing issues, or availability gaps before they affect real bookings.
-  </Card>
-  <Card title="Use Buffer Time Wisely" icon="clock">
-    Add 5-10 minutes of buffer time between sessions for setup, cleanup, or unexpected delays. Your athletes won't see the buffer time—they'll just see properly spaced available slots.
-  </Card>
-  <Card title="Organize with Programs" icon="folder">
-    As you add more schedulers, group them into logical categories like "Private Training," "Group Classes," and "Assessments." This dramatically improves the athlete booking experience.
-  </Card>
-</CardGroup>
+Availability alone does not reserve a coach or a cage. Attach the appropriate [coaches](/scheduling/setup-coaches) and [resources](/scheduling/resources), then review their conflict settings. Duration, start times, buffers, booking windows, and existing reservations all affect which times can be booked.
 
----
+## Find the right screen
 
-## Related articles
+Open **Scheduling** in the admin navigation:
 
-<CardGroup cols={3}>
-  <Card title="Your First Bookable Session" icon="rocket" href="/scheduling/book-your-first-session">
-    10-minute guide to creating your first bookable session
-  </Card>
-  <Card title="How Availability Works" icon="calendar-check" href="/scheduling/how-availability-works">
-    Understanding availability templates and how they power schedulers
-  </Card>
-  <Card title="What Are Schedulers?" icon="question-circle" href="/scheduling/what-are-schedulers">
-    Deep dive into schedulers and when to create multiple types
-  </Card>
-  <Card title="Calendar Overview" icon="calendar-alt" href="/scheduling/calendar-overview-and-navigation">
-    Master your scheduling command center
-  </Card>
-  <Card title="Credit System Overview" icon="coins" href="/payments/credits/credit-system-overview">
-    How credits work and when to use them
-  </Card>
-  <Card title="Advanced Settings" icon="lightbulb" href="/scheduling/advanced-scheduler-settings">
-    Configure reminders, limits, and permissions
-  </Card>
-</CardGroup>
+| Screen | Use it to |
+| --- | --- |
+| **Calendar** | View booked sessions or open availability; book, move, cancel, and check in athletes |
+| **Schedulers** | Create and edit services, copy booking links, organize the catalog, and archive finished offerings |
+| **Setup** | Manage reusable availability, coaches, locations, resources, and defaults for new schedulers |
 
-<Info>
-  **Need help getting started?** Our support team is here to help you set up scheduling for your specific coaching business. [Contact Support](https://coachiq.com/support)
-</Info>
+## Decide when to use another scheduler
+
+Use one scheduler for different lengths of the same service when the rest of the setup is shared. [Price by session length](/scheduling/pricing-by-session-length) lets a 30-minute lesson and a 60-minute lesson have different prices or credit costs.
+
+Create a separate scheduler when the offering needs different capacity, booking rules, availability, or service details—for example, a private lesson and a group clinic. A different venue on one date can use a [per-date location](/scheduling/setup-locations#a-different-venue-for-each-date).
+
+## Choose how people book and pay
+
+Athletes and parents can book through your published schedule or a direct link. Staff can [book manually](/scheduling/manually-booking-athletes) or create a [recurring schedule](/scheduling/recurring-bookings). Parents select the attending child; see [family booking](/scheduling/booking-for-multiple-athletes).
+
+A scheduler can be **Free** or **Paywalled**. Paid options are **Price**, **Credit**, or **Either**. Configure the payment option separately from the booking's date and time; creating a staff booking is not proof that a card payment was collected.
+
+For a team season, start with [Teams practices and games](/people/teams/practices-and-games) when Teams is enabled for your organization. Team membership, payment, and a successful session booking are separate results.
+
+## Make the scheduler available to families
+
+Creating an active scheduler, placing it in the portal or website, and deciding who can book are separate steps. Follow [Share and publish schedulers](/scheduling/sharing-schedulers), then check [Team visibility](/scheduling/organizing-schedulers#team-visibility) if only part of your group should have access.
+
+Before changing an established schedule, check [what happens to existing bookings](/scheduling/changing-your-schedule).

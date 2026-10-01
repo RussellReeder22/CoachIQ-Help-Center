@@ -1,543 +1,68 @@
 ---
-title: "Canceling Bookings: Process and Outcomes"
-description: "Quick guide to canceling sessions, understanding credit refunds, and managing cancellation notifications"
-sidebarTitle: "Canceling Bookings"
-icon: "times-circle"
-keywords: ["cancel booking", "cancel session", "cancellation", "delete booking", "remove booking", "credit refund on cancel"]
+title: "Cancel Bookings and Sessions"
+sidebarTitle: "Cancel Bookings & Sessions"
+description: "Cancel one athlete, a whole session, or a recurring booking, with clear credit and notification choices."
+icon: "calendar"
 ---
 
-<Info>
-  **Quick navigation**: Schedule → Calendar → Click session → trash (**Cancel Session**) or cancel a single booking
-</Info>
+Cancel from **Scheduling → Calendar**. First decide whether you are removing **one athlete's booking** or **the entire session on that date**. Canceling a whole group session affects everyone booked into it.
 
-## Who can cancel bookings?
+| What you need | Action |
+| --- | --- |
+| Remove one athlete from a session | Open that athlete's booking and cancel it |
+| Cancel a class for everyone on one date | Open the session and use **Cancel Session** |
+| Skip one date in an athlete's recurring series | Open the recurring booking's **Occurrences** and use **Skip** |
+| Stop a recurring booking | Remove the recurring pattern; review the scope before confirming |
+| Keep the booking but change its time | [Move or reschedule it](/scheduling/editing-rescheduling-bookings) |
 
-<Tabs>
-  <Tab title="Admins & Coaches">
-    **Full cancellation control:**
+## Cancel one athlete's booking
 
-    - Cancel any booking at any time
-    - Cancel single sessions or entire recurring patterns
-    - Override cancellation policies
-    - No restrictions
+1. Open the session on the calendar and find the athlete in the participant list. You can also open the booking from the client's profile.
+2. Open the athlete's booking actions and choose **Cancel**.
+3. If the booking used credits, review the **credit refund** choice in the confirmation dialog.
+4. Confirm, then check that the athlete was removed and the other participants remain.
 
-    **Use cases**: Schedule conflicts, coach illness, facility issues, athlete requests
-  </Tab>
-  <Tab title="Athletes">
-    **Limited by your cancellation policy:**
+<Frame>
+  ![Session details with the participant list and booking actions](/images/session-detail-modal.png)
+</Frame>
 
-    - Can only cancel their own bookings (if product allows)
-    - Subject to time restrictions (e.g., 24-hour notice)
-    - May lose credits based on policy
-    - Cannot cancel past sessions
-
-    **Access**: Through athlete portal/app or booking confirmation link
-  </Tab>
-</Tabs>
-
----
-
-## Controlling whether athletes can cancel
-
-You can enable or disable athlete self-cancellation on a per-scheduler basis. When disabled, only coaches and admins can cancel bookings — athletes must contact you directly.
-
-Find this in your scheduler under **Settings → Booking Rules → Allow athletes to cancel**.
-
-You can also control whether credits are refunded on cancellation with the **Refund credits used on cancelation** toggle in the same section. See [Scheduler Settings: Limits and Permissions](/scheduling/scheduler-settings-limits-and-permissions) for all Booking Rules options.
-
----
-
-## How to cancel a booking
-
-<Steps>
-  <Step title="Find the booking">
-    **Two ways to access:**
-
-    1. **From Calendar**: Schedule → Calendar → Click the booking
-    2. **From Athlete Profile**: People → Clients → Select athlete → Upcoming Bookings
-
-    Choose whichever is most convenient.
-  </Step>
-  <Step title="Open booking details">
-    Click on the specific booking to open the details panel.
-
-    <Frame>
-      ![Session detail modal showing booking participants and actions](/images/session-detail-modal.png)
-    </Frame>
-
-    You'll see:
-
-    - Athlete name and participants list
-    - Session time/date
-    - Scheduler type
-    - Action buttons including **Send Message to All**
-  </Step>
-  <Step title="Click 'Cancel'">
-    Look for the **Cancel** button (usually red or in actions menu).
-
-    Click it to initiate cancellation.
-
-    <Note>
-      Note: Before cancelling be sure to notify your clients of cancellation and your reason. Look for the Send Message to All button to message all participants in a session.
-    </Note>
-  </Step>
-  <Step title="Confirm cancellation">
-    System asks for confirmation to prevent accidental cancellations.
-
-    Note: If a client booked with a credit the system will prompt you to refund the credit to their account or not.
-
-    <Frame>
-      ![CoachIQ cancellation confirmation dialog with credit refund option](/images/credit-refund.png)
-    </Frame>
-    **Cancel** to complete the cancellation.
-
-    <Check>
-      **Booking canceled!** Session removed from calendar, athlete notified, credits handled per policy.
-    </Check>
-  </Step>
-</Steps>
+<Frame>
+  ![Cancellation confirmation with the option to refund a booking credit](/images/credit-refund.png)
+</Frame>
 
 ## Cancel an entire session from the calendar
 
-Use this when you need to close the whole occurrence (every participant) in one step — for example coach illness or a facility conflict — instead of canceling each booking one by one.
+1. Open the session on the date you want to cancel.
+2. Click the red trash icon in the header to open **Cancel Session**.
+3. Review the date and affected participants.
+4. Review **Notify participants**, the recipient count, and the selected channels. The dialog offers **Announcement**, **SMS**, and **In-app message**. Edit the prefilled message if you need to explain the change.
+5. Click **Cancel Session** to confirm, or **Keep Session** to leave it as it is.
 
-Where to find this: **Schedule → Calendar → click the session**
+This cancels that occurrence. It does not delete the scheduler or close all future availability. To close other dates, [block time off](/scheduling/setting-black-out-dates) and separately review any bookings already made for those dates.
 
-### Open Cancel Session
+## Cancellation and credit refunds
 
-On the session click view, the header shows **Move Session** and a red trash icon. Click the trash icon.
+Athlete self-service cancellation depends on two separate settings in the scheduler:
 
-That opens **Cancel Session**.
+| Setting | What it controls |
+| --- | --- |
+| **Allow athletes to cancel** and the cancellation notice window | Whether and how close to the session an athlete can cancel themselves |
+| **Refund credits used on cancelation** | Whether an eligible self-service cancellation returns the credit |
 
-### What Cancel Session does
+Inside the notice window, the athlete cannot cancel through the app. They need to contact your team. It is not an automatic late-cancellation flow that lets them cancel and forfeits the credit.
 
-The dialog warns that this closes the occurrence so it cannot be booked again and cancels every current participant booking. It also shows how many participants will be canceled.
-
-### Notify participants (optional)
-
-**Notify participants** is on by default (recipient count shown). Choose channels:
-
-- **Announcement**
-- **SMS**
-- **In-app message** (pre-checked)
-
-### Message
-
-The **Message** field is prefilled with the canceled session name, day, and time. Edit it to add a personal note.
-
-### Keep Session or Cancel Session
-
-- **Keep Session** — close without canceling
-- **Cancel Session** — confirm and cancel the occurrence
-
-Credit refund prompts can appear when participants used credits. Free sessions may not show credit controls.
-
----
-
-## Canceling many separate sessions
-
-To cancel many different calendar days (for example a full week of unrelated sessions), open each session and use **Cancel Session**, or cancel individual bookings as above. Filter the calendar to the date range you need to move faster.
-
----
-
-## What happens when you cancel?
-
-<CardGroup cols={2}>
-  <Card title="Calendar Updates" icon="calendar-alt">
-    **Immediate changes:**
-
-    - Booking removed from your calendar
-    - Time slot becomes available again
-    - Athlete's calendar updated
-    - Capacity opens up (for group sessions)
-  </Card>
-  <Card title="Notifications Sent" icon="bell">
-    **Who gets notified:**
-
-    - Athlete receives cancellation email/SMS
-    - You receive confirmation
-    - Any followers/coaches assigned to session
-
-    **Message includes**: Canceled session details
-  </Card>
-  <Card title="Credit Handling" icon="coins">
-    **Depends on your policy:**
-
-    - **With proper notice**: Credits refunded
-    - **Late cancellation**: Credits forfeited
-    - **Free sessions**: No credit impact
-
-    See credit policies section below.
-  </Card>
-  <Card title="Recurring Bookings" icon="repeat">
-    **For recurring sessions:**
-
-    - Canceling ONE occurrence: Only that session canceled
-    - Canceling ENTIRE pattern: All future sessions removed
-    - Already-completed sessions: Unaffected
-
-    See [Recurring Bookings](/scheduling/recurring-bookings) for details.
-  </Card>
-</CardGroup>
-
----
-
-## Cancellation scenarios and outcomes
-
-<AccordionGroup>
-  <Accordion title="Coach cancels with advance notice">
-    **Scenario**: You cancel athlete's session 48 hours in advance
-
-    **What happens:**
-
-    - ✅ Booking removed from calendar
-    - ✅ Athlete notified immediately
-    - ✅ Credits refunded (if credit-based)
-    - ✅ Athlete can rebook another time
-    - ✅ Professional courtesy maintained
-
-    **Best practice**: Offer alternative times in cancellation message
-
-    **Example message**: "Hi Jake, need to cancel Tuesday's session due to facility maintenance. Can we reschedule for Wednesday 5pm or Thursday 6pm?"
-  </Accordion>
-  <Accordion title="Coach cancels last-minute">
-    **Scenario**: You cancel session on same day (emergency)
-
-    **What happens:**
-
-    - ✅ Booking removed
-    - ✅ Athlete notified
-    - ✅ Credits refunded (coach cancellations typically refund regardless of timing)
-    - ⚠️ May impact athlete satisfaction
-
-    **Best practice**:
-
-    - Call/text athlete directly (don't rely only on auto-notification)
-    - Offer priority rebooking
-    - Consider offering extra session or discount for inconvenience
-
-    **Example**: "Jake, I'm so sorry but I'm sick and need to cancel today's 6pm session. Credits fully refunded. Can I offer you a free 15-min extension on your next session?"
-  </Accordion>
-  <Accordion title="Athlete cancels with proper notice">
-    **Scenario**: Athlete cancels 24+ hours before session (within your policy)
-
-    **What happens:**
-
-    - ✅ Booking removed
-    - ✅ You're notified
-    - ✅ Credits refunded to athlete
-    - ✅ Time slot opens for other bookings
-    - ✅ No penalty
-
-    **Coach action needed**: None (system handles automatically)
-
-    **Optional**: Send quick confirmation message acknowledging cancellation
-  </Accordion>
-  <Accordion title="Athlete cancels late (violates policy)">
-    **Scenario**: Athlete cancels with only 6 hours notice (policy requires 24 hours)
-
-    **What happens:**
-
-    - ✅ Booking removed
-    - ❌ Credits NOT refunded (forfeited per policy)
-    - ✅ You're notified
-    - ⚠️ Time slot might be too late to fill
-
-    **Coach decision points**:
-
-    - **Strict enforcement**: No refund, credits lost
-    - **One-time courtesy**: Manually refund credits, warn about future
-    - **Consider circumstances**: Legit emergency? Offer flexibility
-    - **Edit Scheduler:** Adjust your minimum cancellation notice to your policy to avoid cancellation through the system
-
-    **Example strict message**: "Hi Sarah, I see you canceled today's session. Per our 24-hour policy, the credit has been forfeited. Please make sure to cancel earlier next time!"
-
-    **Example flexible message**: "Hi Sarah, I see you canceled today's session last-minute. I'll refund the credit this time as a courtesy, but please note our 24-hour cancellation policy for future sessions."
-  </Accordion>
-  <Accordion title="Athlete no-shows">
-    **Scenario**: Athlete doesn't show up and doesn't cancel
-
-    **What happens:**
-
-    - ✅ Session time passes
-    - ❌ Credits NOT refunded (forfeited)
-    - ⚠️ Wasted time slot
-    - ⚠️ Potential revenue loss
-
-    **Coach action required**:
-
-    2. Message athlete/parent to check in
-    3. Enforce no-show policy
-    4. Consider pattern (multiple no-shows = conversation needed)
-
-    **Example message**: "Hey Chris, I noticed you didn't make it to today's 5pm session. Everything okay? Per our policy, the credit has been used."
-  </Accordion>
-  <Accordion title="Canceling group session with participants">
-    **Scenario**: You need to cancel a group class with 8 athletes booked
-
-    **What happens:**
-
-    - ✅ All athletes can be notified at once
-    - ✅ Credits refunded to all participants
-    - ✅ Full capacity opens up
-
-    **Best practice**:
-
-    - Send group message explaining cancellation
-    - Offer alternative date/time
-    - Consider posting on social media if you have regular group classes
-
-    **Example**: "Hey team, tonight's 6pm bootcamp is canceled due to weather. Rescheduled for tomorrow same time. All credits refunded—see you tomorrow!"
-  </Accordion>
-  <Accordion title="Canceling one occurrence in recurring series">
-    **Scenario**: Athlete's recurring Tuesday sessions, need to cancel just Oct 15
-
-    **What happens:**
-
-    - ✅ Single session removed
-    - ✅ All other Tuesdays remain scheduled
-    - ✅ Credits refunded (if applicable)
-    - ✅ Recurring pattern continues
-
-    **How to do it**:
-
-    - Click Oct 15 session → Cancel
-    - OR use "Skip" in Occurrences view (see [Recurring Bookings](/scheduling/recurring-bookings))
-
-    **Note**: This doesn't affect the recurring pattern itself—future sessions continue as scheduled.
-  </Accordion>
-  <Accordion title="Canceling entire recurring pattern">
-    **Scenario**: Athlete discontinues training, needs to cancel all future sessions
-
-    **What happens:**
-
-    - ✅ All remaining recurring sessions deleted
-    - ✅ Athlete notified once
-    - ✅ Credits NOT automatically refunded (handle manually if needed)
-    - ✅ Calendar cleared of all future occurrences
-
-    **How to do it**:
-
-    1. Click any session in recurring series
-    2. Open Occurrences view
-    3. Delete entire pattern
-
-    **Important**: Past completed sessions remain unaffected.
-
-    See [Recurring Bookings](/scheduling/recurring-bookings) for full details.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Understanding cancellation policies
-
-Your cancellation policy determines credit refund rules. Configure this in your scheduler settings.
-
-### Common policy structures
-
-<Tabs>
-  <Tab title="24-Hour Policy (Recommended)">
-    **Configuration**:
-
-    - Cancel 24+ hours before: Credits refunded
-    - Cancel 24 hours: Credits forfeited
-    - No-show: Credits forfeited
-
-    **Best for**: Most coaches, balanced fairness
-
-    **Why it works**:
-
-    - Gives you time to fill the slot
-    - Fair to athletes who plan ahead
-    - Industry standard
-  </Tab>
-  <Tab title="Strict Same-Day Policy">
-    **Configuration**:
-
-    - Cancel by 6am on session day: Credits refunded
-    - Cancel after 6am: Credits forfeited
-    - No-show: Credits forfeited + possible penalty
-
-    **Best for**: High-demand schedules, waitlists common
-
-    **Why it works**:
-
-    - Protects premium time slots
-    - Reduces last-minute cancellations
-    - Maximizes booking efficiency
-  </Tab>
-  <Tab title="Lenient Policy">
-    **Configuration**:
-
-    - Cancel anytime: Credits always refunded
-    - No-show: Credits forfeited (only exception)
-
-    **Best for**: New businesses, building clientele, trial periods
-
-    **Why it works**:
-
-    - Low barrier for new athletes
-    - Builds goodwill
-    - Competitive advantage in crowded markets
-
-    **Risk**: Higher cancellation rates, harder to plan
-  </Tab>
-  <Tab title="Hybrid/Tiered">
-    **Configuration**:
-
-    - 48+ hours: Full refund
-    - 24-48 hours: 50% credit refund
-    - Less than 24 hours: No refund
-    - No-show: No refund + \$10 fee
-
-    **Best for**: Premium services, established businesses
-
-    **Why it works**:
-
-    - Graduated consequences
-    - Incentivizes early cancellation
-    - Protects business while offering flexibility
-  </Tab>
-</Tabs>
-
-### Setting your policy
-
-**Where to configure**:
-
-1. Go to scheduler settings
-2. Find "Cancellation Policy" section
-3. Set time window (e.g., 24 hours)
-4. Choose refund behavior
-
-**Communicate clearly**:
-
-- Display policy on booking page
-- Include in confirmation emails
-- Remind athletes periodically
-
-<Tip>
-  **Policy enforcement**: The system can enforce policies automatically, but you always have manual override ability. Use discretion for legitimate emergencies.
-</Tip>
-
----
-
-## Credit refund scenarios
-
-<Warning>
-  **Important**: Credit refunds depend on your cancellation policy configuration. These are typical scenarios—your actual setup may differ.
-</Warning>
-
-| Scenario                              | Credits Refunded? | Notes                                                                                   |
-| ------------------------------------- | ----------------- | --------------------------------------------------------------------------------------- |
-| Coach cancels anytime                 | ✅ Yes (always)    | Regardless of timing, coach cancellations refund credits                                |
-| Athlete cancels with proper notice    | ✅ Yes             | Within policy window (e.g., 24+ hours)                                                  |
-| Athlete cancels late                  | ❌ No              | Outside policy window = forfeited                                                       |
-| Athlete no-show                       | ❌ No              | Credits used, session counted                                                           |
-| Free session canceled                 | N/A               | No credits involved                                                                     |
-| Paid session canceled (proper notice) | ✅ Yes             | Refund to original payment method or credit account for an alternative training session |
-| Recurring pattern deleted             | Manual            | Handle refunds on case-by-case basis                                                    |
-
----
-
-## Best practices for cancellations
-
-<CardGroup cols={2}>
-  <Card title="Clear Policy" icon="file-contract">
-    **Document and share** your cancellation policy:
-
-    - On website booking page
-    - In welcome packet
-    - In confirmation emails
-    - Verbally during onboarding
-
-    **Result**: Fewer disputes, clear expectations
-  </Card>
-  <Card title="Offer Alternatives" icon="calendar-plus">
-    **When you cancel**, immediately offer rebooking options:
-
-    - "Can we move to Thursday?"
-    - "Next week same time work?"
-
-    **Result**: Maintains momentum, reduces dropout
-  </Card>
-  <Card title="Use Discretion" icon="balance-scale">
-    **Enforce policies consistently** but allow for:
-
-    - Legitimate emergencies
-    - First-time exceptions
-    - Long-term loyal clients
-
-    **Balance**: Fairness + flexibility = retention
-  </Card>
-  <Card title="Track Patterns" icon="chart-line">
-    **Monitor cancellation rates** by:
-
-    - Individual athletes
-    - Time slots
-    - Session types
-
-    **Action**: Address chronic cancelers, adjust popular times
-  </Card>
-</CardGroup>
-
----
-
-## Quick reference: Cancellation checklist
-
-**When canceling a booking:**
-
-- Cancel as soon as you know (maximize notice time)
-- Send personal message (don't rely only on auto-notification)
-- Offer alternative times/dates
-- Confirm credit refund status with athlete
-- Note reason for cancellation (for your records)
-- For recurring sessions: Clarify if this is one session or entire pattern
-- For group sessions: Consider group message/announcement
-- Follow up day after to confirm athlete received notice
-
----
-
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="Recurring Bookings" icon="repeat" href="/scheduling/recurring-bookings">
-    Understand how cancellations work within recurring patterns
-  </Card>
-  <Card title="Scheduler Settings" icon="cog" href="/scheduling/creating-your-first-scheduler">
-    Configure your cancellation policies and rules
-  </Card>
-  <Card title="Credit System Guide" icon="coins" href="/payments/credits/credit-system-overview">
-    Deep dive into how credits work with cancellations
-  </Card>
-</CardGroup>
-
-## Related articles
-
-<CardGroup cols={3}>
-  <Card title="Booking Types" icon="info-circle" href="/scheduling/understanding-booking-types">
-    Understand different booking methods
-  </Card>
-  <Card title="Calendar Management" icon="calendar-alt" href="/scheduling/calendar-overview-and-navigation">
-    Navigate and filter to find bookings to cancel
-  </Card>
-  <Card title="Scheduler Settings" icon="tools" href="/scheduling/scheduler-settings-limits-and-permissions">
-    Fix common booking and cancellation issues
-  </Card>
-</CardGroup>
-
----
-
-<Check>
-  **You now understand**: How to cancel bookings, what happens to credits and notifications, and how to handle various cancellation scenarios professionally.
-</Check>
-
-<Info>
-  **Questions about cancellation policies?** Our support team can help you configure the optimal cancellation rules for your coaching business. [Contact Support](https://support.coachiq.com)
-</Info>
+When staff cancel a credit booking, review the refund choice rather than assuming the scheduler's policy has made the decision for you. Afterward, confirm the transaction in the athlete's **Credits** tab. If you need to correct a balance, see [Manage athlete credits](/payments/credits/managing-athlete-credits).
 
 <Note>
-
-Need to move a session instead of canceling? See [Editing & Rescheduling Bookings](/scheduling/editing-rescheduling-bookings).
-
+  A credit refund and a card payment refund are different actions. Canceling a booking is not confirmation that a card payment was refunded. Review the payment separately using [Issue refunds](/payments/issuing-refunds).
 </Note>
+
+## Recurring bookings
+
+Use **Skip** for one occurrence, or remove the pattern to stop the remaining series. Check the scope before confirming: canceling an entire calendar session may affect other athletes as well. See [Recurring bookings](/scheduling/recurring-bookings) for occurrence changes and payment considerations.
+
+## After canceling
+
+Check the calendar, the athlete's credit or payment record, and any notification choices you made. If you promised a replacement session, [book it](/scheduling/manually-booking-athletes) and verify whether a credit should be redeemed; do not deduct twice for the same service.
+
+For athletes who did not attend, use [attendance tracking](/scheduling/checking-in-athletes). A no-show does not by itself tell CoachIQ to refund a payment or credit.

@@ -38,7 +38,7 @@ The most common credit confusion is changing a setting in the wrong place. Use t
 
 <Steps>
   <Step title="Open the scheduler's Payment section">
-    Go to **Schedule → Schedulers**, open the scheduler, and scroll to **Payment**.
+    Go to **Scheduling → Schedulers**, open the scheduler, and scroll to **Payment**.
   </Step>
   <Step title="Set the scheduler to Paywalled">
     The Payment section starts with a **Free** / **Paywalled** toggle. Choose **Paywalled**.
@@ -51,7 +51,7 @@ The most common credit confusion is changing a setting in the wrong place. Use t
     </Frame>
   </Step>
   <Step title="Set the credit cost">
-    Enter how many credits one booking deducts. Almost every coach uses **1**. Use more for longer or premium sessions (a 90-minute session at 2 credits), or a fraction for short add-ons. The summary line under the section reads back what you set ("Families use 1 credit from a package they already bought"), and the cost is shown to the athlete before they confirm.
+    Enter how many credits one booking deducts. For example, charge **1** credit for a standard lesson and **2** for a longer lesson. Use [length pricing](/scheduling/pricing-by-session-length) when different durations have different costs. The summary line under the section reads back what you set ("Families use 1 credit from a package they already bought"), and the cost is shown to the athlete before they confirm.
   </Step>
   <Step title="Add a Buy more credits link (recommended)">
     In **Buy more credits** (optional), paste the URL of the product that sells credits for this scheduler. When an athlete does not have enough credits, they are sent there to buy more instead of hitting a dead end.
@@ -67,11 +67,11 @@ The most common credit confusion is changing a setting in the wrong place. Use t
 ## What the athlete sees
 
 - On your schedule page, credit-based sessions show their cost (for example **1 Credit**) instead of a price.
-- **Credits come first.** When the athlete holds credits this scheduler accepts, checkout goes straight to credit redemption and the card field is not shown, so nobody pays by card while sitting on usable credits. The card field appears only when they have no applicable credits.
+- Checkout checks which credits are eligible for the selected athlete, scheduler, and session length. A total balance alone does not establish that a booking can use those credits.
 - On a scheduler set to **Either**, the athlete chooses between spending a credit and paying the price before the payment step.
 - Their remaining credit count is shown during booking and again on the confirmation, and the cost is deducted the moment the booking is confirmed.
 - When a booking cannot use credits, the message says why rather than a generic "Not enough credits": no credits left, credits **not valid for this scheduler** (they came from a product that does not include it), or the membership that granted them has expired.
-- With no usable credits, the athlete is prompted to buy. If you added a **Buy more credits** link they go to that product; otherwise they land on your general products list.
+- With no usable credits, review the purchase options or **Buy more credits** link shown in checkout. Configure a relevant product so the family has a clear next step.
 - An athlete who comes up short can also ask you directly. CoachIQ sends you an In-App message on their behalf in the Inbox, naming the session and date they wanted and how many credits short they are (for example "…but I'm 1 credit short. Could you add credits to my account?"). Grant the credits from the athlete's **Credits** tab and they can complete the booking; see [Managing athlete credits](/payments/credits/managing-athlete-credits).
 - Parents with family members added book from one shared balance and pick which child the session is for. See [Booking for multiple athletes](/scheduling/booking-for-multiple-athletes).
 
@@ -85,7 +85,7 @@ Credits are deducted at booking time, so cancellation is where they come back, o
 | **Refund credits used on cancelation: off** | Credit forfeited | Cannot cancel in-app inside the notice window | You choose in the cancel dialog |
 
 <Note>
-  The refund setting is all or nothing per scheduler. The common "refund with notice, forfeit when late" policy comes from combining it with the **cancellation notice window**: outside the window athletes can cancel and get the credit back, inside the window they cannot cancel at all through the app. Turn on the reschedule lockout too, or athletes will reschedule out of a late slot to avoid the forfeit. Both settings are explained in [Scheduler settings, limits, and permissions](/scheduling/scheduler-settings-limits-and-permissions#credit-refund-settings).
+  The refund setting is all or nothing per scheduler. The common "refund with notice, forfeit when late" policy comes from combining it with the **cancellation notice window**: outside the window athletes can cancel and get the credit back, inside the window they cannot cancel at all through the app. Turn on the reschedule lockout too, or athletes will reschedule out of a late slot to avoid the forfeit. Both settings are explained in [Scheduler settings, limits, and permissions](/scheduling/scheduler-settings-limits-and-permissions#cancellation-and-credit-refunds).
 </Note>
 
 When you cancel a credit booking from the calendar, the confirmation dialog asks whether to refund the credit. Refund it when the cancellation is on you, and forfeit it only when you are enforcing your late policy. If a refund was skipped by mistake, add the credit back from the athlete's **Credits** tab. See [Canceling bookings](/scheduling/canceling-bookings).
@@ -94,7 +94,7 @@ When you cancel a credit booking from the calendar, the confirmation dialog asks
 
 <AccordionGroup>
   <Accordion title="Athlete has credits but the scheduler says they have none">
-    The credits came from a product whose **Which schedulers accept these credits** list does not include this scheduler. Fix it on the product, not the scheduler. If the athlete needs to book today, grant a **Master Credit** from their profile; Master Credits work on every credit-based scheduler.
+    The credits came from a product whose **Which schedulers accept these credits** list does not include this scheduler. Fix it on the product, not the scheduler. If you intentionally grant a courtesy credit, **Master Credits** are usable across credit-based schedulers. Check the existing product entitlement first so you do not issue a duplicate credit.
   </Accordion>
   <Accordion title="Athlete has 1 credit and the session costs 2">
     The booking is blocked. Credits are not split across bookings and there is no partial payment. Either the athlete buys more, or you grant the difference as a Master Credit. Keep multi-credit sessions rare for this reason.
@@ -103,10 +103,10 @@ When you cancel a credit booking from the calendar, the confirmation dialog asks
     It depends on **Sessions must occur by expiration** on the product. With it on, the session date must fall within the credit period, including when rescheduling. With it off, credits need to be valid when booked, and the session may happen later. A qualifying cancellation refund keeps the original expiration date; canceling does not extend it. See [Require sessions to happen before credits expire](/payments/product-builder#require-sessions-to-happen-before-credits-expire).
   </Accordion>
   <Accordion title="You set up a recurring booking for the athlete">
-    Recurring bookings you create from the calendar do **not** deduct credits when the series is created, and skipping an occurrence does not refund one. If an athlete is on a standing weekly slot, collect payment directly and skip credits for them. Details in [Recurring bookings](/scheduling/recurring-bookings#credit-handling-with-recurring-bookings).
+    Review the credit controls for the recurring booking and verify the athlete's ledger after saving. A recurring reservation is separate from a paid subscription; do not assume that every series charges credits automatically or that every series is credit-free. Details in [Recurring bookings](/scheduling/recurring-bookings#credit-handling-with-recurring-bookings).
   </Accordion>
   <Accordion title="You manually book the athlete from the calendar">
-    Manual booking follows the same credit logic as self-booking, with one extra control: a **Redeem credits** checkbox. Leave it checked to deduct the credit. Uncheck it for a makeup or comp session so the athlete is not charged twice. See [Manually booking athletes](/scheduling/manually-booking-athletes).
+    Staff bookings have a **Redeem credits** control when credits are available. Check it to redeem eligible credits, and confirm whose balance is used. Uncheck it for a makeup or comp session so the athlete is not charged twice. See [Manually booking athletes](/scheduling/manually-booking-athletes).
   </Accordion>
   <Accordion title="Same scheduler, athlete has two kinds of credits">
     Product-specific credits that are valid for this scheduler are used first. Master Credits are only spent when no eligible product credit remains. Check the athlete's Credits tab if you need to know which pool a booking drew from.
@@ -150,7 +150,7 @@ Open **People**, click the athlete, and open the **Credits** tab. The log shows 
   <Card title="Credit usage limits" icon="gauge" href="/payments/credits/credit-usage-limits-restrictions">
     Per-scheduler caps, multi-credit sessions, and how limits stack
   </Card>
-  <Card title="Scheduler settings" icon="sliders" href="/scheduling/scheduler-settings-limits-and-permissions#credit-refund-settings">
+  <Card title="Scheduler settings" icon="sliders" href="/scheduling/scheduler-settings-limits-and-permissions#cancellation-and-credit-refunds">
     Cancellation windows, refund toggle, and reschedule lockout
   </Card>
   <Card title="Managing athlete credits" icon="user" href="/payments/credits/managing-athlete-credits">

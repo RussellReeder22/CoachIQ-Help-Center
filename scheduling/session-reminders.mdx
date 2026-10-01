@@ -1,0 +1,56 @@
+---
+title: "Set Session Reminders"
+sidebarTitle: "Session Reminders"
+description: "Configure reminder timing and channels, and distinguish reminders from confirmations and change notifications."
+icon: "bell"
+---
+
+Session reminders tell booked athletes about an upcoming session. Configure them per scheduler under **Scheduling → Schedulers → open a scheduler → Reminders**.
+
+## Add a reminder
+
+1. Open the scheduler's **Reminders** section and add a reminder.
+2. Choose how long before the session it should send. Presets include **30 minutes**, **1 hour**, **1 day**, and **2 days**, or use a custom interval.
+3. Choose the delivery method: **SMS**, **Announcement**, or **In-app**.
+4. Write a short message with any preparation instructions. Use the editor's supported fields for session-specific information rather than typing unverified template variables.
+5. Save the scheduler. Repeat for another reminder if you need both an advance notice and a day-of reminder.
+
+For example, a one-day reminder can explain what to bring, while a one-hour reminder can help the family leave on time. Choose a cadence that suits your clients; there is no need to send through every channel.
+
+Editing one scheduler's reminders does not change reminders on other schedulers.
+
+## Understand the message types
+
+| Message | Purpose | Where to review it |
+| --- | --- | --- |
+| Booking confirmation | Confirms a booking was made | Booking notification settings and the booking's recipient |
+| Session reminder | Sends before an upcoming session | The scheduler's **Reminders** section |
+| Session change or cancellation notice | Tells participants about a change | The action's **Notify participants** or email options |
+| Your own automation | Runs a workflow you configured | [Automations](/tools/automations/what-are-automations) |
+
+Turning off **Notify participants** while editing a session does not turn off its scheduled reminders or your own automations. A **New Booking** automation may also run when a booking is rescheduled.
+
+## Families and duplicate reminders
+
+Check the athlete's connected parents when reviewing delivery. A parent may receive reminders for their child's session even when someone else made the booking.
+
+CoachIQ avoids sending an identical reminder multiple times to the same person for the same occurrence—for example, when a parent has two children booked into that session. Separate reminder rules or automations can still produce separate messages.
+
+## What happens after a time change
+
+Changing only the duration does not resend an already-sent reminder. Moving the start time by less than an hour also does not resend it.
+
+For a move of an hour or more, a fresh reminder can send if its new scheduled send time is still in the future. CoachIQ does not send a late catch-up reminder for a send time that has already passed. Review the notification choices in the change dialog if participants need to know about the move immediately.
+
+See [Move and reschedule bookings](/scheduling/editing-rescheduling-bookings) for those notification controls.
+
+## Troubleshoot a missing reminder
+
+1. Confirm the athlete is booked into the intended occurrence.
+2. Check this scheduler's saved reminder timing and channel.
+3. Compare the session time, timezone, and reminder send time.
+4. Check the recipient's contact information and family connections.
+5. For SMS, review your [SMS setup](/inbox/sms-messages) and [SMS credits](/inbox/sms-credits).
+6. Check whether another message came from an automation or a different reminder rule.
+
+If you still need help, send support the scheduler, session date and timezone, intended recipient, channel, and expected send time. That is more useful than reporting only that a reminder did not arrive.
