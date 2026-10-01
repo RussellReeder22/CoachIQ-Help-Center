@@ -4,6 +4,47 @@ description: "New updates and improvements"
 icon: "clock-rotate-left"
 ---
 
+<Update label="September 30, 2026">
+
+## Features & improvements
+
+**Choose whether session edits notify participants**
+
+In the admin calendar, changing a booked session's location now lets you review the message and choose channels before saving. Duration changes offer the same choice, with notifications off by default. **Move Session** also offers Email, and editing one athlete's booking has an optional email checkbox. Resource changes stay quiet. Your own **New Booking** automations can still run on reschedules.
+
+**Cancel memberships from the client's profile**
+
+Open **Client profile → Products → Cancel membership** and choose **At end of billing period** or **Immediately**. Removing a membership that is still billing is blocked until you cancel it. If a subscription has no matching purchase, find **Not on a purchase** under **Payment Methods → Active Subscriptions** and use **Cancel subscription** there. Cancellation does not automatically refund past payments; shared family memberships have separate safeguards.
+
+**Review recurring conflicts across different sessions**
+
+Before staff save a weekly or monthly booking, CoachIQ checks the athlete's bookings across other offerings and names the conflicting session and time, including conflicts on later dates. **Go back** creates nothing; **Book anyway** is an explicit choice to allow the overlap. Booking several athletes into the same series checks the group before saving.
+
+**Organize media through your connected AI assistant**
+
+With supported write access, your connected assistant can import a supported file from a public link, rename and tag media, and attach an existing file to a program or lesson. It can also search by type, uploader, tag, or date and check program and lesson usage. Usage results do not include every place a file could appear, so an empty result does not prove it is unused. The assistant cannot delete Media Hub files, change their visibility, or perform Video Analysis. [Connect your assistant →](/getting-started/use-coachiq-with-ai)
+
+<Accordion title="Fixes in this release">
+
+- **Shared family memberships:** One subscription covering several athletes now renews credits for each eligible linked membership, up to the paid quantity, without duplicating credits when a payment is processed again. Each membership shows its own share of the price. Canceling one cannot silently end the other athletes' memberships; families are directed to the coach. Past missed credits are not added automatically.
+- **Scheduled cancellations:** Memberships ending at period end remain **Active** or **Trialing** with their cancellation date. Details show **Cancels on** and **Cancel requested** without a misleading next renewal. They stay in their current status filter until they end.
+- **Membership prices:** Orders show the full **Initial payment**, including any discounted setup fee, separately from the renewal price. A first-payment-only coupon no longer makes the regular renewal look discounted. Scheduled first charges show **Billing starts** instead of being presented as a free trial in member-facing billing screens.
+- **Product payment options:** Later charges and free trials are available for subscriptions, not one-time products. Older unsupported one-time settings are blocked before payment and must be corrected in the editor. Repeated Archive clicks no longer permanently remove a product; permanent deletion requires its own confirmation.
+- **Saved cards and checkout:** Eligible saved cards appear in paid-session checkout. A card-loading error offers **Retry** instead of suggesting the card is missing. Paid bookings for a child identify the parent as payer and the child as athlete in the relevant billing and transaction views.
+- **Calendar and bookings:** Capped sessions show their actual participant limit and **Full** status; unlimited previews no longer imply a one-person limit. A slot taken by another client refreshes after checkout refuses it. Upcoming and Canceled booking lists update after changes, and adjoining availability windows no longer introduce extra start times.
+- **Online sessions:** Public booking pages show the online provider without exposing the meeting link. A completed booking shows the join action on its confirmation and in booked-session details, including supported guest confirmations.
+- **Website checkout:** Code-only products display **Code**, and access-code bookings offer a labeled field with clear empty or invalid-code feedback. Sign-up explains when a phone number belongs to an account using a different email, while preserving the entered details and selected session.
+- **Copilot:** Approved product changes preserve unrelated settings; credit packages contain the requested credits. Availability proposals show the requested hours and timezone, follow-up requests find saved schedules, and canceled proposals stop offering approval. Rate-limit messages give a retry countdown.
+- **Automations:** History shows full trigger and action names, a written result, and a readable date and time. Expand a run for individual steps and technical details. Templates opened from a team retain the team trigger and return to that team's Automations tab.
+- **Forms and programs:** Guest form activity correctly distinguishes completed purchases and bookings from submissions with neither. Program sharing saves athlete assignments or displays **Program not saved** on failure; sharing itself does not send an email or text.
+- **Messages and mobile:** Staff reservation emails name the booked session. Group-send confirmation shows the organization's current audience limit. The mobile Announcements channel shows scrollable history and returns to the list after opening a post; unsupported document previews explain the limitation.
+- **Website lead funnels:** The DFY intake funnel requires a connected form, saves a lead, and confirms that staff will follow up rather than promising a booking. Success and failure results survive a reload, contact details stay out of the URL, and age selection requires a valid choice.
+- **Navigation and layout:** Long dashboard labels remain readable, compact form and automation controls stay usable, and signing in through another group's link no longer adds an unintended membership.
+
+</Accordion>
+
+</Update>
+
 <Update label="September 27, 2026">
 
 ## Features & improvements
