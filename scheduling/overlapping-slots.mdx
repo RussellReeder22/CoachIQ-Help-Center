@@ -6,9 +6,9 @@ icon: "layer-group"
 keywords: ["overlapping slots", "overlapping sessions", "start cadence", "new sessions can start", "slot cadence", "start every 30 minutes", "rolling start times", "duration", "advanced settings"]
 ---
 
-By default, CoachIQ offers start times back-to-back based on your session duration: a 60-minute session offers 9:00, 10:00, 11:00. The **Advanced settings** section of a scheduler lets you separate three things that used to be tied together:
+By default, CoachIQ offers start times back-to-back based on your session duration: a 60-minute session offers 9:00, 10:00, 11:00. The **Advanced settings** section of a scheduler lets you configure three separate controls:
 
-- **Duration** — how long one booked session runs
+- **Session lengths** — how long a booked session can run
 - **New sessions can start** — how often a start time is offered
 - **Allow overlapping sessions** — whether separate start times on this scheduler may overlap
 
@@ -20,7 +20,7 @@ By default, CoachIQ offers start times back-to-back based on your session durati
 
 | Control | What it does | Example |
 |---|---|---|
-| **Duration** | Length of one session. Presets **15 / 30 / 45 / 60 mins** or **Custom** (exact hours and minutes). | 60 min |
+| **Session lengths** | Offer one or more lengths. Presets **15 / 30 / 45 / 60 mins** or **Custom** (exact hours and minutes). | 60 min |
 | **New sessions can start** | The start-time grid: how often a family can grab a start time. Usually the same as duration. Presets 15 / 30 / 45 / 60 or Custom. | Every 30 min offers 9:00–10:00 *or* 9:30–10:30 |
 | **Allow overlapping sessions** | Checkbox. When **off**, a booking removes every later start time that would collide with it. When **on**, two bookings may occupy the same window. | Off: once 9:00 is booked, 9:30 disappears. On: 9:00 and 9:30 can both be booked. |
 
@@ -63,12 +63,12 @@ The three are independent. Setting a start cadence shorter than the duration doe
     Click **Advanced settings** in the left rail of the scheduler builder.
 
     <Frame>
-      ![Advanced settings with Duration, New sessions can start, and Allow overlapping sessions](/images/scheduling/overlapping-session-cadence.png)
+      ![Advanced settings with Session lengths, New sessions can start, and Allow overlapping sessions](/images/scheduling-review-oct01/lengths-start-times-overlap.jpg)
     </Frame>
   </Step>
 
-  <Step title="Set Duration">
-    Pick **15**, **30**, **45**, or **60 mins**, or **Custom** for an exact length.
+  <Step title="Choose Session lengths">
+    Select the lengths you offer: **15**, **30**, **45**, or **60 mins**, or **Custom**. Families choose a length before choosing a time.
   </Step>
 
   <Step title="Set New sessions can start">
