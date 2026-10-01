@@ -12,13 +12,13 @@ keywords: ["create automation", "first automation", "welcome email", "new member
 
 By the end of this guide, qualifying subscription purchases will trigger a welcome email with instructions to [book their first session](/scheduling/overview). You'll also [tag](/people/tags-filters) them as an "Active Member" so you can easily find them later.
 
-No templates, no shortcuts—we're building from scratch so you understand how it works.
+Build this from scratch to learn how the trigger, condition, and actions fit together.
 
 ## What You're Building
 
 | Trigger       | Condition         | Actions                                 |
 | ------------- | ----------------- | --------------------------------------- |
-| Purchase Made | Is a subscription | 1. Send welcome email with booking link |
+| Purchase Made | Is subscription | 1. Send welcome email with booking link |
 |               |                   | 2. Add "Active Member" tag              |
 
 ---
@@ -50,7 +50,7 @@ No templates, no shortcuts—we're building from scratch so you understand how i
   <Step title="Add a Condition">
     We only want this automation to run for new members, not every purchase. Let's add a filter.
 
-    In **Conditions**, click **Add Condition** to create your first rule group, then choose **Is a subscription** in the **Field** dropdown.
+    In **Conditions**, click **Add Condition** to create your first rule group, then choose **Is subscription** in the **Field** dropdown.
 
     Now this automation will only fire when someone purchases a subscription product—not one-time buys like camps or drop-in sessions.
 
@@ -132,9 +132,23 @@ Message, SMS, booking, credit, and purchase actions have real effects the moment
 
 1. **Build with Enabled off.** Check **Settings**, switch it off, and save while you prepare the automation.
 2. **Use a test account.** Make sure the email will land somewhere you can read it—your own test profile, not a real member.
-3. **Click Test Run** in the header and read the filled-in email. Test Run really sends, so it will email whoever it targets.
+3. **Click Test Run** in the header. For **Purchase Made**, select a test user whose most recent purchase matches the subscription condition. Review **What Will Happen**, then choose **Run Test Now**. A profile with no purchase history cannot test this trigger. Test Run really sends to the action's configured target.
 4. **Check Execution Logs** to see which conditions passed and what each action returned.
 5. **Then switch Enabled on** in **Settings** and click **Update** to save once you have verified the results.
+
+### A real email-action test
+
+The screenshots below show a separate **New User** welcome-email example in a test workspace. It uses a **Specific user** target owned by the tester, with no subscription condition, and remains disabled. This checks the email action; it does not verify the purchase trigger, subscription condition, or tag action in the membership workflow above.
+
+<Frame caption="A configured email action with a controlled recipient, subject, and welcome message.">
+  ![Configured CoachIQ Send an Email action in the current automation builder](/images/walkthroughs-oct01/automation-configured-email.jpg)
+</Frame>
+
+<Frame caption="The real test processed one user and reported send_email success. Check the recipient's mailbox separately to confirm arrival and formatting.">
+  ![Automation Test Results showing one user processed, one action executed, and send_email Success](/images/walkthroughs-oct01/automation-test-success.jpg)
+</Frame>
+
+For your production welcome flow, keep **User from trigger** as the intended recipient unless you deliberately need another audience. A fixed test recipient should not remain in a workflow that is meant to welcome every new member. Recheck all targets and save before enabling automatic runs.
 
 ---
 

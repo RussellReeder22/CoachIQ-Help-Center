@@ -94,6 +94,8 @@ Before diving into subscription setup, understand how subscriptions differ from 
 
 ### Why subscriptions transform your business
 
+The revenue examples below are illustrative, not CoachIQ benchmarks or promised results. Retention and time saved depend on your services, pricing, and follow-up.
+
 <CardGroup cols={2}>
   <Card title="Predictable Revenue (MRR)" icon="chart-line">
     **One-time packages**: Sporadic \$450 payments
@@ -118,8 +120,8 @@ Before diving into subscription setup, understand how subscriptions differ from 
     **Subscription athlete**:
 
     - Subscribes at \$400/month
-    - Stays 8 months average
-    - LTV: \$3,200 (7x higher!)
+    - In this example, stays 8 months
+    - Revenue over those months: \$3,200
 
     **Why**: Recurring billing = passive renewal (friction-free)
   </Card>
@@ -128,12 +130,7 @@ Before diving into subscription setup, understand how subscriptions differ from 
 
     **Subscription psychology**: "I pay monthly, might as well use it"
 
-    **Data shows**:
-
-    - Package athletes: 50-60% repurchase rate
-    - Subscription athletes: 80-90% renewal rate (when managed well)
-
-    **Reason**: Subscription = ongoing commitment mindset
+    Recurring billing removes the need to buy a new package each cycle. Track your own renewal and cancellation rates to see whether the membership is meeting athletes' needs.
   </Card>
   <Card title="Reduced Admin Burden" icon="clock">
     **Package model**:
@@ -150,7 +147,7 @@ Before diving into subscription setup, understand how subscriptions differ from 
     - Athletes self-renew (passive)
     - Consistent cash flow
 
-    **Time saved**: 10-15 hours/month not chasing renewals
+    **Potential time savings**: Fewer manual renewal reminders. Measure the change against your own workflow.
   </Card>
 </CardGroup>
 
@@ -588,13 +585,8 @@ What happens at each stage of a subscription's life.
 
 **Health metrics to track**:
 
-- **Usage rate**: What % of credits/bookings are athletes using?
-  - Healthy: 70-90% usage
-  - Concerning: 50% usage (risk of cancellation)
-  - Over: \>95% usage (opportunity to upsell)
-- **Payment success rate**: What % of renewals process successfully?
-  - Healthy: \>90% success rate
-  - Concerning: 85% success rate (many failed payments)
+- **Usage rate**: How much of the membership do athletes use? Compare with their goals and your own historical patterns before deciding who needs outreach.
+- **Payment success rate**: How many renewals complete successfully? Review failed payments and trends rather than treating an example percentage as a universal benchmark.
 
 ---
 
@@ -715,39 +707,15 @@ For a membership whose credits expire each cycle, turn on **Sessions must occur 
 
 Leaving the setting off keeps the book-before-expiration rule. If a cancellation refunds a credit, it retains the original expiration; it does not gain a new cycle.
 
-### Voluntary cancellation (Athlete initiated)
+### Voluntary cancellation
 
-**What triggers it**: Athlete cancels subscription themselves
+Use the membership's cancellation controls or help the family with their request. In the admin, open the athlete's **Products** tab and choose **Cancel membership**. Review whether it ends immediately or at the end of the billing period before confirming.
 
-**How athletes cancel**:
+A scheduled cancellation can continue to show active access until the displayed end date. Check each credit's expiration and the product's usage rules; do not assume canceling immediately removes every existing credit. Refunds are a separate decision under your published policy.
 
-1. Athlete Portal → Settings → Billing → Subscriptions → Cancel
-2. Or: Contact you requesting cancellation
-3. Or: Dispute charge with credit card company (worst case)
+For example, a membership paid through February 15 and scheduled to end then can remain available after a February 3 cancellation request. Confirm the actual date and credit rules on the membership instead of calculating them from the request date.
 
-**Effect**:
-
-- Subscription status: "Active (cancels [date])" in Stripe
-- Credits: Remain usable until period ends
-- Access: Maintained through paid period
-- Refund: None (athlete received full month value)
-
-**Example**:
-
-- Athlete subscribed Jan 15 (monthly)
-- Cancels Feb 3
-- Status: Active until Feb 14 (original renewal date)
-- Feb 15: Subscription becomes "Canceled," credits disappear
-
-**Athlete experience**: "Your cancellation will take effect on [date]. You have access until then."
-
-**Pros**: Fair to athlete (gets full paid period), reduces refund disputes, clean accounting
-
-**Cons**: Athlete has several days/weeks to change mind and reactivate (good or bad depending on perspective)
-
-<Check>
-  **Best practice**: End-of-period cancellation is industry standard and most fair to athletes.
-</Check>
+Follow [Canceling and removing memberships](/payments/manage-subscriptions) for the full workflow. If one subscription covers siblings, use [Shared Family Memberships](/payments/shared-family-memberships) to remove one athlete without ending the others' memberships.
 
 **Coach response to cancellation**:
 

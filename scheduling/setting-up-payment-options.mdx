@@ -555,9 +555,9 @@ Complete end-to-end testing before going live. The first four steps are the core
     4. **Verify** the system prevents cancellation OR does not refund the credit (per your policy)
   </Step>
   <Step title="Test subscription renewal (if using subscriptions)">
-    **Active subscription**: use all of this month's credits, then trigger renewal (wait for the date or trigger it in the Stripe dashboard). **Verify** fresh credits arrive, unused credits expire or carry over per your settings, and the "Credit Renewals" date advances.
+    **Active subscription**: check a completed renewal on a test membership. **Verify** fresh credits arrive, unused credits expire or carry over per your settings, and the next renewal date advances. Do not trigger a real customer's charge just to test the setup.
 
-    **Cancelled subscription**: cancel the test subscription in Stripe. **Verify** the athlete can no longer book with subscription credits and "Redeemable Sessions" no longer shows them as active.
+    **Canceled subscription**: open the test athlete's **Products** tab and use **Cancel membership**. Check whether cancellation is immediate or scheduled for the end of the billing period. A scheduled cancellation can remain active until its end date. Verify the displayed end date and the credits' configured expiration instead of assuming every credit disappears immediately. See [Canceling memberships](/payments/manage-subscriptions). For a shared family subscription, follow [Remove one athlete](/payments/shared-family-memberships#remove-one-athlete).
   </Step>
   <Step title="Test unlimited credits display (if configured)">
     1. In Billing settings, **verify** "Credit Balance: ∞" and "Redeemable Sessions: [Schedulers] (0/∞)"
@@ -650,8 +650,8 @@ Complete end-to-end testing before going live. The first four steps are the core
     2. Verify product is subscription type (not one-time)
     3. Check Product Builder → Credits → "Add credits once purchased" is ON
     4. Test: Manually trigger renewal in Stripe → Verify credits issued
-    5. Check webhook connectivity: Payments → Settings → Webhooks
-    6. If webhooks failing: Contact CoachIQ support
+    5. Compare the completed renewal in Stripe with the athlete's CoachIQ product and credit history.
+    6. If they disagree, contact CoachIQ support with the subscription and payment details. Support can investigate delivery or synchronization issues before you grant replacement credits.
   </Accordion>
   <Accordion title="Unlimited credits (∞) not displaying correctly">
     **Possible causes:**
