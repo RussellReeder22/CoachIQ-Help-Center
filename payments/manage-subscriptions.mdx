@@ -1,13 +1,13 @@
 ---
 title: "Managing Subscriptions"
-description: "Cancel, pause, or modify active subscriptions and handle subscription changes"
+description: "Cancel a membership in CoachIQ, understand its end date, stop unmatched subscriptions, and distinguish cancellation from removal and refunds."
 sidebarTitle: "Manage Subscriptions"
 icon: "sliders"
 keywords: ["cancel subscription", "manage subscription", "pause subscription", "subscription status", "end membership", "subscription changes", "update card", "ACH subscription", "bank account membership"]
 ---
 
 <Info>
-  **Where to find this**: Payments → Subscriptions → Click subscription → Actions
+  **Where to find this**: **People → Clients → open the client → Products**. Use **Payments → Subscriptions** to review billing status across clients.
 </Info>
 
 ## Canceling subscriptions
@@ -23,7 +23,7 @@ Two ways to cancel a subscription:
     **What happens:**
 
     1. Client retains access until period ends
-    2. Credits remain valid until period ends
+    2. Credit access follows the purchase and its configured expiration rules
     3. No refund issued
     4. No future charges
     5. Subscription status changes to "Canceled" on end date
@@ -38,7 +38,7 @@ Two ways to cancel a subscription:
     **What happens:**
 
     1. Client loses access immediately
-    2. Credits expire immediately
+    2. Check the purchase's credit expiration rules before promising any remaining balance
     3. Partial refund may be issued (optional)
     4. No future charges
     5. Subscription status changes to "Canceled" now
@@ -54,30 +54,48 @@ Two ways to cancel a subscription:
 ## How to cancel a subscription
 
 <Steps>
-  <Step title="Find the subscription">
-    Go to **Payments → Subscriptions** and click the **Open** under the source column to redirect to Stripe.
+  <Step title="Open the client's purchase">
+    Open **People → Clients**, select the client, and choose **Products**. Find the membership you intend to end.
   </Step>
-  <Step title="Click Cancel">
-    Click **Action** button and click **Cancel Subscription** button.
-
-    <Frame>
-      ![Stripe subscription detail page with Cancel Subscription action](/images/cancel-sub.png)
-    </Frame>
+  <Step title="Choose Cancel membership">
+    Use **Cancel membership** on that purchase. Staff can use this control even when the product does not allow members to cancel themselves.
   </Step>
-  <Step title="Choose cancellation timing">
-    Select:
-
-    - **Cancel at period end** (access continues until paid period expires)
-    - **Cancel immediately** (access ends now)
+  <Step title="Choose when it ends">
+    Select **At end of billing period** to keep access through the paid period, or **Immediately** to end billing and access now. Neither option automatically refunds a payment.
   </Step>
-  <Step title="Confirm cancellation">
-    Review cancellation details and click **Confirm**.
-
-    <Check>
-      **Subscription canceled.** Status updates and client notification sent (if configured).
-    </Check>
+  <Step title="Confirm and check the result">
+    Choose **Cancel membership** to proceed, or **Keep membership** to leave it unchanged. Reopen the purchase and check its status and end date. Use the client's **Subscriptions** tab or **Payments → Subscriptions** to verify the billing record.
   </Step>
 </Steps>
+
+<Frame caption="Test-account example showing the two cancellation timings.">
+  ![Cancel membership dialog with end-of-period and immediate options](/images/release-guides-sep30/cancel-membership.png)
+</Frame>
+
+<Note>
+  If the subscription pays for more than one athlete, canceling it would affect the other memberships. Follow [Shared family memberships](/payments/shared-family-memberships#remove-one-athlete) to remove one athlete instead.
+</Note>
+
+## A subscription is not on a purchase
+
+If a client reports charges for a membership missing from Products, check **Client profile → Payment Methods → Active Subscriptions**.
+
+1. Find the subscription marked **Not on a purchase** and verify its name and amount.
+2. Choose **Cancel subscription** on that record.
+3. Select **At end of billing period** or **Immediately**, then confirm.
+4. Check the end date or Canceled status in **Payments → Subscriptions**. The missing purchase does not need to be recreated to stop billing.
+
+<Frame caption="Test records illustrate subscriptions that need billing management even though they are not linked to a purchase.">
+  ![Payment Methods showing Not on a purchase and Cancel subscription](/images/release-guides-sep30/unmatched-subscription.png)
+</Frame>
+
+A membership still linked to a purchase is managed from **Products → Cancel membership**. If checkout has only just completed, the app may temporarily block cancellation while it finishes processing; follow the displayed explanation before trying again.
+
+## Canceling versus removing a purchase
+
+**Cancel membership** controls future billing and when membership access ends. **Remove** or **Archive** changes the purchase on the client's profile. A membership that is still billing cannot be removed first.
+
+Cancel and verify the outcome before removing or archiving. To preserve access through the paid period, leave the purchase in place until its end date. Removing a purchase is not a payment refund. One-time purchases do not require a subscription-cancellation step.
 
 ## What happens after cancellation
 
@@ -88,8 +106,7 @@ Two ways to cancel a subscription:
 
 **Credits:**
 
-- Cancel at period end: Valid until period expires
-- Cancel immediately: Expire immediately
+Credit expiration depends on the product's configuration. Check [Product Builder → Credits](/payments/product-builder#section-3-credits) and the client's balance; do not assume cancellation creates a credit or payment refund.
 
 **Payments:**
 
@@ -103,7 +120,7 @@ Two ways to cancel a subscription:
 - New subscription ID and billing schedule
 
 <Note>
-  Canceled subscriptions remain visible in your Subscriptions list filtered by "Canceled" status.
+  A membership scheduled to end stays **Active** or **Trialing**, with **Cancels [date]**, until it ends. It remains in that filter and count; it appears under **Canceled** after ending. Open its details for **Cancels on** (the end date) and **Cancel requested** (when cancellation was requested).
 </Note>
 
 ## Refunding subscription payments
@@ -170,7 +187,7 @@ Instruct client:
 3. Navigate to **Billing**
 4. Add or update card
 
-No action needed from you. When a client adds a new card it becomes their default and is used on the next renewal; the old card is no longer charged.
+Check the **default** label separately from whether the new card was added. Confirm the intended payment method is selected for the membership before relying on it for the next renewal.
 
 **You check what's on file**
 
@@ -205,8 +222,8 @@ When subscription payment fails, status changes to Past Due.
     **Steps:**
 
     1. Issue full refund for current period
-    2. Choose "Cancel subscription" when refunding
-    3. Select "Cancel immediately"
+    2. Open the membership in **Client profile → Products**
+    3. Choose **Cancel membership → Immediately**, confirm, and check the result
 
     Client gets money back and loses access now.
   </Accordion>

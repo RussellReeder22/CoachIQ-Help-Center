@@ -64,11 +64,20 @@ Actions run in order. Put the message you most want delivered first.
 
 ### Execution Logs
 
-A record of every time the automation ran: when it fired, for whom, which conditions passed, and what each action returned. Click **Check for events** to refresh. This is the first place to look when someone says they did not get a message.
+Start here when a message or action seems missing. Click **Check for events** to refresh, then find the run by its full event and action names and the local date and time. Each row summarizes the outcome in words; expand it to check individual actions.
+
+- **Succeeded** means the actions completed, but a successful run alone does not prove someone read a message.
+- **Partial success** means some actions completed and others did not. Check each result before running the automation again, so you do not repeat an action that already succeeded.
+- A failed condition means the event did not qualify for the actions that follow.
+- Expand **Show technical details** when you need more detail for troubleshooting or support.
+
+<Frame caption="Test-account example of automation execution history.">
+  ![Automation history showing full event and action names, outcome, and time](/images/release-guides-sep30/automation-history.png)
+</Frame>
 
 ### Settings
 
-The **Enabled** toggle. Off means the automation is saved but never runs. There is no separate delete button; the section says "Disable above to delete this automation", so switch Enabled off first and the delete option appears. Deleting is permanent, so if you may want it back, leave it disabled or archive it from the Automations list instead (see below).
+The **Enabled** toggle. Off stops automatic runs; it does not make a manual **Test Run** a preview. There is no separate delete button; the section says "Disable above to delete this automation", so switch Enabled off first and the delete option appears. Deleting is permanent, so if you may want it back, leave it disabled or archive it from the Automations list instead (see below).
 
 ## Archiving an automation
 
@@ -84,7 +93,9 @@ Archiving is the middle ground between disabling and deleting. Use it for automa
 
 ### Test Run
 
-**Test Run** in the header runs the automation once against a sample, so you can read the filled-in message before real athletes do. Use it after every edit to a message or condition.
+**Test Run** performs the configured actions. Messages really send, and other actions can change records. Before testing, save your changes and check the target, conditions, and every action. Use a test profile and an email address or phone number you control.
+
+Keep **Enabled** off while preparing the automation, but remember that it does not prevent a manual test. After testing, review [Execution Logs](#execution-logs), confirm the result on the test profile, then enable and save the automation when you are ready for automatic runs.
 
 ## A note on the older screenshots
 

@@ -32,15 +32,39 @@ On **Schedule** → **Calendar**, click a session. The click view shows **Durati
     Helper: the end time is named, and the change does not change the session date or start time.
   </Step>
   <Step title="Save Duration or Cancel">
-    Click **Save Duration**, or **Cancel**.
+    **Notify participants** starts off. Turn it on only if you want to notify booked athletes, choose the available channels, and review the message. Click **Save Duration** to save, or **Cancel** to leave it unchanged.
 
     <Frame>
-      ![Edit Duration with Duration in minutes, Cancel, and Save Duration](/images/scheduling-edit-duration.png)
+      ![Edit Duration with Notify participants switched off](/images/release-guides-sep30/edit-duration.png)
     </Frame>
   </Step>
 </Steps>
 
 ---
+
+## Change a session location
+
+From the calendar session details, choose **Edit** beside **Location**, then select the new location. If the location changes and athletes are booked, review **Notify participants** before choosing **Save Location**.
+
+The dialog shows the booked-athlete count and a suggested message. Choose **Announcement**, **SMS**, **In-app message**, or **Email**, or turn notification off. The change and its selected notifications happen only after a successful save. Choosing the same location or editing a session with no bookings saves without that notification step.
+
+<Frame caption="Test session showing notification choices before saving a new location.">
+  ![Change Location with recipient count, channel choices, message, and Save Location](/images/release-guides-sep30/change-location.png)
+</Frame>
+
+## Which edits send messages
+
+| Change in the admin calendar | Notification choice |
+| --- | --- |
+| Location of a booked session | Review Notify participants and the chosen channels before saving |
+| Duration | Notify participants starts off |
+| Move Session | Notify participants is available; In-app is preselected, with Email also available |
+| One athlete's booking | **Email [athlete] about this change** starts unchecked |
+| Resources | No athlete notification from the resource change |
+
+<Note>
+  Your own **New Booking** automations can still run when a booking is rescheduled. Turning off this dialog's notifications does not disable those automations. These steps describe the admin web calendar; do not assume the mobile app or a connected tool shows the same notification dialog.
+</Note>
 
 ## Move an entire session
 
@@ -54,7 +78,7 @@ Where to find this: **Schedule → Calendar → click the session**
 - The assigned coach or coaches
 - The attached resources
 
-Nothing about the scheduler changes. Other dates of the same session stay where they are, and the moved occurrence keeps its duration, location, price, and payment status.
+Nothing about the scheduler changes. Other dates of the same session stay where they are, and the moved occurrence keeps its location, price, and payment status. Review the proposed start and end times before confirming.
 
 ### Move the session
 
@@ -68,26 +92,26 @@ Nothing about the scheduler changes. Other dates of the same session stay where 
   </Step>
 
   <Step title="Set New Date & Time">
-    Pick the new date and start time under **New Date & Time**. The session keeps its current duration, so the end time follows.
+    Pick the new date and review the start and end times under **New Date & Time**. Confirm that the resulting duration is what you intend.
 
     Moving a session does not check the new time against your availability template, so confirm the coach and any resources are actually free before you move it.
   </Step>
 
   <Step title="Choose how to notify participants">
-    **Notify participants** is on by default, with **In-app** pre-checked. The message is prefilled with the original date and time and the new one; edit it to add a personal note (why it moved, what to bring).
+    **Notify participants** is on by default, with **In-app** pre-checked. Review the channels, including the optional **Email** summary for athletes and their families, or turn notification off. The message is prefilled with the original and new date/time; edit it to add a personal note.
   </Step>
 
   <Step title="Confirm">
     Click **Move Session**. The occurrence and all its bookings appear at the new time immediately; the old time is freed.
 
     <Check>
-    Every participant receives the move announcement with the original date and time and the new one.
+    After a successful save, notifications follow the channels you selected. Turning Notify participants off skips this step’s notifications.
     </Check>
   </Step>
 </Steps>
 
 <Frame>
-  ![Move Session on the calendar session detail](/images/scheduling-move-session-modal.png)
+  ![Move Session with Notify participants, In-app message, and Email options](/images/release-guides-sep30/move-session.png)
 </Frame>
 
 ### Moving one athlete, not the whole session
@@ -144,7 +168,7 @@ The announcement follows this pattern:
 
 When you move a booking:
 
-- **In-app announcement** — Names the original date/time and the new date/time
+- **Selected notifications** — When enabled, communicate the original and new details through the channels you chose
 - **Portal update** — The updated session appears in their Athlete Portal immediately
 - **Calendar sync** — Any linked calendar invites are automatically updated
 

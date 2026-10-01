@@ -89,6 +89,12 @@ Give a client a product they didn't buy through checkout, and record how (or whe
   - Cash, check, or bank-transfer payments taken outside CoachIQ
 </Note>
 
+## Cancel a membership
+
+Use **Cancel membership** on the client's purchase to choose **At end of billing period** or **Immediately**. Check the resulting end date or status before removing the purchase. A membership still billing cannot be removed first, and cancellation does not refund past payments. [Full cancellation steps](/payments/manage-subscriptions#how-to-cancel-a-subscription).
+
+When one subscription covers several athletes, use the [shared family membership guide](/payments/shared-family-memberships) for linking, renewal credits, and removing one child without ending the others' memberships.
+
 ## Archiving a client's product
 
 When a membership has ended or the wrong product was added, **Archive** the product from the client's Products tab. Archiving:
@@ -141,13 +147,14 @@ A confirmation spells out the credit and booking-access change before anything h
 
 ---
 
-## What you CAN'T do here
+## Where to manage each part
 
-The Products tab is primarily **view-only**. To take action:
+Use the purchase for access and membership actions, and the matching payment record for money already collected:
 
 | Action Needed            | Where to Do It                       |
 | ------------------------ | ------------------------------------ |
-| **Cancel subscription**  | Stripe                               |
+| **Cancel membership** | This tab → **Cancel membership** |
+| **Stop a subscription with no purchase** | Payment Methods → Active Subscriptions → **Not on a purchase** → **Cancel subscription** |
 | **Refund purchase**      | Stripe                               |
 | **Change product price** | Payments → Products → Edit product   |
 | **See payment history**  | Transactions tab (financial details) |
@@ -160,6 +167,10 @@ The Products tab is primarily **view-only**. To take action:
 </Note>
 
 ---
+
+<Note>
+  An empty Products tab does not prove billing has stopped. Check **Payment Methods → Active Subscriptions** for records marked **Not on a purchase**. [Manage unmatched subscriptions](/payments/manage-subscriptions#a-subscription-is-not-on-a-purchase).
+</Note>
 
 ## Empty products tab?
 
