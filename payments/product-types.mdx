@@ -1,346 +1,99 @@
 ---
 title: "Product Types Explained"
-description: "Understand the differences between One-Time, Subscription, and Access Code products to choose the right type for your offerings"
+description: "Choose between One-Time, Subscription, and Access Code products, with examples for each"
 sidebarTitle: "Product Types"
 icon: "layer-group"
-keywords: ["product types", "one-time product", "subscription product", "access code product", "which product type", "recurring vs one-time"]
+keywords: ["product types", "one-time product", "subscription product", "access code product", "which product type", "recurring vs one-time", "free product"]
 ---
 
-<Info>
-  **Where to find this**: Payments → Products → + Create Product (select type)
-</Info>
-
-## Three product types
-
-CoachIQ offers three product types, each designed for different business models:
-
-<CardGroup cols={3}>
-  <Card title="One-Time" icon="credit-card">
-    Single purchase, immediate access
-  </Card>
-  <Card title="Subscription" icon="rotate">
-    Recurring billing, automatic renewal
-  </Card>
-  <Card title="Access Code" icon="ticket">
-    Code redemption, special access
-  </Card>
-</CardGroup>
-
-You select the product type when creating a new product. The type determines available settings and how the product behaves.
-
-<Frame>
-  ![Product Builder](/images/product-builder.png)
-</Frame>
-
-## One-Time Products
-
-<Tabs>
-  <Tab title="What it is">
-    **Single purchase with one-time payment**
-
-    Client pays once and receives immediate access to what they purchased.
-
-    **No recurring billing.** No automatic renewals. One transaction, one delivery.
-  </Tab>
-  <Tab title="When to use">
-    **Best for individual purchases:**
-
-    - Single training sessions
-    - Skills assessments or evaluations
-    - One-time workshops or clinics
-    - Summer camps
-    - Multi-session packages (pay once, use over time)
-    - Program access with lifetime purchase
-    - Merchandise or equipment
-
-    Use One-Time products when clients buy something specific with no ongoing billing.
-  </Tab>
-  <Tab title="Key settings">
-    **Required:**
-
-    - Product name
-    - Price
-
-    **Optional but common:**
-
-    - Credits: Issue credits for session bookings
-    - Credit expiration: When credits expire
-    - Processing fee: Who pays Stripe fees
-    - Confirmation page: Where client goes after purchase
-
-    **Customer experience:**
-
-    1. Client selects product
-    2. Pays once
-    3. Receives credits or access immediately
-    4. No future charges
-
-    <Check>
-      Simplest product type. Great starting point for most coaches.
-    </Check>
-  </Tab>
-  <Tab title="Examples">
-    **Single session:**
-
-    - Name: "60-Minute Training Session"
-    - Price: \$75
-    - Credits: None
-    - Use: Client books one session
-
-    **Session package:**
-
-    - Name: "10-Session Package"
-    - Price: \$650
-    - Credits: 10 credits
-    - Expiration: 90 days
-    - Use: Client books 10 sessions over 3 months
-
-    **Workshop:**
-
-    - Name: "Weekend Skills Clinic"
-    - Price: \$150
-    - Credits: None
-    - Use: Client registers for specific event
-  </Tab>
-</Tabs>
-
-## Subscription Products
-
-<Tabs>
-  <Tab title="What it is">
-    **Recurring billing on a schedule**
-
-    Client's card charges automatically each billing period (monthly, quarterly, annually) until they cancel.
-
-    **Automatic renewal.** No manual re-purchasing. Charges continue until canceled.
-  </Tab>
-  <Tab title="When to use">
-    **Best for recurring revenue:**
-
-    - Monthly unlimited training
-    - Weekly session packages (e.g., 4 credits per month)
-    - Facility memberships
-    - Program access with monthly fee
-    - Ongoing coaching packages
-    - VIP or premium tiers
-
-    Use Subscription products when you want predictable recurring revenue and clients want ongoing access.
-
-    <Tip>
-      Subscriptions reduce administrative work. No chasing payments each month—billing happens automatically.
-    </Tip>
-  </Tab>
-  <Tab title="Key settings">
-    **Required:**
-
-    - Product name
-    - Price
-    - Payment frequency (monthly, quarterly, semi-annually, annually)
-
-    **Optional but common:**
-
-    - Trial period: Free days before first charge
-    - Credits per period: Renew credits each billing cycle
-    - Credit expiration: Typically "when subscription ends"
-    - Processing fee: Who pays Stripe fees
-
-    **Customer experience:**
-
-    1. Client subscribes with card on file
-    2. First charge processes (or after trial period)
-    3. Credits issued (if configured)
-    4. Card charges automatically each period
-    5. New credits issued with each renewal
-    6. Client cancels when done
-
-    <Info>
-      Client cancellation depends on the membership settings. Staff can choose the supported cancellation timing; shared family memberships need special handling. See [Manage subscriptions](/payments/manage-subscriptions).
-    </Info>
-  </Tab>
-  <Tab title="Examples">
-    **Unlimited monthly:**
-
-    - Name: "Unlimited Monthly Membership"
-    - Price: \$200/month
-    - Frequency: Monthly
-    - Credits: 999 per month (effectively unlimited)
-    - Use: Client books as many sessions as they want
-
-    **4-session monthly package:**
-
-    - Name: "4 Sessions Per Month"
-    - Price: \$280/month
-    - Frequency: Monthly
-    - Credits: 4 per month
-    - Expiration: End of billing period
-    - Use: Client gets 4 credits every month, unused credits don't roll over
-
-    **Quarterly program access:**
-
-    - Name: "Quarterly Training Program"
-    - Price: \$450 every 3 months
-    - Frequency: Quarterly
-    - Credits: None (access-based, not session-based)
-    - Use: Client maintains access to program content as long as subscribed
-  </Tab>
-</Tabs>
-
-## Access Code Products
-
-<Tabs>
-  <Tab title="What it is">
-    **Code redemption for special access**
-
-    Client enters a specific code during checkout to receive a discount or free access.
-
-    **Code required.** A code-only offer can appear on your website, but clients need a valid access code to complete checkout.
-  </Tab>
-  <Tab title="When to use">
-    **Best for special access scenarios:**
-
-    - Corporate partnership codes (company pays for employees)
-    - Sponsor or donor free access
-    - Team discount codes
-    - Referral program offers
-    - Promotional campaigns
-    - Scholarship codes
-    - Beta tester access
-
-    Use Access Code products when specific groups need special pricing or free access that shouldn't be publicly available.
-
-    <Warning>
-      A code-only product is not the same as an ordinary free product. Website pricing cards and expanded product-list rows show **Code** instead of a zero price. Paid offers that optionally accept a code keep their price, and **Hide Price** remains respected.
-    </Warning>
-  </Tab>
-  <Tab title="Key settings">
-    **Required:**
-
-    - Product name
-    - Price (can be \$0 for free access)
-    - Access codes (at least one code)
-
-    **Optional but common:**
-
-    - Redemption limits: How many times each code can be used
-    - Credits: Issue credits upon redemption
-    - Processing fee: Who pays Stripe fees (if price \> \$0)
-
-    **Customer experience:**
-
-    1. Client receives code from you or partner
-    2. Client enters code during booking or checkout
-    3. Discount applies or product becomes free
-    4. Client completes purchase
-    5. Access or credits granted
-
-    <Info>
-      Track code usage in the Product Builder to see how many times each code has been redeemed.
-    </Info>
-  </Tab>
-  <Tab title="Examples">
-    **Corporate partnership (free):**
-
-    - Name: "IBM Employee Access"
-    - Price: \$0
-    - Code: IBM2025
-    - Redemption limit: 500 uses
-    - Use: IBM employees train for free
-
-    **Sponsor discount:**
-
-    - Name: "Sponsor Partnership - 50% Off"
-    - Price: \$37.50 (50% off regular \$75)
-    - Code: SPONSOR50
-    - Redemption limit: 100 uses
-    - Use: Sponsor's clients get half-price sessions
-
-    **Team code:**
-
-    - Name: "High School Team Package"
-    - Price: \$500 (normally \$750)
-    - Code: HSBASKETBALL
-    - Redemption limit: 15 uses (one per player)
-    - Use: Team gets bulk discount
-  </Tab>
-</Tabs>
-
-### Booking with a code on your website
-
-On the step-by-step website scheduler, choose the athlete, session, date, and time, then select **Reserve My Spot**. The checkout opens a labeled **Access code** field.
-
-- An empty field asks you to enter a code.
-- An invalid code shows feedback beside the field and does not create a booking or order.
-- After a valid code completes checkout, check the confirmation for the selected athlete, date, and time.
-
-Use the **Access code** field for a code-gated offer. Paid checkout can have a separate promo-code field for [coupons](/payments/coupon-overview).
-
-## Product type comparison
-
-| Feature               | One-Time                   | Subscription                  | Access Code                    |
-| --------------------- | -------------------------- | ----------------------------- | ------------------------------ |
-| **Payment**           | Single charge              | Recurring billing             | Single charge                  |
-| **Billing frequency** | Once                       | Monthly/Quarterly/Annual      | Once                           |
-| **Price**             | Any amount                 | Any amount                    | Any amount (including \$0)     |
-| **Credits**           | Optional                   | Optional (renews each period) | Optional                       |
-| **Code required**     | No                         | No                            | Yes                            |
-| **Trial period**      | No                         | Yes                           | No                             |
-| **Automatic renewal** | Never                      | Until canceled                | Never                          |
-| **Best for**          | Sessions, packages, events | Memberships, ongoing access   | Partners, promos, scholarships |
-
-## Choosing the right type
-
-<Steps>
-  <Step title="Ask: How often do they pay?">
-    **Once** → One-Time or Access Code
-
-    **Recurring** → Subscription
-  </Step>
-  <Step title="Ask: Is this publicly available?">
-    **Yes, anyone can buy** → One-Time or Subscription
-
-    **No, special access only** → Access Code
-  </Step>
-  <Step title="Ask: What are they buying?">
-    **Specific session(s)** → One-Time
-
-    **Ongoing access or credits** → Subscription
-
-    **Discounted or free access** → Access Code
-  </Step>
-</Steps>
-
-## Can you change product type later?
-
-**No.** Product type is permanent once created.
-
-If you need to change types:
-
-1. Create a new product with correct type
-2. Archive the old product
-3. Update schedulers/programs to use new product
-
-<Warning>
-  Changing product type requires creating a new product. Existing purchases and active subscriptions continue with the old product.
-</Warning>
-
-## Multiple product types for the same offering
-
-You can create multiple products for the same service:
-
-**Example: Training sessions**
-
-- One-Time: "\$75 Single Session"
-- One-Time: "\$650 for 10 Sessions"
-- Subscription: "\$280/month for 4 Sessions"
-- Access Code: "Corporate Partner - Free"
-
-All products attach to the same scheduler. Client chooses which payment option works best for them.
-
-<Tip>
-  Offering multiple pricing options increases conversions. Some clients prefer packages, others prefer subscriptions.
-</Tip>
+You choose a product's type when you select **+ Create** on **Payments → Products**. The type decides how the family pays and which settings the [Product Builder](/payments/product-builder) shows.
+
+| | One-Time | Subscription | Access Code |
+| --- | --- | --- | --- |
+| **Payment** | Once, at checkout | Every billing period | Redeems a code, no card payment |
+| **Can be free** | Yes, price \$0.00 | Yes, price \$0.00 | Yes, with a code |
+| **Credits** | Optional, added once | Optional, added every period | Optional, added on redemption |
+| **Free trial or later first charge** | No | Yes | No |
+| **Use for** | Drop-ins, packages, camps | Memberships, monthly plans | Sponsored, scholarship, partner, staff access |
+
+## One-Time
+
+The family pays once at checkout. Nothing renews.
+
+Use it for:
+
+- A single drop-in session or evaluation
+- A credit package, such as 10 sessions with credits that expire after 90 days
+- A camp, clinic, or event registration
+- Lifetime access to a program
+
+**Examples**
+
+- "60-Minute Private Lesson" for \$75, no credits. Used as the payment on a paid scheduler.
+- "10-Session Package" for \$650 with 10 credits that expire 90 days after purchase.
+- "Summer Camp Week 1" for \$250 with a total purchase limit of 24.
+
+## Subscription
+
+The family's card or bank account is charged on a schedule, such as every month, until the subscription reaches its set end or is canceled.
+
+Use it for:
+
+- Monthly memberships
+- Credit plans, such as 4 credits a month
+- Ongoing program access
+- A season billed in installments, using an end date or a set number of payments
+
+Subscription-only settings include billing frequency, an initial down payment, a set end, a free trial, and **Schedule charges for later**. See [Product Builder: Payment](/payments/product-builder#payment).
+
+**Examples**
+
+- "4 Sessions a Month" for \$280 a month, 4 credits each month, unused credits expire at renewal.
+- "Unlimited Membership" for \$200 a month with **Unlimited Credits** (shown to families as **∞**).
+- "Fall Season" for \$150 a month, ending after 4 payments.
+
+To change or cancel a family's subscription, see [Managing subscriptions](/payments/manage-subscriptions).
+
+## Access Code
+
+The family enters a code you gave them and gets the product without paying by card. Each code can have its own usage limit.
+
+Use it for:
+
+- Sponsored or scholarship athletes
+- Partner organizations or teams you've agreed to cover
+- Staff or assistant coaches who need access
+
+**Example**
+
+"Scholarship Access" with the code `SCHOLAR2026` limited to 10 uses, adding 8 credits on redemption.
+
+On your website, a code-only product shows **Code** instead of a price. At checkout, the family types the code into the **Access code** field. An invalid code shows a message beside the field and doesn't create a booking or order.
+
+<Note>
+  **Access code or coupon?** An access code unlocks the product without a card payment. A [coupon](/payments/coupon-overview) lowers the price of a paid product. Use a coupon for a discount such as 50% off.
+</Note>
+
+### Allow a code on a paid product
+
+A One-Time or Subscription product can also accept codes. Turn on **Enable access codes** in the product's **Payment** section and add codes. Families can then pay the price or enter a code. Code holders skip payment; everyone else pays.
+
+## Choosing a type
+
+1. **Will the family pay again automatically?** Yes: **Subscription**. No: keep going.
+2. **Should only people you choose get it free?** Yes: **Access Code**, or a paid product with **Enable access codes** if others should be able to buy it.
+3. Otherwise: **One-Time**.
+
+## Changing the type later
+
+The type is set when you create the product. To switch, create a new product with the right type, place it where the old one was, and archive the old one. Existing purchases and subscriptions stay on the old product.
+
+## Several products for one service
+
+One service can have several products. For example, a private-lesson scheduler can take a \$75 drop-in product at checkout, while families with a 10-session package or a monthly membership pay with credits. See [Use products in schedulers, programs, and forms](/payments/attach-products).
 
 ## Related articles
 
-- [Product Builder: Complete Reference](/payments/product-builder)
-- [Coupons Overview](/payments/coupon-overview)
+- [Products overview](/payments/product-overview)
+- [Product Builder reference](/payments/product-builder)
+- [Coupons overview](/payments/coupon-overview)
