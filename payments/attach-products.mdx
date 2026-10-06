@@ -1,304 +1,112 @@
 ---
-title: "Using Products in Your Business"
-description: "Attach products to session schedulers, programs, and forms to start accepting payments from clients"
+title: "Use Products in Schedulers, Programs, and Forms"
+description: "Connect a product to a scheduler, program, or form so families can pay or use credits"
 sidebarTitle: "Attach Products"
 icon: "link"
-keywords: ["attach product", "link product", "product to scheduler", "product to program", "product to form", "accept payment"]
+keywords: ["attach product", "link product", "product to scheduler", "product to program", "product to form", "accept payment", "paywall", "credits"]
 ---
 
-<Info>
-  **Three places to use products**: Session schedulers, programs, and forms
-</Info>
+A product earns money once families can reach it. Besides your app's [Products page](/athlete-portal/products) and the product's direct link, you can connect a product to three places:
 
-## Where products attach
+| Place | What the family does | Where you set it |
+| --- | --- | --- |
+| **Scheduler** | Pays for a session, or uses credits from a package or membership | Scheduler → **Payment** |
+| **Program** | Buys access to paywalled content | Program Builder → **Share** |
+| **Form** | Pays as part of a registration or sign-up form | Form builder → **Connections** |
 
-Products don't generate revenue until attached to something clients interact with:
+One product can be used in several places.
 
-**Session Schedulers** → Clients book time slots and pay **Programs** → Clients purchase access to locked content **Forms** → Clients submit forms with payment
+## Schedulers
 
-One product can attach to multiple places. Reuse products across your offerings.
+Open the scheduler under **Scheduling → Schedulers** and go to **Payment**. Choose **Free** or **Paywalled**. For **Paywalled**, choose **How they pay**:
 
-## Attach products to session schedulers
+| Option | What families do | Product's role |
+| --- | --- | --- |
+| **Price** | Pay at booking | The product they buy at checkout |
+| **Credit** | Use credits they already have | The package or membership that issued the credits |
+| **Either** | Pay at booking or use credits | Both |
 
-<Steps>
-  <Step title="Navigate to scheduler payment settings">
-    1. Go to **Schedule** in left sidebar
-    2. Click **Schedulers**
-    3. Select the scheduler you want to add payment to
-    4. Scroll to **Payment Settings** section
+<Frame>
+  ![Scheduler Payment section with Paywalled and Price selected](/images/scheduling-review-oct01/payment-price-verified.jpg)
+</Frame>
 
-    <Frame>
-      ![CoachIQ scheduler payment settings section with payment method options](/images/payment-section-scheduler-settings.png)
-    </Frame>
-  </Step>
-  <Step title="Choose payment method">
-    Select one of four options:
+For credit booking, two settings must agree:
 
-    **Free** - No payment required, clients book without charge
+1. The scheduler's **Payment** is **Credit** or **Either**, with the credit cost per booking.
+2. The product adds credits, and its **Credit Limits** allow this scheduler, or are left open to all schedulers.
 
-    **Product** - Client must purchase a product to book
+<Frame>
+  ![Scheduler Payment section configured to charge credits](/images/scheduling-review-oct01/payment-credits-verified.jpg)
+</Frame>
 
-    **Credits** - Client must have credits to book (no direct payment)
+Add a **Buy more credits** link pointing to the right product so families know where to top up.
 
-    **Product OR Credits** - Client can either buy product or use existing credits
-
-    <Tip>
-      **Most common:** Product OR Credits. Gives clients flexibility to pay directly or use credits from packages.
-    </Tip>
-  </Step>
-  <Step title="Select product(s)">
-    If you selected Product or Product OR Credits:
-
-    1. Click **Add Product**
-    2. Select product from dropdown
-    3. Add multiple products if offering different pricing options
-
-    Clients see all attached products as payment choices during booking.
-  </Step>
-  <Step title="Save scheduler">
-    Click **Save** at the top or bottom of the scheduler.
-
-    <Check>
-      **Connected.** Clients can now book this scheduler with payment.
-    </Check>
-  </Step>
-</Steps>
-
-### How clients book paid sessions
-
-<Steps>
-  <Step title="Client selects session">
-    Client goes to your booking page and chooses the scheduler.
-
-    <Frame>
-      ![Athlete view of a CoachIQ scheduler booking page](/images/scheduler-athlete-view.png)
-    </Frame>
-  </Step>
-  <Step title="Client picks time slot">
-    Client selects date and available time.
-  </Step>
-  <Step title="Payment screen appears">
-    Client sees payment options:
-
-    - Product(s) you attached
-    - Use Credits (if Product OR Credits is configured and they have credits)
-
-  </Step>
-  <Step title="Client completes purchase">
-    Client enters payment info and confirms.
-  </Step>
-  <Step title="Booking confirmed">
-    Session appears on both your calendar and client's calendar.
-
-    Client receives confirmation email with session details.
-  </Step>
-</Steps>
-
-## Attach products to programs
-
-<Steps>
-  <Step title="Navigate to program paywall settings">
-    1. Go to **Content** in left sidebar
-    2. Click **Programs**
-    3. Select the program you want to paywall
-    4. Click **Change** next to the \*\*Share \*\*at the top of the page
-
-    <Frame>
-      ![CoachIQ program share settings with paywall toggle](/images/access-paywall-programs.png)
-    </Frame>
-  </Step>
-  <Step title="Enable paywall">
-    Toggle **Paywalled** to ON.
-
-    <Info>
-      Paywall locks all program content behind a purchase requirement.
-    </Info>
-  </Step>
-  <Step title="Select product(s)">
-    Choose which product grants access to this program.
-
-    Clients must purchase this product to unlock program content.
-
-    <Tip>
-      Use One-Time products for lifetime access or Subscription products for access while subscribed.
-    </Tip>
-  </Step>
-  <Step title="Save program">
-    Click **Save**.
-
-    <Check>
-      **Paywalled.** Program content is now locked until purchase.
-    </Check>
-  </Step>
-</Steps>
-
-### How clients access paid programs
-
-<Steps>
-  <Step title="Client views program">
-    Client navigates to program in their Athlete Portal.
-  </Step>
-  <Step title="Locked content appears">
-    Program shows as locked with purchase requirement.
-  </Step>
-  <Step title="Client clicks unlock/purchase">
-    Client clicks button to purchase access.
-  </Step>
-  <Step title="Payment screen appears">
-    Client completes purchase of the required product.
-
-    <Frame>
-      ![Client checkout screen for a paywalled CoachIQ program](/images/paywalled-program-ui.png)
-    </Frame>
-  </Step>
-  <Step title="Program unlocks">
-    All program content becomes immediately accessible.
-
-    Client can view videos, documents, workouts, and all program materials.
-  </Step>
-</Steps>
-
-## Attach products to forms
-
-<Steps>
-  <Step title="Open form builder">
-    1. Go to **Tools** in left sidebar
-    2. Click **Forms**
-    3. Select existing form or create new form
-  </Step>
-  <Step title="Add connected products">
-    1. Click **Connections**
-    2. Toggle **Add Product(s)**
-    3. Drag payment field to desired position in form
-
-    <Tip>
-      Place payment field near the end of form, after collecting all necessary information.
-    </Tip>
-  </Step>
-  <Step title="Configure payment field">
-    **Select product:** Choose which product to connect
-
-    <Frame>
-      ![CoachIQ form builder connections panel with product attached](/images/connected-products-forms.png)
-    </Frame>
-  </Step>
-  <Step title="Save and publish form">
-    Click **Create Form** to make form live.
-
-    <Check>
-      **Form ready.** Clients now pay when submitting this form.
-    </Check>
-  </Step>
-</Steps>
-
-### How clients submit forms with payment
-
-<Steps>
-  <Step title="Client fills out form">
-    Client enters all required information (name, contact, questions, etc.).
-
-    <Frame>
-      ![Client filling out a CoachIQ form with payment field](/images/form-payment-flow.png)
-    </Frame>
-  </Step>
-  <Step title="Payment field appears">
-    Client reaches payment section showing:
-
-    - Product name and price
-    - Payment field for card details
-  </Step>
-  <Step title="Client enters payment">
-    Client provides credit card information.
-
-    <Info>
-      Payment processes through Stripe. Card details never touch CoachIQ servers.
-    </Info>
-  </Step>
-  <Step title="Confirmation" stepNumber={4}>
-    Client receives:
-
-    - Form submission confirmation
-    - Payment receipt
-    - Any credits (if product issues them)
-  </Step>
-</Steps>
-
-## Paywall vs. credits vs. free
-
-Understanding when to use each payment method:
-
-**Free** - No payment required
-
-- Use for: Complimentary sessions, internal team use, evaluation sessions
-
-**Paywall** \*\*Only \*\*- Direct purchase required, no credits accepted
-
-- Use for: When you don't want to manage credit system, single-purchase offerings
-
-**Credits** - Must have credits, no direct purchase option
-
-- Use for: When you only want existing clients/members to book (no new purchases)
-
-**Paywall OR Credits** - Client chooses payment method or uses credits
-
-- Use for: Maximum flexibility, most common setup
+The full steps, including prices by session length, are in [Set booking payments](/scheduling/setting-up-payment-options) and [Credits and schedulers](/scheduling/credits-and-schedulers).
 
 <Tip>
-  **Recommended:** Use Paywall OR Credits for most schedulers. Gives clients choice while allowing new purchases.
+  To make a session members-only, use **Paywalled → Credit** and sell the credits through a membership. Families without eligible credits can't book it.
 </Tip>
+
+Saving the scheduler doesn't publish it. Add it to your app or website, then book a test session through the link families will use. See [Share and publish schedulers](/scheduling/sharing-schedulers).
+
+## Programs
+
+<Steps>
+  <Step title="Open the program's share settings">
+    Go to **Content → Programs**, open the program, and select **Share** in the top bar, or **Change** beside it.
+
+    <Frame>
+      ![Program Builder top bar with Change beside Share highlighted](/images/access-paywall-programs.png)
+    </Frame>
+  </Step>
+  <Step title="Set it to Paywalled">
+    Choose **Paywalled**, then select the products that unlock the program.
+  </Step>
+  <Step title="Save">
+    Select **Save** to apply the share settings.
+  </Step>
+</Steps>
+
+A one-time product gives lasting access. A subscription gives access while it's active. Families open the program in the app, see that it's locked, and buy one of the products you selected to unlock it.
+
+Full program sharing options, including private programs, are in [Share and sell programs](/content/sharing-programs).
+
+## Forms
+
+Open the form under **Tools → Forms**, select **Connections** in the top bar, and turn on **Add Product(s)**. The product becomes its own page after the questions, so families answer the form and then check out. Select **Update Form** to save.
+
+<Frame>
+  ![Form builder Connections menu with Add Product(s) turned on and a Product(s) page after the questions](/images/connected-products-forms.png)
+</Frame>
+
+To require a form whenever someone buys a product, start from the product instead: **Advanced → Add a form**. See [Attach a registration form to a product](/payments/product-builder#attach-a-registration-form-to-a-product) and [Forms with payments and bookings](/tools/forms/payments-and-bookings).
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Product doesn't appear in dropdown">
-    **Check these:**
-
-    - Product is published (not draft)
-    - Product isn't archived
-    - You're looking in correct section (schedulers vs programs vs forms)
-    - Refresh the page
-
-    If still missing, go to Payments → Products and verify product status.
+  <Accordion title="The product isn't in the list">
+    - Check the product isn't archived. On **Payments → Products**, set the status filter to **Archived**.
+    - Check you saved the product.
+    - Reopen the scheduler, program, or form so the list reloads.
   </Accordion>
-  <Accordion title="Client says they can't book">
-    **Verify:**
-
-    - Product is attached to scheduler
-    - Product price is correct (not accidentally $0 or $10,000)
-    - Stripe is connected and in Live Mode
-    - Client has valid payment method
-
-    Test the booking flow yourself to identify where it breaks.
+  <Accordion title="A family can't pay">
+    - Check [Stripe is connected](/payments/connecting-stripe) and the product's price is correct.
+    - Check the product hasn't reached its purchase limit.
+    - Open the link or page the family used and go as far as checkout yourself.
   </Accordion>
-  <Accordion title="Credits aren't working">
-    Credits require configuration in both Products AND Schedule sections.
+  <Accordion title="A family has credits but can't book">
+    - The scheduler must be **Paywalled** with **Credit** or **Either**.
+    - The product's **Credit Limits** must allow this scheduler.
+    - The credits may have expired, or a per-scheduler limit may be reached for this billing period.
+    - The credits may belong to a parent or a child depending on [who the purchase is for](/payments/product-builder#who-the-purchase-is-for).
 
-    **Check:**
-
-    - Product has credits enabled
-    - Number of credits is specified
-    - Scheduler payment method includes "Credits" option
-    - Scheduler is in the product's allowed usage list
-
-    [Learn more about credits →](/payments/credits/credit-system-overview)
-  </Accordion>
-  <Accordion title="Want to require membership before booking">
-    Set scheduler payment method to **Credits** only.
-
-    Then only clients with active membership subscriptions (which issue credits) can book.
-
-    This prevents one-off purchases and ensures only members access these sessions.
+    See [Credit usage limits and restrictions](/payments/credits/credit-usage-limits-restrictions).
   </Accordion>
 </AccordionGroup>
 
-## Next steps
-
-1. [Understand credits](/payments/credits/credit-system-overview) - Learn the credit system
-3. [View transactions](/payments/transactions) - Monitor incoming payments
-
 ## Related articles
 
-- [Products Overview](/payments/product-overview)
-- [Creating Your First Product](/payments/creating-first-product)
-- [Product Types Explained](/payments/product-types)
-- [Credits Overview](/payments/credits/credit-system-overview)
+- [Products overview](/payments/product-overview)
+- [Product Builder reference](/payments/product-builder)
+- [Credits overview](/payments/credits/credit-system-overview)
+- [Transactions](/payments/transactions)

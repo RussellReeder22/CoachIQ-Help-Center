@@ -1,363 +1,81 @@
 ---
 title: "Processing Fees Configuration"
-description: "Configure who pays Stripe transaction fees - absorb costs or pass them to clients"
+description: "Decide whether you absorb payment processing fees or add a fee for the buyer, per product"
 sidebarTitle: "Processing Fees"
 icon: "percent"
-keywords: ["processing fees", "stripe fees", "transaction fees", "who pays fees", "pass fees to client", "2.9%", "ACH fee", "bank payment fee"]
+keywords: ["processing fees", "stripe fees", "transaction fees", "who pays fees", "pass fees to client", "2.9%", "platform fee", "ACH fee", "bank payment fee"]
 ---
 
-<Info>
-  **Where to find this**: Product Builder → Section 2 (Payment Options) → Processing Fee
-</Info>
+Every paid transaction has two fees:
 
-## What processing fees are
+- **Stripe's processing fee.** The standard US card rate is 2.9% + \$0.30. Your rate depends on your Stripe account, the payment method, and the card's country.
+- **The CoachIQ platform fee.** The Product Builder's **Product Preview** shows it as **CoachIQ Platform Fee**, for example 1% + \$0.20.
 
-Every successful transaction incurs two fees: Stripe's processing fee, plus CoachIQ's platform fee.
+Each product decides who covers them. By default you absorb the fees. Turn on **Add processing fee** to charge the buyer a fee on top of the price.
 
-**US standard rates:**
+## Example
 
-- Stripe: 2.9% of transaction amount, plus \$0.30 per transaction
-- CoachIQ: 1% of transaction amount, plus \$0.20 per transaction, added on top of Stripe's fee
-- Combined: 3.9% + \$0.50 per transaction
+For a \$100 product, with Stripe at 2.9% + \$0.30 and a platform fee of 1% + \$0.20:
 
-**Example:**
+| | You absorb the fees | Buyer pays a 3.9% + \$0.50 fee |
+| --- | --- | --- |
+| Buyer pays | \$100.00 | \$104.40 |
+| You receive | \$95.60 | Slightly under \$100 |
 
-- \$100 charge
-- Stripe fee: (100 × 0.029) + 0.30 = \$3.20
-- CoachIQ fee: (100 × 0.01) + 0.20 = \$1.20
-- Total fee: \$4.40
-- You receive: \$95.60
+When the buyer pays the fee, Stripe's percentage applies to the whole \$104.40, so you receive slightly less than the full price. Raise the fee a little if you need to net every cent.
 
-<Note>
-  International cards and currency conversions may have additional Stripe fees.
-</Note>
-
-## Who pays the fees
-
-You decide who covers Stripe's processing fees:
-
-<Tabs>
-  <Tab title="You absorb fees">
-    **Default option - You pay the fees**
-
-    Client pays product price. You receive product price minus the combined Stripe + CoachIQ fee.
-
-    **Example:**
-
-    - Product price: \$100
-    - Client pays: \$100
-    - Total fee (Stripe + CoachIQ): \$4.40
-    - You receive: \$95.60
-
-    **Pros:**
-
-    - Simpler pricing
-    - Better client experience
-    - Standard industry practice
-
-    **Cons:**
-
-    - Reduces your revenue per sale
-    - Fees add up over time
-    - You lose 3.9%+ on every sale
-  </Tab>
-  <Tab title="Client pays fees">
-    **Pass fees to client**
-
-    Combined fee added as separate line item at checkout. You receive full product price.
-
-    **Example:**
-
-    - Product price: \$100
-    - Total fee (Stripe + CoachIQ): \$4.40
-    - Client pays: \$104.40
-    - You receive: \$100.00
-
-    **Pros:**
-
-    - You receive full product price
-    - No revenue lost to fees
-    - More accurate pricing
-
-    **Cons:**
-
-    - Higher price may reduce conversions
-    - Adds complexity at checkout
-    - Some clients resistant to fees
-    - State regulations may restrict this
-
-    <Warning>
-      Some US states restrict credit card surcharges. Check local laws before passing fees to clients.
-    </Warning>
-  </Tab>
-</Tabs>
-
-## Configure processing fees
+## Add a processing fee to a product
 
 <Steps>
-  <Step title="Open Product Builder">
-    Go to **Payments → Products** and either:
-
-    - Click **\+ Create Product** for new product
-    - Click existing product to edit
+  <Step title="Open the product">
+    Go to **Payments → Products**, then select **+ Create** or open an existing product.
   </Step>
-  <Step title="Navigate to Payment Options">
-    Scroll to **Section 2: Payment Options**
+  <Step title="Turn on Add processing fee">
+    In the **Payment** section, turn on **Add processing fee**.
   </Step>
-  <Step title="Find Processing Fee toggle">
-    Choose to toggle processing fee on or off
+  <Step title="Set the amounts">
+    Enter the **Fixed Fee** and **Percentage Fee**. The fields start at Stripe's standard card rate. If the buyer should also cover the CoachIQ platform fee, add its percentage and fixed amount to the matching fields.
 
     <Frame>
-      ![Processing fee toggle in CoachIQ Product Builder payment options](/images/processing-fee.png)
+      ![Payment section with Add processing fee on, Fixed Fee and Percentage Fee fields, and the Preview showing price, fee, and total](/images/processing-fee.png)
     </Frame>
   </Step>
-  <Step title="Decide on fee">
-    Choose whether you or client pays Stripe fees.
-
-    If you select **Add processing fee**, additional fields appear.
-  </Step>
-  <Step title="Configure fee structure (if client pays)">
-    **Two fields appear:**
-
-    **Fixed amount:** \$0.50 (Stripe's \$0.30 + CoachIQ's \$0.20)
-
-    **Percentage:** 3.9% (Stripe's 2.9% + CoachIQ's 1%)
-
-    These default to the combined Stripe + CoachIQ standard US rates. You control both fields directly — adjust them if your Stripe rates differ, but keep CoachIQ's 1% + \$0.20 included so the combined fee is fully covered.
-
-    <Tip>
-      Check your actual Stripe rates in Stripe Dashboard. Rates may differ based on processing volume, country, or negotiated pricing.
-    </Tip>
-  </Step>
-  <Step title="Save product">
-    Click **Create Product**.
-
-    <Check>
-      **Fee configuration saved.** Applies to all future purchases of this product.
-    </Check>
+  <Step title="Check the preview and save">
+    The **Preview** shows the price, the processing fee, and the total the buyer pays. Save the product.
   </Step>
 </Steps>
 
-## How clients see fees
-
-<Tabs>
-  <Tab title="You absorb fees">
-    **Simple checkout - Client sees product price only**
-
-    ```
-    Product: 60-Minute Session
-    Price: $75.00
-    ─────────────────────
-    Total: $75.00
-    ```
-
-    Clean, simple. Client pays exactly what's advertised.
-  </Tab>
-  <Tab title="Client pays fees">
-    **Checkout shows fee as separate line item**
-
-    ```
-    Product: 60-Minute Session
-    Price: $75.00
-    Processing Fee: $3.43
-    ─────────────────────
-    Total: $78.43
-    ```
-
-    Transparent breakdown showing fee separately.
-
-    <Info>
-      Processing fee labeled clearly so client understands the additional charge.
-    </Info>
-  </Tab>
-</Tabs>
-
-## Calculating fee amounts
-
-**Combined formula:**
-
-Fee = (Transaction amount × 0.039) + \$0.50 (Stripe's 2.9% + \$0.30, plus CoachIQ's 1% + \$0.20)
-
-**Examples:**
-
-| Product Price | Total Fee (Stripe + CoachIQ) | You Absorb       | Client Pays          |
-| ------------- | ---------- | ---------------- | -------------------- |
-| \$50          | \$2.45     | You get \$47.55  | Client pays \$52.45  |
-| \$100         | \$4.40     | You get \$95.60  | Client pays \$104.40 |
-| \$200         | \$8.30     | You get \$191.70 | Client pays \$208.30 |
-| \$500         | \$20.00    | You get \$480.00 | Client pays \$520.00 |
-
-<Note>
-  These calculations use the combined 3.9% + \$0.50 rate (Stripe 2.9% + \$0.30, CoachIQ 1% + \$0.20). Your actual Stripe rate may differ based on your account; CoachIQ's 1% + \$0.20 applies uniformly.
-</Note>
+At checkout, the fee appears as its own line under the price.
 
 ## Fees for ACH payments
 
-If your organization accepts **US Bank Account (ACH)** payments, the Processing Fee settings on each product include a separate fee for ACH. Bank payments cost less to process than cards, so this lets you pass on a lower fee (or no fee) to clients who pay by bank while still charging the card fee to clients who pay by card, on the same product.
+If your organization accepts **US bank account (ACH)** payments, the processing fee settings include a separate fee for ACH. Bank payments usually cost less than cards, so you can charge bank payers a lower fee, or none, on the same product. Checkout applies the fee that matches the method the buyer chooses.
 
-**Why this exists:** Before this option, the only way to offer a cheaper bank-payment price was a second copy of every product. Now one product carries both a card fee and an ACH fee, and checkout applies whichever matches the method the client picks.
+1. Turn on ACH for your organization. See [Payment methods at checkout](/payments/getting-started#payment-methods-at-checkout).
+2. In the product's **Payment** section, set the card fee as usual.
+3. Set the ACH fee to cover what a bank payment costs you, using your Stripe pricing, or leave it at zero.
 
-**Setting it up:**
-
-1. Turn on ACH for your organization (see [Payment methods at checkout](/payments/getting-started#payment-methods-at-checkout)).
-2. In the product's **Section 2: Payment Options → Processing Fee**, set the card fee as usual.
-3. Set the ACH fee. Stripe's published US rate for ACH Direct Debit is lower than its card rate and capped per transaction; check your own Stripe pricing and enter a fixed amount and percentage that cover what a bank payment actually costs you, or leave it at zero to absorb the fee for bank payers.
+The ACH fee option appears only after ACH is enabled. Products created earlier show it the next time you edit them.
 
 <Tip>
-  Many coaches pass the full card fee to card payers and charge nothing extra for ACH. The lower total nudges families toward bank payments for large registrations without changing the product price.
+  Charging card payers a fee and bank payers none encourages families to pay large camp or season registrations by bank.
 </Tip>
 
-<Note>
-  The ACH fee option only appears when ACH is enabled for your organization. Products created before you enabled ACH pick up the option the next time you edit them.
-</Note>
+## Changing a product's fee
 
-## Custom fee structures
+A change applies to new purchases. Past transactions and existing subscriptions aren't changed. Tell families before you change the fee on a product they buy regularly.
 
-Some coaches configure custom fee amounts:
+## Before you add fees
 
-**Higher than Stripe fees:**
+- Some US states restrict or prohibit card surcharges, and card networks have their own disclosure rules. Check the rules where you operate before passing card fees on.
+- Say in the product description that a processing fee is added, so it isn't a surprise at checkout.
+- Stripe can charge more for international cards, currency conversion, and disputes. These aren't included in the fee fields. See your Stripe pricing.
 
-- Cover additional costs (bookkeeping, software)
-- Flat \$5 processing fee instead of calculated amount
-- Markup percentage (3.5% instead of 2.9%)
+Absorbing fees keeps checkout simple; you can raise the price slightly to cover them. Passing fees on keeps your price lower but adds a line at checkout. Both work. Pick one approach and use it consistently across similar products.
 
-**Lower than Stripe fees:**
+## Related articles
 
-- Split costs with client (1.5% + \$0.15 each)
-- Absorb fixed fee, pass percentage only
-- Subsidize to reduce client price impact
-
-<Warning>
-  Be transparent about fees. Unexpected charges damage trust and may violate consumer protection laws in some areas.
-</Warning>
-
-## Legal considerations
-
-**Before passing fees to clients, check:**
-
-**State regulations:**
-
-- Some states prohibit credit card surcharges
-- Others require specific disclosures
-- Rules vary by location
-
-**Stripe's terms:**
-
-- Must comply with Stripe's surcharging requirements
-- Proper labeling required
-- Card brand rules apply
-
-**Disclosure requirements:**
-
-- Must inform clients before purchase
-- Can't hide fees in fine print
-- Clear explanation of what fee covers
-
-<Warning>
-  Consult legal counsel about surcharging regulations in your jurisdiction before implementing.
-</Warning>
-
-## Impact on pricing strategy
-
-<Tabs>
-  <Tab title="Absorb fees - Price higher">
-    **Build fees into your base price**
-
-    If you absorb fees, increase base price to maintain margins:
-
-    - Target: \$100 profit per session
-    - Combined fee (Stripe + CoachIQ): ~4%
-    - Set price: ~\$105 to net \$100
-
-    Client sees: \$105 (clean price)You receive: ~\$100 after fees
-  </Tab>
-  <Tab title="Pass fees - Price lower">
-    **Price products at target, add fees**
-
-    If clients pay fees, price at exact target:
-
-    - Target: \$100 profit per session
-    - Set price: \$100
-    - Fee added: ~\$4.40
-
-    Client sees: $100 + $4.40 fee = $104.40
-You receive: $100
-  </Tab>
-</Tabs>
-
-**Result:** Similar final cost to client either way. Choose based on market expectations and legal compliance.
-
-## International and special fees
-
-**Additional Stripe fees may apply for:**
-
-**International cards:**
-
-- Stripe adds 1% for non-US cards (Stripe total: 3.9% + \$0.30 for international)
-- CoachIQ's 1% + \$0.20 still applies on top of Stripe's rate, international or domestic
-
-**Currency conversion:**
-
-- Additional 1% for currency conversion (Stripe)
-- Applies when charge currency differs from payout currency
-
-**Disputed charges:**
-
-- \$15 chargeback fee
-- Separate from processing fees
-- Usually not passed to clients
-
-<Note>
-  Most coaches use the standard combined rate (Stripe 2.9% + \$0.30, CoachIQ 1% + \$0.20) for US cards and absorb international card fees rather than configuring multiple fee structures.
-</Note>
-
-## Changing fee configuration
-
-**Existing products:**
-
-- Edit product → Section 2 → Update processing fee settings
-- Changes apply to future purchases only
-- Doesn't affect past transactions
-
-**Active subscriptions:**
-
-- Fee configuration locked at subscription creation
-- Can't change mid-subscription
-- Applies to new subscriptions only
-
-<Warning>
-  Changing who pays fees mid-campaign may confuse clients. Communicate changes clearly.
-</Warning>
-
-## Best practices
-
-**Be transparent:**
-
-- Clearly state who pays fees in product descriptions
-- Don't surprise clients at checkout
-- Explain fee purpose if passing to clients
-
-**Stay consistent:**
-
-- Apply same fee policy across similar products
-- Don't switch approaches frequently
-- Document your policy
-
-**Comply with laws:**
-
-- Research local surcharging regulations
-- Follow Stripe's requirements
-- Consult legal if uncertain
-
-**Monitor impact:**
-
-- Track conversion rates by fee approach
-- Gather client feedback
-- Adjust based on data, not assumptions
-
-## Next steps
-
-1. [Revenue sharing](/payments/sharing-rev) - Split revenue with partners or contractors
-2. [Guest checkout](/payments/guest-checkout) - Allow purchases without accounts
-3. [Product Builder reference](/payments/product-builder) - Complete Product Builder guide
-4. [Payment methods at checkout](/payments/getting-started#payment-methods-at-checkout) - Cards, wallets, ACH, and where to enable them
+- [Product Builder reference](/payments/product-builder)
+- [Payment methods at checkout](/payments/getting-started#payment-methods-at-checkout)
+- [Revenue sharing](/payments/sharing-rev)
+- [Transactions](/payments/transactions)

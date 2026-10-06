@@ -15,7 +15,7 @@ keywords: ["coupons", "discount codes", "promo codes", "discounts", "create coup
 Coupons are discount codes that reduce product prices at checkout:
 
 - Percentage discounts (10%, 25%, 50% off)
-- Fixed amount discounts ($10, $25 off)
+- Fixed amount discounts (\$10, \$25 off)
 - Free access (100% off)
 
 Clients enter coupon codes during checkout to apply discounts automatically.
@@ -79,7 +79,7 @@ Navigate to **Payments → Coupons** to view all discount codes.
     - HALF = 50% discount
 
     <Tip>
-      Percentage discounts scale with product price. $100 product with 25% off = $25 discount. $200 product with 25% off = $50 discount.
+      Percentage discounts scale with product price. \$100 product with 25% off = \$25 discount. \$200 product with 25% off = \$50 discount.
     </Tip>
   </Tab>
   <Tab title="Amount Off">
@@ -100,7 +100,7 @@ Navigate to **Payments → Coupons** to view all discount codes.
     - TWENTYFIVE = \$25 off
 
     <Warning>
-      Amount-off coupons can't reduce price below $0. $10 off a $5 product results in $0 charge, not negative.
+      Amount-off coupons can't reduce price below \$0. \$10 off a \$5 product results in \$0 charge, not negative.
     </Warning>
   </Tab>
 </Tabs>
@@ -202,7 +202,7 @@ Enter or share the code exactly as created.
 
 - Free: 100%
 - Percentage: 10%, 25%, 50%, etc.
-- Amount: $10, $25, \$50, etc.
+- Amount: \$10, \$25, \$50, etc.
 
 **Redemptions**: Number of times coupon has been used
 
@@ -275,10 +275,12 @@ Member discounts are automatic: anyone who holds a specific membership pays less
 
 **How it works**
 
-1. Open the membership product in the Product Builder (**Payments → Products**). The membership you edit is the qualifying membership: whoever has it active gets the discount.
-2. In the product's settings, turn on member discounts and set the discount.
-3. Choose which products it applies to: a hand-picked list, or **all products**. The list can include other memberships and one-time products.
-4. Save. From then on, when an active member checks out on one of those products, the discount is applied automatically and shown in the price breakdown.
+1. Open **Payments → Coupons → Create coupon** and set the discount.
+2. Turn on **Automatic member discount** and choose the qualifying memberships. Anyone with one of them active gets the discount.
+3. Choose which products it applies to: selected products, or all products. The list can include other memberships and one-time products.
+4. Select **Create coupon**. From then on, when an active member checks out on one of those products, the discount is applied automatically and shown in the price breakdown.
+
+To change a member discount later, delete it and create a new one.
 
 **Coupon or member discount?**
 
@@ -286,14 +288,13 @@ Member discounts are automatic: anyone who holds a specific membership pays less
 | --- | --- | --- |
 | Who gets it | Anyone with the code | Anyone with the qualifying membership active |
 | How it's applied | Client types the code at checkout | Automatically at checkout |
-| Scope | Any product you allow on the coupon | Products you select on the membership, or all products |
+| Scope | Any product you allow on the coupon | Products you select, or all products |
 | Redemption eligibility | The code must meet its expiry, usage, product, and client rules | The qualifying membership must be active |
 
 <Tip>
   Use a coupon for a time-limited promotion anyone can share. Use a member discount for a standing perk that should follow the membership without you handing out codes.
 </Tip>
 
-The member discount setting is described field-by-field in the [Product Builder reference](/payments/product-builder#section-2-payment-options).
 
 ## Creating your first coupon
 
@@ -345,7 +346,7 @@ Use redemption data to:
 - Test different amounts to find sweet spot
 - Too small: Doesn't motivate action
 - Too large: Erodes margins unnecessarily
-- Common sweet spot: 20-30% for percentage, $25-$50 for amount
+- Common sweet spot: 20-30% for percentage, \$25-\$50 for amount
 
 **Promotion timing:**
 

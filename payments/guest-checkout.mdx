@@ -1,297 +1,87 @@
 ---
 title: "Guest Checkout"
-description: "Let people buy a product or book a session without creating a CoachIQ account"
+description: "Let people buy a product or book a free session without signing in first"
 sidebarTitle: "Guest Checkout"
 icon: "user-clock"
 keywords: ["guest checkout", "no account", "buy without login", "anonymous purchase", "one-time buyer", "book without account", "intro call", "trial session"]
 ---
 
-<Info>
-  **Where to find this**: Products: Product Builder → Section 6 (Advanced Settings) → **Guest Checkout**. Schedulers: the guest checkout setting in the scheduler builder (see [Guest checkout for schedulers](#guest-checkout-for-schedulers)).
-</Info>
+Guest checkout lets someone pay, or book a free session, without signing in or creating a password first. Use it for a first purchase from an ad, your website, or a link you share.
 
-## What guest checkout is
+The guest still gets a CoachIQ profile under the email they enter. They just don't need a password to check out. They can set one later on the sign-in screen with the same email.
 
-Guest checkout lets people pay with just their contact and payment details - no account creation required. It exists in two places:
+## Where guest checkout applies
 
-- **Products** - a toggle on each product, for merchandise, event fees, and other one-off sales.
-- **Schedulers** - a toggle on each scheduler, so someone can book an intro call or trial session straight from an ad, a quiz funnel, or your website without hitting a login wall.
+| What they're buying | What controls guest checkout |
+| --- | --- |
+| A product, from its link, your app, or your website | The product's **Allow users to checkout as guest** setting |
+| A paid session (**Paywalled → Price**) | The same product setting on the product used for payment |
+| A free session | The scheduler's own guest checkout setting |
+| A session paid with credits | Not available. Credits are used from a signed-in account. |
 
-**With guest checkout enabled:**
-
-- Guest enters name and email
-- Guest enters payment details
-- Purchase or booking completes
-- No password or portal login is created
-
-**With guest checkout disabled (default):**
-
-- Person must create a CoachIQ account (or log in)
-- Account required before checkout
-- Person gets Athlete Portal access
-
-## When to enable guest checkout
-
-<Tabs>
-  <Tab title="Enable for">
-    **Sales and bookings that don't need ongoing access:**
-
-    ✅ **Merchandise or equipment sales**
-
-    - T-shirts, gear, supplements
-    - One-time physical products
-    - No need for portal access
-
-    ✅ **One-time workshops or events**
-
-    - Single-session clinics
-    - Drop-in classes
-    - Public seminars
-
-    ✅ **Intro calls and trial sessions (schedulers)**
-
-    - The first touch in a marketing funnel
-    - Free or paid trial sessions
-    - Anyone landing from an ad or your website can book immediately
-
-    ✅ **Non-client purchases**
-
-    - Community members
-    - One-time visitors
-    - People who won't book again
-
-    ✅ **Gift purchases**
-
-    - Someone buying for another person
-    - No need for buyer to have account
-
-    <Tip>
-      Enable guest checkout when you're selling to the general public, not just your established client base. For a funnel, put guest checkout on the intro-call scheduler and keep it off everything that comes after.
-    </Tip>
-  </Tab>
-  <Tab title="Keep disabled for">
-    **Products and schedulers that need an account:**
-
-    ❌ **Subscriptions or memberships**
-
-    - Ongoing access to portal
-    - Credit tracking over time
-    - Recurring billing management
-
-    ❌ **Program access**
-
-    - Need account to view content
-    - Videos, documents, workouts
-    - Progress tracking
-
-    ❌ **Multi-session packages**
-
-    - Credits require account
-    - Must book sessions over time
-    - Need to track usage
-
-    ❌ **Recurring or credit-based schedulers**
-
-    - Credits can only be spent from an account
-    - Rescheduling and cancellation happen in the portal
-    - Reminders and history need a profile
-
-    <Warning>
-      If a product issues credits or grants program access, guest checkout won't work properly. Guests can't use credits or access portal content.
-    </Warning>
-  </Tab>
-</Tabs>
-
-## Enable guest checkout on a product
+## Turn on guest checkout for a product
 
 <Steps>
-  <Step title="Open Product Builder">
-    Go to **Payments → Products** and either:
-
-    - Click **\+ Create Product** for new product
-    - Click existing product to edit
+  <Step title="Open the product">
+    Go to **Payments → Products** and open the product, or select **+ Create**.
   </Step>
-  <Step title="Navigate to Advanced Settings">
-    Scroll to **Section 6: Advanced Settings**
-  </Step>
-  <Step title="Toggle guest checkout ON">
-    Find **Guest Checkout** toggle and switch to ON.
+  <Step title="Turn on the setting">
+    In **Advanced**, turn on **Allow users to checkout as guest**. The builder confirms that users won't need to sign in to purchase this product.
 
     <Frame>
-      ![Guest checkout toggle in CoachIQ Product Builder advanced settings](/images/guest-checkout-setting.png)
+      ![Advanced section with Allow users to checkout as guest turned on](/images/guest-checkout-setting.png)
     </Frame>
   </Step>
-  <Step title="Save product">
-    Click **Create.**
-
-    <Check>
-      **Guest checkout enabled.** People can purchase without creating an account.
-    </Check>
-  </Step>
+  <Step title="Save the product" />
 </Steps>
 
-## Guest checkout for schedulers
+The setting doesn't apply when:
 
-Schedulers have their own guest checkout setting, separate from any product. Turn it on and anyone who reaches the scheduler - from your booking page, your website, or a link in an ad - can reserve a time without logging in.
+- The product's purchase is for a **Managed Athlete**. The parent signs in so they can choose which child they're registering.
+- A subscription requires a registration form under **Advanced → Add a form**. The buyer is asked to sign in or sign up. A one-time product with a registration form can still use guest checkout.
 
-<Steps>
-  <Step title="Open the scheduler">
-    Go to **Schedule → Schedulers** and open the scheduler you want to open up (typically an intro call or trial session).
-  </Step>
-  <Step title="Turn on guest checkout">
-    In the scheduler builder, switch the guest checkout setting ON and save.
-  </Step>
-  <Step title="Share the scheduler link">
-    Use the scheduler's link or embed it on your website. Visitors book without being asked to create an account.
+## Turn on guest booking for a free scheduler
 
-    <Check>
-      **Guest booking enabled.** The login step is skipped for this scheduler only.
-    </Check>
-  </Step>
-</Steps>
+<span id="guest-checkout-for-schedulers" />
 
-**What a guest provides when booking:**
+Use this for a free intro call, evaluation, or trial session. Open the scheduler under **Scheduling → Schedulers**, turn on its guest checkout setting, and save. Anyone with the scheduler's link can then book without signing in.
 
-- Name and email (and phone, if the scheduler asks for it)
-- Payment details, if the scheduler is paid
-- Any form connected to the scheduler is still completed
+The scheduler setting only affects free sessions. A paid session follows the product's setting, and a credit session always requires sign-in.
 
-**What you see:**
+## What the guest enters
 
-- The booking appears on your calendar with the guest's name and contact details
-- The guest is not added to your client list and has no portal login
-- For a paid scheduler, the payment appears in **Payments → Transactions** like any other
-
-<Note>
-  Guest bookings are best for the first session. Once someone becomes a client, have them create an account so they can reschedule, use credits, and receive reminders in the portal. Booking schedulers only accept guests when this setting is on; a scheduler with guest checkout off still requires login even if the attached product allows guests.
-</Note>
-
-Scheduler payment settings (free, price, or credits) are covered in [Setting up payment options](/scheduling/setting-up-payment-options).
-
-## What guests provide at checkout
-
-**Required information:**
-
-- Email address
-- Name
-- Payment method (a card, or any other payment method you've enabled - see [Payment methods at checkout](/payments/getting-started#payment-methods-at-checkout))
-
-**NOT required:**
-
-- Password
-- Phone Number (unless the scheduler or form asks for it)
-- Account creation
-- Profile setup
-
-<Info>
-  Minimal friction checkout. Faster for one-time buyers who don't need ongoing access.
-</Info>
-
-## What guests receive
-
-**After purchase or booking:**
-
-✅ **Email receipt**
-
-- Payment confirmation
-- Purchase details
-- Transaction amount
-
-✅ **Product, booking, or access (if applicable)**
-
-- Booking confirmation for a guest-enabled scheduler
-- Event confirmation if workshop/clinic
-
-❌ **No Athlete Portal access**
-
-- Can't log into CoachIQ
-- Can't view purchase history
-- Can't manage account or reschedule from the portal
-
-❌ **No credits**
-
-- Even if product issues credits
-- Credits require account to track and use
-
-❌ **No booking on other schedulers**
-
-- Only schedulers with guest checkout ON can be booked as a guest
-- Everything else still asks for an account
+- Name and email
+- Payment details, for a paid purchase
+- Answers to any form connected to the product or scheduler
 
 ## What you see
 
-**In your Transactions:**
+- The purchase appears in **Payments → Transactions** like any other.
+- A guest booking appears on your calendar with the guest's name, so you can check in, move, or cancel it as usual.
+- CoachIQ keeps a profile under the email the guest used, so later purchases and bookings stay together.
 
-- Guest purchases appear normally
-- Transaction recorded with email
-- Payment processed successfully
+## When to use it
 
-**In your client list:**
+**Good fits**
 
-- Guest does NOT appear as client
-- No profile created
-- Email captured but not as full client record
+- Free intro calls, evaluations, and trial sessions
+- Paid drop-ins and one-off clinics bought from a link or ad
+- Event and camp registrations
+- Merchandise or one-time fees
 
-**On your calendar (scheduler guests):**
+**Keep it off for**
 
-- The booking shows with the guest's name and email
-- Treat it like any other booking for check-in, cancel, or reschedule
+- Credit packages and memberships: families need to sign in to book with credits and manage their membership.
+- Program access: content is viewed in the signed-in app.
+- Team or family registrations where you need to know which child is attending. Use **Managed Athlete** instead.
 
-<Note>
-  Guest transactions are tracked for your records, but the guest doesn't become a full client in your system.
-</Note>
-
-## Guest checkout flow
-
-<Steps>
-  <Step title="Guest selects product or time">
-    Guest finds the product on your booking page or website, or picks a time on a guest-enabled scheduler.
-
-    Clicks purchase, buy, or book.
-  </Step>
-  <Step title="Guest enters name & email">
-    Checkout form asks for name and email address.
-
-    No "create password" field appears.
-  </Step>
-  <Step title="Guest enters payment">
-    Guest provides payment details (skipped for a free scheduler).
-
-    Standard Stripe payment form.
-  </Step>
-  <Step title="Purchase or booking completes">
-    Transaction processes immediately.
-
-    Guest receives email receipt or booking confirmation.
-
-    <Check>
-      **Complete.** Guest paid or booked, you received the order, no account created
-    </Check>
-  </Step>
-</Steps>
-
-## Guest vs. account checkout comparison
-
-| Feature              | Guest Checkout                                   | Account Checkout        |
-| -------------------- | ------------------------------------------------ | ----------------------- |
-| **Speed**            | Faster (contact + payment)                       | Slower (create account) |
-| **Portal access**    | No                                               | Yes                     |
-| **Purchase history** | No                                               | Yes                     |
-| **Session booking**  | Yes, on schedulers with guest checkout ON        | Yes                     |
-| **Reschedule / cancel from portal** | No                                | Yes                     |
-| **Credits**          | No                                               | Yes                     |
-| **Subscriptions**    | No                                               | Yes                     |
-| **Programs**         | No                                               | Yes                     |
-| **Best for**         | One-time sales, intro calls, trial sessions      | Ongoing services        |
-
-## Next steps
-
-1. [Product Builder](/payments/product-builder) - Complete Product Builder guide
-2. [Processing fees](/payments/processing-fee) - Configure who pays Stripe fees
-3. [Setting up payment options](/scheduling/setting-up-payment-options) - Free, priced, or credit-based schedulers
+<Tip>
+  For a sales funnel, turn on guest checkout for the first step, such as an intro session, and keep it off for the packages and memberships that come after. Once someone is a client, have them sign in so they can see bookings, use credits, and get reminders in the app.
+</Tip>
 
 ## Related articles
 
-- [Processing Fees Configuration](/payments/processing-fee)
-- [Revenue Sharing](/payments/sharing-rev)
-- [Learn about issuing refunds](/payments/issuing-refunds)
+- [Product Builder reference](/payments/product-builder)
+- [Set booking payments](/scheduling/setting-up-payment-options)
+- [Processing fees](/payments/processing-fee)
+- [Issuing refunds](/payments/issuing-refunds)
