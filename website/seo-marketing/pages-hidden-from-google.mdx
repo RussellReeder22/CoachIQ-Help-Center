@@ -14,13 +14,15 @@ keywords: ["sitemap", "hidden pages", "no information available", "Google search
 
 When Google shows **"No information is available for this page"** beneath your website link in search results, it means Google has found your site but cannot crawl or read the page content.
 
-The most common cause in CoachIQ: **all pages are set to hidden in the Sitemap Builder.**
+The most common cause in CoachIQ: **the page is hidden in the Sitemap Builder.** Hidden pages are blocked in your site's `robots.txt`, so Google can still show the link (for example, when another site links to it) but isn't allowed to read the page.
 
 <Frame>
   ![Sitemap Builder with all pages hidden](/images/website-sitemap-all-pages-hidden.png)
 </Frame>
 
-When every page shows the crossed-out eye icon (as shown above), Google treats your entire site as uncrawlable. No meta descriptions, titles, or content will appear in search results until pages are made visible.
+When every page shows the crossed-out eye icon (as shown above), your whole site is blocked from crawling. No meta descriptions, titles, or content will appear in search results until pages are made visible.
+
+If only one page shows this message and you meant to hide it, nothing is broken. To take it out of results quickly, use the **Removals** tool in Google Search Console. See [Sitemap Builder](/website/seo-marketing/sitemap-builder#what-hiding-a-page-does) for everything hiding a page changes.
 
 ## How to fix it
 
@@ -53,7 +55,7 @@ Once your pages are visible in the sitemap, submit your sitemap to Google Search
 See: [Get Your CoachIQ Website Indexed on Google](/website/seo-marketing/seo-google-search-console)
 
 <Note>
-Unhiding your pages in the Sitemap Builder does not make previously private pages public — it only tells Google it is allowed to crawl them. Anyone with a direct link could always visit those pages regardless of sitemap visibility.
+Hidden pages were never private. Anyone with a direct link could always visit them. Unhiding a page adds it back to your sitemap, removes the `robots.txt` block and the `noindex` tag, so Google is allowed to crawl and list it.
 </Note>
 
 ## Related articles
