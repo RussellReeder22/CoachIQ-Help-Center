@@ -36,31 +36,32 @@ You'll need:
   </Step>
 
   <Step title="Add your website">
-    You'll see two options:
-    - **Domain** (left side)
-    - **URL prefix** (right side)
+    You'll see two property types. Pick the one that matches how you'll verify in the next step:
 
-    Choose **URL prefix**. Paste your complete website URL (for example: `https://yourcoachingname.com`) and click **Continue**.
+    - **Domain** (left side): covers every version of your address. Enter your domain without `https://` or `www`, for example `yourcoachingname.com`. You'll verify with a DNS record.
+    - **URL prefix** (right side): covers one exact address. Open your website in a browser and copy the address it lands on, for example `https://www.yourcoachingname.com`. You'll verify with Google Analytics.
 
     <Tip>
-      Include `https://` at the beginning and don't add a trailing slash at the end.
+      Not sure? Choose **Domain**. It works whether your site loads with or without `www`.
     </Tip>
   </Step>
 
   <Step title="Verify you own the site">
-    Google needs to confirm you own this website. You'll see several verification methods — the two most common for CoachIQ sites:
+    Google needs to confirm you own this website.
 
-    **HTML tag (recommended):**
-    1. Select the **HTML tag** method
-    2. Copy the meta tag Google provides
-    3. In your CoachIQ Website Builder, go to **Settings** → **SEO** and paste the verification code
-    4. Click **Verify** back in Google Search Console
+    **DNS record (Domain property):**
+    1. Copy the TXT record Google shows you
+    2. Sign in to the company where you bought your domain (GoDaddy, Namecheap, Squarespace and so on) and add it as a new TXT record in your DNS settings
+    3. Back in Search Console, click **Verify**. DNS changes can take up to 24 hours to take effect, so try again later if it doesn't work right away
 
-    **DNS record (if using a custom domain):**
-    1. Select the **Domain name provider** method
-    2. Copy the TXT record Google provides
-    3. Add it to your domain's DNS settings through your domain provider (GoDaddy, Namecheap, etc.)
-    4. Click **Verify** — DNS changes can take up to 24 hours to propagate
+    **Google Analytics (URL prefix property):**
+    1. Make sure your Google Analytics ID is saved in **Website Builder → Settings → Scripts & Analytics** and your site is published. See [Google Analytics](/website/analytics-tracking/google-analytics)
+    2. Sign in to Search Console with a Google account that has **Editor** access to that Analytics property
+    3. Choose the **Google Analytics** method and click **Verify**
+
+    <Note>
+      The **HTML tag** method isn't available for CoachIQ websites. The builder doesn't have a place to add a tag to your site's `<head>`, which is where Google looks for it. Use DNS or Google Analytics instead.
+    </Note>
 
     <Check>
       Once verified, you'll see a confirmation message and be taken to your Search Console dashboard.
@@ -72,15 +73,15 @@ You'll need:
 
     In the left sidebar of Search Console, click **Indexing** → **Sitemaps**.
 
-    In the "Add a new sitemap" field, enter:
+    In the "Add a new sitemap" field, enter your sitemap address. On a URL prefix property you only need to type `sitemap.xml`. On a Domain property, enter the full address, for example:
     ```
-    sitemap.xml
+    https://www.yourcoachingname.com/sitemap.xml
     ```
 
     Click **Submit**.
 
     <Note>
-      Your full sitemap URL is your website address + `/sitemap.xml` (for example: `https://yourcoachingname.com/sitemap.xml`). CoachIQ keeps this updated automatically whenever you change your site.
+      Your full sitemap URL is your website address + `/sitemap.xml`. CoachIQ keeps it updated automatically whenever you publish changes. Pages you've hidden in the [Sitemap Builder](/website/seo-marketing/sitemap-builder) aren't included.
     </Note>
   </Step>
 
@@ -89,7 +90,7 @@ You'll need:
     - **Success** — Google accepted your sitemap
     - **Pending** — Google is still processing (normal)
 
-    If you see errors, double-check that you entered `sitemap.xml` correctly.
+    If you see errors, open the sitemap address in your browser to check it loads.
 
     <Warning>
       It takes 2-3 days for Google to begin crawling and 1-2 weeks for pages to start appearing in search results. This is completely normal — don't resubmit repeatedly.
@@ -119,9 +120,11 @@ After a few days, come back to Search Console to confirm Google is indexing your
 
 <AccordionGroup>
   <Accordion title="Verification keeps failing">
-    **HTML tag method**: Make sure you pasted the full meta tag (starting with `<meta`) into your CoachIQ SEO settings, then saved before clicking Verify.
+    **DNS method**: DNS changes can take up to 24 hours. Wait and retry. Double-check the TXT record was added with your domain provider exactly as Google showed it.
 
-    **DNS method**: DNS changes can take up to 24 hours. Wait and retry. Double-check the TXT record was added correctly with your domain provider.
+    **Google Analytics method**: Check that your Google Analytics ID is saved in Scripts & Analytics, your site is published, and you're signed in to Search Console with an account that has Editor access to that Analytics property. The URL prefix must match the address your site actually loads at, including `www`.
+
+    **HTML tag method**: Not available for CoachIQ websites. Use DNS or Google Analytics.
 
     If neither works, [contact CoachIQ support](mailto:info@coachiq.io) with a screenshot of the error.
   </Accordion>
@@ -129,7 +132,7 @@ After a few days, come back to Search Console to confirm Google is indexing your
   <Accordion title="Sitemap shows errors or 'Couldn't fetch'">
     1. Verify your CoachIQ website is published (not in draft mode)
     2. Check that your domain is properly connected and active
-    3. Make sure you entered just `sitemap.xml`, not the full URL
+    3. Open the sitemap address in your browser to confirm it loads. On a Domain property, enter the full sitemap URL
     4. If you recently connected a custom domain, wait 24 hours for DNS to propagate
   </Accordion>
 
@@ -156,11 +159,11 @@ After a few days, come back to Search Console to confirm Google is indexing your
   </Accordion>
 
   <Accordion title="What's the difference between Domain and URL prefix verification?">
-    **URL prefix** (recommended): Easier to set up, works immediately with CoachIQ sites, tracks one version of your site (`https://yoursite.com`).
+    **Domain**: Tracks every version of your address (www, non-www, http, https) in one property. Verified with a DNS record at your domain provider.
 
-    **Domain**: Tracks all versions (www, non-www, http, https) in one property. Requires DNS record changes. More complex but cleaner long-term.
+    **URL prefix**: Tracks one exact address, such as `https://www.yoursite.com`. On a CoachIQ website, verify it with Google Analytics.
 
-    For most coaches, URL prefix is the right choice.
+    If you can get into your domain provider, Domain is the simpler long-term choice.
   </Accordion>
 </AccordionGroup>
 
