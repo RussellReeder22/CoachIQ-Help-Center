@@ -24,10 +24,25 @@ Not every page should appear in Google search results. You might want to hide:
 - **Landing pages** for specific ad campaigns
 - **Duplicate content** pages
 - **Pages under construction** that aren't ready yet
-- **Private pages** meant only for existing clients
+- **Pages for existing clients**, like member setup or agreement pages
+
+## What hiding a page does
+
+When you hide a page and publish, CoachIQ does four things:
+
+| Change | What it means |
+|--------|---------------|
+| Removes the page from `sitemap.xml` | Search engines aren't pointed to it |
+| Adds a `Disallow` line for it to `robots.txt` | Search engines are asked not to crawl it |
+| Adds a `noindex, nofollow` robots tag to the page | Search engines are asked not to list it |
+| Leaves it out of your site's `llms.txt` | AI tools reading that file don't see it |
+
+<Warning>
+**Hidden doesn't mean private.** The page still loads for anyone who has the link. Don't put information on a website page that only certain people should see.
+</Warning>
 
 <Note>
-Hiding a page from the sitemap doesn't make it inaccessible - people with the direct link can still visit it. It just tells Google not to index it in search results.
+**If Google already listed the page**, it can stay in results for a while. Because the page is blocked in `robots.txt`, Google can't recrawl it to read the `noindex` tag, so an old result can linger, often with "No information is available for this page" under it. To remove it quickly, use the **Removals** tool in [Google Search Console](/website/seo-marketing/seo-google-search-console).
 </Note>
 
 ## Using the Sitemap Builder
@@ -56,8 +71,8 @@ Hiding a page from the sitemap doesn't make it inaccessible - people with the di
     - **Eye icon** (visibility toggle)
 
     Click the **eye icon** to toggle visibility:
-    - **Eye visible** = Page IS included in sitemap (Google can index it)
-    - **Eye crossed out** = Page is NOT in sitemap (hidden from Google)
+    - **Eye visible** = The page is in your sitemap and open to search engines
+    - **Eye crossed out** = The page is hidden: left out of your sitemap, blocked in `robots.txt` and tagged `noindex`. It still loads for anyone with the link
 
     <Frame>
       ![Page hidden from sitemap](/images/website-sitemap-page-hidden.png)
@@ -69,22 +84,22 @@ Hiding a page from the sitemap doesn't make it inaccessible - people with the di
   </Step>
 </Steps>
 
-## When to hide pages from sitemap
+## When to hide a page
 
-| Page Type | Hide from Sitemap? | Why |
+| Page Type | Hide? | Why |
 |-----------|-------------------|-----|
 | Home, About, Services | No | Core pages should be indexed |
 | Contact, Pricing | No | People search for these |
 | Thank You pages | Yes | No search value, clutters results |
 | Ad landing pages | Sometimes | Depends if you want organic traffic |
 | Test/draft pages | Yes | Not ready for public |
-| Duplicate pages | Yes | Avoid SEO penalties |
+| Duplicate pages | Yes | Keeps one version in search results |
 
 ## Common questions
 
 <AccordionGroup>
-  <Accordion title="Does hiding a page from the sitemap make it private?">
-    No. Anyone with the direct link can still visit the page. Sitemap visibility only affects search engine indexing. For truly private pages, you'd need authentication/login requirements.
+  <Accordion title="Does hiding a page make it private?">
+    No. Anyone with the direct link can still visit the page. Hiding only affects search engines and AI tools that follow your sitemap, `robots.txt` and robots tags. Don't put private information on a website page.
   </Accordion>
 
   <Accordion title="How long until Google notices the change?">
@@ -92,7 +107,7 @@ Hiding a page from the sitemap doesn't make it inaccessible - people with the di
   </Accordion>
 
   <Accordion title="Will my page disappear from Google immediately?">
-    No. Removing a page from your sitemap tells Google to stop including it, but existing indexed pages may remain in search results for weeks until Google re-crawls your site.
+    No, and there's no fixed timeline. A page Google already listed can stay in results for a while, sometimes as a bare link with "No information is available for this page." Use the **Removals** tool in Google Search Console if you need it gone quickly.
   </Accordion>
 
   <Accordion title="Should I hide my blog posts?">
@@ -100,7 +115,7 @@ Hiding a page from the sitemap doesn't make it inaccessible - people with the di
   </Accordion>
 
   <Accordion title="Where can I see my actual sitemap file?">
-    Your sitemap is automatically generated at `yourdomain.com/sitemap.xml`. You can visit this URL to see exactly what Google sees.
+    Your sitemap is automatically generated at `yourdomain.com/sitemap.xml`, and your crawl rules are at `yourdomain.com/robots.txt`. Visit either to check what search engines see. Hidden pages are missing from the sitemap and listed as `Disallow` in `robots.txt`.
   </Accordion>
 </AccordionGroup>
 
