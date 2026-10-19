@@ -246,7 +246,7 @@ CoachIQ has two distinct credit types that work together:
     **How they work:**
 
     - Can ONLY be used for specific sessions you select
-    - Used FIRST (before master credits)
+    - Used after Master Credits; among product banks, the soonest-expiring credits are used first
     - Displayed with "Redeemable Sessions" list showing which schedulers accept them
 
     <Frame>
@@ -272,10 +272,13 @@ CoachIQ has two distinct credit types that work together:
   </Tab>
 </Tabs>
 
-**Credit Priority System:** When athlete books a session, CoachIQ checks credits in this order:
+**Credit Priority System:** When an athlete books a session, CoachIQ spends credits in this order:
 
-1. **First**: Scheduler-specific credits for that particular scheduler
-2. **Last**: Master credits (if scheduler-specific exhausted or don't exist)
+1. **First**: Master Credits
+2. **Then**: product credits that can pay for this session. Unlimited credits come first, then the credits that expire soonest
+3. **Last**: product credits that never expire
+
+So an expiring membership credit is spent before a pack credit that never expires. If a balance drops in a different bank than you expected, compare the expiration dates, not the order the tabs are listed in. A pack whose weekly allowance is already used up pays last.
 
 ---
 
@@ -834,14 +837,14 @@ See [Subscription Scheduling](/payments/credits/recurring-credit-memberships) fo
 
     - Added manually by an admin/coach
     - Universal—can be used for any credit-enabled scheduler
-    - Used LAST (after scheduler-specific credits exhausted)
+    - Used FIRST when they can pay for the session
 
     **Product Bank Credits**
 
     - Credits that are added when a user makes a product purchase (one time or subscription)
     - Non Scheduler Specifc: Universal—can be used for any credit-enabled scheduler
     - Scheduler Specific: Restricted to designated schedulers only
-    - Used FIRST (priority over master credits)
+    - Used after Master Credits, soonest-expiring first; credits that never expire are used last
     - Great for tiered memberships and program-specific packages
   </Accordion>
 </AccordionGroup>

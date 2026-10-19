@@ -34,6 +34,10 @@ All recurring memberships for this client with real-time status:
   ![CoachIQ client Subscriptions tab with status filters and monthly revenue](/images/client-subscriptions.png)
 </Frame>
 
+<Note>
+  In organizations with several groups, this tab and the client's **Active Subscriptions** under **Payment Methods** show only the current group's memberships. If some rows couldn't be checked, a notice asks you to refresh.
+</Note>
+
 ---
 
 ## Subscription entry details
@@ -90,7 +94,7 @@ Each subscription shows:
   <Tab title="Scheduled">
     **Meaning**: Subscription set to start in the future.
 
-    **What happens**: Not active yet, will activate on scheduled date.
+    **What happens**: Not active yet. The record shows **Billing starts** with the date of the first charge.
 
     **Your action**: Wait for start date or cancel if client changes mind.
   </Tab>
@@ -156,6 +160,8 @@ A scheduled cancellation stays **Active** or **Trialing** and shows **Cancels [d
 
 Next to Subscriptions, the profile's **Payment Methods** tab lists every card the client has saved with you and marks which one is the **default**. The default is the card Stripe charges on the next renewal.
 
+For each membership, the tab shows the card that will actually be charged (the same card the athlete sees in **Billing**), the full billing cadence (for example "\$7.00/2 months"), and a dates line such as "Started Oct 8 · Next bill Dec 8". Use the dates to tell apart two memberships of the same product before changing a card.
+
 **Use it to:**
 
 - Confirm a new card landed after the client updated it in their portal (**Billing**). Check the **default** label separately from whether the new card is listed. Adding a card through the admin flow preserves the existing default.
@@ -167,9 +173,11 @@ Next to Subscriptions, the profile's **Payment Methods** tab lists every card th
 1. Open **People → Clients**, select the client, and open **Payment Methods**.
 2. Choose **Add card** and enter the card details with the client's permission.
 3. Confirm the consent to save the card for future payments and save it.
-4. Check that the card appears in the list. If it should become the default, choose **Set as default** separately.
+4. The list and card count refresh on their own. If the refresh fails, choose **Try again**. If it should become the default, choose **Set as default** separately.
 
-Saving a card does not charge it and preserves the existing default. Cancelling the form leaves saved cards unchanged. If the card is declined, correct the details or use another card; existing saved cards stay in place.
+Saving a card does not charge it and preserves the existing default. Cancelling the form leaves saved cards unchanged. A card that's already saved shows "This card is already on file." If the card is declined, the bank's reason appears; correct the details or use another card. Existing saved cards stay in place.
+
+Staff can't remove a client's saved card from the profile. Clients remove their own cards from **Billing**, unless it's the only card paying for an active membership.
 
 The tab reads **No payment methods on file** when no cards have been saved. Clients can also manage cards from **Billing** in the athlete portal, or save one through a [card-on-file product](/payments/product-builder#section-2-payment-options). See [Updating client payment methods](/payments/manage-subscriptions#updating-client-payment-methods).
 

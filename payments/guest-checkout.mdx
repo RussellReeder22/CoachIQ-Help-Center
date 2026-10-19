@@ -16,7 +16,7 @@ The guest still gets a CoachIQ profile under the email they enter. They just don
 | --- | --- |
 | A product, from its link, your app, or your website | The product's **Allow users to checkout as guest** setting |
 | A paid session (**Paywalled → Price**) | The same product setting on the product used for payment |
-| A free session | The scheduler's own guest checkout setting |
+| A free session | The scheduler's **Allow users to book as guest** setting |
 | A session paid with credits | Not available. Credits are used from a signed-in account. |
 
 ## Turn on guest checkout for a product
@@ -39,12 +39,26 @@ The setting doesn't apply when:
 
 - The product's purchase is for a **Managed Athlete**. The parent signs in so they can choose which child they're registering.
 - A subscription requires a registration form under **Advanced → Add a form**. The buyer is asked to sign in or sign up. A one-time product with a registration form can still use guest checkout.
+- The subscription has a free trial or **Schedule charges for later**. The buyer is asked to log in or sign up first, and signing in from checkout completes the purchase.
 
 ## Turn on guest booking for a free scheduler
 
 <span id="guest-checkout-for-schedulers" />
 
-Use this for a free intro call, evaluation, or trial session. Open the scheduler under **Scheduling → Schedulers**, turn on its guest checkout setting, and save. Anyone with the scheduler's link can then book without signing in.
+Use this for a free intro call, evaluation, or trial session.
+
+<Steps>
+  <Step title="Open the scheduler">
+    Open the scheduler under **Scheduling → Schedulers**.
+  </Step>
+  <Step title="Turn on guest booking">
+    In the **Payment** section of a **Free** scheduler, turn on **Allow users to book as guest**, then save.
+  </Step>
+</Steps>
+
+With it on, a signed-out visitor can book with just their name and email, from your app or the website scheduler, without creating an account. With it off, booking requires an account.
+
+In the website scheduler, sessions that allow guest checkout offer **Continue as guest**. A visitor who creates an account partway through goes straight to payment for the time they picked, with their details filled in.
 
 The scheduler setting only affects free sessions. A paid session follows the product's setting, and a credit session always requires sign-in.
 
@@ -54,9 +68,19 @@ The scheduler setting only affects free sessions. A paid session follows the pro
 - Payment details, for a paid purchase
 - Answers to any form connected to the product or scheduler
 
+## When the guest's email already has an account
+
+If a guest types an email that already has a CoachIQ account (often from buying at another organization), checkout asks them to sign in instead of continuing as a guest. If that account has no password yet, they go to **Set Your Password** with the email filled in. Either way they finish the purchase or booking in the same visit, with one payment, and a session booking keeps the session and time they chose. **Use a different email** lets them fix a typo.
+
+On your website the message reads "This email has an account. Sign in to set a password, or use a different email."
+
+## After the purchase
+
+A guest stays on **Payment Successful** with "Create an account with this email to see your purchases." and a **Create account** button, instead of being sent to a login page.
+
 ## What you see
 
-- The purchase appears in **Payments → Transactions** like any other.
+- The purchase appears in **Payments → Transactions** like any other. Guest bookings made with an access code or a 100% coupon show as \$0 orders.
 - A guest booking appears on your calendar with the guest's name, so you can check in, move, or cancel it as usual.
 - CoachIQ keeps a profile under the email the guest used, so later purchases and bookings stay together.
 

@@ -55,6 +55,8 @@ Once inside the builder, you'll see three areas:
 - **Share** — Get your form link
 - **Update Form** — Save and publish changes
 
+If you keep editing while a save is still finishing (for example, turning on **Last** or **Phone** right after clicking **Update Form**), your changes stay on screen and the builder shows that there are unsaved changes. Click **Update Form** again to save them. Long form names wrap onto more lines in the left panel instead of being cut off.
+
 ## Field types reference
 
 Fields are organized into 5 categories. Click a category icon in the center panel to see available fields.
@@ -144,6 +146,10 @@ This shows the same template options from form creation — useful if you starte
     - Label (the question text)
     - Default value (optional)
 
+    If you create a new custom field and only fill in its title, that title becomes the question on the form. If an older question shows as "Text", type the question title on the form and click **Update Form** to fix it.
+
+    For checkbox, choice, dropdown and terms questions, give every option a label. An option without one still saves the answer, but Responses can only show it as "Option 1", "Option 2" (or "Waiver 1" for a waiver). A question needs at least one option, so removing the last one shows "At least one option is required."
+
     <Warning>
       **The Label is what appears in responses.** The field's **Label** is the column title in Responses and exports and the name automations see. A **Heading** placed above a field is display-only and is not connected to it. If you put the question in a Heading and example text such as "EX: John" in the Label, your responses show "EX: John" as the question. Put the question in the Label and use the default value for example text.
     </Warning>
@@ -152,13 +158,15 @@ This shows the same template options from form creation — useful if you starte
     Drag fields in the left sidebar to change their order. The preview updates automatically.
   </Step>
   <Step title="Set required fields">
-    Click a field to select it, then mark it as required. Required fields show an asterisk (\*) and must be completed to submit.
+    Click a field to select it, then mark it as required. Required fields show an asterisk (\*) and must be completed to submit. For a waiver question, **Required** is in the question's settings menu, like other questions, and shows clearly whether it's on or off. The asterisk on the waiver prompt hides while you edit the prompt and comes back afterwards.
+
+    If every question on a standalone form is optional, someone who submits it completely blank sees "Answer at least one question before submitting." and nothing is saved. Answering any one question is enough. Forms connected to a product or session still let buyers skip optional questions and continue to checkout or booking. To make sure a question is always answered, mark it required.
   </Step>
   <Step title="Add headings and instructions">
     Use **Heading** fields to create sections (e.g., "Athlete Information", "Parent/Guardian Details"). Use **Plain Text** to add instructions or context. Neither is a question: headings and plain text never appear in responses, and they do not label the field beneath them.
   </Step>
   <Step title="Preview your form">
-    Click the preview button to see exactly what respondents will see. Test the flow before publishing.
+    Click **Preview** to see what respondents will see. With Login/Signup on, Preview shows the real sign-in step: **Email** first, then **First**, **Last** and **Phone** as a new person would see them, using the fields you turned on. If the form allows submission without login, all of those fields show together on one step, like the live form. Preview never creates a person or sends anything.
   </Step>
   <Step title="Save and publish">
     Click **Update Form** to save. Your form is now live and ready to share.
@@ -173,6 +181,8 @@ Match your form to your brand using the **Settings** menu:
 | ----------------- | ------------------------------------- |
 | Button Color      | Background color of the submit button |
 | Button Text Color | Text color on the submit button       |
+
+If you leave the button colors unset, the form uses your app's theme color. The builder and Preview show that same color, so what you see matches what athletes see.
 
 <Tip>
   **Use your brand colors.** If your CoachIQ website uses a specific color scheme, match your form buttons for a consistent experience.
@@ -189,7 +199,7 @@ Access these in the **Settings** dropdown:
 ### Multiple responses
 
 - **ON** — Same person can submit the form multiple times
-- **OFF** — One submission per person (requires login)
+- **OFF** — One submission per person (requires login). When the person submits again, their response is updated: Responses keeps a single row with their latest answers, even after you add, rename or remove questions. If you delete their response, their next submission starts a new row. A parent who resubmits a form for a child also keeps a single row.
 
 Use cases:
 
@@ -286,7 +296,6 @@ Complete
 
 ## What you can't do (yet)
 
-- **Duplicate forms** — Each form must be built individually
 - **Conditional logic** — Can't show/hide fields based on answers
 - **Manual page breaks** — Multi-page only comes from connections
 - **Save partial responses** — Respondents must complete in one session

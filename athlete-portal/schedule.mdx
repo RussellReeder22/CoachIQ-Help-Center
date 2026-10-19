@@ -77,6 +77,10 @@ Each scheduler displays its cost (like "1 Credit") which you set when creating t
   </Step>
 </Steps>
 
+<Note>
+  Adding an inactive scheduler to the Schedule page doesn't switch it on. It keeps a grey **Inactive** badge in the builder ("Hidden from athletes until the scheduler is active.") and athletes don't see it until you turn the scheduler on in **Schedule → Schedulers**.
+</Note>
+
 ## Creating and organizing sections
 
 Sections help you organize schedulers into logical groups like "Elite Program", "Rising Stars", or by location. Athletes always see sections expanded - they cannot collapse them.
@@ -110,7 +114,7 @@ Each scheduler can have a custom title and description that athletes see, regard
     ![CoachIQ scheduler edit panel for customizing title and description](/images/Editdescriptionandtitleforschedulersonathleteportal.png)
   </Step>
   <Step title="Edit the title">
-    Update the scheduler name that athletes will see. Make it clear and action-oriented.
+    Update the scheduler name that athletes will see. Make it clear and action-oriented. A custom title on a newly added scheduler is kept on the first **Update Page**.
   </Step>
   <Step title="Edit the description">
     Add helpful context about the session type, skill level, or what athletes should expect. Keep it concise but informative.
@@ -136,6 +140,25 @@ Each scheduler can have a custom title and description that athletes see, regard
     </Warning>
   </Step>
 </Steps>
+
+## What athletes and parents see after booking
+
+Athletes and parents manage their sessions from **Bookings** in your app.
+
+- **Upcoming and Past:** **Upcoming** lists every future booking, including later dates in a monthly series and, in a parent's **All** view, each child's later sessions. A session moves to **Past** once it ends in the session's time zone, and a booking never shows in both tabs.
+- **View details and location** shows that booking's date, time, time zone, who it's for and the location.
+- **Reschedule** appears only when the scheduler has **Allow athletes to reschedule** turned on. This applies to single and recurring bookings, in the app and on the web. When a move is blocked, the athlete sees the reason instead of nothing happening.
+- **Cancel:** the confirmation lists the session, date, time zone and athlete, and says whether the credit will be returned under the scheduler's refund setting. Inside the cancellation notice window, Cancel isn't offered; the booking explains why and suggests contacting you.
+
+Parents can also reschedule or cancel a lesson staff booked for their child. See [Family Accounts](/athlete-portal/family-accounts#changing-a-childs-booking).
+
+<Tip>
+  If a family says a booking is in the wrong tab, ask for a screenshot showing the booking's date and time and their device's time zone.
+</Tip>
+
+## Paywalling the Schedule page
+
+To limit the Schedule page to members, turn on the **Schedulers** paywall in **Pages Paywall**. Parents can book their children from a paywalled Schedule page when either the parent or that child holds a qualifying product. See [Page Paywalls](/athlete-portal/paywall-settings#how-paywalls-work-for-parents-and-children).
 
 ## Add one session to a personal calendar
 
@@ -209,8 +232,10 @@ Use the Settings panel to rename the Schedule tab and update the page URL.
 
     1. The Schedule page is set to **Active**
     2. The scheduler is added to a section in the Athlete Portal
-    3. The scheduler has available time slots configured
-    4. The athlete has the required credits or payment method
+    3. The scheduler itself is active (an inactive one shows an **Inactive** badge in the builder)
+    4. The scheduler has available time slots configured
+    5. The athlete has the required credits or payment method
+    6. If the Schedule page is paywalled, the athlete (or their parent) holds a qualifying product
   </Accordion>
   <Accordion title="How do credits work with bookings?">
     The credit amount shown (e.g., "1 Credit") is the cost to book that session. Athletes must have sufficient credits in their account to book. Credits are set when creating the scheduler, not in the Athlete Portal.

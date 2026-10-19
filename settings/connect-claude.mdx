@@ -58,6 +58,8 @@ On Team or Enterprise, the owner starts in **Organization settings → Connector
 
 The connection opens CoachIQ's sign-in and approval flow. Sign in normally, then check the organization, group, and role shown on the approval page.
 
+The approval screen shows who is connecting, which group, which app, what access, and where it returns. The group ID and connection address are tucked under **Technical details** if you need them. If you change your mind, choose **Cancel** on the sign-in, group choice or approval screen. The app is told you declined, even when the screen opened in a new tab or popup, and no access is granted.
+
 **One connection covers one CoachIQ group.** If you work in several groups, add a separately named connection for each and authorize the correct group. Naming a Claude Project after another group does not switch the connection.
 
 Choose the access you want:
@@ -70,6 +72,10 @@ Choose the access you want:
 Read the access summary and the final button before connecting. For supported changes, the approval button should reflect that choice. If it still says **Connect with read-only access**, you are approving reads only.
 
 Supported changes have limits. The connector is not permission to do everything available in the admin app. For example, automation drafts remain off for you to review in CoachIQ, and the assistant cannot use this connection to charge or refund a client. Ask it to check its current tools before planning a task.
+
+When Claude asks to approve a change, its approval card opens with a plain-English line saying what will change. For a set of related changes, such as tagging a group of people, the assistant plans the whole set up front and suggests **Allow for this task** once instead of asking for every change. On Team and Enterprise plans, **Allow for all tasks** stays unavailable unless your Claude organization admin turns on always-allow for connector tools.
+
+Every change the assistant makes is recorded in [Settings → Data → Logs](/settings/data#changes-from-connected-ai-assistants) with an **Outside app** label, and requests CoachIQ refused are marked **Refused**.
 
 ## 2. Confirm the connection
 

@@ -65,10 +65,11 @@ Give a client a product they didn't buy through checkout, and record how (or whe
     **Configure Purchases** shows the product and price, then asks:
 
     - **Stripe Subscription ID** (optional) - for a subscription product, paste the athlete's existing Stripe subscription ID to link the purchase to real billing, so renewals and credits follow Stripe. Leave blank for a complimentary grant.
-    - **Credits** - **Award now** or **Award upon cycle renew**, for credit-bearing products.
-    - **How the purchase was collected** - record offline money: cash, check, or other, and whether it is paid or still being collected. Use this when a family paid you in person or by check, so the roster and the client's entitlements match reality without the payment going through Stripe.
+    - **Credits** - **Award now** or **Award upon cycle renew**, for credit-bearing products. Without a Stripe Subscription ID, renewal credits can't follow a billing cycle, and the help text under the option says what will happen.
+    - **How the purchase was collected** - record offline money: **Cash**, **Check** or **Other**, and whether it is paid or still **Collection pending**. Use this when a family paid you in person or by check, so the roster and the client's entitlements match reality without the payment going through Stripe.
+    - **Amount** - appears when you mark the purchase paid by Cash, Check or Other. It's prefilled with the product price; change it if you collected a different amount.
 
-    The collection details are saved with the purchase for your records. They don't create a Stripe charge or a Transactions entry.
+    See [Recording cash, check and other payments](#recording-cash-check-and-other-payments) for how these show up in Transactions.
   </Step>
   <Step title="Confirm">
     Client now has access to that product (appears in their Products tab).
@@ -89,6 +90,22 @@ Give a client a product they didn't buy through checkout, and record how (or whe
   - Cash, check, or bank-transfer payments taken outside CoachIQ
 </Note>
 
+## Recording cash, check and other payments
+
+When a purchase is marked paid by **Cash**, **Check** or **Other**, the **Amount** you confirm is what CoachIQ records:
+
+- In **Payments → Transactions** the purchase shows as **Cash · Paid**, **Check · Paid** or **Other · Paid** with that amount, and it counts toward Revenue.
+- To correct the amount later, open the purchase from the client's **Products** tab (pencil icon), change **Amount** and save.
+- Switching the purchase back to **Collection pending** sets the amount to \$0 until you mark it paid again.
+
+No card is charged and nothing goes through Stripe. Card and Stripe purchases are never changed by these fields.
+
+<Warning>
+  Cash, check and other purchases marked paid before the October 19, 2026 release were recorded at \$0. They stay at \$0 until you open the purchase, confirm the **Amount** and save.
+</Warning>
+
+Products you add from this tab name this client as the athlete on the purchase. Purchases added before that change may still show "Not recorded (legacy)".
+
 ## Cancel a membership
 
 Use **Cancel membership** on the client's purchase to choose **At end of billing period** or **Immediately**. Check the resulting end date or status before removing the purchase. A membership still billing cannot be removed first, and cancellation does not refund past payments. [Full cancellation steps](/payments/manage-subscriptions#how-to-cancel-a-subscription).
@@ -103,7 +120,7 @@ When a membership has ended or the wrong product was added, **Archive** the prod
 - Keeps the purchase history on the profile, so past sessions and payments still read correctly
 - Leaves your catalog product and every other client untouched
 
-A confirmation spells out the credit and booking-access change before anything happens. If the product is an active subscription, set the subscription to end first (see [Managing subscriptions](/payments/manage-subscriptions)); a product that is still billing cannot be archived.
+A confirmation spells out what the client will notice before anything happens: the purchase leaves their Orders (where it shows as **Archived**), they lose what it unlocks unless they bought it again, and no refund is issued. Credit packs and subscriptions get their own wording. For a one-time credit pack the action is **Mark inactive**: credits already added stay available, and the pack shows as inactive on its Products row and in the purchase count. If the product is an active subscription, set the subscription to end first (see [Managing subscriptions](/payments/manage-subscriptions)); a product that is still billing cannot be archived.
 
 <Note>
   Archive replaces the old dead end where a credit-bearing product with used credits could not be removed and the profile said to contact Support. If you only want to stop the credits and keep the product showing as active, use the credit toggle instead; see [Turning off a product's credits](/people/client-profiles/client-profiles-credits#turning-off-a-products-credits).

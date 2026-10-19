@@ -3,7 +3,7 @@ title: "Use CoachIQ with AI"
 sidebarTitle: "Use CoachIQ with AI"
 description: "Give ChatGPT or Claude CoachIQ documentation, a live business connection, and a Project tailored to how you work."
 icon: "plug"
-keywords: ["AI", "LLM", "ChatGPT", "Claude", "MCP", "llms.txt", "Project", "business context"]
+keywords: ["AI", "LLM", "ChatGPT", "Claude", "MCP", "llms.txt", "Project", "business context", "write access", "tags", "credits", "products", "coupons", "logs"]
 ---
 
 Give your assistant three things: **CoachIQ's documentation**, **a connection to your business**, and **context about your goals**. Together, they help it give more useful answers and carry out supported work in CoachIQ.
@@ -70,6 +70,42 @@ Answer its questions and follow the saving steps. Your assistant can prepare the
 Ask the new chat to summarize your priorities from the saved brief and perform a small live CoachIQ read. It should be able to identify both the saved context and the current business group. If the connector is unavailable in that chat or mode, return to the platform guide's troubleshooting steps.
 
 Start with one of the five requests from your Business Brief. Keep the brief current when your services, goals, or working preferences change; use live data for details that change day to day.
+
+## What your connected assistant can and can't do
+
+A read-only connection can look things up. Changes need a connection with write access, and you approve each one in your assistant before it runs. The assistant works within your own role and [staff access](/people/managing-staff#managing-staff-access-blocking-pages) in the connected group.
+
+### It can read
+
+- **Clients:** a client's full profile, including contact details, tags, custom fields, waiver status, family links, credit balances and history, transactions, subscriptions and staff notes.
+- **Products and payments:** products, coupons, transactions (including failed payments and pending bank payments) and subscriptions.
+- **Your business setup:** scheduling, locations, programs, lessons, media and other records covered by its tools. Ask it to list its current tools before planning a task.
+
+### With write access, it can
+
+- **Update clients:** correct a client's first name, last name, phone number and custom fields; create Athletes and Parents; add and delete staff notes on a client's profile (currently up to 4,096 characters per note).
+- **Manage tags:** add or remove a tag for up to 100 people in one change, and switch off a tag. Each result lists who was changed, who already had the tag and who was skipped.
+- **Set up products and coupons:** create and edit products, attach them to forms and programs, set a product active or inactive, and create or remove coupons.
+- **Manage credits:** set a client's credit balance, turn a client's credit use for a product on or off, add or remove a credit pack as a top-up option on a session that already charges credits, and add or remove the sessions where a pack's credits can be spent.
+- **Organize media:** import, rename and tag files and attach them to programs and lessons. See [AI workflows](/settings/ai-workflows#find-and-organize-media).
+- **Report a problem:** send a problem report to CoachIQ when something goes wrong, and check its status later.
+
+### It can't
+
+- Refund, charge a card, retry a failed payment, change or cancel a subscription, or change Stripe settings.
+- Change anyone's role (including between Athlete and Parent), remove or block a person, invite staff, change a login email, or change sign-up field settings.
+- Read message threads or saved payment methods.
+- Edit an existing coupon, set one client's credit expiry, or attach a paid product to a scheduler.
+- Make a credit change that would quietly affect every session, such as removing the last session from a pack's list. Set the full list in the product builder instead.
+- Delete Media Hub files, change their visibility, or run Video Analysis.
+
+For anything it can't do, ask for the steps and make the change in CoachIQ.
+
+### Approvals and the activity log
+
+Your assistant asks before each change. In Claude, the approval card opens with a plain-English summary of what will change. For a set of related changes, such as a tag clean-up, ask the assistant to plan the whole set first and choose **Allow for this task** once instead of approving every step.
+
+Every change is logged under the assistant and the coach who approved it. In **Settings → Data → Logs**, changes made through ChatGPT or Claude carry an **Outside app** label, and requests CoachIQ refused carry a red **Refused** label. If your role or staff access changes, the assistant is told nothing changed and what to do next, which may be to reconnect.
 
 ## Use your Project for daily work
 

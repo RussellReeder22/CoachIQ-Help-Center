@@ -33,7 +33,7 @@ Turn leads and trials into paying members.
 | Template | What it does |
 |---|---|
 | **Trial to Paid Member Journey** | Welcome trial users and guide them through their first booking |
-| **Website Lead → Trial Booking** | Convert website form submissions into trial bookings |
+| **Website Lead to Trial Booking** | Convert website form submissions into trial bookings |
 | **New Member Welcome** | Welcome new subscribers with onboarding information |
 
 ### Retention
@@ -70,13 +70,15 @@ Run the week without remembering to send things.
     The template opens in the automation builder as a new, **inactive** automation. Nothing runs yet.
   </Step>
   <Step title="Point it at your products and people">
-    Check the **Triggers** and **Conditions** sections. A conversion template may reference "a trial product" or "a membership"; select yours. See [Builder reference](/tools/automations/builder-reference) for what each section does.
+    Every field that needs one of your records (a tag, session, product, form or coach) starts empty, so pick your own in the **Triggers**, **Conditions** and **Actions** sections. A conversion template may reference "a trial product" or "a membership"; select yours. The automation can't be saved until each of these is filled in, so a leftover example name never slips through. See [Builder reference](/tools/automations/builder-reference) for what each section does.
+
+    Pick an active tag. If a tag step uses a tag that was removed from People, saving stops with a message naming the step, for example "3-Month Member: that tag was removed. Choose an active tag." Choose another tag, or add the tag again from People.
   </Step>
   <Step title="Rewrite the message in your voice">
     Open each action under **Actions**. Keep the dynamic fields (the `@` CoachIQ fields such as the athlete's first name) and change the rest. For SMS, watch the counter: past 160 characters the text still sends, but as two billed segments.
   </Step>
   <Step title="Test Run">
-    Click **Test Run** to send the automation to yourself and confirm the message reads well and the fields fill in.
+    Click **Test Run** to send the automation to yourself and confirm the message reads well and the fields fill in. Test Run skips any **Wait/Delay** step and runs the later actions straight away.
   </Step>
   <Step title="Turn it on">
     In **Settings**, switch **Enabled** on and click **Update**. The automation now appears under **Active** on the Automations page.
@@ -101,6 +103,9 @@ After a qualifying event, check [Execution Logs](/tools/automations/builder-refe
   </Accordion>
   <Accordion title="Will using a template again create a duplicate?">
     Yes, each **Use Template** creates a new automation. Archive the extras from the Automations list, or disable them from the automation's **Settings** section.
+  </Accordion>
+  <Accordion title="Weekly Schedule Release Message: who gets it?">
+    It sends one announcement to each member its scheduled check finds, as its description says. If you switch the announcement to specific tags or roles, pick at least one before saving.
   </Accordion>
   <Accordion title="Do templates send anything when I click Use Template?">
     No. Every template starts inactive. Nothing goes out until you enable it, and scheduled templates only run at their next scheduled time after that.

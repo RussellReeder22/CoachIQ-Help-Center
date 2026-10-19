@@ -37,7 +37,7 @@ Every submission is captured in your form's Responses tab.
 | ----------------- | ----------------------------------------------------- |
 | Submission date   | When the form was completed                           |
 | Respondent        | Name/email if login was required, anonymous otherwise |
-| All field answers | Every question and the athlete's response             |
+| All field answers | Every question and the athlete's response, including waiver ticks and checkbox choices |
 | Connected actions | Payment made, session booked (if applicable)          |
 
 <Frame>
@@ -50,7 +50,11 @@ Every submission is captured in your form's Responses tab.
 
 </Frame>
 
-Use **7 Days**, **30 Days**, **90 Days**, or **All** to choose the period. If an older response seems missing, choose **All** and use **Refresh responses** before changing the form. Check the timezone beside the date filters when comparing a submission with a booking.
+Use **7 Days**, **30 Days**, **90 Days**, or **All** to choose the period. If an older response seems missing, choose **All** and use **Refresh responses** before changing the form. Click the **Submitted At** column header to sort oldest or newest first; the rows always follow the arrow.
+
+Check the time zone picker beside the date filters when comparing a submission with a booking. London is listed as **GMT/BST (London)**, which is correct all year. Choose **UTC** to view times in UTC; it only changes this view and doesn't change the time zone saved for your other screens.
+
+Waiver ticks and every choice a person picked appear in the Responses table, the single-response view and the CSV export, and all three agree. If you left a choice unlabeled in the builder, it shows as "Option 1", "Option 2" (or "Waiver 1" for a waiver) instead of a blank cell. Labeling each option gives the clearest results.
 
 ### Check the connected purchase or booking
 
@@ -69,7 +73,11 @@ If the form includes payment or booking, check both the answers and the connecte
 
 Removing a question or choice from a form keeps its past answers readable in Responses. A newly added question is blank on submissions collected before it existed. Duplicating the form copies its current setup and starts with zero responses; archiving and restoring the original preserves its submissions.
 
+On a form that allows one response per person (**Multiple responses** off), a person who submits again keeps a single row with their latest answers, even after you add, rename or remove questions.
+
 To remove a single submission, open Responses, select the submission's delete action, and confirm only after checking the record. Cancelling leaves it unchanged. Deleting one submission does not remove other submissions, purchases, bookings, or signed waivers. Export a copy first if you need to retain the response.
+
+Some submissions can't be deleted because they're the record of something else: the submission where a person first accepted a waiver, and submissions linked to a purchase or booking. **Delete** explains why, and the response stays saved. A later submission where the person only re-ticked a waiver they had already accepted can still be deleted without affecting their acceptance.
 
 ## Exporting responses
 
@@ -116,7 +124,7 @@ When login is required:
 
 1. Go to [**People → Clients**](/people/overview)
 2. Click on an athlete
-3. View their activity — form submissions appear in their history
+3. Open **All Activity** and choose the **Forms** filter. Each form submission is listed, and opening one shows its answers
 
 <Frame>
   ![Client Form Activity](/images/client-form-activity.png)

@@ -19,8 +19,9 @@ Cancel from **Scheduling → Calendar**. First decide whether you are removing *
 
 1. Open the session on the calendar and find the athlete in the participant list. You can also open the booking from the client's profile.
 2. Open the three-dot menu next to that athlete and choose **Cancel Booking**.
-3. If the booking used credits, choose **Cancel Without Refund** or **Cancel and Refund Credits** in the confirmation dialog.
-4. Confirm, then check that the athlete was removed and the other participants remain.
+3. Confirm the cancellation. The confirmation names the client, date and time. **No** keeps the booking. The same confirmation appears when you cancel from a bookings list.
+4. If the booking used credits, choose **Cancel Without Refund** or **Cancel and Refund Credits**.
+5. Check that the athlete was removed and the other participants remain.
 
 <Frame>
   ![Session details with the participant list and booking actions](/images/scheduling-review-oct01/session-participants.jpg)
@@ -38,7 +39,9 @@ Cancel from **Scheduling → Calendar**. First decide whether you are removing *
 4. Review **Notify participants**, the recipient count, and the selected channels. The dialog offers **Announcement**, **SMS**, and **In-app message**. Edit the prefilled message if you need to explain the change.
 5. Click **Cancel Session** to confirm, or **Keep Session** to leave it as it is.
 
-This cancels that occurrence. It does not delete the scheduler or close all future availability. To close other dates, [block time off](/scheduling/setting-black-out-dates) and separately review any bookings already made for those dates.
+This cancels that occurrence and closes that time. It does not delete the scheduler or close all future availability.
+
+If you need the time back later, book it again from **New Booking**: CoachIQ asks **Reopen canceled time?** first. Clients who were canceled stay canceled. See [Book a time closed with Cancel Session](/scheduling/manually-booking-athletes#book-a-time-closed-with-cancel-session). To close other dates, [block time off](/scheduling/setting-black-out-dates) and separately review any bookings already made for those dates.
 
 ## Cancellation and credit refunds
 
@@ -47,9 +50,9 @@ Athlete self-service cancellation depends on two separate settings in the schedu
 | Setting | What it controls |
 | --- | --- |
 | **Allow athletes to cancel** and the cancellation notice window | Whether and how close to the session an athlete can cancel themselves |
-| **Refund credits used on cancelation** | Whether an eligible self-service cancellation returns the credit |
+| **Refund credits used on cancellation** | Whether an eligible self-service cancellation returns the credit |
 
-Inside the notice window, the athlete cannot cancel through the app. They need to contact your team. It is not an automatic late-cancellation flow that lets them cancel and forfeits the credit.
+Inside the notice window, the athlete cannot cancel through the app. The booking explains why and suggests contacting the coach. It is not an automatic late-cancellation flow that lets them cancel and forfeits the credit. Outside the window, the athlete's cancel confirmation says whether the credit will be returned.
 
 When staff cancel a credit booking, review the refund choice rather than assuming the scheduler's policy has made the decision for you. Afterward, confirm the transaction in the athlete's **Credits** tab. If you need to correct a balance, see [Manage athlete credits](/payments/credits/managing-athlete-credits).
 
@@ -59,7 +62,7 @@ When staff cancel a credit booking, review the refund choice rather than assumin
 
 ## Recurring bookings
 
-Use **Skip** for one occurrence, or remove the pattern to stop the remaining series. Check the scope before confirming: canceling an entire calendar session may affect other athletes as well. See [Recurring bookings](/scheduling/recurring-bookings) for occurrence changes and payment considerations.
+Use **Skip** for one occurrence, or remove the pattern to stop the remaining series. Skipping a credit-paid date asks how many credits to return, starting at 0. Check the scope before confirming: canceling an entire calendar session may affect other athletes as well. See [Recurring bookings](/scheduling/recurring-bookings) for occurrence changes and payment considerations.
 
 ## After canceling
 

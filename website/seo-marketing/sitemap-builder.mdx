@@ -16,6 +16,12 @@ A sitemap is a file that tells search engines (like Google) which pages exist on
 
 Think of it as a table of contents for search engines - if a page isn't in your sitemap, Google might not find it (or might take longer to discover it).
 
+## New pages are included by default
+
+Your home page and every page you add are included in your sitemap and your site's `llms.txt` from the start. You don't need to turn anything on. The Sitemap Builder help says: "New pages are included in your sitemap by default. Hide a page to keep it out of search engines and AI tools."
+
+You can hide any page later, including the home page.
+
 ## Why control your sitemap?
 
 Not every page should appear in Google search results. You might want to hide:
@@ -66,7 +72,7 @@ When you hide a page and publish, CoachIQ does four things:
 
   <Step title="Toggle Page Visibility">
     Each page shows:
-    - **Page title** (what appears in search results)
+    - **Page title** (what appears in search results). A home page with no title is listed as **Home Page**
     - **URL slug** (the page path like `/about`)
     - **Eye icon** (visibility toggle)
 
@@ -108,6 +114,10 @@ When you hide a page and publish, CoachIQ does four things:
 
   <Accordion title="Will my page disappear from Google immediately?">
     No, and there's no fixed timeline. A page Google already listed can stay in results for a while, sometimes as a bare link with "No information is available for this page." Use the **Removals** tool in Google Search Console if you need it gone quickly.
+  </Accordion>
+
+  <Accordion title="Why is my home page called Home Page?">
+    If your home page has no **Title** in its page settings, the Sitemap Builder and your `llms.txt` name it **Home Page**. Give the page a title in its page settings to use your own name. It still opens at your site's main address.
   </Accordion>
 
   <Accordion title="Should I hide my blog posts?">

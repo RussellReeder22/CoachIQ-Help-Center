@@ -131,7 +131,7 @@ Open **Athlete Portal → Edit**, then select **Products** in the builder's left
     - Description preview
   </Step>
   <Step title="Confirm selection">
-    Click **Save** to add selected products to the section.
+    Click a selected product again to unselect it. Click **Save** to add selected products to the section. A custom title you give a newly added product is kept on the first **Update Page**.
 
     <Check>
       Products appear with their pricing and purchase buttons once you publish the page.
@@ -275,7 +275,48 @@ Share direct web purchase links when athletes cannot access the required checkou
 
 Families should check the initial charge separately from the recurring membership price. A setup fee or coupon can make the first payment different from renewals. A membership that starts billing later shows a scheduled billing date; that is not necessarily a free trial. See [Product payment amounts](/payments/product-builder#understand-the-amounts-clients-see).
 
-An eligible saved card can be selected during checkout. A card saved with a different seller may require a new payment method for this purchase. If saved payment methods fail to load, use **Retry** rather than assuming there are no saved cards. Check the selected card before confirming payment.
+An eligible saved card can be selected during checkout, and the card marked **Default** in **Billing** is preselected. A card saved with a different seller may require a new payment method for this purchase. If saved payment methods fail to load, use **Retry** rather than assuming there are no saved cards. Check the selected card before confirming payment.
+
+## What members see in Billing
+
+After a purchase, athletes and parents manage it from **Settings → Billing** in your app.
+
+<AccordionGroup>
+  <Accordion title="Memberships and orders">
+
+    - **Billing** lists every current membership, not only the most recent. **Orders** keeps loading older purchases as they scroll. If history can't load, both pages say so with **Retry** instead of showing nothing.
+    - Trial memberships show the trial end date next to the price.
+    - A membership whose payments you paused in Stripe shows **Payments paused** and, if set, when payments resume, in **Billing**, **Orders** and **Archive**. The member keeps their access, bookings and credits while paused.
+    - Free ($0) memberships and memberships you granted show "No payment method needed."
+    - A purchase you archive on the client's profile shows **Archived** in their **Orders**.
+    - Order times show the time zone and match when the person paid.
+
+  </Accordion>
+  <Accordion title="Canceling a membership">
+
+    When the product allows members to cancel, they see when access ends before they confirm: for a trial, the trial end date and confirmation that they won't be charged; for a paid membership, the end of the current period. Members can also cancel a free membership themselves. A scheduled membership canceled before its first charge reads "Access until (date) · no charge."
+
+    When a member can't cancel from **Billing**, they see why: only the person who pays can cancel it, you need to cancel it (with a button to message you), a temporary problem with **Try again**, or a prompt to sign in. If they continue to Inbox, the drafted message names the membership. A membership you already canceled shows "Already canceled."
+
+  </Accordion>
+  <Accordion title="Credits">
+
+    - **Billing → Credits** lists the member's credit packs. A parent also sees each managed child's credits, marked **For** and the child's name.
+    - One-time credit packs show **Active**, **Expired**, **Credits unavailable** or **No credits left**. They no longer say "Subscription inactive" or offer Re-subscribe.
+    - When a pack has credits that expire on different dates, it names the next expiry and what has already expired. Credits that can still be booked are never labeled expired.
+
+  </Accordion>
+  <Accordion title="Saved cards">
+
+    - Members can remove a saved card, including their only card, unless it's the only card paying for an active membership. In that case they're asked to add another card first. The **Remove card** dialog explains that memberships move to the default card and aren't canceled.
+    - **Set as default** sticks after a reload, and checkout preselects that card.
+    - Changing the card on a membership works after a missed payment or after the old card was removed. When a change can't be made, the reason is shown.
+    - A declined card shows the bank's reason.
+
+  </Accordion>
+</AccordionGroup>
+
+Coaches still can't remove a client's card from the client profile. To cancel or change a membership for a member, see [Manage subscriptions](/payments/manage-subscriptions).
 
 ## Common questions
 
@@ -332,7 +373,8 @@ An eligible saved card can be selected during checkout. A card saved with a diff
 1. Check the athlete’s app version and whether it supports the intended purchase; offer the web purchase link when needed.
 2. Check Products page Active toggle is ON
 3. Verify their account has access
-4. Test the web portal link yourself
+4. Check the product isn't archived. Archived products don't appear in your app's Products page or website product sections, and a direct link to one shows **No Product Found**. Hidden but active products still open from a direct link.
+5. Test the web portal link yourself
 
 ### Purchase buttons not working (web)
 

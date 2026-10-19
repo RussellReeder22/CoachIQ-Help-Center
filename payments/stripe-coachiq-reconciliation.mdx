@@ -172,6 +172,18 @@ These systems sync automatically, but occasionally they can get out of alignment
     3. Ensure the remaining subscription has the new card attached
     4. Verify CoachIQ shows only one Active subscription
   </Accordion>
+
+  <Accordion title="Payments are paused in Stripe">
+    **Stripe shows payment collection paused on a subscription.**
+
+    CoachIQ shows **Payments paused** under the subscription's status in **Payments → Subscriptions**, with the resume date if one is set. Paused memberships have their own filter and count and aren't included in Active or MRR. The client keeps access, bookings and credits. See [Payments paused](/payments/subscriptions-dashboard#payments-paused).
+  </Accordion>
+
+  <Accordion title="A payment or subscription is in Stripe but not in CoachIQ">
+    Use **Missing transactions?** on **Payments → Transactions**, or **Missing subscriptions?** on **Payments → Subscriptions**, to resync. The dialog says whether the resync started, is still running, or found everything up to date. New transactions can take a few minutes to appear.
+
+    In an organization with several groups, each group's pages show only that group's sales, so check that you're in the group that sold the product.
+  </Accordion>
 </AccordionGroup>
 
 ---
@@ -182,7 +194,7 @@ These systems sync automatically, but occasionally they can get out of alignment
 |-------------|------------------|
 | Client subscription status | CoachIQ → People → Client → Subscriptions tab |
 | Subscription payment history | Stripe Dashboard → Subscriptions → Click subscription |
-| Client's saved payment method | Stripe Dashboard → Customers → Search by email |
+| Client's saved payment method | CoachIQ → People → Client → Payment Methods tab (shows which card each membership charges), or Stripe Dashboard → Customers → Search by email |
 | All charges for a client | Stripe Dashboard → Payments → Search by email |
 | Whether credits were issued | CoachIQ → People → Client → Credits tab |
 | Products client has purchased | CoachIQ → People → Client → Products tab |

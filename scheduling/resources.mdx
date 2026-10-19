@@ -1,9 +1,9 @@
 ---
 title: "Resources"
-description: "Track courts, rooms, and equipment; attach them to schedulers; choose whether a booking reserves all of them or one open one; and prevent (or allow) double-booking."
+description: "Track courts, rooms, and equipment; attach them to schedulers; choose whether a booking reserves all of them or one open one; change a lesson's resource; and prevent (or allow) double-booking."
 icon: "cube"
 sidebarTitle: "Resources"
-keywords: ["resources", "courts", "cages", "equipment", "reserve all", "use first available", "resource pool", "allow resource double booking", "per-date resources", "double-booking prevention"]
+keywords: ["resources", "change resource", "one per session", "one per booking", "one resource per booking", "courts", "cages", "equipment", "reserve all", "use first available", "resource pool", "allow resource double booking", "per-date resources", "double-booking prevention"]
 ---
 
 ## What are Resources?
@@ -64,7 +64,22 @@ Once more than one resource is attached, the **Resources** section asks how a bo
 | **Reserve all** — *Every attached resource is required* | Reserves every attached resource for the time slot. A time is available only when every attached resource is open. | Sessions that need the whole space: a team practice across Cage 1, 2, and 3 |
 | **Use first available** — *Assign one open resource at booking* | Takes one free resource from the attached list and reserves only that one. The rest of the pool stays open for other bookings. | Interchangeable spaces: two hitting lessons at 4:00 that each need *a* cage, not a specific one |
 
-**Reserve all** is the default and matches how resources worked before this option existed. Existing schedulers with several resources attached are unchanged.
+**Reserve all** is the default and matches how resources worked before this option existed. Existing schedulers with several resources attached are unchanged. **Use first available** can only be chosen once at least one resource is attached; a scheduler with no resources books normally.
+
+### One per booking or one per session
+
+When you choose **Use first available**, also choose how the pool is shared:
+
+| Option | What happens | Use it for |
+|---|---|---|
+| **One per booking** | Each booking takes its own resource. Two athletes in the same session time hold two resources. | Rentals and private lessons, where every booking needs its own space |
+| **One per session** | Everyone booked into the same session time shares one resource. The first booking takes the first open resource, and later athletes join it. | Group and semi-private sessions, where the whole group uses one field or court |
+
+Example: a facility has three fields. Its rental schedulers use **One per booking**, and its semi-private session (up to 3 athletes) uses **One per session**. Three athletes in the 1:00 PM semi-private all land on the same field, so two fields stay open for rentals. Once the fields or the session's seats are full, further bookings are refused.
+
+<Tip>
+  If one group session is closing every other scheduler at that time, check that it is set to **One per session**, not **One per booking**.
+</Tip>
 
 ### How Use first available plays out
 
@@ -77,7 +92,27 @@ A facility attaches **Cage 1** and **Cage 2** to a "Hitting Lesson" scheduler se
 
 This example assumes the scheduler's capacity, staffing, and other booking rules also permit the simultaneous lessons. A resource pool does not override those limits.
 
-Families do not pick a cage. Staff see which resource was reserved on the booking in the calendar click view, and the allocated resource is what conflict checks use from then on: another scheduler that needs Cage 1 loses that hour, while Cage 2 stays free until someone takes it.
+Families do not pick a cage. Staff see which resource was reserved in the calendar click view, and the allocated resource is what conflict checks use from then on: another scheduler that needs Cage 1 loses that hour, while Cage 2 stays free until someone takes it.
+
+## Change a booked lesson's resource
+
+On the web admin calendar, a session that uses **Use first available** with **One per booking** says **One resource per booking** in its click view, and each athlete shows which resource they hold. To switch one:
+
+<Steps>
+  <Step title="Open the session">
+    Go to **Scheduling → Calendar** and click the session.
+  </Step>
+  <Step title="Open the athlete's menu">
+    Click the three dots next to the athlete and choose **Change Resource**.
+  </Step>
+  <Step title="Pick a free resource">
+    Resources already taken at that time are greyed out and show who has them. Pick an open one.
+  </Step>
+</Steps>
+
+Moving a lesson or using **Move Session** picks a free resource from the pool automatically. If every resource is taken at the new time, the move is refused and the message names them, for example "Cage 1 and Cage 2 are already in use at that time."
+
+A session set to **One per session** shows **One resource per session** with the resource it holds. Its athletes share that resource, so there is no per-athlete **Change Resource** option.
 
 <Tip>
   Pair **Use first available** with one scheduler per skill or coach rather than one scheduler per cage. You keep the booking flow families already know, and the pool sorts out which space is used.
@@ -104,13 +139,13 @@ Conflict checks for that date use the date's own resources, not the scheduler de
 
 ## How double-booking prevention works
 
-Once a resource is attached to a scheduler, CoachIQ locks that resource for the duration of each booked session. If that time slot is already filled by another session using the same resource, it becomes unavailable — even if the second scheduler still has open capacity. With **Use first available**, the lock applies to the one resource that was assigned to the booking.
+Once a resource is attached to a scheduler, CoachIQ locks that resource for the duration of each booked session. If that time slot is already filled by another session using the same resource, it becomes unavailable — even if the second scheduler still has open capacity. With **Use first available**, the lock applies to the one resource that was assigned: to each booking with **One per booking**, or to the whole session time with **One per session**.
 
 If two groups in your organization share a building, link them under **Settings → Shared Calendar** with the **Resources only** share mode so a cage booked in either group blocks it for the other. See [Sharing a calendar across groups](/scheduling/shared-calendar-across-groups).
 
 ## Example use cases
 
-- **Basketball facility**: "Half Court A" and "Half Court B" attached to one group training scheduler with **Use first available**, so two groups can run side by side
+- **Basketball facility**: "Half Court A" and "Half Court B" attached to one group training scheduler with **Use first available** and **One per session**, so two groups can run side by side
 - **Training room**: "Speed & Agility Room" on a conditioning scheduler prevents two coaches from booking the same room at the same time
 - **Batting cage**: "Cage 1" on a hitting session scheduler ensures each session has a dedicated lane
 - **Team practice**: Cage 1, Cage 2, and Cage 3 on a "Team Practice" scheduler with **Reserve all**, so the whole facility is held for the practice

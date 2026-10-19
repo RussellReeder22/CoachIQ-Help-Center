@@ -625,9 +625,7 @@ What happens at each stage of a subscription's life.
   <Step title="Athlete sees error">
     When trying to book with subscription credits:
 
-    **Message**: "Subscription inactive. Update payment method to continue."
-
-    Or similar error indicating payment issue
+    **What they see**: In **Billing**, the membership reads "Membership inactive · Credits paused" with a note that the credits can't be redeemed while the membership is inactive. In your admin, the client's credit tab reads "Membership inactive. The balance is kept but can't be spent." with 0 redeemable.
 
     **Solution required**: Athlete must update payment method in Athlete Portal or Stripe
   </Step>
@@ -695,7 +693,7 @@ What happens at each stage of a subscription's life.
 
     **After 30 days**: Cancel subscription in Stripe (releases athlete from failed payment attempts)
 
-    **Document**: Note in athlete profile why subscription ended (involuntary churn due to payment failure)
+    **Document**: Add a note on the client's profile (**PROFILE → Notes**) saying why the subscription ended (involuntary churn due to payment failure). [Staff notes](/people/client-profiles/client-profiles#staff-notes)
   </Accordion>
 </AccordionGroup>
 

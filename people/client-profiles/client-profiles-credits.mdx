@@ -36,7 +36,7 @@ Each credit transaction shows:
 
 | Column     | What it means                                                    |
 | ---------- | ---------------------------------------------------------------- |
-| **Date**   | When transaction occurred (with time)                            |
+| **Date**   | When transaction occurred, in your time zone. The header names the zone, for example **Date (PT)**; hover a date for the year, seconds and zone |
 | **Amount** | Credits added/removed (green = +5, red = -1)                     |
 | **Action** | What happened (Redeemed, Expiration, Renewal, Purchased, Set by) |
 | **Source** | Where credits came from (product name, admin name, "Unknown")    |
@@ -45,6 +45,8 @@ Each credit transaction shows:
 <Frame>
   ![CoachIQ credit transaction log showing amounts, actions, and sources](/images/client-credit-logs.png)
 </Frame>
+
+Credit Logs and **Payments → Transactions** use the same time zone, so a purchase and the credits it added show the same time.
 
 ---
 
@@ -70,11 +72,11 @@ Each credit transaction shows:
     **When you see this**: After they complete purchase or recurring billing
   </Tab>
   <Tab title="Set by">
-    **Action**: You (admin) manually added credits
+    **Action**: You (admin) manually changed the balance
 
-    **Shows**: `+6 Credits` (green)
+    **Shows**: `Set to 6`, the balance after the change, not the number of credits added or removed. Older manual rows display the same way.
 
-    **Source**: Your name (e.g., "Russell Reeder")
+    **Source**: **Manual**, with **Set by** and the staff member's name (e.g., "Russell Reeder")
 
     **When you see this**: When you give makeup credits, promotions, or adjustments
   </Tab>
@@ -97,6 +99,20 @@ Each credit transaction shows:
     **When you see this**: When credits hit expiration date and weren't used
   </Tab>
 </Tabs>
+
+---
+
+## Credit renewals and expirations
+
+For a membership billed through Stripe, the **Credit Renewals** and **Credit Expirations** dates match the membership's billing date. A membership set to cancel at the end of its period shows no renewal row, and its expiration date matches the cancel date. Memberships added without a Stripe subscription renew the day after, when the overnight run adds the credits.
+
+The expiration warning on a credit pack counts only credits whose date has passed. Credits used for bookings are not described as expired.
+
+When a booking paid with credits is canceled and the credit is returned, it goes back to the pack that paid for it and keeps that pack's expiration date.
+
+### When a membership is inactive
+
+If a membership has ended or is otherwise inactive, its credit tab reads "Membership inactive. The balance is kept but can't be spent." **Credits Redeemable** shows 0, matching what the athlete sees in **Billing**. The balance comes back into use if the membership becomes active again. This is separate from the credit-use toggle described in [Turning off a product's credits](#turning-off-a-products-credits).
 
 ---
 
@@ -142,13 +158,13 @@ Each credit transaction shows:
     **Proof**: "You redeemed a credit on Oct 16 for Rising Stars Class at 10:34 AM."
   </Accordion>
   <Accordion title="Manually adding credits (makeup, promotion, gift)">
-    **You can't do it from this tab.** To manually add credits:
+    1. Open the **Master Credits** tab, or the tab for the product whose credits you want to change
+    2. Enter the new total balance (this sets the balance; it doesn't add to it)
+    3. Click **Update Redeemable Credits**
 
-    1. Go to main **Payments** section → **Credits**
-    2. Find client, add credits
-    3. Return to profile Credits tab to see "Set by [Your Name]" entry
+    The confirmation names the credit bank and its new balance, and Credit Logs show a "Set to" entry with your name.
 
-    [Learn how to add credits →](/payments/credits/credit-system-overview)
+    [Learn how to add credits →](/payments/credits/managing-athlete-credits#manual-credit-operations)
   </Accordion>
 </AccordionGroup>
 
@@ -213,7 +229,7 @@ Turning credits off overrides everything else: even if the underlying purchase o
 - Client might have Master Credits AND Elite Credits separately
 
 <Warning>
-  **Redemption priority**: When a client books, CoachIQ uses product-specific credits first (if available), then falls back to Master Credits. You can't control this order.
+  **Redemption priority**: When a client books, CoachIQ uses Master Credits first. If more than one product's credits can pay for the session, it uses the credits that expire soonest, and credits that never expire are used last. You can't control this order.
 </Warning>
 
 ---

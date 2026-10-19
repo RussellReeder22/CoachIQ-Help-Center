@@ -3,7 +3,7 @@ title: "Client Profiles: Complete Activity Dashboard"
 description: "Everything you need to know about a client in one place—navigate the profile dashboard and understand each activity tab"
 sidebarTitle: "Client Profiles"
 icon: "address-card"
-keywords: ["client profile", "athlete profile", "activity history", "profile tabs", "client dashboard", "view client", "client info"]
+keywords: ["client profile", "athlete profile", "staff notes", "client notes", "private notes", "activity history", "profile tabs", "client dashboard", "view client", "client info"]
 ---
 
 <Info>
@@ -83,6 +83,8 @@ On the right side of every profile, the **User Details** panel shows editable in
 - **Additional emails** (CC, up to 3) — extra addresses that receive copies of emails to this client
 - **Custom fields** (click **Add Field** for custom tracking; fields you created under [Sign-up & Profile](/people/sign-up-and-profile) appear here too)
 
+Coaches whose Clients page isn't blocked in Staff Access can see and edit a client's custom field values. Adding or deleting a field stays with Admins.
+
 <Note>
   **Changes save automatically**: Click into any field, make your edit, and it saves immediately. No separate "Save" button needed.
 </Note>
@@ -93,7 +95,11 @@ On the right side of every profile, the **User Details** panel shows editable in
 
 ## The profile sections explained
 
-The client profile organizes everything into three groups of tabs: **ACTIVITY** (All Activity, Messages, Bookings), **PAYMENTS** (Credits, Products, Transactions, Subscriptions, Payment Methods), and **PROFILE** (Family, Media, Waivers, Block or Remove). Each tab answers a specific question about your relationship with this client.
+The client profile organizes everything into three groups of tabs: **ACTIVITY** (All Activity, Messages, Bookings), **PAYMENTS** (Credits, Products, Transactions, Subscriptions, Payment Methods), and **PROFILE** (Family, Notes, Media, Waivers, Block or Remove). Each tab answers a specific question about your relationship with this client.
+
+<Note>
+  If an Admin blocks a staff member's Payments pages in Staff Access, the matching **Products**, **Transactions**, **Subscriptions** and **Payment Methods** tabs hide on client profiles too. **Credits** always stays visible.
+</Note>
 
 <Frame>
   ![CoachIQ client profile activity tabs navigation bar](/images/client-tabs.png)
@@ -156,6 +162,11 @@ The client profile organizes everything into three groups of tabs: **ACTIVITY** 
 
     Choose an active athlete account, or create a managed child.
   </Card>
+  <Card title="Notes" icon="note-sticky" href="#staff-notes">
+    **Private staff notes**
+
+    What your staff knows about this family, with who wrote each note and when. Athletes and parents never see notes.
+  </Card>
   <Card title="Media" icon="photo-film" href="/people/client-profiles/client-profiles-media">
     **Shared content**
 
@@ -208,6 +219,34 @@ A managed child can show **Managed — no login** with **Enable login**.
 <Frame>
   ![New child form](/images/people-client-family-new-child.png)
 </Frame>
+
+## Staff notes
+
+<Info>
+**Where to find this**: **People** → **Clients** → open the client → **PROFILE** → **Notes**
+</Info>
+
+Use **Notes** to keep what you know about a family in one place: injuries, goals, who to call about payments, what you talked about at the last session. Notes are staff-only. Athletes and parents never see them, and they are never sent to families in emails or messages.
+
+- Notes are plain text, up to 50,000 characters each.
+- Each note shows who wrote it and when, newest first.
+- Notes can't be edited. To correct one, delete it and add it again.
+- Staff profiles (Coaches and Admins) have no Notes tab. Notes are for clients.
+
+**Who can do what**
+
+| | Read notes | Add notes | Delete notes |
+| --- | --- | --- | --- |
+| **Admins** | Yes | Yes | Any note |
+| **Coaches** | Yes | Yes, while **Coaches can add notes** is on | Only their own |
+
+Admins see a **Coaches can add notes** switch at the top of the Notes tab. It is on by default. When it is off, Coaches can still read notes but can't add or delete them.
+
+<Tip>
+  If Copilot is available in your organization, it can read, add and delete notes with the same rules, after you approve its card. A note it adds shows **CoachIQ Assistant for** the staff member who asked. A connected AI assistant (ChatGPT or Claude) can do the same, and its notes name the app and the staff member who allowed it. For now, notes from a connected assistant are limited to 4,096 characters.
+</Tip>
+
+---
 
 ## How to use profiles effectively
 
@@ -297,7 +336,7 @@ When reviewing multiple client profiles, use these shortcuts to move quickly:
     - Their subscription status
     - Their messages with you
 
-    They **cannot** see transaction history, all activity timeline, or the detailed information you see in the coaching dashboard.
+    They **cannot** see transaction history, all activity timeline, staff notes, or the detailed information you see in the coaching dashboard.
   </Accordion>
   <Accordion title="Why don't I see any data in some tabs?">
     Tabs only populate with data after activity occurs:

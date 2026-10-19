@@ -27,7 +27,11 @@ The Transactions dashboard displays every payment event in your coaching busines
 - Failed payments
 - Revenue totals
 
-Every transaction that touches Stripe appears here with complete details.
+Every transaction that touches Stripe appears here with complete details. Purchases you add to a client and mark paid by cash, check or other, and \$0 orders (access codes and 100% coupons, including guest bookings), appear here too.
+
+<Note>
+  In organizations with several groups, Transactions shows only the current group's records, and the totals include only that group's sales. If some rows couldn't be checked, a notice says so.
+</Note>
 
 <Frame>
   ![CoachIQ Transactions dashboard showing payment history and revenue metrics](/images/transaction-page.png)
@@ -39,14 +43,16 @@ Each transaction displays:
 
 | Column      | What it shows                           |
 | ----------- | --------------------------------------- |
-| **Date**    | When transaction occurred               |
-| **Status**  | Succeeded, Blocked, Payout, etc.        |
+| **Date**    | When transaction occurred, in your own time zone. The header names it, for example **Date (PT)** |
+| **Status**  | Succeeded, Blocked, Payout, etc. A retryable decline shows the reason underneath, such as **Card declined** |
 | **Amount**  | Transaction amount                      |
 | **Client**  | Client name (clickable link to profile) |
 | **Product** | Which product was purchased             |
 | **Source**  | How the transaction was created (see below) |
 
-Click any transaction row to view complete details.
+Click any transaction row to view complete details. The list loads more rows as you scroll; a **Load more** button appears only when the list is too short to scroll.
+
+**Membership rows with no charge yet** say why instead of reading as collected money: **Trial ends [date]**, **Scheduled** with **Starts [date]**, **Cancels [date]** or **Canceled**, with a muted amount and **No charge yet** or **No charge**. These rows add \$0 to Revenue.
 
 ## Transaction source types
 
@@ -57,6 +63,8 @@ The **Source** column tells you how a transaction was created:
 | **Open** | Transaction has a Stripe ID. Click **Open** to view the charge directly in Stripe. |
 | **Admin** | Transaction was created by an admin — no Stripe charge is mapped. This appears when a purchase is manually added through the dashboard (e.g., comping a client, granting a free trial) or when a Stripe ID has been manually removed from a subscription. |
 | **Coupon** | A coupon code was applied to the transaction. |
+| **Access Code** | The order was placed with an access code, including codes on recurring products. These orders also appear under the Access Code filter. |
+| **Cash · Paid**, **Check · Paid**, **Other · Paid** | A product you added to a client and marked paid outside Stripe. The amount is what you confirmed in **Amount**, and it counts toward Revenue. [Recording cash, check and other payments](/people/client-profiles/client-profiles-products#recording-cash-check-and-other-payments) |
 
 <Note>
 **"Admin" does not mean the admin was charged.** It means an admin created the transaction manually without a Stripe payment. This is normal for comped access, free trials granted by the coach, or manual adjustments.
@@ -95,6 +103,8 @@ The **Source** column tells you how a transaction was created:
 - Usually displayed when transaction wasn't completed
 - Ex: User goes through checkout but doesn't complete the process
 
+**Declined payments that can be retried** show the reason under the status (for example **Card declined** or **Authentication failed**). Hover it for Stripe's full message. These stay under **Past Due** and **Blocked**; the **Failed** card counts only final failed or canceled payments. Hover **Failed** for a reminder.
+
 ## Filter and search transactions
 
 **Filter by status:**
@@ -104,7 +114,7 @@ The **Source** column tells you how a transaction was created:
 - Past Due only
 - Blocked only
 
-**Filter by Product:** Click the product(s) from the drop down view
+**Filter by Product:** Choose products in **Filter by products**. Each one becomes a chip; click **Apply** to filter. Filtering by status keeps each payment's product name and link. The product filter resets when you reload the page.
 
 <Frame>
   ![CoachIQ transactions page product filter dropdown](/images/transaction-product-filter.png)
@@ -116,9 +126,10 @@ Top of page displays key metrics:
 
 **Total Revenue**
 
-- Sum of all successful transactions
-- Updates in real-time
-- Includes one-time and subscription payments
+- Counts only money actually collected
+- Includes one-time and subscription payments, and cash, check and other purchases marked paid
+- Canceled memberships marked **No charge** add \$0, though each row still shows its own amount
+- A payment linked to two purchase records is counted once
 
 **Revenue by period**
 
@@ -128,8 +139,14 @@ Top of page displays key metrics:
 - Custom date range
 
 <Info>
-  Revenue metrics reflect selected date range and filters. Adjust filters to see different calculations.
+  Revenue metrics reflect the selected date range and product filter. When you filter by status, the cards are labeled **Totals: all statuses**, because they still count every status, not just the rows shown.
 </Info>
+
+If the totals fail to load, the page says "Totals couldn't load." with **Try again**.
+
+## Missing transactions?
+
+If a payment you see in Stripe isn't listed, click **Missing transactions?** to resync. The dialog says "Resync started. New transactions can take a few minutes to appear." or that everything is up to date. The last totals stay on screen with "Updating totals" while they recount. If the resync fails, the dialog stays open with **Try again**.
 
 ## View transaction details
 
@@ -249,7 +266,7 @@ Click **Open** under the Source column of the transaction to view on Stripe:
     **Possible causes:**
 
     - Transaction not linked to CoachIQ product
-    - Sync delay (wait 5 minutes and refresh)
+    - Sync delay (use **Missing transactions?** to resync, then wait a few minutes)
     - Manual Stripe charge (not through CoachIQ)
 
     **Check:** View transaction in Stripe Dashboard to see product/metadata
@@ -269,6 +286,8 @@ Click **Open** under the Source column of the transaction to view on Stripe:
 
     - You manually grant a client access or a free trial from the dashboard
     - A Stripe ID was removed from a subscription manually
+
+    Purchases you mark paid by cash, check or other show as **Cash · Paid**, **Check · Paid** or **Other · Paid** instead.
 
     The admin was **not** charged. It simply means the purchase bypassed Stripe.
   </Accordion>

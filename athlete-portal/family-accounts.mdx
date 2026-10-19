@@ -38,6 +38,8 @@ In youth programs the parent is the person who acts: they pay, they drive to the
 
 Parents can do this any time, not only at sign-up. A parent who registered with one child and later wants to add a sibling does not need you to do it for them.
 
+Parents can also add a child in the middle of checkout. When they add one new athlete there, that athlete is selected automatically, so **Continue** buys for the child they just added. If they add several at once, nothing is preselected and they must pick one before continuing.
+
 ## What you can do as a coach
 
 <Info>
@@ -90,11 +92,25 @@ Once family members are added, booking a session includes a **Select Athlete** s
 
 That step also shows **Family Credits available**. Eligible credits from the booking parent's Buyer pack can cover a connected managed athlete's session. The scheduler determines how many credits are used. A purchase assigned to the athlete supplies that athlete's credits; a parent's own pack is not a shared balance for another parent. The booking record itself shows which athlete it's for, so you no longer have to rely on notes, tags, or asking at check-in to tell family bookings apart — see [Booking for Multiple Athletes](/scheduling/booking-for-multiple-athletes).
 
+## Changing a child's booking
+
+A linked parent can reschedule or cancel their child's lesson from **Bookings**, including a lesson you or your staff booked for the child. Rescheduling needs **Allow athletes to reschedule** turned on for the scheduler. Cancel isn't offered inside the cancellation notice window, and rescheduling there follows the scheduler's **Block rescheduling within cancellation window** setting.
+
+- **Single lessons:** the parent picks a new time and sees **Reschedule Confirmed**. The lesson stays under the child's name. A parent who cancels gets the cancellation email.
+- **Weekly series:** the parent can move or cancel one date in the series. Only that date changes; the rest of the series stays booked.
+- **When the change is blocked:** the parent sees a readable reason, for example "You can only book a time slot once." when the child already has a lesson at that time. Inside the notice window, the booking explains why Cancel isn't available and suggests contacting you.
+
+Someone who isn't linked to the child can't change the booking and sees "This athlete isn't linked to your account."
+
 ## How a parent sees their athletes' bookings
 
 A parent's own **Bookings** view in the athlete portal, and in the native iOS and Android apps, lists every connected athlete's sessions **grouped by athlete**. The parent never has to switch into each child to check who has practice tonight. Session location shows on each booking in the app, so a per-date venue change is visible where the parent looks.
 
 You see the same thing from the coach side: opening the parent in **People** → **Bookings** shows all bookings under that parent, sorted by which athlete they belong to. Opening the athlete shows only that athlete's bookings. See [Bookings tab](/people/client-profiles/client-profiles-bookings#parent-profiles-bookings-grouped-by-athlete).
+
+## A child's credits in the parent's Billing
+
+A parent's **Settings → Billing → Credits** lists their own credits first, then each managed child's credits marked **For** and the child's name. Credits from a membership bought for a child always belong to the child; this is where the parent can see them. Booking for that child uses the child's credits.
 
 ## Registering an athlete at checkout
 
@@ -106,6 +122,8 @@ What attaches to the athlete they pick:
 - Any team tag the product's automation applies
 - Any credits the product grants
 - Date of birth, which is collected per athlete rather than once per family
+
+If the product or session has a required registration form, the form is asked **for each athlete**. A parent who completed it for themselves or for one child is asked again for the next child, and each child's answers are saved under that child. Families who filled in a form under the parent's account before October 2026 may be asked once more for the child. A returning buyer whose form is already on file sees a note that the step was skipped. Waivers are still required.
 
 A parent registering two children for two different teams goes through checkout once per child, choosing the right athlete each time, and each child ends up on the right roster with the right credits. Purchase-triggered automations (add a tag, book all future practices) act on the selected athlete, not the parent.
 
@@ -131,7 +149,7 @@ For paid session bookings, the parent remains the payer and the selected child i
 
 More than one parent can connect to the same athlete. There is no designated primary parent. Each sees the athlete's schedule, including bookings made by the other parent.
 
-- **Booking changes:** Either parent can book. For a one-time booking, the parent who made it must cancel or reschedule it. Recurring-booking cancellation currently also allows another connected parent.
+- **Booking changes:** Either parent can book. For a one-time booking a parent made, that parent must cancel or reschedule it. Recurring-booking cancellation currently also allows another connected parent. Bookings staff made for the athlete can be rescheduled or canceled by a connected parent (see [Changing a child's booking](#changing-a-childs-booking)).
 - **Credits:** Purchases assigned to the athlete can supply credits when either parent books for that athlete. A parent's own credit pack is not spendable by the other parent. Refunds return to the original payment source.
 - **Notifications:** Booking confirmations and cancellation notices go to the parent who made the booking; session reminders go to connected parents. For automations, choose the athlete-and-parents audience when both should receive the action. Purchase receipts go to the parent who paid.
 - **Account changes:** Either connected parent can edit the athlete's details or remove another parent's connection. There is no separate approval step for those changes.
@@ -141,6 +159,8 @@ Staff see each parent as a separate contact on the athlete's Family tab.
 ## Opening a link for another business
 
 Signing in through another CoachIQ group's link does not automatically join that group. If the page says **You're a member of** a different group, use the option to go to your group, or ask the intended business for its registration instructions.
+
+Within one organization, someone who already belongs to one of its groups and opens another group's app gets one clear choice: go to their own group, or join this one. Someone who is signed in but hasn't joined sees a single **Join** card with your logo and a **Join Now** button. A parent who signs in on a group's booking page joins that group as a parent and gets the welcome email, the same as with **Join this group**.
 
 ## Common questions
 
@@ -153,6 +173,9 @@ Signing in through another CoachIQ group's link does not automatically join that
   </Accordion>
   <Accordion title="A parent bought a registration but the child has no practices on their schedule">
     Check which athlete the purchase is attached to: open the parent in **People** → **Products**. If the purchase landed on the parent rather than the child (this happened before the **Who are you registering?** step existed), book the child into the team's practice sessions manually and move the tag to the child. Registrations made after August 2026 attach to the selected athlete automatically.
+  </Accordion>
+  <Accordion title="Can a parent or coach remove a managed child?">
+    Only if the child has no history. A managed child who has any booking, purchase or activity can't be removed by a parent or staff member; the message reads "Can't remove: this athlete has booking, purchase, or activity history." This keeps the child's memberships and records attached to a real profile.
   </Accordion>
   <Accordion title="Do parents see their athletes' bookings in the native app?">
     Yes. The iOS and Android apps show a parent every connected athlete's bookings, grouped by athlete, with the session location. See [Booking in the native app](/athlete-portal/native-app-booking).

@@ -3,7 +3,7 @@ title: "Subscriptions Dashboard"
 description: "Navigate the Subscriptions page to monitor recurring billing, track active memberships, and manage subscription status"
 sidebarTitle: "Subscriptions Dashboard"
 icon: "rotate"
-keywords: ["subscriptions dashboard", "view subscriptions", "active subscriptions", "MRR", "recurring revenue", "membership list"]
+keywords: ["subscriptions dashboard", "view subscriptions", "active subscriptions", "MRR", "recurring revenue", "membership list", "payments paused", "paused subscription"]
 ---
 
 <Info>
@@ -22,19 +22,28 @@ The Subscriptions dashboard displays all recurring billing for your coaching bus
 
 Every subscription product purchase creates an entry here that tracks billing until canceled.
 
+<Note>
+  In organizations with several groups, Subscriptions shows only the current group's memberships, and the counts and MRR include only that group's sales. If some rows couldn't be checked, the page says "Some subscriptions could not be checked. Refresh to try again." and leaves those rows out.
+</Note>
+
 <Frame>
   ![CoachIQ Subscriptions dashboard showing active subscriptions and MRR metrics](/images/subscription-landing.png)
 </Frame>
 
 ## Key metrics at the top
 
-Three metrics display above your subscription list:
+These metrics display above your subscription list:
 
 **Active Subscriptions**
 
 - Count of currently active, billing subscriptions
 - Includes trialing and scheduled subscriptions
-- Excludes canceled and past due
+- Excludes canceled, past due and payments paused
+
+**Payments paused**
+
+- Count of memberships whose payment collection is paused in Stripe
+- Shown separately next to Active and MRR, and not counted as active revenue
 
 **Canceled Subscriptions**
 
@@ -58,13 +67,13 @@ Each subscription displays:
 | Column      | What it shows                                             |
 | ----------- | --------------------------------------------------------- |
 | **Date**    | When subscription started                                 |
-| **Status**  | Current billing status (Active, Canceled, Past Due, etc.) |
-| **Client**  | Client name linked to profile                             |
+| **Status**  | Current billing status (Active, Canceled, Past Due, etc.), with a second line such as **Trial ends [date]**, **Cancels [date]** or **Payments paused** when it applies |
+| **Client**  | Client name linked to profile. Shows **Removed client** if the client's account was deleted |
 | **Amount**  | Billing amount and frequency (\$200/month)                |
 | **Product** | Which subscription product                                |
 | **Type**    | Always "Subscription"                                     |
 
-Click any row to view full subscription details.
+Click any row to view full subscription details. Long membership names wrap. The list loads more rows as you scroll; a **Load more** button appears only when the list is too short to scroll.
 
 ## Subscription status types
 
@@ -79,14 +88,14 @@ Click any row to view full subscription details.
 
     Client is in free trial before first charge.
 
-    Card on file but not yet charged. Trial ends on specified date, then first payment processes. Client can cancel during trial without charge.
+    Card on file but not yet charged. The row and the record show **Trial ends [date]**, then the first payment processes. Client can cancel during trial without charge.
   </Tab>
   <Tab title="Scheduled">
-    **Purple indicator - Starts in future**
+    **Amber indicator - Starts in future**
 
-    Subscription purchased but doesn't start until future date.
+    Subscription purchased with a later first charge. It shows **Scheduled**, not Trialing, and its record shows **Billing starts** with the date and time of the first charge, matching what the member sees in **Billing**.
 
-    No charges yet. Will activate on start date. Useful for seasonal programs or delayed memberships.
+    No charges yet. Will activate on start date. Useful for seasonal programs or delayed memberships. A scheduled membership canceled before its first charge shows "Access until [date] · no charge" to the member.
   </Tab>
   <Tab title="Past Due">
     **Yellow/Orange indicator - Payment failed**
@@ -127,6 +136,21 @@ Open the row to distinguish **Cancels on**, the membership's end date, from **Ca
 
 A **Not on a purchase** label means billing is not linked to a purchase on the client's profile. Use [Payment Methods to manage that subscription](/payments/manage-subscriptions#a-subscription-is-not-on-a-purchase).
 
+## Payments paused
+
+If you pause payment collection for a membership in the Stripe Dashboard, CoachIQ shows it:
+
+- The row shows **Payments paused** under the status, with the resume date if you set one.
+- The **Payments paused** filter lists only paused memberships, and a separate paused count sits next to Active and MRR.
+- Paused memberships aren't counted as active revenue.
+- The member sees "Payments paused" and when payments resume in **Billing**, **Orders** and **Archive**.
+
+Members keep their access, bookings and credits while payments are paused. Nothing is charged or canceled by the pause itself. A membership that is already set to cancel shows its cancel date instead of the pause.
+
+<Note>
+  Pausing and resuming are done in Stripe. CoachIQ doesn't have its own pause button yet.
+</Note>
+
 ## Filter and search subscriptions
 
 **Filter by status:** Click status tabs at top:
@@ -135,14 +159,20 @@ A **Not on a purchase** label means billing is not linked to a purchase on the c
 - Active
 - Canceled
 - Past Due
-- Trialing
-- Scheduled
+- **Trialing / Scheduled**
+- **Payments paused**
 
-**Filter by Product:** Click the product(s) from the drop down view
+**Filter by Product:** Choose products in **Filter by products**. Each one you pick becomes a chip; click **Apply** to filter. The list only offers subscription products.
+
+If no subscriptions match, the page says "No subscriptions match these filters." with a **Clear filters** button.
 
 <Frame>
   ![CoachIQ subscriptions page product filter dropdown](/images/filter-products.png)
 </Frame>
+
+## Missing subscriptions?
+
+If a membership you expect isn't listed, click **Missing subscriptions?** to resync with Stripe. The dialog tells you what happened: the resync started, is still running, or found everything up to date. The last totals stay on screen with "Updating totals" while they recount. If the resync fails, the dialog stays open with **Try again**.
 
 ## Check for unsynced subscriptions
 
@@ -276,11 +306,7 @@ Click Open under the Source column of the subscription to view on Stripe:
     - No charges yet
     - Clients have the same access as an Active subscription
 
-    **What to do:** Nothing until trial ends. First charge processes automatically on trial end date.
-
-    <Note>
-      Trialing is currently only set manually as the coach or Admin from Stripe.
-    </Note>
+    **What to do:** Nothing until trial ends. First charge processes automatically on trial end date. Trials come from a product's free trial setting in the [Product Builder](/payments/product-builder) or are set in Stripe.
   </Tab>
 </Tabs>
 

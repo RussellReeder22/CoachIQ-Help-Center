@@ -14,7 +14,7 @@ keywords: ["edit booking", "reschedule", "change booking", "move session", "chan
 
 On **Scheduling** → **Calendar**, click a session. The click view shows **Duration**, **Time Slot**, **Location**, **Coaches**, resources, and participants.
 
-**Duration**, **Location**, and **Coaches** each have **Edit**. **Time Slot** does not; to change the date or time, use **Move Session** in the header (below). You can also add a coach or a resource to this one occurrence from the click view without opening the scheduler. Use **Add Participants** to add an athlete, or **Add over capacity** when the session is full. **Send Message to All** opens participant messaging.
+**Duration**, **Location**, and **Coaches** each have **Edit**. **Time Slot** does not; to change the date or time, use **Move Session** in the header (below). You can also add a coach or a resource to this one occurrence from the click view without opening the scheduler. When a session hands out one resource per booking from a pool, use **Change Resource** in an athlete's three-dot menu to switch theirs; see [Change a booked lesson's resource](/scheduling/resources#change-a-booked-lessons-resource). Use **Add Participants** to add an athlete, or **Add over capacity** when the session is full. **Send Message to All** opens participant messaging.
 
 <Frame>
   ![Calendar session click view with Duration, Time Slot, Location, and Coaches](/images/scheduling-review-oct01/session-participants.jpg)
@@ -118,6 +118,8 @@ Nothing about the scheduler changes. Other dates of the same session stay where 
 
 **Move Session** moves every participant in that occurrence. To change one athlete's reservation, use the three-dot menu next to that athlete and choose **View/Edit Booking** to review its rescheduling options. The **Email [athlete] about this change** choice starts unchecked. If the new service or length requires a different payment, follow [canceling](/scheduling/canceling-bookings) and [rebooking](/scheduling/manually-booking-athletes) with the correct payment or credit handling. For one date of a recurring booking, use **Change** in the [Occurrences view](/scheduling/recurring-bookings#changing-one-occurrence) instead.
 
+You can move a booking into any time the booking builder offers, including on days when another booking for the same coach shifts the start times. If the new time was closed with **Cancel Session**, you're asked **Reopen canceled time?** first; **Reopen and move** reopens it and moves the booking. **Reschedule** on a canceled booking offers **Notify participants**, so you can send the family a confirmation for the new time.
+
 ---
 
 ## Drag-and-drop rescheduling
@@ -179,7 +181,9 @@ When you move a booking:
 
 You can configure athlete self-rescheduling on a per-scheduler basis in the scheduler’s **Advanced settings → Booking Rules**. There are two related toggles:
 
-**Allow athletes to reschedule** — When on, athletes can move their booking to a different available time slot from the Athlete Portal or app. An eligible reschedule retains its existing payment or credit arrangement; it does not collect a price difference. A differently priced length may require canceling and rebooking. Credit-paid sessions must still meet applicable expiration and session-date restrictions. When off, only coaches and admins can reschedule — athletes must contact you to make changes.
+**Allow athletes to reschedule** — When on, athletes can move their booking to a different available time slot from the Athlete Portal or app. An eligible reschedule retains its existing payment or credit arrangement; it does not collect a price difference. A differently priced length may require canceling and rebooking. Credit-paid sessions must still meet applicable expiration and session-date restrictions. When off, only coaches and admins can reschedule — athletes must contact you to make changes. This applies in the mobile app too, for single and recurring bookings.
+
+Parents can reschedule or cancel a child's lesson that staff booked, within the same rules. For a weekly series, only the date they pick moves. When something blocks the change, they see the reason.
 
 **Block rescheduling within cancellation window** — When on, athletes cannot reschedule once they're inside your cancellation notice window. This prevents athletes from using reschedule as a workaround to avoid forfeiting a credit on a late cancellation. The blocking window matches your Cancellation Policy (e.g., if you require 24-hour notice, rescheduling is also blocked within that same 24 hours).
 
@@ -205,4 +209,4 @@ You can configure athlete self-rescheduling on a per-scheduler basis in the sche
 
 An athlete with another booking at the new time produces an amber heads-up. You can still move the whole session after reviewing it. Two sessions at the same saved location do not conflict merely because they share that location.
 
-Red warnings still block the move, including an occupied resource or another occurrence of the same session at the proposed time. Review the named conflicting session or resource and choose a different time or resource. All warnings appear together, with blockers above heads-up messages.
+Red warnings still block the move, including an occupied resource or another occurrence of the same session at the proposed time. For a session that takes one resource from a pool, the move picks a free one automatically and is only blocked when every resource in the pool is taken; the message names them. Review the named conflicting session or resource and choose a different time or resource. All warnings appear together, with blockers above heads-up messages.

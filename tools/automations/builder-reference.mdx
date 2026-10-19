@@ -24,7 +24,9 @@ The builder is one long page with a section for each part of the automation, and
 
 ### Details
 
-The automation's **label**. This is what you see in the Automations list and in Execution Logs, so make it specific: "Trial → membership nudge, day 3" rather than "Follow-up".
+The automation's **label**. This is what you see in the Automations list and in Execution Logs, so make it specific: "Trial to membership nudge, day 3" rather than "Follow-up".
+
+Use letters, numbers, spaces and ordinary punctuation. A name with emoji or special symbols (such as arrows) can't be saved; the name field shows a message asking you to change it.
 
 ### Triggers
 
@@ -45,6 +47,8 @@ Click **Add Condition** to create the first group and rule, then **Add Rule** fo
 
 **Add And/Or** creates a nested group, so you can express things like "(bought a membership **or** a credit pack) **and** has no future booking". If there are no conditions, the automation runs for every trigger event.
 
+A scheduled trigger is the exception: a **Scheduled Check** needs at least one condition to decide who it runs for. Without one, **Create** shows "A Scheduled Check needs at least one condition." and nothing is saved.
+
 ### Actions
 
 What happens when the conditions pass. Click **Add Action** for each step. The two most used:
@@ -62,6 +66,8 @@ Inside any message field, type `#` to insert a **field option** from the trigger
 
 Actions run in order. Put the message you most want delivered first.
 
+A **Wait/Delay** action pauses the automation for that person for the time you set (minutes, hours, days or weeks; long waits such as 28 days work) before the next actions run. If the wait has a "continue only if" condition, CoachIQ checks it when the wait ends, using the person's data at that moment. If they no longer match (for example, a lead tag was removed because they booked), the actions after the wait don't run. See [Wait/Delay under All Actions](/tools/automations/triggers-actions-reference#all-actions) for the fields.
+
 ### Execution Logs
 
 Start here when a message or action seems missing. Click **Check for events** to refresh, then find the run by its full event and action names and the local date and time. Each row summarizes the outcome in words; expand it to check individual actions.
@@ -69,6 +75,8 @@ Start here when a message or action seems missing. Click **Check for events** to
 - **Succeeded** means the actions completed, but a successful run alone does not prove someone read a message.
 - **Partial success** means some actions completed and others did not. Check each result before running the automation again, so you do not repeat an action that already succeeded.
 - A failed condition means the event did not qualify for the actions that follow.
+- An automation with a **Wait/Delay** step shows the run in two parts: the actions before the wait, then the rest when the wait ends.
+- If the list can't load, the page says "Automation runs could not be loaded. Please try again." with **Try again**. An empty-looking list during a loading problem doesn't mean the automation didn't run.
 - Expand **Show technical details** when you need more detail for troubleshooting or support.
 
 <Frame caption="Test-account example of automation execution history.">
@@ -95,6 +103,8 @@ Archiving is the middle ground between disabling and deleting. Use it for automa
 
 **Test Run** performs the configured actions. Messages really send, and other actions can change records. Before testing, save your changes and check the target, conditions, and every action. Use a test profile and an email address or phone number you control.
 
+Test Run doesn't wait. Any **Wait/Delay** step is reported as skipped for the test (along with its "continue only if" condition), and the actions after it run once, straight away. Nothing is sent again later when the wait would have ended.
+
 Keep **Enabled** off while preparing the automation, but remember that it does not prevent a manual test. After testing, review [Execution Logs](#execution-logs), confirm the result on the test profile, then enable and save the automation when you are ready for automatic runs.
 
 ## A note on the older screenshots
@@ -106,6 +116,12 @@ Some pages in this section show an earlier version of the builder with a blank c
 <AccordionGroup>
   <Accordion title="My automation ran but nobody got the message">
     Open **Execution Logs**. If the run shows conditions failing, the person did not match. If an action shows an error, check the target user has a phone (for SMS) or a portal login (for announcements).
+  </Accordion>
+  <Accordion title="Create or Update shows an error">
+    The builder lists the reason on the page. The usual causes are a name with emoji or special symbols, a **Scheduled Check** with no condition, or a step that still needs a tag, session, product or form picked. Fix what it names and click **Create** again. A save that fails doesn't leave a partial copy behind, so retrying won't create duplicates.
+  </Accordion>
+  <Accordion title="My follow-up went out even though the person already booked">
+    Put the follow-up after a **Wait/Delay** step with a "continue only if" condition, such as a lead tag that another automation removes when the person books. The condition is checked when the wait ends, so anyone who no longer matches is skipped. Automations saved before this was fixed work as saved; you don't need to rebuild them.
   </Accordion>
   <Accordion title="Can one automation have two triggers?">
     No. Create a second automation with the other trigger. Templates make that quick: see [Automation templates](/tools/automations/automation-templates).

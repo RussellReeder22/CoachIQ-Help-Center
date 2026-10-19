@@ -53,6 +53,8 @@ Complete the connection details. If it appears in your personal plugins but is n
 
 Sign in through the CoachIQ page that opens. Confirm the organization, group, and role before approving access.
 
+The approval screen shows who is connecting, which group, which app, what access, and where it returns. The group ID and connection address are tucked under **Technical details** if you need them. If you change your mind, choose **Cancel** on the sign-in, group choice or approval screen. The app is told you declined, even when the screen opened in a new tab or popup, and no access is granted.
+
 A CoachIQ connection covers **one group**. To work with another group, use a separately named connection authorized for that group. Project names do not change the group a connector can reach.
 
 If you want supported changes, select **I allow this assistant to make supported changes in this group** on the CoachIQ approval screen. Leaving it unchecked grants read-only access. Read the final access summary and button before continuing.
@@ -60,6 +62,8 @@ If you want supported changes, select **I allow this assistant to make supported
 <Info>
   Verify the access actually granted in the next step. A connected badge does not prove write access, and approval does not make every CoachIQ feature available through ChatGPT. Read-only access is enough for the business-brief setup below.
 </Info>
+
+Every change the assistant makes is recorded in [Settings → Data → Logs](/settings/data#changes-from-connected-ai-assistants) with an **Outside app** label, and requests CoachIQ refused are marked **Refused**.
 
 ## 2. Confirm the connection
 

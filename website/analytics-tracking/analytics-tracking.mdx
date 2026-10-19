@@ -65,6 +65,24 @@ CoachIQ integrates with three powerful analytics platforms that work together to
   </Step>
 </Steps>
 
+## Custom JS
+
+Use the **Custom JS** field for tracking tools that don't have their own field, such as Google Tag Manager, Hotjar, LinkedIn Insight Tag or TikTok Pixel.
+
+You can paste either plain JavaScript or the snippet exactly as the tool gives it to you, including the `<script>` tags and comment lines. CoachIQ saves the JavaScript inside it, and it runs on your live site. A snippet with two script blocks works too.
+
+The field only accepts code your live site can run. If you paste something it can't use, the box turns red, a message under it says what to remove, and nothing is saved until you fix it:
+
+| Pasted content | What to do instead |
+|----------------|--------------------|
+| A `<style>` block | Remove it. Custom JS takes JavaScript only |
+| A snippet that is only a `<noscript>` block | Paste the `<script>` part of the snippet instead |
+| An external script tag, like `<script src="https://...">` | Add the address under **Scripts** with **Add Script Source** |
+
+<Tip>
+  Many tag snippets include a `<noscript>` fallback after the script. You can paste the whole snippet: the script part is saved and runs.
+</Tip>
+
 ## Quick setup guide
 
 <Tabs>
@@ -153,7 +171,7 @@ CoachIQ integrates with three powerful analytics platforms that work together to
     - **Custom scripts**: Depends on the service
   </Accordion>
   <Accordion title="Can I add other tracking tools?">
-    Yes! Use the Custom JS field to add any other tracking scripts like:
+    Yes. Use the [Custom JS](#custom-js) field, or **Add Script Source** for a script address, to add other tracking scripts like:
 
     - Google Tag Manager
     - Hotjar

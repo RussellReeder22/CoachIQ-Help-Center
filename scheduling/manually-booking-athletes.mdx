@@ -25,7 +25,7 @@ Open **Scheduling → Calendar → Book Session** to book on an athlete's behalf
   <Step title="Select the client">
     In **Client**, use **Search users**. The dropdown groups results into **Tags** and **People**. Choose the athlete who will attend. For a family, select the child rather than the parent when the child is the participant.
 
-    Choosing a tag adds a chip and selects matching people. Review the selected participants before continuing, especially when booking several athletes.
+    Choosing a tag adds a chip and shows how many people have that tag, with their names, before you press **Create**. Review the list before continuing, especially when booking several athletes. A tag nobody has shows **No one has this tag**, and **Create** books no one.
 
     <Frame>
       ![New Booking client selector with Tags and People groups](/images/scheduling-new-booking-tags.png)
@@ -39,7 +39,7 @@ Open **Scheduling → Calendar → Book Session** to book on an athlete's behalf
   <Step title="Choose a date and time">
     Select an available date, start time, and session length. Confirm the coach, location, and resources needed for the booking.
 
-    **Allow custom date selection** lets staff enter a time outside the normal availability choices. Use it for a deliberate exception and review the calendar first. It is not a guarantee that every conflict, capacity, or booking limit has been bypassed.
+    **Allow custom date selection** lets staff enter a time outside the normal availability choices. When you turn it on, **Duration** starts at the selected scheduler's session length (for example 60 mins) and follows if you switch schedulers. Use it for a deliberate exception and review the calendar first. If the time breaks one of the scheduler's rules, you are asked before anything is booked (see [Book past a scheduler's rules](#book-past-a-schedulers-rules)).
 
     <Frame>
       ![New Booking builder with Redeem credits and Allow custom date selection controls](/images/booking-builder-custom-date.png)
@@ -48,14 +48,66 @@ Open **Scheduling → Calendar → Book Session** to book on an athlete's behalf
   <Step title="Review and create">
     Confirm the participants, scheduler, date, time, duration, and credit choice. For a repeating appointment, follow [Recurring bookings](/scheduling/recurring-bookings) before creating it.
 
-    Read any conflict warning. **Go back** creates nothing; **Book anyway** is an intentional override of the conflict described in the warning.
+    To tell the family, turn on **Notify participants** under **Notes** (see [Send a booking confirmation](#send-a-booking-confirmation)). It is off by default.
+
+    Read any warning that appears. **Go back** creates nothing and keeps what you entered; **Book anyway** is an intentional override of the rule or conflict the warning names.
   </Step>
   <Step title="Verify the result">
     Open the new session on the calendar and check the participant list. For multiple athletes, review each result and the processed count; a partial success does not mean everyone was booked.
 
+    Bookings staff make for a child show **Booked by** with the coach or admin's name in Calendar List view, the client's **Bookings** tab, and **Edit Booking**. When a parent's credits paid, it reads "Booked by (coach) with credits from (parent)".
+
     If you redeemed credits, check the athlete's credit history. If payment is still due, handle it through your normal payment workflow.
   </Step>
 </Steps>
+
+## Send a booking confirmation
+
+When families book themselves, they get a "Session confirmed" email and app notification. A booking you create on their behalf sends nothing unless you ask it to.
+
+<Steps>
+  <Step title="Turn on Notify participants">
+    In **New Booking**, find **Notify participants** under **Notes** and turn it on. It is off by default. **Email** is selected first: the athlete and their linked parents get the same "Session confirmed" email and app notification they get when they book themselves. If a child has no email of their own, the parent receives it.
+  </Step>
+  <Step title="Add a message (optional)">
+    Anything you type in **Message** appears in the email under a "Message from" line with your organization's name. Links in it work, so you can include a payment link for the session. This also reaches families who haven't set up the app yet.
+  </Step>
+  <Step title="Choose other channels (optional)">
+    Add **In-app message**, **SMS** or **Announcement** to send the same message there too. With any of these selected, the message is required, and it starts with the session name and time.
+  </Step>
+</Steps>
+
+For a recurring booking, the confirmation says it is a recurring session, with the first upcoming date and how it repeats. **Reschedule** on a canceled booking offers the same **Notify participants** step, so the family can get a confirmation for the new time.
+
+<Note>
+  Scheduled [session reminders](/scheduling/session-reminders) are separate. They go out before the session, not when the booking is made.
+</Note>
+
+## Book past a scheduler's rules
+
+Staff can book a client at a time that breaks one of the scheduler's booking rules. Before anything is saved, CoachIQ asks **Book anyway?**, shows the date and time, and names the rule in the way:
+
+- Inside the scheduler's minimum notice
+- Outside the scheduler's availability or past its booking window
+- Full, for example "2 of 2 booked"
+
+**Go back** keeps everything you entered so you can pick another time. **Book anyway** books the client and records which rule you booked past in the booking's history.
+
+This works from **Book Session**, a client's profile, **Add participant** on a calendar session, and the mobile app. When you book several clients at once, you get one question that shows who is already booked. For a recurring series, dates outside the scheduler's availability are listed before anything is saved; see [Recurring bookings](/scheduling/recurring-bookings#review-conflicts-before-saving).
+
+<Note>
+  Clients who book for themselves still have to follow every rule. The override is only for coaches and admins.
+</Note>
+
+## Book a time closed with Cancel Session
+
+[Cancel Session](/scheduling/canceling-bookings#cancel-an-entire-session-from-the-calendar) closes a time. You can book that time again from **New Booking** on the web. Booking a client onto a closed time shows **Reopen canceled time?** with the date. **Reopen and book** makes the time bookable again and books the client. Moving an existing booking onto a closed time asks the same question, with **Reopen and move**.
+
+A recurring booking that crosses closed dates lists them under "Canceled with Cancel Session" before anything is saved.
+
+- Clients who were canceled from that time stay canceled. Check who was booked before you reopen it.
+- Canceled team times can't be reopened.
+- Reopening works on the web only. The Android app explains that the time is canceled and points you to the web calendar.
 
 ## Using Copilot for faster booking
 
