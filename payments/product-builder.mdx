@@ -8,7 +8,9 @@ keywords: ["product builder", "create product", "product settings", "product opt
 
 Open **Payments → Products**, then select **+ Create** for a new product or select an existing product to edit it.
 
-The builder lists its sections on the left. The **Product Preview** on the right summarizes the product as you go, including its processing fee, frequency, credits, credit limits, and confirmation page. Save with the button at the top right, for example **Create Subscription** or **Update One Time**. **Archive** sits beside it on an existing product.
+The builder lists its sections on the left. The **Product Preview** on the right summarizes the product as you go, including its processing fee, frequency, down payment, when a subscription ends (for example "After 3 billing cycles" or the end date), credits, credit limits, whether a free product collects a card, **Archived** status, and confirmation page. Save with the button at the top right, for example **Create Subscription** or **Update One Time**. **Archive** sits beside it on an existing product.
+
+An existing product opens as **Edit One Time**, **Edit Subscription** or **Edit Access Code**. Each **Update** shows **Saved** and reloads the stored settings, so what you see after saving is what was saved.
 
 <Frame>
   ![Product Builder for a subscription with the section list, Details and Payment sections, and the Product Preview](/images/product-builder.png)
@@ -36,6 +38,8 @@ The builder lists its sections on the left. The **Product Preview** on the right
 
 **Price** is required for One-Time and Subscription products. Enter **\$0.00** for a free product. Access Code products don't need a price.
 
+Prices keep cents as typed: 0.50 saves as \$0.50. This applies to price, down payment, fee, coupon discount and minimum order fields. Before the October 19, 2026 release a typed decimal point could be dropped (0.50 became \$50), so check any price that looks much larger than you meant.
+
 <AccordionGroup>
   <Accordion title="Add processing fee">
     Turn on **Add processing fee** to charge the buyer a fee on top of the price. Set a **Fixed Fee** and a **Percentage Fee**. The **Preview** below the fields shows the price, fee, and total. Leave it off to absorb the fees yourself.
@@ -43,15 +47,17 @@ The builder lists its sections on the left. The **Product Preview** on the right
     You can also set the label buyers see for the fee. Fee amounts, the CoachIQ platform fee, and ACH fees are covered in [Processing fees](/payments/processing-fee).
   </Accordion>
   <Accordion title="Enable access codes">
-    Turn on **Enable access codes** to let families redeem a code instead of paying. Add each code and how many times it can be used. Remove a code to stop new redemptions; purchases already made with it are unaffected.
+    Turn on **Enable access codes** to let families redeem a code instead of paying. Add each code and how many times it can be used, or turn on **Unlimited use**. Remove a code to stop new redemptions; purchases already made with it are unaffected. An older product may list the same code twice from an earlier save; remove the extra one.
 
-    On an Access Code product, codes are the only way to get the product. On a One-Time or Subscription product, families can pay or enter a code. See [Product types: Access Code](/payments/product-types#access-code).
+    **View Stats** on a code shows how many times it was used, including on unlimited codes, or "No uses yet."
+
+    On an Access Code product, codes are the only way to get the product, and checkout shows a single **Redeem code** button. On a One-Time or Subscription product, families can pay or enter a code. See [Product types: Access Code](/payments/product-types#access-code).
   </Accordion>
   <Accordion title="Payment methods at checkout">
     Products don't choose their own payment methods. Buyers see the methods that are active for your organization: cards, plus Apple Pay and Google Pay, US bank account (ACH), and buy-now-pay-later options such as Afterpay where enabled. ACH works on one-time products and recurring memberships. See [Payment methods at checkout](/payments/getting-started#payment-methods-at-checkout).
   </Accordion>
   <Accordion title="Show payment methods (collect a card without charging)">
-    **\$0.00 products only.** Turn on **Show payment methods** to have the buyer enter a card at checkout without being charged. The card is saved to their profile. Use it to get cards on file before a season starts.
+    **\$0.00 products only.** Turn on **Show payment methods** to have the buyer enter a card at checkout without being charged. The card is saved to their profile. Use it to get cards on file before a season starts. At checkout the button reads **Save payment method** and there's no coupon box.
 
     Saving a card doesn't schedule a charge. To charge automatically on a future date, use a subscription with **Schedule charges for later**.
   </Accordion>
@@ -59,10 +65,12 @@ The builder lists its sections on the left. The **Product Preview** on the right
     Adds a one-time amount to the first payment only, such as an enrollment or registration fee. Later payments charge the regular price.
 
     Example: a \$50 down payment on a \$200-a-month membership charges \$250 at signup, then \$200 a month.
+
+    A down payment can't be combined with a free trial or **Schedule charges for later**. Turning one on turns the other off, with a short note in that section explaining why.
   </Accordion>
   <Accordion title="Subscription length (subscriptions)">
     - **Ongoing** (default): bills until the family or you cancel.
-    - **End after a number of payments**: for example, 4 payments for a season billed monthly.
+    - **End after a number of payments**: for example, 4 payments for a season billed monthly. The count starts at the first charge, so a membership with a free trial or a later start still collects that many full payments. This applies to memberships bought on or after October 19, 2026; existing subscriptions are unchanged.
     - **End on a date**: for example, the last day of the season.
   </Accordion>
   <Accordion title="Schedule charges for later (subscriptions)">
@@ -73,7 +81,7 @@ The builder lists its sections on the left. The **Product Preview** on the right
   <Accordion title="Enable free trial (subscriptions)">
     Set the **Trial period (days)**. The family isn't charged until the trial ends and can cancel before then. The client's [Subscriptions tab](/people/client-profiles/client-profiles-subscriptions) shows **Trialing** during the trial.
 
-    A product can use a free trial or **Schedule charges for later**, not both.
+    A product can use a free trial or **Schedule charges for later**, not both. Turning one on turns the other off, with a note saying which was turned off.
   </Accordion>
 </AccordionGroup>
 
@@ -94,6 +102,8 @@ To give members an automatic discount on other products, create a member discoun
 ## Frequency
 
 **Subscriptions only.** Set **Payment Every** to a number and a period: Day, Week, Month, or Year. For example, every 1 month, every 3 months, or every 1 year. If the product adds credits, they are added on the same schedule.
+
+Changing the period keeps the number you entered. If the number is too large for the new period, it's lowered and a note explains why.
 
 ## Credits
 
@@ -198,7 +208,7 @@ Every saved product has a direct checkout link. Copy it from the builder to send
 <AccordionGroup>
   <Accordion title="Purchase limits">
     - **Add a purchase limit for this product**: the total number of purchases across your business. When it's reached, the product is sold out. Use it for camp spots or roster sizes.
-    - **Add a purchase limit for this product per user**: how many times one person can buy it. Set 1 for an intro offer.
+    - **Add a purchase limit for this product per user**: how many times one person can buy it. Set 1 for an intro offer. A buyer who has reached it sees "You have reached your purchase limit for this product" (or the child's name when a parent is buying), not Sold out.
 
     Example: a total limit of 24 and a per-user limit of 1 gives a 24-athlete camp where no family can register the same child twice.
   </Accordion>
@@ -220,7 +230,7 @@ Every saved product has a direct checkout link. Copy it from the builder to send
 
 ### Attach a registration form to a product
 
-In **Advanced**, choose **Add a form**, select a form, and save the product. The form needs at least one question.
+In **Advanced**, choose **Add a form**, select a form, and save the product. The form needs at least one question. If **Add a form** is on but no form is chosen, **Update** stops with "Choose a form below, or turn off Add a form."
 
 Checkout then goes **registration → review → purchase**, and required answers must be completed first. A parent or athlete who already completed registration for that product skips the form on a repeat purchase.
 
@@ -241,7 +251,7 @@ With **Managed Athlete**, two registrations by one parent stay attached to the r
 
 ## Archive a product
 
-Select **Archive** at the top of the builder. An archived product can't be bought, but existing purchases, subscriptions, and credits are unaffected. It isn't removed from your app, schedulers, or forms, so remove it there too. See [Archive a product](/payments/product-overview#archive-a-product).
+Select **Archive** at the top of the builder. An archived product can't be bought, but existing purchases, subscriptions, and credits are unaffected. It drops off your app's Products catalog and website product sections, and a direct link shows "No Product Found." If someone has its checkout open when you archive it, their next step tells them they weren't charged. It stays listed in your own builders and isn't removed from schedulers or forms, so remove it there too. See [Archive a product](/payments/product-overview#archive-a-product).
 
 ## Related articles
 

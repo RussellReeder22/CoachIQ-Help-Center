@@ -82,6 +82,25 @@ Think of it as the athlete-facing side of your coaching business - the polished,
   </Step>
 </Steps>
 
+### How athletes and parents sign in
+
+The sign-in screen in your app shows your logo (or initials) and **Sign in to** your club name. Athletes and parents can sign in two ways:
+
+- **Email and password**, with **Forgot password?** if they need a reset.
+- **A texted code.** They enter the phone number on their account and get a 6-digit code by text. For privacy the screen always says "If this number is on an account, we texted you a code", so it never reveals whether a number is registered. Each code works once. After a wrong code, they can tap **Resend**, which unlocks after 60 seconds.
+
+New families use **New here? Create an account** to go straight to the account form, and can finish creating their account from the sign-in screen.
+
+Coach and admin accounts keep signing in with email and password; the texted code is for athletes and parents only.
+
+<Tip>
+  A family that says the code never arrived should check the phone number saved on their account (**Settings → Profile** in your app), wait for **Resend**, and otherwise sign in with email and password.
+</Tip>
+
+**When sign-up can't go through,** the form says why and keeps everything they typed: the terms box isn't ticked, the password is too weak, the phone number is already on another account (use the email on that account or a different number), or the email already has an account (they're taken to the password step with the email filled in). On phones and tablets, signed-out visitors who open the login page, home or Settings see the sign-in and **Set Your Password** form straight away.
+
+**Signed in but not a member yet:** someone who is signed in but hasn't joined your group sees one card with your logo, "Join" your club name and a single **Join Now** button. Someone who already belongs to another group in your organization gets one choice: go to their own group, or join this one.
+
 ### Platform differences
 
 Your portal is available on the web and in supported iOS and Android apps. [Personalized Apps](/power-ups/personalized-app) are now available for both stores; each business's listing and update is released separately.
@@ -203,7 +222,7 @@ The App Builder is where you shape the entire athlete experience. Located in you
 
   <Accordion title="How do athletes create an account?">
 
-    Athletes can create an account on your website. Personalized apps also prompt new athletes to register on their first login attempt, using your configured sign-up fields.
+    Athletes can create an account on your website, or from **New here? Create an account** on your app's sign-in screen. Personalized apps also prompt new athletes to register on their first login attempt, using your configured sign-up fields.
 
   </Accordion>
   <Accordion title="What's the best way to onboard new athletes?">
@@ -229,6 +248,9 @@ The App Builder is where you shape the entire athlete experience. Located in you
 
     Booking happens in the app. If a scheduler accepts both payment and credits, the app asks the athlete whether to pay or use a credit, the same choice as on the web. Card checkout can stay in the app where enabled for the purchase, or open the browser on other versions. See [Booking in the native app](/athlete-portal/native-app-booking).
 
+  </Accordion>
+  <Accordion title="Can athletes sign in without a password?">
+    Yes. Athletes and parents can choose a texted code on the sign-in screen. The code goes to the phone number saved on their account, so make sure that number is right on their profile. Coaches and admins sign in with email and password. See [How athletes and parents sign in](#how-athletes-and-parents-sign-in).
   </Accordion>
   <Accordion title="Do athletes get logged out when CoachIQ pushes an update?">
     No. If a platform update lands while an athlete or coach is using the app, the app signs them back in once the update completes instead of dropping them at the login screen. An athlete who still ends up logged out should update the app from the App Store or Google Play and sign in once.

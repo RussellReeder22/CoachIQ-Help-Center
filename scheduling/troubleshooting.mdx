@@ -32,7 +32,7 @@ Work through these checks in order:
 
 Use [Open availability](/scheduling/saved-calendar-views) in the admin calendar to inspect a focused date range. An opening shown to staff is still subject to the customer's own eligibility and booking rules.
 
-If another client takes the last spot during checkout, the old choice can be cleared and the available times refreshed. Select a new available time rather than repeatedly submitting the stale one.
+If another client takes the last spot during checkout, the buyer sees "That time was just booked by someone else... You were not charged." and the available times refresh. Select a new available time rather than repeatedly submitting the stale one.
 
 ## The athlete has credits but cannot book
 
@@ -41,7 +41,7 @@ Check the selected athlete before changing the balance, especially for families.
 1. Identify the product that issued the credits.
 2. Check **Which schedulers accept these credits** on that product.
 3. Compare the eligible balance with the selected session length's credit cost.
-4. Check expiration, membership status, per-scheduler usage limits, and whether sessions must occur before the credits expire.
+4. Check expiration, membership status, per-scheduler usage limits, and whether sessions must occur before the credits expire. If the pack only covers sessions within a set period, checkout says how many credits can't be used for the chosen date and suggests an earlier one.
 5. For a child, check product ownership and family or shared membership links. Do not assume every parent's and child's balances are pooled.
 
 See [Credits and schedulers](/scheduling/credits-and-schedulers) and [Book for families](/scheduling/booking-for-multiple-athletes).
@@ -50,7 +50,13 @@ See [Credits and schedulers](/scheduling/credits-and-schedulers) and [Book for f
 
 Read the refusal or conflict warning before overriding anything. Confirm the athlete, scheduler, credit redemption choice, and the whole recurring date range.
 
-**Book anyway** permits the overlap described in the warning; it is not confirmation of payment or a universal bypass. For multiple athletes, check individual results and the processed count.
+When the time breaks one of the scheduler's rules (minimum notice, availability or booking window, or capacity), staff are asked **Book anyway?** with the rule named. **Book anyway** permits that rule or the overlap described in the warning; it is not confirmation of payment. For multiple athletes, check individual results and the processed count. See [Book past a scheduler's rules](/scheduling/manually-booking-athletes#book-past-a-schedulers-rules).
+
+Other common causes:
+
+- **The time was closed with Cancel Session.** You'll see **Reopen canceled time?** Reopen it to book or move a client there. Reopening works on the web only. See [Book a time closed with Cancel Session](/scheduling/manually-booking-athletes#book-a-time-closed-with-cancel-session).
+- **The scheduler is archived.** New bookings show "This scheduler is archived. Restore it to add bookings." You can still end a recurring series or skip dates. See [Series on an archived scheduler](/scheduling/recurring-bookings#series-on-an-archived-scheduler).
+- **The move target isn't offered.** Staff can move a booking into any time the booking builder offers. A time it doesn't offer is refused with "Timeslot is not available" unless you use **Allow custom date selection**.
 
 If the native app reports a generic error, try the web admin to review the specific refusal or conflict prompt. See [Manual bookings](/scheduling/manually-booking-athletes) and [Recurring bookings](/scheduling/recurring-bookings).
 
@@ -75,6 +81,8 @@ If an edit says the occurrence changed while it was open, refresh the calendar a
 ## The athlete did not receive a message
 
 Identify whether you expected a booking confirmation, scheduled reminder, change notification, or automation. Each has different controls.
+
+A booking staff create from **New Booking** sends no confirmation unless **Notify participants** was turned on. See [Send a booking confirmation](/scheduling/manually-booking-athletes#send-a-booking-confirmation).
 
 For a move, duration change, or venue change, review the notification options you selected. For a scheduled reminder, check the scheduler's reminder rule, recipient, channel, and send time. See [Session reminders](/scheduling/session-reminders).
 

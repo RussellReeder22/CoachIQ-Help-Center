@@ -190,10 +190,10 @@ Credit logs provide a complete transaction history for each athlete's credits. E
     **Log entry format:**
 
     ```
-    08 Jul, 5:53 PM | +13 Credits | Set by [Coach Name]
+    08 Jul, 5:53 PM | Set to 13 | Manual · Set by [Coach Name]
     ```
 
-    **What it means**: Coach manually added credits to athlete's account
+    **What it means**: A staff member manually changed the balance. "Set to 13" is the balance after the change, not the number of credits added. Older manual rows display the same way.
 
     **Source**: "Set by [Coach Name]" identifies who granted the credits
 
@@ -251,10 +251,10 @@ Use Master Credits when you want to give credits that work for ANY scheduler.
   <Step title="Save and verify" stepNumber={4}>
     Click **Update Redeemable Credits** button
 
-    **Verification**: Credit balance updates immediately, new entry appears in Credit Logs:
+    **Verification**: The confirmation names the credit bank and its new balance. A new entry appears in Credit Logs showing the resulting balance:
 
     ```
-    [Today's date] | +5 Credits | Set by [Your Name]
+    [Today's date] | Set to 7 | Manual · Set by [Your Name]
     ```
 
     <Check>
@@ -375,7 +375,7 @@ For adding credits tied to specific products/subscriptions.
     2. Enter new total (remember: this SETS the total)
     3. Save changes by pressing **Update Redeemable Credits**
 
-    **Result**: Credit logs will show: "[Date] | +X Credits | Set by [Coach Name]"
+    **Result**: Credit logs will show: "[Date] | Set to X | Manual · Set by [Coach Name]", where X is the new balance
   </Step>
 </Steps>
 

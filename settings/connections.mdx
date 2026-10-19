@@ -33,7 +33,7 @@ Connect your preferred assistant to CoachIQ, verify its access, and create a Pro
 | Stripe | See payment and payout status. Choose **Manage** to open your existing Stripe integration settings. |
 | Google Calendar | See linked accounts and add another Google account. Use the Google permissions link to remove access. |
 
-Opening ChatGPT is not confirmation that an assistant has connected to CoachIQ. Follow the connection and authorization flow in the client you use. Review the requested access before approving it.
+Opening ChatGPT is not confirmation that an assistant has connected to CoachIQ. Follow the connection and authorization flow in the client you use. Review the requested access before approving it. The CoachIQ approval screen shows who is connecting, which group, which app and what access, with IDs and addresses under **Technical details**. **Cancel** tells the app you declined and never grants access.
 
 ## If your directory looks different
 
@@ -43,7 +43,8 @@ Follow the availability and access details shown in your account. A service card
 
 - For Stripe, use [Stripe settings](/payments/connecting-stripe). Only an Admin can connect or disconnect it.
 - For Google Calendar, manage linked accounts from its panel. Removal takes place through your Google account permissions, not a CoachIQ disconnect button. See [Google Calendar sync](/scheduling/google-calendar-sync).
-- For assistant connections, review the permissions in the client and the CoachIQ authorization screen. Read-only access does not permit changes. Supported writes require explicit write access; the connection does not grant unrestricted access to every feature.
+- For assistant connections, review the permissions in the client and the CoachIQ authorization screen. Read-only access does not permit changes. Supported writes require explicit write access; the connection does not grant unrestricted access to every feature. The assistant also follows your role and any Staff Access blocks; if those change mid-conversation, it's told that nothing changed and what to do next, such as reconnecting.
+- To check what an assistant did, open [Settings → Data → Logs](/settings/data#changes-from-connected-ai-assistants). Its changes carry an **Outside app** label, and requests CoachIQ refused are marked **Refused**.
 
 If an older assistant connection remains read-only after reconnecting, remove and re-add the connector, then review the supported-write option on the authorization screen. Clients that support token renewal can maintain the connection without hourly sign-in; older connections may need one reconnect.
 

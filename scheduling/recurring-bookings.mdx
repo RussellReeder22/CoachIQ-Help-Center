@@ -13,7 +13,7 @@ A recurring booking reserves time. It is separate from a recurring membership or
 
 1. Select the athlete or athletes and the scheduler in **New Booking**.
 2. Review the credit handling available for that booking. See [Credit handling](#credit-handling-with-recurring-bookings) below.
-3. Turn on **Recurring** and choose the frequency, interval, days, and start time.
+3. Turn on **Recurring** and choose the frequency, interval, days, and start time. **Repeat every** accepts any whole number from 1 to 50, typed or with the arrows; anything else shows "Choose 1 to 50". Monthly patterns such as "every 1st Thursday of the month" land on that weekday.
 4. Set an end date for a defined program or season. Check the first and last dates in the occurrence preview.
 5. Review holidays, planned absences, and conflicts before clicking **Create**.
 6. Check the saved results and open several dates on the calendar to verify the pattern.
@@ -26,10 +26,19 @@ If you use Copilot to draft the pattern, still review the generated days, times,
 
 ### Review conflicts before saving
 
-CoachIQ checks the selected athlete's existing bookings across offerings, including later dates in a weekly or monthly series. The warning identifies the overlapping session and time.
+CoachIQ checks the selected athlete's existing bookings across offerings, including later dates in a weekly or monthly series. The review lists every overlapping booking with its client, scheduler, date and time.
+
+Before anything is saved, the same review also lists:
+
+- **Dates outside the scheduler's availability**, such as a Saturday on a Monday to Friday scheduler, or a blocked date. The first 90 dates of a series are checked.
+- **Dates closed with Cancel Session**, under "Canceled with Cancel Session". **Reopen and book** reopens those times and books the series. Clients canceled from them stay canceled. See [Book a time closed with Cancel Session](/scheduling/manually-booking-athletes#book-a-time-closed-with-cancel-session).
+
+What you can do:
 
 - **Go back** creates nothing so you can adjust the pattern.
-- **Book anyway** intentionally permits the overlap described in the warning.
+- **Book anyway** books the series as entered, including overlaps and dates outside availability that the review listed.
+
+The web admin shows this review. The mobile app does not yet check dates outside availability and books the series as entered.
 
 For several athletes, check each result and the processed count. Do not assume every requested booking succeeded if the result reports an error or partial completion.
 
@@ -49,7 +58,11 @@ You can also correct a past occurrence if its recorded time is wrong. Check the 
 
 ### Skipping one occurrence
 
-Choose **Skip** for a date the athlete will not attend. The rest of the recurring pattern continues. If that date needs to be booked again later, create a booking for it and check the payment or credit history first.
+Choose **Skip** for a date the athlete will not attend. The confirmation names the client, date and time, and says the rest of the series stays booked. Choose **No** to change nothing.
+
+For a series paid with credits, the next step starts at 0 credits. Enter how many credits to return for that date and choose **Skip and Refund Credits**, or choose **Skip Without Refund**. You can't return more credits than the series has left.
+
+If that date needs to be booked again later, create a booking for it and check the payment or credit history first.
 
 Skipping a date is not evidence that a payment or credit was refunded. Verify those records separately.
 
@@ -59,7 +72,13 @@ Skipping a date is not evidence that a payment or credit was refunded. Verify th
 
 To replace the standing schedule, record the remaining dates, remove the old recurring pattern, and create the replacement pattern. Review the deletion confirmation to ensure you are stopping the intended athlete's series rather than canceling a group session for everyone.
 
+To end a series on a set date, open the booking with **View/Edit Booking**, choose **Set an end date**, and click **Update**.
+
 Past occurrences remain in the athlete's history when you stop the remaining series. After creating the replacement, check the transition date so the old and new patterns do not overlap or leave a gap. Confirm the new schedule with the family.
+
+### Series on an archived scheduler
+
+If the scheduler has been [archived](/scheduling/organizing-schedulers#archiving-a-scheduler), the **Scheduler** field shows its name with "(archived)". You can still end the series with **Set an end date → Update** and skip single dates. Any other change shows "This scheduler is archived. You can only end this series or skip dates. Restore the scheduler to change it." New bookings on an archived scheduler aren't allowed until you restore it.
 
 ## Credit handling with recurring bookings
 

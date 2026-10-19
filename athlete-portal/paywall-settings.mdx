@@ -49,7 +49,7 @@ A page paywall is a monetization feature that restricts athlete access to entire
     </Tip>
   </Step>
   <Step title="Select pages to paywall">
-    Choose which pages you want to restrict access to. You can paywall:
+    Choose which pages you want to restrict access to under **Paywalled Pages**. When the paywall is active, these pages open only for athletes with a paywall product (including active or trialing subscriptions). Everyone else sees the paywall. You can paywall:
 
     - **Programs** - Training content, certifications, and courses
     - **Products** - Your product catalog and purchase options
@@ -110,6 +110,17 @@ When an athlete without the required product tries to access a paywalled page, t
 <Note>
   The paywall only stands in front of the page itself. An athlete who reaches a scheduler through a form, a button, or a direct link (rather than the Schedule page) can book it without the paywalled product, and a program you shared directly with an athlete stays visible even when the Programs page is paywalled.
 </Note>
+
+## How paywalls work for parents and children
+
+When the **Schedulers** page is paywalled, access is checked for the family as well as the person signed in:
+
+- **The parent holds the product.** If a parent's own purchase unlocks the Schedule page, they can book any of their linked children from it and pay with the family's credits.
+- **A child holds the product.** If one of a parent's children holds a qualifying product, the parent can open the Schedule page and book that child.
+- **Siblings don't share access.** Each booking is still checked for the athlete it's for. A product held by one child never lets the parent book a sibling who doesn't have it.
+- **Archived purchases don't count.** If you archive the qualifying product on a client's profile, it no longer unlocks the page.
+
+The parent's menu updates when a child gets or loses the qualifying product. If a parent says **Sessions** still looks locked after their child received the product, ask them to refresh the app once.
 
 ## Managing multiple products on paywalls
 
@@ -203,6 +214,12 @@ Ensure your product descriptions clearly communicate:
 6. **Paywall on, but no active page selected**
    - Symptom: athletes see a prompt to pick a page instead of the paywall or the content
    - Solution: Activate at least one paywalled page in Menu & Links, then click **Update Paywall** again
+7. **Qualifying product archived on the profile**
+   - Check: [People](/people/overview) → [Athlete Name] → Products tab. A purchase marked **Archived** no longer unlocks the page
+   - Solution: Add the product to the client again if they should keep access
+8. **Parent booking a child who doesn't hold the product**
+   - Symptom: the parent can open the Schedule page through another child's purchase, but booking this child is refused
+   - Solution: The child being booked needs a qualifying product, or the parent needs one on their own profile. See [How paywalls work for parents and children](#how-paywalls-work-for-parents-and-children)
 
 <Warning>
   **iOS App Limitation**: Due to Apple's Reader App policy, athletes cannot purchase products directly through the iOS app. They must use the web portal to purchase access to paywalled content.

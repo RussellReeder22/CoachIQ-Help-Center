@@ -50,6 +50,19 @@ Each log entry shows:
 | **Time** | When it occurred |
 | **OS, Device, Browser** | Technical details |
 
+Long action and actor names wrap instead of being cut off, and entries don't repeat as you scroll through older pages.
+
+### Changes from connected AI assistants
+
+When someone uses a connected AI assistant such as ChatGPT or Claude, its activity is logged under the staff member who approved it, with the app's name. Two labels help you read those rows:
+
+| Label | What it means |
+|--------|-------------|
+| **Outside app** | The change came through an outside app such as Claude or ChatGPT, not CoachIQ's own Assistant. Outside apps name themselves, and CoachIQ doesn't verify those names. |
+| **Refused** (red) | CoachIQ refused the request, so nothing changed. Changes that went through show no label. |
+
+Requests CoachIQ's Assistant declines on its own, such as an admin-only change asked for by a coach, never reach your account and don't appear in Logs as changes. A connected assistant reports times with the year and time zone, so they match what you see in Logs.
+
 ### Filtering logs
 
 Use the tabs at the top to filter by role: **All**, **Admin**, **Coach**, **Parent**, or **Athlete**.

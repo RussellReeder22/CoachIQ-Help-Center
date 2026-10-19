@@ -3,7 +3,7 @@ title: "Managing Subscriptions"
 description: "Cancel a membership in CoachIQ, understand its end date, stop unmatched subscriptions, and distinguish cancellation from removal and refunds."
 sidebarTitle: "Manage Subscriptions"
 icon: "sliders"
-keywords: ["cancel subscription", "manage subscription", "pause subscription", "subscription status", "end membership", "subscription changes", "update card", "ACH subscription", "bank account membership"]
+keywords: ["cancel subscription", "manage subscription", "pause subscription", "payments paused", "subscription status", "end membership", "subscription changes", "update card", "ACH subscription", "bank account membership"]
 ---
 
 <Info>
@@ -189,9 +189,13 @@ Instruct client:
 
 Check the **default** label separately from whether the new card was added. Confirm the intended payment method is selected for the membership before relying on it for the next renewal.
 
+Clients can also change the card on a specific membership from **Billing**, including after a missed payment or after the old card was removed. If a change can't be made, they see the reason. They can remove a saved card, even their only one, unless it's the only card paying for an active membership; then they're asked to add another card first. Removing a card moves its memberships to the default card and doesn't cancel them.
+
+If a client can't cancel a membership themselves, **Billing** tells them why: only the person who pays can cancel, or the coach has to cancel it (with a button to message you).
+
 **You check what's on file**
 
-Open the client's profile and click the **Payment Methods** tab. It lists every saved card with the default marked, so you can confirm a new card landed (or that an expiring one is still the default) without opening Stripe. Details: [Payment methods on file](/people/client-profiles/client-profiles-subscriptions#payment-methods-on-file).
+Open the client's profile and click the **Payment Methods** tab. It lists every saved card with the default marked, and shows which card each membership will actually charge, so you can confirm a new card landed (or that an expiring one is still the default) without opening Stripe. Details: [Payment methods on file](/people/client-profiles/client-profiles-subscriptions#payment-methods-on-file).
 
 ## Handling failed subscription payments
 
@@ -233,13 +237,13 @@ When subscription payment fails, status changes to Past Due.
     **Options:**
 
     1. Cancel now, client resubscribes when ready (loses pricing if changed)
-    2. Use Stripe Dashboard to pause subscription (requires setup)
+    2. Pause payment collection on the subscription in the Stripe Dashboard
     3. Let subscription continue, client just doesn't book sessions
 
     Most coaches use option 3 for short pauses.
 
     <Note>
-      When you pause collection on a Stripe subscription, Stripe keeps the subscription status as **Active** — it just stops collecting payment. Because CoachIQ reads subscription status directly from Stripe, athletes with paused-collection subscriptions will still appear as **Active** in CoachIQ, including when filtering by Active in Payments > Products. Keep this in mind when reviewing your active subscriber count.
+      When you pause payment collection in Stripe, CoachIQ shows it. **Payments → Subscriptions** shows **Payments paused** under the status, with the resume date if you set one, and paused memberships are counted separately from Active and left out of MRR. The member sees "Payments paused" and when payments resume in **Billing** and **Orders**. They keep their access, bookings and credits while paused. CoachIQ has no pause button of its own yet. [Paused memberships](/payments/subscriptions-dashboard#payments-paused)
     </Note>
   </Accordion>
   <Accordion title="Client's card expires next month">

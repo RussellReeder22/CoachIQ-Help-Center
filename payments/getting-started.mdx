@@ -99,13 +99,24 @@ Once Stripe is connected, your admin settings include a **Payment Methods** list
 
 **ACH in practice**
 
-- ACH is the lower-fee option for larger camp, team, and membership payments. You can pass on a different processing fee for ACH than for cards; see [Fees for ACH payments](/payments/processing-fee#fees-for-ach-payments).
+- ACH is the lower-fee option for larger camp, team, and membership payments. Where separate ACH fees are switched on, you can pass on a different processing fee for ACH than for cards; see [Fees for ACH payments](/payments/processing-fee#fees-for-ach-payments).
 - New recurring memberships offer every active method, including bank account. Memberships bought through athlete checkout between late April and early September 2026 were created card-only; see [Payment methods on recurring memberships](/payments/manage-subscriptions#payment-methods-on-recurring-memberships).
 - A client who has already paid once has their saved methods, and which one is default, listed on the **Payment Methods** tab of their [client profile](/people/client-profiles/client-profiles-subscriptions#payment-methods-on-file).
+- Bank payments take 3–5 business days to clear. Until then the payment shows as **Processing**; wait for **Succeeded** before treating it as paid. The **How to enable** help next to ACH in **Settings → Payment Methods** explains this too.
 
 <Note>
   Checkout follows your athlete portal's theme, so a dark-mode portal gets a dark checkout with matching contrast. Coupons, waivers, and processing fees behave the same whichever method the client picks.
 </Note>
+
+### What families see at checkout
+
+- **Saved cards:** checkout preselects the card the client marked **Default** in **Billing**. **Use a new card** opens the card fields and keeps saved cards available to switch back. A declined card shows the bank's reason.
+- **Totals:** when the charge differs from the listed price (coupon, member discount, processing fee, down payment or access code), **Your Order** shows **Due today** during checkout and **Paid today** on the confirmation. Amounts always show cents.
+- **Free trials and later starts:** a free trial shows **Due today \$0.00**, then the recurring price and the trial length. A membership with a later first charge shows \$0.00 due today and the **Billing starts** date. Any plan that keeps a card on file tells the buyer the card is saved for future charges.
+- **Free products:** a \$0 product that doesn't collect a card ends on a **Review** step with **Complete purchase** and "No payment is due."
+- **Access codes:** a product sold only by code has a single **Redeem code** button.
+- **Purchase limits:** a buyer who has reached a product's per-person limit is told so; **Sold out** appears only when the product's total limit is reached.
+- **Confirmation:** **Payment Successful** appears right away and stays if the page is refreshed.
 
 ## Your first three steps
 

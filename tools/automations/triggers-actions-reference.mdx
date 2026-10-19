@@ -268,7 +268,7 @@ Rules live inside groups. Each group is either:
 
 Click **Add Condition** to create the first group, **Add Rule** to add a rule to the current group, and **Add And/Or** to nest a new group inside it. Nesting lets you express things like "(bought a membership **or** a credit pack) **and** has no future booking".
 
-If an automation has no conditions at all, it runs for every trigger event. Scheduled Check is the exception: it requires at least one condition.
+If an automation has no conditions at all, it runs for every trigger event. Scheduled Check is the exception: it requires at least one condition, and **Create** shows "A Scheduled Check needs at least one condition." until you add one.
 
 ---
 
@@ -602,7 +602,7 @@ Pauses the automation before continuing to the next action.
 | Field | Type | Description |
 |-------|------|-------------|
 | Wait type | Radio | A duration, or until a date/time |
-| Duration | Number + Unit | Minutes, hours, days, or weeks |
+| Duration | Number + Unit | Minutes, hours, days, or weeks. Long waits, such as 28 days, are supported |
 | Wait until | Date/time | When Wait type is a date |
 
 **Continuation Conditions** (optional):
@@ -618,8 +618,12 @@ Pauses the automation before continuing to the next action.
 | User hasn't replied to last message | Continue only if no reply received |
 
 <Note>
-If a continuation condition isn't met, the automation stops for that user.
+Continuation conditions are checked when the wait ends, against the person's data at that moment. If a condition isn't met, the automation stops for that user and the actions after the wait don't run. For example, if a lead's tag is removed because they booked a call, a follow-up placed after a "still has this tag" wait isn't sent.
 </Note>
+
+<Tip>
+**Test Run** doesn't wait: it reports the wait (and its conditions) as skipped and runs the later actions once, straight away.
+</Tip>
 
 </Accordion>
 

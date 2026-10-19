@@ -173,22 +173,34 @@ Navigate to **Payments → Coupons** to view all discount codes.
     At checkout, client finds "Coupon Code" or "Promo Code" field and enters code.
   </Step>
   <Step title="Discount applies">
-    Price updates immediately to reflect discount.
+    The payment buttons wait until the new total appears, so the charge always matches the total shown. The applied coupon sits in one row with **Change** and **Remove**; removing it restores the original price.
 
     Client sees:
 
     - Original price (strikethrough)
-    - Discount amount
-    - New total
+    - Discount amount, in dollars and cents (for example \$20.00, - \$5.00, \$15.00)
+    - New total, labeled **Due today** when it differs from the list price. A coupon larger than the price totals \$0.00, never a negative amount.
 
     <Frame>
       ![Checkout screen showing coupon applied with discounted price](/images/coupon-checkout.png)
     </Frame>
   </Step>
   <Step title="Client completes purchase">
-    Client pays discounted amount and receives product/credits.
+    Client pays discounted amount and receives product/credits. The confirmation shows **Paid today** with the amount actually charged.
   </Step>
 </Steps>
+
+### When a code is refused
+
+If a code can't be used, checkout says why and the total doesn't change:
+
+| Message | What it means |
+| --- | --- |
+| "This coupon has reached its redemption limit." | The code's total use limit is used up |
+| "This coupon does not apply to this product." | **Limit to selected products** is on and this product isn't on the list |
+| The coupon is invalid | The code doesn't exist; check spelling with the client |
+
+\$0 products that only save a card on file don't show a coupon box.
 
 ## Coupon list columns explained
 
@@ -278,7 +290,9 @@ Member discounts are automatic: anyone who holds a specific membership pays less
 1. Open **Payments → Coupons → Create coupon** and set the discount.
 2. Turn on **Automatic member discount** and choose the qualifying memberships. Anyone with one of them active gets the discount.
 3. Choose which products it applies to: selected products, or all products. The list can include other memberships and one-time products.
-4. Select **Create coupon**. From then on, when an active member checks out on one of those products, the discount is applied automatically and shown in the price breakdown.
+4. Select **Create coupon**. From then on, when an active member checks out on one of those products, the discount is applied automatically and shown in the price breakdown. This includes a parent paying for an athlete who holds the qualifying membership, on product checkout and session booking.
+
+If a percentage member discount can't be saved because one of the qualifying memberships has a down payment, the message names the memberships to remove (up to three, then "and N more").
 
 To change a member discount later, delete it and create a new one.
 
@@ -304,6 +318,10 @@ To change a member discount later, delete it and create a new one.
 4. Under **Limits**, leave **Unlimited use** on or turn it off to set a total use limit. Add any per-client, first-purchase, expiry, or minimum-order restrictions.
 5. Under **Products**, leave **Limit to selected products** off for all products, or turn it on and choose the eligible products. Use **Automatic member discount** only for a membership-based offer.
 6. Review the code, discount, duration, and restrictions, then click **Create coupon**. **Cancel** closes an unsaved example.
+
+<Note>
+  Amount fields keep cents as typed: 0.50 saves as \$0.50. Before the October 19, 2026 release, a typed decimal point could be dropped, so a discount could save much larger than intended (0.50 became \$50). Coupons can't be edited, so if one of yours looks too large, delete it and create it again.
+</Note>
 
 <Frame caption="Example: WELCOME25 gives 25% off during the first three calendar months. This screenshot shows an unsaved example, not an active promotional code.">
 

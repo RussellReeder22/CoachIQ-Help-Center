@@ -3,7 +3,7 @@ title: "How Credits Work on a Scheduler"
 description: "Set credit costs, connect eligible products, and resolve booking, expiration, and cancellation issues."
 sidebarTitle: "Credits & Schedulers"
 icon: "coins"
-keywords: ["credit charge", "paywalled", "credit or price", "buy more credits", "credits per session", "scheduler credits", "redeemable schedulers", "refund credits on cancelation", "credit cost", "athlete can't book with credits", "master credits", "multi-credit session", "credit renew link"]
+keywords: ["credit charge", "paywalled", "credit or price", "buy more credits", "credits per session", "scheduler credits", "redeemable schedulers", "refund credits on cancelation", "refund credits used on cancellation", "credit cost", "athlete can't book with credits", "master credits", "multi-credit session", "credit renew link"]
 ---
 
 A scheduler set to **Credit** redeems credits issued by a product or granted by staff. Set the booking cost on the scheduler and the credit eligibility on the product. **Either** also lets families pay by purchasing the selected product.
@@ -21,7 +21,7 @@ The most common credit confusion is changing a setting in the wrong place. Use t
 | Make a session cost credits instead of dollars | **Scheduler** | Payment section → **Paywalled** → **How they pay: Credit** |
 | Let athletes choose between credits and paying by card | **Scheduler** | Payment section → **Paywalled** → **How they pay: Either** |
 | Change how many credits one booking costs | **Scheduler** | Payment section → credit cost |
-| Decide whether a cancellation returns the credit | **Scheduler** | Advanced settings → Booking Rules → **Refund credits used on cancelation** |
+| Decide whether a cancellation returns the credit | **Scheduler** | Advanced settings → Booking Rules → **Refund credits used on cancellation** |
 | Block rescheduling inside the cancellation window | **Scheduler** | Advanced settings → **Block rescheduling within cancellation window** |
 | Point athletes to where they buy more credits | **Scheduler** | Payment section → **Buy more credits** |
 | Decide how many credits an athlete receives | **Product** | Credits → **Number of credits** |
@@ -57,7 +57,7 @@ The most common credit confusion is changing a setting in the wrong place. Use t
     In **Buy more credits** (optional), paste the URL of the product that sells credits for this scheduler. When an athlete does not have enough credits, they are sent there to buy more instead of hitting a dead end.
   </Step>
   <Step title="Set the cancellation behavior">
-    Under **Advanced settings → Booking Rules**, decide whether **Refund credits used on cancelation** is on. Pair it with your cancellation notice window. Details in [Cancellation and credit refunds](#cancellation-and-credit-refunds) below.
+    Under **Advanced settings → Booking Rules**, decide whether **Refund credits used on cancellation** is on. Pair it with your cancellation notice window. Details in [Cancellation and credit refunds](#cancellation-and-credit-refunds) below.
   </Step>
   <Step title="Save, then check the product">
     Click **Create** or **Update**. Then open the product that issues the credits and confirm this scheduler is selected under **Which schedulers accept these credits**, or that the field is blank (which means all schedulers).
@@ -67,7 +67,7 @@ The most common credit confusion is changing a setting in the wrong place. Use t
 ## What the athlete sees
 
 - On your schedule page, credit-based sessions show their cost (for example **1 Credit**) instead of a price.
-- Checkout checks which credits are eligible for the selected athlete, scheduler, and session length. A total balance alone does not establish that a booking can use those credits.
+- Checkout checks which credits are eligible for the selected athlete, scheduler, session length, and date. A total balance alone does not establish that a booking can use those credits. If a pack only covers sessions within a set period, picking a later date shows how many credits can't be used for that date and suggests choosing an earlier date; **Use Credits & Book** isn't offered.
 - On a scheduler set to **Either**, the athlete chooses between spending a credit and paying the price before the payment step.
 - Their remaining credit count is shown during booking and again on the confirmation, and the cost is deducted the moment the booking is confirmed.
 - When a booking cannot use credits, the message says why rather than a generic "Not enough credits": no credits left, credits **not valid for this scheduler** (they came from a product that does not include it), or the membership that granted them has expired.
@@ -81,8 +81,8 @@ Credits are deducted at booking time, so cancellation is where they come back, o
 
 | Setting | Athlete cancels with notice | Athlete cancels late | Coach cancels |
 |---|---|---|---|
-| **Refund credits used on cancelation: on** | Credit returned to balance | Cannot cancel in-app inside the notice window | You choose in the cancel dialog |
-| **Refund credits used on cancelation: off** | Credit forfeited | Cannot cancel in-app inside the notice window | You choose in the cancel dialog |
+| **Refund credits used on cancellation: on** | Credit returned to balance | Cannot cancel in-app inside the notice window | You choose in the cancel dialog |
+| **Refund credits used on cancellation: off** | Credit forfeited | Cannot cancel in-app inside the notice window | You choose in the cancel dialog |
 
 <Note>
   The refund setting is all or nothing per scheduler. The common "refund with notice, forfeit when late" policy comes from combining it with the **cancellation notice window**: outside the window athletes can cancel and get the credit back, inside the window they cannot cancel at all through the app. If your policy also prevents late moves, enable **Block rescheduling within cancellation window**. Both settings are explained in [Scheduler settings, limits, and permissions](/scheduling/scheduler-settings-limits-and-permissions#cancellation-and-credit-refunds).
@@ -109,7 +109,7 @@ When you cancel a credit booking from the calendar, the confirmation dialog asks
     Staff bookings have a **Redeem credits** control when credits are available. Check it to redeem eligible credits, and confirm whose balance is used. Uncheck it for a makeup or comp session so the athlete is not charged twice. See [Manually booking athletes](/scheduling/manually-booking-athletes).
   </Accordion>
   <Accordion title="Same scheduler, athlete has two kinds of credits">
-    Product-specific credits that are valid for this scheduler are used first. Master Credits are only spent when no eligible product credit remains. Check the athlete's Credits tab if you need to know which pool a booking drew from.
+    Master Credits are used first. After that, when several sets of product credits could pay, the ones that expire soonest are used first and credits that never expire are used last, so expiring membership credits aren't wasted. Check the athlete's Credits tab if you need to know which pool a booking drew from.
   </Accordion>
   <Accordion title="Product has a per-scheduler billing-cycle cap">
     A subscription can grant 8 credits with only 4 usable on a given scheduler per cycle. Once the athlete hits 4 on that scheduler they are blocked there, even with credits left, until the next billing cycle. The message they see is a limit message, not an out-of-credits message. Details in [Credit usage limits and restrictions](/payments/credits/credit-usage-limits-restrictions).
@@ -121,7 +121,7 @@ When you cancel a credit booking from the calendar, the confirmation dialog asks
     Athletes keep their credits, but this scheduler no longer accepts them. Plan how to honor unused credits, such as offering another eligible scheduler. Any card-payment refund is handled separately using [Issue refunds](/payments/issuing-refunds); adjusting a credit balance does not return money.
   </Accordion>
   <Accordion title="You archive or delete a credit-based scheduler">
-    Credits tied only to that scheduler become unusable. Before archiving, edit the product's **Which schedulers accept these credits** list to include a replacement scheduler. How archiving works: [Organizing schedulers](/scheduling/organizing-schedulers#archiving-a-scheduler).
+    If a credit pack can only be used on this one scheduler, deleting the scheduler is blocked with a message naming the pack ("Credits from (pack) can only be used on this session. Change that product's sessions before deleting it."). Add another scheduler to the pack first. Archiving isn't blocked: credits tied only to an archived scheduler become unusable. Before archiving, edit the product's **Which schedulers accept these credits** list to include a replacement scheduler. How archiving works: [Organizing schedulers](/scheduling/organizing-schedulers#archiving-a-scheduler).
   </Accordion>
   <Accordion title="Free and credit sessions on the same schedule page">
     Fine. Payment type is per scheduler. A free trial scheduler and a 1-credit scheduler can sit side by side, and the trial scheduler will never touch a credit balance.

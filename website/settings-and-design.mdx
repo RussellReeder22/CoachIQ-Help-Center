@@ -57,10 +57,21 @@ To use a Google Font:
 - **Button Text Color**: Choose a contrasting color for button text visibility
 
 <Check>
-Your design changes save automatically and apply site-wide.
+Any change in **Design** switches the top button to **Publish**. Click **Publish** to apply it site-wide. If you try to leave or reload first, the builder asks before discarding your changes. If a save fails, the button stays on **Publish** so you can try again.
 </Check>
 </Step>
 </Steps>
+
+### How your brand color stays readable
+
+Your **Primary Color** is used for small labels, headings, text links, outline buttons, star ratings and **Read More** links. If that color would be hard to read on the background behind it, such as a dark brand color on the Dark theme or a light brand color on the Light theme, those details switch to a readable shade automatically:
+
+- On dark sites they use a lighter shade of your brand color, and on light sites a deeper shade. Some details, such as outline button borders, switch to white or black.
+- Small labels over a background photo switch to white or near-black.
+- Brand colors that already read well are not changed.
+- Main buttons keep your brand color as their fill.
+
+Your saved color doesn't change, and the builder preview shows the same colors as the live site. Text you place directly on a photo, with no section color behind it, keeps the color you chose.
 
 ### How custom sections use Design settings
 
@@ -113,16 +124,18 @@ This commonly happens when:
 </Step>
 
 <Step title="Fix transparent text">
-If your text color shows "transparent" in the hex code field:
+A section's **Primary Color** and text colors (such as Text, Muted Text, Button Text and Heading) don't offer **Set transparent**, so text can't be made invisible by accident. Backgrounds and borders can still be transparent.
 
-1. Highlight the affected text
-2. Click the color picker
-3. Choose any visible color (black, dark gray, etc.)
-4. Ensure the hex code field does NOT say "transparent"
-5. Apply to all affected text elements
+A section saved with a transparent color before this change shows **Transparent** in the color box. To fix it:
+
+1. Select the section and find the color that shows **Transparent**
+2. Click **Use inherited** to go back to your site's brand color, or pick any visible color
+3. Repeat for each affected section, then publish
+
+For text you colored with the text color tool, highlight the text, open the color picker and make sure the hex code field doesn't say "transparent".
 
 <Note>
-**Quick check**: Look for "transparent" in the hex code field - this means your text has no color and won't be visible.
+**Quick check**: "Transparent" in a color box or hex code field means that text has no color and won't be visible.
 </Note>
 </Step>
 
@@ -188,7 +201,8 @@ Install Facebook Pixel for ad tracking and retargeting.
 </Accordion>
 
 <Accordion title="Custom Scripts">
-Add custom JavaScript for third-party integrations or advanced functionality.
+Add custom JavaScript for third-party integrations or advanced functionality. **Custom JS** takes plain JavaScript or a pasted snippet with `<script>` tags. Style blocks, `<noscript>`-only snippets and external script tags are refused with a message, and nothing is saved.
+[See full guide →](/website/analytics-tracking/analytics-tracking#custom-js)
 </Accordion>
 </AccordionGroup>
 
@@ -209,6 +223,10 @@ Click **Need another domain?** to:
 - Connect an existing domain
 
 [Complete domain setup guide →](/website/domain-setup/purchasing-domain)
+
+<Note>
+If the address you enter isn't a valid domain (for example `abc` with no dot, or one with spaces), a message under the field explains it, such as "Enter a domain like www.example.com." Nothing is requested until you enter a valid domain. **Domain Requested** only shows once the request has been saved.
+</Note>
 </Step>
 </Steps>
 
@@ -266,6 +284,7 @@ Use **Purge Cache** button when:
 - Check for typos in font name
 - Some fonts require specific weights (e.g., "Roboto:400,700")
 - Clear browser cache after font changes
+- If the font name isn't available, the builder preview and the live site both fall back to the same plain sans-serif font, so a plain font in the preview usually means the name needs fixing
 </Accordion>
 
 <Accordion title="Colors not updating">

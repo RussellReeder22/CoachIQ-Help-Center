@@ -176,6 +176,33 @@ A coach with no custom access keeps following **Default Coach Access**, so you c
   Keep the default as the *most* restrictive set you are comfortable with, then open up individual coaches. That way a newly added coach starts locked down until you decide otherwise.
 </Tip>
 
+### What a page block also hides
+
+Blocking a page hides more than its menu item. The block carries through to the places that show the same information:
+
+| Blocked page | Also hidden or refused for that coach |
+| --- | --- |
+| **Products** | The **Products** tab on client profiles, product links in credit history (names show as plain text), **Edit product** in a product's **Limits**, and product shortcuts. A product link opened directly goes to a page the coach can open instead. |
+| **Transactions** | The **Transactions** tab on client profiles, saved cards under **Payment Methods**, and on the dashboard the Orders count, Orders filter, order activity and **View Payments** buttons. |
+| **Subscriptions** | The **Subscriptions** tab on client profiles and subscription rows under **Payment Methods**. |
+| **Coupons** | The **Coupons** button and related shortcuts. |
+| **Website & App** | The website builder and the App builder as well as the Website & App page. A saved link to either builder opens the coach's Inbox instead, and they can't save website or app changes another way. Public pages of the live site keep working. |
+
+A client's **Credits** tab always stays visible. **Payment Methods** shows when either Transactions or Subscriptions is allowed.
+
+Copilot follows the same blocks, and picks up a change right away in the same chat: a blocked area gets a message to ask an Admin, while other questions are still answered. A connected AI assistant also respects the coach's blocks and keeps access to the actions those blocks don't cover.
+
+### What coaches can do on client profiles
+
+When a coach's access doesn't block **Clients**, they can:
+
+- See and edit a client's custom field values. Adding or deleting a custom field for everyone stays with Admins, so those buttons are hidden for coaches.
+- Use **Update User** to fix a client's name, email or phone. Staff members' details are read-only for coaches, and a coach can't change the email, phone or CC emails of a client who also belongs to another group; the message says only an Admin can.
+
+In Inbox, coaches see the products, sessions, forms and media attached to messages in any conversation they can open. Coaches can unsend only their own messages.
+
+In notification preferences, coaches see a one-line status of the group's staff emails (active or paused) with a **Delivery details** link. Only Admins see the pause and resume control.
+
 ### Blocking or removing a coach
 
 Separate from page access, a coach profile also has **Block or Remove**:

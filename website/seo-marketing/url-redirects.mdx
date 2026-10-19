@@ -49,7 +49,7 @@ A redirect automatically sends visitors from the old URL to the new one - no bro
     | **Redirect From** | The old URL path (without domain) | `/summer-camp` |
     | **Redirect To** | The new URL path or full external URL | `/summer-camp-2026` |
 
-    Click the **+** button to add another redirect if needed.
+    Click the **+** button to add the redirect. If an entry can't be saved, a message tells you why and nothing is saved. See [If a redirect won't save](#if-a-redirect-wont-save).
   </Step>
 
   <Step title="Save and Publish">
@@ -86,6 +86,17 @@ You want an old page to go to your booking calendar:
 <Tip>
 **External URLs**: When redirecting to a different website, enter the full URL including `https://`.
 </Tip>
+
+### Moving from an old website (.html and .php pages)
+
+If your old site used addresses that end in a file name, like `/about.html` or `/index.php`, you can redirect those too:
+
+| Redirect From | Redirect To |
+|--------------|-------------|
+| `/about-us.html` | `/about` |
+| `/index.php` | `/` |
+
+Capital letters in the old address don't matter, so `/About-Us.html` and `/about-us.html` both land on the new page. Anything after a `?` in the old link (like tracking tags) is carried over to the new address. An old `.html` address with no redirect still shows the normal page-not-found screen.
 
 ## Using wildcards
 
@@ -128,7 +139,7 @@ This redirects:
   </Accordion>
 
   <Accordion title="Redirect loops (A → B → A)">
-    Never create a loop where pages redirect to each other. This breaks the page completely. Double-check your redirect destinations.
+    A loop where pages redirect to each other would break the page completely. CoachIQ refuses a redirect to itself and a loop between two redirects with a message, so these can't be saved. Longer chains are still worth checking yourself.
   </Accordion>
 
   <Accordion title="Forgetting the leading slash">
@@ -142,6 +153,18 @@ This redirects:
     Be very careful redirecting `/` (your home page). This affects your entire site's entry point. Only do this if you're absolutely sure.
   </Accordion>
 </AccordionGroup>
+
+## If a redirect won't save
+
+Each of these is refused with a message on screen, and nothing is saved until you fix it:
+
+| What you entered | What to do |
+|------------------|------------|
+| A blank row, or only one of the two fields | Fill in both **Redirect From** and **Redirect To** |
+| A destination that isn't a page path or a web address (for example `ftp://...`) | Use a page path like `/about` or a web address like `https://example.com` |
+| The same old address twice | Keep one redirect per old address and edit that one |
+| A redirect to itself (`/camp` → `/camp`) | Point it at a different page |
+| Two redirects that send visitors in a loop (`/a` → `/b` and `/b` → `/a`) | Remove one of them, or point both at the final page |
 
 ## Testing your redirects
 
