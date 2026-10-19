@@ -4,6 +4,162 @@ description: "New updates and improvements"
 icon: "clock-rotate-left"
 ---
 
+<Update label="October 19, 2026">
+
+## Features & improvements
+
+**Send a booking confirmation when you book for a client**
+
+**New Booking** (**Scheduling → Calendar → Book Session**) has a **Notify participants** section, off by default. Turn it on to send the athlete and their linked parents the same "Session confirmed" email and app notification they get when they book themselves. Anything you type in **Message** appears in the email with working links, so you can include a payment link, and you can also send it by in-app message, SMS or announcement. Parents receive it for children who have no email of their own. **Reschedule** on a canceled booking offers the same step. [Book for a client →](/scheduling/manually-booking-athletes)
+
+**Book past a scheduler's rules, with a warning first**
+
+When staff book a client at a time that breaks a scheduler rule, CoachIQ now asks **Book anyway?** and names the rule: inside the minimum notice, outside availability or the booking window, or full (for example "2 of 2 booked"). **Go back** keeps what you entered; **Book anyway** books the client and records the override in the booking's history. This works from **Book Session**, a client's profile and **Add participant**. Recurring series list any dates outside availability before saving. Clients booking for themselves still have to follow every rule. [Book for a client →](/scheduling/manually-booking-athletes)
+
+**Reopen a time you closed with Cancel Session**
+
+Booking or moving a client onto a time you closed with **Cancel Session** now shows **Reopen canceled time?** with **Reopen and book** or **Reopen and move**, instead of blocking it for good. Recurring bookings that cross closed dates list them before anything is saved. Clients canceled from that time stay canceled, and canceled team times can't be reopened. Reopening works on the web only. [Change your schedule →](/scheduling/changing-your-schedule)
+
+**Change a booked lesson's resource, or share one across a group**
+
+For sessions that assign one resource from a pool (for example Cage 1 or Cage 2), the lesson window shows which resource each athlete holds, and **Change Resource** in the athlete's menu switches it. Taken resources are greyed out and show who has them, and moving a lesson picks a free resource automatically. In the scheduler's **Resources** step, **Use first available** now also offers **One per session**, so everyone in the same group session shares one resource. Keep **One per booking** for rentals. Available on the web calendar. [Resources →](/scheduling/resources)
+
+**Let families book a free scheduler as a guest**
+
+A Free scheduler now has an **Allow users to book as guest** switch in its **Payment** section. With it on, a signed-out visitor can book with just their name and email from your app or website, without creating an account. Anyone who already has an account is asked to sign in. Sessions that allow guest checkout also offer **Continue as guest** in the website scheduler. [Guest checkout →](/payments/guest-checkout)
+
+**Athletes and parents can sign in with a texted code**
+
+Your app's sign-in screen now offers a 6-digit code texted to the phone number on the account, alongside email and password. New families can finish creating an account from the same screen. Each code works once, and **Resend** unlocks after 60 seconds. Coach and admin accounts still sign in with email and password. [Your app →](/athlete-portal/understanding-your-athlete-portal)
+
+**Keep private staff notes on a client's profile**
+
+Open a client's profile and choose the new **Notes** tab to write a note. Each note shows who wrote it and when. Athletes and parents never see notes. Admins have a **Coaches can add notes** switch (on by default) and can delete any note; coaches can delete only their own. Notes can't be edited yet, so delete and re-add to change one. [Client profiles →](/people/client-profiles/client-profiles)
+
+**See when membership payments are paused**
+
+If you pause payment collection for a membership in Stripe, **Payments → Subscriptions** now shows **Payments paused** with the resume date, adds a filter and a paused count, and leaves paused memberships out of active revenue. Members see the pause in **Billing**, **Orders** and **Archive**, and keep their access, bookings and credits. Pausing is still done in Stripe. [Subscriptions →](/payments/subscriptions-dashboard)
+
+**Record what you collected for cash, check and other payments**
+
+When you add a product to a client and mark it paid by **Cash**, **Check** or **Other**, a new **Amount** field (prefilled with the price) records what you collected. These purchases show as **Cash · Paid**, **Check · Paid** or **Other · Paid** in **Transactions** and count toward Revenue. Purchases marked paid before this release stay at $0 until you open one, confirm the amount and save. [Client products →](/people/client-profiles/client-profiles-products)
+
+**Choose what stays in frame in website photos and videos**
+
+In the website builder, a new **Focus** setting under an image or video controls how it's cropped in cards and galleries: **Auto**, **Top**, **Bottom**, **Left**, **Center** or **Right**, or drag on the preview to place the focus point exactly. Optional section images, such as backgrounds and video covers, also have a **Remove** control, and removed images stay gone after publishing. [Working with sections →](/website/sections/working-with-sections)
+
+**Your connected AI assistant can do more**
+
+With write access, a connected ChatGPT or Claude assistant can now:
+- Read a client's full profile and correct their name, phone number and custom fields.
+- Read products, coupons, transactions, subscriptions and credit history.
+- Create and edit products, create and remove coupons, and set a client's credit balance.
+- Add or remove a tag for up to 100 people in one change, with fewer approval prompts.
+
+It still can't refund, charge a card, change or cancel a subscription, change anyone's role, remove people, or touch Stripe settings. Every change is logged under the assistant and the coach who approved it, and **Settings → Data → Logs** now labels changes made from outside apps and requests CoachIQ refused. [Connect your assistant →](/getting-started/use-coachiq-with-ai)
+
+<Accordion title="Fixes: checkout and payments">
+
+- **Guests with an existing account:** A guest whose email already has a CoachIQ account no longer hits "We could not start payment." They're taken to sign in or **Set Your Password** and finish the purchase or booking in the same visit, with one payment.
+- **Clearer totals:** Checkout shows **Due today** and **Paid today** when the charge differs from the list price (coupon, member discount, fee, down payment or access code). Free trials show **Due today $0.00**, then the regular price, and later-start memberships show when billing starts. Amounts show cents everywhere, and a coupon larger than the price totals $0.00.
+- **Coupons:** Refused codes explain why ("reached its redemption limit", "does not apply to this product"). The payment button waits until the new total appears, so the charge always matches what's shown. An applied coupon sits in one row with **Change** and **Remove**.
+- **Purchase limits:** Buyers who've hit a per-person limit see "You have reached your purchase limit" instead of the product looking sold out.
+- **Payment form:** **Purchase Now** waits for the card form to load and offers **Retry** if it doesn't. **Payment Successful** no longer turns back into a blank checkout on refresh. A product deleted or archived mid-checkout says "You weren't charged."
+- **Free and code-only products:** Free products end on a **Review** step with **Complete purchase**. Code-only products have one **Redeem code** button, and $0 products that keep a card on file say **Save payment method**.
+- **Checkout for families:** A newly added athlete is selected automatically. The member discount applies when a parent pays for an athlete who holds the qualifying membership. A visitor who isn't yet in the group gets the normal **Join this group to continue** step.
+- **Saved cards:** Checkout preselects the card marked **Default**, and **Set as default** sticks. **Use a new card** works and keeps saved cards available. Declined cards show the bank's reason. Saved cards no longer disappear for athletes with many purchases.
+- **Archived products** no longer appear in your app's catalog or website product sections, and direct links show "No Product Found." Hidden but active products still open from a direct link.
+- **Phones:** Checkout opens with the product name and price visible, every step fits on screen, and long product names wrap.
+
+</Accordion>
+
+<Accordion title="Fixes: memberships, credits and reporting">
+
+- **Product builder saves:** Edits to price, down payment, weekly booking allowance, scheduler redemption and access-code **Unlimited use** now save, and every **Update** shows **Saved**. Prices with cents keep the decimal point ($0.50 no longer saves as $50); check any price or coupon that saved larger than intended. The builder turns off conflicting trial, down-payment and scheduled-billing options with a note before saving, instead of silently dropping one.
+- **Billing cycles:** New memberships that end after a set number of cycles collect that many full payments even with a free trial or later start. Existing subscriptions are unchanged.
+- **Member Billing:** Lists every current membership, explains when access ends before canceling, and says why a membership can't be canceled there (only the payer can, or the coach must). Free and staff-granted memberships no longer show a bank-account error. Parents see each child's credits under **Billing → Credits**. One-time credit packs show **Active**, **Expired** or **No credits left** instead of "Subscription inactive."
+- **Cards on memberships:** Members can remove a card unless it's the only one paying for an active membership. Changing the card on a membership works after a missed payment. On a client's **Payment Methods**, each membership shows the card that will be charged and its billing dates.
+- **Credits spend in the right order:** Bookings use the credits that expire soonest first. The booking step counts only credits valid for the chosen date. Credits returned after a cancellation go back to the pack that paid and keep its expiration; credits already lost this way aren't restored automatically.
+- **Credit records:** Manual changes appear in **Credit Logs** as "Set to N" with the resulting balance. Inactive memberships show their credits as kept but not spendable. Credit renewal and expiration dates match the Stripe billing date.
+- **Transactions and Subscriptions:** In organizations with several groups, each group sees only its own records, and MRR follows. Revenue counts only money actually collected, and a payment linked to two purchases is no longer counted twice, so some Revenue figures may drop slightly. Declined payments show the reason. Rows with no charge yet show **Trial ends**, **Scheduled** or **Cancels**. Times use your time zone. Totals no longer get stuck on dashes.
+- **Client profile:** **Remove purchase** explains what the client loses and that no refund is issued. Products staff add to a client name that client as the athlete. Profile tags and scheduler chips wrap instead of overflowing.
+
+</Accordion>
+
+<Accordion title="Fixes: scheduling and bookings">
+
+- **Staff booking:** Custom date bookings start at the scheduler's length. **Repeat every** accepts 1 to 50, and "every 1st Thursday" lands on the right Thursday. The recurring conflict review lists every overlap, not just the first three. Booking by tag shows who has the tag before you create. Staff can move a booking into any time the builder offers.
+- **Booked by:** Staff bookings for children show **Booked by** with the coach's name, and "with credits from (parent)" when a parent's credits paid.
+- **Cancel and skip:** Canceling from the calendar or a bookings list asks you to confirm and names the client and time. **Skip This Session** names the client and date and says the rest of the series stays booked. A series on an archived scheduler can now be ended.
+- **Scheduler Preview:** Shows the same start times families see, names what blocks a time, and shows counts like "3 of 12" with only the people actually booked. Touching or overlapping availability windows preview the same way families see them.
+- **Scheduler setup:** **Use first available** requires an attached resource, which fixes failed bookings on sessions without one. Deleting the only session a credit pack is limited to is blocked, so the pack's credits can't start working everywhere. **Refund credits used on cancellation** shows the right state on older schedulers.
+- **Athletes and parents:** The Bookings page lists every upcoming booking, including a child's later sessions, and sessions move to **Past** once they end. Parents can reschedule or cancel a staff-booked lesson for their child, including one date in a series. Cancel explains whether the credit comes back, or why cancel is unavailable inside the notice window. Turning off **Allow athletes to reschedule** now applies in the mobile app too.
+- **Booking checkout:** If someone else takes the time mid-checkout, the buyer is told they weren't charged. A failed payment releases the time. Booking limits show as soon as a time is picked. Required registration forms are asked for each child.
+- **Website booking:** Credit bookings confirm the cost before spending, and show how many credits are missing with **Add more credits**. Website calendars show the schedule's time zone, and sections pointing to an archived session say it's unavailable. Members signed in on your website stay signed in when a button opens your app.
+- **Phones and tablets:** Booking steps fit in one row, the selected session and price show above the calendar, saved views stay readable, and month view shows busy days with **View all**.
+
+</Accordion>
+
+<Accordion title="Fixes: website, your app and admin">
+
+- **Edits now stick after Publish:** Spacer sections, Feature Grid headings, custom footer fields, the header **Brand Name**, the hero background, a page's **Parent Page**, Custom URL buttons and form disconnects all stay saved. If a published change doesn't reach the live site on the first try, CoachIQ retries it in the background.
+- **Builder:** Changing anything in **Design** marks the page unpublished and warns before you leave. A page that won't load shows **Retry** instead of an endless spinner. **Add** in FAQ and gallery lists creates a blank item. Sections copied from earlier pages keep their content, and new template pages fill in your business name. Deleted gallery images and footer links stay deleted.
+- **Website form uploads** accept images and videos again; they had been failing with "Upload failed." A failed upload keeps your other answers.
+- **SEO and domains:** Custom JS, **URL Redirects** and custom domain settings explain mistakes before saving. Old .html and .php addresses redirect correctly. New websites include the home page in the sitemap and AI listing. Newly uploaded images show in social link previews, and older images are being corrected after the release.
+- **Brand colors:** Dark brand colors on dark sites, and light ones on light sites, switch labels, links and outline buttons to a readable shade. Custom header, footer and section backgrounds show on the live site. Mixed Media gallery photos show again next to videos.
+- **Navigation:** The Compact Header menu on phones opens every link, and submenus work by keyboard and touch. **Member Login** opens in a new tab and leaves your website open. Long headings, menus and footer addresses wrap.
+- **Your app:** The sign-in screen shows your club name, and visitors who haven't joined see one clear Join card. Your saved colors and logo show on the first page load. Light-theme Billing and program text is readable. In **App Builder**, inactive schedulers stay hidden from athletes and custom item titles save the first time.
+- **Admin on phones and tablets:** Every Settings section has the same headings and navigation, and client and staff profiles have a **User Details** tab.
+
+</Accordion>
+
+<Accordion title="Fixes: forms, Inbox, automations and staff access">
+
+- **Automation Wait steps:** Automations now wait the full time set in a Wait step, including long waits like 28 days, and check "continue only if" conditions when the wait ends. A lead who already booked no longer gets the follow-up. Booking-ended automations run once per booking. Existing automations don't need rebuilding.
+- **Creating automations:** The builder says why an automation can't be saved instead of a generic error, and a failed save no longer leaves duplicates. Templates open with their pickers ready. Templates can't be saved with a removed tag.
+- **Reminder texts** no longer show up as the latest message in a family's Inbox conversation, so real replies stay at the top, and archived conversations stay archived.
+- **Announcement emails** show attached products as named cards with price and a **Purchase** button, and attached forms, sessions and media by name.
+- **Out of credits:** When organization credits stop an email or text, the coach sees a clear message pointing an admin to **Settings → Credits**, and the draft stays put.
+- **Form responses** now show waiver ticks and unlabeled choices in the table and CSV export. Forms that allow one response keep a single row with the latest answers. A standalone form with only optional questions asks for at least one answer instead of saving nothing.
+- **Form builder:** Changes made while a save is finishing are no longer lost. **Preview** shows the real sign-in step. Form Responses has a **UTC** view option and sorts correctly by **Submitted At**.
+- **Paywalled Schedule page:** Parents can book their linked children when a purchase unlocks the page. A product bought for one child doesn't unlock booking for a sibling.
+- **Staff access:** Blocking Payments pages also hides the matching client-profile tabs and dashboard order cards. Blocking **Website & App** also blocks the builders. Coaches can see and edit a client's custom field values. Coaches with an older scheduler access setting can sign in again.
+- **Sign-up:** When a family's sign-up fails, the form says why (terms, password, phone or email already in use) and keeps what they typed.
+- **Media Hub** search shows only matching items, even after scrolling.
+
+</Accordion>
+
+<Accordion title="Fixes: Copilot">
+
+These apply wherever Copilot is available in your organization.
+
+- **New:** Copilot can change a scheduler's minimum notice, places per time slot and session length, and can write the text on a lesson slide. You can flag a wrong answer on the **Assistant** page with **That was wrong**.
+- **Approval cards** lead with what's changing, showing old and new values, and can be read in full on phones and tablets. On tablets the side panel folds away to give the conversation room. Expired cards say "Nothing was changed" with **Ask again**.
+- **Bookings:** "Move her Wednesday booking an hour later" moves it instead of creating a second booking. Cancel cards don't ask for a refund when no credits return. Check-in cards name the athlete, scheduler, day and time. Copilot won't book outside open hours and points you to **Book anyway** on the calendar.
+- **Credits:** "Take 3 credits off" subtracts from the balance (10 → 7) instead of setting it to 3. "Give her another five" and "Maximum 3 per client" are understood.
+- **Availability:** "Make Fridays end at 5" changes only Friday. Different hours for different days stay separate. Copilot doesn't ask again for days and hours you already gave.
+- **Follow-ups:** "Make it $20" right after viewing a product changes that product. When one message asks for two booking changes, Copilot names both and asks which first.
+- **Answers from your data:** Copilot answers from your own calendar, people, products, forms, waivers, website and notification settings instead of giving how-to steps. Misspelled names get a "Did you mean…?" suggestion.
+- **Limits:** Copilot follows **Staff Access** changes right away and tells a coach when an area needs an admin. It declines medical and injury questions and suggests a professional.
+- **Privacy:** Phone numbers, including international ones, are fully hidden before a message reaches the AI model.
+- **Chat:** **Stop** shows "Stopped" and lets you ask a follow-up. Unsent text and attachments survive a reload, and a message sent while a chat loads stays in that chat.
+
+</Accordion>
+
+<Accordion title="Coming with the next mobile app update">
+
+These fixes are done and will reach phones when the next CoachIQ app release is live in the App Store and Google Play.
+
+- Home shows your logo at the top, and the bottom tabs use the page names from **Menu & Links**. Wide logos show as initials on a brand-colored tile.
+- Completing a required registration form in checkout unlocks **Pay**, and the default card is preselected. Members on a free trial can book the sessions their membership covers.
+- **Billing & purchases** loads again, and purchases for a child are labeled with the child's name.
+- In the coach app, **Add participant** books the athlete again, session details list one row per booking, and adding a product to a client confirms success instead of a false failure.
+- **New Booking** has a **Send booking confirmation** box.
+
+</Accordion>
+
+</Update>
+
 <Update label="September 30, 2026">
 
 ## Features & improvements
