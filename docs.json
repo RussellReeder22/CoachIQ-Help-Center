@@ -244,6 +244,13 @@
             ]
           },
           {
+            "group": "Sales",
+            "icon": "chart-line",
+            "pages": [
+              "sales/pipeline"
+            ]
+          },
+          {
             "group": "Payments",
             "pages": [
               "payments/getting-started",
@@ -314,9 +321,7 @@
             "pages": [
               "people/overview",
               "people/adding-editing-clients",
-              "people/sign-up-and-profile",
               "people/tags-filters",
-              "people/block-and-remove-athletes",
               {
                 "group": "Client Profiles",
                 "icon": "id-card",
@@ -333,17 +338,21 @@
                   "people/client-profiles/client-profiles-waivers"
                 ]
               },
-              {
-                "group": "Teams",
-                "icon": "people-group",
-                "pages": [
-                  "people/teams/overview",
-                  "people/teams/roster-and-staff",
-                  "people/teams/practices-and-games",
-                  "people/teams/registration-and-messaging"
-                ]
-              },
-              "people/managing-staff"
+              "people/block-and-remove-athletes",
+              "people/managing-staff",
+              "people/staff-access",
+              "people/sign-up-and-profile",
+              "people/how-clients-sign-in"
+            ]
+          },
+          {
+            "group": "Teams",
+            "icon": "people-group",
+            "pages": [
+              "people/teams/overview",
+              "people/teams/roster-and-staff",
+              "people/teams/practices-and-games",
+              "people/teams/registration-and-messaging"
             ]
           },
           {

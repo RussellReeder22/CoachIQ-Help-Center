@@ -1,482 +1,143 @@
 ---
-title: "Adding & Editing Client Information"
-description: "Create new clients manually or import hundreds at once—plus how to keep client information accurate and up-to-date"
-sidebarTitle: "Adding & Editing Clients"
+title: "Add and Edit Clients"
+description: "Add a client or a parent with their athletes, import a list, keep contact details right, add custom fields, and export your clients."
+sidebarTitle: "Add & Edit Clients"
 icon: "user-plus"
-keywords: ["add client", "add athlete", "new client", "import clients", "bulk import", "CSV import", "edit client", "update client info", "custom fields"]
+keywords: ["add client", "new client", "add athlete", "add parent", "import clients", "CSV import", "edit client", "custom fields", "export clients", "set password"]
 ---
 
 <Info>
-  **Where to find this**: Dashboard → **People** → **Clients** → **New User** button (top right)
+  **Where to find this**: **People › Clients** › **New client** (top right). Client details are edited on the right side of each client's profile.
 </Info>
 
-## What you'll accomplish
+Most families add themselves when they sign up on your website or app, book, buy or fill in a form. Use this page when you need to add someone yourself, bring over a list from another system, or fix someone's details.
 
-Learn how to add individual clients to CoachIQ, bulk import your entire roster from a spreadsheet, edit client details as information changes, and add custom fields to track what matters most to your business.
+## Add a client
 
----
+<Steps>
+  <Step title="Open New client">
+    Go to **People › Clients** and click **New client**. The window reads "Add a client to" followed by your business name.
+  </Step>
+  <Step title="Pick the account type">
+    - **Athlete**: "I'm the player". Use this for adult clients and athletes who hold their own login.
+    - **Parent / Guardian**: "I'm registering my child". The parent holds the login and payment method. Add their children from the parent's [Family section](/people/client-profiles/client-profiles#family) once the parent is created.
+    - **CoachIQ / Admin**: admin access to your business. To add coaches, use [Staff](/people/managing-staff) instead.
+  </Step>
+  <Step title="Fill in their details">
+    Enter **First name**, **Last name**, **Email** and **Phone number**. The phone field has a country picker and saves the number with its country code, so texts reach the right phone. Any fields you've made required in [Sign-up & Profile](/people/sign-up-and-profile) show here too.
 
-## When to add clients manually vs bulk import
+    Add tags in **Tags (comma separated)**, for example `Varsity, Tuesday group`.
+  </Step>
+  <Step title="Create the client">
+    Click **Create client**. They appear at the top of your Clients list, and you can book them, sell them a product or message them right away.
+  </Step>
+</Steps>
 
-Choose your method based on your situation:
+<Frame>
+  ![New client window with Account type, name, email, phone and tags](/images/people-new-client-2026-11.png)
+</Frame>
 
-<Tabs>
-  <Tab title="Manual Entry (Best for...)">
-    **Use the "New User" button when:**
+**What can stop a new client from saving:**
 
-    - Adding 1-5 clients at a time
-    - Someone just signed up on your website
-    - You're onboarding a trial client
-    - You need immediate access to book them into a session
-    - You want to assign specific tags and roles during creation
+- The email already belongs to someone in CoachIQ. The existing account is added to your business instead of creating a second one, and their existing name and role are kept.
+- The phone number already belongs to a different account. Use another number or leave it blank.
+- A required sign-up field is empty.
 
-    **Advantage**: Full control, immediate profile creation, can add custom details right away
-  </Tab>
-  <Tab title="Bulk Import (Best for...)">
-    **Use spreadsheet import when:**
+<Note>
+  Tags you add in **New client** start any active **User Tag Added** automations, the same as adding the tag from the profile later. Each tag starts the automation once. Check your automations before tagging a new client if a tag sends a message. See [Triggers and actions](/tools/automations/triggers-actions-reference).
+</Note>
 
-    - Migrating from another platform (10+ clients)
-    - Starting fresh with CoachIQ and have an existing roster
-    - Adding an entire team or program cohort at once
-    - You already maintain a spreadsheet of athletes
+### Help a new client set their password
 
-    **Advantage**: Add 100+ clients in seconds, no repetitive data entry, great for one-time migrations
-  </Tab>
-</Tabs>
+A client you add has no password yet. On their profile, the **Sign-in** part of **Client details** reads **Has not set a password yet** with a **Send set-password email** button.
+
+1. Click **Send set-password email**. The line under it shows when the link was sent, for example "Link sent 6:47 PM", and the button changes to **Send again**.
+2. If you click **Send again** within 10 minutes, a note tells you when another link can be sent.
+
+Clients can also sign in with a code texted to their phone, or with Google where your site offers it. See [How clients sign in](/people/how-clients-sign-in).
+
+## Import a list of clients
+
+To bring clients over from a spreadsheet or another system, use **Settings › Data › Import People**. Download the formatted CSV, fill in one row per person with an email, and upload it. Rows whose email already exists are matched to the existing person instead of creating a duplicate, and one bad row doesn't stop the rest. See [Import People](/settings/data#import-people).
 
 <Tip>
-  **Pro tip**: Most coaches use manual entry for ongoing operations (new signups) and bulk import once during initial setup or when acquiring a new team/program.
+  Import a test file of five people first, then check them in **People › Clients** before you upload everyone.
 </Tip>
 
----
-
-## Adding clients manually
-
-<Steps>
-  <Step title="Click 'New User' button">
-    From **People → Clients**, click the **New User** button in the top-right corner.
-
-    <Frame>
-      ![CoachIQ New User button on the Clients page](/images/new-user.png)
-    </Frame>
-    A form will appear with fields for client information.
-  </Step>
-  <Step title="Enter required information">
-    Fill in the essential fields:
-
-    **Required fields:**
-
-    - **First Name** - Client's first name
-    - **Last Name** - Client's last name
-    - **Email** - Primary email address (used for login and communications)
-    - **Phone** - Mobile phone number for SMS (include country code)
-
-    <Warning>
-      **Email is critical**: This becomes their login credential for your Athlete Portal (mobile app/web). Use the email address they check regularly.
-    </Warning>
-    <Note>
-      **Phone number format**: Use international format with country code, e.g., `+1 234 567 8900` for US numbers. This ensures SMS messages deliver correctly.
-    </Note>
-  </Step>
-  <Step title="Assign role(s)">
-    Select at least one role for this person:
-
-    **Common role selections:**
-
-    - **Athlete** - For anyone who trains with you (most common)
-    - **Parent** - For guardians of youth athletes
-    - **Coach** - If they also help deliver training (limited admin access)
-    - **Admin** - Full platform access (use sparingly)
-
-    <Tip>
-      **Multiple roles**: You can select multiple roles. For example, a paying athlete who trains with you would be both "Athlete" and "Customer".
-    </Tip>
-    **What roles control:**
-
-    - **App access**: Athletes/Parents see the athlete portal, Coaches/Admins see the coaching dashboard
-    - **Permissions**: What they can view, book, and manage
-    - **Filtering**: How they appear in your People list filters
-  </Step>
-  <Step title="Add tags (optional but recommended)">
-    Tags help you organize and filter clients. Add relevant tags during creation:
-
-    **Examples:**
-
-    - Program/group: "Elite Program", "Beginner Group", "Rising Stars"
-    - Status: "Trial", "Active Member", "Monthly Subscription"
-    - Location: "Downtown Facility", "North Campus"
-    - Custom: Whatever makes sense for your business
-
-    <Tip>
-      **Don't overthink it**: You can always add or change tags later. Start simple with 2-3 tags like program name and membership status.
-    </Tip>
-    **To add a tag**: Type the tag name in the "Tags" field. If it doesn't exist yet, CoachIQ will create it automatically.
-  </Step>
-  <Step title="Save and confirm">
-    Click **Create** **New User** button.
-
-    <Check>
-      **Success!** The new client:
-
-      - Appears immediately in your People → Clients list
-      - Receives an email invitation to access your Athlete Portal
-      - Can now be booked into sessions, assigned products, and messaged
-    </Check>
-    The client will receive an email with instructions to set their password and access your app/portal.
-  </Step>
-</Steps>
-
----
-
-## Bulk importing from a spreadsheet
-
-When you need to add many clients at once, bulk import saves hours of manual data entry.
-
-<Steps>
-  <Step title="Prepare your spreadsheet">
-    Create a CSV or Excel file with these columns (headers must match exactly):
-
-    **Required columns:**
-
-    - `first_name`
-    - `last_name`
-    - `email`
-    - `phone`
-
-    **Optional columns:**
-
-    - `tags` (comma-separated, e.g., "Elite Program, Trial")
-    - `role` (e.g., "athlete", "parent")
-
-    **Example spreadsheet:**
-
-    | first_name | last_name | email                                             | phone            | tags                  | role    |
-    | ---------- | --------- | ------------------------------------------------- | ---------------- | --------------------- | ------- |
-    | Sarah      | Johnson   | [sarah.j@email.com](mailto:sarah.j@email.com)     | \+1 555 123 4567 | Elite Program, Active | athlete |
-    | Mike       | Chen      | [mike.chen@email.com](mailto:mike.chen@email.com) | \+1 555 234 5678 | Beginner Group        | athlete |
-
-    <Warning>
-      **Clean your data first**:
-
-      - Remove duplicate email addresses (imports will fail for duplicates)
-      - Verify phone numbers include country codes
-      - Check for typos in email addresses
-      - Ensure consistent tag naming (case-sensitive)
-    </Warning>
-  </Step>
-  <Step title="Access import feature">
-    From **People → Clients**, look for the **Import** button or navigate to **Settings → Import & Export → Import Athletes**.
-
-    <Note>
-      **Location varies**: Some CoachIQ accounts have the import button directly in the People section, others access it through Settings. Check both locations.
-    </Note>
-  </Step>
-  <Step title="Upload and map fields">
-    1. Upload your CSV or Excel file
-    2. Map your spreadsheet columns to CoachIQ fields
-    3. Preview the first few rows to verify correct mapping
-    4. Choose whether to send invitation emails (recommended: No for bulk imports, send manually later)
-
-    <Tip>
-      **Test with 5 clients first**: Upload a small test file with 5 clients to verify your format works before importing your entire roster.
-    </Tip>
-  </Step>
-  <Step title="Review and import">
-    CoachIQ will show:
-
-    - How many clients will be imported
-    - Any errors or duplicates detected
-    - Which fields are missing
-
-    Click **Import** to process.
-
-    <Check>
-      **Import complete!** Your clients now appear in the People list. You can filter by the tags you imported to verify everything processed correctly.
-    </Check>
-  </Step>
-  <Step title="Follow up after import">
-    After bulk importing:
-
-    1. **Verify the import**: Filter by imported tags to check client count
-    2. **Send welcome messages**: Use Inbox to send a group message to all imported clients
-    3. **Provide login instructions**: Send app download links and first-time login guidance
-    4. **Assign products/programs**: If they should have access to content or credits, add those next
-
-    <Tip>
-      **Welcome automation**: Consider setting up an automation (Tools → Automations) that triggers when "New User" is created to send welcome messages automatically.
-    </Tip>
-  </Step>
-</Steps>
-
----
-
-## Editing client information
-
-Client details change—email addresses, phone numbers, roles, tags. Here's how to keep information current:
-
-<Steps>
-  <Step title="Open the client profile">
-    From **People → Clients**, click the client's name to open their full profile.
-
-    <Frame>
-      ![CoachIQ client profile with User Details sidebar](/images/profile-view-default.png)
-    </Frame>
-  </Step>
-  <Step title="Use the User Details sidebar">
-    On the right side of the profile, you'll see the **User Details** panel with:
-
-    - Role dropdown
-    - First name field
-    - Last name field
-    - Email field
-    - Phone number field
-    - **\+ Add Field** button (for custom fields)
-
-    **To edit**: Click into any field, make your change, and it saves automatically.
-
-    <Warning>
-      **Changing email addresses**: If you change someone's email, they'll need to use the NEW email to log in. Notify them immediately to avoid confusion.
-    </Warning>
-
-    On phones, **User Details** is its own tab on the profile.
-
-    <Note>
-      **Coaches** can edit a client's name, email, phone and custom field values when their Staff Access doesn't block Clients. Only Admins see **\+ Add Field** and can delete a field. Coaches see staff members' details as read-only, and can't change the email, phone or CC emails of a client who also belongs to another group. See [Managing staff](/people/managing-staff#what-coaches-can-do-on-client-profiles).
-    </Note>
-  </Step>
-  <Step title="Update role or tags">
-    **To change roles:**
-
-    1. Click the **Role** dropdown in User Details
-    2. Select/deselect roles as needed
-    3. Changes save automatically
-
-    **To update tags:**
-
-    1. Scroll to the Tags field in User Details
-    2. Add or remove tags (type to search existing tags)
-    3. Changes save immediately
-
-    <Note>
-      **Bulk tag updates**: To change tags for multiple clients at once, use the Clients list view—select multiple clients, then use bulk actions to add/remove tags. Details in [Organizing Clients with Tags & Filters](/people/tags-filters).
-    </Note>
-  </Step>
-</Steps>
-
----
-
-## Adding custom fields
-
-Beyond the standard fields (name, email, phone), you can track custom information specific to your business.
-
-**Common custom field examples:**
-
-- Emergency contact name/phone
-- School or team affiliation
-- Jersey number
-- Graduation year
-- Parent's work phone
-- Medical conditions or allergies
-- Referral source
-
-<Steps>
-  <Step title="Click '+ Add Field'">
-    In the User Details sidebar of any client profile, click **\+ Add Field** at the bottom.
-  </Step>
-  <Step title="Name and populate the field">
-    1. Enter a field name (e.g., "Emergency Contact")
-    2. Enter the value for this specific client
-    3. Click save
-
-    <Tip>
-      **Custom fields are global**: Once you create a custom field for one client, it becomes available for ALL clients. You don't have to fill it in for everyone—only for those where it's relevant.
-    </Tip>
-  </Step>
-  <Step title="Use custom fields for filtering">
-    After creating custom fields, you can:
-
-    - View them in the User Details sidebar for each client
-    - Edit values at any time
-    - Use them for reporting or segmentation
-
-    <Note>
-      **Limitation**: Custom fields appear in client profiles but aren't currently available as filter options in the main Clients list. Use tags for filterable organization.
-    </Note>
-  </Step>
-</Steps>
-
----
-
-## Exporting client data
-
-Need your client list in a spreadsheet? Use the export feature for backups, external tools, or reporting.
-
-**To export:**
-
-1. Go to **People → Clients**
-2. Apply any filters (optional—export only filtered results)
-3. Click **Export** button (top right)
-4. Download the CSV file
-
-**What's included in the export:**
-
-- Name (first and last)
-- Email address
-- Phone number
-- Role(s)
-- Tags
-- Join date
-- Custom field values
+Children without an email are added from the parent's **Family** section with **Add child**, not through the import.
+
+## Edit a client's details
+
+Open the client from **People › Clients**. **Client details** sits on the right of the profile (on a phone it's its own section).
+
+<Frame>
+  ![Client details panel with Role, Tags, name, email, phone, Add CC email, Sign-in and Custom fields](/images/people-client-details-2026-11.png)
+</Frame>
+
+| Field | What to know |
+|---|---|
+| **Role** | Athlete, Parent, Coach or Admin. Changing it takes effect right away. Making someone a Coach puts them on your Default coach access. |
+| **Tags** | **Add tag** to pick or create a tag; remove one with its x. |
+| **First name**, **Last name**, **Email**, **Phone** | Edit the field and it saves. A person's name, email and phone belong to their CoachIQ account, so the change also shows in any other business they belong to. |
+| **Add CC email** | Send copies of this client's emails to another address, such as a second parent. |
+| **Sign-in** | Shows whether they've set a password, with the set-password email button. |
+| **Custom fields** | Your own fields, such as shirt size or school. |
 
 <Warning>
-  **Privacy reminder**: Exported files contain personal information. Store securely, share only when necessary, and delete copies when no longer needed. Comply with your privacy policy and applicable regulations.
+  If you change someone's email, they sign in with the new email from then on. Tell them before you change it.
 </Warning>
 
-<Tip>
-  **Regular backups**: Consider exporting your full client list monthly as a backup. Store securely with your other business records.
-</Tip>
+**What coaches can edit.** A coach whose access doesn't block **Clients** can edit a client's name, email, phone and custom field values. Staff members' details are read-only for coaches, and a coach can't change the email, phone or CC emails of a client who also belongs to another business. Only admins can add a new client, and a coach limited to tagged clients doesn't see **New client**.
 
----
+<a id="adding-custom-fields"></a>
+
+## Custom fields
+
+Custom fields hold anything else you need on a profile: emergency contact, date of birth, position, school, shirt size.
+
+- **Add a field.** In **Client details**, click **Add field** under **Custom fields**, name it and enter the value. The field is then available on every client's profile; fill it in only where it matters.
+- **Edit a value.** Each custom field is one text box. Type and it saves.
+- **Field menu.** The menu next to a field's name has **Copy field ID** and **Delete field for everyone**. Only admins see **Delete**.
+- **Ask for it at sign-up.** Turn a custom field on in [Sign-up & Profile](/people/sign-up-and-profile) so families fill it in when they create an account.
+
+<Warning>
+  **Delete field for everyone** removes the field and its values from every profile, and takes it off your sign-up form too. New families can still sign up and you can still add clients afterwards. If you only want to stop asking for it, turn it off at sign-up instead.
+</Warning>
+
+## Export your client list
+
+On **People › Clients**, click **Export**. The download is named "Clients" and includes the people your current search, role and tag filters show. Exported files hold personal details, so store them carefully.
 
 ## Common questions
 
 <AccordionGroup>
-  <Accordion title="What happens after I add a new client?">
-    Immediately after creation:
-
-    1. Client appears in your People → Clients list
-    2. They receive an email invitation to access your Athlete Portal
-    3. You can now book them into sessions, message them, and assign products
-    4. They can download your mobile app or access the web portal using the email you entered
-
-    **Email invitation**: Contains a link to set their password and get started. If they don't see it, check spam folders or resend from their profile.
+  <Accordion title="Can I add a child who doesn't have an email?">
+    Yes. Add the parent first, open their profile, go to **Family** and click **Add child** › **New child**. The child is a managed athlete with no login of their own. See [Family](/people/client-profiles/client-profiles#family).
   </Accordion>
-  <Accordion title="Can I add a client without an email address?">
-    No—email is required because it serves as their login credential for your Athlete Portal.
-
-    **Workarounds for special cases:**
-
-    - **Youth athletes without email**: Use a parent's email and set Role as "Parent", then link the child later
-    - **Team accounts**: Create a temporary email (e.g., `team-placeholder@yourfacility.com`) but you'll need to update it later for them to access the portal
-
-    <Tip>
-      **Best practice**: Always use real, working email addresses. It ensures clients can log in, receive booking confirmations, and get messages.
-    </Tip>
+  <Accordion title="Can clients edit their own details?">
+    Yes. In your app, clients can change their name, email, phone, password and photo. Roles, tags, credits and purchases are yours to manage.
   </Accordion>
-  <Accordion title="What if I import duplicate clients?">
-    CoachIQ checks for duplicate email addresses during import. If a duplicate is detected:
-
-    - That row is skipped (not imported)
-    - You'll see an error message identifying the duplicate
-    - Other non-duplicate clients in the file still import successfully
-
-    **To fix**: Remove duplicate emails from your spreadsheet and re-import just those clients, or manually add them one by one.
+  <Accordion title="How do I make a client a coach?">
+    Add them from **People › Staff** › **Add**. An existing client can't be turned into staff from the Add window; change their **Role** to Coach on their profile instead. See [Add and manage staff](/people/managing-staff).
   </Accordion>
-  <Accordion title="Can clients edit their own information?">
-    Yes, partially. Clients can update their own:
-
-    - Name
-    - Email address
-    - Phone number
-    - Password
-    - Profile photo
-
-    They access these settings through the Athlete Portal (mobile app or web) under their account settings.
-
-    **You control**: Roles, tags, credits, product assignments, and custom fields—clients cannot change these.
-  </Accordion>
-  <Accordion title="How do I delete a client?">
-    From the client's profile, click the **Delete** button (trash icon) in the top-right corner near "Message" and "Book" buttons.
-
-    **What happens:**
-
-    - Client is removed from your People list
-    - They lose access to your Athlete Portal immediately
-    - Historical data (past bookings, transactions, messages) is preserved for your records
-    - They WILL be charged for any upcoming subscriptions. Subscriptions and billing are handled via Stripe. Be sure to cancel any active subscriptions before deleting a user.
-
-    <Warning>
-      **This cannot be undone easily**. Consider using an "Inactive" tag instead if they might return or you want to preserve their active status.
-    </Warning>
-  </Accordion>
-  <Accordion title="Can I change someone from Client to Staff?">
-    Yes! Roles can be changed at any time:
-
-    1. Open their profile (People → Clients or Staff)
-    2. In the User Details sidebar, update the **Role** dropdown
-    3. Changes save automatically
-
-    **Example**: An athlete who starts coaching for you can have both "Athlete" and "Coach" roles. They'll see the coaching dashboard AND their own athlete profile.
+  <Accordion title="How do I remove a client?">
+    From the client's row menu choose **Remove client**, or open the profile and use **Block or remove**. See [Block or remove a client](/people/block-and-remove-athletes).
   </Accordion>
 </AccordionGroup>
 
----
-
-## Pro tips for client management
-
-<CardGroup cols={2}>
-  <Card title="Tag During Creation" icon="tags">
-    Always add at least 2 tags when creating clients: their program/group and their status (Trial, Member, etc.). Makes filtering and messaging much easier later.
-  </Card>
-  <Card title="Verify Contact Info" icon="check">
-    Double-check email and phone before saving. Typos in email = client can't log in. Wrong phone = SMS won't deliver.
-  </Card>
-  <Card title="Use Consistent Naming" icon="font">
-    Decide on a format for names (First Last, or Nickname Full Last) and stick to it. Makes your client list clean and searchable.
-  </Card>
-  <Card title="Add Notes Immediately" icon="pen">
-    Right after creating a client, open their profile and add a comment in their Activity with context: how you met, what they're training for, referral source. Future-you will thank you.
-  </Card>
-</CardGroup>
-
----
-
-## What's next
-
-Now that you know how to add and edit clients, explore what you can do with their profiles:
-
-<CardGroup cols={2}>
-  <Card title="Client Profiles Overview" icon="id-card" href="/people/client-profiles/client-profiles">
-    Understand the complete activity dashboard and all profile tabs
-  </Card>
-  <Card title="Organizing with Tags" icon="tags" href="/people/tags-filters">
-    Master filtering, segmentation, and using tags for group messaging
-  </Card>
-  <Card title="Booking Clients" icon="calendar-check" href="/scheduling/manually-booking-athletes">
-    How to book clients into sessions from their profile
-  </Card>
-  <Card title="Messaging Clients" icon="message" href="/inbox/in-app-messages">
-    Send individual or group messages to your client base
-  </Card>
-</CardGroup>
-
----
-
 ## Related articles
 
-<CardGroup cols={3}>
-  <Card title="People Overview" icon="users" href="/people/overview">
-    Back to main People section guide
+<CardGroup cols={2}>
+  <Card title="Find and organize clients" icon="tags" href="/people/tags-filters">
+    Search, sort, views and tags
   </Card>
-  <Card title="Managing Staff" icon="user-tie" href="/people/managing-staff">
-    Adding and managing coaching team
+  <Card title="Client profiles" icon="id-card" href="/people/client-profiles/client-profiles">
+    Every section of a client's profile
   </Card>
-  <Card title="Credits Management" icon="coins" href="/people/client-profiles/client-profiles-credits">
-    View and adjust client credit balances
+  <Card title="Sign-up & Profile" icon="id-badge" href="/people/sign-up-and-profile">
+    Choose the fields new families fill in
   </Card>
-  <Card title="Connect children" icon="people-group" href="/people/client-profiles/client-profiles#connect-children">
-    Connect an athlete or create a managed child from the client Family section
-  </Card>
-  <Card title="Bulk Operations" icon="list-check" href="/people/tags-filters">
-    Update multiple clients at once with tags
-  </Card>
-  <Card title="Import & Export" icon="arrow-right-arrow-left" href="/settings/data#import-people">
-    Advanced import/export settings
+  <Card title="How clients sign in" icon="right-to-bracket" href="/people/how-clients-sign-in">
+    Passwords, texted codes and Google
   </Card>
 </CardGroup>
-
----
-
-<Check>
-  **You now know how to**: Add individual clients manually, bulk import from spreadsheets, edit client information, add custom fields, and manage client data responsibly.
-</Check>
