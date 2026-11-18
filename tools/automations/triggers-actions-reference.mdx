@@ -1,6 +1,6 @@
 ---
 title: "Triggers & Actions Reference"
-description: "Complete list of all automation triggers, conditions, data sources, actions, and dynamic fields"
+description: "Every automation trigger, condition, data source, step and dynamic field, with the settings each one takes."
 sidebarTitle: "Triggers & Actions Reference"
 icon: "list"
 keywords: ["triggers", "actions", "conditions", "data sources", "dynamic fields", "automation triggers", "automation actions", "trigger reference", "incoming webhook", "update custom field"]
@@ -16,20 +16,20 @@ This is your complete reference for building automations in CoachIQ. Use it to l
 **New to automations?** Start with [Build Your First Automation](/tools/automations/build-your-first-automation) for a hands-on walkthrough, and see the [Builder Reference](/tools/automations/builder-reference) for what each section of the builder does.
 </Note>
 
-An automation has up to four parts. The builder shows them as sections on one page:
+An automation has up to four parts. The builder shows them as a column of cards (**When**, **Only if**, numbered steps), with **Data sources** at the top right:
 
 | Part | What It Does |
 |------|--------------|
-| **Trigger** | The event (or schedule) that starts the automation. One per automation. |
+| **When** (trigger) | The event (or schedule) that starts the automation. One per automation. |
 | **Data Sources** | Optional. Extra information fetched before the conditions run, such as the person's credit balance or upcoming bookings. |
-| **Conditions** | Optional filters. Each rule compares a field to a value; rules sit in **And**/**Or** groups that can be nested. |
-| **Actions** | What happens, in order, when the conditions pass. |
+| **Only if** (conditions) | Optional filters. Each rule compares a field to a value; rules sit in **And**/**Or** groups that can be nested. |
+| **Steps** (actions) | What happens, in order, when the conditions pass. |
 
 ---
 
 ## All Triggers
 
-Triggers determine **when** your automation runs. There are 12. Each trigger has different condition fields available to filter who it applies to, and every trigger also exposes the **user fields** (ID, email, phone, first name, last name) of the person the event happened to.
+Triggers determine **when** your automation runs. There are 15, grouped in the builder as **People**, **Bookings**, **Payments & forms**, **Sales pipeline** and **Timing & other tools**. Each trigger has different condition fields available to filter who it applies to, and every trigger also exposes the **user fields** (ID, email, phone, first name, last name) of the person the event happened to.
 
 <AccordionGroup>
 
@@ -39,7 +39,7 @@ Fires when a new user is added to your account.
 
 | Condition | Type | Description |
 |-----------|------|-------------|
-| Email contains | Text input | Filter by email domain or keyword |
+| Email contains | Text input | Filter by email domain or keyword. Matches new users whose email contains the text, and keeps its setting when you reopen the automation |
 | Has phone number | Boolean | User has a phone number on file |
 | Is missing phone number | Boolean | User doesn't have a phone number |
 
@@ -48,6 +48,8 @@ Fires when a new user is added to your account.
 <Accordion title="Purchase Made">
 
 Fires when someone purchases any [product](/payments/product-overview).
+
+The **user from trigger** is the athlete chosen at checkout on products set to ask for an athlete, and the buyer on every other purchase. The builder says so on this trigger. Purchase automations don't run for products you add to someone by hand (cash, a free grant or a card link).
 
 | Condition | Type | Description |
 |-----------|------|-------------|
@@ -129,6 +131,12 @@ The cancelled session's title and the occurrence date and time are available as 
 
 </Accordion>
 
+<Accordion title="Booking Rescheduled">
+
+Fires when a booking moves to a new time.
+
+</Accordion>
+
 <Accordion title="Form Submitted">
 
 Fires when someone submits a [form](/tools/forms/overview).
@@ -141,8 +149,10 @@ Fires when someone submits a [form](/tools/forms/overview).
 | Form fields | Various | Form ID and label |
 | Answer fields | Various | One field per question on the selected form (layout-only blocks such as headings and media are excluded). Checkbox, terms, and waiver questions default to **Contains**; other questions default to **Equal to** |
 
+When you reopen a saved automation, the form condition shows the chosen form's name.
+
 <Tip>
-Answer fields do two jobs. In **Conditions** they let you branch on what someone answered ("How did you hear about us?" **Equal to** "Instagram" → add the tag "Instagram Lead"). In **Actions** the same answers are available as field options: type `#` in a message field and pick the question to drop that person's answer into the email or text. See [Form answers in messages](#form-answers-in-messages).
+Answer fields do two jobs. In **Only if** they let you branch on what someone answered ("How did you hear about us?" **Equal to** "Instagram" → add the tag "Instagram Lead"). In steps, the same answers are available as field options: type `#` in a message field and pick the question to drop that person's answer into the email or text. See [Form answers in messages](#form-answers-in-messages).
 </Tip>
 
 </Accordion>
@@ -179,6 +189,18 @@ Fires when someone cancels their [subscription](/payments/product-overview).
 | User has a specific tag | Dropdown | User must have this tag |
 | User doesn't have a specific tag | Dropdown | User must not have this tag |
 | Product fields | Various | Product ID and label |
+
+</Accordion>
+
+<Accordion title="Added to Pipeline">
+
+Fires when someone is added to a sales pipeline.
+
+</Accordion>
+
+<Accordion title="Pipeline Stage Changed">
+
+Fires when a pipeline card moves to another stage.
 
 </Accordion>
 
@@ -383,14 +405,14 @@ Sends an email to a user.
 | Target User | Auto/Dropdown | User from trigger, trigger user and their guardians, or a specific user |
 | Subject | Text | Supports dynamic fields |
 | Message | Rich text | Supports dynamic fields and formatting |
-| CC / BCC | Text | Optional additional recipients |
+| CC / BCC | Text | Optional extra recipients, added with **Add CC** and **Add BCC** |
 
 <Note>
 Each email uses 0.1 credit per address, including CC and BCC. If your balance can't cover it, the action fails with "Not enough credits to send this email", nothing is sent, and the automation log shows the failure. See [How credits work](/inbox/sms-credits).
 </Note>
 
 <Note>
-Send an Email has no attachment picker. To send someone a booking, product, or form link by email, paste the link into the message. The in-app, SMS, and announcement actions below can attach a session, product, or form directly.
+The message steps don't attach files, sessions, products or forms. To send a booking, product or form link, paste the link into the message. An email whose message is empty can't be saved, and blank lines you leave in the message come through in the email.
 </Note>
 
 </Accordion>
@@ -404,12 +426,9 @@ Sends a text message to a user's phone.
 | Target User | Auto/Dropdown | User from trigger, trigger user and their guardians, or a specific user |
 | From | Dropdown | Default, or **Set** to choose which admin it appears to come from |
 | Message | Text | Supports dynamic fields. Not capped at 160 characters: a live counter (for example **180 / 160**) shows when the text will split into a second segment |
-| Attach Product | Dropdown | Optional - adds short purchase link |
-| Attach Session | Dropdown | Optional - adds short booking link |
-| Attach Form | Dropdown | Optional - adds short form link |
 
 <Note>
-SMS attachments are text links only—no images or files. Longer messages are allowed; they are sent as multiple segments and each segment is billed from your SMS credits, so keep the message under 160 characters when you want it to cost one credit per recipient. Emojis shrink a segment to about 70 characters. See [How SMS credits work](/inbox/sms-credits).
+Texts can't carry images or files; paste a link instead. Longer messages are allowed; they are sent as multiple segments and each segment is billed from your SMS credits, so keep the message under 160 characters when you want it to cost one credit per recipient. Emojis shrink a segment to about 70 characters. See [How SMS credits work](/inbox/sms-credits).
 </Note>
 
 </Accordion>
@@ -422,10 +441,7 @@ Sends a message to the user's [inbox](/inbox/inbox-overview) within CoachIQ.
 |-------|------|-------------|
 | Target User | Auto/Dropdown | User from trigger, trigger user and their guardians, or a specific user |
 | From | Dropdown | Default, or **Set** to choose which admin it appears to come from |
-| Message | Text | Supports dynamic fields |
-| Attach Product | Dropdown | Optional - adds purchase link |
-| Attach Session | Dropdown | Optional - adds booking link |
-| Attach Form | Dropdown | Optional - adds form link |
+| Message | Text | Text only. Supports dynamic fields |
 
 </Accordion>
 
@@ -439,9 +455,6 @@ Posts an [announcement](/inbox/announcements) to one person or a group of users.
 | From | Dropdown | Default, or **Set** to choose which admin it appears to come from |
 | Title | Text | Announcement headline |
 | Message | Rich text | Supports dynamic fields |
-| Attach Product | Dropdown | Optional - adds purchase link |
-| Attach Session | Dropdown | Optional - adds booking link |
-| Attach Form | Dropdown | Optional - adds form link |
 
 <Tip>
 Use announcements for broadcast messages (like weekly schedules) instead of individual messages.
@@ -526,6 +539,8 @@ Grants a user a product without payment.
 | Target User | Auto/Dropdown | User from trigger or select specific user |
 | Product | Dropdown | Product to grant |
 
+The step is skipped, with a note in **Activity**, for someone whose membership is Suspended or Declined. The rest of the automation carries on.
+
 </Accordion>
 
 <Accordion title="Remove Product Purchase from a User">
@@ -541,13 +556,14 @@ Removes a product from a user's account.
 
 <Accordion title="Grant Program Access to a User">
 
-Gives a user access to a program.
+Adds a user to a private program. Access lasts until you revoke it. The step only adds this person; it doesn't change who else can open the program.
 
 | Field | Type | Description |
 |-------|------|-------------|
 | Target User | Auto/Dropdown | User from trigger or select specific user |
-| Program | Dropdown | Program to grant access to |
-| Access duration | Dropdown | Permanent, until a specific date, or for a number of days |
+| Program | Dropdown | The program to add them to. The builder notes: "Use a private program. Public programs are already open to everyone, and paid programs still need a purchase." |
+
+Automations saved earlier with an access duration show a note that the duration isn't applied.
 
 </Accordion>
 
@@ -595,6 +611,38 @@ Cancels a user's booking.
 
 </Accordion>
 
+<Accordion title="Block Time">
+
+Closes a window on your availability so it can't be booked, the same as a block made in your availability settings.
+
+| Field | Description |
+|-------|-------------|
+| Block name | What the block is called. **Unblock Time** uses it to find the block again |
+| All day | Block whole days instead of set hours |
+| Start date, End date | The days to block, as YYYY-MM-DD or a webhook field. The end date defaults to the start date |
+| Start time, End time | 24-hour times like 14:30, or a webhook field. Times follow each availability's own time zone |
+| Apply to | **All availability**, or **By location** and choose the locations |
+
+</Accordion>
+
+<Accordion title="Unblock Time">
+
+Reopens a window closed by **Block Time**. Enter the same name, dates and times the block was made with. It removes the block with that name and times everywhere; if none matches, nothing happens.
+
+</Accordion>
+
+<Accordion title="Add to Pipeline">
+
+Adds the person to the sales pipeline. **Stage** is where they start; leave it empty to use the first stage.
+
+</Accordion>
+
+<Accordion title="Move to Pipeline Stage">
+
+Moves the person's pipeline card to the stage you pick.
+
+</Accordion>
+
 <Accordion title="Wait/Delay">
 
 Pauses the automation before continuing to the next action.
@@ -622,7 +670,7 @@ Continuation conditions are checked when the wait ends, against the person's dat
 </Note>
 
 <Tip>
-**Test Run** doesn't wait: it reports the wait (and its conditions) as skipped and runs the later actions once, straight away.
+**Test run** doesn't wait: it marks the wait **Skipped** ("Wait skipped in test run") and runs the later steps once, straight away. Real runs still wait. If you turn the automation off while someone is waiting, their run stops there and **Activity** shows it as stopped.
 </Tip>
 
 </Accordion>
@@ -801,7 +849,7 @@ Book your next session soon!
     Set up products that power purchase and subscription triggers
   </Card>
   <Card title="Attach Products" icon="credit-card" href="/payments/attach-products">
-    Attach products to messages sent by automations
+    Attach products to messages and forms
   </Card>
   <Card title="Scheduling Overview" icon="calendar" href="/scheduling/overview">
     Manage sessions referenced by booking triggers and actions

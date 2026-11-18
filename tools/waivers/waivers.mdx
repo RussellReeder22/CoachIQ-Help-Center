@@ -17,16 +17,16 @@ CoachIQ's waiver system lets you create waivers, attach them to products and for
 Navigate to **Tools → Waivers** to see all your waivers at a glance.
 
 <Frame>
-  ![Waivers page listing Liability Waiver with 1 product, 3 of 37 signed, and its created date](/images/waivers-list-2026-11.png)
+  ![The Waivers list with the All statuses filter, the Recent sort and one waiver signed by 3 of 37](/images/waivers-list-2026-11.png)
 </Frame>
-
-The dashboard shows:
 
 | Column | What it shows |
 |--------|---------------|
-| **Waiver** | The waiver name, with how many products require it |
-| **Signed** | How many clients have accepted, out of the total (for example **3 of 37**) |
-| **Created** | Date the waiver was created |
+| **Waiver** | The waiver's name, and how many products require it |
+| **Signed** | How many clients have accepted it out of everyone it covers, for example **3 of 37**. This matches the waiver's report |
+| **Created** | When the waiver was made |
+
+The report icon on a row opens its compliance report.
 
 Use the search box to find a waiver by name, the status filter (**All statuses**, active or archived) and the sort menu (**Recent**). Each row's **···** menu has **Edit**, **View report**, **Duplicate** and **Archive**.
 
@@ -116,17 +116,15 @@ You can also require waiver acceptance on any form — useful for registration f
     </Frame>
   </Step>
 
-  <Step title="Select your waiver">
-    Choose the waiver you want to require. The form will display a checkbox with a link to the waiver document.
-
-    The waiver question's **Required** setting is in its settings menu, like other questions, and clearly shows on or off.
+  <Step title="Pick the waiver">
+    In the question's panel, choose the waiver to require. The form shows a checkbox with a link to the waiver document. Turn on **Required** so the form can't be sent without it. The form can't be saved until a waiver is picked.
   </Step>
 
   <Step title="Save the form">
     Click **Save** at the top right. The builder shows **All changes saved** once the form is saved.
 
     <Check>
-      **Done!** Anyone submitting this form must accept the waiver before completing it.
+      **Done!** Anyone submitting this form must accept the waiver first. If the question has more than one waiver, they must tick every one, and the message under the question names the one still to accept.
     </Check>
   </Step>
 </Steps>
@@ -148,6 +146,8 @@ The compliance report shows exactly who has accepted each waiver and who hasn't 
     - **All** — Every client in your system
     - **Accepted** — Clients who have agreed to the waiver (with the date)
     - **Missing** — Clients who have not yet accepted
+
+    When a parent accepts a waiver while buying for their child, the child shows as signed, with the date the parent signed. The CoachIQ app's report shows the same list.
 
     <Frame>
       ![Compliance report for Liability Waiver showing 3 of 37 accepted, All, Accepted and Missing tabs, and Export CSV](/images/waivers-compliance-report-2026-11.png)
@@ -207,6 +207,14 @@ Click **Archive** to deactivate a waiver without deleting it. Archived waivers a
 
   <Accordion title="Can I see waiver acceptance on a specific client?">
     Yes. Open the client's profile and click the **Waivers** tab. It shows a count such as **1/2 accepted** and lets you record an acceptance you collected in person. See [the Waivers tab](/people/client-profiles/client-profiles-waivers).
+  </Accordion>
+
+  <Accordion title="A staff member marked a waiver accepted by mistake">
+    An Admin can undo it. On the client's **Waivers** tab, a waiver marked by staff shows **Manual** with an **Undo** button next to **Accepted**. Undo asks first, sets the waiver back to not accepted, and records who undid it and when. Waivers the client accepted themselves have no Undo.
+  </Accordion>
+
+  <Accordion title="Where do I see the signature on a form response?">
+    Open the response from the form's **Responses**. A **Signature** block shows who agreed, when and to what, and the table and export have a **Signed** column. See [Responses](/tools/forms/responses-and-automations#open-one-response).
   </Accordion>
 </AccordionGroup>
 

@@ -35,7 +35,11 @@ This is how you build credit expiration reminders, inactive member outreach, wee
 
 ## Setting Your Schedule
 
-Choose the **Scheduled Check** trigger. You have four timing options:
+Click the **When** card, then **Change**, and choose **Scheduled Check** ("Daily, weekly, monthly or on one date"). The **Schedule Configuration** panel sets when it runs: how often (for example **Every day**), whether to send **Only once per person**, the time and the time zone. You have four timing options:
+
+<Frame>
+  ![A Scheduled Check set to Every day at 9:00 AM, Only once per person, with the 1000-users note](/images/automation-scheduled-check-2026-11.png)
+</Frame>
 
 | Schedule          | What You Set                                          | Best For              | Example                                          |
 | ----------------- | ----------------------------------------------------- | --------------------- | ------------------------------------------------ |
@@ -47,7 +51,7 @@ Choose the **Scheduled Check** trigger. You have four timing options:
 Time is entered as a time of day. Every scheduled trigger also has its own **timezone** setting, so "Monday at 9:00 AM" means 9:00 AM in the timezone you pick on the trigger—not necessarily your account's timezone. Check it when you set up automations for a location in another time zone.
 
 <Note>
-  A **Specific Date** automation runs once. After that date passes it stays in your list but never fires again, so disable it or reuse it with a new date.
+  A **Specific Date** automation runs once. After that date passes it stays in your list but never fires again, so turn it off, archive it, or reuse it with a new date.
 </Note>
 
 ---
@@ -79,7 +83,7 @@ You can also filter on the standard user fields (email, phone, first name, last 
 
 ### Combining Conditions
 
-Rules live inside **And**/**Or** groups. In an **And** group every rule must be true; in an **Or** group any one rule is enough. Click **Add And/Or** to nest a group inside another, which lets you mix the two.
+Rules live inside **And**/**Or** groups. In an **And** group every rule must be true; in an **Or** group any one rule is enough. Add a group inside another group, which lets you mix the two.
 
 **Example**: Find members who are at risk of churning (one **And** group)
 
@@ -103,9 +107,9 @@ Here's what happens when your scheduled automation fires:
 
 1. **CoachIQ finds all users** matching your conditions (up to 1,000 per run)
 2. **Executes your actions** once for each user found
-3. **Logs the results** in **Execution Logs** so you can see who was contacted
+3. **Records the results** in the automation's **Activity** tab so you can see who was contacted
 
-**Once or every time?** Each scheduled trigger has a send mode. The default sends to a matching person **only the first time** that condition state is seen—so someone who still has 3 credits expiring next week doesn't get the same reminder two runs in a row. If their situation changes (they book, use credits, then match again) they can be messaged again. Switch the mode to send on **every run** when you want a repeat every time someone matches, such as a weekly "schedule is live" announcement. **Test Run** ignores this setting and always sends.
+**Once or every time?** Each scheduled trigger has a send mode. The default, **Only once per person**, sends to a matching person **only the first time** that condition state is seen—so someone who still has 3 credits expiring next week doesn't get the same reminder two runs in a row. If their situation changes (they book, use credits, then match again) they can be messaged again. Switch the mode to send on **every run** when you want a repeat every time someone matches, such as a weekly "schedule is live" announcement. **Test run** ignores this setting and always sends.
 
 <Info>
   **Example in action**: Every Monday at 9am, find everyone whose credits expire in less than 7 days → Send each of them a personalized reminder with their credit count and expiration date.
@@ -116,10 +120,6 @@ Here's what happens when your scheduled automation fires:
 ## Dynamic Fields for Scheduled Automations
 
 Scheduled automations can personalize messages with each person's credit and booking status. In the message field, type `@` to insert a CoachIQ field or `#` to insert a field option from a data source; the builder inserts the token in the exact `{{field...}}` syntax shown below.
-
-<Frame>
-  ![CoachIQ scheduled automation condition and dynamic field options](/images/scheduled-conditons.png)
-</Frame>
 
 ### Credit Fields
 
@@ -158,13 +158,13 @@ Come back this week?
 
 ## Testing Safely
 
-Scheduled automations reach everyone who matches, so test before you enable:
+Scheduled automations reach everyone who matches, so test before you turn one on:
 
-1. Leave **Enabled** off in **Settings** while you build.
+1. Keep the automation **Off** while you build (new automations start off).
 2. Add a condition like **Has a specific tag → "Test"** and tag only yourself (or a test account).
-3. Click **Test Run** and read the filled-in message. Test Run sends real messages to whoever matches, so keep that test tag in place.
-4. Check **Execution Logs** to confirm who matched and what each action returned.
-5. Remove the test condition, then switch **Enabled** on.
+3. **Save**, click **Test run** and read the filled-in message. Test run sends real messages, so keep that test tag in place. Any **Wait/Delay** step is skipped in the test.
+4. Check **Activity** to confirm who matched and what each step did.
+5. Remove the test condition, **Save**, then switch it **On**.
 
 ---
 
@@ -213,7 +213,7 @@ These are the most popular scheduled automations coaches use. Full setup instruc
 
 <CardGroup cols={2}>
   <Card title="Builder Reference" icon="wrench" href="/tools/automations/builder-reference">
-    What each section of the automation builder does, including Test Run and Execution Logs
+    Every part of the automation builder, including Test run and Activity
   </Card>
   <Card title="Inbox Overview" icon="inbox" href="/inbox/inbox-overview">
     Where automated in-app messages and emails are delivered to members

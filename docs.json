@@ -360,9 +360,9 @@
             "pages": [
               "content/content-overview",
               "content/media-overview",
-              "content/programs-overview",
               "content/lesson-overview",
               "content/lesson-components",
+              "content/programs-overview",
               "content/sharing-programs",
               "content/video-analysis"
             ]
@@ -378,8 +378,8 @@
                   "tools/forms/creating-forms",
                   "tools/forms/payments-and-bookings",
                   "tools/forms/sharing-forms",
-                  "tools/forms/returning-visitor-sign-in",
-                  "tools/forms/responses-and-automations"
+                  "tools/forms/responses-and-automations",
+                  "tools/forms/returning-visitor-sign-in"
                 ],
                 "icon": "file-pen"
               },
@@ -389,12 +389,12 @@
                   "tools/automations/what-are-automations",
                   "tools/automations/build-your-first-automation",
                   "tools/automations/automation-templates",
-                  "tools/automations/triggers-actions-reference",
                   "tools/automations/builder-reference",
+                  "tools/automations/triggers-actions-reference",
                   "tools/automations/scheduled-automations",
+                  "tools/automations/automation-playbook",
                   "tools/automations/zapier-integration",
-                  "tools/automations/zapier-troubleshooting",
-                  "tools/automations/automation-playbook"
+                  "tools/automations/zapier-troubleshooting"
                 ],
                 "icon": "wand-magic-sparkles"
               },
