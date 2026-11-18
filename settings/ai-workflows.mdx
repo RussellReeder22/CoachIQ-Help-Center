@@ -1,14 +1,14 @@
 ---
 title: "Useful CoachIQ Workflows for Your AI Assistant"
 sidebarTitle: "AI Workflows"
-description: "Use a connected assistant to check availability, prepare booking changes, and organize media with clear review and verification steps."
+description: "Copyable prompts for a connected ChatGPT or Claude: availability, bookings, group messages, scheduler and website text, and media, each with a check of the result."
 icon: "wand-magic-sparkles"
-keywords: ["MCP workflows", "AI prompts", "availability", "blackouts", "media", "ChatGPT", "Claude"]
+keywords: ["MCP workflows", "AI prompts", "availability", "blackouts", "bookings", "group message", "website", "media", "ChatGPT", "Claude"]
 ---
 
 Once your assistant is connected, start with a specific task and ask it to verify the result. These examples use the CoachIQ tools available to your connection; they do not give the assistant access to every feature in the Help Center.
 
-If you still need the connection or your business Project, follow [Use CoachIQ with AI](/getting-started/use-coachiq-with-ai). For the assistant inside CoachIQ, see [Copilot](/getting-started/copilot).
+If you still need the connection or your business Project, follow [Use CoachIQ with AI](/getting-started/use-coachiq-with-ai). For the full list of supported changes, see [What your connected assistant can do](/settings/ai-what-it-can-do). For the assistant inside CoachIQ, see [Copilot](/getting-started/copilot).
 
 ## Confirm the business and access
 
@@ -44,7 +44,33 @@ Review the named template and exact timezone. Changing availability is separate 
 Find [athlete name]'s booking for [session name] on [date and time]. Prepare a move to [new date and time, timezone]. Confirm the athlete, current booking, and available destination. Tell me about any conflict or unsupported action and wait for my approval. After an approved change, read the booking back to verify it.
 ```
 
-For a cancellation, name the exact booking and ask whether returning credits is allowed before approving. Do not assume the assistant can override a restriction or that changing a booking produces a payment refund. Check the saved booking and any permitted credit change separately.
+A booking the assistant makes or moves **takes no payment and uses no credits**. If the athlete should pay, book them from the [calendar](/scheduling/calendar-overview-and-navigation) or send them the booking link instead.
+
+Only Admins can cancel through the assistant, one booking or one date at a time. The approval says whether credits go back; a cancellation never refunds a payment. If the assistant makes 20 new bookings within 10 minutes, CoachIQ pauses it for about three minutes and asks it to check with you.
+
+## Message a group of clients
+
+```text
+Prepare one email to everyone tagged [tag] with the subject [subject] and this message: [message]. Show me who will get it, who is left out and why, and the credit cost. Wait for my approval, then tell me who it was sent to and anything that wasn't confirmed.
+```
+
+A group email or text goes to up to 100 clients per approval, and nobody can be added after you approve. If any delivery comes back unknown, check with the family before sending again; the same message to the same people is refused for a day in that case. For more than 100 people, or for announcements, use the [Inbox](/inbox/inbox-overview).
+
+## Update a scheduler's title and description
+
+```text
+Read the scheduler [scheduler name]. Show me its current title and description next to this new version: [new text]. Change only the title and description, and wait for my approval. After saving, read it back.
+```
+
+Price, payment, coaches, location, availability and booking rules stay as they are. If someone edits the text in the Scheduler builder after the assistant reads it, the change is refused; ask it to read the scheduler again.
+
+## Update text on your website
+
+```text
+On my website page [page name], find the section with [what it says now]. Prepare new text: [new text]. Show me the preview of each field that changes and wait for my approval. After saving, read the section back.
+```
+
+The assistant can change the text, image and link fields of custom sections, and one page's search title, description, keywords and share image. Images must already be in your Media Hub. Design, menus, adding or removing pages, and legal pages stay in the [website builder](/website/overview). An Admin can undo a section edit from **Settings → General → Connections → App activity**.
 
 ## Find and organize media
 
@@ -80,12 +106,16 @@ Show which programs and lesson slides use [media filename]. Explain what locatio
 
 The lookup covers program media and files placed on lesson slides, including supported files shared into the organization. It does not cover every use as a cover image, inside rich text, or on websites, emails, and messages. An empty result does not prove the file is unused.
 
+## Review or undo what the assistant did
+
+Open **Settings → General → Connections**. Under **App activity**, choose **Review** to see what an assistant changed in a session, approve or decline removals waiting for you, or put back something it removed in the last 30 days. **Undo this session** takes the session's changes back after showing each step. See [Approvals, activity and limits](/settings/ai-approvals-and-activity#app-activity-and-undo).
+
 ## Check the outcome
 
 For each change, confirm:
 
 - The assistant used the intended business group and exact record.
-- You reviewed and approved the supported action.
+- You reviewed and approved the change, or approved it in **App activity** if it was waiting there.
 - A fresh read shows the saved result, including the relevant dates, amounts, or destination.
 - Anything the assistant could not verify is clearly identified.
 
