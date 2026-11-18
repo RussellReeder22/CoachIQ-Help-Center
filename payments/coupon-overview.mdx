@@ -22,22 +22,26 @@ Clients enter coupon codes during checkout to apply discounts automatically.
 
 ## The Coupons page
 
-Navigate to **Payments → Coupons** to view all discount codes.
+Navigate to **Payments → Coupons** to view all discount codes. Search by code, or use **Type** to show one kind of coupon.
 
+The list has four columns:
 
-**Page displays:**
-
-- Coupon code
-- Discount type (Free, Percentage, Amount)
-- Value off
-- Redemption count
-- Membership discount duration
-- Eligibility and selected products
+- **Coupon**: the code clients enter
+- **Discount**: the type and amount, with how long it lasts on memberships
+- **Uses**: how many times it has been used, against its limit if it has one
+- **Applies to**: what it covers, such as **All products**, **All products except 3**, or **2 products**
 
 **Available actions:**
 
-- Create new coupon
+- **Create** a new coupon
+- **Edit products** on an All products coupon, to change what it leaves out
 - Delete a coupon using its row action
+
+### Who can use the Coupons page
+
+Admins always can. A coach can use it when their Staff Access covers all clients and the Coupons page is turned on for them. They can create, change, and delete coupons the same as an admin.
+
+A coach limited to clients with certain tags doesn't get the Coupons page, because a coupon shows which clients used it. In Staff Access, Coupons shows as locked while their clients are limited.
 
 ## Three coupon types
 
@@ -197,34 +201,20 @@ If a code can't be used, checkout says why and the total doesn't change:
 | Message | What it means |
 | --- | --- |
 | "This coupon has reached its redemption limit." | The code's total use limit is used up |
-| "This coupon does not apply to this product." | **Limit to selected products** is on and this product isn't on the list |
+| "This coupon does not apply to this product." | The product isn't one of the coupon's selected products, or it's left out of an All products coupon |
 | The coupon is invalid | The code doesn't exist; check spelling with the client |
 
 \$0 products that only save a card on file don't show a coupon box.
 
 ## Coupon list columns explained
 
-**Code**: Exact text client must enter
+**Coupon**: the exact text a client enters. Share it exactly as created.
 
-Enter or share the code exactly as created.
+**Discount**: Free (100% off), Percentage off (10%, 25%, 50%), or Amount off (\$10, \$25). How long it lasts on memberships shows with it, such as Every payment.
 
-**Type**: Free, Percentage Off, or Amount Off
+**Uses**: how many times the coupon has been used. With a limit it shows both, so 15/100 means 15 uses out of 100.
 
-**Value Off**:
-
-- Free: 100%
-- Percentage: 10%, 25%, 50%, etc.
-- Amount: \$10, \$25, \$50, etc.
-
-**Redemptions**: Number of times coupon has been used
-
-- Tracks usage count
-- Compares against limit (if set)
-- Example: 15/100 = 15 uses out of 100 limit
-
-**Membership duration**: Shown beneath the discount type, such as Every payment.
-
-**Eligibility / Products**: Shows product restrictions or automatic member-discount requirements. Review these alongside redemption limits.
+**Applies to**: All products, All products except a number, or the number of selected products. Automatic member discounts also show which memberships qualify.
 
 ## Filter coupons
 
@@ -247,13 +237,55 @@ Use the type filters beside the coupon list to narrow the table.
 - First purchase only (no previous purchases in this business, including free orders)
 - An expiration date for new redemptions
 - A minimum order amount
-- Selected products only
 
-<Frame caption="Use Limits to control redemption, then choose whether the coupon applies to all products or selected products.">
+<Frame caption="Limits control who can use the code and when. Automatic member discount turns it into a standing member perk.">
 
-![New coupon builder showing use limits, expiry, minimum order, automatic member discount and product restrictions](/images/coupon-limits-products-2026-09.png)
+![Create coupon window showing coupon code, discount type, how long it lasts on memberships, limits, and automatic member discount](/images/coupon-create-2026-11.png)
 
 </Frame>
+
+## Choose which products a coupon covers
+
+Under **Products**, pick one:
+
+- **All products**: covers every product, including ones you create later. Use **Except** to leave some out.
+- **Selected products**: covers only the products you pick. New products aren't covered until you add them.
+
+<Frame caption="All products with an Except list. New products are included automatically.">
+
+![Products section of Create coupon with All products selected and an Except list with Add product](/images/coupon-products-except-2026-11.png)
+
+</Frame>
+
+### Leave products out of an All products coupon
+
+Use this when a discount should cover almost everything, for example 20% off all training for team members, but not team registration fees.
+
+<Steps>
+  <Step title="Choose All products">
+    In **Create coupon**, under **Products**, select **All products**.
+  </Step>
+  <Step title="Add the products to leave out">
+    Next to **Except**, select **Add product**. Search, tick the products to leave out, then select **Done**. Each one shows under **Except**, and you can remove them one at a time.
+  </Step>
+  <Step title="Create the coupon">
+    Select **Create coupon**. Left-out products show their full price at checkout, with no discount line.
+  </Step>
+</Steps>
+
+<Frame caption="Search and tick the products to leave out.">
+
+![Product picker for the Except list, with a search box, product checkboxes, a left out count and Done](/images/coupon-except-picker-2026-11.png)
+
+</Frame>
+
+To change what an existing All products coupon leaves out, open its row menu on the Coupons page and select **Edit products**. The code, discount, and qualifying memberships stay the same. The change applies to checkouts from then on. Orders already paid, and checkouts already under way, keep their price.
+
+You can also do this from a product: when an All products member discount covers it, the [product builder](/payments/product-builder) shows a line under the price with **Leave out**. See [Member discounts](#member-discounts).
+
+<Tip>
+  Making team fees or other products that shouldn't get the member price? Check the line under the price in the product builder before you publish the product. New products are covered by All products coupons until you leave them out.
+</Tip>
 
 ## Coupons and subscriptions
 
@@ -289,12 +321,18 @@ Member discounts are automatic: anyone who holds a specific membership pays less
 
 1. Open **Payments → Coupons → Create coupon** and set the discount.
 2. Turn on **Automatic member discount** and choose the qualifying memberships. Anyone with one of them active gets the discount.
-3. Choose which products it applies to: selected products, or all products. The list can include other memberships and one-time products.
+3. Choose which products it applies to: selected products, or all products. With all products, use **Except** to leave some out, such as team fees. The list can include other memberships and one-time products.
 4. Select **Create coupon**. From then on, when an active member checks out on one of those products, the discount is applied automatically and shown in the price breakdown. This includes a parent paying for an athlete who holds the qualifying membership, on product checkout and session booking.
 
 If a percentage member discount can't be saved because one of the qualifying memberships has a down payment, the message names the memberships to remove (up to three, then "and N more").
 
-To change a member discount later, delete it and create a new one.
+To change which products an All products member discount leaves out, use **Edit products** on its row, or **Leave out** and **Include** in each product's builder. Both change the same Except list. To change anything else (the discount, duration or qualifying memberships), delete it and create a new one.
+
+### See member pricing in the product builder
+
+When an All products member discount covers a product, the product builder shows a line under the price, for example "Members pay \$160: MEMBER20ALL covers all products", with a **Leave out** button. Select **Leave out** and the line changes to "Left out of MEMBER20ALL: members pay full price", with **Include** to undo it.
+
+The line only shows when checkout would actually give the discount. A member discount that has reached its use limit doesn't show a member price. If checkout would refuse the discount, for example a percentage member discount on a membership with a down payment, the builder says so. A product you haven't created yet shows the line without the button until you save it.
 
 **Coupon or member discount?**
 
@@ -302,7 +340,7 @@ To change a member discount later, delete it and create a new one.
 | --- | --- | --- |
 | Who gets it | Anyone with the code | Anyone with the qualifying membership active |
 | How it's applied | Client types the code at checkout | Automatically at checkout |
-| Scope | Any product you allow on the coupon | Products you select, or all products |
+| Scope | Selected products, or all products with exceptions | Selected products, or all products with exceptions |
 | Redemption eligibility | The code must meet its expiry, usage, product, and client rules | The qualifying membership must be active |
 
 <Tip>
@@ -316,11 +354,16 @@ To change a member discount later, delete it and create a new one.
 2. Enter the **Coupon code**, then choose **Free**, **Percentage off**, or **Amount off**. Enter the percentage or amount when required.
 3. Under **On memberships, this discount applies to**, choose **First payment only**, **A set number of months**, or **Every payment**. Enter 1–36 months for a limited duration.
 4. Under **Limits**, leave **Unlimited use** on or turn it off to set a total use limit. Add any per-client, first-purchase, expiry, or minimum-order restrictions.
-5. Under **Products**, leave **Limit to selected products** off for all products, or turn it on and choose the eligible products. Use **Automatic member discount** only for a membership-based offer.
-6. Review the code, discount, duration, and restrictions, then click **Create coupon**. **Cancel** closes an unsaved example.
+5. Turn on **Automatic member discount** only for a membership-based offer, then choose the qualifying memberships.
+6. Under **Products**, choose **All products** (add any exceptions under **Except**) or **Selected products** and pick them.
+7. Review the code, discount, duration, and restrictions, then select **Create coupon**. **Cancel** closes the window without saving.
 
 <Note>
-  Amount fields keep cents as typed: 0.50 saves as \$0.50. Before the October 19, 2026 release, a typed decimal point could be dropped, so a discount could save much larger than intended (0.50 became \$50). Coupons can't be edited, so if one of yours looks too large, delete it and create it again.
+  A deleted coupon's code can't be used again. If you try, you'll be asked to choose a different code. This stops a new coupon from picking up the old one's uses.
+</Note>
+
+<Note>
+  Amount fields keep cents as typed: 0.50 saves as \$0.50. Before the October 19, 2026 release, a typed decimal point could be dropped, so a discount could save much larger than intended (0.50 became \$50). Apart from the products an All products coupon leaves out, coupons can't be edited. If one of yours looks too large, delete it and create a new one with a different code.
 </Note>
 
 <Frame caption="Example: WELCOME25 gives 25% off during the first three calendar months. This screenshot shows an unsaved example, not an active promotional code.">
