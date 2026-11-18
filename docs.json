@@ -169,20 +169,16 @@
             "group": "Inbox",
             "pages": [
               "inbox/inbox-overview",
+              "inbox/work-as-a-team",
+              "inbox/client-profile-and-activity",
+              "inbox/new-message",
               "inbox/in-app-messages",
-              {
-                "group": "SMS",
-                "icon": "comment-sms",
-                "pages": [
-                  "inbox/sms-messages"
-                ]
-              },
               "inbox/announcements",
+              "inbox/sms-messages",
               "inbox/email",
-              "inbox/sms-credits",
-              "inbox/professional-email",
               "inbox/attaching-forms-schedulers-and-products",
-              "inbox/using-tags-for-group-messages"
+              "inbox/sms-credits",
+              "inbox/professional-email"
             ]
           },
           {
@@ -510,6 +506,10 @@
     "indexing": "all"
   },
   "redirects": [
+    {
+      "source": "/inbox/using-tags-for-group-messages",
+      "destination": "/inbox/new-message"
+    },
     {
       "source": "/introduction",
       "destination": "/"
@@ -1376,7 +1376,7 @@
     },
     {
       "source": "/inbox/email-marketing",
-      "destination": "/inbox/inbox-overview#email"
+      "destination": "/inbox/email"
     },
     {
       "source": "/settings/billing-invoices",
