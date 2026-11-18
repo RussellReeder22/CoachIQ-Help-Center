@@ -7,7 +7,7 @@ keywords: ["shared calendar", "link groups", "multiple groups", "double booking"
 ---
 
 <Info>
-**Where to find this**: **Settings** → **Shared Calendar** (organization owner access)
+**Where to find this**: **Settings → Data → Shared calendar**. Only an organization owner can change it.
 </Info>
 
 If you run more than one group under the same organization out of the same facility — for example a baseball program and a softball program sharing one building — a booking in one group won't automatically stop the same time slot from being booked in the other. Shared Calendar links two groups' calendars so they share busy time.
@@ -23,11 +23,13 @@ When you link groups, choose how much busy time to share:
 
 Shared Calendar does not merge staff lists or give you a single combined schedule screen. It only shares busy time between the two groups.
 
+If the page says "No eligible groups are available to link", your organization has only one group, or no other group can be linked yet.
+
 ## Linking two groups
 
 <Steps>
   <Step title="Open Shared Calendar settings">
-    As an organization owner, go to **Settings** → **Shared Calendar**.
+    As an organization owner, go to **Settings → Data → Shared calendar**. The **Linked groups** section lists the groups you can link.
   </Step>
   <Step title="Link the groups">
     Select the other group in your organization. Choose **All busy time** or **Resources only** based on what should block bookings, then confirm the link.
@@ -37,13 +39,27 @@ Shared Calendar does not merge staff lists or give you a single combined schedul
   </Step>
 </Steps>
 
+## What you see on the calendar
+
+The other group's bookings show on your **Scheduling → Calendar** as **Busy** blocks. They name the space in use, never the other group's athletes, coaches or session titles.
+
+- **All sessions** shows Busy blocks. **My schedule** and a coach filter hide them so your own sessions use the full width. Use **Linked groups** in the filters to show or hide each linked group; your choice is saved with the view. Overlapping blocks show as one.
+- Hiding Busy blocks never frees the time. It still can't be booked.
+- Click a Busy block to see a small box with the group's name, the space and the time. It has no booking buttons. This works in Day, Week, Month and the Day view by Resources.
+- If you coach in both groups, your own sessions in the other group show as real sessions (title, time, space and number of athletes, with a chip in that group's color). They have no actions here; manage them from the other group.
+- The CoachIQ app's calendar works the same way, with a **Linked groups** section in **Filters**.
+
+## Booking a space that's held
+
+When you **Book session** and pick a scheduler, a date and a time, a **Space** list shows each of the scheduler's spaces as **Free** or **Held**. A space held by the linked group names only that group. A note says which free space the booking will take, or asks you to pick another time when none is free.
+
 ## Related articles
 
 <CardGroup cols={2}>
   <Card title="Settings: Complete Guide" icon="gear" href="/settings/index">
     Overview of all settings sections
   </Card>
-  <Card title="Managing Availability for Multiple Coaches" icon="calendar-clock" href="/scheduling/managing-availability-for-multiple-coaches">
-    How CoachIQ prevents double-booking within a single group
+  <Card title="Coaches" icon="calendar-clock" href="/scheduling/setup-coaches">
+    How coach bookings block each other within one group
   </Card>
 </CardGroup>

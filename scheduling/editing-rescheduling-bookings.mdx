@@ -12,19 +12,24 @@ keywords: ["edit booking", "reschedule", "change booking", "move session", "chan
 
 ## Editing a booking
 
-On **Scheduling** → **Calendar**, click a session. The click view shows **Duration**, **Time Slot**, **Location**, **Coaches**, resources, and participants.
+On **Scheduling → Calendar**, click a session. Its details show **When**, **Location**, **Coach**, **Resources**, **Note for athletes** and **Participants**.
 
-**Duration**, **Location**, and **Coaches** each have **Edit**. **Time Slot** does not; to change the date or time, use **Move Session** in the header (below). You can also add a coach or a resource to this one occurrence from the click view without opening the scheduler. When a session hands out one resource per booking from a pool, use **Change Resource** in an athlete's three-dot menu to switch theirs; see [Change a booked lesson's resource](/scheduling/resources#change-a-booked-lessons-resource). Use **Add Participants** to add an athlete, or **Add over capacity** when the session is full. **Send Message to All** opens participant messaging.
+- **When** has a **Move** button to move the whole session (below), and an icon to edit the length.
+- **Location** and **Coach** each have an edit button that changes this date only. Only one editor is open at a time; if you leave one with an unsaved change, you're asked whether to discard it.
+- When a session hands out one resource per booking from a pool, use **Change Resource** in an athlete's three-dot menu to switch theirs; see [Change a booked lesson's resource](/scheduling/resources#change-a-booked-lessons-resource).
+- **Message all** messages everyone booked.
 
 <Frame>
-  ![Calendar session click view with Duration, Time Slot, Location, and Coaches](/images/scheduling-review-oct01/session-participants.jpg)
+  ![Session details with When and Move, Location, Coach, Resources, Note for athletes and Participants](/images/calendar-session-popup-2026-11.png)
 </Frame>
+
+To edit one client's booking, use the three-dot menu next to them and choose **View/Edit Booking**. In **Edit booking**, the client's picture and name is a button that opens their profile over the calendar; the back arrow returns you to the booking. If you have unsaved changes you're asked "Discard your changes?" first.
 
 ## Edit duration from the calendar
 
 <Steps>
-  <Step title="Click Edit next to Duration">
-    On the session click view, **Duration** shows the current length (for example **60 min**). Click **Edit**.
+  <Step title="Edit the length">
+    In the session's details, the **When** row shows the current length (for example **60 min**). Click the edit-length icon on that row.
   </Step>
   <Step title="Edit Duration">
     That opens **Edit Duration**. The field is **Duration in minutes**.
@@ -84,10 +89,10 @@ Nothing about the scheduler changes. Other dates of the same session stay where 
 
 <Steps>
   <Step title="Open the session">
-    Go to **Scheduling** → **Calendar** and click the session you want to move. **Move Session** is in the header of the click view, next to the red trash icon that opens [Cancel Session](/scheduling/canceling-bookings#cancel-an-entire-session-from-the-calendar).
+    Go to **Scheduling** → **Calendar** and click the session you want to move. Click **Move** on the **When** row.
   </Step>
 
-  <Step title="Click Move Session">
+  <Step title="Open Move Session">
     The **Move Session** dialog opens with the current date and time shown.
   </Step>
 
@@ -119,6 +124,13 @@ Nothing about the scheduler changes. Other dates of the same session stay where 
 **Move Session** moves every participant in that occurrence. To change one athlete's reservation, use the three-dot menu next to that athlete and choose **View/Edit Booking** to review its rescheduling options. The **Email [athlete] about this change** choice starts unchecked. If the new service or length requires a different payment, follow [canceling](/scheduling/canceling-bookings) and [rebooking](/scheduling/manually-booking-athletes) with the correct payment or credit handling. For one date of a recurring booking, use **Change** in the [Occurrences view](/scheduling/recurring-bookings#changing-one-occurrence) instead.
 
 You can move a booking into any time the booking builder offers, including on days when another booking for the same coach shifts the start times. If the new time was closed with **Cancel Session**, you're asked **Reopen canceled time?** first; **Reopen and move** reopens it and moves the booking. **Reschedule** on a canceled booking offers **Notify participants**, so you can send the family a confirmation for the new time.
+
+### When a move is refused
+
+- **The time is being canceled, or was canceled.** You can't move bookings off a time while its **Cancel Session** is still running. Refresh the calendar and try again. The same applies to changing a repeating booking's times.
+- **Moving a whole session onto a canceled time.** If nobody is booked on the canceled time, **Move Session** asks **Reopen canceled time?** and shows who moves with the session; confirm to reopen and move in one step. If someone is still booked there, the move is refused.
+- **A blocked resource.** Moving onto a resource that's [blocked](/scheduling/block-time) is refused, and the message names the resource and the block.
+- **A differently priced length.** A family can't reschedule to a session length that costs a different amount; they cancel and book the new length.
 
 ---
 
