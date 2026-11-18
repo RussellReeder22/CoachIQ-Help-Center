@@ -80,7 +80,7 @@ Before diving into subscription setup, understand how subscriptions differ from 
     Price: $400/month (recurring)
     Credits issued: Unlimited (∞) per month
     Renewal: Automatic monthly via Stripe
-    Expiration: Credits reset each month (not expire, but renew)
+    Expiration: Unlimited, renewed each billing period
     ```
 
     **Best for**:
@@ -185,8 +185,8 @@ Feb 16-Mar 14: Athlete books 10 sessions
 Credits: ∞ (unlimited continues)
 
 Mar 15: Subscription payment FAILS (expired card)
-Subscription becomes inactive on Stripe
-Credits: 0 (unlimited credits now unusable)
+Membership goes Past due
+Credits: paused (kept, but can't book until a payment goes through)
 ```
 
 ### Credit  display variations
@@ -341,18 +341,13 @@ Step-by-step: Setting up recurring credit memberships.
         ```
 
         <Note>
-          **Expiration option**: Unused credits can either:
-
-          1. **Expire** (athlete loses them at renewal)
-          2. **Carry over** (athlete accumulates unused credits)
-
-          Most subscriptions use **expire** to prevent credit hoarding.
+          **Expiration option**: unused credits can expire at renewal, carry over, or carry over with each payment's credits expiring a set number of days later. See [Unused credit behavior at renewal](#unused-credit-behavior-at-renewal) below and [Product builder: Credits](/payments/product-builder#credits).
         </Note>
       </Tab>
     </Tabs>
   </Step>
   <Step title="Set credit restrictions">
-    **Redeemable Schedulers** section: Select which schedulers accept these credits
+    **Credit Limits** section: pick schedulers under **Credits can be redeemed for these schedulers**
 
     **Example restriction strategy**:
 
@@ -373,14 +368,14 @@ Step-by-step: Setting up recurring credit memberships.
     <Tip>
       **Product tiering**: Use scheduler restrictions to differentiate subscription levels (Basic \< Standard \< Premium)
     </Tip>
-    For detailed scheduler restriction setup, see [Article #26: Credit Usage Limits](/payments/credits/credit-usage-limits-restrictions).
+    For detailed scheduler restriction setup, see [Credit Limits](/payments/credits/credit-usage-limits-restrictions).
   </Step>
   <Step title="Configure usage limits (optional but recommended)">
-    **Usage Limits** section: Set daily/weekly/monthly booking caps
+    **Credit Limits** section: set a **Weekly booking allowance** or **Limit credits per scheduler per billing cycle**. See [Credit Limits](/payments/credits/credit-usage-limits-restrictions).
 
     **For unlimited (∞) subscriptions**:
 
-    - **Recommended**: Weekly limit (e.g., "4 bookings per week")
+    - **Recommended**: a weekly booking allowance (e.g., 4 bookings per week)
     - **Prevents abuse**: Athlete can't book 30 sessions in Week 1
     - **Encourages consistency**: Spreads usage across month
 
@@ -614,7 +609,7 @@ What happens at each stage of a subscription's life.
     
     1. Update payment method: [link]
     2. Switch to pay-per-session temporarily (no commitment)
-    3. Pause membership for 30 days (keeps your rate when you return)
+    3. Pause your payments for 30 days (keeps your rate when you return)
     4. Or if you need to cancel, I understand—just let me know
     
     What works best for you?"
