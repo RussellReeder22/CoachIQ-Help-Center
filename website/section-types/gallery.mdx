@@ -6,70 +6,80 @@ keywords: ["gallery section", "photo gallery", "images", "tagged images", "galle
 icon: "images"
 ---
 
-## **Introduction**
+<Info>
+**Where to find this:** website builder → **Add Section** → **Default Templates** → **CoachIQ Gallery**
+</Info>
 
-The **Gallery Block** in the CoachIQ website builder allows you to display a collection of images in a customizable layout. This guide will walk you through adding, customizing, and managing your gallery to enhance your website's visual appeal.
+A CoachIQ Gallery shows a grid of photos and videos from your [Media Hub](/content/media-overview). You don't pick files one by one: you tag them in Media Hub, enter the tag in the section, and every file with that tag shows.
 
 <video controls className="w-full aspect-video rounded-xl" src="https://share.coachiq.io/nqRWXFx0" />
 
-### **Adding a Gallery Section**
+## Add the section
 
-1. **Open the website builder.**
-2. **Click** `Add Section`.
-3. **Select** `CoachIQ Gallery`.
-4. The gallery section will appear at the bottom of the page.
-5. **Click and drag** the section to reposition it where you want.
+<Steps>
+  <Step title="Open the page">
+    Go to **Website & App** → **Website**, click **Edit website**, and pick the page from the page menu at the top.
+  </Step>
+  <Step title="Add CoachIQ Gallery">
+    Click **Add Section**, open **Default Templates**, click **CoachIQ Gallery**, then **Add to page**. The section lands at the bottom of the page; drag it where you want it.
+  </Step>
+  <Step title="Fill it in">
+    Click the section in the left panel. Tag the files you want in Media Hub, then type that tag in **Search media tags...** and pick it.
+  </Step>
+  <Step title="Publish">
+    Click **Publish**, then check the live page on a computer and a phone.
+  </Step>
+</Steps>
 
-### **Uploading and Managing Images**
+## Choose what shows
 
-1. **Click** on the gallery section to open its settings.
-2. **Click** the **Edit** (pencil icon).
-3. **Upload** new images or **select** from existing media.
-4. **Create a tag** for your images (e.g., `Homepage Gallery`).
-5. **Apply** the created tag to the uploaded images.
+1. Click the pencil next to **CoachIQ Gallery** (**Upload/Edit Media**) to open your media. Upload new photos and videos or pick existing ones.
+2. Give them a tag, for example "Homepage gallery". See [Organize with tags](/content/media-overview#organize-with-tags).
+3. Close the media window, type the tag in **Search media tags...** and pick it. Search finds a tag from a letter or part of its name.
 
-### **Displaying Tagged Images**
+Every file with that tag shows in the gallery.
 
-1. **Close** the image uploader.
-2. **Enter** your created tag under **Search Media Tags**.
-3. The gallery will automatically populate with images associated with that tag.
+## Settings
 
-### **Customizing the Gallery Layout**
+| Setting | What it does |
+|---|---|
+| **Subheading** | A short line above the heading, often in capitals. |
+| **Heading** | The section's title. Up to 500 characters. |
+| **Description** | A line or paragraph under the heading. |
+| **Search media tags...** | The tag whose files the gallery shows. |
+| **View Options** | **Default** or **Static Grid**. **Static Grid** shows every tagged item at once in a plain grid. |
+| **Max Columns** | The most columns the gallery uses. |
+| **Column/Row Gap** | The space between items. |
+| **Row Height** | How tall each row is. **Default** view only. |
+| **Border Radius** | How rounded the corners are. Set it to 0 for square corners. **Default** view only. |
 
-- **View More Option**: Allows users to scroll through more images.
-- **Columns & Image Size**:
-  - Adjust the number of columns displayed.
-  - Modify the spacing between images.
-  - Resize images as needed.
-- **Border Radius**:
-  - Set the border radius to change image shape.
-  - Set to `0` for square images or increase for rounded edges/circles.
-- **Static Grid Mode**:
-  - Enable to display all images at once, disabling the **View More** function.
+For **Background**, **Vertical Padding** and width, turn on **Change Section Styles**. See [Backgrounds & Styling](/website/sections/backgrounds-styling).
 
-### **Galleries with individual items**
+<Frame>
+  ![A gallery section on a coaching website](/images/gallery-example.avif)
+</Frame>
 
-Some gallery sections, such as the auto-scrolling mixed media gallery and the masonry gallery, list each photo or video as its own item instead of using a media tag.
+## Galleries with individual items
+
+Some published gallery sections, such as the auto-scrolling mixed media gallery and the masonry gallery, list each photo or video as its own item instead of using a media tag.
 
 - **Add** creates a blank item. Use **Duplicate** when you want a copy of an existing one.
 - An item you delete stays deleted after you publish, and a new item starts blank instead of bringing back an old caption or alt text.
 - Under each photo or video, use **Focus** to choose which part stays visible in the card. See [Choose which part of a photo or video stays visible](/website/sections/working-with-sections#choose-which-part-of-a-photo-or-video-stays-visible).
 - An optional video cover image can be taken off with **Remove**. The video itself stays.
 
-### **Publishing Your Gallery**
+## If the gallery is empty
 
-<Frame>
-  ![Gallery Example Avi](/images/gallery-example.avif)
-</Frame>
+- Check the tag in **Search media tags...** is the one on your files, and that the files are tagged in Media Hub.
+- Changes show on your live site only after you **Publish**.
 
-1. After customizing, **click** `Publish`.
-2. Your gallery is now live on your website.
+## Tips
 
-### **Troubleshooting**
+- Use one tag per gallery, such as "Home gallery" or "Summer camp 2026", so tagging a file for one page doesn't add it to another.
+- Pick photos where faces sit near the middle. Gallery tiles crop to fit, and centered subjects survive the crop.
 
-- **Images Not Showing?**
-  - Ensure the correct tag is applied and entered in **Search Media Tags**.
-- **Gallery Section Not Moving?**
-  - Refresh the page and try dragging the section again.
-- **Changes Not Applying?**
-  - Make sure to **click** `Publish` after making updates.
+## Related
+
+- [Working with Sections](/website/sections/working-with-sections): add, reorder, hide and delete sections
+- [Backgrounds & Styling](/website/sections/backgrounds-styling): what **Change Section Styles** does
+- [Section Types](/website/section-types/section-types): every default section
