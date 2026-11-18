@@ -1,16 +1,12 @@
 ---
-title: "Family accounts in the Athlete Portal"
+title: "Family accounts: parents and their athletes in your app"
 description: "How parents add and manage their athletes, who receives reminders for a managed child, how a parent sees every athlete's bookings, and how registration asks which athlete is being signed up"
-sidebarTitle: "Family Accounts"
+sidebarTitle: "Family accounts"
 icon: "people-roof"
 keywords: ["family", "family accounts", "add athlete", "manage athlete", "parent account", "family tab", "add family member", "select athlete", "family credits", "guardian", "managed child", "who are you registering", "parent notifications", "reminders to parent"]
 ---
 
-<Info>
-**Where to find this**: Athlete Portal → **Settings** → **Family**
-</Info>
-
-In youth programs the parent is the person who acts: they pay, they drive to the field, they read the message. CoachIQ models that as a **parent (guardian) account** with one or more **athletes** connected to it. Parents manage the family from the athlete portal; you can also connect children from the client's **Family** section in admin.
+In youth programs the parent is the person who acts: they pay, they drive to the field, they read the message. CoachIQ models that as a **parent (guardian) account** with one or more **athletes** connected to it. Parents manage their family in your app under **Settings › Family**; you can also connect children from the client's **Family** section in **People**.
 
 ## How a family is structured
 
@@ -19,17 +15,17 @@ In youth programs the parent is the person who acts: they pay, they drive to the
 - The parent-to-athlete link is stored on both profiles. Reminders, booking views, and automations follow that link (details below).
 
 <Note>
-  The **Family** tab only appears on profiles with the **Parent** role. If a parent tells you they cannot find it, check their role in **User Details** and change it to **Parent** if needed. See [Sign-up & Profile](/people/sign-up-and-profile#account-type) to make new sign-ups land on the right role from the start.
+  **Family** only shows in a family's **Settings** when their account has the **Parent** role. If a parent can't find it, check their role on their profile in **People** and change it to **Parent** if needed. See [Sign-up & Profile](/people/sign-up-and-profile#account-type) to make new sign-ups land on the right role from the start.
 </Note>
 
 ## What parents can do
 
 <Steps>
   <Step title="Open Settings">
-    From the athlete portal, the parent selects **Settings**.
+    In your app, the parent opens **Settings** from their account menu.
   </Step>
   <Step title="Go to Family">
-    They select **Family**, where they'll see the athlete they're currently managing.
+    They select **Family**, which lists the athletes they manage. A child without their own login shows **Managed, no login**.
   </Step>
   <Step title="Add a family member">
     Selecting **Add Athlete** lets them add another child to the account. They can also select an existing athlete listed there to switch to managing them.
@@ -42,34 +38,14 @@ Parents can also add a child in the middle of checkout. When they add one new at
 
 ## What you can do as a coach
 
-<Info>
-**Where to find this**: **People** → open the client → **PROFILE** → **Family**
-</Info>
-
-On **Family** you can **Connect children** — choose an active athlete account, or create a managed child.
-
-The **+** control is **Create new child**. That opens **New child**:
-
-- Helper: "The child is added without a login. You can enable login later."
-- **First name** (required) (placeholder First) and **Last name** (placeholder Last)
-- **Cancel** and **Create child**
-
-A connected child can show **Managed — no login** with **Enable login**.
-
-<Frame>
-  ![Client Family section with Connect children](/images/people-client-family-connect-children.png)
-</Frame>
-
-<Frame>
-  ![New child form: First name, Last name, Cancel, Create child](/images/people-client-family-new-child.png)
-</Frame>
+On a parent's profile in **People**, **Profile › Family** lists their children. **Add child** creates a managed athlete with no login, and **Connect athlete** links an athlete who already has an account. See [Client profile › Family](/people/client-profiles/client-profiles#family).
 
 ### Managed children with no login
 
 A managed child has a profile, bookings, credits, and tags like any athlete, but no email and no password. That is the right shape for most youth athletes: the parent does everything on their behalf, and nothing is ever sent to an inbox the child does not have.
 
 - Anything addressed to a managed child (reminders, announcements, in-app messages) is delivered to their parent. See [Who receives reminders and notifications](#who-receives-reminders-and-notifications).
-- When the athlete is old enough to run their own account, click **Enable login** on the child's row. They keep their history.
+- When the athlete is old enough to run their own account, click **Enable login** on the child's row in **People**. They keep their history.
 - Automations can target a managed child's parent explicitly with the **trigger user and their guardians** option on **Target User**. See [Triggers and actions](/tools/automations/triggers-actions-reference).
 
 ## Who receives reminders and notifications
@@ -79,7 +55,7 @@ Practice reminders and notifications for an athlete go to that athlete **and** t
 A parent with two athletes is connected to both, so they receive both athletes' reminders from one account. You do not need to tag or message the parent separately.
 
 <Tip>
-  If a family reports that they "never got the reminder", open the athlete in **People** and check **PROFILE** → **Family**. An athlete with no connected parent and no email has nowhere for a reminder to go. Connect the parent and the next reminder will reach them.
+  If a family reports that they "never got the reminder", open the athlete in **People** and check **Profile › Family**. An athlete with no connected parent and no email has nowhere for a reminder to go. Connect the parent and the next reminder will reach them.
 </Tip>
 
 ## Booking for a specific family member
@@ -104,13 +80,15 @@ Someone who isn't linked to the child can't change the booking and sees "This at
 
 ## How a parent sees their athletes' bookings
 
-A parent's own **Bookings** view in the athlete portal, and in the native iOS and Android apps, lists every connected athlete's sessions **grouped by athlete**. The parent never has to switch into each child to check who has practice tonight. Session location shows on each booking in the app, so a per-date venue change is visible where the parent looks.
+Every booking, credit pack and order a parent sees is labeled **Me** or with the child's name, so it's clear whose it is. In **Bookings**, chips at the top filter the list to one athlete; if that athlete has nothing booked, the list says so with a **Book** button.
 
-You see the same thing from the coach side: opening the parent in **People** → **Bookings** shows all bookings under that parent, sorted by which athlete they belong to. Opening the athlete shows only that athlete's bookings. See [Bookings tab](/people/client-profiles/client-profiles-bookings#parent-profiles-bookings-grouped-by-athlete).
+A parent's **Bookings** in your app, on the web and in the mobile app, lists every connected athlete's sessions **grouped by athlete**. The parent never has to switch into each child to check who has practice tonight. Session location shows on each booking in the app, so a per-date venue change is visible where the parent looks.
+
+You see the same thing from the coach side: opening the parent in **People** › **Bookings** shows all bookings under that parent, sorted by which athlete they belong to. Opening the athlete shows only that athlete's bookings. See [Bookings tab](/people/client-profiles/client-profiles-bookings#parent-profiles-bookings-grouped-by-athlete).
 
 ## A child's credits in the parent's Billing
 
-A parent's **Settings → Billing → Credits** lists their own credits first, then each managed child's credits marked **For** and the child's name. Credits from a membership bought for a child always belong to the child; this is where the parent can see them. Booking for that child uses the child's credits.
+A parent's **Settings › Billing › Credits** lists their own credits first, then each managed child's credits marked **For** and the child's name. A membership bought for a child keeps its **For** line in Billing even after it's canceled, until its access ends. Credits from a membership bought for a child always belong to the child; this is where the parent can see them. Booking for that child uses the child's credits.
 
 ## Registering an athlete at checkout
 
@@ -131,11 +109,17 @@ A parent registering two children for two different teams goes through checkout 
   Whether a product is bought for the buyer themselves or for a managed athlete is a setting on the product. See [Product Builder](/payments/product-builder) for the buyer vs. managed athlete option and how it changes checkout for adults buying for themselves.
 </Note>
 
+## Buying for a second child
+
+- **Already has it:** if the child picked at checkout already has the product active, checkout says so before payment, so the family isn't charged twice.
+- **Programs:** a parent who already has a program can buy it for another child from the program page with **Purchase for another child**, under the program's title. It shows only when the program offers a family purchase. After buying, the confirmation links back to the program. In the mobile app this button comes with the next app update.
+- **Membership needed to book:** if a parent books a sibling with credits and that sibling doesn't have the membership the scheduler requires, the message links to your membership options.
+
 ## Check which athlete a purchase is for
 
 Before paying, parents can confirm the selected athlete's name on the final **Review & payment** screen for a product, or the **Payment** screen when booking a session with credits or a card. If they change children during checkout, the review updates to the newly selected athlete. Review any required registration answers again after switching.
 
-After purchase, **Orders** and **Billing Archive** show a **For:** line naming the athlete when the purchase recorded one. Older purchases that did not record an athlete may not show this line; its absence alone does not tell you who received the purchase. Check the relevant athlete's profile before asking a parent to buy again.
+After purchase, **Orders** and the Billing **Archive** show a **For:** line naming the athlete when the purchase recorded one. Older purchases that did not record an athlete may not show this line; its absence alone does not tell you who received the purchase. Check the relevant athlete's profile before asking a parent to buy again.
 
 ## One membership for multiple athletes
 
@@ -158,9 +142,7 @@ Staff see each parent as a separate contact on the athlete's Family tab.
 
 ## Opening a link for another business
 
-Signing in through another CoachIQ group's link does not automatically join that group. If the page says **You're a member of** a different group, use the option to go to your group, or ask the intended business for its registration instructions.
-
-Within one organization, someone who already belongs to one of its groups and opens another group's app gets one clear choice: go to their own group, or join this one. Someone who is signed in but hasn't joined sees a single **Join** card with your logo and a **Join Now** button. A parent who signs in on a group's booking page joins that group as a parent and gets the welcome email, the same as with **Join this group**.
+Signing in through another CoachIQ group's link doesn't join that group. Someone who belongs to one of your groups and opens another group's app gets one choice: go to their own group, or join this one. See [How clients sign in › Signed in but not a member yet](/people/how-clients-sign-in#signed-in-but-not-a-member-yet).
 
 ## Common questions
 
@@ -172,13 +154,13 @@ Within one organization, someone who already belongs to one of its groups and op
     Connect each parent to the athlete from that parent's **Family** section in admin. Both then see the athlete's bookings and receive their reminders. If you run into a case that does not behave this way, contact support with the family's names.
   </Accordion>
   <Accordion title="A parent bought a registration but the child has no practices on their schedule">
-    Check which athlete the purchase is attached to: open the parent in **People** → **Products**. If the purchase landed on the parent rather than the child (this happened before the **Who are you registering?** step existed), book the child into the team's practice sessions manually and move the tag to the child. Registrations made after August 2026 attach to the selected athlete automatically.
+    Check which athlete the purchase is attached to: open the parent in **People** › **Products**. If the purchase landed on the parent rather than the child (this happened before the **Who are you registering?** step existed), book the child into the team's practice sessions manually and move the tag to the child. Registrations made after August 2026 attach to the selected athlete automatically.
   </Accordion>
   <Accordion title="Can a parent or coach remove a managed child?">
     Only if the child has no history. A managed child who has any booking, purchase or activity can't be removed by a parent or staff member; the message reads "Can't remove: this athlete has booking, purchase, or activity history." This keeps the child's memberships and records attached to a real profile.
   </Accordion>
-  <Accordion title="Do parents see their athletes' bookings in the native app?">
-    Yes. The iOS and Android apps show a parent every connected athlete's bookings, grouped by athlete, with the session location. See [Booking in the native app](/athlete-portal/native-app-booking).
+  <Accordion title="Do parents see their athletes' bookings in the mobile app?">
+    Yes. The iPhone and Android apps show a parent every connected athlete's bookings, grouped by athlete, with the session location. See [Your app on iPhone and Android](/athlete-portal/native-app-booking).
   </Accordion>
 </AccordionGroup>
 
@@ -188,8 +170,8 @@ Within one organization, someone who already belongs to one of its groups and op
   <Card title="Booking for Multiple Athletes" icon="users" href="/scheduling/booking-for-multiple-athletes">
     How shared credits and family booking work today
   </Card>
-  <Card title="Client Profiles" icon="id-card" href="/people/client-profiles/client-profiles">
-    Family is under PROFILE on the client
+  <Card title="Client profile › Family" icon="id-card" href="/people/client-profiles/client-profiles#family">
+    Add or connect a parent's children
   </Card>
   <Card title="Bookings tab" icon="calendar-check" href="/people/client-profiles/client-profiles-bookings">
     A parent's bookings grouped by athlete
@@ -200,7 +182,7 @@ Within one organization, someone who already belongs to one of its groups and op
   <Card title="Triggers and actions" icon="bolt" href="/tools/automations/triggers-actions-reference">
     Target an athlete and their guardians from an automation
   </Card>
-  <Card title="Booking in the native app" icon="mobile-screen" href="/athlete-portal/native-app-booking">
-    Pay-or-credit prompt, purchases in the browser, session location
+  <Card title="Bookings, billing and orders" icon="receipt" href="/athlete-portal/bookings-billing-orders">
+    What families see after they book or buy
   </Card>
 </CardGroup>

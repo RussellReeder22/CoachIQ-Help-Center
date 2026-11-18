@@ -1,11 +1,11 @@
 ---
 title: "What Returning Visitors See: The Sign-In Prompt"
-description: "When a form requires login and someone enters an email that already has an account, CoachIQ asks them to sign in mid-form. Here is exactly what they see, why, and what to tell them."
+description: "When someone enters an email that already has an account, a form asks them to sign in part-way through. What they see, why, and what to tell them."
 sidebarTitle: "Returning Visitor Sign-In"
 icon: "right-to-bracket"
 ---
 
-When a form has **Login/Signup** required in its Connections, CoachIQ needs to know who is submitting it. New visitors create an account as part of the flow. Returning visitors, most often parents who registered a child last season, are asked to **sign in** the moment they enter an email that already has an account.
+Every form starts by asking visitors for their details, beginning with their email (**Guest or log in** in the builder). When a form doesn't allow guests, or takes a payment, CoachIQ needs to know who is submitting it. New visitors create an account as part of the form. Returning visitors, most often parents who registered a child last season, are asked to **sign in** as soon as they enter an email that already has an account.
 
 This is expected behavior, not a bug. Coaches have reported it as a bug more than once, so it helps to know what the athlete or parent actually sees.
 
@@ -17,9 +17,9 @@ This applies to forms on your **website** and forms in the **athlete app**. The 
 
 Someone whose email is not in your organization goes straight through:
 
-1. They answer your form questions.
-2. On the Login/Signup page they create an account (name, email, password).
-3. They continue to any product or scheduler pages you attached, then submit.
+1. They enter their email and the other details you ask for, and create an account.
+2. They answer your questions.
+3. They continue to the **Products** or **Sessions** page if the form has one, then submit.
 
 ## What a returning visitor sees
 
@@ -45,24 +45,24 @@ Copy and paste this if someone emails you about the prompt:
 
 <AccordionGroup>
   <Accordion title="Can I turn the prompt off?">
-    Only by removing the Login/Signup requirement from the form's Connections. Without it, responses are collected but are not attached to a profile, and Contact Info fields will not sync to People. See [Creating Forms](/tools/forms/creating-forms).
+    Turn on **Allow guests to submit without logging in** in the form's **Connections** tab. Guests then submit without an account. A form that takes a payment always needs the person, so the prompt stays on those. See [Guests, payments and bookings](/tools/forms/payments-and-bookings#who-fills-it-in).
   </Accordion>
   <Accordion title="A parent says they never made an account">
     Someone in the family probably did, often the other parent or the athlete. Search the email in [People](/people/overview) to confirm, then have them use **Forgot password?**.
   </Accordion>
-  <Accordion title="Does this happen on forms without a login requirement?">
-    No. Forms without Login/Signup in their Connections never prompt anyone to sign in.
+  <Accordion title="Does this happen on forms that allow guests?">
+    Guests can submit without an account, so they aren't required to sign in. Someone who does sign in and reopens a one-response form sees their saved answers, ready to update.
   </Accordion>
 </AccordionGroup>
 
 ## Related articles
 
 <CardGroup cols={2}>
-  <Card title="Creating Forms" icon="file-pen" href="/tools/forms/creating-forms">
-    Where the Login/Signup connection lives and what it does to profile sync
+  <Card title="Guests, payments and bookings" icon="file-pen" href="/tools/forms/payments-and-bookings">
+    Where you choose whether guests can submit
   </Card>
   <Card title="Sharing Forms" icon="share-nodes" href="/tools/forms/sharing-forms">
-    Put your form on your website or in the athlete app
+    Put your form on your website or send it to clients
   </Card>
   <Card title="Adding & Editing Clients" icon="user-plus" href="/people/adding-editing-clients">
     How accounts and profiles are created in People

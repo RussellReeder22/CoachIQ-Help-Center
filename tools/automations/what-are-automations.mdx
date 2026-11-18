@@ -1,6 +1,6 @@
 ---
 title: "What Are Automations?"
-description: "Let CoachIQ handle repetitive tasks automatically so you can focus on coaching"
+description: "Automations send the follow-ups, tags and credits you'd otherwise do by hand, every time something happens."
 sidebarTitle: "What Are Automations?"
 icon: "gears"
 keywords: ["automations", "workflows", "automatic", "triggered actions", "automate tasks", "when this happens", "automation basics"]
@@ -10,25 +10,25 @@ keywords: ["automations", "workflows", "automatic", "triggered actions", "automa
 **Where to find this**: Tools → Automations
 </Info>
 
-You're busy coaching—not sitting at a computer sending emails. But the follow-ups pile up: welcome messages for new members, reminders about expiring credits, check-ins with people who haven't trained in a while. Things slip through the cracks.
+You're busy coaching, not sitting at a computer sending emails. But the follow-ups pile up: welcome messages for new members, reminders about expiring credits, check-ins with people who haven't trained in a while.
 
-Automations handle these tasks for you, automatically, in the background.
+Automations do these for you, every time, in the background.
 
 ## How Automations Work
 
 Every automation follows a simple formula:
 
 <Card title="When THIS happens → Do THAT" icon="arrow-right">
-  A member signs up, so CoachIQ sends them a welcome email. A booking gets cancelled, so CoachIQ follows up. You set it up once, and it runs every time the event happens, for as long as it's enabled.
+  A member signs up, so CoachIQ sends them a welcome email. A booking gets cancelled, so CoachIQ follows up. You set it up once, and it runs every time the event happens, for as long as it's on.
 </Card>
 
-Each automation has three core parts, plus an optional fourth:
+In the builder, each automation is a column of cards: **When**, **Only if** and numbered steps, plus optional **Data sources**.
 
 | Part | What It Does | Example |
 |------|--------------|---------|
-| **Trigger** | The event that starts it | Someone purchases a [membership](/payments/product-overview) |
-| **Conditions** | Optional filters to target the right people | Only if it's their first purchase |
-| **Actions** | What happens automatically | Send a welcome email + add a "New Member" [tag](/people/tags-filters) |
+| **When** (trigger) | The event that starts it | Someone purchases a [membership](/payments/product-overview) |
+| **Only if** (conditions) | Optional filters to target the right people | Only if it's their first purchase |
+| **Steps** | What happens automatically, in order | Send a welcome email + add a "New Member" [tag](/people/tags-filters) |
 | **Data Sources** | Optional extra information fetched before the conditions run | Their current credit balance, so the message can say "you have 3 credits left" |
 
 ## What This Looks Like in Practice
@@ -47,28 +47,29 @@ Here are automations CoachIQ coaches use every day:
 
 Automations can trigger when:
 
-- A new user is added to your account
-- Someone makes a [purchase](/payments/product-overview) or starts a subscription
-- Someone [books a session](/scheduling/overview), a booking starts, a booking ends, or a booking is cancelled
-- A [form](/tools/forms/overview) gets submitted
+- Someone is added to your account
 - A [tag](/people/tags-filters) is added to or removed from someone
-- A subscription is cancelled
-- On a schedule—daily, weekly, monthly, or once on a specific date
-- An outside tool sends data to the automation's webhook URL
+- Someone [books a session](/scheduling/overview), a booking starts or ends, or a booking is cancelled or rescheduled
+- Someone makes a [purchase](/payments/product-overview) or cancels a subscription
+- A [form](/tools/forms/overview) is submitted
+- Someone is added to the sales pipeline, or their card moves to another stage
+- A schedule: daily, weekly, monthly, or once on a date
+- An outside tool sends data to the automation's webhook
 
 ## What Can Automations Do?
 
 Once triggered, automations can:
 
-- Send emails, SMS messages, [in-app messages](/inbox/inbox-overview), or [announcements](/inbox/announcements)
-- Add or remove [tags](/people/tags-filters) from members
-- Update a custom profile field
+- Send emails, texts, [in-app messages](/inbox/inbox-overview) or [announcements](/inbox/announcements)
+- Add or remove [tags](/people/tags-filters), or update a custom profile field
 - Add or redeem credits
 - Add or remove a product purchase
-- Grant or revoke program access
-- Book or remove someone from a session
+- Grant or revoke access to a private program
+- Book someone into a session or remove a booking
+- Block or unblock time on your availability
+- Add someone to the sales pipeline or move their card
 - Wait for a set time before continuing
-- Send data to external tools via webhooks
+- Send data to another tool through a webhook
 
 <Tip>
 **Best uses for automations:**
@@ -78,26 +79,25 @@ Once triggered, automations can:
 </Tip>
 
 <Warning>
-Automations do real things to real people: a message action sends the message, a booking action books the seat, a credit action changes the balance. Build with **Enabled** off, check the result with **Test Run** and **Execution Logs**, and only then switch it on. See [Build Your First Automation](/tools/automations/build-your-first-automation#test-before-you-enable) for the checklist.
+Automations do real things to real people: a message step sends the message, a booking step books the spot, a credit step changes the balance. New automations start off. Save, check the result with **Test run** and **Activity**, and only then turn it on. See [Build your first automation](/tools/automations/build-your-first-automation#test-before-you-turn-it-on) for the checklist.
 </Warning>
 
-## Disabling, archiving, or deleting automations
+## Turning off or archiving automations
 
-You have three ways to take an automation out of service, from gentlest to most permanent:
+Two ways to take an automation out of service:
 
 | Option | Where | What happens |
 |--------|-------|--------------|
-| **Disable** | Open the automation → **Settings** → switch **Enabled** off | Stops automatic runs while preserving the workflow. **Test Run can still execute real actions**; choose a controlled test recipient and review the actions first. |
-| **Archive** | The archive icon on its row in the Automations list | It leaves your working list and moves to the **Archived** tab, so the list stays short. |
-| **Delete** | Open the automation → **Settings**, after disabling it | Permanent. The automation and its execution history are gone. |
+| **Turn off** | The **On/Off** switch at the top of the builder | Stops automatic runs and keeps everything. **Test run still does real things.** |
+| **Archive** | The **…** menu on its row in the Automations list | It stops running and leaves your working list. Restore it any time; it comes back turned off. |
 
 <Note>
-Not sure? Disable it. You lose nothing, and you can archive or delete it later if it stays unused.
+Not sure? Turn it off. You lose nothing, and you can archive it later if it stays unused.
 </Note>
 
 ## What's Next?
 
-Ready to build your first automation? It takes about 5 minutes.
+Ready to build one? It takes about 5 minutes.
 
 <CardGroup cols={2}>
   <Card title="Start from a template" icon="layer-group" href="/tools/automations/automation-templates">

@@ -1,108 +1,94 @@
 ---
-title: "Menu & Links settings"
-description: "Control which pages appear in your athletes' navigation and configure your active portal domains."
+title: "Menu & Links: show, rename and link your app's pages"
+description: "Choose which pages show in your app, set each page's web address, rename the menu sections and links families see, and check your app's domains."
 sidebarTitle: "Menu & Links"
 icon: "bars"
+keywords: ["menu and links", "hide page", "show page", "URL path", "slug", "rename menu", "sidebar labels", "keep bookings visible", "domains", "custom domain"]
 ---
 
-**Menu & Links** lets you decide which sections athletes can navigate to in their portal — and whether athletes with existing bookings can still view them even if self-scheduling is turned off.
+Menu & Links controls your app's menu: which pages families can open, the web address of each page, and the names families see.
 
-<Info>
-**Where to find this:** Athlete Portal Builder → **Settings** → **Menu & Links**
-</Info>
+**Where to find it:** **Website & App › App**, then **Domain** or any menu row, or **Settings › Menu & Links** in the App builder. The page has three parts, **Pages & routes**, **Sidebar labels** and **Domains**. Click one on the left to jump to it.
 
-## Main Menu toggles
-
-The **Main Menu** section controls which pages appear in the athlete portal navigation. Each row shows the page label, its URL path, and a toggle.
-
-<Frame caption="The Main Menu section showing the three default portal pages and their toggles">
-  ![Menu & Links Settings panel showing Programs, Products, and Sessions toggles](/images/main-menu-athlete-portal.png)
+<Frame>
+  ![Menu & links settings: Pages & routes with Programs, Products and Scheduling, each with a URL path box and a show switch, Keep Bookings visible, and Sidebar labels below](/images/app-menu-and-links-2026-11.png)
 </Frame>
 
-| Page | URL path | Effect when off |
-|------|----------|-----------------|
-| **Programs** | /programs | Hides the programs page |
-| **Products** | /products | Hides the products page |
-| **Sessions** | /sessions | Removes the scheduling page from the nav |
-
-Toggling a page off hides it for all athletes. The page's content isn't deleted — it becomes inaccessible from the nav. Toggle it back on to restore it.
-
-Click **Update Settings** to save any changes.
-
-## Renaming portal pages
-
-The labels athletes see in their navigation are yours to change, so the portal can say "Training" instead of "Programs" or "Book a Lesson" instead of "Sessions". The rename lives on each page, not in Menu & Links:
-
-| Page | Where to rename it |
-|------|--------------------|
-| **Programs** | App Builder → **Content** → gear icon → **Page Name**. See [Programs page settings](/athlete-portal/content#page-settings) |
-| **Products** | App Builder → **Products** → gear icon → **Page Name**. See [Products page settings](/athlete-portal/products#configuring-page-settings) |
-| **Sessions** | App Builder → **Schedule** → gear icon → page display name. See [Schedule page settings](/athlete-portal/schedule#page-settings) |
-
-Each of those Settings panels also has a **Slug** field for the URL path, so you can move `/sessions` to `/schedule` at the same time if you want the link to match the new name. Click **Update Page** on that page to save; the new label shows in **Menu & Links** and in the athlete navigation immediately.
+When you're done, click **Save changes** at the top.
 
 <Note>
-Renaming is per organization. If you run several groups, each group's portal has its own labels.
+  Some labels on this page still say "athlete portal". That's your app.
 </Note>
 
-## Still show Bookings to athletes
+## Pages & routes
 
-When **Sessions** is toggled off, a sub-option appears below it:
+Three of your app's sections can be shown or hidden: **Programs**, **Products** and **Scheduling** (the Sessions section). Channels always shows.
 
-<Frame caption="The 'Still show Bookings to athletes' option appears when Sessions is disabled">
-  ![Menu & Links Settings with Still show Bookings to athletes checkbox highlighted](/images/still-show-schedulers-portal.png)
-</Frame>
+For each one:
 
-> **Still show Bookings to athletes** — Athletes can't self-schedule, but they'll still see their upcoming bookings.
+- **The switch** shows or hides the section in your app. A hidden section shows **Hidden** here and on the App page. Hiding a section doesn't delete anything: your schedulers, programs, products and families' bookings stay as they are, and turning it back on brings the section back.
+- **The URL path** is the end of the web address, such as `programs` in `app.coachiq.io/your-business/programs`. Change it if you want the address to match a new name, for example `schedule` instead of `sessions`. Update any links to the old address you've shared, such as on your website or in emails.
 
-When checked, athletes see a **Bookings** section in their portal sidebar where they can view upcoming, past, and canceled sessions — but cannot book new ones. This is the right choice when you manage all scheduling manually but still want athletes to have visibility into their calendar.
+### Keep Bookings visible
 
-When unchecked, the Bookings view is hidden entirely.
+Under **Scheduling**, **Keep Bookings visible** lets families see their bookings while you've hidden self-scheduling. Use it when you book everyone yourself: families can't book new sessions, but they can still see their upcoming, past and canceled sessions under **Bookings**.
+
+It only matters while Scheduling is hidden. When Scheduling shows, families have both **Available** and **Bookings**.
+
+## Sidebar labels
+
+Rename the sections and links in your app's menu, for example "Training" instead of "Programs" or "Book a lesson" instead of "Sessions". Leave a box blank to use the default name.
+
+| Section | Section heading | Links |
+|---|---|---|
+| **Channels** | Channels | Announcements, Direct Message |
+| **Scheduling** | Sessions | Available, Bookings |
+| **Products** | Products | Available, Orders |
+| **Programs** | Programs | Available, Shared with you |
+
+**Use defaults** on a section clears its boxes so it goes back to the default names.
+
+The names you choose show in the menu and as page headings on the web, and in the menu, tabs and headings in the mobile app. A blank name falls back to the default.
+
+Each page's **Page settings** (the gear in the App builder) also has a page name and slug box for the same page.
 
 <Note>
-This option only appears when **Sessions** is toggled off. If Sessions is on, the full scheduling page is available and this setting has no effect.
+  Labels are set per group. If you run several groups, each group's app has its own names.
 </Note>
 
-## Active Domains
+## Domains
 
-The **Active Domains** section shows the URLs athletes can use to access your portal. These are read-only here — contact CoachIQ support to connect a custom domain.
+**Active domains** lists the web addresses your app answers on. Click one to open your app there.
+
+To put your app on your own domain, such as `app.yourbusiness.com`, contact CoachIQ support.
 
 ## Common questions
 
 <AccordionGroup>
-  <Accordion title="Will turning off Sessions cancel existing bookings?">
-    No. Toggling off **Sessions** only removes the scheduling page from the nav. Existing bookings are unaffected. Athletes with booked sessions can still view them if **Still show Bookings to athletes** is checked.
+  <Accordion title="Will hiding Scheduling cancel bookings?">
+    No. Hiding Scheduling only takes the booking pages out of the menu. Existing bookings stay booked, and families can still see them if **Keep Bookings visible** is on.
   </Accordion>
-
-  <Accordion title="Can I hide the Bookings view from athletes even with Sessions off?">
-    Yes. When **Sessions** is off, uncheck **Still show Bookings to athletes** and click **Update Settings**. Athletes will no longer see the Bookings section in their portal.
+  <Accordion title="Can I hide the Bookings page too?">
+    Yes. With Scheduling hidden, turn **Keep Bookings visible** off and click **Save changes**.
   </Accordion>
-
-  <Accordion title="Why don't I see the 'Still show Bookings to athletes' option?">
-    This option only appears when **Sessions** is toggled off. Toggle **Sessions** off first and the option will appear below it.
-  </Accordion>
-
-  <Accordion title="Can I rename the pages athletes see?">
-    Yes. Open the page in the App Builder (Content, Products, or Schedule), click the gear icon, and change the page name and, if you like, the slug. See [Renaming portal pages](#renaming-portal-pages).
+  <Accordion title="I renamed a section but the mobile app still shows the old name">
+    Ask the family to close and reopen the app. If the name still doesn't change, they may need the latest version of the app from the App Store or Google Play.
   </Accordion>
 </AccordionGroup>
 
 ## Related articles
 
 <CardGroup cols={2}>
-  <Card title="Athlete Portal overview" icon="app-store" href="/athlete-portal/understanding-your-athlete-portal">
-    Understand how the portal is structured and how athletes experience it
+  <Card title="Your app: overview" icon="mobile" href="/athlete-portal/understanding-your-athlete-portal">
+    What families see and where
   </Card>
-
-  <Card title="App Builder navigation" icon="sidebar" href="/athlete-portal/app-builder-navigation-and-interface">
-    Navigate the App Builder interface and publish changes
+  <Card title="App builder" icon="compass" href="/athlete-portal/app-builder-navigation-and-interface">
+    Edit pages and publish changes
   </Card>
-
+  <Card title="Page access" icon="lock" href="/athlete-portal/paywall-settings">
+    Open pages only to paying members
+  </Card>
   <Card title="Sharing schedulers" icon="calendar" href="/scheduling/sharing-schedulers">
-    Add schedulers to the athlete portal schedule page
-  </Card>
-
-  <Card title="Pages Paywall" icon="lock" href="/athlete-portal/paywall-settings">
-    Restrict portal pages to paying members
+    Other ways to share a scheduler
   </Card>
 </CardGroup>

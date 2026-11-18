@@ -1,12 +1,12 @@
 ---
 title: "What Are Forms?"
-description: "Collect athlete info, registrations, waivers, and payments — all in one place that connects to your entire CoachIQ system."
+description: "Collect athlete details, registrations, waivers and payments with forms that connect to your clients, products, schedulers and automations."
 sidebarTitle: "What Are Forms?"
 icon: "clipboard-list"
 keywords: ["forms", "intake form", "registration", "waiver", "collect information", "sign up form", "questionnaire", "data collection"]
 ---
 
-Forms are how you collect information from athletes and parents — without the back-and-forth texting, manual data entry, or scattered Google Docs.
+Forms are how you collect information from athletes and parents, without back-and-forth texts, typing it in yourself, or answers spread across Google Docs.
 
 <Info>
   **Where to find Forms**: Tools → Forms in the main navigation
@@ -14,46 +14,46 @@ Forms are how you collect information from athletes and parents — without the 
 
 ## What forms do
 
-A CoachIQ form replaces the messy process of gathering athlete info via text, email, or paper. You create a form once, share the link, and responses flow directly into your system.
+You build a form once, share its link, and every response is saved in CoachIQ, on the form and on the client's profile.
 
 Common uses:
 
-- **Lead capture** — "I'm interested in training" inquiries from your website
-- **New athlete intake** — Contact info, goals, experience level, parent details
-- **Camp/event registration** — Sign up + payment in one step
-- **Waivers** — Liability agreements before the first session
-- **Feedback** — Post-program surveys or testimonials
+- **Lead capture**: "I'm interested in training" inquiries from your website
+- **New athlete intake**: contact details, goals, experience, parent details
+- **Camp or event registration**: sign-up and payment in one go
+- **Waivers**: agreements before the first session
+- **Feedback**: end-of-program surveys and testimonials
 
 <Frame>
-  ![Forms Example](/images/forms-example.png)
+  ![The form builder with a tryout registration form](/images/form-builder-2026-11.png)
 </Frame>
 
 ## How forms connect to CoachIQ
 
-Forms aren't just data collection — they plug into your entire business system.
+Forms connect to the rest of CoachIQ.
 
 <CardGroup cols={2}>
   <Card title="People" icon="users" href="/people/overview">
-    When you require login/signup, form responses automatically appear on the athlete's profile and their data syncs to your People list. Returning visitors are asked to [sign in mid-form](/tools/forms/returning-visitor-sign-in).
+    Responses from people with an account appear on their profile, and answers can fill profile fields. Returning visitors are asked to [sign in part-way through](/tools/forms/returning-visitor-sign-in).
   </Card>
   <Card title="Products" icon="credit-card" href="/payments/product-overview">
-    Add a product to your form to collect payment during submission — perfect for camp fees, registration deposits, or trial session charges.
+    Take a payment as part of the form, for camp fees or registration fees. Products can also require a form at checkout.
   </Card>
   <Card title="Schedulers" icon="calendar" href="/scheduling/creating-your-first-scheduler">
-    Embed a scheduler so athletes can book their first session right after completing your intake form.
+    Let athletes book a session, such as an evaluation, right after your questions.
   </Card>
   <Card title="Automations" icon="bolt" href="/tools/automations/what-are-automations">
-    Trigger automated actions when a form is submitted — send a welcome message, add a tag, or assign credits.
+    Start an automation when a form is submitted: send a welcome message, add a tag or add credits.
   </Card>
 </CardGroup>
 
 <Note>
-  **How connections work**: When you add Products, Schedulers, or Login/Signup to a form, each becomes a separate page in the submission flow. The athlete completes the form fields first, then proceeds through each connected page.
+  **How the pages work**: visitors enter their details, answer your questions, then go to a **Products** page if the form takes a payment or a **Sessions** page if it books a session. A form does one or the other. See [Guests, payments and bookings](/tools/forms/payments-and-bookings).
 </Note>
 
 ## Why use CoachIQ forms vs. external tools
 
-You might be used to Google Forms, Typeform, or JotForm. Here's why CoachIQ forms work better for your coaching business:
+If you've used Google Forms, Typeform or JotForm, here's the difference:
 
 | External Tools                       | CoachIQ Forms                      |
 | ------------------------------------ | ---------------------------------- |
@@ -61,11 +61,11 @@ You might be used to Google Forms, Typeform, or JotForm. Here's why CoachIQ form
 | Manual copy/paste to track responses | Responses appear in one dashboard  |
 | Can't collect payments               | Add products for registration fees |
 | Can't book sessions                  | Embed schedulers directly          |
-| Generic branding                     | Matches your CoachIQ website       |
+| Generic branding                     | Matches your CoachIQ website and app |
 | No automation triggers               | Triggers automations on submission |
 
 <Tip>
-  **The real advantage**: Everything stays in one system. When an athlete submits a form, you don't need to manually add them anywhere — their info, payment, and booking are already connected.
+  When an athlete submits a form, you don't have to add them anywhere by hand. Their details, payment and booking are already in CoachIQ.
 </Tip>
 
 ## What you can build with forms
@@ -84,39 +84,37 @@ Combine info collection with payment: athlete details, t-shirt size, emergency c
 
 ### Waiver/liability form
 
-Display your terms and require agreement before training begins. When login is required, the signed waiver attaches to their profile.
+Add a **Waiver** question and require agreement before training begins. With guests turned off, the signed waiver is on their profile and in the waiver's report.
 
 ### Testimonial collection
 
-Request feedback and permission to share on your website. Great for building social proof.
+Ask for a review and permission to share it on your website.
 
 ## What forms can't do
 
-Understanding limitations helps you build the right workflows:
-
-- **No conditional logic** — You can't show/hide questions based on previous answers
-- **No partial saves** — Athletes must complete the form in one session
-- **No branching inside the form** — a form cannot change its own questions based on an answer. Automations can, though: the **Form Submitted** trigger exposes each question as an **Answer field**, so "if they selected Instagram, add the Instagram Lead tag" is built in [Automations](/tools/forms/responses-and-automations#automations-triggered-by-forms)
-- **No completion analytics** — You see total responses, not drop-off rates
+- **Show or hide questions based on an answer.** Automations can act on answers instead: the **Form Submitted** trigger offers each question as an **Answer field**, so "if they picked Instagram, add the Instagram Lead tag" is built in [Automations](/tools/forms/responses-and-automations#automations-triggered-by-forms).
+- **Save a half-finished response.** Families complete the form in one go.
+- **Take a payment and book a session on the same form.** Pick one.
+- **Show drop-off.** You see responses, not how many people started and left.
 
 ## Quick glossary
 
 | Term                    | Meaning                                                                                    |
 | ----------------------- | ------------------------------------------------------------------------------------------ |
-| **Field**               | A single question or element on your form                                                  |
-| **Contact Info fields** | Pre-built fields (name, email, phone) that sync to athlete profiles when login is required |
-| **Custom fields**       | Questions you create from scratch (text, dropdown, checkbox, etc.)                         |
-| **Connections**         | Products, Schedulers, or Login/Signup added to your form flow                              |
-| **Response**            | A single completed form submission                                                         |
+| **Question** | One item on your form. Headings and text blocks are on the form too but aren't questions |
+| **Contact info** | Ready-made questions (names, email, phone, address) for athletes and parents |
+| **Saved questions** | Question sets you can add to any form, including your own from **Create new** |
+| **Connections** | Who fills it in, and whether it takes a payment or books a session |
+| **Response** | One submission |
 
 ## Next steps
 
 <CardGroup cols={2}>
-  <Card title="Create Your First Form" icon="rocket" href="/tools/forms/creating-forms">
-    Build and publish a form in under 5 minutes
+  <Card title="Build a form" icon="rocket" href="/tools/forms/creating-forms">
+    Create a form and add your questions
   </Card>
-  <Card title="Collect Payments & Bookings" icon="credit-card" href="/tools/forms/payments-and-bookings">
-    Add products and schedulers to your forms
+  <Card title="Guests, payments and bookings" icon="credit-card" href="/tools/forms/payments-and-bookings">
+    Take a payment or book a session
   </Card>
 </CardGroup>
 
@@ -137,6 +135,6 @@ If Teams is enabled for your organization, a team can connect an existing regist
     Build a scheduler to embed in your form flow for session bookings
   </Card>
   <Card title="People Overview" icon="users" href="/people/overview">
-    See how form submissions connect to athlete profiles
+    See where form responses show on a client's profile
   </Card>
 </CardGroup>

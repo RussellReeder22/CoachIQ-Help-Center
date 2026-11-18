@@ -1,133 +1,167 @@
 ---
 title: "Automation Builder Reference"
-description: "What each section of the automation builder does: Details, Triggers, Data Sources, Conditions, Actions, Execution Logs, Settings, and Test Run."
+description: "The Automations list and every part of the automation builder: When, Only if, steps, Data sources, Activity, Settings, Test run, saving and turning on."
 sidebarTitle: "Builder Reference"
 icon: "wrench"
-keywords: ["automation builder", "data sources", "conditions", "and/or groups", "execution logs", "test run", "enabled toggle", "delete automation", "archive automation", "restore automation", "guardians", "dynamic fields", "@ fields"]
+keywords: ["automation builder", "automations list", "when", "only if", "steps", "data sources", "conditions", "and/or groups", "activity", "test run", "turn on automation", "archive automation", "restore automation", "guardians", "dynamic fields", "@ fields", "# fields", "wait"]
 ---
 
 <Info>
-  **Where to find this**: **Tools → Automations**, then click any automation or **Create Automation**
+  **Where to find this**: **Tools → Automations**, then open an automation or click **Create**
 </Info>
 
-## The builder, top to bottom
+## The Automations list
 
-The builder is one long page with a section for each part of the automation, and a side menu (**Details · Triggers · Data Sources · Conditions · Actions · Logs · Settings**) that jumps to each. The header holds **Test Run** and **Update** (labelled **Create** for a new automation). Nothing you change is saved until you click Update.
+**Tools → Automations** lists every automation with search, status tabs and sorting. Each row has a **…** menu, where you archive an automation. At the top right:
+
+- **Start from a template** opens the [template library](/tools/automations/automation-templates).
+- **Create** starts a new automation.
+
+If you haven't made any automations yet, the page offers three popular templates (**Welcome new members**, **Turn trials into members**, **Keep members training**), **Browse all 13 templates** and **Start from scratch**.
 
 <Frame>
-  ![The automation builder: side menu, Details, Triggers and Data Sources sections](/images/automation-builder-sections.png)
+  ![The Automations page before any automations exist, with three suggested templates](/images/automations-start-2026-11.png)
 </Frame>
 
-<Note>
-  Section names and labels were checked against the live app on 2026-09-02. For the full list of triggers, actions, and dynamic fields see the [Triggers and actions reference](/tools/automations/triggers-actions-reference).
-</Note>
+### Archive and restore
 
-### Details
+Archive automations you're done with (last season's registration flow, a one-off campaign) so the list shows only what's in use. An archived automation stops running and keeps its settings and Activity.
 
-The automation's **label**. This is what you see in the Automations list and in Execution Logs, so make it specific: "Trial to membership nudge, day 3" rather than "Follow-up".
+To get one back, open the archived automations (the **Archived** tab, or **View archived** when everything is archived), open it and restore it. It comes back **turned off**, so check it and turn it on again when you're ready.
 
-Use letters, numbers, spaces and ordinary punctuation. A name with emoji or special symbols (such as arrows) can't be saved; the name field shows a message asking you to change it.
+## The builder
 
-### Triggers
+An automation opens full screen as a column of cards: what starts it, its conditions, and its numbered steps. Click a card to open its settings in the panel on the right, then click **Done**.
 
-The event that starts the automation, such as **Purchase Made**, **Booking Created**, **Form Submitted**, or a schedule. One trigger per automation. When the event fires, the person it happened to becomes the **user** every later section can reference.
-
-### Data Sources
-
-Extra information fetched **before** the conditions run. Use a data source when your condition or message needs something the trigger alone does not carry: the athlete's current credit balance, their active subscription, their upcoming bookings. Add the source here and its fields become available in Conditions and Actions.
-
-### Conditions
-
-Filters that decide whether the automation continues. Each rule compares a field to a value: **Product Label · Equal To · "Summer Camp"**, **Interval · Equal To · month**, and so on.
-
-Click **Add Condition** to create the first group and rule, then **Add Rule** for another rule. Rules sit inside groups, and you choose how a group combines them:
-
-- **And** — every rule in the group must be true
-- **Or** — any one rule is enough
-
-**Add And/Or** creates a nested group, so you can express things like "(bought a membership **or** a credit pack) **and** has no future booking". If there are no conditions, the automation runs for every trigger event.
-
-A scheduled trigger is the exception: a **Scheduled Check** needs at least one condition to decide who it runs for. Without one, **Create** shows "A Scheduled Check needs at least one condition." and nothing is saved.
-
-### Actions
-
-What happens when the conditions pass. Click **Add Action** for each step. The two most used:
-
-| Action | Fields |
-|---|---|
-| **Send an Announcement** | **Target User** (defaults to *User from trigger*; click **Change** to pick someone else), **From** (*Default*, or **Set** to choose which admin it appears to come from), **Title**, and **Message** |
-| **Send an SMS Message** | **Target User**, **From**, and **Message**, with a live counter such as **180 / 160** so you can see when a text splits into a second segment. The hint reads "Keep it under 160 characters for SMS" |
-
-**Target User** has three choices on the messaging and tag actions: **User from trigger** (the person the event happened to), **trigger user and their guardians**, or a specific person you pick after clicking **Change**. Choose the guardians option when the triggering athlete may be a managed child with no email or login of their own: a welcome announcement, team tag, or practice reminder then reaches the parent as well, instead of landing on a profile nobody checks. A parent who triggers the automation is a single target; the option never adds children.
-
-The **180 / 160** counter is a cost hint, not a limit. Texts longer than 160 characters still send; they go out as more than one segment and each segment is billed from your SMS credits (see [How SMS credits work](/inbox/sms-credits)).
-
-Inside any message field, type `#` to insert a **field option** from the trigger or a data source, or `@` to insert a **CoachIQ field** such as the athlete's first name, the session title, or the booking time (the field hint says exactly that: "Use # for field options, and @ for CoachIQ fields"). Fields fill in per person when the automation runs.
-
-Actions run in order. Put the message you most want delivered first.
-
-A **Wait/Delay** action pauses the automation for that person for the time you set (minutes, hours, days or weeks; long waits such as 28 days work) before the next actions run. If the wait has a "continue only if" condition, CoachIQ checks it when the wait ends, using the person's data at that moment. If they no longer match (for example, a lead tag was removed because they booked), the actions after the wait don't run. See [Wait/Delay under All Actions](/tools/automations/triggers-actions-reference#all-actions) for the fields.
-
-### Execution Logs
-
-Start here when a message or action seems missing. Click **Check for events** to refresh, then find the run by its full event and action names and the local date and time. Each row summarizes the outcome in words; expand it to check individual actions.
-
-- **Succeeded** means the actions completed, but a successful run alone does not prove someone read a message.
-- **Partial success** means some actions completed and others did not. Check each result before running the automation again, so you do not repeat an action that already succeeded.
-- A failed condition means the event did not qualify for the actions that follow.
-- An automation with a **Wait/Delay** step shows the run in two parts: the actions before the wait, then the rest when the wait ends.
-- If the list can't load, the page says "Automation runs could not be loaded. Please try again." with **Try again**. An empty-looking list during a loading problem doesn't mean the automation didn't run.
-- Expand **Show technical details** when you need more detail for troubleshooting or support.
-
-<Frame caption="Test-account example of automation execution history.">
-  ![Automation history showing full event and action names, outcome, and time](/images/release-guides-sep30/automation-history.png)
+<Frame>
+  ![The automation builder with When, Only if and Step 1 cards, and the step's settings open on the right](/images/automation-builder-2026-11.png)
 </Frame>
 
-### Settings
+The top bar shows the automation's name and status (**Inactive** or **Active**), the save state (**Not saved yet**, **Unsaved changes**), the **On/Off** switch, **Test run** and **Save**. The tabs under it are **Workflow** (the cards), **Activity** and **Settings**, with **Data sources** on the right.
 
-The **Enabled** toggle. Off stops automatic runs; it does not make a manual **Test Run** a preview. There is no separate delete button; the section says "Disable above to delete this automation", so switch Enabled off first and the delete option appears. Deleting is permanent, so if you may want it back, leave it disabled or archive it from the Automations list instead (see below).
+Nothing is saved until you click **Save**, and the builder stays open after saving. If you close it with unsaved changes, it asks first.
 
-## Archiving an automation
+### When
 
-Archiving is the middle ground between disabling and deleting. Use it for automations you are done with (last season's registration flow, a one-off campaign) so the **Tools → Automations** list shows only what is live.
+The trigger: what starts the automation. Click the **When** card, then **Change**, to see **What starts this automation?** Search or pick from the list, grouped as **People**, **Bookings**, **Payments & forms**, **Sales pipeline** and **Timing & other tools**.
 
-- **Where**: from the automations list at **Tools → Automations**, not from inside the builder. Archive the automation from its row.
-- **What happens**: the automation stops running and leaves the active list. Its Execution Logs and configuration are kept.
-- **Getting it back**: switch the list to show archived automations, open the one you want, and restore it. It returns to the active list with its history intact; check the **Enabled** toggle before relying on it again.
+<Frame>
+  ![The trigger list: People, Bookings and Payments & forms triggers](/images/automation-triggers-2026-11.png)
+</Frame>
 
-<Note>
-  Archive rather than delete when there is any chance you will run the same flow next season. A deleted automation and its logs are gone; an archived one is a click away.
-</Note>
+One trigger per automation. To start the same steps from a second event, make a second automation. The person the event happened to becomes the **user from trigger** that later steps act on.
 
-### Test Run
+For **Purchase Made**, the user from trigger is the athlete chosen at checkout on products that ask for an athlete, and the buyer on every other purchase. A tag or message step lands on that one athlete, never on every child in the family.
 
-**Test Run** performs the configured actions. Messages really send, and other actions can change records. Before testing, save your changes and check the target, conditions, and every action. Use a test profile and an email address or phone number you control.
+Every trigger and what it carries is listed in the [Triggers and actions reference](/tools/automations/triggers-actions-reference#all-triggers).
 
-Test Run doesn't wait. Any **Wait/Delay** step is reported as skipped for the test (along with its "continue only if" condition), and the actions after it run once, straight away. Nothing is sent again later when the wait would have ended.
+### Only if
 
-Keep **Enabled** off while preparing the automation, but remember that it does not prevent a manual test. After testing, review [Execution Logs](#execution-logs), confirm the result on the test profile, then enable and save the automation when you are ready for automatic runs.
+Conditions that decide whether the automation carries on. **No conditions** means it runs every time it starts.
 
-## A note on the older screenshots
+Click the **Only if** card, then **Add Condition**. Each rule compares a field to a value, for example **Product Label · Equal To · "Summer Camp"**. Rules sit in groups:
 
-Some pages in this section show an earlier version of the builder with a blank canvas and a **Select Trigger** button. The sections above are the current layout; the concepts are the same.
+- **And**: every rule in the group must be true
+- **Or**: any one rule is enough
+
+Groups can sit inside groups, so you can say "(bought a membership **or** a credit pack) **and** has no future booking". A group with no rules left can't be saved; remove it or add a rule.
+
+A **Scheduled Check** needs at least one condition to decide who it runs for. See [Scheduled automations](/tools/automations/scheduled-automations).
+
+### Steps
+
+What happens when the conditions pass. Click **Add a step** and search or pick from **Messages**, **Tags & profile**, **Credits & purchases**, **Programs & bookings**, **Sales pipeline** and **Timing & other tools**. Steps run in order, top to bottom. Put the message you most want delivered first.
+
+<Frame>
+  ![The Add a step list: Messages, Tags & profile and Credits & purchases steps](/images/automation-add-step-2026-11.png)
+</Frame>
+
+The **…** menu on a step card moves, duplicates or removes it. **Remove step** is also at the bottom of the step's panel.
+
+Most steps start with **Target User**:
+
+- **User from trigger** (the default): the person the event happened to.
+- **Trigger user and their guardians**: also reaches the parent when the athlete is a child with no email or login of their own. A parent who triggers the automation is a single target; this never adds children.
+- A specific person you pick after clicking **Change**.
+
+In any message field, type `#` to insert a **field option** from the trigger or a data source (such as a form answer or the product bought), or `@` to insert a **CoachIQ field** such as the athlete's first name, the session title or the booking time. Fields fill in for each person when the automation runs.
+
+Rules worth knowing:
+
+- **Send an SMS Message** has a 160-character counter. Longer texts still send, as more than one segment, and each segment uses [SMS credits](/inbox/sms-credits).
+- An email step whose message is empty can't be saved. An email with no visible text once its fields are filled in isn't sent and uses no email credits. Blank lines you leave in an email body come through in the email.
+- **Wait/Delay** pauses the automation for that person for the time you set (minutes up to weeks; waits over 25 days work) or until a date and time. If it has a "continue only if" condition, CoachIQ checks it when the wait ends. If the person no longer matches, for example a lead tag was removed because they booked, the steps after the wait don't run. If you turn the automation off while someone is waiting, their run stops there.
+- **Grant Program Access to a User** adds the person to a private program until you revoke it. It doesn't change who else can open the program. Older automations saved with an access length show a note that the length isn't applied.
+- **Block Time** closes a window on your availability. **Unblock Time** reopens a window closed by Block Time with the same name and times.
+- **Add a Product Purchase to a User** is skipped, with a note in Activity, for someone whose membership is Suspended or Declined. The rest of the automation carries on.
+
+Every step and its fields are in the [Triggers and actions reference](/tools/automations/triggers-actions-reference#all-actions).
+
+### Data sources
+
+Extra records fetched before the conditions run, for when a condition or message needs something the trigger doesn't carry, such as the person's current credit balance or upcoming bookings. Click **Data sources** at the top right, then **Add Data Source**. Its fields become available in **Only if** and as `#` fields in steps.
+
+## Settings
+
+The **Settings** tab holds the **Automation name**, shown in the Automations list and in Activity, and the **On** switch. Use letters, numbers, spaces and ordinary punctuation; a name with emoji or symbols such as arrows can't be saved.
+
+## Turn it on
+
+New automations, including ones made from templates or by Copilot, start **off**: nothing runs or sends. When you're ready, switch **Off** to **On** in the top bar. CoachIQ shows what it will do (**When: …**, **Then: …**) and saves your unsaved changes with it. Click **Turn on**. It runs for real from the next time it starts.
+
+<Frame>
+  ![Turn on confirmation listing When and Then, with Cancel and Turn on](/images/automation-turn-on-2026-11.png)
+</Frame>
+
+Turning it off stops automatic runs. It doesn't stop a **Test run** from doing real things.
+
+## Test run
+
+**Test run** is available once the automation is saved. Pick the person to run it for. The window says plainly: "The test runs each step for this person, so messages are sent and their records can change." Use a test profile with an email and phone you control.
+
+- **Wait/Delay** steps are skipped in a test and marked **Skipped** ("Wait skipped in test run"), so the steps after them run straight away. Nothing is sent again later.
+- For **Purchase Made** and similar triggers, pick someone whose latest purchase or booking matches your conditions.
+- The window scrolls on a small screen; **Cancel** and **Run Test Now** stay at the bottom. Email steps show their message as readable text.
+
+Check the result in **Activity** and on the test profile before you turn the automation on.
+
+## Activity
+
+**Activity** lists every run, newest first, with what started it and when. It shows once the automation is saved. Expand a run to see each step. Steps that send something say what happened:
+
+| Result | Meaning |
+| --- | --- |
+| **Delivered** | Sent |
+| **Queued** | A text or email was accepted by the provider for delivery |
+| **Suppressed** | Sending is turned off where it ran, so nothing went out |
+| **Outcome unknown** | CoachIQ couldn't confirm what happened |
+| **Delivered 1 of 2** | Partly sent, with the reason |
+
+Other run results:
+
+- **Stopped: condition no longer met**: a Wait ended and the person no longer matched. This is normal, not a failure.
+- **Stopped: automation switched off**, under a **Wait resume** heading: the automation was turned off during a wait.
+- **Failed**: something went wrong. Expand it for the reason before running anything again, so you don't repeat a step that already worked.
+
+An automation with a Wait shows the run in two parts: the steps before the wait, then the rest when it ends. Runs recorded before this update keep their older wording, such as **Success**.
 
 ## Common questions
 
 <AccordionGroup>
   <Accordion title="My automation ran but nobody got the message">
-    Open **Execution Logs**. If the run shows conditions failing, the person did not match. If an action shows an error, check the target user has a phone (for SMS) or a portal login (for announcements).
+    Open **Activity** and expand the run. **Suppressed** means sending was off; a failed condition means the person didn't match; **Failed** on a step gives the reason, such as no phone number for a text.
   </Accordion>
-  <Accordion title="Create or Update shows an error">
-    The builder lists the reason on the page. The usual causes are a name with emoji or special symbols, a **Scheduled Check** with no condition, or a step that still needs a tag, session, product or form picked. Fix what it names and click **Create** again. A save that fails doesn't leave a partial copy behind, so retrying won't create duplicates.
+  <Accordion title="Save shows an error">
+    The builder names the problem: a name with emoji or symbols, a **Scheduled Check** with no condition, an empty condition group, an empty email, or a step that still needs a tag, session, product or form picked. A failed save doesn't leave a copy behind. If the automation was deleted in another tab, the save says "Automation not found. Reload the page and try again." and creates nothing.
   </Accordion>
   <Accordion title="My follow-up went out even though the person already booked">
-    Put the follow-up after a **Wait/Delay** step with a "continue only if" condition, such as a lead tag that another automation removes when the person books. The condition is checked when the wait ends, so anyone who no longer matches is skipped. Automations saved before this was fixed work as saved; you don't need to rebuild them.
+    Put the follow-up after a **Wait/Delay** with a "continue only if" condition, such as a lead tag that another automation removes when they book. The condition is checked when the wait ends.
   </Accordion>
   <Accordion title="Can one automation have two triggers?">
-    No. Create a second automation with the other trigger. Templates make that quick: see [Automation templates](/tools/automations/automation-templates).
+    No. Make a second automation with the other trigger. [Templates](/tools/automations/automation-templates) make that quick.
   </Accordion>
-  <Accordion title="What is the difference between # and @ fields?">
-    `#` fields come from the event that fired or a data source you added (the product bought, the form answers). `@` fields are CoachIQ's standard fields about the person and your business (first name, session title, your group name).
+  <Accordion title="What's the difference between # and @ fields?">
+    `#` fields come from the event or a data source (the product bought, the form answers). `@` fields are standard CoachIQ fields about the person and your business (first name, session title, your group name).
   </Accordion>
 </AccordionGroup>
 
@@ -135,15 +169,15 @@ Some pages in this section show an earlier version of the builder with a blank c
 
 <CardGroup cols={2}>
   <Card title="Triggers and actions reference" icon="list" href="/tools/automations/triggers-actions-reference">
-    Every trigger, action, and dynamic field
-  </Card>
-  <Card title="Automation templates" icon="layer-group" href="/tools/automations/automation-templates">
-    Prebuilt automations to start from
-  </Card>
-  <Card title="Scheduled automations" icon="clock" href="/tools/automations/scheduled-automations">
-    Automations that run on a timer instead of an event
+    Every trigger, step and dynamic field
   </Card>
   <Card title="Build your first automation" icon="play" href="/tools/automations/build-your-first-automation">
     A guided first build
+  </Card>
+  <Card title="Automation templates" icon="layer-group" href="/tools/automations/automation-templates">
+    Ready-made automations to start from
+  </Card>
+  <Card title="Scheduled automations" icon="clock" href="/tools/automations/scheduled-automations">
+    Automations that run on a timer
   </Card>
 </CardGroup>

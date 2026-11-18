@@ -9,23 +9,23 @@ keywords: ["lesson elements", "media element", "text element", "quiz", "button",
 Every lesson you build in CoachIQ is made up of elements—the building blocks you combine to create interactive training content. This guide covers each of the six elements in detail, including configuration options and best practices.
 
 <Info>
-  **Adding elements**: In the Lesson Builder, click on any element icon in the toolbar to add it to your current slide. Each slide can have multiple elements layered on top of each other.
+  **Adding elements:** in the lesson builder, click **Media**, **Text**, **Upload**, **Button**, **Quiz** or **Form** above the slide. Each one adds a layer to the current slide, and a slide can hold several layers. Lower in the layer list sits on top.
 </Info>
 
 <Frame>
-  ![Lesson Ui](/images/lesson-ui.png)
+  ![The lesson builder with the six element buttons above the slide](/images/lesson-builder-2026-11.png)
 </Frame>
 
 ## Element quick reference
 
-| Element    | Icon | What it does                 | Athlete interaction |
-| ---------- | ---- | ---------------------------- | ------------------- |
-| **Media**  | ▶    | Displays video or image      | Watch/view          |
-| **Text**   | TT   | Shows text overlay           | Read                |
-| **Button** | Grid | Provides navigation or links | Tap                 |
-| **Quiz**   | 🤔   | Multiple choice question     | Select answer       |
-| **Form**   | 📋   | Free-text input field        | Type response       |
-| **Upload** | 📎   | File upload prompt           | Submit video/image  |
+| Element    | What it does                 | What athletes do    |
+| ---------- | ---------------------------- | ------------------- |
+| **Media**  | Shows a video or image       | Watch or view       |
+| **Text**   | Shows text on the slide      | Read                |
+| **Upload** | Asks for a file              | Send a video, photo or file |
+| **Button** | Next slide, web link or download | Tap             |
+| **Quiz**   | Multiple choice question     | Pick an answer      |
+| **Form**   | Free-text question           | Type an answer      |
 
 ---
 
@@ -33,15 +33,11 @@ Every lesson you build in CoachIQ is made up of elements—the building blocks y
 
 The Media element pulls videos and images from your [Media Hub](/content/media-overview) to display on slides. This is typically the foundation of most slides—start with media, then layer other elements on top.
 
-<Frame>
-  ![Media Hub In Lesson](/images/media-hub-in-lesson.png)
-</Frame>
-
 ### How to add media
 
 <Steps>
-  <Step title="Click the Media icon">
-    In the Lesson Builder toolbar, click the **Media** element (▶ icon).
+  <Step title="Click Media">
+    Above the slide, click **Media**.
   </Step>
   <Step title="Select from Media Hub">
     A panel opens showing your Media Hub. Browse or search for the video or image you want.
@@ -83,8 +79,8 @@ The Text element adds customizable text overlays to your slides. Use it for inst
 ### How to add text
 
 <Steps>
-  <Step title="Click the Text icon">
-    In the toolbar, click the **Text** element (TT icon).
+  <Step title="Click Text">
+    Above the slide, click **Text**.
   </Step>
   <Step title="Edit the default text">
     A text box appears with placeholder text. Click to edit and type your content.
@@ -137,8 +133,8 @@ The Button element creates tappable buttons that can navigate between slides, op
 ### How to add a button
 
 <Steps>
-  <Step title="Click the Button icon">
-    In the toolbar, click the **Button** element (grid icon).
+  <Step title="Click Button">
+    Above the slide, click **Button**.
   </Step>
   <Step title="Configure the action">
     Choose what happens when athletes tap the button.
@@ -152,9 +148,9 @@ The Button element creates tappable buttons that can navigate between slides, op
 
 | Action                    | What it does                             | When to use                                               |
 | ------------------------- | ---------------------------------------- | --------------------------------------------------------- |
-| **Take to next slide**    | Advances to the next slide in the lesson | Default navigation, ensuring athletes acknowledge content |
+| **Take user to next slide** | Advances to the next slide in the lesson | Default navigation, ensuring athletes acknowledge content |
 | **Add web link**          | Opens an external URL                    | Link to your website, YouTube, or external resources      |
-| **Add downloadable link** | Provides a file download                 | Share PDFs, worksheets, or other downloadable resources   |
+| **Add downloadable link** | Provides a file download. Click **Choose from Media Hub** to fill in a file's link instead of pasting it. | Share PDFs, worksheets, or other downloadable resources   |
 
 ### Button settings
 
@@ -173,7 +169,7 @@ The Button element creates tappable buttons that can navigate between slides, op
 - **Test links**: Always preview your lesson to make sure external links and downloads work
 
 <Note>
-  **Downloadable files**: The downloadable link option accepts any file type—PDFs, spreadsheets, documents, etc. This is how you share materials that can't be displayed directly in lessons.
+  **Downloadable files:** upload the file to [Media Hub](/content/media-overview) first, then choose **Add downloadable link** and **Choose from Media Hub**. Any file type works: PDFs, spreadsheets, documents. If you paste a link that won't open, a note under the field tells you. Only people who can open the lesson can open its files.
 </Note>
 
 ---
@@ -185,8 +181,8 @@ The Quiz element adds multiple choice questions to your lessons. Athletes tap to
 ### How to add a quiz
 
 <Steps>
-  <Step title="Click the Quiz icon">
-    In the toolbar, click the **Quiz** element (🤔 icon).
+  <Step title="Click Quiz">
+    Above the slide, click **Quiz**.
   </Step>
   <Step title="Write your question">
     Enter the question athletes will see.
@@ -242,8 +238,8 @@ The Form element adds free-text input fields where athletes can type their own r
 ### How to add a form
 
 <Steps>
-  <Step title="Click the Form icon">
-    In the toolbar, click the **Form** element (📋 icon).
+  <Step title="Click Form">
+    Above the slide, click **Form**.
   </Step>
   <Step title="Write your prompt">
     Enter the question or prompt athletes will respond to.
@@ -294,8 +290,8 @@ The Upload element lets athletes submit their own videos, images, or files. This
 ### How to add an upload prompt
 
 <Steps>
-  <Step title="Click the Upload icon">
-    In the toolbar, click the **Upload** element (📎 icon).
+  <Step title="Click Upload">
+    Above the slide, click **Upload**.
   </Step>
   <Step title="Configure the prompt">
     Athletes will see a prompt to upload their content.
@@ -310,6 +306,10 @@ The Upload element lets athletes submit their own videos, images, or files. This
 | Setting   | Options       |
 | --------- | ------------- |
 | **Theme** | Light or Dark |
+
+### What happens when an athlete uploads
+
+The upload counts as done once the file is saved to the athlete's lesson. They see their file in the upload box. If the file couldn't be added, the box says so and asks them to try again. If the connection drops before the save is confirmed, it says the upload is still processing. Saved uploads show in the program's [Stats](/content/programs-overview#see-who-viewed-each-item) under **Lesson responses**.
 
 ### What athletes can upload
 

@@ -1,210 +1,127 @@
 ---
 title: "Build Your First Automation"
-description: "Create and test a welcome email for subscription purchases"
+description: "Make, test and turn on a welcome email and tag for every new subscription, step by step."
 sidebarTitle: "Build Your First Automation"
 icon: "play"
-keywords: ["create automation", "first automation", "welcome email", "new member email", "automation tutorial", "set up automation"]
+keywords: ["create automation", "first automation", "welcome email", "new member email", "automation tutorial", "set up automation", "start from scratch"]
 ---
 
 <Info>
-**Where to find this**: Tools → Automations → Create Automation
+**Where to find this**: **Tools → Automations → Create**
 </Info>
 
-By the end of this guide, qualifying subscription purchases will trigger a welcome email with instructions to [book their first session](/scheduling/overview). You'll also [tag](/people/tags-filters) them as an "Active Member" so you can easily find them later.
+By the end of this guide, each new subscription sends the buyer a welcome email with a link to [book their first session](/scheduling/overview) and [tags](/people/tags-filters) them **Active Member** so you can find them later. You'll build it from scratch to see how the parts fit together.
 
-Build this from scratch to learn how the trigger, condition, and actions fit together.
+## What you're building
 
-## What You're Building
+| When | Only if | Steps |
+| --- | --- | --- |
+| **Purchase Made** | Is subscription | 1. **Send an Email** with your booking link |
+| | | 2. **Add a Tag to a User**: Active Member |
 
-| Trigger       | Condition         | Actions                                 |
-| ------------- | ----------------- | --------------------------------------- |
-| Purchase Made | Is subscription | 1. Send welcome email with booking link |
-|               |                   | 2. Add "Active Member" tag              |
-
----
-
-## Step-by-Step Instructions
+## Step by step
 
 <Steps>
-  <Step title="Open the Automation Builder">
-    Go to **Tools → Automations** and click **Create Automation**.
-
-    The builder is one long page with a section for each part of the automation—**Details**, **Triggers**, **Data Sources**, **Conditions**, **Actions**, **Logs**, and **Settings**—and a side menu that jumps between them. Nothing is saved until you click **Create** in the header. If a new automation opens with anything already filled in, replace or remove it as you follow the steps below.
+  <Step title="Start a new automation">
+    Go to **Tools → Automations** and click **Create** (or **Start from scratch** if you have none yet). The builder opens full screen as a column of cards: **When**, **Only if** and the steps. It's off and **Not saved yet**.
 
     <Frame>
-      ![The automation builder: side menu, Details, Triggers and Data Sources sections](/images/automation-builder-sections.png)
+      ![The automation builder with When, Only if and Step 1 cards](/images/automation-builder-2026-11.png)
     </Frame>
+
+    If a step is already there, you'll change it in step 5.
   </Step>
-  <Step title="Name It">
-    In **Details**, enter a label like **New Member Welcome**. This is the name you'll see in the Automations list and in Execution Logs, so make it specific.
+  <Step title="Name it">
+    Open the **Settings** tab and type an **Automation name**, such as **New Member Welcome**. This is the name in the Automations list and in Activity. Go back to **Workflow**.
   </Step>
-  <Step title="Choose Your Trigger">
-    In **Triggers**, choose **Purchase Made**.
+  <Step title="Choose the trigger">
+    Click the **When** card, then **Change**. Under **Payments & forms**, choose **Purchase Made** ("Someone buys any product") and click **Done**.
 
-    This trigger fires whenever someone buys any [product](/payments/product-overview)—memberships, credit packs, camps, or one-time sessions. The buyer becomes the **user** that every later section refers to.
-
-    <Frame>
-      ![CoachIQ automation trigger selection menu showing available triggers](/images/trigger-options.png)
-    </Frame>
+    The buyer becomes the **user from trigger** that the steps act on. On products that ask for an athlete at checkout, it's the athlete instead.
   </Step>
-  <Step title="Add a Condition">
-    We only want this automation to run for new members, not every purchase. Let's add a filter.
-
-    In **Conditions**, click **Add Condition** to create your first rule group, then choose **Is subscription** in the **Field** dropdown.
-
-    Now this automation will only fire when someone purchases a subscription product—not one-time buys like camps or drop-in sessions.
-
-    <Frame>
-      ![Adding the subscription condition](/images/condition-options.png)
-    </Frame>
-    <Tip>
-      Conditions are optional, but they help you target the right people. Rules sit inside **And**/**Or** groups, so you can add several and choose whether all of them or any one of them must be true. Skip **Data Sources** for now—this automation doesn't need extra information.
-    </Tip>
+  <Step title="Add a condition">
+    You only want this for subscriptions, not camps or drop-ins. Click the **Only if** card, then **Add Condition**, and choose **Is subscription** in the field list. Click **Done**.
   </Step>
-  <Step title="Add Your First Action — Send Email">
-    In **Actions**, click **Add Action** and select **Send an Email**.
+  <Step title="Add the email">
+    Click **Add a step** and choose **Send an Email** under **Messages**. If a **Step 1** card is already there, click it and change **Step type** to **Send an Email** instead. Fill in:
 
-    Fill in the fields:
-
-    | Field           | What to Enter                                    |
-    | --------------- | ------------------------------------------------ |
-    | **Target User** | User from trigger (the default)                  |
-    | **Subject**     | `Welcome to the team, {{field.user.firstName}}!` |
-    | **Message**     | See template below                               |
-
-    Here's a welcome email you can copy and paste. Replace the bracketed line with the booking link for your main training session:
+    | Field | What to enter |
+    | --- | --- |
+    | **Target User** | **User from trigger** (the default) |
+    | **Subject** | Welcome to the team, then type `@` and pick the first name field |
+    | **Message** | The text below |
 
     ```
-    Hey {{field.user.firstName}},
-    
-    You're officially part of the team! 🎉
-    
-    Here's how to get started: book your first session here: [paste your session's booking link]
-    If you have any questions, just reply to this email—I'm here to help.
-    
+    Hey [@ first name],
+
+    You're officially part of the team!
+
+    Book your first session here: [paste your session's booking link]
+
+    Any questions, just reply to this email.
+
     See you soon,
-    [Your Name]
+    [Your name]
     ```
 
-    <Note>
-      **Dynamic fields** like `{{field.user.firstName}}` automatically insert each member's actual name. Type `@` in the subject or message to insert one from a list instead of typing it. Your email stays personal without extra work.
-    </Note>
-    <Frame>
-      ![Configuring the send email action](/images/automation-actions.png)
-    </Frame>
+    Type `@` wherever you want a CoachIQ field such as the first name. It fills in for each person. Click **Done**.
   </Step>
-  <Step title="Add a Second Action — Add Tag">
-    Let's also tag new members so you can target them with future automations.
-
-    Click **Add Action** and select **Add a Tag to a User**.
-
-    | Field           | What to Enter                                |
-    | --------------- | -------------------------------------------- |
-    | **Target User** | User from trigger                            |
-    | **Tag**         | Select "Active Member" (or create a new tag) |
-
-    Now every new subscriber automatically gets tagged, making it easy to send announcements or check engagement later.
-
-    <Frame>
-      ![Adding a tag to the user](/images/add-tag-action.png)
-    </Frame>
+  <Step title="Add the tag">
+    Click **Add a step** and choose **Add a Tag to a User** under **Tags & profile**. Keep **User from trigger** and pick the **Active Member** tag (create it in [People](/people/tags-filters) first if you don't have it). Click **Done**.
   </Step>
-  <Step title="Create, Test, Then Enable">
-    Set **Enabled** off in **Settings**, then click **Create** in the header to save the automation without starting automatic runs.
-
-    Work through the [test checklist](#test-before-you-enable) below, then open **Settings**, switch **Enabled** on, and click **Update** to save.
+  <Step title="Save">
+    Click **Save**. The automation is saved but still off, so nothing runs yet.
+  </Step>
+  <Step title="Test it">
+    Follow the checklist in [Test before you turn it on](#test-before-you-turn-it-on).
+  </Step>
+  <Step title="Turn it on">
+    Switch **Off** to **On** in the top bar. CoachIQ shows **When: Purchase Made** and **Then:** your steps. Click **Turn on**.
 
     <Check>
-      **That's it!** Your automation is now live. The next person who purchases a subscription will automatically receive your welcome email and get tagged as an Active Member.
+      **That's it.** The next person who buys a subscription gets your welcome email and the Active Member tag.
     </Check>
   </Step>
 </Steps>
 
-<Note>
-  Some screenshots on this page show an earlier layout of the builder with a blank canvas and a **Select Trigger** button. The steps above describe the current builder; the concepts are the same.
-</Note>
+## Test before you turn it on
 
----
+Email, text, booking, credit and purchase steps do real things the moment they run, so check your work first.
 
-## Test Before You Enable
+1. **Use a test profile.** Pick a profile with an email you can read, not a real member. For **Purchase Made**, its latest purchase must be a subscription, or the condition won't pass.
+2. **Click Test run** in the top bar (it's available once the automation is saved), pick the test profile and click **Run Test Now**. The test really sends.
+3. **Open Activity.** Expand the run to see whether the condition passed and what each step did (**Delivered**, **Queued** and so on).
+4. **Check the inbox** of the test profile to see how the email reads.
+5. **Then turn it on.**
 
-Message, SMS, booking, credit, and purchase actions have real effects the moment they run, so check your work before switching an automation on:
+## Check it's working
 
-1. **Build with Enabled off.** Check **Settings**, switch it off, and save while you prepare the automation.
-2. **Use a test account.** Make sure the email will land somewhere you can read it—your own test profile, not a real member.
-3. **Click Test Run** in the header. For **Purchase Made**, select a test user whose most recent purchase matches the subscription condition. Review **What Will Happen**, then choose **Run Test Now**. A profile with no purchase history cannot test this trigger. Test Run really sends to the action's configured target.
-4. **Check Execution Logs** to see which conditions passed and what each action returned.
-5. **Then switch Enabled on** in **Settings** and click **Update** to save once you have verified the results.
+- **Activity** lists every run, who it was for and what each step did. See [Activity](/tools/automations/builder-reference#activity).
+- The tag shows on the client's profile in **People**.
+- A new account on its own doesn't start this automation. It needs a purchase.
 
-### A real email-action test
+## What you just learned
 
-The screenshots below show a separate **New User** welcome-email example in a test workspace. It uses a **Specific user** target owned by the tester, with no subscription condition, and remains disabled. This checks the email action; it does not verify the purchase trigger, subscription condition, or tag action in the membership workflow above.
+Every automation uses the same pattern:
 
-<Frame caption="A configured email action with a controlled recipient, subject, and welcome message.">
-  ![Configured CoachIQ Send an Email action in the current automation builder](/images/walkthroughs-oct01/automation-configured-email.jpg)
-</Frame>
+- **When**: the event that starts it (a purchase, a booking, a [form submission](/tools/forms/overview), a schedule)
+- **Only if**: who it applies to (only subscriptions, only first-time buyers)
+- **Steps**: what CoachIQ does (send [messages](/inbox/inbox-overview), add tags, manage credits)
+- **Data sources** (optional): extra details, such as a credit balance, for conditions and messages to use
 
-<Frame caption="The real test processed one user and reported send_email success. Check the recipient's mailbox separately to confirm arrival and formatting.">
-  ![Automation Test Results showing one user processed, one action executed, and send_email Success](/images/walkthroughs-oct01/automation-test-success.jpg)
-</Frame>
-
-For your production welcome flow, keep **User from trigger** as the intended recipient unless you deliberately need another audience. A fixed test recipient should not remain in a workflow that is meant to welcome every new member. Recheck all targets and save before enabling automatic runs.
-
----
-
-## Verify It's Working
-
-A few ways to confirm your automation is running:
-
-- **Check Execution Logs**: Open the automation and scroll to **Logs** for a record of every run, who it was for, and what each action did
-- **Make a test purchase**: Use a test account to subscribe and see if the email arrives
-- **Check the next qualifying subscription purchase**: Find its run in [Execution Logs](/tools/automations/builder-reference#execution-logs). Creating an account alone does not match this trigger
-
----
-
-## What You Just Learned
-
-You now understand the building blocks of every automation:
-
-- **Triggers** start automations when something happens (a purchase, booking, [form submission](/tools/forms/overview), or a schedule)
-- **Conditions** filter who it applies to (only subscriptions, only first-time buyers)
-- **Actions** are what CoachIQ does automatically (send [messages](/inbox/inbox-overview), add tags, manage credits)
-- **Data Sources** (optional) fetch extra information, like a credit balance, for conditions and messages to use
-
-Every automation in CoachIQ—no matter how complex—uses this same pattern.
-
----
-
-## What's Next?
+## What's next?
 
 <CardGroup cols={2}>
-  <Card title="Automation Playbook" icon="book" href="/tools/automations/automation-playbook">
-    Browse ready-to-use automations for trial conversions, member retention, credit reminders, and more.
+  <Card title="Automation templates" icon="layer-group" href="/tools/automations/automation-templates">
+    Thirteen ready-made automations to start from
   </Card>
-  <Card title="Scheduled Automations" icon="calendar" href="/tools/automations/scheduled-automations">
-    Learn how to run automations on a schedule—like weekly check-ins for inactive members or credit expiration alerts.
+  <Card title="Scheduled automations" icon="calendar" href="/tools/automations/scheduled-automations">
+    Weekly check-ins, credit reminders and other timed automations
   </Card>
-</CardGroup>
-
-## Related articles
-
-<CardGroup cols={2}>
-  <Card title="Builder Reference" icon="wrench" href="/tools/automations/builder-reference">
-    What each section of the builder does, including Test Run and Execution Logs
+  <Card title="Builder reference" icon="wrench" href="/tools/automations/builder-reference">
+    Every part of the builder, Test run and Activity
   </Card>
-  <Card title="Triggers & Actions Reference" icon="list" href="/tools/automations/triggers-actions-reference">
-    Every trigger, condition, data source, action, and dynamic field
-  </Card>
-  <Card title="Forms Overview" icon="file-lines" href="/tools/forms/overview">
-    Build forms that trigger automations on submission
-  </Card>
-  <Card title="Creating Your First Scheduler" icon="calendar" href="/scheduling/creating-your-first-scheduler">
-    Set up the sessions your automations will reference
-  </Card>
-  <Card title="Inbox Overview" icon="inbox" href="/inbox/inbox-overview">
-    Where automated emails and in-app messages are delivered
-  </Card>
-  <Card title="Tags and Filters" icon="users" href="/people/tags-filters">
-    Organize members with tags that automations can add or remove
+  <Card title="Triggers and actions reference" icon="list" href="/tools/automations/triggers-actions-reference">
+    Every trigger, condition, step and field
   </Card>
 </CardGroup>

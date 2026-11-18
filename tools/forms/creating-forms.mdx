@@ -1,329 +1,220 @@
 ---
-title: "Creating & Customizing Forms"
-description: "Build professional intake forms, registrations, and waivers using templates or from scratch — complete field type reference included."
-sidebarTitle: "Creating Forms"
+title: "Build a Form"
+description: "Create a form from scratch or a template, add and edit questions, set the design and what happens after someone submits, then save."
+sidebarTitle: "Build a Form"
 icon: "hammer"
-keywords: ["create form", "build form", "form builder", "form fields", "custom form", "form templates", "add fields", "edit form", "archive form", "restore form", "field label", "phone field"]
+keywords: ["create form", "build form", "form builder", "form fields", "question types", "form templates", "add question", "edit form", "saved questions", "after submit", "multiple responses", "archive form", "duplicate form", "dark form", "submit button text"]
 ---
 
-This guide covers everything you need to build forms in CoachIQ — from quick template setups to fully custom builds.
+This page walks through the form builder from top to bottom: the Forms list, creating a form, adding questions, the form's design and settings, and saving. Payments, bookings and who has to log in are on [Guests, payments and bookings](/tools/forms/payments-and-bookings). Sharing is on [Share a form](/tools/forms/sharing-forms).
 
 <Info>
-  **Where to find Forms**: Tools → Forms → **\+ Create Form**
+  **Where to find this**: **Tools → Forms**
 </Info>
 
-## Start with a template or blank form
+## The Forms list
 
-When you create a new form, you choose your starting point:
-
-<Frame>
-  ![Form Templates](/images/form-templates.png)
-</Frame>
-
-| Option                     | Best for                                                                      |
-| -------------------------- | ----------------------------------------------------------------------------- |
-| **Website Form**           | Lead capture on your site — simple contact info + "how did you hear about us" |
-| **Player Onboarding Form** | New athlete intake — contact info, goals, experience, parent details          |
-| **Camp Form**              | Event registration — attendee info, emergency contacts, t-shirt sizes         |
-| **Onboarding Waiver**      | Liability agreements — terms display + agreement checkbox                     |
-| **Athlete Testimony**      | Collecting reviews — feedback questions + permission to share                 |
-| **Blank Form**             | Custom builds — start with nothing and add exactly what you need              |
-
-<Tip>
-  **Start with a template, then customize.** It's faster than building from scratch, and you can add, remove, or edit any field.
-</Tip>
-
-## The form builder interface
-
-Once inside the builder, you'll see three areas:
-
-| Area             | Purpose                                      |
-| ---------------- | -------------------------------------------- |
-| **Left sidebar** | Your added fields in order — drag to reorder |
-| **Center panel** | Field picker with 5 categories               |
-| **Right panel**  | Live preview of your form                    |
+**Tools → Forms** lists your forms with their number of **Questions**, **Responses** and the **Date created**.
 
 <Frame>
-  ![Form Builder Example](/images/form-builder-example.png)
+  ![The Forms list with search, the Active filter, the Recent sort and three forms](/images/forms-list-2026-11.png)
 </Frame>
 
-**Top bar options:**
+- **Search form names** looks at form names only. When nothing matches, **Clear search** brings the list back.
+- The **Active** menu switches to **Archived** forms.
+- The **Recent** menu changes the sort order.
+- Click a form to open it in the builder. The **…** menu on each row has **Edit**, **Responses**, **Share**, **Copy link**, **Duplicate** and **Archive**.
 
-- **Settings** — Button colors, multiple response toggle
-- **Connections** — Add products, schedulers, or require login
-- **Responses** — View submissions (after publishing)
-- **Share** — Get your form link
-- **Update Form** — Save and publish changes
-
-If you keep editing while a save is still finishing (for example, turning on **Last** or **Phone** right after clicking **Update Form**), your changes stay on screen and the builder shows that there are unsaved changes. Click **Update Form** again to save them. Long form names wrap onto more lines in the left panel instead of being cut off.
-
-## Field types reference
-
-Fields are organized into 5 categories. Click a category icon in the center panel to see available fields.
-
-### Contact Info fields
-
-Pre-built fields designed for athlete and parent data. When you require login/signup (in Connections), these fields sync to the athlete's profile in [People](/people/overview).
-
-| Field              | What it captures           |
-| ------------------ | -------------------------- |
-| Athlete First Name | Athlete's first name       |
-| Athlete Last Name  | Athlete's last name        |
-| Athlete Email      | Athlete's email address    |
-| Athlete Phone      | Athlete's phone number     |
-| Athlete Age        | Athlete's age              |
-| Parent First Name  | Parent/guardian first name |
-| Parent Last Name   | Parent/guardian last name  |
-| Custom Field       | Maps to one of your org's People custom fields (you pick which) |
-
-<Note>
-  **Profile sync only works when Login/Signup is required.** Without it, Contact Info fields capture data but don't automatically connect to People profiles.
-</Note>
-
-#### Custom Field — map to your People custom fields
-
-The **Custom Field** option (at the bottom of the **Contact Info** category) lets a form write to your organization's **People custom fields** — the same custom fields on an athlete's profile in [People](/people/overview), like "Started Training" or "Child Name".
-
-1. In the form builder, open the **Contact Info** category and select **Custom Field**.
-2. In the **Custom Field** dropdown, choose which custom field to map to (e.g., "Child Name").
-3. Toggle **Required?** if the answer is mandatory.
-
-With **Login/Signup required**, the athlete's answer writes straight to that custom field on their People profile — so an onboarding form can fully populate a new athlete's custom fields, the same way the waiver field connects to the Waivers tab.
-
-### General fields
-
-Content elements that add structure and context to your form — not questions.
-
-| Field                | What it does                                      |
-| -------------------- | ------------------------------------------------- |
-| Media                | Embed an image or video                           |
-| Heading              | Add a section title (display only; it is not the label of the field below it) |
-| Plain Text           | Add instructions or descriptions                  |
-| Upload File          | Let respondents attach files (PDFs, images, etc.) |
-| Description of Terms | Display legal text (for waivers)                  |
-
-### Choices fields
-
-Pre-built selection questions.
-
-| Field    | What it does                      |
-| -------- | --------------------------------- |
-| Checkbox | Multiple selections allowed       |
-| Yes / No | Binary choice (two radio buttons) |
-
-### Custom fields
-
-Build your own questions with these input types:
-
-| Field         | Best for                       | Example                                               |
-| ------------- | ------------------------------ | ----------------------------------------------------- |
-| Text          | Short answers                  | "What position do you play?"                          |
-| Phone         | Phone number input; accepts numbers typed with dashes or spaces, and validates them | Secondary contact number |
-| Text Area     | Long answers                   | "What are your training goals?"                       |
-| Checkbox      | Multiple selections            | "Which days work for you?" (Mon, Tue, Wed...)         |
-| Select Box    | Single selection (dropdown)    | "Experience level" (Beginner, Intermediate, Advanced) |
-| Radio Buttons | Single selection (all visible) | "I am the..." (Parent, Athlete)                       |
-| Country       | Country selection              | Pre-populated country dropdown                        |
-
-### Templates category
-
-This shows the same template options from form creation — useful if you started blank and want to reference a template's structure.
-
----
-
-## Build a form step-by-step
+## Create a form
 
 <Steps>
-  <Step title="Create a new form">
-    Go to **Tools → Forms** and click **\+ Create Form**. Choose a template or start blank. Give your form a name.
+  <Step title="Click Create form">
+    Go to **Tools → Forms** and click **Create form** in the top right.
   </Step>
-  <Step title="Add fields">
-    Click a category in the center panel, then click a field to add it. The field appears in your left sidebar and right preview.
+  <Step title="Pick a starting point">
+    Choose **Start from scratch** or one of the templates. Each template shows how many questions it has.
 
-    For custom fields, you'll see a modal to configure:
+    <Frame>
+      ![The Create form window with Start from scratch and six templates](/images/form-create-2026-11.png)
+    </Frame>
 
-    - Field type (Text, Select Box, etc.)
-    - Label (the question text)
-    - Default value (optional)
-
-    If you create a new custom field and only fill in its title, that title becomes the question on the form. If an older question shows as "Text", type the question title on the form and click **Update Form** to fix it.
-
-    For checkbox, choice, dropdown and terms questions, give every option a label. An option without one still saves the answer, but Responses can only show it as "Option 1", "Option 2" (or "Waiver 1" for a waiver). A question needs at least one option, so removing the last one shows "At least one option is required."
-
-    <Warning>
-      **The Label is what appears in responses.** The field's **Label** is the column title in Responses and exports and the name automations see. A **Heading** placed above a field is display-only and is not connected to it. If you put the question in a Heading and example text such as "EX: John" in the Label, your responses show "EX: John" as the question. Put the question in the Label and use the default value for example text.
-    </Warning>
+    | Template | Best for |
+    | --- | --- |
+    | **Athlete Testimony** | Collecting reviews and permission to share them |
+    | **Player Onboarding Form** | New athlete intake: contact details, goals, experience, parent details |
+    | **Website Form** | A short lead form for your website |
+    | **Camp Form** | Camp or clinic registration |
+    | **Onboarding Wavier** | A waiver to accept before the first session |
+    | **Parent & Player Feedback Form** | Feedback after a program or season |
   </Step>
-  <Step title="Reorder fields">
-    Drag fields in the left sidebar to change their order. The preview updates automatically.
+  <Step title="Fill in the template's placeholders">
+    Some template questions contain placeholder text in quotes. The builder marks each one **Fill in** in the outline and under the question's **Label**, and Share lists them until you replace the words and save.
   </Step>
-  <Step title="Set required fields">
-    Click a field to select it, then mark it as required. Required fields show an asterisk (\*) and must be completed to submit. For a waiver question, **Required** is in the question's settings menu, like other questions, and shows clearly whether it's on or off. The asterisk on the waiver prompt hides while you edit the prompt and comes back afterwards.
-
-    If every question on a standalone form is optional, someone who submits it completely blank sees "Answer at least one question before submitting." and nothing is saved. Answering any one question is enough. Forms connected to a product or session still let buyers skip optional questions and continue to checkout or booking. To make sure a question is always answered, mark it required.
-  </Step>
-  <Step title="Add headings and instructions">
-    Use **Heading** fields to create sections (e.g., "Athlete Information", "Parent/Guardian Details"). Use **Plain Text** to add instructions or context. Neither is a question: headings and plain text never appear in responses, and they do not label the field beneath them.
-  </Step>
-  <Step title="Preview your form">
-    Click **Preview** to see what respondents will see. With Login/Signup on, Preview shows the real sign-in step: **Email** first, then **First**, **Last** and **Phone** as a new person would see them, using the fields you turned on. If the form allows submission without login, all of those fields show together on one step, like the live form. Preview never creates a person or sends anything.
-  </Step>
-  <Step title="Save and publish">
-    Click **Update Form** to save. Your form is now live and ready to share.
+  <Step title="Name it and save">
+    Type the form's name at the top of the page and click **Create form**. A form can't be saved with a blank name. After the first save the button reads **Save**.
   </Step>
 </Steps>
 
-## Customize form design
+Nothing is saved until you click **Create form** or **Save**. If you close a new form made from a template, **Leave** discards the draft and **Keep editing** returns you to it.
 
-Match your form to your brand using the **Settings** menu:
+## The builder
 
-| Setting           | What it controls                      |
-| ----------------- | ------------------------------------- |
-| Button Color      | Background color of the submit button |
-| Button Text Color | Text color on the submit button       |
-
-If you leave the button colors unset, the form uses your app's theme color. The builder and Preview show that same color, so what you see matches what athletes see.
-
-<Tip>
-  **Use your brand colors.** If your CoachIQ website uses a specific color scheme, match your form buttons for a consistent experience.
-</Tip>
+The builder has three columns, with the form drawn in the middle at phone width, the way families see it.
 
 <Frame>
-  ![Forms Example](/images/forms-example.png)
+  ![The form builder: outline on the left, the form page in the middle, the settings panel on the right](/images/form-builder-2026-11.png)
 </Frame>
 
-## Form settings
+| Area | What it's for |
+| --- | --- |
+| **Top bar** | Close (**X**), the save status, **Undo** and **Redo**, **Responses**, **Share**, **Preview** and **Save** |
+| **Outline** (left) | Every question in order. Drag to reorder, click to select, **Add question** to add more |
+| **Page** (middle) | The form as families see it. Click any question on it to edit it |
+| **Panel** (right) | The selected question's settings, or **Form settings** with the **Design**, **Settings** and **Connections** tabs |
 
-Access these in the **Settings** dropdown:
+The status beside **Undo** tells you where you are: **Not saved yet** for a new form, **Unsaved changes** after an edit, and **All changes saved** once it's saved. If you try to leave with unsaved changes, the builder asks first.
 
-### Multiple responses
+The outline counts questions the same way as the Forms list. Headings and text blocks are counted separately, for example **10 questions · 1 text block**.
 
-- **ON** — Same person can submit the form multiple times
-- **OFF** — One submission per person (requires login). When the person submits again, their response is updated: Responses keeps a single row with their latest answers, even after you add, rename or remove questions. If you delete their response, their next submission starts a new row. A parent who resubmits a form for a child also keeps a single row.
+When the form takes a payment or books a session, it gets a second page. The pages show as tabs above the form (**1 · Questions**, **2 · Products**) and as groups in the outline. See [Guests, payments and bookings](/tools/forms/payments-and-bookings).
 
-Use cases:
+On a tablet or phone, the outline and the panel open as sheets over the page.
 
-- **ON**: Feedback forms, session check-ins
-- **OFF**: Registration forms, waivers (one per athlete)
+## Add questions
 
-## Duplicate a form
-
-1. Open **Tools → Forms** and find the original form.
-2. Hover over its row to reveal the actions on the right. Choose **Duplicate form**, the overlapping-squares icon.
-3. Open the copy, update its name for the new camp or season, and review its questions and connections before sharing.
+Click **Add question** at the bottom of the outline, or the **+** between two questions, to open the question menu. Type in **Search blocks** to find one quickly.
 
 <Frame>
-
-![Form row with the duplicate icon followed by public-link, edit, and archive actions](/images/form-duplicate-action-2026-09.png)
-
+  ![The Add question menu with Contact info questions, Create new and Manage saved questions](/images/form-add-question-2026-11.png)
 </Frame>
 
-Duplication copies the current questions, choices, and settings. The copy starts with **zero responses**; submissions stay with the original form. Review the copied questions and connections before sharing it for a new season or camp.
+| Group | Questions |
+| --- | --- |
+| **Contact info** | Athlete first name, Athlete last name, Athlete email, Athlete phone, Athlete age, Parent first name, Parent last name, Parent email, Parent phone, Zip code, Address, Country, Instagram, Twitter, and **Custom field** (fills one of your clients' custom fields) |
+| **General** | Media, Heading, Text block, Upload file, Waiver, Consent |
+| **Choices** | Checkboxes, Yes / No |
+| **Saved questions** | Your saved question sets, such as the questions from each template, with their question counts |
 
-Editing questions does not erase historical answers. Removed questions and choices remain readable in past submissions, while questions added later are blank on those earlier submissions. See [Managing response history](/tools/forms/responses-and-automations#manage-response-history).
+**Create new** at the bottom makes your own question: give it a **Title**, pick its **Type** (for example **Short answer**, **Checkboxes** or **Single choice**) and click **Create New Field**. **Manage saved questions** is where you delete a saved question. It asks before deleting. The menu itself only adds questions.
 
-## Archiving and restoring a form
+A question type has the same name everywhere: in this menu, in the outline and at the top of the panel.
 
-When a form has run its course (last season's registration, a closed camp), archive it instead of deleting it. Archiving keeps every past submission and takes the form out of circulation.
+**Heading** and **Text block** are not questions. They never appear in responses and they don't label the question below them.
 
-<Steps>
-  <Step title="Archive it">
-    Go to **Tools → Forms**, hover over the form's row, and click the **archive** icon on the right (next to the share and edit icons).
-  </Step>
-  <Step title="Find it later">
-    Switch the **Show** filter at the top of the list from **Active** to **Archived**. Archived forms can be opened, viewed, and edited from there.
-  </Step>
-  <Step title="Restore it">
-    Open the archived form and restore it. It moves back to the **Active** list and its links and embeds work again.
-  </Step>
-</Steps>
+Forms don't have a date, number or signature question. For a signature, use a **Waiver** question (see [Waivers](/tools/waivers/waivers#add-a-waiver-to-a-form)).
 
-What archiving does:
+## Edit a question
 
-- Stops the form from accepting submissions on any live page or link, so an old form cannot keep quietly collecting responses
-- Keeps the form, its settings, and all of its responses
-- Is reversible at any time
+Click a question in the outline or on the page. The panel shows its settings.
 
-Full details, including what happens to shared links, are in [Sharing forms → Archiving a form](/tools/forms/sharing-forms#archiving-a-form). Deleting a form is permanent and removes its responses; export first if you must delete (see [Responses & Automations](/tools/forms/responses-and-automations#exporting-responses)).
+| Setting | What it does |
+| --- | --- |
+| **Label** | The question families read. It's also the column title in Responses and exports and the name automations see |
+| **Required** | Families must answer before they can submit. Required questions show an asterisk (\*) |
+| **Options** | For choice questions: each answer, in order. Drag to reorder, **×** to remove, **Add option** to add one |
+| **Save to profile field** | Copies the answer into a field on the client's profile. **Not saved** keeps it on the response only |
 
-## How connections add pages
+The **…** menu on a question in the outline has **Duplicate**, **Move to page** and **Delete**.
 
-When you add Products, Schedulers, or Login/Signup via the **Connections** menu, each becomes a separate page in the form flow:
+<Warning>
+  **Put the question in the Label.** A question without a label shows its type as a grey stand-in on the page, and when you save, the builder warns you, for example: Question 2 has no label; visitors will see "Text". Give every choice a label too, or Responses can only show it as "Option 1", "Option 2".
+</Warning>
 
-```
-Page 1: Form fields (your questions)
-     ↓
-Page 2: Login/Signup (if enabled)
-     ↓
-Page 3: Product payment (if added)
-     ↓
-Page 4: Scheduler booking (if added)
-     ↓
-Complete
-```
+A few rules the builder checks for you:
 
-<Note>
-  This is the only way to create multi-page forms. There's no manual page break option — the pages come from connections you add.
-</Note>
+- A choice question needs at least one option.
+- A **Waiver** question needs a waiver picked before the form can be saved. With more than one waiver on a required question, families must tick every one. See [Waivers](/tools/waivers/waivers#add-a-waiver-to-a-form).
+- Before you delete a question, the builder shows any automations that use it, each with a link to open and check it. If a team's registration rule uses the question, it says so. Past responses keep their answers either way.
+- If every question on a form without a payment or booking is optional, someone who submits it blank sees "Answer at least one question before submitting." The message clears as soon as they answer one.
 
-<Tip>
-  With Login/Signup enabled, anyone who enters an email that already has an account is asked to sign in mid-form. That is expected. See [What Returning Visitors See](/tools/forms/returning-visitor-sign-in) for exactly what they see and what to tell them.
-</Tip>
+## Design
 
-<Note>
-  The phone field on the Login/Signup page defaults to **+1** with a country selector, so a US number typed without a country code is saved correctly. Numbers typed with dashes are accepted.
-</Note>
+Click **Form settings** (with the back arrow) at the top of the panel, then **Design**.
 
-## Form building tips
+| Setting | What it controls |
+| --- | --- |
+| **Theme** | **Light** or **Dark** background for the form |
+| **Button color** | The submit button's background |
+| **Button text color** | The submit button's text |
+
+Forms that take a payment or book a session use your organization's app theme instead, so the checkout pages match. The **Design** tab says so when that applies.
+
+## Settings
+
+**Form settings → Settings** controls responses and what happens after someone submits.
+
+<Frame>
+  ![Form settings: Multiple responses, Submit button text, After submit choices and When someone submits](/images/form-settings-2026-11.png)
+</Frame>
+
+**Responses**
+
+- **Multiple responses**: on, the same person can submit more than once (good for check-ins and feedback). Off, each person keeps one response: if they submit again, their response is updated with their latest answers, even after you add, rename or remove questions.
+- **Submit button text**: the words on the button, for example **Register**.
+
+**After submit**
+
+| Choice | What happens |
+| --- | --- |
+| **Thank you page** | A confirmation on the same page |
+| **Send them to your app** | Opens your app, signed in |
+| **Send them to a link** | Opens a page you choose. The link box appears only for this choice |
+
+**When someone submits** shows everything the form sets off, in one place:
+
+- **Email to you**: whether you get an email for each submission. **Change** takes you to **Settings → Communication → Notifications** (see [Email for new submissions](/tools/forms/responses-and-automations#email-for-new-submissions)).
+- **Client profiles**: which answers are saved to a profile field.
+- **Automations**: which automations use this form. **Open** opens Automations in a new tab, so your unsaved changes stay here.
+
+## Preview
+
+Click **Preview** for a full-screen view of the form. Switch between **Phone** and **Desktop**, then **Exit preview**. Preview shows the real sign-in step, never creates a person and never sends anything. Choices, checkboxes and waivers can be ticked with the keyboard.
+
+## Duplicate, archive and delete
+
+- **Duplicate** (row menu) copies the questions, choices and settings. The copy starts with no responses. Rename it and check its connections before you share it.
+- **Archive** (row menu) takes a form out of use. Its links stop accepting submissions, and the form and all its responses are kept. Find it again with the **Archived** filter and restore it from there. Restoring is never blocked.
+- A form can't be archived while a product that's on sale needs it at checkout. The message names the product. Remove the form from that product first, or archive the product.
+- A form that has responses, or that a product requires at checkout, can't be deleted. Archive it instead.
+
+Editing questions never erases past answers. Removed questions and choices stay readable on earlier responses, and questions you add later are blank on them. See [Responses](/tools/forms/responses-and-automations#manage-response-history).
+
+## Tips
 
 <AccordionGroup>
   <Accordion title="Keep forms short">
-    Every additional field reduces completion rates. Ask only what you need. You can always collect more info later.
+    Every question you add lowers the number of people who finish. Ask what you need now; you can collect more later.
   </Accordion>
   <Accordion title="Lead with easy questions">
-    Start with simple fields (name, email) before asking longer questions (goals, experience). This builds momentum.
+    Names and email first, longer questions like goals and experience after.
   </Accordion>
-  <Accordion title="Use headings to organize">
-    For longer forms, break content into clear sections: "Athlete Info", "Parent Info", "Training Preferences". Makes scanning easier.
+  <Accordion title="Use headings to group questions">
+    On longer forms, add a **Heading** for each part: "Athlete", "Parent or guardian", "Training preferences".
   </Accordion>
-  <Accordion title="Preview before sharing">
-    Always preview your form. Check that required fields are marked, questions make sense, and the flow feels natural.
-  </Accordion>
-  <Accordion title="Match your website branding">
-    Consistent colors build trust. If athletes click a form link from your site, it should feel like the same experience.
+  <Accordion title="Preview on Phone before sharing">
+    Most families open forms on a phone. Check every page in **Preview** and fix anything **Share** flags before you send the link.
   </Accordion>
 </AccordionGroup>
 
-## What you can't do (yet)
+## What forms can't do yet
 
-- **Conditional logic** — Can't show/hide fields based on answers
-- **Manual page breaks** — Multi-page only comes from connections
-- **Save partial responses** — Respondents must complete in one session
-
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="Collect Payments & Bookings" icon="credit-card" href="/tools/forms/payments-and-bookings">
-    Add products and schedulers to your forms
-  </Card>
-  <Card title="Share Your Forms" icon="share" href="/tools/forms/sharing-forms">
-    Get your link, embed on your website, and configure completion actions
-  </Card>
-</CardGroup>
+- Show or hide questions based on an earlier answer. Use an automation's **Only if** conditions on the answers instead (see [Responses and automations](/tools/forms/responses-and-automations#automations-triggered-by-forms)).
+- Save a half-finished response for later.
+- Add page breaks. The only extra pages come from taking a payment or booking a session.
 
 ## Related articles
 
 <CardGroup cols={2}>
-  <Card title="Product Overview" icon="credit-card" href="/payments/product-overview">
-    Understand the products you can connect to forms for payment collection
+  <Card title="Guests, payments and bookings" icon="credit-card" href="/tools/forms/payments-and-bookings">
+    Who has to log in, taking a payment and booking a session
   </Card>
-  <Card title="Creating Your First Scheduler" icon="calendar" href="/scheduling/creating-your-first-scheduler">
-    Build a scheduler to embed in your form flow for session bookings
+  <Card title="Share a form" icon="share" href="/tools/forms/sharing-forms">
+    The ready check, the link, sending it and embedding it
   </Card>
-  <Card title="What Are Automations?" icon="bolt" href="/tools/automations/what-are-automations">
-    Trigger automated actions when forms are submitted
+  <Card title="Responses and automations" icon="bolt" href="/tools/forms/responses-and-automations">
+    Read, search and export answers, and act on them
   </Card>
-  <Card title="People Overview" icon="users" href="/people/overview">
-    See how form submissions connect to athlete profiles when login is required
+  <Card title="Waivers" icon="file-contract" href="/tools/waivers/waivers">
+    Add a waiver question and track who has signed
   </Card>
 </CardGroup>
