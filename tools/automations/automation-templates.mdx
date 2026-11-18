@@ -7,24 +7,26 @@ keywords: ["automation templates", "use template", "template library", "conversi
 ---
 
 <Info>
-  **Where to find this**: **Tools → Automations → Templates**
+  **Where to find this**: **Tools → Automations → Start from a template**
 </Info>
 
 ## Why start from a template
 
-A template is a complete automation: trigger, conditions, and actions already wired, with a message written for the situation. Pick one, swap in your product and your wording, turn it on. It is the fastest way to get value from automations without learning the builder first.
+A template is a complete automation: trigger, conditions and steps already set up, with a message written for the situation. Pick one, swap in your product and your wording, turn it on. It's the quickest way to start without learning the builder first.
 
 <Frame>
-  ![The Automation Templates modal with category tabs and Use Template buttons](/images/automation-templates-modal.png)
+  ![The Automations page with three suggested templates and Browse all 13 templates](/images/automations-start-2026-11.png)
 </Frame>
-
-<Note>
-  Names and descriptions were checked against the live app on 2026-09-02; the library grows over time, so you may see more.
-</Note>
 
 ## The library
 
-Click **Templates** on the Automations page. The **Automation Templates** modal ("Choose from pre-built templates to quickly set up common automations") groups templates into three categories, with **All Templates** showing everything. There are 13 today.
+<Frame>
+  ![The Start from a template window with All, Conversion, Retention and Operations tabs and template cards](/images/automation-templates-2026-11.png)
+</Frame>
+
+Click **Start from a template** on the Automations page (or **Browse all 13 templates** if you have no automations yet). The window reads "Every template opens as a new, inactive automation. Nothing sends until you turn it on." Tabs filter by **All**, **Conversion**, **Retention** and **Operations**, **Search templates** finds one by name, and each template says what starts it, for example **Starts on Purchase Made**.
+
+Before you have any automations, the Automations page also suggests three: **Welcome new members** (New Member Welcome), **Turn trials into members** (Trial to Paid Member Journey) and **Keep members training** (Weekly Inactive Member Check).
 
 ### Conversion
 
@@ -33,7 +35,7 @@ Turn leads and trials into paying members.
 | Template | What it does |
 |---|---|
 | **Trial to Paid Member Journey** | Welcome trial users and guide them through their first booking |
-| **Website Lead to Trial Booking** | Convert website form submissions into trial bookings |
+| **Website Lead → Trial Booking** | Convert website form submissions into trial bookings |
 | **New Member Welcome** | Welcome new subscribers with onboarding information |
 
 ### Retention
@@ -64,24 +66,24 @@ Run the week without remembering to send things.
 
 <Steps>
   <Step title="Open the library">
-    Go to **Tools → Automations** and click **Templates**. Use the category tabs to narrow the list.
+    Go to **Tools → Automations** and click **Start from a template**. Use the tabs to narrow the list.
   </Step>
-  <Step title="Click Use Template">
-    The template opens in the automation builder as a new, **inactive** automation. Nothing runs yet.
+  <Step title="Click Use template">
+    The template opens in the builder, ready to edit. Nothing is saved until you click **Save**, and it stays off until you turn it on.
   </Step>
   <Step title="Point it at your products and people">
-    Every field that needs one of your records (a tag, session, product, form or coach) starts empty, so pick your own in the **Triggers**, **Conditions** and **Actions** sections. A conversion template may reference "a trial product" or "a membership"; select yours. The automation can't be saved until each of these is filled in, so a leftover example name never slips through. See [Builder reference](/tools/automations/builder-reference) for what each section does.
+    Every field that needs one of your records (a tag, session, product, form or coach) starts empty, so pick your own on the **When**, **Only if** and step cards. A conversion template may reference "a trial product" or "a membership"; select yours. The automation can't be saved until each of these is filled in, so a leftover example name never slips through. See [Builder reference](/tools/automations/builder-reference) for what each card does.
 
     Pick an active tag. If a tag step uses a tag that was removed from People, saving stops with a message naming the step, for example "3-Month Member: that tag was removed. Choose an active tag." Choose another tag, or add the tag again from People.
   </Step>
   <Step title="Rewrite the message in your voice">
-    Open each action under **Actions**. Keep the dynamic fields (the `@` CoachIQ fields such as the athlete's first name) and change the rest. For SMS, watch the counter: past 160 characters the text still sends, but as two billed segments.
+    Open each step card. Keep the dynamic fields (the `@` CoachIQ fields such as the athlete's first name) and change the rest. For SMS, watch the counter: past 160 characters the text still sends, but as two billed segments.
   </Step>
-  <Step title="Test Run">
-    Click **Test Run** to send the automation to yourself and confirm the message reads well and the fields fill in. Test Run skips any **Wait/Delay** step and runs the later actions straight away.
+  <Step title="Save and test">
+    Click **Save**, then **Test run** to send it to yourself and check the message reads well and the fields fill in. Test run skips any **Wait/Delay** step and runs the later steps straight away.
   </Step>
   <Step title="Turn it on">
-    In **Settings**, switch **Enabled** on and click **Update**. The automation now appears under **Active** on the Automations page.
+    Switch **Off** to **On** in the top bar and click **Turn on** to confirm. The automation shows as **Active** in the list.
   </Step>
 </Steps>
 
@@ -93,22 +95,24 @@ Run the week without remembering to send things.
 
 When you open templates from a team's automation area, the new rule keeps its team context, including **Athlete joins team** for a team-join automation. Use the back control to return to that team. Before enabling a template, confirm the selected team, trigger, recipient, and actions; a template still needs your review.
 
-After a qualifying event, check [Execution Logs](/tools/automations/builder-reference#execution-logs) to see what actually ran.
+After a qualifying event, check [Activity](/tools/automations/builder-reference#activity) to see what actually ran.
+
+Pipeline templates (such as **Trial membership**) also come with automations. Ones that text parents start off and carry a **Texts parents** label; turn them on once the starter message reads right. This applies to pipelines created from a template from now on.
 
 ## Common questions
 
 <AccordionGroup>
   <Accordion title="Can I edit a template after I've turned it on?">
-    Yes. It is a normal automation once created. Open it from the Automations list, change anything, and click **Update**.
+    Yes. It's a normal automation once saved. Open it from the Automations list, change anything, and click **Save**.
   </Accordion>
   <Accordion title="Will using a template again create a duplicate?">
-    Yes, each **Use Template** creates a new automation. Archive the extras from the Automations list, or disable them from the automation's **Settings** section.
+    Yes, each saved **Use template** is a new automation. Archive the extras from the Automations list.
   </Accordion>
   <Accordion title="Weekly Schedule Release Message: who gets it?">
     It sends one announcement to each member its scheduled check finds, as its description says. If you switch the announcement to specific tags or roles, pick at least one before saving.
   </Accordion>
-  <Accordion title="Do templates send anything when I click Use Template?">
-    No. Every template starts inactive. Nothing goes out until you enable it, and scheduled templates only run at their next scheduled time after that.
+  <Accordion title="Do templates send anything when I click Use template?">
+    No. Nothing is saved until you click **Save**, and every template starts off. Nothing goes out until you turn it on, and scheduled templates run at their next scheduled time after that.
   </Accordion>
 </AccordionGroup>
 

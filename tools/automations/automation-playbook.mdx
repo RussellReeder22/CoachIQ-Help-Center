@@ -16,7 +16,7 @@ These are the automations CoachIQ coaches use most. Find your goal, copy the set
   Several of these use **Scheduled Automations**, which run on a schedule (daily, weekly, monthly, or once on a specific date) instead of reacting to an event. If you're new to those, check out [Scheduled Automations](/tools/automations/scheduled-automations) for a deeper explanation. Every trigger, condition, and action named below is listed in the [Triggers & Actions Reference](/tools/automations/triggers-actions-reference).
 </Note>
 
-**Before you enable any recipe**: build it with **Enabled** off, point it at a test account or a "Test" tag you've only given yourself, click **Test Run**, check **Execution Logs**, and then switch it on. Message and SMS actions really send, even from a Test Run. Each recipe below also lists its **manual prerequisites**—the tags, products, forms, or sessions you need to have created first.
+**Before you turn on any recipe**: new automations start off. Point it at a test account or a "Test" tag you've only given yourself, save, click **Test run**, check **Activity**, and then switch it on. Message and SMS steps really send, even from a Test run. Each recipe below also lists its **manual prerequisites**—the tags, products, forms, or sessions you need to have created first.
 
 **Dynamic fields**: the templates use tokens like `{{field.user.firstName}}`. Type `@` in a message field to insert one from a list, or copy them exactly as shown, braces included.
 
@@ -123,10 +123,6 @@ Turn website visitors into trial bookers, and trial bookers into paying members.
   </Accordion>
 </AccordionGroup>
 
-<Frame>
-  ![CoachIQ automation templates for converting leads and trials](/images/conversion-templates.png)
-</Frame>
-
 ---
 
 ## Welcoming New Members
@@ -173,7 +169,7 @@ Make every new member feel like they made the right decision.
 </AccordionGroup>
 
 <Frame>
-  ![CoachIQ new member welcome automation setup](/images/new-member-automation.png)
+  ![The automation builder with When, Only if and step cards](/images/automation-builder-2026-11.png)
 </Frame>
 
 ---
@@ -284,10 +280,6 @@ Catch disengaged members before they cancel and keep your credit users booking s
   </Accordion>
 </AccordionGroup>
 
-<Frame>
-  ![CoachIQ automation templates for member retention and engagement](/images/retention-templates.png)
-</Frame>
-
 ---
 
 ## Camps & Events
@@ -367,10 +359,6 @@ Streamline registration confirmations and pre-event communication.
   </Accordion>
 </AccordionGroup>
 
-<Frame>
-  ![CoachIQ automation templates for camps and event registration](/images/camp-automation-templates.png)
-</Frame>
-
 ---
 
 ## Weekly Operations
@@ -442,10 +430,6 @@ Automate your recurring announcements and stay on top of your schedule.
   </Accordion>
 </AccordionGroup>
 
-<Frame>
-  ![CoachIQ automation templates for weekly operations and announcements](/images/operations-templates.png)
-</Frame>
-
 ---
 
 ## What's Next?
@@ -463,7 +447,7 @@ Automate your recurring announcements and stay on top of your schedule.
 
 <CardGroup cols={2}>
   <Card title="Builder Reference" icon="wrench" href="/tools/automations/builder-reference">
-    What each section of the builder does, including Test Run and Execution Logs
+    Every part of the builder, including Test run and Activity
   </Card>
   <Card title="Forms Overview" icon="file-lines" href="/tools/forms/overview">
     Create the forms that trigger lead-capture automations

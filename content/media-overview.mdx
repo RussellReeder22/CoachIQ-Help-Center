@@ -9,26 +9,32 @@ keywords: ["media hub", "upload videos", "training videos", "images", "media lib
 Media Hub is your central storage for all videos and images in CoachIQ. Upload your training content here, organize it with tags, then pull it into [lessons](/content/lesson-overview) and [programs](/content/programs-overview).
 
 <Info>
-  **Where to find Media Hub**: Dashboard → Content → Media Hub tab
+  **Where to find it:** **Content → Media Hub**
 </Info>
 
 <Frame>
-  ![Media Hub Example](/images/media-hub-example.png)
+  ![Media Hub with Create lesson, Record and Upload at the top, type filters, and a grid of files and lessons](/images/media-hub-2026-11.png)
 </Frame>
 
-## Uploading media
+Media Hub holds three kinds of things: **videos**, **images** and **lessons**. The buttons at the top right add each one:
+
+| Button | What it does |
+| --- | --- |
+| **Upload** | Upload videos, images or other files from your computer. |
+| **Record** | Record your screen, a window or a tab, with your camera and microphone if you like. The recording is saved to Media Hub. |
+| **Create lesson** | Opens the [lesson builder](/content/lesson-overview). |
+
+## Upload files
 
 <Steps>
   <Step title="Open Media Hub">
-    Navigate to **Content** from the main navigation, then select the **Media Hub** tab.
+    Go to **Content → Media Hub**.
   </Step>
-
-  <Step title="Click Upload Media">
-    Click the **Upload Media** button in the top right corner. Select one or more files from your computer.
+  <Step title="Click Upload">
+    Click **Upload** at the top right and choose one or more files from your computer.
   </Step>
-
   <Step title="Wait for processing">
-    Files upload and process automatically. Videos may take a moment depending on size. Once complete, they appear in your media grid.
+    Files upload and process on their own. A long video may show **Taking longer than expected**; leave the tab open and the tile turns into a playable video as soon as it's ready. **Check again** starts the check over.
   </Step>
 </Steps>
 
@@ -42,46 +48,47 @@ Some files cannot be previewed inside CoachIQ. The details view shows the file n
 
 ### Organize media with ChatGPT or Claude
 
-Once connected to CoachIQ, your assistant can find, rename, and tag media, import supported files from a public link, and attach media to a program step or lesson slide. See [AI workflows](/settings/ai-workflows#find-and-organize-media) for copyable prompts and the limits of usage checks. A usage lookup does not include every possible place a file has been used, including sent Inbox messages.
+Once connected to CoachIQ, your assistant can find, rename, and tag media, import supported files from a public link, and attach media to a program step or lesson slide. See [AI workflows](/settings/ai-workflows#find-and-organize-media) for copyable prompts and the limits of usage checks. A usage lookup does not include every possible place a file has been used, including sent Inbox messages. When a connected app asks to remove a file or a tag, nothing changes until you approve it in **Settings → Connections → App activity**; see [Connections](/settings/connections).
 
-## Organizing with tags
+## Find and filter media
 
-Tags are how you keep your media library manageable as it grows. You can create nested tags to build a structured hierarchy.
+| Control | What it does |
+| --- | --- |
+| **Search media hub** | Find files and lessons by name. Changing or clearing the search starts the list over from the top. |
+| **All types / Lessons / Videos / Images** | Show everything, or only one kind. |
+| **By user** (left) | Show only what one person added. Useful when several coaches upload. |
+| **Tags** (left) | Show only items with a tag. |
+| List and grid icons (top right) | Switch views. |
 
-**Example tag structure for a basketball coach:**
-- Drills → Shooting → Layups
-- Drills → Shooting → Free Throws
-- Drills → Ball Handling
-- Game Film → 2025 Season
+## Organize with tags
 
-<Steps>
-  <Step title="Select media to tag">
-    Click on a media item to open it, or select multiple items using the checkboxes.
-  </Step>
+Tags keep a growing library manageable, for example **Drills**, **Game film** or **Hitting**.
 
-  <Step title="Add or create tags">
-    Use the tag selector to apply existing tags or type a new tag name to create one. Nest tags using the arrow syntax (e.g., "Drills → Shooting").
-  </Step>
-</Steps>
+- **Create a tag:** click **Create tag** in the left panel.
+- **Tag one item:** use **Select tags** on its tile or in its details.
+- **Tag several items:** select them, then use the bulk actions to tag them together.
+
+Tags work the same way on lessons and on [programs](/content/programs-overview).
 
 <Tip>
-  Set up your tag structure before uploading a large batch of content. It's much easier to tag as you upload than to go back and organize later.
+  Set up your main tags before uploading a big batch. It's easier to tag as you go than to sort later.
 </Tip>
 
-## Filtering and finding media
+## File details
 
-Use the controls at the top of Media Hub to find what you need:
+Click a video or image to open its details.
 
-| Filter | What it does |
-| --- | --- |
-| **By User** | Filter media by who uploaded it (useful for teams with multiple coaches) |
-| **All tags** | Filter by any tag or nested tag in the sidebar |
-| **All types** | Show everything |
-| **Lessons** | Show only lessons you've created |
-| **Videos** | Show only video files |
-| **Images** | Show only image files |
+<Frame>
+  ![A file's details with Kind, Size, Added by, Used in, tags, groups, and the Create Video, Copy Link, Replace, Download and Delete buttons](/images/media-details-2026-11.png)
+</Frame>
 
-You can also use the search bar to find media by name. Results show only matching items, even if you had already scrolled through several pages, and changing or clearing the search starts the list over from the top.
+- **Kind**, **Size**, **Added by** and **Used in** (the programs and lessons that use the file, including programs that use it as their cover).
+- **Select tags** and **Connected to … group**: which of your groups the file is shared with.
+- **Create Video**: opens the file in [Video Analysis](/content/video-analysis).
+- **Copy Link**: copies a link anyone can use to open the file. A link to a file that no longer exists says the file wasn't found.
+- **Replace**, **Download** and **Delete** (below).
+
+**Rename** and **Delete** show only to the person who uploaded the file and to club Admins. If a change is refused, you see a message and nothing changes.
 
 ## Using media in lessons and programs
 
@@ -92,19 +99,31 @@ Media you upload here is available throughout CoachIQ:
 - **On your Website** — Pull images and videos into website sections
 
 <Info>
-  When you add media to a lesson or program, it references the original file in Media Hub. Updating or replacing the file in Media Hub updates it everywhere it's used.
+  Lessons, programs and messages point to the file in Media Hub, so replacing it there updates them all. Program covers, website sections and forms keep their own copy of the image and don't change.
 </Info>
 
-## Managing your media library
+## Replace a file
 
-**Bulk actions** — Select multiple items to tag, delete, or download in bulk.
+Use **Replace** when you've made a better version of a video or image and want every lesson, program and message that uses it to show the new one.
 
-**Replacing media** — Click on any media item to open its details, where you can replace the file while keeping the same tags and references.
+1. Open the file and click **Replace**.
+2. Choose the new file. An image can only be replaced by an image, and a video by a video.
+3. The new file uploads into the same Media Hub item. Its name, tags, groups and **Used in** list stay the same. Videos process the same way as a new upload.
 
-**Downloading** — Select media items and use the download option to save copies to your computer.
+Program covers, website sections and forms that copied the file keep the old one. The Replace window reminds you.
+
+## Share a file with your other groups
+
+If you coach in more than one group, use **Connected to … group** in a file's details to share it. The list shows only groups where you're an accepted Admin or Coach, plus groups the file is already shared with. If a share is refused, the reason shows and the group isn't marked as shared.
+
+## Delete files
+
+Open a file and click **Delete**, or select several items and delete them together.
+
+Before anything is deleted, the warning tells you what will lose the file: the lessons and programs that use it (including programs that use it as their cover) and any sent Inbox messages it's attached to. Deleting a lesson names the programs that will lose it. If the check can't list every use, the warning says "There may be more: the check could not list every use."
 
 <Warning>
-  Deleting media from Media Hub removes it from lessons, programs, and sent Inbox messages that use it. Keep shared feedback videos in Media Hub for as long as athletes need access.
+  Deleting a file removes it from the lessons, programs and sent Inbox messages that use it. Keep feedback videos in Media Hub for as long as athletes need them.
 </Warning>
 
 ### Before deleting a file you have sent
