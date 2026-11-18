@@ -1,20 +1,43 @@
 ---
 title: "Communication Settings: Notifications, SMS Number & Inbox"
-description: "Choose which email and push alerts you receive, set up your dedicated business texting number with 10DLC registration, and control what shows in your Inbox."
+description: "See the messages CoachIQ sends your clients, choose the email and push alerts you receive, set up your business texting number, and set your Inbox reminders and signature."
 sidebarTitle: "Communication"
 icon: "bell"
 keywords: ["notifications", "email alerts", "push notifications", "SMS number", "10DLC", "Twilio", "call forwarding", "inbox settings", "booking reminders"]
 ---
 
 <Info>
-**Where to find this**: **Settings → Communication**, which holds **Notifications**, **SMS Number**, and **Inbox Settings**.
+**Where to find this**: **Settings → Communication**, which holds **Notifications**, **SMS number** and **Inbox settings**.
 </Info>
 
 ## Notifications
 
-**Settings → Notifications** has two tabs. **Notifications** lists the messages CoachIQ sends to clients (bookings, messages, purchases and memberships, accounts and staff); choose **View messages** on a row to see them. **My preferences** controls the alerts you and your staff receive by email and mobile push.
+**Settings → Notifications** has two tabs:
 
-### Pause staff emails for your group
+- **Notifications**: the messages CoachIQ sends your clients for you.
+- **My preferences**: the alerts you and your staff receive.
+
+### Messages your clients get
+
+The **Notifications** tab lists what CoachIQ sends your clients automatically. Every message uses your organization's logo, colors and name, with the right person and session details filled in.
+
+| Group | What's in it |
+|---|---|
+| **Bookings** | Confirmations, cancellations and session changes for booked athletes and families |
+| **Messages** | New messages and announcements for the people included |
+| **Purchases & memberships** | Purchase confirmations, access updates and membership changes |
+| **Accounts & staff** | Account emails, and invitations when you add staff |
+| **Payment receipts** | Refunds made in CoachIQ email the payer a receipt unless Stripe already sends one. Payment recovery emails are managed in Stripe: click **Open Stripe settings** |
+
+Click **View messages** on a group to see each message in it and when it's sent. For example, **Bookings** lists **Session confirmation**, **Session cancellation**, **Booking payment refunded** and **Session changed**, plus the staff alerts **New booking** and **Booking canceled**. Click **Back to notifications** to return.
+
+<Frame caption="The Notifications tab: the messages your clients get, grouped.">
+  ![Notifications tab listing Bookings, Messages, Purchases & memberships and Accounts & staff, each with View messages, and Payment receipts with Open Stripe settings](/images/settings-client-messages-2026-11.png)
+</Frame>
+
+### My preferences
+
+#### Pause staff emails for your group
 
 As an admin, open **Settings → Notifications → My preferences** in the group you want to manage. The **Staff emails** card shows **Active** or paused. Choose **Pause staff emails** to stop routine staff emails for the group, and use the same card to resume them.
 
@@ -32,9 +55,9 @@ Use the personal controls below to change only your own notifications.
 
 </Frame>
 
-### Notification categories
+#### Staff updates
 
-**Staff updates** lists each alert you can receive:
+**Staff updates** lists each alert you can receive. **Membership canceled** is email only.
 
 | Alert | When it's sent |
 |----------|----------|
@@ -47,13 +70,13 @@ Use the personal controls below to change only your own notifications.
 | **Form submitted** | A form is submitted |
 | **Team rule needs review** | A team rule needs your review |
 
-### Identify the session in a booking email
+#### Identify the session in a booking email
 
 Staff **New reservation** emails include the class or session name in the subject, opening text, and **Session** row. Use that name together with the athlete and time to identify the booking.
 
 Changing an existing session has separate notification choices. See [Which edits send messages](/scheduling/editing-rescheduling-bookings#which-edits-send-messages) before changing a location, duration, or booking time.
 
-### Notification channels
+#### Email and mobile push
 
 Each category can be toggled independently for:
 
@@ -78,15 +101,17 @@ We recommend keeping **New purchase** and **New member joins** on so you're alwa
 
 ## Messaging credits
 
-Open **Settings → Communication → Credits** to check your messaging balance, buy credits, manage auto-refill, and review usage. Outbound SMS and coach-written emails share this balance. Email copies of announcements and automation **Send an Email** actions use **0.1 credit per address** at the default rate; automatic notifications such as receipts and booking confirmations remain free.
+Texts and the emails you write in CoachIQ use your organization's messaging credits. Automatic notifications, such as receipts and booking confirmations, are free. See [How messaging credits work](/inbox/sms-credits) for what each send costs and what happens when the balance runs out.
 
-When the balance runs out, an email or text that needs credits isn't sent. The coach sees a message pointing an Admin to **Settings → Credits**, and the draft stays in the composer so it can be sent once credits are added.
+The **Credits** page, where you see your balance and buy more, isn't in the Settings menu for every organization yet. If you don't see it and a send is refused for credits, contact CoachIQ support from **Help** in the sidebar.
 
-These credits are separate from the session credits athletes use for bookings. See [How messaging credits work](/inbox/sms-credits) for costs and delivery troubleshooting.
+Only Admins can buy credits.
+
+These credits are separate from the session credits athletes use for bookings.
 
 ---
 
-## SMS Number
+## SMS number
 
 Set up your dedicated business phone number for texting athletes through CoachIQ. Texts you send are paid for with SMS credits; see [How SMS credits work](/inbox/sms-credits).
 
@@ -95,16 +120,16 @@ Set up your dedicated business phone number for texting athletes through CoachIQ
 CoachIQ uses Twilio for SMS messaging. To send text messages, you'll need to complete 10DLC (10-digit long code) registration, which is required by mobile carriers to reduce spam.
 
 <Steps>
-<Step title="Navigate to SMS Number">
-Go to **Settings → SMS Number**.
+<Step title="Open SMS number">
+Go to **Settings → SMS number**.
 </Step>
 
 <Step title="Select your business type">
-Choose whether you're registering as a **Sole Proprietor** or a **Business**.
+Under **10DLC Compliance**, choose whether you're registering as a **Sole Proprietor** or a **Business**.
 </Step>
 
 <Step title="Enter your preferred area codes">
-Add your primary area code and optionally a secondary area code. CoachIQ will try to assign you a number matching these codes.
+Under **Preferred Area Codes**, add your primary area code and, if you like, a second one. CoachIQ will try to assign you a number matching these codes.
 </Step>
 
 <Step title="Begin registration">
@@ -117,7 +142,7 @@ The 10DLC registration process typically takes 1-7 business days to complete. On
 </Info>
 
 <Note>
-**Policy pages are handled for you.** Carriers check a public Privacy Policy and Terms page as part of 10DLC review. CoachIQ auto-generates both on your athlete portal (`/privacy-policy` and `/terms-of-condition` under your portal address), keeps them public, and includes the SMS clauses carriers require. Nothing to write or upload; see [Get your business number](/inbox/sms-messages#get-your-business-number) for what reviewers look at.
+**Policy pages are handled for you.** Carriers check a public Privacy Policy and Terms page as part of 10DLC review. CoachIQ auto-generates both in your app (`/privacy-policy` and `/terms-of-condition` under your app address), keeps them public, and includes the SMS clauses carriers require. Nothing to write or upload; see [Get your business number](/inbox/sms-messages#get-your-business-number) for what reviewers look at.
 </Note>
 
 ### After your number is assigned
@@ -126,9 +151,13 @@ The page shows your **SMS Number** and lets you set a **Call Forwarding Number**
 
 ---
 
-## Inbox Settings
+## Inbox settings
 
-**Inbox Preferences** has one toggle today: **Show booking reminders in inbox**. It is **off by default**, which keeps the Inbox to conversations athletes started or you started; the reminders are still delivered to athletes, they just do not appear as threads in your Inbox or in the athlete's conversation with you. Turn it on to see the automated session reminders as threads in the **Automated** folder. See [Automated messages](/inbox/inbox-overview#automated-messages) in the Inbox overview.
+**Settings → Inbox settings** has three parts:
+
+- **Reminders**: **Booking reminders** shows the automatic session reminders in your Inbox. It's off by default; the reminders still reach your clients either way. See [Automated messages](/inbox/inbox-overview#automated-messages).
+- **Email replies**: a **Signature** added to the end of every email reply and forward. Click **Save** after changing it. **Replies land in the Inbox** reads **Not available yet** while CoachIQ finishes setting up email for clubs.
+- **Can't get email**: the people your club's emails skip because their address bounced, they reported spam or they unsubscribed. Receipts and account emails still reach them. See [People who can't get your email](/inbox/email#people-who-cant-get-your-email).
 
 ---
 

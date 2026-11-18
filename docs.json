@@ -52,13 +52,13 @@
             "group": "Getting Started",
             "pages": [
               "index",
+              "getting-started/find-your-way-around",
               "getting-started/use-coachiq-with-ai"
             ]
           },
           {
             "group": "Website & App",
             "pages": [
-              "getting-started/dashboard",
               {
                 "group": "Website Builder",
                 "pages": [
@@ -430,6 +430,7 @@
             "pages": [
               "settings/index",
               "settings/general",
+              "settings/change-organization-group-name",
               {
                 "group": "Connections",
                 "icon": "link",
@@ -446,8 +447,7 @@
               "settings/communication",
               "settings/billing",
               "settings/payment-methods",
-              "settings/data",
-              "settings/change-organization-group-name"
+              "settings/data"
             ]
           }
         ]
@@ -1444,6 +1444,10 @@
     {
       "source": "/scheduling/managing-availability-for-multiple-coaches",
       "destination": "/scheduling/setup-coaches"
+    },
+    {
+      "source": "/getting-started/dashboard",
+      "destination": "/getting-started/find-your-way-around"
     }
   ],
   "metadata": {
