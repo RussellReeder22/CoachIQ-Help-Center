@@ -12,9 +12,9 @@ keywords: ["sign-up", "signup form", "account type", "parent or athlete", "custo
 
 ## What you'll accomplish
 
-Shape the account people create when they join you: force the right account type, pick the fields they fill in, make the important ones required, and add your own custom fields (jersey size, emergency contact, school) so every profile has what you need from day one.
+Shape the account people create when they join you: ask for the right account type, pick the fields they fill in, make the important ones required, and add your own custom fields (jersey size, emergency contact, school) so every profile has what you need from day one.
 
-Everything on this page applies both to **public sign-up** (someone registers through your website, athlete portal, or a form) and to the form you see when you **add a user yourself**.
+Everything on this page applies both to **public sign-up** (someone registers through your website, your app, or a form) and to the form you see when you **add a client yourself**.
 
 ---
 
@@ -24,27 +24,27 @@ The page has three parts:
 
 | Section | What it controls |
 |---|---|
-| **Account type** | Whether new sign-ups are created as a **Parent/Guardian** or an **Athlete**, and whether you force one or let people choose |
+| **Account type** | Whether new people choose **Athlete** or **Parent / Guardian** when they sign up |
 | **Sign-up fields** | The table of fields on your sign-up form: which appear, which are required, and their order |
-| **Live preview** | A rendered copy of the form as it will look, with a toggle between **Public sign-up** and **Coach adds user** |
+| **Preview** | A rendered copy of the form as it will look, with a toggle between **Public sign-up** and **Coach adds user** |
 
 <Frame>
-  ![People › Sign-up & Profile: Account type, Sign-up fields table, and Live preview](/images/people-signup-profile.png)
+  ![People › Sign-up & Profile: Account type, Sign-up fields table, and Preview](/images/people-signup-profile-2026-11.png)
 </Frame>
 
 ---
 
 ## Account type
 
-Use **FORCE AT SIGN-UP** to decide who is creating the account. As the app puts it: new users identify as a Parent or an Athlete before they finish signing up; the choice decides which fields they see next and sets their role.
+**Ask for account type at sign-up** decides whether new people say who they are before they finish: "Parents and athletes each see only their own fields."
 
-- **Parent/Guardian** — the person signing up is the parent. They create their own login, then add their children as connected athletes. Choose this if you coach youth players and want parents to hold the account, the payment method, and the messages.
-- **Athlete** — the person signing up is the player. Choose this for adult clients, college athletes, or any program where the athlete manages their own account.
+- **On**: the sign-up form asks "I'm signing up as" **Athlete** or **Parent / Guardian**. The answer sets their role and decides which fields they see next. A parent then adds their athletes, and each athlete's last name is optional.
+- **Off**: everyone signs up as an athlete with the same fields.
 
-When you force an account type, the sign-up form skips the "who are you?" question and creates the correct role every time. Leave it unforced and the person picks for themselves.
+People whose account was created by filling in one of your forms get the same choice the first time they sign in to your app, along with any sign-up fields you've made required for the type they pick.
 
 <Tip>
-  Most youth programs force **Parent/Guardian**. It stops 12-year-olds from creating orphaned accounts that never get a payment method attached. Parents connect children from their profile — see [Connect children](/people/client-profiles/client-profiles#connect-children).
+  Most youth programs turn this on. Parents hold the account, the payment method and the messages, and children don't end up with accounts that have no parent attached. Parents add children from their account, or you add them from the parent's [Family section](/people/client-profiles/client-profiles#family).
 </Tip>
 
 ---
@@ -57,12 +57,12 @@ The **Sign-up fields** table lists every field a new account can carry. Each row
 |---|---|
 | **FIELD** | The field's label, as the person sees it |
 | **APPLIES TO** | Who the field is collected for: **Everyone**, **Parents**, or **Athletes** |
-| **SIGN-UP** | Toggle: show this field on the sign-up form |
-| **REQUIRED** | Toggle: the form cannot be submitted until it is filled in |
+| **AT SIGN-UP** | Show this field on the sign-up form |
+| **REQUIRED** | The form can't be submitted until it's filled in |
 
 ### Built-in fields
 
-**First name**, **Last name**, **Email**, and **Phone number** are built in (each row shows its type, for example "Text · built-in"). Email is the login credential, so it always stays on the form. Turn phone on and switch its **REQUIRED** toggle on if you rely on SMS reminders; a profile with no phone number cannot receive texts. The phone number is also where athletes and parents receive a sign-in code if they choose to sign in with a texted code. See [How athletes and parents sign in](/athlete-portal/understanding-your-athlete-portal#how-athletes-and-parents-sign-in).
+**First name**, **Last name**, **Email**, and **Phone number** are built in (each row shows its type, for example "Text · built-in"). Email is the login credential, so it always stays on the form. **Phone number** starts out required. If you want families to be able to sign up without a phone, turn its **REQUIRED** switch off and save. A profile with no phone number can't receive texts or sign in with a texted code. The phone number is also where athletes and parents receive a sign-in code if they choose to sign in with a texted code. See [How clients sign in](/people/how-clients-sign-in).
 
 The phone field on the sign-up form has a country selector that defaults to **+1** (United States). People outside the US pick their country from the selector; numbers are saved with the country code, so a US number is stored as +1 and not misread as another country's code. Dashes and spaces in the number are accepted.
 
@@ -70,7 +70,7 @@ Toggling a field off at sign-up does not delete it. It still lives on the profil
 
 ### Custom fields
 
-Click **Add field** to create your own. Give it a label, pick who it applies to, then switch **SIGN-UP** and **REQUIRED** on as needed. Typical custom fields:
+Click **Add** above the table to create your own. Give it a label, pick who it applies to, then switch **AT SIGN-UP** and **REQUIRED** on as needed. Typical custom fields:
 
 - Emergency contact name and number
 - Date of birth or graduation year
@@ -78,13 +78,13 @@ Click **Add field** to create your own. Give it a label, pick who it applies to,
 - School or club team
 - Jersey or T-shirt size for camps
 
-Custom fields appear in the **User Details** panel of every client profile, where you or the client can update them later. See [Client Profiles](/people/client-profiles/client-profiles#the-user-details-sidebar).
+Custom fields appear under **Custom fields** in **Client details** on every client's profile. See [Custom fields](/people/adding-editing-clients#custom-fields).
 
 ### Reorder fields
 
 Drag rows up or down to change the order they appear in on the form. Put the fields people always know (name, email) first and the optional extras last.
 
-Nothing applies until you click **Save changes** at the top of the page.
+Nothing applies until you click **Save** at the top of the page. **Reset** throws away changes you haven't saved.
 
 <Warning>
   Every required field is a place someone can abandon your sign-up. Require what you genuinely need on day one and collect the rest later with a [form](/tools/forms/overview) or in the profile.
@@ -92,12 +92,12 @@ Nothing applies until you click **Save changes** at the top of the page.
 
 ---
 
-## Live preview
+## Preview
 
 The right-hand preview updates as you change fields. Toggle between:
 
 - **Public sign-up** — what a new person sees when they register through your site or portal
-- **Coach adds user** — what you see under **People → Clients → New User**
+- **Coach adds user** — what you see under **People › Clients › New client**
 
 The public preview is titled **Create your account** with the line "A few details to get set up." and ends in a **Create account** button. Use it to check the wording, the order, and that required markers land where you expect before you share a sign-up link.
 
@@ -108,9 +108,9 @@ When a new person's sign-up can't go through, the form says why and keeps everyt
 ## How this connects to the rest of CoachIQ
 
 - **Forms** — a form with **Log in / Sign up** turned on uses these same account settings when a new person submits it. See [Creating Forms](/tools/forms/creating-forms).
-- **Products** — guest checkout can create an account at purchase; the account type you force applies. See [Product Builder](/payments/product-builder).
+- **Products** — guest checkout can create an account at purchase; the account type choice applies. See [Product Builder](/payments/product-builder).
 - **Automations** — the **New User** trigger fires after sign-up, so you can welcome people or tag them by a custom field value. See [Triggers and actions](/tools/automations/triggers-actions-reference).
-- **Import** — bulk imports through **Settings → Data → Import People** skip the sign-up form entirely. See [Data settings](/settings/data#import-people).
+- **Import** — bulk imports through **Settings › Data › Import People** skip the sign-up form entirely. See [Data settings](/settings/data#import-people).
 
 ---
 
@@ -118,7 +118,7 @@ When a new person's sign-up can't go through, the form says why and keeps everyt
 
 <AccordionGroup>
   <Accordion title="Will changing required fields affect existing clients?">
-    No. Requirements apply at sign-up. Existing profiles keep whatever they have; you can fill gaps from their profile or ask them to update it in the athlete portal.
+    No. Requirements apply at sign-up. Existing profiles keep whatever they have; you can fill gaps from their profile or ask them to update it in your app.
   </Accordion>
   <Accordion title="Can I have different fields for parents and athletes?">
     Yes. Set **APPLIES TO** on each field. A parent-only field (say, "Preferred contact time") is hidden when an athlete signs up, and vice versa.
@@ -127,10 +127,10 @@ When a new person's sign-up can't go through, the form says why and keeps everyt
     The form now shows the reason above the button. The usual cause is a phone number or email already linked to another account. They can sign in with the email on that account, or use a different phone number.
   </Accordion>
   <Accordion title="Can I delete a custom field?">
-    You can turn it off for sign-up so nobody new is asked for it. Removing it from existing profiles clears data you may want, so turn it off first and confirm you no longer need the values.
+    Yes, from the field's menu on any client's profile (**Delete field for everyone**, admins only). That removes the field and its values from every profile, and its sign-up question goes too, so families can still sign up. If you only want to stop asking for it, turn **AT SIGN-UP** off instead.
   </Accordion>
   <Accordion title="Where do I see the answers?">
-    In the **User Details** panel on the client's profile, and in the **Clients** list when you export. Coaches whose Staff Access doesn't block Clients can see and edit the values too; only Admins can add or delete a field.
+    In **Client details** on the client's profile, and in the **Clients** list when you export. Coaches whose Staff Access doesn't block Clients can see and edit the values too; only Admins can add or delete a field.
   </Accordion>
 </AccordionGroup>
 

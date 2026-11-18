@@ -104,7 +104,11 @@ No card is charged and nothing goes through Stripe. Card and Stripe purchases ar
   Cash, check and other purchases marked paid before the October 19, 2026 release were recorded at \$0. They stay at \$0 until you open the purchase, confirm the **Amount** and save.
 </Warning>
 
-Products you add from this tab name this client as the athlete on the purchase. Purchases added before that change may still show "Not recorded (legacy)".
+Products you add from this tab name this client as the athlete on the purchase. A paid booking someone made for themselves names them as the athlete too. Older purchases with no linked booking may still show "Not recorded (legacy)".
+
+When a parent buys a membership for a child they manage, the child's Products list shows the membership as paid by that parent, by name (or "another account" when the payer isn't in your business).
+
+Long product names and amounts such as "$40.00 / month" wrap onto a second line instead of being cut off. On a narrow screen, the purchase count and amount move under the product name.
 
 ## Cancel a membership
 
@@ -121,6 +125,12 @@ When a membership has ended or the wrong product was added, **Archive** the prod
 - Leaves your catalog product and every other client untouched
 
 A confirmation spells out what the client will notice before anything happens: the purchase leaves their Orders (where it shows as **Archived**), they lose what it unlocks unless they bought it again, and no refund is issued. Credit packs and subscriptions get their own wording. For a one-time credit pack the action is **Mark inactive**: credits already added stay available, and the pack shows as inactive on its Products row and in the purchase count. If the product is an active subscription, set the subscription to end first (see [Managing subscriptions](/payments/manage-subscriptions)); a product that is still billing cannot be archived.
+
+### Restore an archived purchase
+
+An archived one-time purchase shows a **Restore** button. Restoring brings back the same purchase, and any purchases of this product archived with it, with their amounts and payment history. No new charge is made and no new purchase is created.
+
+If there's nothing active left to archive (for example, you're on an older tab, or the product belongs to the parent's child), the message says nothing was changed and why.
 
 <Note>
   Archive replaces the old dead end where a credit-bearing product with used credits could not be removed and the profile said to contact Support. If you only want to stop the credits and keep the product showing as active, use the credit toggle instead; see [Turning off a product's credits](/people/client-profiles/client-profiles-credits#turning-off-a-products-credits).
