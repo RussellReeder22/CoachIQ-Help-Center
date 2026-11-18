@@ -370,7 +370,15 @@
           {
             "group": "Tools",
             "pages": [
-              "getting-started/copilot",
+              {
+                "group": "Assistant",
+                "pages": [
+                  "tools/assistant/overview",
+                  "tools/assistant/what-it-can-do",
+                  "tools/assistant/approvals"
+                ],
+                "icon": "robot"
+              },
               {
                 "group": "Forms",
                 "pages": [
@@ -517,6 +525,10 @@
     "indexing": "all"
   },
   "redirects": [
+    {
+      "source": "/getting-started/copilot",
+      "destination": "/tools/assistant/overview"
+    },
     {
       "source": "/inbox/using-tags-for-group-messages",
       "destination": "/inbox/new-message"
