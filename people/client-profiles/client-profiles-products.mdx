@@ -100,7 +100,7 @@ When a purchase is marked paid by **Cash**, **Check** or **Other**, the **Amount
 
 No card is charged and nothing goes through Stripe. Card and Stripe purchases are never changed by these fields.
 
-The **Stripe ID** box on a purchase only takes a real Stripe ID. Payment text such as "cash $1,200" is refused with a hint to use the collection status instead, and nothing is saved. If an older one-time purchase has payment text in that box and was never really paid, set it to **Not recorded** or **Collection pending**: its amount leaves Orders and Revenue while the purchase stays in the history, and you can then archive it.
+The **Stripe ID** box on a purchase only takes a real Stripe ID. Payment text such as "cash \$1,200" is refused with a hint to use the collection status instead, and nothing is saved. If an older one-time purchase has payment text in that box and was never really paid, set it to **Not recorded** or **Collection pending**: its amount leaves Orders and Revenue while the purchase stays in the history, and you can then archive it.
 
 <Warning>
   Cash, check and other purchases marked paid before the October 19, 2026 release were recorded at \$0. They stay at \$0 until you open the purchase, confirm the **Amount** and save.
@@ -110,7 +110,7 @@ Products you add from this tab name this client as the athlete on the purchase. 
 
 When a parent buys a membership for a child they manage, the child's Products list shows the membership as paid by that parent, by name (or "another account" when the payer isn't in your business).
 
-Long product names and amounts such as "$40.00 / month" wrap onto a second line instead of being cut off. On a narrow screen, the purchase count and amount move under the product name.
+Long product names and amounts such as "\$40.00 / month" wrap onto a second line instead of being cut off. On a narrow screen, the purchase count and amount move under the product name.
 
 ## Cancel a membership
 
@@ -148,7 +148,7 @@ If there's nothing active left to archive (for example, you're on an older tab, 
     2. Look for products with "Active" status
     3. Check amount to see monthly billing
 
-    **Example**: "Hybrid Rising Stars/Elite 5 Credit Package - $125.00/month" = They're paying $125/month for this membership.
+    **Example**: "Hybrid Rising Stars/Elite 5 Credit Package - \$125.00/month" = They're paying \$125/month for this membership.
   </Accordion>
   <Accordion title="Did they buy the trial session?">
     1. Click **One-Time Payment** filter tab
@@ -184,7 +184,7 @@ Use the purchase for access and membership actions, and the matching payment rec
 | ------------------------ | ------------------------------------ |
 | **Cancel membership** | This tab → **Cancel membership** |
 | **Stop a subscription with no purchase** | Payment Methods → Active Subscriptions → **Not on a purchase** → **Cancel subscription** |
-| **Refund purchase**      | Stripe                               |
+| **Refund purchase**      | Transactions tab → **Refund payment** ([steps](/payments/issuing-refunds)) |
 | **Change product price** | Payments → Products → Edit product   |
 | **See payment history**  | Transactions tab (financial details) |
 | **Turn off a product's credits** | Credits tab → toggle on the product's credit tab |

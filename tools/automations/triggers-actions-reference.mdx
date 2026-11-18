@@ -746,7 +746,7 @@ Insert these with `#` rather than typing them: the token names the specific ques
 
 Example, on a "Free evaluation request" form with a "Preferred position" question:
 
-```
+```text wrap
 Hi {{field.user.firstName}}, thanks for requesting an evaluation.
 We'll set you up at [Preferred position] and be in touch within a day.
 ```
@@ -802,7 +802,7 @@ Each [data source](#data-sources) you add contributes its outputs as field optio
 
 Here's how to use dynamic fields in a message:
 
-```
+```text wrap
 Hi {{field.user.firstName}},
 
 You have {{field.user.credits.count}} credits remaining. 
@@ -813,7 +813,7 @@ Book your next session soon!
 
 **This would send:**
 
-```
+```text wrap
 Hi John,
 
 You have 5 credits remaining.

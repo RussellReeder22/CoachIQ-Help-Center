@@ -45,7 +45,7 @@ Before diving into subscription setup, understand how subscriptions differ from 
 
     **Example**:
 
-    ```
+    ```text wrap
     Product: "10-Credit Training Package"
     Price: $450 (one-time payment)
     Credits issued: 10 (all at once)
@@ -75,12 +75,12 @@ Before diving into subscription setup, understand how subscriptions differ from 
 
     **Example**:
 
-    ```
+    ```text wrap
     Product: "Monthly Unlimited Training"
     Price: $400/month (recurring)
     Credits issued: Unlimited (∞) per month
     Renewal: Automatic monthly via Stripe
-    Expiration: Credits reset each month (not expire, but renew)
+    Expiration: Unlimited, renewed each billing period
     ```
 
     **Best for**:
@@ -171,7 +171,7 @@ The infinity symbol (∞) in CoachIQ has a specific meaning that's critical to u
 
 **Example timeline**:
 
-```
+```text wrap
 Jan 15: Athlete subscribes to "Unlimited Monthly" 
 Credits: ∞ (can book unlimited sessions until Feb 15)
 
@@ -185,8 +185,8 @@ Feb 16-Mar 14: Athlete books 10 sessions
 Credits: ∞ (unlimited continues)
 
 Mar 15: Subscription payment FAILS (expired card)
-Subscription becomes inactive on Stripe
-Credits: 0 (unlimited credits now unusable)
+Membership goes Past due
+Credits: paused (kept, but can't book until a payment goes through)
 ```
 
 ### Credit  display variations
@@ -195,7 +195,7 @@ Credits: 0 (unlimited credits now unusable)
   <Accordion title="∞ with Usage Tracking (Subscription Credits)">
     **Display**: Under "Redeemable Schedulers" section
 
-    ```
+    ```text wrap
     Rising Stars Class (3/∞)
     Rising Stars Shooting Lab (0/∞)
     Rising Stars Open Gym (5/∞)
@@ -220,7 +220,7 @@ Credits: 0 (unlimited credits now unusable)
 
     Some subscriptions issue finite credits monthly:
 
-    ```
+    ```text wrap
     Monthly 12-Credit Membership
     Credit Balance: 12 (not ∞)
     Renewal: Gets 12 fresh credits each month
@@ -285,7 +285,7 @@ Step-by-step: Setting up recurring credit memberships.
 
     **Description**: Explain what subscription includes
 
-    ```
+    ```text wrap
     Example: "Train unlimited times per month at our group classes. 
     Includes access to all Rising Stars schedulers. Book up to 4 
     sessions per week. Cancel anytime with 30-day notice."
@@ -314,7 +314,7 @@ Step-by-step: Setting up recurring credit memberships.
 
         **Example configuration**:
 
-        ```
+        ```text wrap
         Monthly Unlimited Membership - $400/month
         Credits: Unlimited (∞)
         Redeemable schedulers: All group classes
@@ -333,7 +333,7 @@ Step-by-step: Setting up recurring credit memberships.
 
         **Example configuration**:
 
-        ```
+        ```text wrap
         Monthly 12-Credit Membership - $350/month
         Credits: 12 per month
         Expiration: Unused credits expire at renewal
@@ -341,22 +341,17 @@ Step-by-step: Setting up recurring credit memberships.
         ```
 
         <Note>
-          **Expiration option**: Unused credits can either:
-
-          1. **Expire** (athlete loses them at renewal)
-          2. **Carry over** (athlete accumulates unused credits)
-
-          Most subscriptions use **expire** to prevent credit hoarding.
+          **Expiration option**: unused credits can expire at renewal, carry over, or carry over with each payment's credits expiring a set number of days later. See [Unused credit behavior at renewal](#unused-credit-behavior-at-renewal) below and [Product builder: Credits](/payments/product-builder#credits).
         </Note>
       </Tab>
     </Tabs>
   </Step>
   <Step title="Set credit restrictions">
-    **Redeemable Schedulers** section: Select which schedulers accept these credits
+    **Credit Limits** section: pick schedulers under **Credits can be redeemed for these schedulers**
 
     **Example restriction strategy**:
 
-    ```
+    ```text wrap
     Basic Subscription ($250/month):
       ✓ Group Classes only
     
@@ -373,14 +368,14 @@ Step-by-step: Setting up recurring credit memberships.
     <Tip>
       **Product tiering**: Use scheduler restrictions to differentiate subscription levels (Basic \< Standard \< Premium)
     </Tip>
-    For detailed scheduler restriction setup, see [Article #26: Credit Usage Limits](/payments/credits/credit-usage-limits-restrictions).
+    For detailed scheduler restriction setup, see [Credit Limits](/payments/credits/credit-usage-limits-restrictions).
   </Step>
   <Step title="Configure usage limits (optional but recommended)">
-    **Usage Limits** section: Set daily/weekly/monthly booking caps
+    **Credit Limits** section: set a **Weekly booking allowance** or **Limit credits per scheduler per billing cycle**. See [Credit Limits](/payments/credits/credit-usage-limits-restrictions).
 
     **For unlimited (∞) subscriptions**:
 
-    - **Recommended**: Weekly limit (e.g., "4 bookings per week")
+    - **Recommended**: a weekly booking allowance (e.g., 4 bookings per week)
     - **Prevents abuse**: Athlete can't book 30 sessions in Week 1
     - **Encourages consistency**: Spreads usage across month
 
@@ -398,7 +393,7 @@ Step-by-step: Setting up recurring credit memberships.
 
     **Cancellation policy**:
 
-    ```
+    ```text wrap
     Example policy:
     "Cancel anytime. Cancellations take effect at end of current 
     billing period (you keep access until paid-for period ends). 
@@ -590,7 +585,7 @@ What happens at each stage of a subscription's life.
 
     **Example message**:
 
-    ```
+    ```text wrap
     "Hey [Name], I noticed your membership payment didn't go through 
     this month. Just wanted to reach out personally—your subscription 
     is currently on hold. 
@@ -608,13 +603,13 @@ What happens at each stage of a subscription's life.
 
     **Example message**:
 
-    ```
+    ```text wrap
     "Hi [Name], I haven't heard back about your membership payment. 
     I want to help you continue training! Here are some options:
     
     1. Update payment method: [link]
     2. Switch to pay-per-session temporarily (no commitment)
-    3. Pause membership for 30 days (keeps your rate when you return)
+    3. Pause your payments for 30 days (keeps your rate when you return)
     4. Or if you need to cancel, I understand—just let me know
     
     What works best for you?"
@@ -631,7 +626,7 @@ What happens at each stage of a subscription's life.
 
     **Example message**:
 
-    ```
+    ```text wrap
     "[Name], your membership has been on hold for 3 weeks due to 
     payment issue. I'll need to cancel the subscription by [date] 
     if we can't resolve this.
@@ -672,7 +667,7 @@ Follow [Canceling and removing memberships](/payments/manage-subscriptions) for 
   <Step title="Acknowledge promptly">
     Send confirmation within 24 hours:
 
-    ```
+    ```text wrap
     "Hi [Name], I've received your cancellation request. Your 
     subscription will remain active through [end date], and you 
     can continue training until then.
@@ -786,7 +781,7 @@ Follow [Canceling and removing memberships](/payments/manage-subscriptions) for 
 
     **Your refund policy** (example):
 
-    ```
+    ```text wrap
     "Subscription refunds available within 48 hours of first charge 
     if no credits used. After 48 hours or if credits used, no 
     refunds—cancel anytime to stop future charges."

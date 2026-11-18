@@ -130,7 +130,7 @@ A connected assistant can now send one email or text to a group of up to 100 cli
 
 <Accordion title="Fixes: website">
 
-- **Builder:** Add Section previews match the section once added. **Hide Price** on a custom pricing card hides the interval too. Access-code products show "Code" instead of $0. Deleted forms show **Form not found** with the fix. Lists in custom sections hold up to 500 items, and new images show right away.
+- **Builder:** Add Section previews match the section once added. **Hide Price** on a custom pricing card hides the interval too. Access-code products show "Code" instead of \$0. Deleted forms show **Form not found** with the fix. Lists in custom sections hold up to 500 items, and new images show right away.
 - **Deleting a page** lists the menu items and buttons that point at it and removes them too, so your menu never has a dead link.
 - **Design:** Your website's Design panel follows the Brand Kit, and **Use Brand Kit** puts back any setting you changed for the website only.
 - **Media and cache:** Media tag search finds tags from one letter, in any capitals. **Purge Cache** says what happened.
@@ -163,7 +163,7 @@ A connected assistant can now send one email or text to a group of up to 100 cli
 
 <Accordion title="Fixes: scheduling and booking">
 
-- **Calendar:** Month view lists every session on one line with "+N more" and loads much faster. Session details show capacity as "3 of 8 booked · 5 open" with **Move**, and a child's row shows who booked it. Bookings past midnight show on both days. Coaches limited to their own clients see other bookings as **Busy**.
+- **Calendar:** Month view lists every session on one line with "+N more" and loads much faster. Session details show capacity as "3 of 8 booked · 5 open" with **Move**, and a child's row shows who booked it. Bookings past midnight show on both days. In the Day view by space, coaches limited to their own clients see other bookings as **Busy**.
 - **Linked groups:** When two groups share a calendar, the other group's bookings show as **Busy**, with a **Linked groups** filter, and **Book session** shows each space as Free or Held.
 - **Setup and schedulers:** Buttons read **Create scheduler**, **Create availability**, **Save** and **Book session** everywhere, and **Assign schedulers** is the one name for linking coaches and resources. Scheduler cards show the next time athletes can really book. The Availability list no longer stops at 15 templates.
 - **Booking:** The New booking window shows its time zone, warns before you leave a multi-athlete booking partway, and lists dates over an athlete's limit or with no free space before booking a series. A repeating "Use first available" lesson takes one cage per date instead of blocking them all. **Move Session** can reopen a canceled time when nobody is on it.
@@ -178,10 +178,10 @@ A connected assistant can now send one email or text to a group of up to 100 cli
 
 <Accordion title="Fixes: payments and coupons">
 
-- **New look:** Products, Subscriptions, Transactions and Coupons have the new admin look, with summary cards, one status picker and **Resync Stripe**. Transactions now lists $0 sign-ups from free memberships and 100% off coupons.
+- **New look:** Products, Subscriptions, Transactions and Coupons have the new admin look, with summary cards, one status picker and **Resync Stripe**. Transactions now lists \$0 sign-ups from free memberships and 100% off coupons.
 - **Products:** Archiving a product turns it off in Stripe, and unarchiving turns it back on. Deleting a product no longer removes a Stripe price another product still uses. Product names keep accented letters. The first-charge date picker offers only dates billing accepts. One-time products with credits can limit credits per scheduler.
 - **Checkout:** If a card is charged and the page closes, the purchase is recorded once, with no second charge. Free and access-code purchases can't be recorded twice. Yen and other currencies without cents charge correctly. A refused promo code is never sent with the payment, and a parent switching children gets each child's own discount. Account credit that covers a whole first membership payment completes checkout.
-- **Subscriptions and Transactions:** Status notes no longer get cut off. Revenue no longer drops 30 cents on a $0 payment. A Transactions page left open in another tab refreshes when you come back.
+- **Subscriptions and Transactions:** Status notes no longer get cut off. Revenue no longer drops 30 cents on a \$0 payment. A Transactions page left open in another tab refreshes when you come back.
 - **Credits:** The Manual Adjustment note explains what lowering a balance does. Membership credits renew correctly after a staff-linked subscription renews, and a renewal can't add credits twice.
 - **Coupons:** The list shows what each coupon covers (**All products**, **All products except 3**, **2 products**). Coaches whose access covers all clients can manage coupons again. A deleted coupon's code can't be reused, so a new coupon no longer starts out used up.
 - **Adding credits by hand:** **Adjust balance** adds or removes an amount with + and −. On a membership whose credits expire each cycle, choose **Keep until used** so added credits don't expire with the cycle.
@@ -303,7 +303,7 @@ If you pause payment collection for a membership in Stripe, **Payments → Subsc
 
 **Record what you collected for cash, check and other payments**
 
-When you add a product to a client and mark it paid by **Cash**, **Check** or **Other**, a new **Amount** field (prefilled with the price) records what you collected. These purchases show as **Cash · Paid**, **Check · Paid** or **Other · Paid** in **Transactions** and count toward Revenue. Purchases marked paid before this release stay at $0 until you open one, confirm the amount and save. [Record cash and check payments →](/people/client-profiles/client-profiles-products#recording-cash-check-and-other-payments)
+When you add a product to a client and mark it paid by **Cash**, **Check** or **Other**, a new **Amount** field (prefilled with the price) records what you collected. These purchases show as **Cash · Paid**, **Check · Paid** or **Other · Paid** in **Transactions** and count toward Revenue. Purchases marked paid before this release stay at \$0 until you open one, confirm the amount and save. [Record cash and check payments →](/people/client-profiles/client-profiles-products#recording-cash-check-and-other-payments)
 
 **Choose what stays in frame in website photos and videos**
 
@@ -322,11 +322,11 @@ It still can't refund, charge a card, change or cancel a subscription, change an
 <Accordion title="Fixes: checkout and payments">
 
 - **Guests with an existing account:** A guest whose email already has a CoachIQ account no longer hits "We could not start payment." They're taken to sign in or **Set Your Password** and finish the purchase or booking in the same visit, with one payment.
-- **Clearer totals:** Checkout shows **Due today** and **Paid today** when the charge differs from the list price (coupon, member discount, fee, down payment or access code). Free trials show **Due today $0.00**, then the regular price, and later-start memberships show when billing starts. Amounts show cents everywhere, and a coupon larger than the price totals $0.00.
+- **Clearer totals:** Checkout shows **Due today** and **Paid today** when the charge differs from the list price (coupon, member discount, fee, down payment or access code). Free trials show **Due today \$0.00**, then the regular price, and later-start memberships show when billing starts. Amounts show cents everywhere, and a coupon larger than the price totals \$0.00.
 - **Coupons:** Refused codes explain why ("reached its redemption limit", "does not apply to this product"). The payment button waits until the new total appears, so the charge always matches what's shown. An applied coupon sits in one row with **Change** and **Remove**.
 - **Purchase limits:** Buyers who've hit a per-person limit see "You have reached your purchase limit" instead of the product looking sold out.
 - **Payment form:** **Purchase Now** waits for the card form to load and offers **Retry** if it doesn't. **Payment Successful** no longer turns back into a blank checkout on refresh. A product deleted or archived mid-checkout says "You weren't charged."
-- **Free and code-only products:** Free products end on a **Review** step with **Complete purchase**. Code-only products have one **Redeem code** button, and $0 products that keep a card on file say **Save payment method**.
+- **Free and code-only products:** Free products end on a **Review** step with **Complete purchase**. Code-only products have one **Redeem code** button, and \$0 products that keep a card on file say **Save payment method**.
 - **Checkout for families:** A newly added athlete is selected automatically. The member discount applies when a parent pays for an athlete who holds the qualifying membership. A visitor who isn't yet in the group gets the normal **Join this group to continue** step.
 - **Saved cards:** Checkout preselects the card marked **Default**, and **Set as default** sticks. **Use a new card** works and keeps saved cards available. Declined cards show the bank's reason. Saved cards no longer disappear for athletes with many purchases.
 - **Archived products** no longer appear in your app's catalog or website product sections, and direct links show "No Product Found." Hidden but active products still open from a direct link.
@@ -336,7 +336,7 @@ It still can't refund, charge a card, change or cancel a subscription, change an
 
 <Accordion title="Fixes: memberships, credits and reporting">
 
-- **Product builder saves:** Edits to price, down payment, weekly booking allowance, scheduler redemption and access-code **Unlimited use** now save, and every **Update** shows **Saved**. Prices with cents keep the decimal point ($0.50 no longer saves as $50); check any price or coupon that saved larger than intended. The builder turns off conflicting trial, down-payment and scheduled-billing options with a note before saving, instead of silently dropping one.
+- **Product builder saves:** Edits to price, down payment, weekly booking allowance, scheduler redemption and access-code **Unlimited use** now save, and every **Update** shows **Saved**. Prices with cents keep the decimal point (\$0.50 no longer saves as \$50); check any price or coupon that saved larger than intended. The builder turns off conflicting trial, down-payment and scheduled-billing options with a note before saving, instead of silently dropping one.
 - **Billing cycles:** New memberships that end after a set number of cycles collect that many full payments even with a free trial or later start. Existing subscriptions are unchanged.
 - **Member Billing:** Lists every current membership, explains when access ends before canceling, and says why a membership can't be canceled there (only the payer can, or the coach must). Free and staff-granted memberships no longer show a bank-account error. Parents see each child's credits under **Billing → Credits**. One-time credit packs show **Active**, **Expired** or **No credits left** instead of "Subscription inactive."
 - **Cards on memberships:** Members can remove a card unless it's the only one paying for an active membership. Changing the card on a membership works after a missed payment. On a client's **Payment Methods**, each membership shows the card that will be charged and its billing dates.
@@ -399,7 +399,7 @@ These apply wherever Copilot is available in your organization.
 - **Bookings:** "Move her Wednesday booking an hour later" moves it instead of creating a second booking. Cancel cards don't ask for a refund when no credits return. Check-in cards name the athlete, scheduler, day and time. Copilot won't book outside open hours and points you to **Book anyway** on the calendar.
 - **Credits:** "Take 3 credits off" subtracts from the balance (10 → 7) instead of setting it to 3. "Give her another five" and "Maximum 3 per client" are understood.
 - **Availability:** "Make Fridays end at 5" changes only Friday. Different hours for different days stay separate. Copilot doesn't ask again for days and hours you already gave.
-- **Follow-ups:** "Make it $20" right after viewing a product changes that product. When one message asks for two booking changes, Copilot names both and asks which first.
+- **Follow-ups:** "Make it \$20" right after viewing a product changes that product. When one message asks for two booking changes, Copilot names both and asks which first.
 - **Answers from your data:** Copilot answers from your own calendar, people, products, forms, waivers, website and notification settings instead of giving how-to steps. Misspelled names get a "Did you mean…?" suggestion.
 - **Limits:** Copilot follows **Staff Access** changes right away and tells a coach when an area needs an admin. It declines medical and injury questions and suggests a professional.
 - **Privacy:** Phone numbers, including international ones, are fully hidden before a message reaches the AI model.
@@ -999,7 +999,7 @@ The athlete portal's page labels can be renamed beyond just the header, so the p
 **Payments and checkout**
 - ACH bank payments complete checkout instead of linking a bank account and charging nothing.
 - Checkout no longer stops after the waiver step, and no longer shows a false "Checkout changed while the payment form was open" warning on an unchanged order.
-- A 100% coupon that brings the total to $0.00 completes the order without waiting on a card form that never loads.
+- A 100% coupon that brings the total to \$0.00 completes the order without waiting on a card form that never loads.
 - Guest checkout no longer returns "Authentication Required" or "We could not start payment."
 - Fixed "Unable to confirm payment," blank Cost Summary totals, and "Unable to complete checkout" on the public storefront.
 - Athletes can add a card to file, and a card used at purchase stays saved.
@@ -1043,7 +1043,7 @@ The athlete portal's page labels can be renamed beyond just the header, so the p
 
 **Automations**
 - Purchase-triggered automations book the athlete when a parent buys for a managed child (including parents with more than one athlete), instead of silently skipping the booking step.
-- Granting a $0 credit-bearing product through an automation issues its credits.
+- Granting a \$0 credit-bearing product through an automation issues its credits.
 
 **Forms**
 - The form builder makes it clear that a field's **Label** — not the heading above it — is what appears in responses, so responses stop showing placeholder text as field names. [Learn more →](/tools/forms/creating-forms#edit-a-question)
@@ -1302,7 +1302,7 @@ We closed 28 coach-facing fixes this month across scheduling, payments, the webs
 - Google Calendar sync fixes: automation-created bookings now sync, bookings push reliably to the coach's calendar, and group bookings and removals sync more cleanly.
 
 **Payments & Credits**
-- A 100% discount coupon at website checkout no longer asks for card details on a $0.00 total.
+- A 100% discount coupon at website checkout no longer asks for card details on a \$0.00 total.
 - Unlimited-credit products no longer display a fixed credit count in the **Configure Purchases** modal.
 - Fixed a credit-renewal issue where a subscription bought through CoachIQ could lose its product link, leaving athletes without credits to book; added diagnostics so this is caught earlier.
 - Coaches are now notified when a client cancels a subscription.
@@ -1439,7 +1439,7 @@ We shipped more than 60 coach-facing fixes this cycle:
 
 - **Scheduling** — Athletes could no longer book the same slot across two schedulers sharing a location, or double-book a session capped at one athlete; a confirmed booking that never appeared on the athlete or admin calendar now shows correctly; the 2-hour minimum-notice setting no longer hides bookable slots in the branded app; the scheduler builder's preview now reflects attached availabilities, lets you switch months, and matches the live date and slot count; a failed reschedule no longer deletes the original booking; cancelling and refunding a credit now frees the redeemed-session count on the scheduler; siblings booked into the same group session each show in the athletes-booked row and count toward capacity; a class hidden from the schedule now displays; duplicate locations created during the new Locations & Resources setup were cleaned up; and Copilot no longer errors when generating availability on the Specific Dates tab.
 - **Credits** — Credits are refunded when athletes cancel on time, awarded after a product purchase, and renewed each cycle on weekly memberships; a purchase no longer triggers an immediate renewal that awarded credits twice; the credit bank shows on the athlete side again; and the **Force credit redemption** toggle now saves in automations.
-- **Payments** — Fixed a checkout error some athletes hit when purchasing, the Transactions page and dashboard showing $0.00 or missing recent orders, and Stripe payments not syncing into CoachIQ; the processing-fee display now updates in the product builder and is styled less prominently; archived products can no longer be purchased; the **Schedule charges for later** builder shows its price and schedule settings and no longer charges customers before the scheduled date; embedded form + scheduler flows now collect payment before booking; product pop-up embeds open on pricing sections; and a checkout layout issue was cleaned up.
+- **Payments** — Fixed a checkout error some athletes hit when purchasing, the Transactions page and dashboard showing \$0.00 or missing recent orders, and Stripe payments not syncing into CoachIQ; the processing-fee display now updates in the product builder and is styled less prominently; archived products can no longer be purchased; the **Schedule charges for later** builder shows its price and schedule settings and no longer charges customers before the scheduled date; embedded form + scheduler flows now collect payment before booking; product pop-up embeds open on pricing sections; and a checkout layout issue was cleaned up.
 - **Forms** — Forms connected to a scheduler complete the booking after submission; the submit button no longer spins indefinitely; checkbox answers (including waiver acceptances) now save and work on the live site, not just in preview; field labels no longer show a trailing "0"; **Contact Info** custom fields appear on the live link; a scheduler on a quiz form's last step displays; radio buttons render correctly in embedded forms; a legacy website form block was repaired; and you can select a form in the web builder again.
 - **Website Builder** — Navigation links, button destinations, and edited content no longer reset or fail to save on publish (including for web-editor users); background images on new sections persist after publishing; removing a button's link actually removes the button; heading fonts no longer fall back to the paragraph font; the **CoachIQ Login** button destination, homepage and logo links, and page URLs resolve correctly; the mobile hamburger menu opens on custom headers; a tiny-header layout bug was fixed; and em dashes paste correctly into builder fields.
 - **Inbox** — Incoming SMS messages land in the Inbox on desktop and mobile, and in-app announcements to all buckets reach every member.
@@ -1677,7 +1677,7 @@ This opens up powerful use cases:
 
 - **Grandfathered pricing** — Raise your rates without affecting existing subscribers. Hide the old-rate product so new athletes only see current pricing.
 - **Invite-only access** — Restrict your app to a select group (travel teams, VIP athletes, tryout groups) without the product being publicly available.
-- **Complimentary memberships** — Grant free or discounted access to staff, scholarship athletes, or partners without a visible $0 option.
+- **Complimentary memberships** — Grant free or discounted access to staff, scholarship athletes, or partners without a visible \$0 option.
 
 Configure hidden products at App Builder → Settings → Pages Paywall → Hidden Products.
 
