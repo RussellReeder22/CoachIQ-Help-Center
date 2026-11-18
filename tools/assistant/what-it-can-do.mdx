@@ -1,0 +1,243 @@
+---
+title: "What the Assistant Can Do"
+description: "The questions CoachIQ's Assistant answers and the changes it can make, by area, with example requests and what it won't do."
+sidebarTitle: "What it can do"
+icon: "list-check"
+keywords: ["assistant", "copilot", "examples", "prompts", "bookings", "credits", "products", "schedulers", "availability", "forms", "website", "tags", "revenue", "attendance", "limits"]
+---
+
+The Assistant does two kinds of work:
+
+- **Answers.** It looks things up in your own records and never changes anything while it does. You can ask anything below without worrying.
+- **Changes.** It prepares the change as a card, and nothing saves until you approve it. See [Approvals, undo and limits](/tools/assistant/approvals).
+
+It works as you: a coach only gets what their role and [staff access](/people/staff-access) allow. The examples use made-up names; use your own.
+
+<Tip>
+  Not sure if something is possible? Ask: "Can you change how families pay for Private Lessons?" When CoachIQ doesn't do something, the Assistant says so in one sentence and gives you the closest option and where to find it.
+</Tip>
+
+## Your business numbers
+
+Ask about money, bookings and clients for any period you name: "since April", "the past 2 weeks", "last quarter", "last summer". Each answer says which dates it covers and what it counted.
+
+> How much did we collect last month, and how does that compare with the month before?
+
+> Who owes us money right now?
+
+> What has Jordan Ellis been charged for this month?
+
+> How many active subscriptions do we have?
+
+> Who hasn't been in for 30 days?
+
+> How was attendance at the 12U Hitting Clinic in October?
+
+> Who are my new leads, and which of them haven't booked?
+
+> Who registered for the Summer Camp form?
+
+- **Revenue** can be broken down by client, product or week, and compared with an earlier period.
+- **Attendance** is given as booked, checked in, not marked and cancelled. "Not marked" is never called a no-show, because CoachIQ doesn't record no-shows.
+- **Who hasn't been in lately** lists clients with no booking in the window and what they still hold (an active plan or credits).
+- **New leads** are people who sent a form or signed up without buying in the last 30 days.
+- **Setup checks**: where your Stripe connection and payouts stand, what stage your texting number is at, whether a message or automation reached someone, and whether your website domain and links work.
+
+Payment and membership answers read up to 500 payments or plans and say so if your history is bigger. When the Assistant couldn't read every record, it says "at least" instead of giving a total. It can't rank products by sales, read monthly recurring revenue, count no-shows or list credits by expiry date; it says so and offers what it can show. Attendance and "who hasn't been in" reach back about 14 weeks.
+
+## Schedule and bookings
+
+**Ask:**
+
+> What's on my schedule tomorrow?
+
+> What times are open for Private Lessons on Friday?
+
+> Who's in the 4 PM clinic on Thursday, 11/19?
+
+> What did I write on Sam Lee's Wednesday lesson?
+
+> What time did Ava check in?
+
+> What are our busiest days?
+
+It reads any day up to about three months away and whole months up to 12 months back or ahead. Check-in times are given in your time zone.
+
+**Change:**
+
+| Task | Example |
+| --- | --- |
+| Book a client | Book Sam Lee into Private Lessons next Tuesday at 4 PM. |
+| Move a booking (same or another day) | Move Sam's Wednesday lesson to Thursday at 1 PM. |
+| Cancel a booking and give credits back | Cancel Ava Chen's Friday November 20 booking and give back her credit. |
+| Check a client in | Check Sam Lee in for today's 4 PM lesson. |
+| Change the coach or venue of one time slot | For Private Lessons on Wednesday, Nov 4 at 10:00 AM, set the location to Main Gym. |
+| Add, change or clear a booking note | Clear the note on Sam's Thursday booking. |
+
+What to know:
+
+- **A booking made from chat takes no payment and uses no credits.** The card says so. If the session should be paid for, take the payment or credits separately, or [book it from the calendar](/scheduling/manually-booking-athletes).
+- Before a move, the Assistant checks the new time is open. If it's taken, it says who has it and lists that day's open times. The card says if the new time has a different location or coaches.
+- A cancel card shows the credits that will really go back, or why fewer will. For one date of a repeating booking, it never returns more than the series can.
+- One date of a weekly repeating booking can be cancelled from chat. To move a repeating booking, use the Schedule calendar.
+- Coaches can book and move from chat. Cancelling is for admins; a coach is pointed to the booking on the Schedule calendar.
+- One booking change at a time. "Cancel every booking on Thanksgiving" gets that day's list so you can pick.
+- Bookings outside open hours are refused. Use **Book anyway** in the booking window on the calendar instead.
+
+## Schedulers and availability
+
+**Ask:** how many schedulers you have, a scheduler's settings and how clients pay for it, an availability's hours and time zone, why a day shows no open times, and your defaults for new sessions.
+
+> Why can't clients book Private Lessons on Sundays?
+
+**Change:**
+
+| Task | Example |
+| --- | --- |
+| Create a lesson scheduler | Create a free 30-minute lesson scheduler named Pitching Lessons using Lesson Hours. Keep self-booking off. |
+| Create a staff-booked session | Create a staff-booked session named Staff Clinic, 60 minutes, free, with Marcus Delgado, availability Facility Hours and location Main Gym. |
+| Change minimum notice, places per time slot, session length or a per-client cap | Change the minimum notice on Private Lessons to 12 hours. |
+| Offer a credit pack on a scheduler, or limit where a pack's credits work | Offer the 10 Lesson Pack on Private Lessons, limit 3. |
+| Create an availability | Create an availability named Winter Hours, Monday and Wednesday 3–7 PM. |
+| Change one day's hours | Close Friday at 3 PM on Weekday Hours. |
+| Add or block a specific date | Add December 20, 9 AM to noon, to Camp Days. |
+| Create or rename a resource | Create a Lane resource named Batting Cage 3 at Main Gym. |
+
+Changing one end of a day ("close Friday at 3") changes only that end; the rest of Friday stays open. Coaches on a session must be on your staff, up to 10.
+
+Some scheduler settings are made in the [Scheduler builder](/scheduling/advanced-scheduler-settings), and the Assistant gives you the steps: making a scheduler free or changing how families pay (Price, Credit or Either), and adding [reminders](/scheduling/session-reminders).
+
+## Clients and families
+
+**Ask:** who someone is, their email or phone, tags, family, credits, payments and notes; counts by role; your newest clients; who holds a tag; who has signed a waiver.
+
+> Who are Dana Ruiz's kids, and how many credits does each have?
+
+> Which clients tagged Varsity don't have an active membership?
+
+**Change:**
+
+| Task | Example |
+| --- | --- |
+| Add an athlete or parent (admins) | Add a new athlete, first name Leo, last name Park, email leo@example.com. |
+| Add a child to a family | Add Mia Park to Dana Park's family. |
+| Change profile details (admins) | Change Leo Park's last name to Park-Lee and phone to 555-0142. |
+| Set a custom field | Set Leo Park's shirt size to M. |
+| Add or delete a note | Note on Leo Park: working on his follow-through. |
+| Tag or untag someone | Tag Leo Park Varsity. |
+| Tag everyone who bought a product | Tag everyone who bought Summer Camp with Camp 2026. |
+
+- Tagging buyers covers up to 100 people on one card, and the card names them. **Tags can start automations**, so check your [automations](/tools/automations/what-are-automations) before tagging a large group.
+- Coaches add notes only when **Coaches can add notes and log calls** is on. Membership details, sign-in email and phone changes, roles, blocking and Staff Access are admin-only; the Assistant tells a coach where an admin does them.
+- To import a list of people or bookings, use [Settings → Data](/settings/data). The Assistant gives you the steps but doesn't import.
+
+## Credits
+
+> How many credits does Ava Chen have on her 10 Lesson Pack?
+
+| Task | Example |
+| --- | --- |
+| Give or take credits | Give Ava Chen 2 credits on her 10 Lesson Pack. / Remove 1 credit from Ava Chen. |
+| Use Master Credits | Give Sam Lee 5 Master Credits. |
+| Pause or allow a client's pack | Stop Sam Lee using his Summer Pack credits for now. |
+
+The card shows the balance before and after (for example 3 → 5). If the balance changed after the card was made, approving is refused and nothing changes; choose **Ask again** for a fresh card. See [Credits](/scheduling/credits-and-schedulers).
+
+## Products, payments and coupons
+
+**Ask:** a product's price, payment type and credits; which products you sell; one client's payments; recent transactions; how a pass-on fee affects what you receive.
+
+| Task | Example |
+| --- | --- |
+| Create a one-time product | Create a one-time product named 4-Lesson Pack for $160 with 4 credits. |
+| Create a membership | Create Monthly Membership at $99 per month. Keep it private. |
+| Change price, name, description or credits | Change 4-Lesson Pack to $150. Keep everything else. |
+| Raise a membership price for new buyers only | Raise Monthly Membership to $109; keep current members on their rate. |
+| Archive a product | Archive Fall Clinic. |
+| Create a discount code | Create a code FALL20 for 20% off 4-Lesson Pack, ending December 31. |
+
+- Products are archived one at a time, never deleted.
+- Access codes, setup fees, free trials, fee overrides and scheduled charges are set in the [product builder](/payments/product-types).
+- Existing coupons can't be edited. Coaches can't see coupons; the Assistant points them to an admin.
+- **No refunds from chat.** Ask about a purchase and the Assistant names it with its amount and date and tells you where to [refund it](/payments/issuing-refunds).
+
+## Messages
+
+> What are the last messages with Dana Ruiz?
+
+> Anything unread?
+
+> Message Leo Park: practice moves to 5 PM tomorrow.
+
+The Assistant sends a message to **one person** at a time, on a card you approve. It **never sends group messages**. Ask it to "email every parent from Saturday's camp" and it counts the audience, lists the names and writes a draft for you to send from the [Inbox](/inbox/inbox-overview).
+
+## Forms and waivers
+
+**Ask:** your forms with question and response counts, who sent a form, who signed a waiver and who hasn't, and which products require a waiver. Form answers and exports are on the form's **Responses**.
+
+| Task | Example |
+| --- | --- |
+| Create a form with questions | Create a form named Tryout Intake with Name, Date of birth and T-shirt size. |
+| Add questions from a photo | (attach a photo of a paper form) Add these questions to Tryout Intake. |
+| Add or remove a choice | Add Green to Favorite color on Tryout Intake. |
+| Attach a form to a product | Attach Tryout Intake to the Tryout product. |
+| Rename, archive or unlink a waiver | Stop requiring the Liability Waiver on 4-Lesson Pack. |
+
+Creating a form with questions takes two cards: one creates the form, the next adds the questions. Approve both.
+
+## Programs, lessons and media
+
+| Task | Example |
+| --- | --- |
+| Build a program | Build a 6-week hitting program with two lessons a week. |
+| Rename a program | Rename Hitting 101 to Hitting Foundations. |
+| Link or unlink a product | Link 4-Lesson Pack to Hitting Foundations. |
+| Add slide text to a lesson | Add a slide to Warmup Basics that says: stretch for five minutes. |
+| Remove a slide or one item on a slide | Remove slide 2 from Warmup Basics. |
+| Tag, untag or rename a Media Hub file | Tag the image Drill Photo with Hitting. |
+
+- A new program comes with its first 3 lessons; add the rest in the [program builder](/content/programs-overview).
+- Lesson slide text is plain text up to 255 characters, added to an empty slide. Use the [lesson builder](/content/lesson-overview) for longer text or formatting.
+- Removing a slide or item is **for good** and the card says so. Files stay in the Media Hub.
+- Unlinking a product from a program takes access away from people who reached the program only through that product. Nothing is refunded.
+
+## Website
+
+**Ask:** the pages on your site, the sections on a page, where your menu and footer links go, and whether your domain works.
+
+| Task | Example |
+| --- | --- |
+| Change a section's wording or heading | On the Home page, change the hero heading to "Train with the best in Austin." |
+| Add, rename or remove a menu or footer link | Remove the Shop link from the header. |
+| Create a page | Create a page called FAQ from the Default template. |
+| Rename, move or delete a page | Move About Us directly after the Home page. |
+| Change a design setting | Make the primary color navy. |
+| Turn the website on | Turn the website on. |
+
+- **Website changes go live when you approve them.** Read the before and after on the card.
+- After a design change, the Done card has **Open**, to see it in the [website builder](/website/overview), and **Undo**, which offers a card setting it back.
+- To add a new section, use the website builder. The Assistant gives you the steps.
+
+## Automations
+
+The Assistant can set up an automation from a plain description, for example "When someone buys Trial, tag them Lead." It's **always saved switched off**, so you can review it in [Automations](/tools/automations/what-are-automations) and turn it on yourself. It can also archive an automation. It can't turn one on.
+
+## Your settings
+
+Ask which notifications you get, and ask to change your own booking email and message email notifications. The card lists the switch it changes and says the others stay as they are.
+
+## What the Assistant won't do
+
+| It won't | Do this instead |
+| --- | --- |
+| Refund a payment | [Refund it](/payments/issuing-refunds) from Payments → Transactions. |
+| Send a group message or text | It writes a draft; send it from the [Inbox](/inbox/inbox-overview). |
+| Turn on an automation | Turn it on in [Automations](/tools/automations/what-are-automations). |
+| Change many records at once (bulk cancel or delete) | It does one at a time and lists them so you can pick. |
+| Delete a product | Archive it. |
+| Import people or bookings | Use [Settings → Data](/settings/data). |
+| Make a scheduler free, change how families pay, or add reminders | Use the [Scheduler builder](/scheduling/setting-up-payment-options). |
+| Add a website section | Use the [website builder](/website/overview). |
+| Test a checkout button or check which emails were sent | Open the page in a private window and go as far as payment, without paying. |
+| Work in another group | Switch groups first. |
+| Give medical advice or write things unrelated to your business | It declines. |

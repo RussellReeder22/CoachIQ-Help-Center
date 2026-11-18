@@ -146,21 +146,21 @@
                 "icon": "browser"
               },
               {
-                "group": "Athlete Portal",
+                "group": "App",
                 "pages": [
                   "athlete-portal/understanding-your-athlete-portal",
                   "athlete-portal/app-builder-navigation-and-interface",
-                  "athlete-portal/design-settings",
-                  "athlete-portal/menu-and-links",
                   "athlete-portal/channels",
                   "athlete-portal/schedule",
                   "athlete-portal/content",
                   "athlete-portal/products",
+                  "athlete-portal/design-settings",
                   "athlete-portal/paywall-settings",
-                  "athlete-portal/hidden-products-paywall",
+                  "athlete-portal/menu-and-links",
+                  "athlete-portal/scripts-and-analytics",
                   "athlete-portal/family-accounts",
-                  "athlete-portal/native-app-booking",
-                  "athlete-portal/scripts-and-analytics"
+                  "athlete-portal/bookings-billing-orders",
+                  "athlete-portal/native-app-booking"
                 ],
                 "icon": "mobile-screen"
               }
@@ -360,9 +360,9 @@
             "pages": [
               "content/content-overview",
               "content/media-overview",
-              "content/programs-overview",
               "content/lesson-overview",
               "content/lesson-components",
+              "content/programs-overview",
               "content/sharing-programs",
               "content/video-analysis"
             ]
@@ -370,7 +370,15 @@
           {
             "group": "Tools",
             "pages": [
-              "getting-started/copilot",
+              {
+                "group": "Assistant",
+                "pages": [
+                  "tools/assistant/overview",
+                  "tools/assistant/what-it-can-do",
+                  "tools/assistant/approvals"
+                ],
+                "icon": "robot"
+              },
               {
                 "group": "Forms",
                 "pages": [
@@ -378,8 +386,8 @@
                   "tools/forms/creating-forms",
                   "tools/forms/payments-and-bookings",
                   "tools/forms/sharing-forms",
-                  "tools/forms/returning-visitor-sign-in",
-                  "tools/forms/responses-and-automations"
+                  "tools/forms/responses-and-automations",
+                  "tools/forms/returning-visitor-sign-in"
                 ],
                 "icon": "file-pen"
               },
@@ -389,12 +397,12 @@
                   "tools/automations/what-are-automations",
                   "tools/automations/build-your-first-automation",
                   "tools/automations/automation-templates",
-                  "tools/automations/triggers-actions-reference",
                   "tools/automations/builder-reference",
+                  "tools/automations/triggers-actions-reference",
                   "tools/automations/scheduled-automations",
+                  "tools/automations/automation-playbook",
                   "tools/automations/zapier-integration",
-                  "tools/automations/zapier-troubleshooting",
-                  "tools/automations/automation-playbook"
+                  "tools/automations/zapier-troubleshooting"
                 ],
                 "icon": "wand-magic-sparkles"
               },
@@ -517,6 +525,14 @@
     "indexing": "all"
   },
   "redirects": [
+    {
+      "source": "/getting-started/copilot",
+      "destination": "/tools/assistant/overview"
+    },
+    {
+      "source": "/athlete-portal/hidden-products-paywall",
+      "destination": "/athlete-portal/paywall-settings"
+    },
     {
       "source": "/inbox/using-tags-for-group-messages",
       "destination": "/inbox/new-message"

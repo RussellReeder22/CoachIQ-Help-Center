@@ -1,464 +1,105 @@
 ---
-title: "Display Products & Payments in Your Athlete Portal"
-description: "Learn how to add products and payment options to your Athlete Portal. Understand platform restrictions and optimize your sales strategy across web and mobile."
-sidebarTitle: "Products & Payments"
+title: "Products page in your app"
+description: "Choose which products families can buy in your app, group them into sections, and rename the page. Plus what families see on a product and at checkout."
+sidebarTitle: "Products"
 icon: "credit-card"
-keywords: ["products in portal", "athlete portal payments", "native checkout", "sell products", "membership sales", "product display"]
+keywords: ["products in app", "sell products", "store", "membership sales", "products page", "app builder products", "purchase now", "native checkout"]
 ---
 
 <Info>
-  **Where to find this**: Athlete Portal → Edit → Products
+  **Where to find this:** **Website & App › App**, click **Edit app**, then **Products** in the builder's left menu. The page is titled **Products page** in the builder.
 </Info>
 
-![CoachIQ Athlete Portal Products page displaying memberships and packages](/images/athlete-portal-product-page.png)
-
-<Warning>
-
-  **App availability varies**: Products and checkout depend on your released native app version and enabled features. Configure product visibility intentionally. The web portal remains available for purchases when an app does not offer the required checkout.
-
-</Warning>
-
-## What you'll accomplish
-
-Set up your products page to display memberships, packages, and services for purchase through your web portal. You'll learn how to organize products into sections, manage visibility settings, and understand critical platform limitations that affect how athletes access your payment options.
-
-![CoachIQ web portal product cards with pricing and purchase buttons](/images/CleanShot2025-09-26at19.44.47.png)
-
-## Web and mobile apps
-
-<Tabs>
-  <Tab title="Mobile apps">
-
-    **iOS and Android apps**
-
-    Supported app versions can display configured products and offer eligible native checkout. Other app versions or purchases use browser checkout. Check your actual released app; a new native payment capability does not automatically make every product visible.
-
-    See [Native app booking](/athlete-portal/native-app-booking).
-
-  </Tab>
-  <Tab title="Web">
-    **Web Browser - Full Access**
-
-    Products fully available when athletes access via:
-
-    - Desktop computers
-    - Mobile web browsers (Safari, Chrome)
-    - Tablet browsers
-    - Any web-based access
-
-    **All features work**: Purchase buttons, payment processing, subscriptions
-  </Tab>
-</Tabs>
-
-## Understanding the Products page
-
-The Products page displays your payment options, memberships, and packages that athletes can purchase to access your services. It functions identically to the Programs page in terms of organization, but focuses on payment products rather than content.
-
-### Overview
-
-- **Purpose**: Payment collection vs. content delivery
-- **Access**: Purchase required vs. content access rules
-- **Platform availability**: Web plus supported native app versions and configuration
-- **Primary action**: Buy button vs. view content
-
-## Before you begin
+The Products page is your app's store: the memberships, credit packs, camps and other products families can buy. You create products in **Payments › Products** (see [Products overview](/payments/product-overview)); this page decides which of them show in your app and under which headings.
 
 <Note>
-  **Required**:
-
-  - At least one product must exist in [Payments → Products](/payments/product-overview)
-  - Stripe account must be connected for payment processing
+  A new product isn't on this page until you add it. Families can also reach a product from a scheduler, a form, a message or its direct link. See [Where families find a product](/payments/product-overview#product-visibility-where-athletes-can-find-products). Your Stripe account must be connected before you can add products.
 </Note>
 
-<Info>
-**Products are hidden by default**: Creating a product in [Payments → Products](/payments/product-overview) doesn't automatically make it visible to athletes. You must explicitly add products to this page (or attach them to schedulers/forms) for athletes to discover them. This lets you set up products before you're ready to launch. [Learn more about product visibility →](/payments/product-overview#product-visibility-where-athletes-can-find-products)
-</Info>
-
-![CoachIQ Products page listing available products in the admin dashboard](/images/Products-page.png)
-
-## Accessing product settings
-
-Open **Athlete Portal → Edit**, then select **Products** in the builder's left navigation.
-
-![CoachIQ App Builder sidebar with App selected in left navigation](/images/athelteportal.png)
-
-## Activating the Products page
+## Add products to the page
 
 <Steps>
-  <Step title="Locate the Active toggle">
-    Find the **Active** toggle in the top right corner of the Products page.
-
-    ![CoachIQ Athlete Portal action bar with Update Page and Settings buttons](/images/Athlete-portal-update-page-update-settings-preivew-page.png)
+  <Step title="Open the Products page">
+    In the builder, click **Products** in the left menu.
   </Step>
-  <Step title="Toggle visibility">
-    - **ON**: The Products page is shown in your web app, and in mobile app versions that support it
-    - **OFF**: The Products page is hidden
-
-    <Info>
-
-      Check both the page configuration and the installed app version when verifying mobile visibility.
-
-    </Info>
-  </Step>
-  <Step title="Save your changes">
-    Click **Update Page** to save the active status.
-  </Step>
-</Steps>
-
-## Adding products to sections
-
-<Steps>
   <Step title="Click Add Products">
-    Within any section, click the **\+ Add Products** button.
-
-    <Frame>
-      ![Add Products button in section](/images/athlete-portal-add-product-add-section.png)
-    </Frame>
+    Inside a section, click **+ Add Products**. The **Products** window lists your products with their amount and the date they were created. Search by name, or filter by **Type**, status (**Active**) and order (**Recent**).
   </Step>
-  <Step title="Select products to display">
-    Choose from your available products:
-
-    - Memberships (recurring subscriptions)
-    - One-time packages
-    - Session bundles
-    - Credit packages
-
-    Each product shows:
-
-    - Product name
-    - Price
-    - Billing frequency (if subscription)
-    - Description preview
+  <Step title="Pick products">
+    Select one or more products, then click **Add Selected**. Each one shows as a row with a title box you can change for this page.
   </Step>
-  <Step title="Confirm selection">
-    Click a selected product again to unselect it. Click **Save** to add selected products to the section. A custom title you give a newly added product is kept on the first **Update Page**.
-
-    <Check>
-      Products appear with their pricing and purchase buttons once you publish the page.
-    </Check>
+  <Step title="Save">
+    Click **Update** at the top right. Nothing changes in your app until you do.
   </Step>
 </Steps>
 
-## Creating and organizing sections
+## Sections
 
-Sections help organize your products into logical categories for easier shopping.
+Sections are the headings families see in the store, such as "Memberships" or "Camps".
 
-### Adding new sections
+- **Add a section:** click **+ Add section** under the last section, then type its name in **Section Title**.
+- **Reorder:** drag a section or a product row by its handle (the six dots, named "Reorder" plus the name for screen readers). Rows only move from the handle, so the title and description boxes stay easy to click.
+- **Remove:** click the trash icon. For a product it's named "Remove", the product name, "from this page". This only takes it off the page; the product itself isn't archived or changed.
 
-<Steps>
-  <Step title="Click Add Section">
-    Click **\+ Add Section** at the bottom of your product list.
+## Turn the page on or off
 
-    <Frame>
-      ![Add Section button for products](/images/athlete-portal-add-product-add-section.png)
-    </Frame>
-  </Step>
-  <Step title="Name your section">
-    Use clear, descriptive names:
+The **Active** switch at the top turns the page on or off for families. You can also show or hide it, and change its address, in [Menu & Links](/athlete-portal/menu-and-links). Turning on the products that unlock paywalled pages is done in [Pages Paywall](/athlete-portal/paywall-settings).
 
-    - "Memberships"
-    - "Single Group Class"
-    - "Training Packages"
-    - "Elite Programs"
-    - "Beginner Packages"
-  </Step>
-  <Step title="Add products to section">
-    Use **\+ Add Products** to populate the new section.
-  </Step>
-</Steps>
+<span id="configuring-page-settings" />
 
-### Section organization best practices
+## Page settings
 
-- Place most popular products at the top
-- Group by commitment level (monthly, yearly, one-time)
-- Separate memberships from individual purchases
-- Consider price-point organization (budget to premium)
+Click the gear icon (**Page settings**) at the top right. It has the same fields as the other pages:
 
-## Configuring page settings
+- **Page name** (the first box): what families see as the page title and in the menu, for example "Shop". Leave it blank to use **Products**.
+- **Slug:** the end of the page's web address, for example `/products`. The buttons beside it copy the link and open the page.
+- **Page Meta (SEO):** the image, title, keywords and description that show when someone shares a link to the page.
 
-Use the Settings panel to rename the Products tab and update the page URL.
+Click **Update** to save.
 
-<Steps>
-  <Step title="Open the Settings panel">
-    Click the **gear icon** in the top right of the Products page to open the Settings panel.
+## What families see
 
-    <Frame>
-      ![Settings menu for Products page](/images/athleteportal-productpage-SEOsettings-customslug.png)
-    </Frame>
-  </Step>
-  <Step title="Rename the page">
-    The first field at the top of the Settings panel is the **Page Name** — the display name athletes see as the tab in their portal. Update it to match your branding (e.g., "Shop", "Memberships", "Purchase").
-  </Step>
-  <Step title="Update the URL slug">
-    The **Slug** field controls the URL path for this page (e.g., `/products`, `/memberships`, `/pricing`).
-  </Step>
-  <Step title="Configure description">
-    Add a **Description** for SEO context explaining your offerings.
-  </Step>
-  <Step title="Save configuration">
-    Click **Update Page** to apply settings.
-  </Step>
-</Steps>
+- **Product list and details:** each product shows its price and a **Purchase Now** button, in the list and in the product's details window. **Read More** shows only when the description is cut short, and long product names wrap on phones instead of being cut off.
+- **A product link that no longer works** says the product isn't available, with a way back to your products.
+- **Signing in:** a visitor who isn't signed in sees **Log in / Sign up** as the first checkout step.
+- **Checkout, Billing and Orders:** what families see when they pay, and where they manage memberships, cards and credits afterwards, is in [Bookings, billing and orders](/athlete-portal/bookings-billing-orders#checkout).
 
-## When an app doesn't offer checkout
+## In the mobile app
 
-Share direct web purchase links when athletes cannot access the required checkout in their installed app.
+The iPhone and Android apps show the Products page too. Depending on the family's app version and the product, they pay inside the app or the app opens checkout in the browser. See [Your app on iPhone and Android](/athlete-portal/native-app-booking).
 
-### Recommended workarounds
-
-<Tabs>
-  <Tab title="Direct Link Strategy">
-    **Send athletes to web portal**
-
-    1. Share your portal link via SMS/email
-    2. Include link in app announcements
-    3. Add "Purchase on Website" message in app
-    4. Use QR codes at facility
-  </Tab>
-  <Tab title="Communication Strategy">
-    **Educate your athletes**
-
-    - Explain during onboarding
-    - Send purchase instructions via Inbox
-    - Create a "How to Buy" program
-    - Include web links in session confirmations
-  </Tab>
-  <Tab title="Alternative Sales">
-    **Other purchase methods**
-
-    - In-person payments at facility
-    - Phone/text orders
-    - Email invoicing
-    - Direct Stripe payment links
-  </Tab>
-</Tabs>
-
-## Preview and testing
-
-<Steps>
-  <Step title="Click Preview Page">
-    Select **Preview Page** to see the athlete view.
-  </Step>
-  <Step title="Test on web browser">
-    Verify display and functionality:
-
-    - Product cards show correctly
-    - Prices display accurately
-    - Purchase buttons work
-    - Sections organized properly
-  </Step>
-  <Step title="Confirm mobile app behavior">
-
-    Check the released iOS/Android apps to verify the intended product visibility and checkout.
-
-  </Step>
-</Steps>
-
-## Publishing changes
-
-<Steps>
-  <Step title="Review all settings">
-    Double-check sections, products, and pricing.
-  </Step>
-  <Step title="Click Update Page">
-    Click **Update Page** to publish changes.
-
-    <Check>
-
-      Changes apply to your published portal. Native visibility also depends on the installed app version and enabled purchase experience.
-
-    </Check>
-  </Step>
-</Steps>
-
-## What families see at checkout
-
-Families should check the initial charge separately from the recurring membership price. A setup fee or coupon can make the first payment different from renewals. A membership that starts billing later shows a scheduled billing date; that is not necessarily a free trial. See [Product payment amounts](/payments/product-builder#understand-the-amounts-clients-see).
-
-An eligible saved card can be selected during checkout, and the card marked **Default** in **Billing** is preselected. A card saved with a different seller may require a new payment method for this purchase. If saved payment methods fail to load, use **Retry** rather than assuming there are no saved cards. Check the selected card before confirming payment.
-
-## What members see in Billing
-
-After a purchase, athletes and parents manage it from **Settings → Billing** in your app.
-
-<AccordionGroup>
-  <Accordion title="Memberships and orders">
-
-    - **Billing** lists every current membership, not only the most recent. **Orders** keeps loading older purchases as they scroll. If history can't load, both pages say so with **Retry** instead of showing nothing.
-    - Trial memberships show the trial end date next to the price.
-    - A membership whose payments you paused in Stripe shows **Payments paused** and, if set, when payments resume, in **Billing**, **Orders** and **Archive**. The member keeps their access, bookings and credits while paused.
-    - Free ($0) memberships and memberships you granted show "No payment method needed."
-    - A purchase you archive on the client's profile shows **Archived** in their **Orders**.
-    - Order times show the time zone and match when the person paid.
-
-  </Accordion>
-  <Accordion title="Canceling a membership">
-
-    When the product allows members to cancel, they see when access ends before they confirm: for a trial, the trial end date and confirmation that they won't be charged; for a paid membership, the end of the current period. Members can also cancel a free membership themselves. A scheduled membership canceled before its first charge reads "Access until (date) · no charge."
-
-    When a member can't cancel from **Billing**, they see why: only the person who pays can cancel it, you need to cancel it (with a button to message you), a temporary problem with **Try again**, or a prompt to sign in. If they continue to Inbox, the drafted message names the membership. A membership you already canceled shows "Already canceled."
-
-  </Accordion>
-  <Accordion title="Credits">
-
-    - **Billing → Credits** lists the member's credit packs. A parent also sees each managed child's credits, marked **For** and the child's name.
-    - One-time credit packs show **Active**, **Expired**, **Credits unavailable** or **No credits left**. They no longer say "Subscription inactive" or offer Re-subscribe.
-    - When a pack has credits that expire on different dates, it names the next expiry and what has already expired. Credits that can still be booked are never labeled expired.
-
-  </Accordion>
-  <Accordion title="Saved cards">
-
-    - Members can remove a saved card, including their only card, unless it's the only card paying for an active membership. In that case they're asked to add another card first. The **Remove card** dialog explains that memberships move to the default card and aren't canceled.
-    - **Set as default** sticks after a reload, and checkout preselects that card.
-    - Changing the card on a membership works after a missed payment or after the old card was removed. When a change can't be made, the reason is shown.
-    - A declined card shows the bank's reason.
-
-  </Accordion>
-</AccordionGroup>
-
-Coaches still can't remove a client's card from the client profile. To cancel or change a membership for a member, see [Manage subscriptions](/payments/manage-subscriptions).
+If you have your own branded app on iPhone, the Products page comes with its next App Store version. Until then, families on that app can buy the same products in your app on the web.
 
 ## Common questions
 
 <AccordionGroup>
-  <Accordion title="Why can't my athletes see products on the mobile app?">
-
-    Check that the Products page is enabled and published, then check the athlete’s installed app version and supported payment experience. Native payments do not automatically turn on your Products page. If checkout is unavailable in that app, share the product’s web purchase link.
-
+  <Accordion title="A product isn't in the Products window. Why?">
+    Check that it exists in **Payments › Products** and isn't archived, and that Stripe is connected. Archived products can't be added, and a direct link to one says the product isn't available.
   </Accordion>
-  <Accordion title="How do I sell to athletes who only use the app?">
-    Best practices:
-
-    1. **Send purchase links** via SMS or email
-    2. **Add announcements** in the app directing to web portal
-    3. **Include instructions** in your welcome message
-    4. **Process payments** in person or over the phone
-    5. **Share QR codes** that link to your web products page
+  <Accordion title="A family can't find a product in the app. What should I check?">
+    1. The Products page's **Active** switch is on and you clicked **Update**.
+    2. Products isn't hidden in [Menu & Links](/athlete-portal/menu-and-links).
+    3. The product is on this page, in a section, and isn't archived.
+    4. On a phone, their app is up to date. If their app doesn't offer the purchase, send them the product's link to buy on the web.
   </Accordion>
-  <Accordion title="Can I accept payments through the app at all?">
-
-    Native payment availability depends on the released app and eligible purchase. When it is unavailable, you can:
-
-    - Use credits (pre-purchased on web)
-    - Book sessions that require payment later
-    - Send payment links through in-app messaging
+  <Accordion title="Do credits bought on the web work in the mobile app?">
+    Yes. Credits are on the person's account, so they can book with them on the web or in the app.
   </Accordion>
-
-  <Accordion title="How do I explain this to frustrated athletes?">
-
-    Sample message:
-    "If you do not see the purchase option in your app, use our web portal to buy your membership or package. Then return to the app to use it."
-
-  </Accordion>
-
-  <Accordion title="Do credits purchased on web work in the app?">
-
-    Yes. Credits bought on the web can be used to book in the mobile app, and the other way around.
-
-  </Accordion>
-
 </AccordionGroup>
-
-## Troubleshooting
-
-### Products not appearing in selection
-
-- Verify products exist in [Payments → Products](/payments/product-overview)
-- Check the product isn't archived (use the status filter dropdown to check)
-- Confirm Stripe is properly connected
-- Refresh the App Builder page
-
-### Athletes report they can't find products
-
-1. Check the athlete’s app version and whether it supports the intended purchase; offer the web purchase link when needed.
-2. Check Products page Active toggle is ON
-3. Verify their account has access
-4. Check the product isn't archived. Archived products don't appear in your app's Products page or website product sections, and a direct link to one shows **No Product Found**. Hidden but active products still open from a direct link.
-5. Test the web portal link yourself
-
-### Purchase buttons not working (web)
-
-- Verify Stripe integration is active
-- Check product configuration in [Payments](/payments/product-overview)
-- Ensure product has valid pricing
-- Test in incognito/private browser
-
-## Pro tips
-
-<Tip>
-  **Mobile purchase funnel**:
-  Create a dedicated "How to Purchase" program in your app that includes:
-
-  1. Step-by-step instructions with screenshots
-  2. Direct link to web portal
-  3. Video walkthrough
-  4. What to do if their app doesn't show a purchase option
-</Tip>
-
-<Tip>
-  **Pricing page on website**:
-  Families who don't see a purchase option in their installed app can still buy from your website, so make your pricing page complete:
-
-  - Detailed product descriptions
-  - Comparison tables
-  - Clear CTAs to purchase
-  - Mobile-optimized design
-</Tip>
-
-<Tip>
-  **Communication strategy**:
-
-  - Add web portal link to email signature
-  - Include in SMS session reminders
-  - Share during trial session sign-ups
-  - Post QR codes at your facility
-</Tip>
-
-<Tip>
-  **Section naming for web**:
-  Section names are what families see first, so make them clear:
-
-  - "Most Popular"
-  - "Best Value - Save 20%"
-  - "New Member Special"
-  - "Limited Time Offer"
-</Tip>
-
-<Tip>
-  **Track your funnel**:
-  Monitor where athletes drop off:
-
-  1. App users who don't know about web purchasing
-  2. Web visitors who don't complete purchase
-  3. Create targeted messages for each group
-</Tip>
-
-## Critical reminders
-
-<Warning>
-  Whether families can buy inside the mobile app depends on their installed app version and the purchase. Check the app itself before telling families where to buy, and keep the web purchase link handy for anyone whose app doesn't offer checkout.
-</Warning>
 
 ## Related articles
 
 <CardGroup cols={2}>
-  <Card title="Creating Products" icon="box" href="/payments/product-builder">
-    Build memberships, packages, and one-time products in the Product Builder
+  <Card title="Products overview" icon="box" href="/payments/product-overview">
+    Create memberships, credit packs and one-time products
   </Card>
-  <Card title="Setting Up Stripe" icon="credit-card" href="/payments/connecting-stripe">
-    Connect your Stripe account for payment processing
+  <Card title="Bookings, billing and orders" icon="receipt" href="/athlete-portal/bookings-billing-orders">
+    What families see at checkout and afterwards
   </Card>
-  <Card title="Understanding the Athlete Portal" icon="mobile" href="/athlete-portal/understanding-your-athlete-portal">
-    Learn how the Athlete Portal works for coaches and athletes
+  <Card title="Pages Paywall" icon="lock" href="/athlete-portal/paywall-settings">
+    Limit pages to members who hold a product
   </Card>
-  <Card title="Paywall Settings" icon="lock" href="/athlete-portal/paywall-settings">
-    Restrict page access until athletes purchase a qualifying product
+  <Card title="Connect Stripe" icon="credit-card" href="/payments/connecting-stripe">
+    Connect your Stripe account to take payments
   </Card>
-  <Card title="Product Types" icon="box" href="/payments/product-types">
-    Understand the different product types available in CoachIQ
-  </Card>
-  <Card title="Communicating with Athletes" icon="inbox" href="/inbox/inbox-overview">
-    Send messages and announcements through your Inbox
-  </Card>
-
 </CardGroup>

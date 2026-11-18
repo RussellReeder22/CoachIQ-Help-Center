@@ -1,350 +1,111 @@
 ---
-title: "Set Up Page Paywalls to Monetize Your Athlete Portal"
-description: "Learn how to restrict athlete access to Programs, Scheduling, and Products pages until payment. Complete paywall setup guide with troubleshooting."
-sidebarTitle: "Page Paywalls"
+title: "Page access: open app pages only to paying members"
+description: "Put your app's Programs, Products or Schedule page behind a paywall so it opens only for families with a qualifying product. Add hidden products for grandfathered or invite-only access."
+sidebarTitle: "Page access (paywall)"
 icon: "lock"
-keywords: ["paywall", "restrict access", "membership wall", "subscription paywall", "monetize app", "page access control"]
+keywords: ["paywall", "page access", "pages paywall", "members only", "restrict access", "hidden products", "grandfathered pricing", "membership wall", "subscription paywall"]
 ---
 
-<Info>
-  **Quick Answer**: Page paywalls restrict athlete access to specific pages (Programs, Scheduling, or Products) in your athlete portal until they purchase a required product. Configure paywalls at App Builder → Settings → Pages Paywall.
-</Info>
+Page access lets you make whole pages of your app open only for families who've bought a qualifying product, usually a membership. Everyone else sees a paywall page with the products that unlock it.
 
-![CoachIQ paywalled athlete app showing purchase prompt for restricted content](/images/paywalled-athlete-app.png)
+**Where to find it:** **Website & App › App › Page access**, or **Settings › Pages Paywall** in the App builder.
 
-## What is a page paywall in CoachIQ?
+<Frame>
+  ![Pages paywall settings: the Active switch, Paywalled pages with Programs, Products and Schedulers switches, Paywall options with Add Product, and Hidden products with Add Hidden Product](/images/app-pages-paywall-2026-11.png)
+</Frame>
 
-A page paywall is a monetization feature that restricts athlete access to entire sections of your athlete portal until they purchase a qualifying product. When athletes attempt to access a paywalled page without the required product, they see a purchase prompt instead of the content.
+## Before you start
 
-![CoachIQ Athlete Portal paywall page settings configuration](/images/athleteportal-paywall-page-settings.png)
+- Create the products that should unlock the pages in [Payments › Products](/payments/product-overview). Memberships and one-time products both work.
+- Make sure the pages you want to lock are showing in [Menu & Links](/athlete-portal/menu-and-links). The paywall stands in front of a page; it can't show a page that's hidden.
 
-**Key capabilities:**
-
-- Paywall three core pages: Programs, Scheduling, and Products
-- Multiple products can unlock the same page
-- Works with subscriptions, one-time purchases, and access codes
-- Automatically relocks pages if subscriptions expire or payments fail
-
-## Prerequisites for setting up paywalls
-
-<Note>
-  **Required before starting:**
-
-  - At least one product created in [Payments → Products](/payments/product-overview)
-  - Admin or owner permissions in CoachIQ
-  - Active athlete portal (configured in App Builder)
-  - Pages activated in Menu & Links settings
-</Note>
-
-![CoachIQ Products page in the admin dashboard](/images/Products-page.png)
-
-## Setting up your first page paywall
+## Set up page access
 
 <Steps>
-  <Step title="Navigate to paywall settings">
-    From your App Builder, click **Settings** in the left sidebar, then select **Pages Paywall**.
-
-    <Tip>
-      You can also access this by going to App Builder → Settings → Menu & Links, then selecting Pages Paywall from the sidebar.
-    </Tip>
+  <Step title="Choose the pages to lock">
+    Under **Paywalled pages**, turn on **Programs**, **Products**, **Schedulers** (your Schedule page) or any mix.
   </Step>
-  <Step title="Select pages to paywall">
-    Choose which pages you want to restrict access to under **Paywalled Pages**. When the paywall is active, these pages open only for athletes with a paywall product (including active or trialing subscriptions). Everyone else sees the paywall. You can paywall:
-
-    - **Programs** - Training content, certifications, and courses
-    - **Products** - Your product catalog and purchase options
-    - **Schedulers** - The Schedule page and the schedulers you have added to it
-
-    ![CoachIQ page selection checkboxes for choosing which pages to paywall](/images/selectwhichpagesyouwishtopaywall.png)
-
-    <Note>
-      Paywalling **Schedulers** restricts only the schedulers listed on your portal's Schedule page. A scheduler you link from a form, a website button, or a direct link stays bookable without the paywalled product, so intake forms and evaluation links keep working for prospects. To gate one of those schedulers too, attach a product to it directly — see [Attach products to schedulers](/payments/attach-products).
-    </Note>
+  <Step title="Add the products that unlock them">
+    Under **Paywall options**, click **Add Product** and pick one or more products. Buying **any one** of them unlocks the locked pages. Use **Add section** to group the options under headings, such as "Monthly" and "Season pass". Families see these sections on the paywall page.
   </Step>
-  <Step title="Add qualifying products">
-    Click **\+ Add Product** under the page section you want to paywall. This opens a product selection modal.
-
-    Select one or more products that will grant access to this page. Athletes must purchase at least one of these products to unlock the page.
-
-    ![CoachIQ product selection modal for assigning products to a paywalled page](/images/selectproducttopaywallspecificpage.png)
-  </Step>
-  <Step title="Configure product grouping">
-    You can create multiple product groups (sections) for different membership tiers:
-
-    For example:
-
-    - **Memberships section**: Monthly subscriptions
-    - **Virtual Training section**: One-time course purchases
-
-    <Note>
-      Products in the same section represent alternatives (athlete needs ANY one). Products in different sections can represent bundles or tiers.
-    </Note>
-  </Step>
-  <Step title="Update and activate">
-    Once configured, ensure:
-
-    1. The page is set to **Active** in Menu & Links settings
-    2. Click **Update Paywall** to save your changes
-    3. The paywall takes effect immediately for all athletes
-
-    <Warning>
-      A paywall needs an active page to sit in front of. If you turn the paywall on but no paywalled page is active, athletes are prompted to pick a page instead of seeing your content. Activate the page in **Menu & Links**, then save the paywall again.
-    </Warning>
+  <Step title="Turn it on">
+    Switch on **Active** at the top and click **Update**. The paywall applies straight away.
   </Step>
 </Steps>
 
-## What athletes see when accessing paywalled pages
+The gear at the top opens the paywall page's settings: its **Slug** (web address) and **Page Meta (SEO)**, the title and description shown in search results and link previews.
 
-When an athlete without the required product tries to access a paywalled page, they see:
+## What families see
 
-![Athlete view of a paywalled page with product pricing and purchase button](/images/paywalled-athlete-app.png)
+A family without a qualifying product who opens a locked page sees the paywall: your products with their prices and descriptions, and buttons to buy them. Visitors who aren't signed in see the same paywall page, with a link to sign in, so a member can sign in and go straight in.
 
-**The paywall experience includes:**
-
-- Clear indication the page is restricted
-- Product name and price display
-- Description of what's included
-- "Purchase Now" or "Learn More" buttons
-- Professional branded appearance matching your portal
+Families get access as soon as their purchase goes through, and keep it while the product is active. A membership counts while it's active or trialing. When it ends or its payment fails, the page locks again until it's paid.
 
 <Note>
-  The paywall only stands in front of the page itself. An athlete who reaches a scheduler through a form, a button, or a direct link (rather than the Schedule page) can book it without the paywalled product, and a program you shared directly with an athlete stays visible even when the Programs page is paywalled.
+  The paywall only covers the pages themselves. A scheduler a family reaches through a form, a website button or a direct link stays bookable, and a program you shared directly with an athlete stays open. To charge for one scheduler, attach a product to it instead. See [Attach products to schedulers](/payments/attach-products).
 </Note>
 
 ## How paywalls work for parents and children
 
-When the **Schedulers** page is paywalled, access is checked for the family as well as the person signed in:
+When the **Schedulers** page is locked, access is checked for the whole family:
 
-- **The parent holds the product.** If a parent's own purchase unlocks the Schedule page, they can book any of their linked children from it and pay with the family's credits.
-- **A child holds the product.** If one of a parent's children holds a qualifying product, the parent can open the Schedule page and book that child.
-- **Siblings don't share access.** Each booking is still checked for the athlete it's for. A product held by one child never lets the parent book a sibling who doesn't have it.
-- **Archived purchases don't count.** If you archive the qualifying product on a client's profile, it no longer unlocks the page.
+- **The parent holds the product.** The parent can open the Schedule page and book any of their children.
+- **A child holds the product.** The parent can open the Schedule page and book that child.
+- **Siblings don't share access.** Each booking is checked for the athlete it's for. One child's product never lets the parent book a sibling who doesn't have it. When a booking is refused for that reason, the message links to your membership options.
+- **Archived purchases don't count.** If you archive the qualifying product on a client's profile, it stops unlocking the page.
 
-The parent's menu updates when a child gets or loses the qualifying product. If a parent says **Sessions** still looks locked after their child received the product, ask them to refresh the app once.
+If a parent says **Sessions** still looks locked after their child got the product, ask them to refresh once.
 
-## Managing multiple products on paywalls
+## Hidden products
 
-### Adding products to existing paywalls
+**Hidden products** unlock the paywall in exactly the same way, but don't show on the paywall page. Families can't find or buy them there.
 
-You can add multiple products that grant access to the same page:
+Use them for:
 
-1. Navigate to Pages Paywall settings
-2. Find your paywalled page section
-3. Click **\+ Add Product**
-4. Select additional products from your product list
-5. Click **Add Selected**
+- **Grandfathered pricing.** You raise your membership from $49 to $69. Move the $49 product to hidden products: current members keep their rate and access, and new families only see $69.
+- **Invite-only access.** A travel team or a tryout group gets a product only you hand out.
+- **Free or discounted access** for staff, scholarship athletes or sponsors, without a $0 option on your public paywall.
 
-**How multiple products work:**
+To add one, click **Add Hidden Product** under **Hidden products**, pick the product and click **Update**. The product must already exist in **Payments › Products**.
 
-- **ANY** product in the list grants full access
-- Athletes only need to purchase ONE qualifying product
-- Great for offering different price points or payment options
-- Perfect for seasonal promotions or grandfathered pricing
+Because families can't buy a hidden product from the paywall, get it to them another way:
 
-### Creating membership tiers
+- Add it to the client yourself from their profile's **Products**. See [Client products](/people/client-profiles/client-profiles-products).
+- Send them the product's link by message, email or text.
 
-Structure your paywalls for different access levels:
-Basic Membership ($50/month)
-→ Unlocks: Programs only
-Pro Membership ($100/month)
-→ Unlocks: Programs + Scheduling
-Elite Membership (\$250/month)
-→ Unlocks: Programs + Scheduling + Products
-
-### Using sections for organization
-
-Create logical groupings of products:
-
-- **Add Section** to create categories like "Memberships" or "Virtual Training"
-- Helps athletes understand their options
-- Makes managing multiple products easier
-- Each section can have its own description
-
-## Customizing paywall pages
-
-### SEO and URL settings
-
-Configure how your paywalled pages appear in search results and browsers:
-
-- **Page Title**: Optimize for search engines (e.g., "Premium Basketball Training Programs")
-- **Meta Description**: Describe the value behind the paywall
-- **URL Slug**: Customize the page URL (e.g., `/paywall` or `/premium-access`)
-
-![CoachIQ paywall page SEO settings with title, description, and URL slug](/images/CleanShot2025-09-26at20.20.26.png)
-
-<Tip>
-  Use compelling descriptions that highlight the value athletes get after purchasing, not just that the content is locked.
-</Tip>
-
-### Paywall messaging
-
-The paywall automatically displays:
-
-- Subscription description from your product settings
-- Price and billing frequency
-- Clear call-to-action buttons
-
-Ensure your product descriptions clearly communicate:
-
-- What's included with purchase
-- Billing terms (monthly, one-time, etc.)
-- Value proposition for athletes
-
-## Troubleshooting paywall access issues
-
-### Why athletes can't access paywalled pages
-
-**Diagnosis checklist:**
-
-1. **No qualifying product purchased**
-   - Check: [People](/people/overview) → [Athlete Name] → Products tab
-   - Solution: Direct athlete to purchase page on web portal
-2. **Subscription expired**
-   - Check: [Payments → Subscriptions](/payments/subscriptions-dashboard) → Filter by athlete
-   - Solution: Update payment method or reactivate subscription
-3. **Payment failed**
-   - Check: [Payments → Transactions](/payments/transactions) → Failed payments
-   - Solution: Have athlete update billing information
-4. **Product removed from paywall**
-   - Check: Pages Paywall settings for product list
-   - Solution: Re-add product or communicate changes to athletes
-5. **Page not active**
-   - Check: Menu & Links settings for page toggle
-   - Solution: Activate the page in settings
-6. **Paywall on, but no active page selected**
-   - Symptom: athletes see a prompt to pick a page instead of the paywall or the content
-   - Solution: Activate at least one paywalled page in Menu & Links, then click **Update Paywall** again
-7. **Qualifying product archived on the profile**
-   - Check: [People](/people/overview) → [Athlete Name] → Products tab. A purchase marked **Archived** no longer unlocks the page
-   - Solution: Add the product to the client again if they should keep access
-8. **Parent booking a child who doesn't hold the product**
-   - Symptom: the parent can open the Schedule page through another child's purchase, but booking this child is refused
-   - Solution: The child being booked needs a qualifying product, or the parent needs one on their own profile. See [How paywalls work for parents and children](#how-paywalls-work-for-parents-and-children)
-
-<Warning>
-  **iOS App Limitation**: Due to Apple's Reader App policy, athletes cannot purchase products directly through the iOS app. They must use the web portal to purchase access to paywalled content.
-</Warning>
-
-### Quick fixes for common issues
+## Common questions
 
 <AccordionGroup>
-  <Accordion title="Athlete purchased but still can't access">
-    1. Verify purchase in People → [Athlete] → Transactions
-    2. Check if subscription is active (not past due)
-    3. Have athlete log out and back in
-    4. Ensure the correct product is linked to the paywall
+  <Accordion title="A family bought the product but the page is still locked">
+    Check the purchase on their profile: it must be active (not canceled, ended or archived) and be one of the products on the paywall, visible or hidden. Then ask them to refresh, or sign out and back in.
   </Accordion>
-  <Accordion title="Subscription renewed but page still locked">
-    Failed payments can cause temporary locks. Check:
-
-    - Payment status in Stripe
-    - Transaction status in CoachIQ
-    - May take up to 5 minutes to sync after successful payment
+  <Accordion title="Can I lock one program instead of the whole Programs page?">
+    Not with the paywall; it works on whole pages. To limit one program, use the program's own sharing and access settings. See [Programs page](/athlete-portal/content).
   </Accordion>
-  <Accordion title="Access code not working">
-    Ensure the access code product is:
-
-    - Added to the paywall product list
-    - Not expired or at usage limit
-    - Properly redeemed by the athlete
+  <Accordion title="Can I lock different pages behind different products?">
+    No. Every product on the paywall unlocks every locked page. For different levels, attach products to individual schedulers, or share programs with chosen athletes.
   </Accordion>
-  <Accordion title="Want to temporarily remove paywall">
-    To temporarily grant free access:
-
-    1. Remove all products from the paywall section
-    2. Save changes
-    3. Page becomes accessible to all athletes
-    4. Re-add products when ready to restore paywall
+  <Accordion title="Does the paywall work in the mobile app?">
+    Yes. Locked pages are locked on the web and in the iPhone and Android apps. Whether a family can buy inside the mobile app depends on their app version; if they can't, they buy on the web and come back.
+  </Accordion>
+  <Accordion title="How do I remove the paywall for a while?">
+    Switch off **Active** and click **Update**. Your pages, products and sections stay set up for when you turn it back on.
   </Accordion>
 </AccordionGroup>
-
-## Best practices for page paywalls
-
-<Tip>
-  **Maximize conversion with these strategies:**
-
-  1. **Clear value proposition** - Make it obvious what athletes get behind the paywall
-  2. **Multiple price points** - Offer various products to match different budgets
-  3. **Trial periods** - Use trial subscriptions to let athletes experience value first
-  4. **Bundle strategically** - Create product combinations that make sense for athlete goals
-  5. **Communicate changes** - Always notify athletes before adding new paywalls
-</Tip>
-
-## Common questions about paywalls
-
-<AccordionGroup>
-  <Accordion title="Does the Schedulers paywall block every scheduler I own?">
-    No. It blocks the schedulers you added to the portal's Schedule page. Schedulers reached through a form, a website button, or a direct link are not gated by the Pages Paywall. If you want one of those gated as well, attach a product to that scheduler in its own settings.
-  </Accordion>
-  <Accordion title="Can I paywall individual programs instead of the whole Programs page?">
-    No, paywalls work at the page level only. To restrict individual programs, use the program sharing settings in Content → Programs → [Program] → Share Settings instead.
-  </Accordion>
-  <Accordion title="What happens when a subscription payment fails?">
-    The page automatically relocks when a subscription payment fails. Athletes see the purchase prompt again until payment is successful. There's typically a grace period of 3-7 days for payment retry.
-  </Accordion>
-  <Accordion title="Can athletes preview paywalled content?">
-    No, paywalled pages are completely restricted. Consider creating a separate "preview" or "demo" section outside the paywall to showcase value.
-  </Accordion>
-  <Accordion title="How do I offer a free trial before the paywall?">
-    Create a subscription product with a trial period in [Payments → Products](/payments/product-overview). Set the trial length (e.g., 7 days free), then add this product to your paywall.
-  </Accordion>
-  <Accordion title="Do paywalls work on both mobile app and web?">
-
-    Paywalls control access on web and native apps. The available purchase flow depends on the installed app and eligible purchase. When native checkout is unavailable, use the web portal to purchase, then return to the app.
-
-  </Accordion>
-  <Accordion title="Can I have different paywalls for different user groups?">
-    Currently, paywalls apply to all athletes universally. For group-specific access, consider using private program assignments or access codes.
-  </Accordion>
-  <Accordion title="What if I want to grant manual access without payment?">
-    You can:
-
-    1. Create a \$0 access code product
-    2. Add it to the paywall
-    3. Manually provide the code to specific athletes
-  </Accordion>
-  <Accordion title="How do refunds affect paywall access?">
-    Refunding a product purchase immediately removes paywall access. The athlete will need to repurchase to regain access.
-  </Accordion>
-</AccordionGroup>
-
-## Monitoring paywall performance
-
-Track your paywall effectiveness:
-
-**Key metrics to monitor:**
-
-- **Conversion rate**: People viewing vs purchasing
-- **Revenue per page**: Which paywalled pages generate most revenue
-- **Churn indicators**: Subscription cancellations after paywall access
-- **Support tickets**: Common access issues to address
-
-**Where to find data:**
-
-- [Payments → Transactions](/payments/transactions) (purchase tracking)
-- [Payments → Subscriptions](/payments/subscriptions-dashboard) (active membership monitoring)
-- [People](/people/overview) → Activity logs (access patterns)
 
 ## Related articles
 
 <CardGroup cols={2}>
-  <Card title="Product Overview" icon="box" href="/payments/product-overview">
-    Understand how products work and where athletes can find them
+  <Card title="Products overview" icon="box" href="/payments/product-overview">
+    How products work and where families find them
   </Card>
-  <Card title="Product Builder" icon="credit-card" href="/payments/product-builder">
-    Create memberships, packages, and one-time products
+  <Card title="Product builder" icon="credit-card" href="/payments/product-builder">
+    Create memberships and one-time products
   </Card>
-  <Card title="Attach Products to Schedulers" icon="calendar-plus" href="/payments/attach-products">
-    Require payment or credits when athletes book sessions
+  <Card title="Menu & Links" icon="bars" href="/athlete-portal/menu-and-links">
+    Show or hide your app's pages
   </Card>
-  <Card title="Products in Your Athlete Portal" icon="mobile" href="/athlete-portal/products">
-    Display and organize products in your athlete-facing portal
+  <Card title="Family accounts" icon="people-roof" href="/athlete-portal/family-accounts">
+    Parents, children and who holds what
   </Card>
-  <Card title="Transactions" icon="credit-card" href="/payments/transactions">
-    Track purchases, refunds, and payment history
-  </Card>
-  <Card title="Managing People" icon="users" href="/people/overview">
-    View athlete profiles, products, and activity
-  </Card>
-
 </CardGroup>
