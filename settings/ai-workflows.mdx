@@ -14,7 +14,7 @@ If you still need the connection or your business Project, follow [Use CoachIQ w
 
 Paste this before working in a new chat or after reconnecting:
 
-```text
+```text wrap
 Use a small live CoachIQ read to confirm my business and group, and tell me whether this connection is read-only or allows supported changes. Do not change anything.
 ```
 
@@ -24,7 +24,7 @@ Read-only access supports lookups. Changes require the supported tools and write
 
 Name the scheduler and the date range. Ask for the link returned by CoachIQ rather than a guessed URL.
 
-```text
+```text wrap
 Check next week's availability for [scheduler name] in [timezone]. Show the available session times and return the exact public booking link from CoachIQ. Tell me if the session is inactive, archived, or closed to self-booking. Do not change anything.
 ```
 
@@ -32,7 +32,7 @@ Open the returned link and check that it points to the intended session. A link 
 
 ## Block a date without changing weekly hours
 
-```text
+```text wrap
 For [availability template name], prepare a blackout on [date] from [start] to [end] in [timezone]. Keep its weekly hours and other dates unchanged. Show me the target, date, and hours and wait for my approval before saving. After saving, read the template back and confirm the blackout.
 ```
 
@@ -40,7 +40,7 @@ Review the named template and exact timezone. Changing availability is separate 
 
 ## Prepare a booking change for one athlete
 
-```text
+```text wrap
 Find [athlete name]'s booking for [session name] on [date and time]. Prepare a move to [new date and time, timezone]. Confirm the athlete, current booking, and available destination. Tell me about any conflict or unsupported action and wait for my approval. After an approved change, read the booking back to verify it.
 ```
 
@@ -50,7 +50,7 @@ Only Admins can cancel through the assistant, one booking or one date at a time.
 
 ## Message a group of clients
 
-```text
+```text wrap
 Prepare one email to everyone tagged [tag] with the subject [subject] and this message: [message]. Show me who will get it, who is left out and why, and the credit cost. Wait for my approval, then tell me who it was sent to and anything that wasn't confirmed.
 ```
 
@@ -58,7 +58,7 @@ Group sending is available after the connector update. A group email or text goe
 
 ## Update a scheduler's title and description
 
-```text
+```text wrap
 Read the scheduler [scheduler name]. Show me its current title and description next to this new version: [new text]. Change only the title and description, and wait for my approval. After saving, read it back.
 ```
 
@@ -66,7 +66,7 @@ This works after the connector update. Price, payment, coaches, location, availa
 
 ## Update text on your website
 
-```text
+```text wrap
 On my website page [page name], find the section with [what it says now]. Prepare new text: [new text]. Show me the preview of each field that changes and wait for my approval. After saving, read the section back.
 ```
 
@@ -76,7 +76,7 @@ The assistant can change the text, image and link fields of custom sections, and
 
 Start with a search, then approve changes to the identified file:
 
-```text
+```text wrap
 Find videos uploaded by [coach] during [date range] with the tag [tag]. List matching names and identifiers without changing them. For the file I select, prepare the new name [name] and tag [tag], then wait for approval before saving.
 ```
 
@@ -84,7 +84,7 @@ The media tools can search by file type, uploader, tag, and date; create or appl
 
 ## Import a file from a public link
 
-```text
+```text wrap
 Prepare to import this public file into CoachIQ Media Hub: [URL]. Check whether the type and size are supported and show me the planned filename. Wait for approval before importing, then confirm the saved media record.
 ```
 
@@ -92,7 +92,7 @@ The import tool supports images and PDFs up to **25 MB**, and MP4 or MOV video u
 
 ## Attach media to a program or lesson
 
-```text
+```text wrap
 Find [media filename] in CoachIQ. Prepare to attach it to [program name] as a media step, or to [lesson name and named slide] as a media block. Identify the exact file and destination and wait for approval. After saving, read the destination back and confirm the attachment.
 ```
 
@@ -100,7 +100,7 @@ Removing that program step or lesson block is different from deleting the source
 
 ## Check usage without assuming a file is unused
 
-```text
+```text wrap
 Show which programs and lesson slides use [media filename]. Explain what locations this lookup does not cover. Do not remove any attachment or delete the file.
 ```
 
