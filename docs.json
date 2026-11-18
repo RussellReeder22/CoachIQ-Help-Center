@@ -257,8 +257,7 @@
                 "pages": [
                   "payments/connecting-stripe",
                   "payments/stripe-dashboard",
-                  "payments/disconnect-stripe",
-                  "payments/sharing-rev"
+                  "payments/disconnect-stripe"
                 ]
               },
               {
@@ -268,9 +267,10 @@
                   "payments/product-overview",
                   "payments/product-types",
                   "payments/product-builder",
-                  "payments/attach-products",
                   "payments/processing-fee",
-                  "payments/guest-checkout"
+                  "payments/attach-products",
+                  "payments/guest-checkout",
+                  "payments/sharing-rev"
                 ]
               },
               {
@@ -278,21 +278,9 @@
                 "icon": "coins",
                 "pages": [
                   "payments/credits/credit-system-overview",
+                  "payments/credits/recurring-credit-memberships",
                   "payments/credits/credit-usage-limits-restrictions",
-                  "payments/credits/managing-athlete-credits",
-                  "payments/credits/recurring-credit-memberships"
-                ]
-              },
-              {
-                "group": "Subscriptions",
-                "icon": "repeat",
-                "pages": [
-                  "payments/subscriptions-dashboard",
-                  "payments/manage-subscriptions",
-                  "payments/shared-family-memberships",
-                  "payments/upgrade-membership",
-                  "payments/grandfather-pricing",
-                  "payments/stripe-coachiq-reconciliation"
+                  "payments/credits/managing-athlete-credits"
                 ]
               },
               {
@@ -302,6 +290,18 @@
                   "payments/transactions",
                   "payments/issuing-refunds",
                   "payments/failed-payments"
+                ]
+              },
+              {
+                "group": "Subscriptions",
+                "icon": "repeat",
+                "pages": [
+                  "payments/subscriptions-dashboard",
+                  "payments/manage-subscriptions",
+                  "payments/upgrade-membership",
+                  "payments/shared-family-memberships",
+                  "payments/grandfather-pricing",
+                  "payments/stripe-coachiq-reconciliation"
                 ]
               },
               {

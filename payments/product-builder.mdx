@@ -8,12 +8,12 @@ keywords: ["product builder", "create product", "product settings", "product opt
 
 Open **Payments → Products**, then select **+ Create** for a new product or select an existing product to edit it.
 
-The builder lists its sections on the left. The **Product Preview** on the right summarizes the product as you go, including its processing fee, frequency, down payment, when a subscription ends (for example "After 3 billing cycles" or the end date), credits, credit limits, whether a free product collects a card, **Archived** status, and confirmation page. Save with the button at the top right, for example **Create Subscription** or **Update One Time**. **Archive** sits beside it on an existing product.
+The builder lists its sections on the left. The **Product Preview** on the right summarizes the product as you go, including its processing fee, frequency, down payment, when a subscription ends (for example "After 3 billing cycles" or the end date), credits, credit limits, whether a free product collects a card, **Archived** status, and confirmation page. The top bar names what you're building, for example **Create New Subscription**. Save with **Create** at the top right, or **Update** on an existing product. **Archive** sits beside it on an existing product.
 
 An existing product opens as **Edit One Time**, **Edit Subscription** or **Edit Access Code**. Each **Update** shows **Saved** and reloads the stored settings, so what you see after saving is what was saved.
 
 <Frame>
-  ![Product Builder for a subscription with the section list, Details and Payment sections, and the Product Preview](/images/product-builder.png)
+  ![Product builder for a new subscription: the section list on the left, Details and Payment in the middle, and the Product Preview on the right](/images/product-builder-2026-11.png)
 </Frame>
 
 | Section | What you set | Shown for |
@@ -22,7 +22,7 @@ An existing product opens as **Edit One Time**, **Edit Subscription** or **Edit 
 | [Payment](#payment) | Price, processing fee, access codes, trials, down payment | All types; some settings subscriptions only |
 | [Frequency](#frequency) | How often it bills and adds credits | Subscriptions |
 | [Credits](#credits) | Whether the purchase adds credits, how many, and when they expire | All types |
-| [Credit Limits](#credit-limits) | Which schedulers accept the credits | When credits are on |
+| [Credit Limits](#credit-limits) | Which schedulers accept the credits, and booking caps | When credits are on |
 | [Confirmation page](#confirmation-page) | Where the buyer lands after paying | All types |
 | [Advanced](#advanced) | Purchase limits, guest checkout, revenue sharing, waivers, registration form, cancellation, who the purchase is for | All types |
 
@@ -31,6 +31,12 @@ An existing product opens as **Edit One Time**, **Edit Subscription** or **Edit 
 - **Product Name** (required): what families see at checkout and in their purchase history. Name it after what it unlocks, such as "Group Training - 8 Credits a Month", not "Package A".
 - **Product Description**: what's included, who it's for, and any expiration or restriction.
 - **Add Feature**: short bullet points shown with the product.
+
+Names and descriptions keep accented letters and symbols such as é, ñ and ©. Curly quotes are saved as straight quotes. If a name contains a character that can't be stored, the builder says which field and which character, and keeps what you typed so you can fix it.
+
+<span id="stripe-isnt-connected" />
+
+If Stripe isn't connected yet, the builder shows **Stripe isn't connected** with a **Connect Stripe** button. Until you connect, products save as free and can only be opened with an access code. See [Connect Stripe](/payments/connecting-stripe).
 
 ## Payment
 
@@ -44,7 +50,12 @@ Prices keep cents as typed: 0.50 saves as \$0.50. This applies to price, down pa
   <Accordion title="Add processing fee">
     Turn on **Add processing fee** to charge the buyer a fee on top of the price. Set a **Fixed Fee** and a **Percentage Fee**. The **Preview** below the fields shows the price, fee, and total. Leave it off to absorb the fees yourself.
 
-    You can also set the label buyers see for the fee. Fee amounts, the CoachIQ platform fee, and ACH fees are covered in [Processing fees](/payments/processing-fee).
+    You can also set the **Fee Label** buyers see. Turn on **Cover my fees** to fill in the fee so you receive about your full price after card processing and any CoachIQ platform fee. You can still change the numbers. Fee amounts, the CoachIQ platform fee, and ACH fees are covered in [Processing fees](/payments/processing-fee).
+  </Accordion>
+  <Accordion title="Your payout (You receive about)">
+    Once you enter a price, the Payment section shows what you keep from a card payment: the CoachIQ platform fee if your organization has one, **Estimated card processing**, and **You receive about**. On a subscription it's labeled **Your payout per recurring card payment**.
+
+    Card processing is estimated at Stripe's standard US card rate (2.9% + 30 cents). Your actual rate can differ by country, card, and currency conversion. The estimate doesn't change what checkout charges.
   </Accordion>
   <Accordion title="Enable access codes">
     Turn on **Enable access codes** to let families redeem a code instead of paying. Add each code and how many times it can be used, or turn on **Unlimited use**. Remove a code to stop new redemptions; purchases already made with it are unaffected. An older product may list the same code twice from an earlier save; remove the extra one.
@@ -52,6 +63,8 @@ Prices keep cents as typed: 0.50 saves as \$0.50. This applies to price, down pa
     **View Stats** on a code shows how many times it was used, including on unlimited codes, or "No uses yet."
 
     On an Access Code product, codes are the only way to get the product, and checkout shows a single **Redeem code** button. On a One-Time or Subscription product, families can pay or enter a code. See [Product types: Access Code](/payments/product-types#access-code).
+
+    A subscription that only access codes can unlock stays a subscription when you save it, and keeps its billing cycles and end date.
   </Accordion>
   <Accordion title="Payment methods at checkout">
     Products don't choose their own payment methods. Buyers see the methods that are active for your organization: cards, plus Apple Pay and Google Pay, US bank account (ACH), and buy-now-pay-later options such as Afterpay where enabled. ACH works on one-time products and recurring memberships. See [Payment methods at checkout](/payments/getting-started#payment-methods-at-checkout).
@@ -75,6 +88,10 @@ Prices keep cents as typed: 0.50 saves as \$0.50. This applies to price, down pa
   </Accordion>
   <Accordion title="Schedule charges for later (subscriptions)">
     The family checks out now and saves a payment method, and the first charge runs automatically on the **First charge date**. Use it to open registration early and bill everyone when the season starts.
+
+    The first charge runs at 12:00 PM UTC on the chosen date, so the earliest date you can pick is the day after today in UTC. In the evening in US time zones, that can mean tomorrow isn't offered.
+
+    If the subscription adds credits, they're added at checkout, not on the first charge date.
 
     Families see **Billing starts [date]** rather than a trial.
   </Accordion>
@@ -140,15 +157,22 @@ Credits turn a product into a package or membership that pays for sessions. The 
     - **Days after purchase**, for example 90 days
     - **A specific date**, such as the end of a season
     - **Never expire**
+
+    Each purchase adds its own credits with its own expiry. Days after purchase is a one-time product setting only.
   </Accordion>
   <Accordion title="Credit expiration: subscriptions">
     - **Unused Credits Expire upon Subscription Frequency**: leftover credits are removed when the next period starts.
-    - **Carry over unused credits**: leftover credits roll into the next period.
+    - **Carry over unused credits**: leftover credits roll into the next period and don't expire.
+    - **Carry over, and expire each payment's credits after a set number of days**: leftover credits roll over, but each payment's credits expire the number of days you set after that payment, for example 45 days after each charge. Credits you add by hand don't get a date. Credits stay usable through the end of their last day in your organization's time zone.
     - **Unlimited Credits**: families see **∞** instead of a credit count. See [Credits overview](/payments/credits/credit-system-overview) for how unlimited credits work.
 
     When a subscription ends, credits from its final period end with it under the expire option.
   </Accordion>
 </AccordionGroup>
+
+<Frame>
+  ![Credits section of a subscription with Number of Credits and the four expiry choices, including Carry over, and expire each payment's credits after a set number of days](/images/product-credits-expiry-2026-11.png)
+</Frame>
 
 State the expiration in the product description so families know before they buy. Some places regulate how soon prepaid credits can expire, so check local rules before setting a short expiration.
 
@@ -167,10 +191,11 @@ A credit returned after a cancellation keeps its original expiration. See [Recur
 
 ## Credit Limits
 
-Shown when credits are on.
+Shown when credits are on, for one-time products and subscriptions.
 
-- **Credits can be Redeemed for these Schedulers**: choose the schedulers that accept this product's credits. Leave it empty to allow every credit scheduler. When you pick schedulers, the credits only work there, and other schedulers tell the family they have no usable credits.
-- **Limit credits per scheduler per billing cycle**: for subscriptions, cap how many of the product's credits can be used on each selected scheduler in a billing period. For example, 4 on group training and 4 on private lessons from an 8-credit membership.
+- **Weekly booking allowance** (subscriptions): cap how many credit-paid bookings an athlete on this membership can make each week, counted Sunday to Saturday across every scheduler the credits apply to. Leave it blank for no weekly cap.
+- **Credits can be redeemed for these schedulers**: choose the schedulers that accept this product's credits. Leave it empty to allow every credit scheduler. When you pick schedulers, the credits only work there, and other schedulers tell the family they have no usable credits.
+- **Limit credits per scheduler per billing cycle** (subscriptions) or **per purchase** (one-time products): cap how many of the product's credits can be used on each selected scheduler. On a subscription the cap resets each billing cycle, for example 4 on group training and 4 on private lessons from an 8-credit membership. On a one-time product each purchase has its own cap, so two purchases allow twice as many.
 
 Restricting schedulers is the most common reason for "I have credits but can't book." Name the product after what it unlocks. The order CoachIQ checks restrictions, balances, and limits is in [Credit usage limits and restrictions](/payments/credits/credit-usage-limits-restrictions#limit-priority-hierarchy).
 
@@ -183,7 +208,7 @@ Restricting schedulers is the most common reason for "I have credits but can't b
 | **Credit Limits schedulers** | Immediate. Adding a scheduler lets every holder book there; removing one blocks them. Tell families before you remove one. |
 | **Archiving the product** | None. Holders keep and can spend their credits. Update any scheduler whose **Buy more credits** link points to it. |
 | **Refunding the payment** | Credits aren't removed automatically. Remove them from the client's **Credits** tab. See [Turning off a product's credits](/people/client-profiles/client-profiles-credits#turning-off-a-products-credits). |
-| **A failed subscription payment** | New period credits stop. Existing bookings aren't canceled. See [Recurring credit memberships](/payments/credits/recurring-credit-memberships#payment-failure-involuntary-churn). |
+| **A failed subscription payment** | The membership goes past due and its credits pause until a payment goes through. Existing bookings aren't canceled. See [Recurring credit memberships](/payments/credits/recurring-credit-memberships#payment-failure-involuntary-churn). |
 
 A coupon lowers the price but doesn't change the number of credits.
 
@@ -253,7 +278,9 @@ With **Managed Athlete**, two registrations by one parent stay attached to the r
 
 ## Archive a product
 
-Select **Archive** at the top of the builder. An archived product can't be bought, but existing purchases, subscriptions, and credits are unaffected. It drops off your app's Products catalog and website product sections, and a direct link shows "No Product Found." If someone has its checkout open when you archive it, their next step tells them they weren't charged. It stays listed in your own builders and isn't removed from schedulers or forms, so remove it there too. See [Archive a product](/payments/product-overview#archive-a-product).
+Select **Archive** at the top of the builder. An archived product can't be bought, but existing purchases, subscriptions, and credits are unaffected. It drops off your app's Products catalog and website product sections, and a direct link shows "No Product Found." If someone has its checkout open when you archive it, their next step tells them they weren't charged. It stays listed in your own builders and isn't removed from schedulers or forms, so remove it there too.
+
+Archiving also turns off the product and its prices in your Stripe account, so archived products don't pile up there. Existing subscribers keep being billed. Unarchiving turns them back on. See [Archive a product](/payments/product-overview#archive-a-product).
 
 ## Related articles
 

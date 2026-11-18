@@ -1,5 +1,5 @@
 ---
-title: "Managing Subscriptions"
+title: "Manage a Client's Subscription"
 description: "Cancel a membership in CoachIQ, understand its end date, stop unmatched subscriptions, and distinguish cancellation from removal and refunds."
 sidebarTitle: "Manage Subscriptions"
 icon: "sliders"
@@ -39,7 +39,7 @@ Two ways to cancel a subscription:
 
     1. Client loses access immediately
     2. Check the purchase's credit expiration rules before promising any remaining balance
-    3. Partial refund may be issued (optional)
+    3. No refund is issued. Refund separately if you want to
     4. No future charges
     5. Subscription status changes to "Canceled" now
 
@@ -125,46 +125,13 @@ Credit expiration depends on the product's configuration. Check [Product Builder
 
 ## Refunding subscription payments
 
-Issue full or partial refund for subscription charges.
+Canceling doesn't refund anything, and refunding doesn't cancel. To give money back for a membership payment, refund it from the client's **Transactions**. See [Refund a payment](/payments/issuing-refunds#refunding-a-membership-payment).
 
-<Steps>
-  <Step title="Open subscription">
-    Payments → Subscriptions → Click **Open** under Source column
-  </Step>
-  <Step title="Find transaction to refund">
-    Scroll to invoices and click most recent invoice.
+## See a membership's billing details
 
-    Scroll to Payment History section. Locate the charge to refund.
-  </Step>
-  <Step title="Click Refund">
-    Click Refund payment button next to the payment.
-  </Step>
-  <Step title="Choose refund amount">
-    **Full refund:** Return entire payment amount
+On the client's **Subscriptions** tab, select **Manage** on a membership to see who pays, the card it charges, the amount, the next payment, and the latest invoice.
 
-    **Partial refund:** Enter specific dollar amount to refund
-
-    <Tip>
-      For partial period cancellations, calculate prorated amount. Example: 200/month, cancel on day 15 = refund 100.
-    </Tip>
-  </Step>
-  <Step title="Decide on subscription status">
-    **Continue subscription:** Issue refund but keep subscription active
-
-    **Cancel subscription:** Issue refund and end subscription
-
-    Most common: Refund + Cancel together
-  </Step>
-  <Step title="Confirm refund">
-    Review details and click **Confirm Refund**.
-
-    <Check>
-      **Refund processing.** Money returns to client's original payment method within 5-10 business days.
-    </Check>
-  </Step>
-</Steps>
-
-[Complete refund guide →](/payments/issuing-refunds)
+A membership that one parent pays for on behalf of two children opens from the parent's page or either child's page. Because a change would affect both children, the panel doesn't offer cancel there and explains why. Make that change in Stripe, or see [Shared family memberships](/payments/shared-family-memberships).
 
 ## Payment methods on recurring memberships
 
@@ -182,7 +149,7 @@ A client needs to update their card for future charges, or you want to see what 
 
 Instruct client:
 
-1. Log into Athlete Portal
+1. Sign in to your app
 2. Click profile picture in top right hand corner
 3. Navigate to **Billing**
 4. Add or update card
@@ -199,16 +166,7 @@ Open the client's profile and click the **Payment Methods** tab. It lists every 
 
 ## Handling failed subscription payments
 
-When subscription payment fails, status changes to Past Due.
-
-**Automatic Stripe retries:**
-
-- First retry: 3 days after failure
-- Second retry: 5 days after first retry
-- Third retry: 7 days after second retry
-- Final attempt: 10 days after third retry
-
-[Complete failed payment recovery guide →](/payments/failed-payments)
+When a membership payment fails, its status changes to **Past due** and Stripe retries the charge on the schedule set in your Stripe account. While it's past due, the membership's credits are paused, so the athlete can't book with them until a payment goes through. See [Failed payments](/payments/failed-payments).
 
 ## Common subscription management scenarios
 
@@ -220,7 +178,6 @@ When subscription payment fails, status changes to Past Due.
     2. Client purchases new subscription product after period ends
     3. New subscription starts with different pricing/credits
 
-    **Future:** Subscription switching without gap coming soon.
   </Accordion>
   <Accordion title="Client paid but wants immediate refund and cancellation">
     **Steps:**
@@ -273,35 +230,6 @@ When subscription payment fails, status changes to Past Due.
   </Accordion>
 </AccordionGroup>
 
-## Preventing cancellations
-
-**Best practices to reduce churn:**
-
-**Before cancellation:**
-
-- Understand why client wants to cancel
-- Offer solutions (schedule flexibility, product downgrade)
-- Provide pause option if temporary issue
-- Remind of progress made and value received
-
-**At risk indicators:**
-
-- Multiple failed payments
-- Declining session bookings
-- No recent activity
-- Support complaints
-
-**Retention strategies:**
-
-- Proactive check-ins with inactive subscribers
-- Usage reports showing progress
-- Exclusive member benefits
-- Loyalty rewards or discounts
-
-<Tip>
-  Retaining existing subscribers costs less than acquiring new ones. Invest in retention.
-</Tip>
-
 ## Resubscribing canceled clients
 
 When client wants to restart canceled subscription:
@@ -327,4 +255,4 @@ When client wants to restart canceled subscription:
 
 1. [Handle failed payments](/payments/failed-payments) - Recover Past Due subscriptions
 2. [Issue refunds](/payments/issuing-refunds) - Process subscription refunds
-3. [View Subscriptions Dashboard](/payments/subscriptions-dashboard) - Monitor all subscriptions
+3. [The Subscriptions page](/payments/subscriptions-dashboard) - Monitor all subscriptions

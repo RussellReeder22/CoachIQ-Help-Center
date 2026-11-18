@@ -1,7 +1,7 @@
 ---
-title: "Subscription-Based Scheduling: Recurring Credit Memberships"
+title: "Membership Credits: Renewals, Carry-Over and Expiry"
 description: "Master recurring subscriptions—create unlimited monthly memberships, understand ∞ credit notation, manage renewals, and optimize subscription revenue"
-sidebarTitle: "Recurring Credit Memberships"
+sidebarTitle: "Membership Credits"
 icon: "sync"
 keywords: ["subscription", "membership", "monthly credits", "recurring billing", "unlimited membership", "credit renewal", "MRR"]
 ---
@@ -459,8 +459,10 @@ Understanding how credits refresh each billing cycle.
     **What happens**:
 
     1. Stripe attempts to charge athlete's saved payment method
-    2. If payment succeeds: Subscription stays active
-    3. If payment fails: Subscription becomes inactive (more on this below)
+    2. If payment succeeds: the membership stays active and adds the new period's credits
+    3. If payment fails: the membership goes past due and its credits pause (more on this below)
+
+    Each period's credits cover sessions through the renewal day itself, so a session on Feb 15 can still use January's credits. The renewal day follows the exact paid billing period, including after a scheduled start or a plan change made in Stripe.
   </Step>
   <Step title="Credits reset (if payment succeeds)">
     **For unlimited (∞) subscriptions**:
@@ -481,19 +483,7 @@ Understanding how credits refresh each billing cycle.
     </Note>
   </Step>
   <Step title="Credit logs update">
-    New entry in athlete's credit logs:
-
-    ```
-    Feb 15, 9:00 AM | +∞ Credits | Subscription Renewed - Monthly Unlimited Membership
-    ```
-
-    Or for finite:
-
-    ```
-    Feb 15, 9:00 AM | +12 Credits | Subscription Renewed - Monthly 12-Credit Membership
-    ```
-
-    **Purpose**: Tracks renewal history, helps with dispute resolution
+    The client's **Credits** tab logs the renewal as a **Renewal** row with the credits added, and any leftover credits that ended as an **Expiration** row. See [Reading the transaction log](/people/client-profiles/client-profiles-credits#reading-the-transaction-log).
   </Step>
   <Step title="Stripe subscription status">
     In your Stripe dashboard:
@@ -506,60 +496,22 @@ Understanding how credits refresh each billing cycle.
 
 ### Unused credit behavior at renewal
 
-**Critical decision**: What happens to unused credits when subscription renews?
+In the product's **Credits** section, choose what happens to leftover credits:
 
-<Tabs>
-  <Tab title="Expire at Renewal (Recommended)">
-    **Configuration**: "Unused credits expire at renewal"
+| Option | At renewal | Example: 12 credits a month, 4 left |
+| --- | --- | --- |
+| **Unused Credits Expire upon Subscription Frequency** | Leftover credits are removed, then the new period's credits are added | 12 |
+| **Carry over unused credits** | Leftover credits stay and don't expire | 16 |
+| **Carry over, and expire each payment's credits after a set number of days** | Leftover credits stay, but each payment's credits expire the number of days you set after that payment | 16, and the 4 from last month expire on their own date |
+| **Unlimited Credits** | Nothing to carry: the client sees **∞** | ∞ |
 
-    **What happens**:
+**Expire each cycle** keeps it simple and stops credits piling up. **Carry over** is friendlier for clients who miss weeks, but balances can grow large. **Carry over with a per-payment expiry** is in between: credits roll over for a while (for example 45 days), then expire, and each payment's credits keep their own date. Credits you add by hand don't get a date.
 
-    - Athlete had 12 credits, used 8, has 4 remaining
-    - At renewal: Remaining 4 credits disappear
-    - Athlete gets fresh 12 credits
+Credits stay usable through the end of their last day in your organization's time zone. A client's **Credits** tab notes when the credits from each payment expire.
 
-    **Pros**:
-
-    - ✅ Prevents credit hoarding (athletes can't accumulate hundreds of unused credits)
-    - ✅ Encourages consistent usage ("use it or lose it")
-    - ✅ Predictable liability for coach (max 12 credits/athlete outstanding)
-    - ✅ Aligns with "monthly membership" concept
-
-    **Cons**:
-
-    - ❌ Athlete loses value if they don't use all credits
-    - ❌ Can feel punitive (especially if illness/vacation caused underuse)
-
-    **Best for**: Most subscription models, especially unlimited or high-credit counts
-  </Tab>
-  <Tab title="Carry Over (Accumulate)">
-    **Configuration**: "Unused credits carry over to next billing cycle"
-
-    **What happens**:
-
-    - Athlete had 12 credits, used 8, has 4 remaining
-    - At renewal: Athlete keeps 4 + gets fresh 12 = 16 total
-    - Next month: If uses 10, has 6 remaining + gets 12 more = 18 total
-
-    **Pros**:
-
-    - ✅ Athlete-friendly (no lost value)
-    - ✅ Flexibility for irregular training schedules
-    - ✅ Rewards loyal subscribers (long-term athletes accumulate buffer)
-
-    **Cons**:
-
-    - ❌ Credit liability grows over time (athlete might accumulate 50+ credits)
-    - ❌ Athlete might cancel after accumulating credits, use them all, then leave
-    - ❌ Undermines monthly structure (athlete could go 3 months without training, use 36 credits in Month 4)
-
-    **Best for**: Low-frequency subscriptions (e.g., 4 credits/month) or premium client relationships
-
-    <Warning>
-      **Financial risk**: Carry-over can create large outstanding credit liability. Monitor carefully. (Not recommended)
-    </Warning>
-  </Tab>
-</Tabs>
+<Note>
+  **Lowering a balance by hand.** On a membership whose credits expire each cycle, the credits left after you lower the balance still expire at the next renewal, so the client renews to the normal amount. If the client also has credits kept until used, lowering takes those first. On a pack or a per-payment-expiry membership, lowering takes credits from the batch that expires soonest. The note under **Manual Adjustment** on the Credits tab says which applies.
+</Note>
 
 ---
 
@@ -610,24 +562,21 @@ What happens at each stage of a subscription's life.
 
     **Athlete notified**: Stripe sends email "Your payment failed, please update"
   </Step>
-  <Step title="Subscription status changes">
-    After retries exhausted with no successful payment:
+  <Step title="The membership goes past due">
+    At the first failed charge, the membership's status changes to **Past due**, and its credits pause right away:
 
-    **Stripe status**: Changes from "Active" to "Incomplete" or "Past Due"
+    - The balance is kept but can't be used to book
+    - The client can still sign in, and can book with Master Credits or by paying per session
+    - When a payment goes through, the credits work again
 
-    **CoachIQ impact**:
-
-    - Subscription becomes inactive in CoachIQ
-    - Credits become unusable (even if balance shows ∞ or number)
-    - Athlete CANNOT book using these credits
-    - Athlete CAN still log in, CAN still book using Master Credits or direct payment
+    If Stripe's retries run out, Stripe cancels the subscription or marks it unpaid, depending on your Stripe settings.
   </Step>
   <Step title="Athlete sees error">
     When trying to book with subscription credits:
 
     **What they see**: In **Billing**, the membership reads "Membership inactive · Credits paused" with a note that the credits can't be redeemed while the membership is inactive. In your admin, the client's credit tab reads "Membership inactive. The balance is kept but can't be spent." with 0 redeemable.
 
-    **Solution required**: Athlete must update payment method in Athlete Portal or Stripe
+    **Solution required**: the client updates the card on that membership from **Billing** in your app.
   </Step>
 </Steps>
 
@@ -644,7 +593,7 @@ What happens at each stage of a subscription's life.
     this month. Just wanted to reach out personally—your subscription 
     is currently on hold. 
     
-    You can update your payment method here: [link to Athlete Portal]
+    You can update your payment method here: [link to your app]
     
     Let me know if you need any help, or if you'd like to discuss 
     your membership. I want to make sure you can keep training with us!"
@@ -809,34 +758,7 @@ Follow [Canceling and removing memberships](/payments/manage-subscriptions) for 
     - This is intentional stacking, clearly communicated
   </Accordion>
   <Accordion title="What if athlete wants to downgrade subscription?">
-    **Scenario**: Athlete on Premium (600/month) wants to switch to Basic (250/month)
-
-    **Process**:
-
-    1. **Athlete requests downgrade**: Via message, email, or portal
-    2. **Confirm timing**:
-       - Immediate: Lose premium benefits immediately, get partial refund (if you offer)
-       - End of period: Keep premium through paid period, then downgrade (recommended)
-    3. **Cancel current subscription**: In Stripe, cancel Premium subscription
-    4. **Enroll in new tier**: Add Basic subscription to athlete profile
-    5. **Process pricing difference** (if mid-period):
-       - Pro-rate: Refund unused portion of Premium, charge for Basic
-       - Or: Wait until current Premium period ends, then start Basic (recommended)
-
-    **Communication**:
-
-    ```
-    "I've switched you to the Basic Membership starting [date]. 
-    You'll be charged $250/month going forward (saves you $350/month!).
-    
-    Your access will change to Basic tier features as of [date].
-    
-    You can always upgrade back to Premium anytime!"
-    ```
-
-    <Tip>
-      **Make it easy**: Frictionless downgrades = lower churn. Athlete who downgrades is still a paying subscriber (vs full cancellation).
-    </Tip>
+    Change the plan in Stripe, then move the subscription to the new product in CoachIQ. Steps: [Move a client to another membership](/payments/upgrade-membership). To switch at the end of the paid period instead, cancel the current membership at the end of its billing period and have the client buy the new one.
   </Accordion>
   <Accordion title="Should I offer refunds on subscriptions?">
     **Legal landscape**: Varies by jurisdiction
@@ -873,36 +795,7 @@ Follow [Canceling and removing memberships](/payments/manage-subscriptions) for 
     </Warning>
   </Accordion>
   <Accordion title="Can I change subscription price for existing subscribers?">
-    **Short answer**: Yes, but handle carefully
-
-    **Process**:
-
-    **1. Grandfather vs Universal Change**:
-
-    - **Grandfather**: Keep existing subscribers at old price, new subscribers pay new price
-    - **Universal**: All subscribers pay new price after X date
-
-    **2. Communicate in advance** (30-60 days notice):
-
-    ```
-    "Heads up: Starting March 1, the Monthly Unlimited Membership 
-    will increase from $400 to $450/month due to rising costs.
-    
-    As a current member, you have 2 options:
-    1. Lock in current $400 rate by switching to annual pre-pay ($4,800/year)
-    2. Continue monthly at new $450 rate starting March 1
-    
-    You're a valued member—I wanted to give you advance notice and options. 
-    Questions? Reply anytime!"
-    ```
-
-    **3. Update Stripe**:
-
-    - Stripe → Products → [Subscription] → Edit pricing
-    - Set effective date for new price
-    - Existing subscriptions: Update via Stripe dashboard
-
-    **Best practice**: Grandfather existing subscribers for 6-12 months (goodwill gesture), then migrate all to new price
+    Changing a product's price only affects new buyers. Existing members keep their price until you change each subscription in Stripe. Give members notice first. Steps and options: [Grandfather pricing](/payments/grandfather-pricing).
   </Accordion>
 </AccordionGroup>
 

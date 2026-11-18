@@ -81,7 +81,7 @@ The Stripe Dashboard is your payment processor's control center. While you manag
     - Product status (active/archived)
 
     <Info>
-      Products created in CoachIQ automatically sync to Stripe. Changes made in Stripe appear in CoachIQ.
+      Products you create in CoachIQ are created in Stripe for you. Edits you make to a product or price in Stripe don't flow back into CoachIQ, and products made only in Stripe aren't imported. Make product changes in CoachIQ.
     </Info>
   </Tab>
   <Tab title="Subscriptions">
@@ -135,7 +135,7 @@ The Stripe Dashboard is your payment processor's control center. While you manag
 - Payout status
 
 <Check>
-  Data syncs in real-time. Changes in one platform appear immediately in the other.
+  Payments, refunds and subscription status sync from Stripe to CoachIQ automatically. If something is missing, select **Resync Stripe** on the Transactions or Subscriptions page.
 </Check>
 
 ## When to use Stripe vs. CoachIQ
@@ -147,7 +147,7 @@ The Stripe Dashboard is your payment processor's control center. While you manag
     - Creating and editing products
     - Viewing transactions
     - Managing subscriptions
-    - Issuing refunds
+    - Issuing refunds (from the client's **Transactions** tab)
     - Tracking credits
     - Client communication
     - Booking management
@@ -219,7 +219,7 @@ Stripe Dashboard has two modes:
 **Live Mode**: Real payments with real money. This is your production environment where actual client transactions occur.
 
 <Info>
-  The toggle switch is in the top right of your Stripe Dashboard. CoachIQ automatically reflects whichever mode Stripe is in.
+  The toggle switch is in the top right of your Stripe Dashboard. Switching the toggle only changes what you see in Stripe. CoachIQ always uses the account you connected.
 </Info>
 
 ## Understanding your balance
@@ -248,4 +248,4 @@ For CoachIQ-specific payment questions, contact CoachIQ support.
 
 - [Connecting Stripe to CoachIQ](/payments/connecting-stripe)
 - [Understanding CoachIQ Payments](/payments/getting-started)
-- [Transactions Dashboard](/payments/transactions)
+- [The Transactions page](/payments/transactions)

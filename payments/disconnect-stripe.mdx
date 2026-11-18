@@ -50,7 +50,7 @@ This banner appears even after you cancel your CoachIQ subscription. The Stripe 
 </Steps>
 
 <Warning>
-**Before you disconnect**: If you still have active customers on CoachIQ, disconnecting Stripe will stop all payment processing. Subscriptions won't renew, and new purchases won't go through. Only disconnect if you're done using CoachIQ for payments.
+**Before you disconnect**: New purchases in CoachIQ stop going through, and CoachIQ stops tracking renewals and adding membership credits. Existing subscriptions are **not** canceled: Stripe keeps billing them. Cancel them first if they should stop. Only disconnect if you're done using CoachIQ for payments.
 </Warning>
 
 ---
@@ -71,7 +71,7 @@ This banner appears even after you cancel your CoachIQ subscription. The Stripe 
 
 <AccordionGroup>
   <Accordion title="Can I reconnect Stripe later?">
-    Yes. Go to **Settings → Stripe Portal** and click the Stripe logo to reconnect. You can connect the same Stripe account or a different one.
+    Yes. Go to **Settings → Stripe** and select **Connect Stripe**. You can connect the same Stripe account or a different one.
 
     <Frame>
       ![Connect Stripe button](/images/Connectstripe.png)

@@ -1,678 +1,98 @@
 ---
-title: "Credit Usage Limits & Restrictions: Controlling How Credits Are Used"
-description: "Control how and where athletes can use their credits with scheduler restrictions and usage limits"
-sidebarTitle: "Usage Limits"
-icon: "shield-alt"
-keywords: ["credit limits", "usage restrictions", "restrict credits", "scheduler specific credits", "credit per day", "booking limits"]
+title: "Credit Limits: Control Where and How Often Credits Are Used"
+description: "Limit which schedulers accept a product's credits, cap credits per scheduler, set a weekly booking allowance, and fix 'I have credits but can't book'"
+sidebarTitle: "Credit Limits"
+icon: "sliders"
+keywords: ["credit limits", "credit restrictions", "redeemable schedulers", "weekly booking allowance", "per scheduler limit", "can't book with credits", "have credits but can't book", "usage limits"]
 ---
 
-<Info>
-  **Where to find this**: Payments → Products → [Select Product] → Credit Limits section
-</Info>
+A product's credits can be limited in three ways, all in the product builder's **Credit Limits** section. Schedulers have their own booking limits too. This page covers each one, then how to work out why a client with credits can't book.
 
-## What you'll accomplish
+## The limits you can set
 
-Learn how to implement strategic credit usage controls—restrict credits to specific schedulers, set daily and weekly booking limits, configure multi-credit sessions, prevent credit abuse, and understand how different limit types interact. Essential for protecting your business model while maintaining athlete satisfaction.
+| Limit | What it does | Where |
+| --- | --- | --- |
+| **Credits can be redeemed for these schedulers** | Only the schedulers you pick accept this product's credits | Product → **Credit Limits** |
+| **Limit credits per scheduler** | Caps how many of the product's credits can be used on one scheduler: per billing cycle on a membership, per purchase on a pack | Product → **Credit Limits**, on each picked scheduler |
+| **Weekly booking allowance** | Caps how many credit-paid bookings a client can make each week, Sunday to Saturday, across all the schedulers the credits work on | Product → **Credit Limits** (memberships) |
+| **Max bookings per athlete per day / week** | Caps bookings on one scheduler, whatever the client pays with | Scheduler → [Rules and limits](/scheduling/scheduler-settings-limits-and-permissions) |
 
-<Note>
-  **Prerequisites**:
+A booking has to pass every limit that applies.
 
-  - Credit-issuing products already created ([Setting Up Credit-Based Sessions](/scheduling/setting-up-payment-options#set-up-credit-booking))
-  - Understanding credit types ([Credit System Overview](https://coachiq.mintlify.app/scheduling/credit-system-overview))
-  - Familiarity with managing credits ([Managing Credits](https://coachiq.mintlify.app/scheduling/managing-athlete-credits))
-</Note>
+<Frame>
+  ![Credit Limits section in the product builder](/images/credit-limits-product.png)
+</Frame>
 
----
+### Choose which schedulers accept the credits
 
-## Understanding credit usage limits
+Open the product, go to **Credit Limits**, and pick schedulers under **Credits can be redeemed for these schedulers**.
 
-Credit usage limits give you control over **how** and **where** athletes can redeem their credits. Without limits, athletes could potentially abuse unlimited subscriptions or use credits in ways that harm your business model.
+- **Leave it empty** and the credits work on every scheduler that takes credits.
+- **Pick one or more** and the credits work only there. Other schedulers tell the client they have no usable credits.
 
-### Why limits matter
-
-<Tabs>
-  <Tab title="Business Protection">
-    **Scenarios limits prevent:**
-
-    ❌ Athlete with unlimited monthly credits books 30 sessions in one day\
-    ❌ Athlete shares unlimited subscription with friends who book under their account\
-    ❌ Athlete uses premium package credits for basic sessions (margin erosion)\
-    ❌ Athlete books all high-demand time slots, blocking other paying athletes\
-    ❌ Family shares one subscription across multiple people
-
-    **Result without limits**: Revenue loss, capacity problems, unfair access distribution
-
-    **Result with limits**: Predictable usage, fair access, protected margins
-  </Tab>
-  <Tab title="Athlete Fairness">
-    **Limits create fairness:**
-
-    ✅ Prevents one athlete from monopolizing popular time slots\
-    ✅ Ensures all subscription holders get equitable access\
-    ✅ Maintains capacity for new athlete acquisition
-
-    **Example**: Monthly unlimited subscription with "3 bookings per week" limit ensures athletes train consistently rather than booking 12 sessions in Week 1 and none in Weeks 2-4.
-  </Tab>
-  <Tab title="Business Model Alignment">
-    **Limits align pricing with value:**
-
-    ✅ Premium schedulers can require more credits (2 credits for advanced training)\
-    ✅ Restrict basic package credits to basic schedulers only\
-    ✅ Force high-value sessions to require premium subscriptions\
-    ✅ Create clear product tiers with different access levels\
-    ✅ Protect high-margin offerings
-
-    **Example**: "\$200/month Youth Program" credits only work for youth schedulers, not your \$75/session private training.
-  </Tab>
-</Tabs>
-
----
-
-## Types of credit restrictions
-
-CoachIQ offers multiple restriction mechanisms. Understanding each type helps you build the right control structure.
-
-### Scheduler-specific restrictions
-
-**What it does**: Limits which schedulers accept credits from a specific product/subscription
-
-**How it works**: When creating a product, you select which schedulers can redeem these credits. Athletes can ONLY use these credits for designated schedulers.
-
-**Example configuration:**
-
-```
-Product: "Rising Stars Youth Membership - $250/month"
-Credits Issued: Unlimited (∞)
-Redeemable Schedulers:
-  ✓ Rising Stars Class
-  ✓ Rising Stars Shooting Lab
-  ✓ Rising Stars Open Gym
-  ✗ Elite Training (not included)
-  ✗ Private Sessions (not included)
-```
-
-**Athlete experience**: When booking "Elite Training," these credits won't show as payment option. They'll need Master Credits or direct payment.
-
-<Tip>
-  **Best practice**: Scheduler-specific restrictions are your FIRST line of defense. Always configure these when creating products.
-</Tip>
-
----
-
-### Multi-credit sessions
-
-**What it does**: Makes certain schedulers cost MORE than 1 credit per booking
-
-**How it works**: Configure scheduler to require 2, 3, or more credits per booking
-
-**Use cases:**
-
-<Tabs>
-  <Tab title="Premium Session Pricing">
-    **Configuration**: Private training costs 2 credits, group class costs 1 credit
-
-    **Business logic**:
-
-    - Reflects higher value/cost of private sessions
-    - Athlete with 10-credit package gets:
-      - 10 group sessions OR
-      - 5 private sessions OR
-      - Mix (e.g., 6 group + 2 private = 10 credits)
-
-    **Benefit**: Single package serves multiple session types with appropriate pricing
-
-    **Example**:
-
-    ```
-    Package: "10-Credit Flex Package - $450"
-    Session Types:
-      - Group Training: 1 credit ($45 value)
-      - Semi-Private (2 people): 1.5 credits ($67.50 value)
-      - Private Training: 2 credits ($90 value)
-    ```
-  </Tab>
-  <Tab title="Longer Session Duration">
-    **Configuration**: 30-min session = 1 credit, 60-min session = 2 credits
-
-    **Business logic**: Time-proportional pricing
-
-    **Athlete choice**: Pick session length based on credit availability and goals
-
-    **Example**:
-
-    ```
-    Scheduler Options:
-      - 30-Min Quick Hit: 1 credit
-      - 60-Min Full Training: 2 credits
-      - 90-Min Extended Session: 3 credits
-    ```
-
-    **Flexibility**: Athlete with 5 credits could book 5×30min OR 2×60min + 1×30min
-  </Tab>
-  <Tab title="Specialty Services">
-    **Configuration**: Standard training = 1 credit, video analysis session = 3 credits
-
-    **Business logic**: Reflects additional coach prep time, technology costs, expertise
-
-    **Use case**:
-
-    - Video analysis requires 30min filming + 60min review + editing
-    - Costs you more time/resources than standard session
-    - 3 credits = appropriate compensation
-
-    **Athlete perception**: Specialty service is premium offering (higher credit cost signals higher value)
-  </Tab>
-</Tabs>
+Use it for tiered memberships (Basic covers group classes, Premium covers everything) or program packs (Elite credits only book Elite sessions). Name the product after what it unlocks, so families know before they buy.
 
 <Warning>
-  **Keep it simple**: Most coaches should stick to 1-2 credit variations max. Complex multi-credit systems confuse athletes and complicate booking.
+  Removing a scheduler from the list takes effect right away for everyone who holds the credits. Tell families before you remove one.
 </Warning>
 
----
+### Cap credits per scheduler
 
-## Configuring scheduler-specific restrictions within Product
+After you pick a scheduler, set how many of the product's credits can be used there.
 
-Step-by-step: Limiting credits to specific schedulers.
+- On a **membership**, the cap resets each billing cycle. Example: an 8-credit membership with a cap of 4 on private lessons and 4 on group training.
+- On a **pack**, the cap is per purchase. A client with two purchases of the same pack can use twice the cap.
+
+When a client reaches the cap, they see a limit message, not an out-of-credits message, and can still book other schedulers with the remaining credits.
+
+### Set a weekly booking allowance
+
+**Weekly booking allowance** caps how many credit-paid bookings a client can make in a week, counted Sunday to Saturday by session date, across every scheduler the credits apply to. Leave it blank for no weekly cap. Use it for "2 sessions a week" memberships.
+
+- Every session in a repeating booking counts in its own week. A new series that would go over the allowance in any week isn't created.
+- A canceled booking frees its spot in that week.
+- The allowance counts against whoever owns the credits. With a family balance owned by a parent, all the children's bookings from it count together.
+- Bookings paid by card don't count.
+
+Staff with permission can override the allowance when they book a client by hand.
+
+## Why a client can't book with credits
+
+Work through these in order. Open the client's profile and the **Credits** tab as you go.
 
 <Steps>
-  <Step title="Navigate to product builder">
-    Dashboard → **Payments** → **Products** → Select product → **Edit**
-
-    Or: Create new product and continue to credit configuration section
+  <Step title="Do they have credits for this scheduler?">
+    Check the product's **Credits can be redeemed for these schedulers** list. If the list isn't empty and this scheduler isn't on it, the credits don't work here. Add the scheduler to the product, or give a [Master Credit](/people/client-profiles/client-profiles-credits) for a one-off.
   </Step>
-  <Step title="Scroll to Credit Limits section">
-    You'll see several configuration options:
-
-    - **Add credits once purchased**: Number of credits issued (or ∞ for unlimited)
-    - **Credit expiration options**: Carry over vs expire
-    - **Redeemable Schedulers**: 🎯 THIS IS WHERE YOU SET RESTRICTIONS
-
-    <Frame>
-      ![Credit Limits configuration in product builder](/images/credit-limits-product.png)
-    </Frame>
+  <Step title="Is the membership active?">
+    If the membership behind the credits is past due, canceled, or ended, its credits are paused. The Credits tab says "Membership inactive" and **Credits Redeemable** shows 0. They come back when a payment goes through. See [Failed payments](/payments/failed-payments).
   </Step>
-  <Step title="Select Redeemable Schedulers">
-    Click **Select Schedulers** or similar button
-
-    **You'll see**:
-
-    - List of all your active schedulers
-    - Checkboxes next to each scheduler
-    - Search/filter options (if many schedulers)
-
-    **Action**: Check ONLY the schedulers where these credits should work
-
-    <Tip>
-      **Strategic thinking**: Leave unchecked = credits won't work there (athlete will need Master Credits or direct payment)
-    </Tip>
+  <Step title="Are the credits on the right account?">
+    With **Buyer** ownership, a parent's purchase is on the parent's account and covers their children. With **Managed athlete**, it's on one child's account and can't pay for a sibling. See [Who owns the credits](/payments/credits/credit-system-overview#who-owns-the-credits).
   </Step>
-  <Step title="Configure scheduler-level details (if available)">
-    Some products allow per-scheduler limits:
-
-    **Example**:
-
-    ```
-    Rising Stars Membership - Redeemable Schedulers:
-      ✓ Rising Stars Class (Unlimited bookings)
-      ✓ Rising Stars Shooting Lab (Max 2/week)
-      ✓ Rising Stars Open Gym (Max 4/month)
-    ```
-
-    **Configuration**: Click scheduler to expand advanced settings
-
-    **Set**: Daily, weekly, or monthly limits per scheduler
+  <Step title="Do they have enough?">
+    A 2-credit session needs 2 credits. Credits aren't split across bookings.
   </Step>
-  <Step title="Save and verify">
-    Click **Save** or **Update Product**
-
-    **Verification checklist**:
-
-    1. Product shows selected schedulers in "Redeemable Schedulers" section
-    2. Athlete profile shows these schedulers under product's credit tab
-    3. Test booking: Athlete can book selected schedulers, blocked from others
-
-    <Check>
-      **Success!** Credits are now restricted to designated schedulers only.
-    </Check>
+  <Step title="Have the credits expired, or is the session after their expiry?">
+    With **Sessions must occur by expiration** on, the session date has to fall before the credits expire. See [Product builder: Credits](/payments/product-builder#require-sessions-to-happen-before-credits-expire).
+  </Step>
+  <Step title="Has a limit been reached?">
+    Check the per-scheduler cap and the weekly booking allowance on the product, and the scheduler's per-athlete daily and weekly limits. The client's message names the limit.
+  </Step>
+  <Step title="Did you pause the product's credits?">
+    On the Credits tab you can turn off credit use for one product. See [Turning off a product's credits](/people/client-profiles/client-profiles-credits#turning-off-a-products-credits).
   </Step>
 </Steps>
 
----
+<span id="limit-priority-hierarchy" />
 
-## Configuring multi-credit sessions
+## How limits and spend order work together
 
-Making certain schedulers cost multiple credits per booking.
-
-<Steps>
-  <Step title="Navigate to scheduler settings">
-    Dashboard → **Schedule** → **Schedulers** → Select scheduler → **Settings**
-  </Step>
-  <Step title="Find payment/pricing section">
-    Scroll to the **Payment** block
-
-    Choose **Paywalled**, then under **How they pay** pick:
-
-    - **Price** (\$ amount)
-    - **Credit** ← THIS IS WHERE YOU CONFIGURE
-    - **Either** (athlete chooses price or credits)
-
-    Optionally set a **Buy more credits** link so athletes who run out are sent to the right product.
-
-    <Frame>
-      ![Scheduler payment configuration](/images/credit-charge-ui.png)
-    </Frame>
-  </Step>
-  <Step title="Set credit cost">
-    **Look for**: "Credits Price" field
-
-    **Configuration options**:
-
-    - **1 credit** (default/standard)
-    - **2 credits** (common for premium)
-    - **3+ credits** (specialty/extended sessions)
-
-    **Select**: Number of credits this scheduler requires per booking
-
-    <Note>
-      **Recommendation**: Stick to whole numbers (1, 2, 3) for simplicity. Fractional credits (0.5, 1.5) work but confuse some athletes.
-    </Note>
-  </Step>
-  <Step title="Configure hybrid payment (optional)">
-    If you want to offer BOTH credit AND direct payment options:
-
-    **Example**: "2 Credits OR \$90"
-
-    **Configuration**:
-
-    - Credits required: 2
-    - Direct payment amount: \$90
-    - Enable both options
-
-    **Athlete choice**: At booking, athlete chooses payment method (use 2 credits OR pay \$90)
-
-    <Tip>
-      **Strategic pricing**: Price direct payment higher than credit-equivalent to incentivize package purchases.
-    </Tip>
-  </Step>
-  <Step title="Save and verify">
-    **Save** scheduler settings
-
-    **Test**:
-
-    1. Athlete with credits attempts to book
-    2. System should deduct 2 credits (or configured amount)
-    3. Credit logs should show: "-2 Credits | Redeemed for [Scheduler Name]"
-    4. Athlete's balance decreases by 2
-
-    <Check>
-      **Success!** Scheduler now costs multiple credits per booking.
-    </Check>
-  </Step>
-</Steps>
-
----
-
-## Understanding limit interactions
-
-How different limits work together (and sometimes conflict).
-
-### Limit priority hierarchy
-
-When multiple limits exist, this is the order CoachIQ enforces:
-
-<Steps>
-  <Step title="1. Scheduler-specific restrictions (highest priority)">
-    **Question**: Can this product's credits even be used for this scheduler?
-
-    **Check**: Is scheduler in product's "Redeemable Schedulers" list?
-
-    **If NO**: Booking blocked entirely (other limits don't matter)
-
-    **If YES**: Continue to next check
-  </Step>
-  <Step title="2. Credit balance check">
-    **Question**: Does athlete have enough credits?
-
-    **Check**: Athlete's credit balance ≥ scheduler's credit cost?
-
-    **If NO**: Booking blocked (athlete needs more credits)
-
-    **If YES**: Continue to next check
-  </Step>
-  <Step title="3. Usage frequency limits">
-    **Question**: Has athlete hit daily/weekly/monthly booking limit?
-
-    **Check**: Current bookings vs limit for this product
-
-    **If limit reached**: Booking blocked (athlete must wait for reset)
-
-    **If under limit**: Continue to next check
-  </Step>
-  <Step title="4. Scheduler capacity">
-    **Question**: Is there room in the session?
-
-    **Check**: Current bookings vs max capacity
-
-    **If full**: Booking blocked (session full)
-
-    **If space available**: ✅ **Booking allowed**
-  </Step>
-</Steps>
-
-### Example limit interaction scenarios
-
-## Viewing athlete usage limits
-
-Where coaches see limit consumption.
-
-<Steps>
-  <Step title="Navigate to athlete profile">
-    Dashboard → **People** → **Clients** → [Athlete Name]
-  </Step>
-  <Step title="Open Credits section">
-    Click **Credits** tab or section in athlete profile
-  </Step>
-  <Step title="Select product-specific tab">
-    Click the tab for the subscription/product with usage limits configured
-
-    **Example**: "Month to Month Rising Stars Membership"
-  </Step>
-  <Step title="Find Redeemable Schedulers Log">
-    Look for "Redeemable Schedulers" section
-
-    <Frame>
-      ![Usage limits tracking in athlete profile](/images/credit-log-ui.png)
-    </Frame>
-  </Step>
-  <Step title="Review usage data">
-    **What you'll see**:
-
-    - **Redeemable Schedulers**: List of schedulers credits can be redeemed for
-    - **Limits for each Scheduler: **Number sessions redeemed over the limit that can be redeemed for the billing cycle.
-
-    **Use this to**:
-
-    - Verify athlete is under/at limits
-    - Troubleshoot "can't book" complaints
-    - Monitor if limits are too restrictive or too loose
-  </Step>
-</Steps>
-
-<Tip>
-  **Weekly monitoring**: Review top users weekly. If many athletes consistently hit limits, consider adjusting (limits may be too restrictive). If no one hits limits, they may be too generous.
-</Tip>
-
-## Troubleshooting limit issues
-
-When limits aren't working as expected.
-
-### Issue: Athlete reports they can't book but haven't hit limit
-
-**Diagnostic steps:**
-
-<Steps>
-  <Step title="Verify limit status">
-    Athlete Profile → Credits → [Product Tab] → Redeemable Schedulers Log
-
-    **Check**:
-
-    - Corresponding scheduler is listed
-    - Per-scheduler bookings: X of Y used
-
-    **If no issues found**: Continue troubleshooting
-  </Step>
-  <Step title="Check scheduler restrictions">
-    **Verify**: Is the scheduler athlete is trying to book in product's "Redeemable Schedulers" list?
-
-    **How to check**:
-
-    1. Payments → Products → [Product] → Redeemable Schedulers section
-    2. Look for scheduler name
-    3. If NOT listed → That's the problem (scheduler restriction blocking)
-
-    **Solution**: Either add scheduler to redeemable list OR athlete needs different credit type
-  </Step>
-  <Step title="Verify credit balance">
-    **Check**: Does athlete have enough credits for this scheduler's cost?
-
-    **Example issue**:
-
-    - Scheduler requires 2 credits
-    - Athlete has 1 credit remaining
-    - System blocks booking (insufficient credits)
-
-    **Solution**: Athlete needs to purchase more credits or use Master Credits
-  </Step>
-  <Step title="Check subscription status on Stripe">
-    If subscription credits:
-
-    **Verify**: Payments → Subscriptions → Is subscription "Active" on Stripe?
-
-    **If inactive**: Credits become unusable even if balance exists
-
-    **Solution**: Athlete must resolve payment issue to reactivate subscription
-  </Step>
-  <Step title="Check the date they picked">
-    The booking payment step only counts credits that are valid on the session date the athlete chose. Credits that expire before that date (or that must be used by their expiration, with **Sessions must occur by expiration** on) are listed with "Choose an earlier date," and **Use Credits & Book** isn't offered.
-
-    Daily and weekly booking limits show as soon as the athlete picks a time. For a child, the message names the membership whose weekly allowance is used up. When a credit pack is offered to cover a shortfall, it only appears if buying it would make that session bookable; otherwise the message explains the credit limit or date restriction.
-  </Step>
-  <Step title="Test booking yourself">
-    **As coach**:
-
-    1. Navigate to Calendar
-    2. Manually book athlete into session
-    3. If booking succeeds: Issue is app/athlete-side
-    4. If booking fails: You'll see the actual error message
-
-    **Common discoveries**:
-
-    - Session is full (capacity issue, not limit issue)
-    - Athlete has conflicting booking
-    - Time slot outside scheduling window
-  </Step>
-</Steps>
-
----
-
-## Best practices for setting limits
-
-Strategic guidance for different scenarios.
-
-<CardGroup cols={2}>
-  <Card title="Start Conservative" icon="shield">
-    **Principle**: Easier to loosen limits than tighten them
-
-    **Approach**:
-
-    - Launch new unlimited product with 3/week limit
-    - Monitor usage for 60 days
-    - If 20% hit limits, consider increasing to 4/week
-    - If 40% hit limits, limits may be too tight
-
-    **Why**: Increasing limits feels like a gift to athletes. Decreasing limits feels like taking away value (negative sentiment).
-  </Card>
-  <Card title="Align Limits with Marketing" icon="bullseye">
-    **Principle**: What you advertise should match what limits allow
-
-    **Examples**:
-
-    - ✅ "3x/Week Training" + 3 bookings/week limit
-    - ✅ "Unlimited Classes (up to 4/week)" + 4 bookings/week limit
-    - ❌ "Unlimited Training" + 3 bookings/week limit (misleading)
-
-    **Why**: Truth in advertising prevents athlete frustration and legal issues
-  </Card>
-  <Card title="Use Limits for Product Differentiation" icon="layer-group">
-    **Principle**: Limits define product tiers
-
-    **Example structure**:
-
-    - **Basic**: 2 bookings/week, \$200/month
-    - **Standard**: 3 bookings/week, \$300/month
-    - **Premium**: 5 bookings/week, \$450/month
-
-    **Why**: Clear value progression encourages upgrades
-  </Card>
-  <Card title="Monitor and Iterate" icon="chart-line">
-    **Principle**: Limits aren't set-it-and-forget-it
-
-    **Quarterly review**:
-
-    - What % of athletes hit each limit type?
-    - Are hit rates increasing or decreasing over time?
-    - What's average usage vs limit?
-    - Any athlete complaints or confusion?
-
-    **Adjust**: Based on data, not individual complaints
-  </Card>
-  <Card title="Communicate Limits Clearly" icon="comment-alt">
-    **Principle**: No surprises
-
-    **Where to communicate**:
-
-    - Product name: "3x/Week Membership"
-    - Product description: "Train up to 3 times per week"
-    - Checkout page: "Includes 3 sessions per week"
-    - Confirmation email: "You can book 3 sessions per week"
-    - In-app display: "2/3 weekly bookings used"
-
-    **Why**: Informed athletes are satisfied athletes
-  </Card>
-  <Card title="Balance Business + Athlete Needs" icon="balance-scale">
-    **Principle**: Limits should protect business WITHOUT frustrating athletes
-
-    **Sweet spot**:
-
-    - 80% of athletes never hit limits (limits are fair)
-    - 15% occasionally hit limits (acceptable constraint)
-    - 5% frequently hit limits (should upgrade to higher tier)
-
-    **If different**: Adjust limits or pricing
-  </Card>
-</CardGroup>
-
----
-
-## Common questions
-
-<AccordionGroup>
-  <Accordion title="Can I set different limits for different athletes on same product?">
-    **Short answer**: No (typically)
-
-    **How product limits work**: Limits are set at product level, apply to ALL athletes who have that product
-
-    **Workaround options**:
-
-    1. **Create custom products for VIP athletes**
-       - Example: "VIP 5x/Week Membership" for athlete who needs more
-       - Manually assign at custom price
-    2. **Use Master Credits for exceptions**
-       - Athlete hits weekly limit on subscription
-       - Grant Master Credits to supplement
-    3. **Hybrid product strategy**
-       - Base subscription with limits
-       - Sell additional credit packs for overflow
-
-    <Note>
-      **Platform limitation**: Individual-athlete limit overrides are rare. Design products to fit 80% of use cases, handle exceptions manually.
-    </Note>
-  </Accordion>
-  <Accordion title="What happens if I change limits on existing product?">
-    **Effect**: Changes apply immediately to all athletes with that product
-
-    **Example scenario**:
-
-    - Product currently has 3 bookings/week limit
-    - You change to 4 bookings/week
-    - All athletes immediately can book 4/week going forward
-
-    **Athlete notification**: System  does NOT auto-notify athletes of limit changes
-
-    **Your action required**:
-
-    1. Email all athletes on product about change
-    2. Update product description on website
-    3. Post announcement in-app (if available)
-
-    **Retroactive**: Changing limits does NOT affect past usage (can't "give back" usage from previous weeks)
-  </Accordion>
-  <Accordion title="Can athletes see their usage limits?">
-    **Yes**: Athletes can view their usage in Athlete Portal
-
-    **Location**: Athlete Portal → Settings → Billing
-
-    **What they see**:
-
-    - Credit balance
-    - Redeemable Sessions list
-    - Usage: "2 of 3 weekly bookings used"
-    - Reset date: "Resets Monday, Oct 7"
-
-    **Benefit**: Self-service transparency reduces "Why can't I book?" questions
-
-    <Tip>
-      **Guide athletes**: During onboarding, show them where to check usage. "You can always see your weekly bookings used in Settings → Billing"
-    </Tip>
-  </Accordion>
-  <Accordion title="Do Master Credits have usage limits?">
-    **No**: Master Credits typically have NO usage limits (unless you manually configure)
-
-    **Why**: Master Credits are designed as flexible override mechanism
-
-    **Use case**:
-
-    - Athlete hits weekly limit on subscription
-    - You grant Master Credits as bonus/compensation
-    - Athlete can use Master Credits even though subscription limit hit
-
-    **Configuration option**: Some platforms allow setting limits on Master Credits, but this is rare and not recommended (defeats purpose of Master Credits)
-  </Accordion>
-  <Accordion title="Should I use limits for finite credit packages?">
-    **Generally no**: Finite packages are self-limiting (10 credits = maximum 10 sessions)
-
-    **Exception scenarios where limits make sense**:
-
-    1. **Program integrity**
-       - 8-week program with 16 credits
-       - Weekly limit: 2 bookings (enforces 2x/week structure)
-       - Without limit: Athlete might book 8 sessions Week 1 (defeats program design)
-    2. **Capacity protection**
-       - Small group training with limited spots
-       - Daily limit: 1 booking (prevents single athlete from booking multiple spots same day)
-    3. **Expiration alignment**
-       - 10-credit package expires in 5 weeks
-       - Weekly limit: 2 bookings (paces usage to avoid last-minute rush)
-
-    **Default recommendation**: No limits on standard finite packages (credit count is sufficient control)
-  </Accordion>
-</AccordionGroup>
-
----
+When more than one set of credits could pay, CoachIQ spends Master Credits first, then the product credits that expire soonest, and credits that never expire last. Credits held back by a limit are skipped, so a product whose weekly allowance is used up pays last. See [The order credits are spent](/payments/credits/credit-system-overview#the-order-credits-are-spent).
 
 ## Related articles
 
-<CardGroup cols={3}>
-  <Card title="Products Overview" icon="shopping-cart" href="/payments/products-overview">
-    Where credit packages are created
-  </Card>
-  <Card title="Creating Schedulers" icon="sliders" href="/scheduling/creating-your-first-scheduler">
-    Set up bookable sessions
-  </Card>
-  <Card title="Automations" icon="bolt" href="/tools/automations/what-are-automations">
-    Automate credit grants and limits
-  </Card>
-  <Card title="Manual Booking" icon="user-plus" href="/scheduling/manually-booking-athletes">
-    Book athletes with credit balance
-  </Card>
-</CardGroup>
-
----
-
-<Check>
-  **You now know how to**: Configure scheduler-specific restrictions, set daily/weekly/monthly usage limits, implement multi-credit sessions, prevent credit abuse, understand limit interactions, troubleshoot limit issues, and strategically design products with appropriate controls.
-</Check>
-
-<Info>
-  **Need help designing your limit strategy?** Our support team can review your business model and recommend optimal limit configurations. [Contact Support](https://support.coachiq.com)
-</Info>
+- [How credits work](/payments/credits/credit-system-overview)
+- [Credits and schedulers](/scheduling/credits-and-schedulers)
+- [Product builder: Credit Limits](/payments/product-builder#credit-limits)
+- [Scheduler rules and limits](/scheduling/scheduler-settings-limits-and-permissions)

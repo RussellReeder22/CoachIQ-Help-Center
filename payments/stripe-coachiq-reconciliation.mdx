@@ -156,7 +156,7 @@ These systems sync automatically, but occasionally they can get out of alignment
     This is a common scenario. Here's the correct workflow:
 
     **What the client should have done:**
-    1. Log into Athlete Portal
+    1. Sign in to your app
     2. Go to Billing settings
     3. Update payment method
     4. Existing subscription continues with new card
@@ -180,7 +180,7 @@ These systems sync automatically, but occasionally they can get out of alignment
   </Accordion>
 
   <Accordion title="A payment or subscription is in Stripe but not in CoachIQ">
-    Use **Missing transactions?** on **Payments → Transactions**, or **Missing subscriptions?** on **Payments → Subscriptions**, to resync. The dialog says whether the resync started, is still running, or found everything up to date. New transactions can take a few minutes to appear.
+    Use **Resync Stripe** on **Payments → Transactions** or **Payments → Subscriptions** to resync. The dialog says whether the resync started, is still running, or found everything up to date. New transactions can take a few minutes to appear.
 
     In an organization with several groups, each group's pages show only that group's sales, so check that you're in the group that sold the product.
   </Accordion>
@@ -203,7 +203,7 @@ These systems sync automatically, but occasionally they can get out of alignment
 
 ## Check for unsynced subscriptions
 
-If you suspect subscriptions aren't connected to Stripe — especially after a transfer or bulk import — use the **Unsynced filter** on the Subscriptions dashboard to find them all at once.
+If you suspect subscriptions aren't connected to Stripe — especially after a transfer or bulk import — set the status filter on **Payments → Subscriptions** to **Unsynced** to find them all at once.
 
 [How to check for unsynced subscriptions →](/payments/subscriptions-dashboard#check-for-unsynced-subscriptions)
 
@@ -232,7 +232,7 @@ Contact CoachIQ support if:
 **Best practices to avoid sync issues:**
 
 1. **Always use CoachIQ** for subscription management (not Stripe directly)
-2. **Train clients** to update payment methods in Athlete Portal, not resubscribe
+2. **Train clients** to update payment methods in your app, not resubscribe
 3. **Check both systems** when investigating payment issues
 4. **Use the same email** in CoachIQ and Stripe for each client
 </Tip>
@@ -241,7 +241,7 @@ Contact CoachIQ support if:
 
 ## Related articles
 
-- [Subscriptions Dashboard](/payments/subscriptions-dashboard)
-- [Managing Subscriptions](/payments/manage-subscriptions)
+- [The Subscriptions page](/payments/subscriptions-dashboard)
+- [Manage a client's subscription](/payments/manage-subscriptions)
 - [Failed Payments](/payments/failed-payments)
 - [Stripe Dashboard Basics](/payments/stripe-dashboard)

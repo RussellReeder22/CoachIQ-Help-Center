@@ -1,66 +1,74 @@
 ---
-title: "Transactions Dashboard"
+title: "The Transactions Page"
 description: "View all payments, refunds, and revenue activity in one centralized transaction history"
-sidebarTitle: "Transactions Dashboard"
+sidebarTitle: "Transactions Page"
 icon: "receipt"
 keywords: ["transactions", "payment history", "revenue", "view payments", "transaction list", "sales history"]
 ---
 
-<Info>
-  **Where to find this**: Payments → Transactions
-</Info>
-
-## Find an ACH payment that is still processing
-
-Open **Payments → Transactions** and select **Processing** to see bank transfers that have not settled. Parents see a bank-payment processing message while they wait. Product access and purchase automations run after the payment is confirmed.
-
-A processing payment is not a completed purchase or a reason to pay again. If the transfer has settled but access is missing, contact support with the transaction details.
-
-
-## What the Transactions page shows
-
-The Transactions dashboard displays every payment event in your coaching business:
-
-- One-time purchases
-- Subscription charges
-- Refunds issued
-- Failed payments
-- Revenue totals
-
-Every transaction that touches Stripe appears here with complete details. Purchases you add to a client and mark paid by cash, check or other, and \$0 orders (access codes and 100% coupons, including guest bookings), appear here too.
+**Payments → Transactions** lists every payment your business takes: one-time purchases, membership charges, refunds, declined attempts, and payouts to your bank. Use it to check what came in, find a client's payment, and spot failed charges.
 
 <Note>
   In organizations with several groups, Transactions shows only the current group's records, and the totals include only that group's sales. If some rows couldn't be checked, a notice says so.
 </Note>
 
 <Frame>
-  ![CoachIQ Transactions dashboard showing payment history and revenue metrics](/images/transaction-page.png)
+  ![Transactions page with the date range buttons, the Total, Revenue, Failed and Refunds cards, the status and Products filters, and the list](/images/transactions-2026-11.png)
 </Frame>
 
-## Transaction list columns
+## Pick a date range
 
-Each transaction displays:
+Use the buttons at the top right: **7 days**, **30 days**, **90 days**, or **All**. The cards and the list follow the range.
 
-| Column      | What it shows                           |
-| ----------- | --------------------------------------- |
-| **Date**    | When transaction occurred, in your own time zone. The header names it, for example **Date (PT)** |
-| **Status**  | Succeeded, Blocked, Payout, etc. A retryable decline shows the reason underneath, such as **Card declined** |
-| **Amount**  | Transaction amount                      |
-| **Client**  | Client name (clickable link to profile) |
-| **Product** | Which product was purchased             |
-| **Source**  | How the transaction was created (see below) |
+## The summary cards
 
-Click any transaction row to view complete details. The list loads more rows as you scroll; a **Load more** button appears only when the list is too short to scroll.
+- **Total**: how many transactions are in the range.
+- **Revenue**: money actually collected, including one-time purchases, membership charges, and purchases you marked paid by cash, check or other. Membership rows with no charge yet add \$0. A payment linked to two purchase records is counted once.
+- **Failed**: payments that failed for good or were canceled. Declines that Stripe can still retry aren't counted here; they show under **Past due** and **Blocked**.
+- **Refunds**: money returned to clients.
 
-**Membership rows with no charge yet** say why instead of reading as collected money: **Trial ends [date]**, **Scheduled** with **Starts [date]**, **Cancels [date]** or **Canceled**, with a muted amount and **No charge yet** or **No charge**. These rows add \$0 to Revenue.
+Revenue doesn't take an estimated card fee from a \$0 payment. Paid amounts use an estimate (2.9% plus 30 cents) until Stripe reports the real fee.
 
-## Transaction source types
+When you filter by status, the cards are labeled **Totals: all statuses**, because they still count every status, not just the rows shown. If the totals fail to load, the page says "Totals couldn't load." with **Try again**.
 
-The **Source** column tells you how a transaction was created:
+If you leave the page open in another browser tab while you change a purchase elsewhere, the list and totals reload when you come back to the tab.
+
+## The list
+
+| Column | What it shows |
+| --- | --- |
+| **Date** | When it happened, in your time zone. The header names it, for example **Date (PT)** |
+| **Status** | Success, Processing, Past due, Blocked, Payout, Refunded, and others. A retryable decline shows the reason under it, such as **Card declined**; hover it for Stripe's full message |
+| **Amount** | The amount |
+| **Payer / Athlete** | Who paid and, when different, who it was for. A declined attempt also shows who tried to pay, while that person is still a member |
+| **Product** | What was bought, with its source on the line under it (see below) |
+
+Long statuses and dates, such as "Requires payment method" or "Trial ends Nov 12, 2026", wrap onto a second line instead of being cut off. The list loads more rows as you scroll.
+
+**Membership rows with no charge yet** say why instead of reading as collected money: **Trial ends [date]**, **Scheduled** with **Starts [date]**, **Cancels [date]** or **Canceled**, with **No charge yet** or **No charge**.
+
+**\$0 rows.** These show as \$0 rows and count in **Total**: access-code orders, 100%-off coupon orders (including a membership with a 100% off forever coupon, which shows its coupon code), and a membership that costs \$0 bought through checkout. They stay listed after the membership is canceled or archived. Free products you add to a client yourself don't appear.
+
+## Filter the list
+
+- **Status** (**All statuses** by default): **Processing**, **Success**, **Past due**, **Blocked**, or **Payout**.
+- **Products**: pick one or more products. Each becomes a chip; select **Apply** to filter. The product filter resets when you reload the page.
+
+<span id="find-an-ach-payment-that-is-still-processing" />
+
+### Find a bank payment that is still processing
+
+Set the status filter to **Processing** to see bank (ACH) transfers that haven't settled. Parents see a bank-payment processing message while they wait. Access and purchase automations run after the payment is confirmed.
+
+A processing payment isn't a completed purchase or a reason to pay again. **Success** only includes payments that went through. A bank payment that fails can show under **Past due**, **Blocked**, or **All**, with any related refund under **Blocked**. If a transfer has settled but access is missing, contact support with the transaction details.
+
+## Where each payment came from
+
+The line under the product shows the source:
 
 | Source | What it means |
 | ------ | ------------- |
-| **Open** | Transaction has a Stripe ID. Click **Open** to view the charge directly in Stripe. |
+| **Open** | The payment has a Stripe ID. Select **Open** to see the charge in Stripe. |
 | **Admin** | Transaction was created by an admin — no Stripe charge is mapped. This appears when a purchase is manually added through the dashboard (e.g., comping a client, granting a free trial) or when a Stripe ID has been manually removed from a subscription. |
 | **Coupon** | A coupon code was applied to the transaction. |
 | **Access Code** | The order was placed with an access code, including codes on recurring products. These orders also appear under the Access Code filter. |
@@ -70,247 +78,48 @@ The **Source** column tells you how a transaction was created:
 **"Admin" does not mean the admin was charged.** It means an admin created the transaction manually without a Stripe payment. This is normal for comped access, free trials granted by the coach, or manual adjustments.
 </Note>
 
-## Transaction status types
+<Note>
+  **"Admin" doesn't mean the admin was charged.** It means the purchase was added by hand without a Stripe payment, for example comped access or a free trial you granted.
+</Note>
 
-**Succeeded** (green)
+<span id="missing-transactions" />
 
-- Payment completed successfully
-- Money received in Stripe account
-- Client has access/credits
+## Resync Stripe
 
-**Blocked** (red)
+If a payment you see in Stripe isn't listed, select **Resync Stripe** at the top. CoachIQ says "Resync started. New transactions can take a few minutes to appear." or that everything is up to date. If the resync fails, select **Try again**.
 
-- Payment declined or unsuccessful
-- No money received
-- Client has no access/credits
+If Stripe isn't connected, the page shows "Stripe account not connected for this organization. Reconnect to resume live sync." See [Connect Stripe](/payments/connecting-stripe).
 
-**Payout** (blue)
+## See the full charge in Stripe
 
-- Shows the amount of money being sent from your Stripe ccount to your bank account
+For a Stripe payment, select **Open** to see it in your Stripe Dashboard: card, Stripe fee, net amount, and the payment's history.
 
-**Refunded** (gray)
+To refund a payment, open the client's profile and use their **Transactions** tab. See [Refund a payment](/payments/issuing-refunds).
 
-- Money returned to client
-- Shows as separate refund transaction
-- Original transaction remains visible
-
-**Processing Fee** (gray)
-
-- Amount Stripe takes from your account per transaction
-
-**Requires Payment Method** (red)
-
-- Usually displayed when transaction wasn't completed
-- Ex: User goes through checkout but doesn't complete the process
-
-**Declined payments that can be retried** show the reason under the status (for example **Card declined** or **Authentication failed**). Hover it for Stripe's full message. These stay under **Past Due** and **Blocked**; the **Failed** card counts only final failed or canceled payments. Hover **Failed** for a reminder.
-
-## Filter and search transactions
-
-**Filter by status:**
-
-- All transactions
-- Succeeded only
-- Past Due only
-- Blocked only
-
-**Filter by Product:** Choose products in **Filter by products**. Each one becomes a chip; click **Apply** to filter. Filtering by status keeps each payment's product name and link. The product filter resets when you reload the page.
-
-<Frame>
-  ![CoachIQ transactions page product filter dropdown](/images/transaction-product-filter.png)
-</Frame>
-
-## Revenue metrics
-
-Top of page displays key metrics:
-
-**Total Revenue**
-
-- Counts only money actually collected
-- Includes one-time and subscription payments, and cash, check and other purchases marked paid
-- Canceled memberships marked **No charge** add \$0, though each row still shows its own amount
-- A payment linked to two purchase records is counted once
-
-**Revenue by period**
-
-- Today
-- This week
-- This month
-- Custom date range
-
-<Info>
-  Revenue metrics reflect the selected date range and product filter. When you filter by status, the cards are labeled **Totals: all statuses**, because they still count every status, not just the rows shown.
-</Info>
-
-If the totals fail to load, the page says "Totals couldn't load." with **Try again**.
-
-## Missing transactions?
-
-If a payment you see in Stripe isn't listed, click **Missing transactions?** to resync. The dialog says "Resync started. New transactions can take a few minutes to appear." or that everything is up to date. The last totals stay on screen with "Updating totals" while they recount. If the resync fails, the dialog stays open with **Try again**.
-
-## View transaction details
-
-Click **Open** under the Source column of the transaction to view on Stripe:
-
-**Transaction information:**
-
-- Transaction ID
-- Date and time
-- Payment method (last 4 of card)
-- Stripe charge ID
-
-**Client information:**
-
-- Client name
-- Email address
-- Payment method on file
-
-**Product information:**
-
-- Product name
-- Price charged
-
-**Payment details:**
-
-- Subtotal
-- Processing fees
-- Net amount received
-- Stripe fee breakdown
-
-**Available actions:**
-
-- Issue refund (if not already refunded)
-
-<Frame>
-  ![Stripe transaction detail page showing charge breakdown and payment info](/images/transcation-stripe-example.png)
-</Frame>
-
-## Understanding transaction flow
-
-<Steps>
-  <Step title="Client initiates purchase">
-    Client books session, subscribes, or completes form with payment.
-  </Step>
-  <Step title="Payment processes">
-    Stripe charges client's card. Transaction appears in Transactions list with "Pending" status briefly.
-  </Step>
-  <Step title="Transaction completes">
-    Status updates to "Succeeded" or "Failed" within seconds.
-  </Step>
-  <Step title="Access granted">
-    If succeeded: Client receives credits or access. Confirmation email sent.
-
-    If failed: No access granted. Client must retry payment.
-  </Step>
-  <Step title="Transaction recorded">
-    Permanent record remains in Transactions list. Syncs with Stripe Dashboard.
-  </Step>
-</Steps>
-
-## Common transaction scenarios
+## Common questions
 
 <AccordionGroup>
-  <Accordion title="Finding specific client payment">
-    **Steps:**
-
-    1. Go to Client page
-    2. Use search box to enter client name or email
-    3. Click their profile
-    4. Click Transaction Tab
-    4. Verify amount, date, and product
-
-    Use this to confirm client payments or answer billing questions.
+  <Accordion title="Find one client's payments">
+    Open the client's profile from **People** and select the **Transactions** tab. It shows only that client's payments, with the same totals for that client.
   </Accordion>
-  <Accordion title="Calculating revenue">
-    **Steps:**
-
-    1. Filter by date range (7 days, 30 days, 90 days, All Time)
-    2. Note Total Revenue metric at top
+  <Accordion title="A payment shows in Stripe but not here">
+    - It may not be linked to a CoachIQ product, for example a charge made directly in Stripe.
+    - It may not have synced yet. Select **Resync Stripe** and wait a few minutes.
   </Accordion>
-  <Accordion title="Tracking failed payments">
-    **Steps:**
+  <Accordion title="A client says they paid but nothing is listed">
+    1. Check whether they used a different email or account.
+    2. Set the status to **Past due** or **Blocked**: their card may have been declined.
+    3. Check Stripe for the charge.
 
-    1. Filter by Status: Blocked
-    2. Review list of unsuccessful charges
-    3. Click transactions to see failure reasons
-    4. Take recovery action for each
-
-    [Learn about recovering failed payments →](/payments/failed-payments)
+    If their card was charged but checkout closed before it finished, CoachIQ records the purchase once on its own, without charging again. If it can't, the payment is held for the CoachIQ team to review, and nothing is refunded automatically.
   </Accordion>
-</AccordionGroup>
-
-## Transactions vs. Stripe Dashboard
-
-**CoachIQ Transactions page:**
-
-- Shows payments related to CoachIQ products
-- Links to client profiles
-- Integrated with your business context
-
-**Stripe Dashboard:**
-
-- Shows ALL Stripe charges (including non-CoachIQ)
-- More detailed fee breakdowns
-- Advanced filtering options
-- Financial reports and analytics
-- Payout information
-
-<Info>
-  Both show the same transactions but with different context. Use CoachIQ for day-to-day business, Stripe for detailed financial analysis.
-</Info>
-
-## Troubleshooting transaction issues
-
-<AccordionGroup>
-  <Accordion title="Transaction shows in Stripe but not CoachIQ">
-    **Possible causes:**
-
-    - Transaction not linked to CoachIQ product
-    - Sync delay (use **Missing transactions?** to resync, then wait a few minutes)
-    - Manual Stripe charge (not through CoachIQ)
-
-    **Check:** View transaction in Stripe Dashboard to see product/metadata
-  </Accordion>
-  <Accordion title="Client says they paid but no transaction appears">
-    **Troubleshooting:**
-
-    1. Verify client email address (may be under different account)
-    2. Check Failed transactions (payment may have declined)
-    3. Check Stripe Dashboard for manual charges
-    4. Verify client completed full checkout process
-
-    Payment confirmation email proves transaction completed.
-  </Accordion>
-  <Accordion title="What does 'Admin' mean in the Source column?">
-    **Admin** means the transaction was created manually by an admin — there is no Stripe charge linked to it. This happens when:
-
-    - You manually grant a client access or a free trial from the dashboard
-    - A Stripe ID was removed from a subscription manually
-
-    Purchases you mark paid by cash, check or other show as **Cash · Paid**, **Check · Paid** or **Other · Paid** instead.
-
-    The admin was **not** charged. It simply means the purchase bypassed Stripe.
-  </Accordion>
-  <Accordion title="Transaction amount doesn't match product price">
-    **Possible reasons:**
-
-    - Processing fees added to charge
-    - Coupon or discount applied
-    - Partial refund issued
-    - Custom pricing used
-
-    Click transaction to see complete fee breakdown.
+  <Accordion title="The amount doesn't match the product price">
+    A processing fee, a coupon, an account credit, or a partial refund changes the amount. Select **Open** to see the breakdown in Stripe.
   </Accordion>
 </AccordionGroup>
 
 ## Related articles
 
-- [Issuing Refunds](/payments/issuing-refunds)
-- [Failed Payments](/payments/failed-payments)
-- [Subscriptions Dashboard](/payments/subscriptions-dashboard)
-
-## Distinguish successful, pending, and failed bank payments
-
-**Success** includes succeeded payments, not terminally failed ACH attempts. Use **Processing** for bank payments that have not settled. Failed attempts can appear under **Past Due**, **Blocked**, or **All**, with related failure refunds under Blocked. Check the transaction status rather than assuming a started bank transfer was paid.
-
-If a bank payment fails during checkout, the client can return to payment selection and retry. Reloading should not leave a terminally failed attempt stuck on Processing. No purchase is granted for the failed attempt.
+- [Refund a payment](/payments/issuing-refunds)
+- [Failed payments](/payments/failed-payments)
+- [The Subscriptions page](/payments/subscriptions-dashboard)
