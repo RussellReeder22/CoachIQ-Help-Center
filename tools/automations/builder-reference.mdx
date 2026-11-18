@@ -92,7 +92,7 @@ Rules worth knowing:
 - An email step whose message is empty can't be saved. An email with no visible text once its fields are filled in isn't sent and uses no email credits. Blank lines you leave in an email body come through in the email.
 - **Wait/Delay** pauses the automation for that person for the time you set (minutes up to weeks; waits over 25 days work) or until a date and time. If it has a "continue only if" condition, CoachIQ checks it when the wait ends. If the person no longer matches, for example a lead tag was removed because they booked, the steps after the wait don't run. If you turn the automation off while someone is waiting, their run stops there.
 - **Grant Program Access to a User** adds the person to a private program until you revoke it. It doesn't change who else can open the program. Older automations saved with an access length show a note that the length isn't applied.
-- **Block Time** closes a window on your availability. **Unblock Time** reopens a window closed by Block Time with the same name and times.
+- **Block Time** closes a window on your availability. **Unblock Time** reopens a window that the same automation closed, with the same name and times; blocks made by hand or by another automation are left alone.
 - **Add a Product Purchase to a User** is skipped, with a note in Activity, for someone whose membership is Suspended or Declined. The rest of the automation carries on.
 
 Every step and its fields are in the [Triggers and actions reference](/tools/automations/triggers-actions-reference#all-actions).
