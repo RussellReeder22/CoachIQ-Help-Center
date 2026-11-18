@@ -56,6 +56,7 @@
               "getting-started/use-coachiq-with-ai",
               {
                 "group": "Walkthroughs",
+              "icon": "route",
                 "pages": [
                   "flows/set-up-your-business",
                   "flows/bring-in-new-families",
