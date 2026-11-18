@@ -108,7 +108,7 @@ Responses has its own page: search by name or answer, pick a date range, and **E
 
 **Automations, redesigned**
 
-Automations open full screen as one column: **When** it starts, **Only if** it should carry on, and numbered steps. New automations start switched off, turning one on shows exactly what it will do, and **Test run** says plainly that it sends for real and skips waits. **Activity** shows whether each message was **Delivered**, **Queued** or **Suppressed**. Start from 13 templates or from scratch. [Automation builder →](/tools/automations/builder-reference)
+Automations open full screen as one column: **When** it starts, **Only if** it should carry on, and numbered steps. New automations start switched off, turning one on shows exactly what it will do, and **Test run** says plainly that it sends for real and skips waits. **Activity** shows whether each message was **Delivered**, **Queued** or **Suppressed**. Start from 13 templates or from scratch. A new **Booking Rescheduled** trigger runs whenever a booking moves, whether the athlete, staff or **Move Session** moved it, and **Same Day as Triggering Booking** books a second session on the same day as the first. [Automation builder →](/tools/automations/builder-reference) · [Triggers and actions →](/tools/automations/triggers-actions-reference)
 
 **Share a sheet with a coach**
 
@@ -170,6 +170,9 @@ A connected assistant can now send one email or text to a group of up to 100 cli
 - **Reports:** Calendar analytics has a cleaner layout, and Export CSV lets you pick 1 to 12 months. Dubai time shows correctly across bookings and forms.
 - **Booking page for families:** Long names wrap, children who can't book show dimmed with a reason, and guest checkouts no longer go blank, double-book on a retry or show technical errors. Paid bookings whose checkout dropped finish automatically when the time is still free. The booking calendar opens on the first month with openings, and on phones picking a time brings **Continue** into view.
 - **Google Calendar:** Stopping a calendar's busy time takes effect even mid-sync.
+- **Family contact on a booking:** Open a player's booking from the calendar to see each parent's phone and email and the player's age.
+- **Check-in:** Check in several athletes in a row without the page reloading.
+- **Locations** need a name, and saving a scheduler with a coach who isn't on your staff says why.
 
 </Accordion>
 
@@ -181,6 +184,10 @@ A connected assistant can now send one email or text to a group of up to 100 cli
 - **Subscriptions and Transactions:** Status notes no longer get cut off. Revenue no longer drops 30 cents on a $0 payment. A Transactions page left open in another tab refreshes when you come back.
 - **Credits:** The Manual Adjustment note explains what lowering a balance does. Membership credits renew correctly after a staff-linked subscription renews, and a renewal can't add credits twice.
 - **Coupons:** The list shows what each coupon covers (**All products**, **All products except 3**, **2 products**). Coaches whose access covers all clients can manage coupons again. A deleted coupon's code can't be reused, so a new coupon no longer starts out used up.
+- **Adding credits by hand:** **Adjust balance** adds or removes an amount with + and −. On a membership whose credits expire each cycle, choose **Keep until used** so added credits don't expire with the cycle.
+- **Held credits:** One-time credits that would have expired while an expiry notice was pending are held. A banner on Clients lets you message those members, keep every held credit, or extend a batch from the client's **Credits** tab.
+- **Renewal day:** A session on a membership's renewal day can always be paid with credits.
+- **Member discounts:** A refused member discount says it needs an active recurring membership.
 
 </Accordion>
 
@@ -221,6 +228,8 @@ A connected assistant can now send one email or text to a group of up to 100 cli
 - **Saving:** Empty condition groups and empty emails can't be saved, blank lines in emails come through, and **Email contains** on New User matches.
 - **Purchase Made:** Steps act on the athlete chosen at checkout, never every child. **Grant Program Access** only adds the person to a private program, and **Add a Product Purchase** skips Suspended or Declined members.
 - **Archived automations** stay reachable when nothing is active, and come back switched off.
+- **Block Time** and **Unblock Time** steps only change blocks they made.
+- Number conditions refuse words such as "10 days".
 
 </Accordion>
 
