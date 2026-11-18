@@ -1,55 +1,78 @@
 ---
-title: "Forms Sections"
-description: "The Form Section feature in CoachIQ allows you to add and manage forms seamlessly on your website, enhancing user interaction and data collection."
+title: "Form Section"
+description: "Put a CoachIQ form on your website so families can register, sign up and pay without leaving your site. Covers sign-in, texted codes and builder notices."
+sidebarTitle: "Forms"
 icon: "clipboard-list"
 ---
 
-## What visitors see
+<Info>
+**Where to find this:** website builder → **Add Section** → **Default Templates** → **Form** (or any section in a form type), then click the section to edit it.
+</Info>
 
-An embedded form lets visitors complete registration on your website. Select a CoachIQ form for the section; its required fields and connected payment or booking steps still apply. Configure those steps in the [Form Builder](/tools/forms/payments-and-bookings), then publish the website page and check the embedded flow.
+A Form section shows one of your [CoachIQ forms](/tools/forms/overview) on a page of your website. The form's own steps still apply: required questions, sign-in, products to buy and sessions to book. Set those up in the [form builder](/tools/forms/payments-and-bookings).
 
-- **File uploads:** image and video upload questions show on the standard Form section. If an upload fails, the visitor sees a message under that file, and their other answers and files are kept so they can try again.
-- **Required fields:** if **Continue** or **Submit** fails, the cursor moves to the first field that needs fixing.
-- **Sign-in step:** when a form asks visitors to sign in, the step explains why it opened. If the form's Custom URL is empty, visitors see the normal thank-you message after submitting.
-- **Builder preview:** an embedded form previews the sign-in step and the questions separately, the way the live site shows them. Optional questions don't show a required star.
-
-If you disconnect the form from the section and publish, it stays disconnected, and the live page keeps the section heading without an empty form box.
-
-
-## **CoachIQ: Form Section Guide**
+## Add a form to a page
 
 <Frame>
-  ![CoachIQ form section example embedded on a coaching website page](/images/forms-example.png)
+  ![A Form section in the website builder with Heading, Description and Select Form](/images/website-form-section-2026-11.png)
 </Frame>
 
-### **How to Use the Form Section**
+1. Click **Add Section**, open **Default Templates** and pick **Form**, then **Add to page**.
+2. Fill in the **Heading** and **Description**. Turn on **Subheading** if you want a small line above the heading.
+3. Under **Form**, click **Select Form** and pick the form. Until you do, the page shows **No form connected**.
+4. **Publish**, then open the live page and run through the form once yourself.
 
-#### **Step 1: Add a Subheading**
+<Tip>
+Publish your page before you go off to build a new form, so you don't lose edits.
+</Tip>
 
-- Navigate to your form section.
-- Add a subheading by clicking on **Add Subheading**. This helps organize your form and provides context to users.
+## What visitors see
 
-#### **Step 2: Select or Create a Form**
+- Every question shows its label. A question saved without a label shows its question type instead, such as "Text", and required questions show an asterisk.
+- Image and video uploads work. If an upload fails, the visitor sees a message under that file and keeps their other answers.
+- If **Continue** or **Submit** fails, the cursor moves to the first field that needs fixing.
+- After submitting, the **Form Submitted** message scrolls into view, even on a long form.
+- If you disconnect the form and publish, the section keeps its heading with no empty form box.
 
-- **To select a form**, click on `Select Form`. Choose from the list of previously created forms.
-- **To create a new form**, ensure you first save and publish your current site to avoid losing any edits. Then, click `Create New Form`.
+## When visitors sign in on a form
 
-#### **Step 3: Save and Publish**
+If a form needs visitors to sign in, the sign-in step explains why it opened. Someone whose email already has an account is asked to sign in as soon as they enter it. See [Returning visitor sign-in](/tools/forms/returning-visitor-sign-in).
 
-- Click on **Website Form** to populate the form on your site.
-- Once your form is set, click `Publish` to make the changes live.
-- You can now view your live site to see the form in action.
+Visitors can sign in two ways:
 
-> **Note:** Always save your site before creating a new form to prevent any data loss from recent edits.
+- **Password**, with **Forgot password?** if they need to reset it.
+- **Text me a code instead**: they enter their mobile number, get a 6-digit code by text, and carry on exactly where they were. If the form already has their email, the code signs in that account, so family members who share one mobile number each reach their own account.
 
-### **Tips and Best Practices**
+New visitors can also create an account with a texted code. After they confirm their phone number, they add their name, email and your sign-up questions, with no password. Registration, waivers and checkout then continue with what they'd chosen.
 
-- **Organize Forms with Clear Subheadings:** Use subheadings to categorize forms, making them intuitive for users to navigate.
-- **Regularly Save and Publish:** Frequently save your progress to avoid data loss and ensure your site is up-to-date.
-- **Test Forms Before Going Live:** Preview your forms to ensure functionality and user-friendliness.
+If sign-in doesn't work, the message says why:
 
-### **Frequently Asked Questions**
+| Message is about | What to tell the family |
+|---|---|
+| Too many attempts | Wait a few minutes and try again. |
+| The account can't sign in to your business | They should contact you. Check the person in [People](/people/overview). |
+| A temporary problem | Try again in a moment. |
+| Wrong password or unknown email | Same as before: check the email or reset the password. |
 
-**Q: How can I ensure my changes are saved before creating a new form?** A: Always click `Save` and `Publish` before initiating the creation of a new form. This process secures your recent edits.
+## Notices in the builder
 
-**Q: What should I do if my form does not appear on the live site?** A: Double-check that you have published your changes. If issues persist, contact support for assistance.
+The builder warns you when a form spot can't show a form:
+
+| Notice | What it means | What to do |
+|---|---|---|
+| **Form not found** on the form card, with "The form chosen here is no longer available." | The form was deleted or belongs to another organization. | Click **Replace** to pick another form, or **Disconnect**. |
+| "No form is picked here." | The spot is empty. | Pick a form. |
+| "This section's form spot has no form picked; the attached form no longer fills it." | An older section that attached one form to the whole section. | Click **Use the attached form**, or pick another form. |
+
+Nothing changes on your live site until you publish. A form spot left empty shows nothing to visitors.
+
+## Common questions
+
+<AccordionGroup>
+<Accordion title="My form doesn't show on the live site">
+Check the section shows the form you picked, not **No form connected** or **Form not found**, then publish. If it still doesn't show, wait a minute and reload.
+</Accordion>
+<Accordion title="A parent says they never made an account">
+Someone in the family probably did. Search their email in [People](/people/overview), then have them use **Forgot password?** or **Text me a code instead**.
+</Accordion>
+</AccordionGroup>

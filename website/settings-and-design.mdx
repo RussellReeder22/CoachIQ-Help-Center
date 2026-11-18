@@ -1,68 +1,47 @@
 ---
-title: "Website Settings, Design & Text Display"
-description: "Configure your website's global settings including design theme, fonts, colors, blog setup, and domain management."
+title: "Website Settings & Design"
+description: "Set your website's theme, fonts, colors, media style and shadows, and manage the favicon, blog page, scripts, domains, sitemap, redirects and site cache."
 sidebarTitle: "Settings & Design"
 icon: "gear"
-keywords: ["website settings", "custom fonts", "text display issues", "transparent text fix", "blog setup", "domain management", "site cache", "CoachIQ design"]
+keywords: ["website settings", "website design", "custom fonts", "brand colors", "Use Brand Kit", "purge cache", "favicon", "text not showing"]
 ---
 
 <Info>
-**Where to find this**: Dashboard → Website Builder → Settings (left sidebar)
+**Where to find this:** **Website & App** → **Website** → **Edit website**, then the palette icon (**Design**) or the gear icon (**Settings**) on the left. You can also click **Design** or **Domain** under **Site** on the Website page.
 </Info>
 
-![CoachIQ Website Builder Settings panel in the left sidebar](/images/globalwebsitesettings.png)
+Two panels in the website builder apply to your whole site: **Design** for how it looks, and **Settings** for everything behind the scenes.
 
-## What you'll accomplish
+## Design
 
-Learn how to configure your website's global settings including custom fonts, text colors, blog pages, domain management, and troubleshoot common text display issues to create a professional coaching website.
+<Frame>
+  ![The Design panel in the website builder with Theme, Font, colors, Media Style and Shadows](/images/website-design-panel-2026-11.png)
+</Frame>
 
-## Design settings
+| Setting | What it does |
+|---|---|
+| **Theme** | Light (sun) or Dark (moon). Sets the default background and text colors for every section. |
+| **Font** | The main Google font for your site. Type the exact name from [Google Fonts](https://fonts.google.com), for example `Montserrat`. |
+| **Heading Font** / **Paragraph Font** | Optional. A different font for headings or body text. Left empty, they read **Uses default font** and use the main font. |
+| **Primary Color** | Your brand color for buttons, links, labels and highlights. |
+| **Secondary Color** | A second brand color some sections use. |
+| **Media Style** | Rounded or square corners on photos and videos. |
+| **Shadows** | A soft shadow on cards and buttons. |
 
-### Theme selection
+Every change switches the top button to **Publish**. Click **Publish** to put it live across your site.
 
-<Steps>
-<Step title="Access design settings">
-Navigate to **Website Builder** and click on **Design** in the left sidebar.
+### Design follows your Brand Kit
 
-![CoachIQ Design settings option in the Website Builder sidebar](/images/designsettings.png)
+These settings start from your [Brand Kit](/website/brand-kit), so your website matches your app. If you change one here, it shows **Changed for this website** and stops following the Brand Kit, so your website can look different from your app on purpose. Click **Use Brand Kit** under the setting to follow the Brand Kit again, then **Publish**.
 
-</Step>
+Changing the Brand Kit later updates every setting that still follows it.
 
-<Step title="Choose your theme">
-Select between Light and Dark themes using the theme selector.
+### Fonts
 
-![CoachIQ global design settings with theme selector, font, and color options](/images/gloabldesignsettings.png)
+- Font names can only use letters, digits, spaces and hyphens, up to 60 characters. Copy the name exactly as Google Fonts shows it.
+- If a font name isn't available, the builder preview and the live site both fall back to the same plain font, so a plain font in the preview means the name needs fixing.
 
-<Warning>
-**Important**: Your theme choice affects default text colors. Dark themes use white text by default, which can become invisible on white section backgrounds.
-</Warning>
-</Step>
-
-<Step title="Set custom fonts">
-Enter a Google Font name in the font field to customize your site's typography.
-
-<Tip>
-**Popular coaching website fonts**: Montserrat, Open Sans, Roboto, Lato, or Raleway provide clean, professional looks.
-</Tip>
-
-To use a Google Font:
-1. Visit [Google Fonts](https://fonts.google.com)
-2. Choose your font
-3. Enter the exact font name (e.g., "Helvetica Neue")
-4. Click outside the field to save
-</Step>
-
-<Step title="Configure colors">
-- **Primary Color**: Set your brand's main color using the color picker
-- **Button Text Color**: Choose a contrasting color for button text visibility
-
-<Check>
-Any change in **Design** switches the top button to **Publish**. Click **Publish** to apply it site-wide. If you try to leave or reload first, the builder asks before discarding your changes. If a save fails, the button stays on **Publish** so you can try again.
-</Check>
-</Step>
-</Steps>
-
-### How your brand color stays readable
+### How your colors stay readable
 
 Your **Primary Color** is used for small labels, headings, text links, outline buttons, star ratings and **Read More** links. If that color would be hard to read on the background behind it, such as a dark brand color on the Dark theme or a light brand color on the Light theme, those details switch to a readable shade automatically:
 
@@ -70,16 +49,45 @@ Your **Primary Color** is used for small labels, headings, text links, outline b
 - Small labels over a background photo switch to white or near-black.
 - Brand colors that already read well are not changed.
 - Main buttons keep your brand color as their fill.
+- With no primary color chosen, button text follows the theme: dark on a light site, white on a dark site.
 
 Your saved color doesn't change, and the builder preview shows the same colors as the live site. Text you place directly on a photo, with no section color behind it, keeps the color you chose.
 
-### How custom sections use Design settings
+### How sections use Design settings
 
-Custom and AI-generated sections use your site's Design settings as their default styling. Update the site theme, fonts, and colors here to keep pages consistent. A style set explicitly on an individual section overrides its inherited default; check the section's settings if it does not follow a sitewide change.
+Every section, including custom sections, uses these settings as its defaults. A color or font set on an individual section overrides the default. If a section doesn't follow a site-wide change, check that section's own style settings. See [Backgrounds & Styling](/website/sections/backgrounds-styling).
 
-Preview and publish after changing styles, then check the live page on desktop and a phone.
+## Site settings
 
-## Troubleshooting text display issues
+<Frame>
+  ![The Settings panel in the website builder](/images/website-settings-panel-2026-11.png)
+</Frame>
+
+| Setting | What it does |
+|---|---|
+| **Add Favicon** | The small icon in browser tabs and bookmarks. **Select Media** or **Upload**. See [Favicon & Share Images](/website/seo-marketing/favicon-share-images). |
+| **Blog Archive Page** | The page that lists your blog posts. Create the page first, then pick it here. See [Blog](/website/blog). |
+| **Scripts & Analytics** | **View/Edit** to add Google Analytics, Facebook Pixel or your own scripts. See [Analytics & Tracking](/website/analytics-tracking/analytics-tracking). |
+| **Active Domains** | The addresses your website answers on. Click one to open it. **Need a custom domain?** requests a domain of your own. See [Domain Setup](/website/domain-setup/domain-setup). |
+| **Sitemap Builder** | **View/Edit** to choose which pages are listed for Google and which are hidden (link only). See [Sitemap Builder](/website/seo-marketing/sitemap-builder). |
+| **URL Redirects** | **View/Edit** to send old addresses to new pages. See [URL Redirects](/website/seo-marketing/url-redirects). |
+| **Site Cache** | **Purge Cache** refreshes the copy of your site visitors are served. See [Site cache](#site-cache). |
+
+### Custom domains
+
+**Need a custom domain?** sends a request to our team; there's no self-serve connection yet. If the address you type isn't a valid domain, for example `abc` with no dot or one with spaces, a message explains it, such as "Enter a domain like www.example.com", and nothing is requested. **Domain Requested** only shows once the request is saved. Your app's address can't be added as a website address.
+
+### Site cache
+
+Visitors are served a saved copy of your site so pages load fast. Publishing refreshes it for you. Use **Purge Cache** only when a published change still isn't showing after a few minutes.
+
+What the message after **Purge Cache** means:
+
+- **It worked:** the refresh went through. Reload your site.
+- **It was sent but not confirmed:** the refresh was sent but didn't confirm within 10 seconds. Some pages may already show the change. Wait a minute, then purge once more if needed.
+- **Refresh isn't set up:** cache refresh isn't set up for this website, so nothing was sent. Contact support.
+
+## Text that doesn't show on your live site
 
 <iframe
   className="w-full aspect-video rounded-xl"
@@ -90,240 +98,54 @@ Preview and publish after changing styles, then check the live page on desktop a
   allowFullScreen
 ></iframe>
 
-### Common text visibility problems
-
-If your published site has missing or invisible text that appears in the editor, you likely have one of these issues:
-
-<Warning>
-**Most common causes**:
-1. White text on white background
-2. Text color set to transparent
-3. Theme/section color conflicts
-</Warning>
-
-### How to fix invisible text
+If text shows in the builder but not on your live site, it's almost always a color problem: white text on a white background, or a color set to transparent.
 
 <Steps>
-<Step title="Identify the problem">
-Check if your text is visible in the editor but not on the published site. This indicates a color conflict.
+<Step title="White text on a white background">
+This usually happens on the Dark theme, which uses white text by default, in a section with a white background. Select the section and set its text color to a dark color, or change the section background. For text you colored with the text color tool, highlight it and pick a dark color.
 </Step>
 
-<Step title="Fix white text on white background">
-This commonly happens when:
-- You're using dark mode (which defaults to white text)
-- Your section background is set to white
+<Step title="Text set to transparent">
+Section text colors (Text, Muted Text, Button Text, Heading) don't offer **Set transparent**, so text can't be hidden by accident. A section saved with a transparent color before that change shows **Transparent** in the color box. Click **Use inherited** to go back to your brand color, or pick any visible color.
 
-**To fix**:
-1. Copy your heading text
-2. Paste it back in place
-3. Highlight the text
-4. Click the text color tool
-5. Select black or another dark color (not white)
-6. Repeat for all affected text
-
+For text you colored with the text color tool, highlight it, open the color picker, and check the hex field doesn't say "transparent".
 </Step>
 
-<Step title="Fix transparent text">
-A section's **Primary Color** and text colors (such as Text, Muted Text, Button Text and Heading) don't offer **Set transparent**, so text can't be made invisible by accident. Backgrounds and borders can still be transparent.
-
-A section saved with a transparent color before this change shows **Transparent** in the color box. To fix it:
-
-1. Select the section and find the color that shows **Transparent**
-2. Click **Use inherited** to go back to your site's brand color, or pick any visible color
-3. Repeat for each affected section, then publish
-
-For text you colored with the text color tool, highlight the text, open the color picker and make sure the hex code field doesn't say "transparent".
-
-<Note>
-**Quick check**: "Transparent" in a color box or hex code field means that text has no color and won't be visible.
-</Note>
-</Step>
-
-<Step title="Verify and publish">
-After fixing text colors:
-1. Click **Publish**
-2. Check your live site
-3. Text should now appear as it does in the editor
-
-<Check>
-**Success**: Your text is now visible on both the editor and live site!
-</Check>
+<Step title="Publish and check">
+Click **Publish**, then open your live site on a computer and a phone.
 </Step>
 </Steps>
-
-### Best practices for text visibility
 
 <Tip>
-**Color contrast rules**:
-- Light backgrounds → Dark text (black, dark gray)
-- Dark backgrounds → Light text (white, light gray)
-- Avoid transparent text unless intentionally hiding content
-- Test all sections after theme changes
+After switching between Light and Dark, check every section before you publish. Dark backgrounds need light text and light backgrounds need dark text.
 </Tip>
-
-## Favicon
-
-Your favicon is the small icon that appears in browser tabs, bookmarks, and mobile home screens. Set it up in the Settings panel under **Add Favicon**.
-
-<Tip>
-**Recommended**: Upload a 50x50 pixel PNG of your logo or a simplified version that's recognizable at small sizes.
-</Tip>
-
-For complete setup instructions including social share images (Open Graph), see the [Favicon & Share Images guide](/website/seo-marketing/favicon-share-images).
-
-## Site configuration
-
-### Blog archive setup
-
-<Steps>
-<Step title="Select your blog page">
-In the Settings panel, find **Blog Archive Page** and select which page will display your blog posts.
-
-<Note>
-You must create a page first before you can designate it as your blog archive.
-</Note>
-</Step>
-</Steps>
-
-### Scripts & analytics
-
-Configure tracking and custom scripts:
-
-<AccordionGroup>
-<Accordion title="Google Analytics">
-Add your Google Analytics tracking ID to monitor visitor behavior.
-[See full guide →](/website/analytics-tracking/google-analytics)
-</Accordion>
-
-<Accordion title="Facebook Pixel">
-Install Facebook Pixel for ad tracking and retargeting.
-[See full guide →](/website/analytics-tracking/facebook-pixel)
-</Accordion>
-
-<Accordion title="Custom Scripts">
-Add custom JavaScript for third-party integrations or advanced functionality. **Custom JS** takes plain JavaScript or a pasted snippet with `<script>` tags. Style blocks, `<noscript>`-only snippets and external script tags are refused with a message, and nothing is saved.
-[See full guide →](/website/analytics-tracking/analytics-tracking#custom-js)
-</Accordion>
-</AccordionGroup>
-
-## Domain management
-
-### Active domains
-
-View and manage all domains connected to your website:
-
-<Steps>
-<Step title="View active domains">
-Check the **Active Domains** section to see all connected domains with their status indicators.
-</Step>
-
-<Step title="Add a domain">
-Click **Need another domain?** to:
-- Purchase a new domain
-- Connect an existing domain
-
-[Complete domain setup guide →](/website/domain-setup/purchasing-domain)
-
-<Note>
-If the address you enter isn't a valid domain (for example `abc` with no dot, or one with spaces), a message under the field explains it, such as "Enter a domain like www.example.com." Nothing is requested until you enter a valid domain. **Domain Requested** only shows once the request has been saved.
-</Note>
-</Step>
-</Steps>
-
-### Domain status indicators
-- ✅ **Active**: Domain is live and working
-- ⏳ **Pending**: DNS propagation in progress (can take 24-48 hours)
-- ❌ **Error**: Check DNS settings
-
-## Advanced settings
-
-### Sitemap builder
-
-Control which pages appear in search engine results. You can hide pages from Google (like thank you pages or drafts) while keeping them accessible via direct link.
-
-[Complete Sitemap Builder guide →](/website/seo-marketing/sitemap-builder)
-
-### URL redirects
-
-Prevent broken links when you rename or delete pages. Supports wildcards for bulk redirects.
-
-[Complete URL Redirects guide →](/website/seo-marketing/url-redirects)
-
-### Site cache
-
-Manage your website's cache for optimal performance:
-
-<Steps>
-<Step title="When to purge cache">
-Use **Purge Cache** button when:
-- Design changes aren't showing
-- Content updates aren't visible
-- Text color fixes aren't appearing
-- After major site updates
-</Step>
-
-<Step title="Cache best practices">
-- Cache automatically refreshes every 24 hours
-- Only purge manually when necessary
-- Allow 5-10 minutes for full cache clear
-</Step>
-</Steps>
 
 ## Troubleshooting
 
 <AccordionGroup>
-<Accordion title="Text not visible on published site">
-- Check if text is white on white background
-- Look for "transparent" in hex code field
-- Switch themes may require text color updates
-- Always test after theme changes
+<Accordion title="My font isn't showing">
+- Check the name matches Google Fonts exactly, with no typos.
+- Names with apostrophes or other symbols aren't allowed.
+- Publish, then reload the live site.
 </Accordion>
 
-<Accordion title="Custom font not displaying">
-- Verify exact font name from Google Fonts
-- Check for typos in font name
-- Some fonts require specific weights (e.g., "Roboto:400,700")
-- Clear browser cache after font changes
-- If the font name isn't available, the builder preview and the live site both fall back to the same plain sans-serif font, so a plain font in the preview usually means the name needs fixing
+<Accordion title="My colors aren't updating">
+- Check the setting doesn't show **Changed for this website** when you expected it to follow the Brand Kit.
+- Some sections have their own colors that override the site colors.
+- Publish, wait a minute, then use **Purge Cache** if the change still doesn't show.
 </Accordion>
 
-<Accordion title="Colors not updating">
-- Ensure you're using valid hex codes (#000000 format)
-- Some sections may override global colors
-- Check that text isn't set to transparent
-- Purge site cache if changes don't appear
-</Accordion>
-
-<Accordion title="Blog page not working">
-- Confirm you've selected a valid page as blog archive
-- Ensure you have at least one published blog post
-- Check that blog sections are added to your pages
+<Accordion title="My blog page isn't working">
+- Check you picked a page under **Blog Archive Page**.
+- Check you have at least one published post.
 </Accordion>
 </AccordionGroup>
 
-## Pro tips
-
-<Tip>
-**Prevent text issues**: When switching themes, always review all sections for text visibility before publishing.
-</Tip>
-
-<Tip>
-**Design consistency**: Choose fonts and colors that match your existing brand materials for a cohesive professional appearance.
-</Tip>
-
-<Tip>
-**Performance optimization**: Limit custom scripts and use built-in features when possible for fastest page load times.
-</Tip>
-
-<Tip>
-**Mobile preview**: Always check how your font and color choices look on mobile devices using the preview toggle.
-</Tip>
-
 ## Related articles
 
+- [Brand Kit](/website/brand-kit)
 - [Favicon & Share Images](/website/seo-marketing/favicon-share-images)
 - [Sitemap Builder](/website/seo-marketing/sitemap-builder)
 - [URL Redirects](/website/seo-marketing/url-redirects)
-- [Domain Setup Guide](/website/domain-setup/purchasing-domain)
-- [Google Analytics Setup](/website/analytics-tracking/google-analytics)
+- [Domain Setup](/website/domain-setup/domain-setup)
 - [Working with Sections](/website/sections/working-with-sections)

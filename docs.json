@@ -63,6 +63,7 @@
                 "group": "Website Builder",
                 "pages": [
                   "website/overview",
+                  "website/brand-kit",
                   "website/settings-and-design",
                   {
                     "group": "Pages & Navigation",
@@ -428,6 +429,8 @@
                   "settings/connections",
                   "settings/connect-chatgpt",
                   "settings/connect-claude",
+                  "settings/ai-what-it-can-do",
+                  "settings/ai-approvals-and-activity",
                   "settings/ai-workflows"
                 ]
               },
