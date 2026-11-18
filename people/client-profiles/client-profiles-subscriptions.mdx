@@ -63,7 +63,7 @@ Each subscription shows:
   <Tab title="Past Due">
     **Meaning**: Payment failed, subscription at risk of canceling.
 
-    **What happens**: Client may lose access after grace period, needs payment method update.
+    **What happens**: The membership's credits pause right away: the balance is kept but can't book sessions until a payment goes through. Stripe keeps retrying under your Stripe settings. See [Failed payments](/payments/failed-payments).
 
     **Your action**: Contact client immediately to update payment info.
   </Tab>
@@ -182,8 +182,8 @@ Subscriptions tab is **view-only**. To take action:
 | **Cancel membership** | Products → **Cancel membership** |
 | **Cancel an unmatched subscription** | Payment Methods → Active Subscriptions → **Cancel subscription** |
 | **Change subscription price** | Payments → Products → Edit product       |
-| **Retry failed payment**      | Payments → Subscriptions → Retry billing |
-| **Refund past charges**       | Transactions tab → Refund                |
+| **Recover a failed payment**   | Payments → Subscriptions → **Open** → send the Stripe payment link ([steps](/payments/failed-payments)) |
+| **Refund past charges**       | Transactions tab → **Refund payment** ([steps](/payments/issuing-refunds)) |
 | **See cards on file / default card** | Payment Methods tab              |
 
 ---
