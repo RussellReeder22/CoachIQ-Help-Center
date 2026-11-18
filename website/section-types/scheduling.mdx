@@ -6,13 +6,63 @@ keywords: ["scheduling section", "booking on website", "book now", "reserve my s
 icon: "calendar-days"
 ---
 
-## Book without leaving your website
+<Info>
+**Where to find this:** website builder → **Add Section** → **Default Templates** → **Schedule**
+</Info>
 
-Sections linked to a CoachIQ scheduler can open its booking experience on your site. The scheduler controls available dates, session lengths, capacity, location, and payment requirements. Edit those settings in [Scheduling → Schedulers](/scheduling/creating-your-first-scheduler); changing website copy alone does not change the booking rules.
+A Schedule section shows session cards, each with a title, length, price, location, description and **Book Now** and **Learn More** buttons. Pick one of your schedulers and the card fills in from it, so families can book from your website. Use it for camps, clinics, lessons or a free first session.
 
-After publishing, open the booking flow from the live section and check that it uses the intended scheduler.
+<Frame>
+  ![A Schedule section with a session card and Book Now and Learn More buttons](/images/scheduling-section-example.avif)
+</Frame>
 
-### What visitors see when they book
+## Add the section
+
+<Steps>
+  <Step title="Open the page">
+    Go to **Website & App** → **Website**, click **Edit website**, and pick the page from the page menu at the top.
+  </Step>
+  <Step title="Add Schedule">
+    Click **Add Section**, open **Default Templates**, click **Schedule**, then **Add to page**. The section lands at the bottom of the page; drag it where you want it.
+  </Step>
+  <Step title="Fill it in">
+    Click the section in the left panel. Under **Schedulers**, click **Add session** and pick what to show.
+  </Step>
+  <Step title="Publish">
+    Click **Publish**, then check the live page on a computer and a phone.
+  </Step>
+</Steps>
+
+## Add a session to the section
+
+Click **Add session**. **Select a Session Type** asks for one of two kinds:
+
+- **CoachIQ Session**: opens **Schedulers**, a list of your schedulers with **Duration**, **Price** and **Location**. Search or sort it, then tick one. The card fills in from that scheduler, and **Book Now** opens its booking.
+- **Custom Session**: a blank card you fill in yourself, for something you don't book through CoachIQ. Set where its buttons go with the gear.
+
+Click **Add session** again to add more cards. The trash icon on a card removes it.
+
+## Settings
+
+| Setting | What it does |
+|---|---|
+| **Subheading** | A short line above the heading, often in capitals. |
+| **Heading** | The section's title. Up to 500 characters. |
+| **Description** | A line or paragraph under the heading. |
+| **Title** | The card's name. Click the pencil next to it to change it. |
+| **Add Media** | Turn on to add a photo or video to the card. |
+| **Date/Time** | The line next to the clock icon, such as "60 mins" or "June 9–12, 9am–noon". |
+| **Price** | The price line, such as "\$40", "1 Credit" or "Free". |
+| **Location** | The address under the title. |
+| **Location Url** | Where the address links, usually a Google Maps link. |
+| **Description** | A few lines about the session. |
+| **Buttons** | **Book Now** and **Learn More**. Change the labels, or click the gear to send a button somewhere else. See [Buttons & CTAs](/website/sections/buttons-ctas). |
+
+The words on the card are yours to edit. The booking itself, including available times, capacity, price and payment, always follows the scheduler. Change those in [Schedulers](/scheduling/creating-your-first-scheduler).
+
+For **Background**, **Vertical Padding** and width, turn on **Change Section Styles**. See [Backgrounds & Styling](/website/sections/backgrounds-styling).
+
+## What visitors see when they book
 
 - **Time zone:** booking calendars show your schedule's time zone, for example "Times shown in PDT", and repeat it next to the list of times. It's always your schedule's zone, not the visitor's. A week where the clocks change reads PDT/PST.
 - **Guest booking:** when a session allows guests (see [Guest checkout](/payments/guest-checkout)), **Reserve My Spot** offers **Continue as guest** alongside sign in. Guests enter a first and last name and don't need a password. If the session needs an account, visitors are asked to sign in or create one. A visitor who creates an account partway through goes straight to payment for the time they picked, with their details filled in.
@@ -23,67 +73,13 @@ After publishing, open the booking flow from the live section and check that it 
 
 The multi-step booking form template uses wording that fits both free and paid sessions ("Book a Session", "Upcoming Session"), and the session card shows the real price. Wording you saved yourself is kept.
 
+## Tips
 
-## **Scheduling Blocks in CoachIQ**
+- After you publish, click **Book Now** on the live page and go as far as the payment step to check it opens the scheduler you meant.
+- For a camp, write the dates in **Date/Time** instead of the session length, and add a photo from last year's camp with **Add Media**.
 
-<video controls className="w-full aspect-video rounded-xl" src="https://drive.google.com/file/d/16MGq-uNR_fUM8PlMeqvmuVc68aHGpjkT/view" />
+## Related
 
-### **Introduction**
-
-This feature is ideal for hosting events, running camps, and addressing various scheduling needs on your webpage. This guide will walk you through the process of adding and customizing a scheduling block, helping you make the most of this powerful feature.
-
-<Frame>
-  ![Scheduling Section Example Avi](/images/scheduling-section-example.avif)
-</Frame>
-
-### **Adding a Scheduling Block**
-
-To add a scheduling block in CoachIQ, follow these steps:
-
-1. **Navigate to the Scheduling Section**: Begin by accessing the scheduling section within your CoachIQ account.
-2. **Edit the Block via the Sidebar**: Use the sidebar to locate and edit the scheduling block options.
-3. **Click on "Add a Schedule"**: Initiate the scheduling process by selecting the option to add a new schedule.
-
-### **Selecting a Session**
-
-When selecting a session for your scheduling block, you have two options:
-
-1. **Select from Sessions Built within CoachIQ**: Choose from pre-existing sessions that are already configured in CoachIQ.
-2. **Create a Custom Session**: Alternatively, design a custom session tailored to your specific needs.
-
-For this guide, we will choose a pre-built session.
-
-### **Customizing the Scheduling Block**
-
-#### **Session Selection**
-
-- **Choose Your Session**: For instance, selecting the "shooting machine" session will automatically fill in all relevant information from that session.
-
-#### **Button Functionality**
-
-- **"Book Now" Button**: This button directs users to book the selected session.
-- **"Learn More" Button**: Offers users an expanded description of the session, providing additional context and information.
-
-#### **Additional Features**
-
-1. **Media Addition**: Enhance your scheduling block by adding media, such as videos or photos, which is particularly useful for events like camps.
-2. **Information Editing**: Customize various aspects of the session, including the title, location, and other pertinent details.
-3. **Button Customization**: By default, the button links to the selected session, but you can modify the destination to suit your needs.
-
-### **Use Cases**
-
-This scheduling block feature is particularly beneficial for:
-
-- Running camps and workshops
-- Hosting sessions directly on your webpage
-- Addressing a variety of scheduling requirements
-
-### **Frequently Asked Questions**
-
-**Q: Can I customize the media content in my scheduling block?**
-
-A: Yes, you can add videos or photos to your scheduling block to enhance its appearance and provide additional information.
-
-**Q: Is it possible to change the default button link?**
-
-A: Absolutely. You can customize the button's destination to direct users to any URL you choose.
+- [Working with Sections](/website/sections/working-with-sections): add, reorder, hide and delete sections
+- [Backgrounds & Styling](/website/sections/backgrounds-styling): what **Change Section Styles** does
+- [Section Types](/website/section-types/section-types): every default section
