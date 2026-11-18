@@ -1,76 +1,67 @@
 ---
 title: "Pricing Section"
-description: "The Pricing Options feature in CoachIQ allows you to effectively manage and showcase your products, whether custom or existing."
+description: "Show your memberships, packages and other products with prices on your website, and send visitors to checkout in your app."
+sidebarTitle: "Pricing"
 icon: "tags"
 ---
 
-## Connect products for checkout on your website
+<Info>
+**Where to find this:** website builder → **Add Section** → **Default Templates** → **Pricing** (or any section in the **Pricing** type), then click the section to edit it.
+</Info>
 
-Select the CoachIQ product for your pricing section's purchase action. When a visitor selects **Purchase**, checkout opens in your app in a new tab, with the product's price, available payment methods, and registration requirements. Edit these in [Product Builder](/payments/product-builder), then publish and verify that each pricing option opens the intended product.
+A Pricing section shows cards with a name, price, features and a button. Use CoachIQ products so visitors can buy straight from your website, or custom products for anything you sell somewhere else.
 
+## Edit the section
 
-## **Pricing Section in the Web-builder**
+Click the section in the left panel. Along with **Subheading**, **Heading** and **Description**, you get:
 
-<Frame>
-  ![Pricing Section Example](/images/pricing-section-example.png)
-</Frame>
-
-### **Introduction**
-
-This feature is designed to help you streamline the selling process, enhance customer experience, and maximize your revenue potential by providing flexible pricing structures.
-
-### **Adding Products**
-
-CoachIQ offers two main methods to add products to your pricing section: Custom Products and Existing CoachIQ Products.
+- **Display as List**: shows the products as rows instead of cards.
+- **Products**: the cards in the section. Click **Add product** to add one, then choose a product type.
 
 <Frame>
-  ![Pricing Section Editor](/images/pricing-section-editor.png)
+  ![Select a Product Type with Custom Product and CoachIQ Product](/images/website-pricing-product-type-2026-11.png)
 </Frame>
 
-#### **1. Custom Products**
+## Add a CoachIQ product
 
-Custom Products are ideal if you sell services or items outside CoachIQ. Here's how to add them:
+Choose **CoachIQ Product** and pick from your products. Its price and features come from the product, and you can edit the features shown on the card.
 
-- **Click the Plus Button**: Initiate the process by clicking the plus button in your pricing section.
-- **Select "Add Custom Product"**: This option is for products not sold through CoachIQ.
-  - **Example**: In-person skills session
-    - **Label**: Name your product, e.g., "In-person skills session".
-    - **Pricing Interval**: Set how often pricing applies, such as per session.
-    - **Target URL**: Enter the URL where the purchase button directs users.
-    - **Features**: List features such as:
-      - 60-minute session
-      - Access to training materials
-- **Flexibility**: Add multiple features and as many products as needed.
+When a visitor clicks **Purchase**, checkout opens in your app in a new tab with the product's price, payment methods and registration steps. Change those in the [Product Builder](/payments/product-builder).
 
-#### **2. Existing CoachIQ Products**
+- A product that's unlocked with an access code shows its price as **Code** in the builder and on your website.
+- Archived products don't show. If a card still points at a product that was archived or deleted, the card shows blank. Pick an active product for it and publish.
+- On phones, the product picker shows each product's full price and billing cadence under its name, and the number of products selected on its own line.
 
-If you're already selling memberships or products through CoachIQ, follow these steps:
+## Add a custom product
 
-- **Click the Plus Button**: Start by clicking the plus button.
-- **Select "CoachIQ Product"**: Choose from your existing product list.
-  - **Automatic Features**: Features are imported from your current settings.
-  - **Updates**: Modify features as necessary to reflect current offerings.
+Choose **Custom Product** for something you don't sell through CoachIQ, such as merchandise on another store.
 
-### **What visitors see**
+<Frame>
+  ![A custom product in a Pricing section with Hide Price, Price, Interval, Button Text and Add feature](/images/website-pricing-custom-product-2026-11.png)
+</Frame>
 
-- **Purchase** buttons for CoachIQ products continue to your app in a new tab and show a small new-tab icon. Buttons in the same row line up with each other.
-- Archived products don't appear in website product sections. If a pricing card still points at a product that was archived or deleted, the card shows blank instead of placeholder text. Pick an active product for that card and publish.
-- In a camp grid, a camp with no registration products set up shows **Coming Soon** with a disabled **Registration Coming Soon** button. Once you add registration options, it shows as open again.
+1. Click **Label** at the top of the card to name the product, for example "In-person skills session".
+2. Enter the **Price** and the **Interval**, such as "per session" or "/month".
+3. Set where the button goes in the link box (the one with the gear icon), and its wording in **Button Text**.
+4. Click **Add feature** for each line you want on the card, such as "60-minute session".
+5. **Publish**.
 
-### **Additional Notes**
+To show a card without a price, for example "Contact us for pricing", turn on **Hide Price**. The **Price** and **Interval** boxes hide, and a note says "The card shows no price or interval." Turn it off to bring both back with what you entered before.
 
-- **Structure Consistency**: The pricing section retains consistent heading and subheading structures for clarity.
-- **Customization**: For custom products, you can specify details such as pricing intervals and target URLs.
-- **Feature Import**: When adding existing CoachIQ products, all associated features are automatically imported, but you have the flexibility to update them.
+## What visitors see
 
-### **Tips and Best Practices**
+- **Purchase** buttons for CoachIQ products open your app in a new tab and show a small new-tab icon. Buttons in the same row line up.
+- Visitors can open pricing rows and the checkout window with a keyboard. Escape closes checkout unless a payment is in progress.
+- Prices at checkout show with their currency symbol. A quick second tap on a checkout button shows a short "One moment" notice instead of opening checkout twice.
+- In a camp grid, a camp with no registration products shows **Coming Soon** with a disabled **Registration Coming Soon** button until you add registration options.
 
-- **Regular Updates**: Keep your product features and pricing intervals updated to reflect changes in your offerings.
-- **Clear Descriptions**: Use concise and descriptive labels for products to enhance user understanding.
-- **Targeted URLs**: Ensure that the target URL is accurate and leads customers to the correct purchase page.
+## Common questions
 
-### **Frequently Asked Questions**
-
-> **Q: Can I add multiple custom products at once?** **A: Yes, you can add as many custom products as you need, each with its unique features and pricing details.**
-
-> **Q: Are features for existing products automatically updated if I change them in CoachIQ?** **A: No, you'll need to manually update the imported features if you make changes to the original product settings.**
+<AccordionGroup>
+<Accordion title="If I change a product's features in CoachIQ, does the card update?">
+No. Features are copied when you add the product. Edit them on the card after you change the product.
+</Accordion>
+<Accordion title="How many products can a Pricing section hold?">
+As many as you need. For a long list, turn on **Display as List**.
+</Accordion>
+</AccordionGroup>

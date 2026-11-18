@@ -63,6 +63,7 @@
                 "group": "Website Builder",
                 "pages": [
                   "website/overview",
+                  "website/brand-kit",
                   "website/settings-and-design",
                   {
                     "group": "Pages & Navigation",
