@@ -103,6 +103,8 @@ A question type has the same name everywhere: in this menu, in the outline and a
 
 Forms don't have a date, number or signature question. For a signature, use a **Waiver** question (see [Waivers](/tools/waivers/waivers#add-a-waiver-to-a-form)).
 
+To ask for a date such as a date of birth, use a text question and set **Save to profile field** to a date field on the profile. That question then checks the answer: it takes dates like 03/14/2016 or 2016-03-14 and saves them to the athlete, and refuses a day that doesn't exist (such as 02/30/2016), a two-digit year, words, a year before 1900 or a day in the future, with a message like: Enter a real date for "Date of birth", like 03/14/2016. The answers stay on the page until the date is fixed. This works on standalone forms, checkout registration forms and forms with a scheduler. A text question not saved to a date field takes any text.
+
 ## Edit a question
 
 Click a question in the outline or on the page. The panel shows its settings.

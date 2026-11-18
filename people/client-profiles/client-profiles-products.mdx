@@ -100,6 +100,8 @@ When a purchase is marked paid by **Cash**, **Check** or **Other**, the **Amount
 
 No card is charged and nothing goes through Stripe. Card and Stripe purchases are never changed by these fields.
 
+The **Stripe ID** box on a purchase only takes a real Stripe ID. Payment text such as "cash $1,200" is refused with a hint to use the collection status instead, and nothing is saved. If an older one-time purchase has payment text in that box and was never really paid, set it to **Not recorded** or **Collection pending**: its amount leaves Orders and Revenue while the purchase stays in the history, and you can then archive it.
+
 <Warning>
   Cash, check and other purchases marked paid before the October 19, 2026 release were recorded at \$0. They stay at \$0 until you open the purchase, confirm the **Amount** and save.
 </Warning>
@@ -160,7 +162,7 @@ If there's nothing active left to archive (for example, you're on an older tab, 
     2. Search for the program product
     3. Select and confirm
 
-    **They now have access** in their Athlete Portal without paying. Useful for beta testing or VIP perks.
+    **They now have access** in your app without paying. Useful for beta testing or VIP perks.
   </Accordion>
   <Accordion title="How many times have they purchased this?">
     Look at the **purchase count indicator** (●):

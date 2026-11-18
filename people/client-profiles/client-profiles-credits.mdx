@@ -106,9 +106,20 @@ Credit Logs and **Payments → Transactions** use the same time zone, so a purch
 
 For a membership billed through Stripe, the **Credit Renewals** and **Credit Expirations** dates match the membership's billing date. A membership set to cancel at the end of its period shows no renewal row, and its expiration date matches the cancel date. Memberships added without a Stripe subscription renew the day after, when the overnight run adds the credits.
 
+On a membership whose credits expire each cycle, a session on the renewal day can always be paid with credits: the ending cycle's credits cover sessions up to and including that day, and the new cycle's credits cover it too once the renewal goes through. **Credit Renewals** and **Credit Expirations** show that same day. A pack whose sessions must fall inside its credit window uses the days shown under **Credit Expirations**, in your scheduler's time zone.
+
 The expiration warning on a credit pack counts only credits whose date has passed. Credits used for bookings are not described as expired.
 
 When a booking paid with credits is canceled and the credit is returned, it goes back to the pack that paid for it and keeps that pack's expiration date.
+
+### Held credits
+
+Some older one-time credits that would have expired while a notice to you was still pending are held instead of lost. When your clients have held credits, the **Clients** list shows a banner with how many credits and members are affected and the date they would expire (45 days after your notice). From the banner you can:
+
+- **Message these members** from a ready-made draft, which ends with your name under "Thank you," and can be edited before you send it
+- Keep every held credit with one action
+
+To change one batch, open the client's **Credits** tab and extend it to a later date or to no expiry. Kept and extended credits show their new date, they can be booked like any other credit (including credits from a pack bought after its fixed expiry date), and every change is written to the credit history. Nothing expires with the November 2026 release.
 
 ### When a membership is inactive
 
@@ -159,10 +170,11 @@ If a membership has ended or is otherwise inactive, its credit tab reads "Member
   </Accordion>
   <Accordion title="Manually adding credits (makeup, promotion, gift)">
     1. Open the **Master Credits** tab, or the tab for the product whose credits you want to change
-    2. Enter the new total balance (this sets the balance; it doesn't add to it)
-    3. Click **Update Redeemable Credits**
+    2. Under **Adjust balance**, use **+** or **−** to enter how many credits to add or remove. It changes the balance by that amount; it isn't a new total
+    3. On a membership whose credits expire each cycle, choose **Expire with this cycle** (default) or **Keep until used**
+    4. Click **Apply**
 
-    The confirmation names the credit bank and its new balance, and Credit Logs show a "Set to" entry with your name.
+    The confirmation gives the new balance (for example "Master Credits balance is now 3."), and Credit Logs show a "Set to" entry with your name.
 
     [Learn how to add credits →](/payments/credits/managing-athlete-credits#manual-credit-operations)
   </Accordion>
