@@ -535,6 +535,22 @@
   },
   "redirects": [
     {
+      "source": "/client-management/import-contacts",
+      "destination": "/people/adding-editing-clients"
+    },
+    {
+      "source": "/scheduling/sessions-overview",
+      "destination": "/scheduling/creating-your-first-scheduler"
+    },
+    {
+      "source": "/scheduling/sessions-scheduler",
+      "destination": "/scheduling/advanced-scheduler-settings"
+    },
+    {
+      "source": "/scheduling/setting-avaliability",
+      "destination": "/scheduling/advanced-scheduler-settings"
+    },
+    {
       "source": "/getting-started/copilot",
       "destination": "/tools/assistant/overview"
     },
