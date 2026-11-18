@@ -26,13 +26,20 @@ You choose the type when you create the product. See [Product types](/payments/p
 
 ## The Products page
 
-The Products page lists your products with their price and creation date. Use the tabs to filter by type: **All Products**, **One-Time Payment**, **Subscriptions**, and **Access Codes**. Use the status filter to switch between **Active**, **Archived**, and **All**, and the search box to find a product by name.
+The Products page lists your products with their **Amount** and **Date Created**. A product unlocked with a code shows **Access Code** as its amount. At the top right, **Coupons** opens your [coupons](/payments/coupon-overview) and **Create** starts a new product.
+
+Above the list:
+
+- **Search for products** finds a product by name.
+- **Type** filters by One Time, Subscription, or Access Code.
+- The status picker switches between **Active**, **Archived**, and all products.
+- The sort picker orders the list, newest first by default (**Recent**).
 
 <Frame>
-  ![Products page with type tabs, status filter, and the row menu open showing View/Edit Product and Archive Product](/images/product-archive-menu.png)
+  ![Products page with the search box, Type, status and sort pickers, and the product list with Amount and Date Created columns](/images/products-list-2026-11.png)
 </Frame>
 
-Select a product to open it in the [Product Builder](/payments/product-builder). The row menu also offers **View/Edit Product** and **Archive Product**.
+Select a product to open it in the [Product Builder](/payments/product-builder). Each row has a **⋯** menu with **View/Edit Product**, **Copy Product Link**, and **Archive Product** (or unarchive on an archived product). The list loads more products as you scroll and stops when the last one is shown.
 
 ## Create a product
 
@@ -47,7 +54,7 @@ Select a product to open it in the [Product Builder](/payments/product-builder).
     Enter the price. For a subscription, set how often it bills. Add credits if the purchase should pay for sessions.
   </Step>
   <Step title="Save">
-    Select the create button at the top right of the builder, for example **Create Subscription**.
+    Select **Create** at the top right of the builder.
   </Step>
 </Steps>
 
@@ -85,7 +92,8 @@ When a product is archived:
 - No one can complete a purchase, including through its direct link.
 - Existing purchases, subscriptions, and credits stay as they are. Cancel a subscription separately if it should stop billing. See [Managing subscriptions](/payments/manage-subscriptions).
 - Transaction history is kept.
-- It isn't removed from pages, schedulers, or forms where you placed it. Remove it there so families don't see an offer they can't buy.
+- It drops off your app's Products page and your website's product sections, and its direct link shows "No Product Found." It stays attached to schedulers and forms, so remove it there so families don't see an offer they can't buy.
+- Its product and prices are turned off in your Stripe account. Existing subscribers are still billed. When you unarchive, CoachIQ turns them back on in Stripe. If Stripe can't be reached, the unarchive is refused and nothing changes, so try again.
 
 To find or restore an archived product, set the status filter to **Archived**, open the product, and unarchive it.
 
@@ -97,7 +105,7 @@ To hide a product you still want to sell to some people, remove it from the plac
 
 ## Good to know
 
-- **Stripe:** Paid products are created in your connected Stripe account, so you will also see them in Stripe.
+- **Stripe:** Paid products are created in your connected Stripe account, so you will also see them in Stripe. Two products can share one Stripe product, for example a copied product. Deleting one of them, or making it free, leaves the Stripe product alone while the other still uses it.
 - **Edits apply going forward:** Changing a product affects new purchases. Existing transactions, subscriptions, and issued credits keep what they had when they were bought.
 - **Fees:** Each product chooses whether the family pays a processing fee on top of the price. See [Processing fees](/payments/processing-fee).
 - **Credits are optional:** Many products only take payment. Turn on credits when the purchase should pay for future sessions. See [Credits overview](/payments/credits/credit-system-overview).

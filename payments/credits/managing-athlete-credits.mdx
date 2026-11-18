@@ -139,7 +139,7 @@ Understanding what you're looking at when you check an athlete's credits.
 
     **Meaning**: 0 credits have expired out of 5 total issued
 
-    **Where athletes see it**: Athlete Portal → Settings → Billing → Credit Expirations
+    **Where athletes see it**: your app → Settings → Billing → Credit Expirations
 
     **Monitoring**: Helps you track if athletes are losing credits to expiration (may indicate engagement issues)
   </Accordion>
@@ -247,6 +247,8 @@ Use Master Credits when you want to give credits that work for ANY scheduler.
     <Warning>
       **Critical**: Setting credits to a lower number will REMOVE credits. Always check current balance first!
     </Warning>
+
+    The note under **Manual Adjustment** says how lowering works for this product: on a pack, credits come out of the batch that expires soonest; on a membership whose credits expire each cycle, what's left still expires at the next renewal; credits kept until used are taken first.
   </Step>
   <Step title="Save and verify" stepNumber={4}>
     Click **Update Redeemable Credits** button
@@ -397,23 +399,25 @@ Managing credits for multiple athletes at once.
 
 **Scenario**: You want to give 1 free credit to all active athletes for a promotion
 
-**Current limitation**: CoachIQ may not have built-in bulk credit grants
+There's no bulk grant button. Use an automation, or update each client's Credits tab.
 
-**Workaround options:**
+**Options:**
 
 <Tabs>
   <Tab title="Option 1: Use Automations">
-    If available, create automation:
+    Create an automation with the **Add Credits to a User** action:
 
-    **Trigger**: Athlete has specific tag (e.g., "Active Athlete")\
-    **Action**: Grant 1 Master Credit
+    **Trigger**: a tag is added (for example "Active Athlete")\
+    **Action**: **Add Credits to a User**, 1 credit, to **Master Credits** or a specific product's credits
 
     **Setup**:
 
-    1. Dashboard → Tools → Automations → Create New
-    2. Set trigger (tag-based)
-    3. Set action: Add credits
-    4. Activate automation
+    1. Go to **Tools → Automations** and create a new automation
+    2. Set the tag trigger
+    3. Add the **Add Credits to a User** action. If you pick a product the client doesn't own, the credits go to Master Credits instead
+    4. Turn the automation on, then tag the clients
+
+    See [Automation actions](/tools/automations/triggers-actions-reference).
 
     <Check>
       **Best option**: Automated, scalable, trackable
@@ -505,7 +509,7 @@ Common problems and solutions.
     **Why this works**: App data sync issue resolved by fresh login
 
     <Tip>
-      **Quick test**: Have athlete check credits on web browser (Athlete Portal). If visible there but not in app, it's definitely an app sync issue.
+      **Quick test**: Have the athlete check credits in a web browser. If they show there but not in the phone app, it's definitely an app sync issue.
     </Tip>
   </Step>
   <Step title="Verify athlete is logged into correct account">
@@ -639,9 +643,9 @@ Common problems and solutions.
     </Warning>
   </Accordion>
   <Accordion title="Can athlete see their own credit logs?">
-    **Yes**: Athletes can view their credit logs in Athlete Portal
+    **Yes**: Athletes can view their credit logs in your app
 
-    **Location for athletes**: Athlete Portal → Settings → Billing → Credit Logs section
+    **Location for athletes**: your app → Settings → Billing → Credit Logs section
 
     **What they see**:
 
@@ -674,7 +678,7 @@ Common problems and solutions.
     **Warning sign**: Liability growing faster than you're delivering sessions = overselling capacity
 
     <Note>
-      **Feature request**: Ask CoachIQ support for built-in credit liability reporting dashboard
+      CoachIQ doesn't have a credit liability report yet, so total it by hand as above.
     </Note>
   </Accordion>
   <Accordion title="Should I offer store credit or refunds?">

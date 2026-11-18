@@ -9,9 +9,11 @@ keywords: ["processing fees", "stripe fees", "transaction fees", "who pays fees"
 Every paid transaction has two fees:
 
 - **Stripe's processing fee.** The standard US card rate is 2.9% + \$0.30. Your rate depends on your Stripe account, the payment method, and the card's country.
-- **The CoachIQ platform fee.** The Product Builder's **Product Preview** shows it as **CoachIQ Platform Fee**, for example 1% + \$0.20.
+- **The CoachIQ platform fee**, if your organization has one. It comes out of your payout and isn't added to the buyer's total. The product builder shows it as **CoachIQ Platform Fee**.
 
-Each product decides who covers them. By default you absorb the fees. Turn on **Add processing fee** to charge the buyer a fee on top of the price.
+Once you enter a price, the product builder's **Payment** section shows your payout from a card payment: the platform fee, **Estimated card processing**, and **You receive about**. On a subscription it reads **Your payout per recurring card payment**.
+
+Each product decides who covers the fees. By default you absorb the fees. Turn on **Add processing fee** to charge the buyer a fee on top of the price.
 
 ## Example
 
@@ -22,7 +24,7 @@ For a \$100 product, with Stripe at 2.9% + \$0.30 and a platform fee of 1% + \$0
 | Buyer pays | \$100.00 | \$104.40 |
 | You receive | \$95.60 | Slightly under \$100 |
 
-When the buyer pays the fee, Stripe's percentage applies to the whole \$104.40, so you receive slightly less than the full price. Raise the fee a little if you need to net every cent.
+When the buyer pays the fee, Stripe's percentage applies to the whole \$104.40, so you receive slightly less than the full price. **Cover my fees** works this out for you.
 
 ## Add a processing fee to a product
 
@@ -34,14 +36,14 @@ When the buyer pays the fee, Stripe's percentage applies to the whole \$104.40, 
     In the **Payment** section, turn on **Add processing fee**.
   </Step>
   <Step title="Set the amounts">
-    Enter the **Fixed Fee** and **Percentage Fee**. The fields start at Stripe's standard card rate. If the buyer should also cover the CoachIQ platform fee, add its percentage and fixed amount to the matching fields.
+    Enter the **Fixed Fee** and **Percentage Fee**, or turn on **Cover my fees**. Cover my fees fills in the fields so you receive about your full price after card processing and any CoachIQ platform fee. You can still change the numbers. Set the **Fee Label** buyers see, such as "Processing Fee".
 
     <Frame>
-      ![Payment section with Add processing fee on, Fixed Fee and Percentage Fee fields, and the Preview showing price, fee, and total](/images/processing-fee.png)
+      ![Payment section with Add processing fee on, the Fixed Fee and Percentage Fee fields, the Cover my fees switch, and the Fee Label](/images/processing-fee-2026-11.png)
     </Frame>
   </Step>
   <Step title="Check the preview and save">
-    The **Preview** shows the price, the processing fee, and the total the buyer pays. Save the product.
+    The preview shows the price, the processing fee, and the total the buyer pays, and **You receive about** shows your payout. The estimate uses Stripe's standard US card rate; your actual rate can differ by country, card, and currency conversion. Save the product.
   </Step>
 </Steps>
 
@@ -55,7 +57,9 @@ If your organization accepts **US bank account (ACH)** payments, the processing 
 2. In the product's **Payment** section, set the card fee as usual.
 3. Set the ACH fee to cover what a bank payment costs you, using your Stripe pricing, or leave it at zero.
 
-The ACH fee option appears only after ACH is enabled. Separate ACH fees aren't switched on for every organization yet. If you don't see the option, or saving it says a separate bank fee isn't available, your product keeps its standard processing fee; contact CoachIQ support if you need it.
+The ACH fee option appears only after ACH is enabled, and only on a product that already exists. On a new product the builder says **Set an ACH fee after creating**: create the product, then open it again to set the bank fee. If your account can't take bank payments, the builder doesn't mention an ACH fee at all.
+
+Separate ACH fees aren't switched on for every organization yet. If the builder says a separate bank processing fee isn't available, your product keeps its standard processing fee and any fee you saved before stays as it was. Contact CoachIQ support if you need it.
 
 <Tip>
   Charging card payers a fee and bank payers none encourages families to pay large camp or season registrations by bank.

@@ -202,7 +202,12 @@ If a code can't be used, checkout says why and the total doesn't change:
 | --- | --- |
 | "This coupon has reached its redemption limit." | The code's total use limit is used up |
 | "This coupon does not apply to this product." | The product isn't one of the coupon's selected products, or it's left out of an All products coupon |
-| The coupon is invalid | The code doesn't exist; check spelling with the client |
+| "That code isn't valid for this order." | The code doesn't exist or can't be used on this order; check the spelling with the client |
+| "We couldn't check that code. Please try again." | A passing connection problem. Selecting **Apply** again checks it |
+
+A code that's turned down is never sent with the payment, so the price on the **Pay** button is the price charged. If one code is applied and a second is turned down, the first discount stays. When the real problem is the payment method or the athlete chosen, checkout shows only that message and doesn't call the code invalid; fix it and select **Apply** again.
+
+A visitor who enters a code and then signs in during checkout has the code checked again for their account, so a member price or a code meant for them shows before they pay. A guest asked to set a password partway through keeps the code they entered.
 
 \$0 products that only save a card on file don't show a coupon box.
 

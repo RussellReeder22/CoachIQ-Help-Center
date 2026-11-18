@@ -1,443 +1,99 @@
 ---
-title: "Issuing Refunds"
-description: "Process full and partial refunds for one-time purchases and subscription payments"
-sidebarTitle: "Issue Refunds"
+title: "Refund a Payment or Give Account Credit"
+description: "Refund all or part of a client's payment from their Transactions tab, or add account credit that comes off their next bill"
+sidebarTitle: "Refunds and Account Credit"
 icon: "rotate-left"
-keywords: ["refund", "refunds", "issue refund", "partial refund", "full refund", "money back", "return payment"]
+keywords: ["refund", "refunds", "issue refund", "partial refund", "full refund", "money back", "return payment", "invoice credit", "account credit", "credit balance", "make good"]
 ---
 
-<Info>
-  **Where to find this**: Payments → Transactions → Click transaction → Refund
-</Info>
+You can give money back to a client in two ways, both from the client's profile:
 
-## When to issue refunds
+| You want to… | Use | What happens |
+| --- | --- | --- |
+| Send money back to their card | **Refund** a payment | The money returns to the card or account they paid with |
+| Take money off their next bill | **Invoice credit** | The amount comes off their next membership or purchase payment |
 
-Common refund scenarios:
-
-**Client request:**
-
-- Changed their mind
-- Can't attend purchased session
-- Dissatisfied with service
-- Duplicate charge
-
-**Business error:**
-
-- Charged wrong amount
-- Charged wrong client
-- Product misconfigured
-- Technical error
-
-**Goodwill:**
-
-- Service issue compensation
-- Retention gesture
-- Promotional adjustment
+Neither one changes the client's access, memberships, bookings, or session credits. If a refund should also end a membership or remove credits, do that separately. See [Cancel a membership](/payments/manage-subscriptions) and [the client's Credits tab](/people/client-profiles/client-profiles-credits).
 
 <Note>
-  Refund policies vary by coach. Define your refund policy clearly in terms and conditions.
+  Refunds need an admin. Staff without access to the client's payments can't refund or see refund details.
 </Note>
 
-## Full vs. partial refunds
-
-<Tabs>
-  <Tab title="Full Refund">
-    **Return entire payment amount**
-
-    Client receives 100% of what they paid.
-
-    **When to use:**
-
-    - Complete cancellation before service
-    - Major service failure
-    - Accidental duplicate charge
-    - Client never received product/access
-
-    **Example:** \$75 session → Refund \$75
-  </Tab>
-  <Tab title="Partial Refund">
-    **Return portion of payment**
-
-    Client receives specific dollar amount, less than full charge.
-
-    **When to use:**
-
-    - Prorated cancellation mid-period
-    - Partial service failure
-    - Processing fee adjustment
-    - Custom settlement amount
-
-    **Example:** 200 monthly membership, cancel on day 15 → Refund 100 (half month)
-
-    <Tip>
-      Calculate prorated refunds: (Amount / Days in period) × Days unused
-    </Tip>
-  </Tab>
-</Tabs>
-
-## How to issue a refund
+## Refund a payment
 
 <Steps>
-  <Step title="Find the transaction">
-    Go to **Payments → Transactions** and locate the transaction to refund.
-
-    Search by client name, amount, or date if needed.
+  <Step title="Open the client's payments">
+    Go to **People**, open the client who paid, and open their **Transactions**.
   </Step>
-  <Step title="Click Open under source column">
-    Redirects to transcation on Stripe
+  <Step title="Choose the payment">
+    Find the payment and select **Refund payment**. The refund window shows how much of the payment can still be refunded.
   </Step>
-  <Step title="Click Refund button">
-    Button appears in the top right corner (if transaction eligible for refund).
-
-    <Frame>
-      ![Stripe transaction detail page with Refund button highlighted](/images/refund-stripe.png)
-    </Frame>
-    <Warning>
-      Refund button only appears for successful, non-refunded transactions. Failed or already-refunded transactions can't be refunded.
-    </Warning>
+  <Step title="Enter the amount and reason">
+    Leave the full amount, or enter less for a partial refund. Choose a reason. If you choose **Other**, add a note.
   </Step>
-  <Step title="Choose refund amount">
-    **Full refund:** Leave default amount (entire transaction)
-
-    **Partial refund:** Enter specific dollar amount to refund
-
-    Amount must be less than or equal to original charge.
-
-    <Frame>
-      ![Stripe refund form showing amount and reason fields](/images/refund-details.png)
-    </Frame>
-  </Step>
-  <Step title="Add reason (optional)">
-    Note why you're issuing refund:
-
-    - Client request
-    - Service issue
-    - Duplicate charge
-    - Other
-
-    Internal note only - client doesn't see this.
-  </Step>
-  <Step title="Confirm refund">
-    Review details and click **Confirm Refund**.
-
-    <Check>
-      **Refund processing.** Money returns to client's original payment method within 5-10 business days.
-    </Check>
+  <Step title="Confirm">
+    Review the amount and confirm. The refund shows as pending, then as partly or fully refunded.
   </Step>
 </Steps>
 
-## What happens after refund
+After the refund:
 
-**Immediate:**
+- The money goes back to the card or bank account the client paid with. Their bank usually shows it within 5–10 business days.
+- The payer gets an emailed receipt.
+- The payment's refund history shows the amount, status, reason, who refunded it, and when.
+- Refunds show on the [Transactions page](/payments/transactions) and count in the **Refunds** card.
 
-- Refund appears in Transactions list with negative amount
-- Transaction status updates to "Refunded"
-- CoachIQ records refund
+You can refund the rest of a partly refunded payment later, up to the original amount. While a refund is pending you can't submit another one for the same payment.
 
-**Within 24 hours:**
+### When a payment can't be refunded here
 
-- Client receives refund confirmation email
-- Stripe processes refund
-- Funds deducted from your Stripe balance
+- **A payment with an open dispute (chargeback):** respond to the dispute in Stripe instead.
+- **Cash, check, or other payments you recorded yourself:** there's no card to send money back to. Return the money the way it was paid.
+- **A failed refund:** the window says what went wrong. Check the payment in Stripe (select **Open** on the [Transactions page](/payments/transactions)) and try again.
 
-**Within 5-10 business days:**
+### Refunds and Stripe fees
 
-- Money appears in client's bank account
-- Timeline depends on client's bank
+Stripe doesn't return its processing fee when you refund. On a \$100 card payment with a \$3.20 fee, a full refund gives the client \$100 back and you're out the \$3.20 fee. If your policy keeps the fee, refund the payment minus the fee as a partial refund, and say so in your refund policy before people buy.
 
-<Info>
-  Refund timeline is controlled by banks, not CoachIQ or Stripe. You can't speed it up.
-</Info>
+### Refunding a membership payment
 
-## Refunding subscription payments
+A refund returns the money for one payment only. The membership keeps billing on its schedule until it's canceled, and its credits stay. To stop future payments, [cancel the membership](/payments/manage-subscriptions).
 
-When refunding subscription charges, additional options appear:
+To work out a prorated refund for part of a month: (payment ÷ days in the period) × days unused. For example, a \$200 monthly membership canceled halfway through gets \$100 back.
 
-<Tabs>
-  <Tab title="Refund only">
-    **Issue refund, keep subscription active**
+## Give invoice credit
 
-    Money returned but subscription continues billing.
-
-    **When to use:**
-
-    - Service issue compensation
-    - Billing adjustment
-    - Goodwill gesture without cancellation
-
-    Client retains access, credits don't expire, future charges continue.
-  </Tab>
-  <Tab title="Refund + Cancel">
-    **Issue refund and end subscription**
-
-    Money returned AND subscription canceled.
-
-    **Options:**
-
-    - Cancel at period end (access until current period expires)
-    - Cancel immediately (access ends now)
-
-    **When to use:**
-
-    - Client canceling due to dissatisfaction
-    - Full service cancellation
-    - Client no longer wants service
-
-    <Tip>
-      Most common choice. Refunding usually means client wants to end relationship.
-    </Tip>
-  </Tab>
-</Tabs>
-
-## Refund limitations
-
-**Time limits:**
-
-- Stripe allows refunds up to 180 days after charge
-- After 180 days, contact Stripe support for special handling
-
-**Amount limits:**
-
-- Can't refund more than original charge
-- Can refund less (partial refund)
-- Can issue multiple partial refunds until full amount refunded
-
-**Already refunded:**
-
-- Can't refund same transaction twice
-- Can't reverse a refund once processed
-
-**Failed payments:**
-
-- Can't refund payments that failed
-- No money was collected, so nothing to refund
-
-<Warning>
-  Refunds are final. You cannot cancel or reverse a refund once confirmed.
-</Warning>
-
-## Refund fees
-
-**Stripe processing fees:**
-
-**Original charge:** You paid 2.9% + \$0.30
-
-**After refund:**
-
-- Transaction fee NOT refunded by Stripe
-- You lose the fee even though client got money back
-
-**Example:**
-
-- Client pays \$100
-- Stripe takes \$3.20 in fees
-- You receive \$96.80
-- You refund \$100 to client
-- Stripe charges you \$100
-- Net loss: 103.20 (original 100 + \$3.20 fees)
-
-<Note>
-  Factor fees into refund policies. Some coaches deduct Stripe fees from refunds to avoid this loss.
-</Note>
-
-## Partial refund calculations
-
-**Common scenarios:**
-
-**Prorated monthly cancellation:**
-
-- \$200/month subscription
-- Client cancels on day 15 of 30-day month
-- Unused: 15 days
-- Refund: $200 × (15/30) = $ 100
-
-**Session package partial use:**
-
-- 10-session package for \$650
-- Client used 3 sessions
-- Remaining: 7 sessions
-- Refund: $650 × (7/10) = $ 455
-
-**Processing fee deduction:**
-
-- \$100 charge
-- Stripe fee: \$3.20
-- Refund after fee: \$96.80
-
-<Tip>
-  Be consistent with refund calculations. Document your policy and apply it uniformly.
-</Tip>
-
-## Refund policies
-
-**Elements of clear refund policy:**
-
-**Time window:**
-
-- How long after purchase can client request refund?
-- Example: "30-day money-back guarantee" or "No refunds after 48 hours"
-
-**Conditions:**
-
-- What qualifies for refund?
-- What doesn't qualify?
-- Example: "Unused sessions only" or "Cancel 24 hours before session"
-
-**Process:**
-
-- How does client request refund?
-- How long does approval take?
-- Example: "Email requests processed within 2 business days"
-
-**Exceptions:**
-
-- Emergency situations
-- Injury or illness
-- Special circumstances
-
-**Display policy:**
-
-- On checkout page
-- In terms and conditions
-- In confirmation emails
-
-<Warning>
-  Clearly communicate refund policy BEFORE purchase. Reduces disputes and chargebacks.
-</Warning>
-
-## Handling refund requests
-
-**Best practices:**
+Invoice credit is a dollar balance on the payer's account. Stripe takes it off their next bills automatically. Use it to make up for a missed session or fix a billing mistake without sending money back. It isn't a cash refund and it isn't a session credit.
 
 <Steps>
-  <Step title="Listen to client">
-    Understand why they want refund. Sometimes issue can be resolved without refund.
+  <Step title="Open the client's invoice credits">
+    Go to **People**, open the client, and open **Invoice Credits** in their payments. If the client has more than one payer, choose the payer.
   </Step>
-  <Step title="Review your policy">
-    Does request qualify based on your terms?
+  <Step title="Add the credit">
+    Select **Add invoice credit**. Enter a positive amount in your organization's currency and a reason. The reason is for your staff only.
   </Step>
-  <Step title="Offer alternatives">
-    Before refunding, consider:
-
-    - Rescheduling session
-    - Transferring credits to friend/family
-    - Service credit for future use
-    - Discounted makeup session
-  </Step>
-  <Step title="Process refund promptly">
-    If refund warranted, process within 24-48 hours. Delays increase frustration.
-  </Step>
-  <Step title="Communicate clearly">
-    Explain what to expect:
-
-    - Refund amount
-    - Processing timeline (5-10 days)
-    - Account changes (credits removed, access ended)
-  </Step>
-  <Step title="Follow up">
-    After refund processes, check in to ensure client satisfied with resolution.
+  <Step title="Review and confirm">
+    Check the old balance, the credit, and the new balance, then confirm.
   </Step>
 </Steps>
+
+The credit is saved once, with a history entry showing the amount, reason, who added it, and when.
+
+What the client sees:
+
+- If they owe a balance, the credit pays that first.
+- At checkout for a membership, the summary lists the plan, the account credit, and what's **Due today**. If the credit covers the whole first payment, checkout completes without a charge. A remainder under 50 cents is added to their next payment instead of being charged.
+- In **Orders** and **Billing**, the first payment shows what they actually paid, for example "Initial payment \$15.00 (after \$5.00 credit)".
+
+If the balance can't be loaded, the section says "Could not load invoice credits" with **Retry**. If Stripe isn't connected, it says "Invoice credits unavailable" and links to your Stripe settings. It never shows a balance it couldn't check as \$0.00.
 
 ## Refunds vs. chargebacks
 
-**Refund (you initiate):**
-
-- You control timing and amount
-- No additional fees
-- Maintains client relationship
-- Professional resolution
-
-**Chargeback (client disputes with bank):**
-
-- Bank controls outcome
-- \$15 chargeback fee even if you win
-- Damages relationship
-- Affects Stripe account health
-
-<Check>
-  Always offer to refund if client unhappy. Prevents chargebacks and maintains goodwill.
-</Check>
-
-## Common refund scenarios
-
-<AccordionGroup>
-  <Accordion title="Client can't attend session they booked">
-    **Your options:**
-
-    1. Reschedule session (no refund needed)
-    2. Issue credit for future use
-    3. Issue full refund if within policy window
-
-    **Recommendation:** Reschedule first, refund only if client insists or outside policy.
-  </Accordion>
-  <Accordion title="Client bought wrong product">
-    **Process:**
-
-    1. Issue full refund for incorrect product
-    2. Client purchases correct product
-    3. Or manually adjust credits if appropriate
-
-    **Note:** Two separate transactions - refund one, new charge for correct product.
-  </Accordion>
-  <Accordion title="Duplicate charge - client charged twice">
-    **Process:**
-
-    1. Verify duplicate (check transactions)
-    2. Issue full refund for one charge
-    3. Keep other charge active
-    4. Apologize for error
-
-    <Warning>
-      Act fast on duplicate charges. Client may dispute with bank if you delay.
-    </Warning>
-  </Accordion>
-  <Accordion title="Client wants prorated refund mid-subscription">
-    **Process:**
-
-    1. Calculate unused portion of period
-    2. Issue partial refund for prorated amount
-    3. Cancel subscription (at period end or immediately)
-
-    **Example:** 300/month, cancel on day 10 of 30 = refund 200 (20 days unused)
-  </Accordion>
-  <Accordion title="Client unhappy with service">
-    **Steps:**
-
-    1. Understand specific issue
-    2. Offer to remedy (makeup session, different coach, etc.)
-    3. If unresolvable, issue refund per policy
-    4. Document for quality improvement
-
-    Service refunds are judgment calls. Balance policy with customer satisfaction.
-  </Accordion>
-</AccordionGroup>
-
-## Tracking refunds
-
-**Monitor refund metrics:**
-
-**Refund rate:** (Refunds / Total transactions) × 100
-
-**Average refund amount:** Total refunded / Number of refunds
-
-**Refund reasons:** Track most common causes
-
-**Refund cost:** Total revenue lost to refunds + fees
-
-**Use data to:**
-
-- Identify problem areas (policies, products, services)
-- Improve client satisfaction
-- Reduce refund requests
-- Adjust policies if needed
-
-<Tip>
-  Healthy refund rate: Under 5% of total transactions. Higher rates indicate issues needing attention.
-</Tip>
+A **refund** is you returning the money. A **chargeback** (dispute) is the client asking their bank to take it back. Disputes carry a Stripe fee even if you win, and you answer them in your Stripe Dashboard. When a client is unhappy and asks for their money back, a quick refund usually costs less than a dispute.
 
 ## Related articles
 
-- [Transactions Dashboard](/payments/transactions)
-- [Managing Subscriptions](/payments/manage-subscriptions)
-- [Failed Payments](/payments/failed-payments)
+- [The Transactions page](/payments/transactions)
+- [Manage a client's subscription](/payments/manage-subscriptions)
+- [Failed payments](/payments/failed-payments)
+- [Client profile: Transactions](/people/client-profiles/client-profiles-transactions)
