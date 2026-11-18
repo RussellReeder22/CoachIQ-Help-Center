@@ -3,7 +3,7 @@ title: "Managing Athlete Credits: Balance Tracking and Manual Operations"
 description: "Master daily credit management—view balances, grant credits, read logs, troubleshoot issues, and handle athlete credit requests efficiently"
 sidebarTitle: "Managing Credits"
 icon: "hand-holding-usd"
-keywords: ["manage credits", "add credits", "grant credits", "credit balance", "credit log", "remove credits", "master credits", "deactivate credits", "configure purchases", "cash", "check"]
+keywords: ["manage credits", "add credits", "adjust balance", "keep until used", "expire with this cycle", "grant credits", "credit balance", "credit log", "remove credits", "master credits", "deactivate credits", "configure purchases", "cash", "check"]
 ---
 
 <Info>
@@ -193,7 +193,7 @@ Credit logs provide a complete transaction history for each athlete's credits. E
     08 Jul, 5:53 PM | Set to 13 | Manual · Set by [Coach Name]
     ```
 
-    **What it means**: A staff member manually changed the balance. "Set to 13" is the balance after the change, not the number of credits added. Older manual rows display the same way.
+    **What it means**: A staff member changed the balance with **Adjust balance**. "Set to 13" is the balance after the change, not the number of credits added. Older manual rows display the same way.
 
     **Source**: "Set by [Coach Name]" identifies who granted the credits
 
@@ -237,23 +237,30 @@ Use Master Credits when you want to give credits that work for ANY scheduler.
       ![Master credits view with the credit balance and Adjust balance controls](/images/client-master-credits-2026-11.png)
     </Frame>
   </Step>
-  <Step title="Adjust credit amount" stepNumber={3}>
-    **Input**: Number of credits to grant (e.g., "5")
-
-    **Important**: This SETS the total, it does not ADD to existing balance
-
-    **Math required**: If athlete has 2 credits and you want to give 5 more, enter "7" (not "5")
+  <Step title="Adjust the balance" stepNumber={3}>
+    Under **Adjust balance**, use **+** and **−** (or type a number) to set how many credits to add or take away. The number is a change to the balance, not a new total: **+2** on a balance of 5 gives 7, and **−1** on a balance of 5 gives 4.
 
     <Warning>
-      **Critical**: Setting credits to a lower number will REMOVE credits. Always check current balance first!
+      A negative number removes credits. Check the **Credit balance** above the box before you apply.
     </Warning>
 
-    The note under **Manual Adjustment** says how lowering works for this product: on a pack, credits come out of the batch that expires soonest; on a membership whose credits expire each cycle, what's left still expires at the next renewal; credits kept until used are taken first.
-  </Step>
-  <Step title="Save and verify" stepNumber={4}>
-    Click **Update Redeemable Credits** button
+    On a membership whose unused credits expire each cycle, adding credits shows an **Added credits** choice:
 
-    **Verification**: The confirmation names the credit bank and its new balance. A new entry appears in Credit Logs showing the resulting balance:
+    - **Expire with this cycle** (the default): "Credits added here can expire at the next renewal, like this cycle's credits."
+    - **Keep until used**: "Credits added here stay until used and are not removed at renewal." Kept credits are used after the cycle's own credits.
+
+    <Frame>
+      ![Adjust balance set to 1 on a membership, with Added credits set to Keep until used](/images/client-credits-keep-until-used-2026-11.png)
+    </Frame>
+
+    **Keep until used** isn't offered on packs, on memberships whose credits carry over, when you lower a balance, or the first time you add credits to that membership for the client. Credits can't be given their own expiry date.
+
+    When you lower a balance: on a pack, credits come out of the batch that expires soonest; on a membership whose credits expire each cycle, what's left still expires at the next renewal; credits kept until used are taken first.
+  </Step>
+  <Step title="Apply and check" stepNumber={4}>
+    Click **Apply**. The confirmation gives the new balance, for example "Master Credits balance is now 7." and the box goes back to 0.
+
+    A new line appears in **Credit logs** with the balance after the change:
 
     ```
     [Today's date] | Set to 7 | Manual · Set by [Your Name]
@@ -373,9 +380,9 @@ For adding credits tied to specific products/subscriptions.
   <Step title="Adjust credit balance">
     Follow same process as Master Credits:
 
-    1. Locate the credit balance
-    2. Enter new total (remember: this SETS the total)
-    3. Save changes by pressing **Update Redeemable Credits**
+    1. Under **Adjust balance**, enter how many credits to add (or a negative number to remove)
+    2. On a membership whose credits expire each cycle, choose **Expire with this cycle** or **Keep until used**
+    3. Click **Apply**
 
     **Result**: Credit logs will show: "[Date] | Set to X | Manual · Set by [Coach Name]", where X is the new balance
   </Step>
@@ -573,7 +580,7 @@ Common problems and solutions.
 
     - Website FAQ page
     - Product purchase confirmation emails
-    - Athlete portal welcome message
+    - Your app's welcome message
 
     **Benefit**: Sets expectations, reduces disputes
   </Card>
@@ -615,7 +622,7 @@ Common problems and solutions.
 
     **What you CAN do**:
 
-    - Remove credits from athlete's balance (sets to 0)
+    - Remove credits from the athlete's balance with a negative **Adjust balance**
     - Turn the product's credits off from its credit tab (keeps the history, stops redemption)
     - Archive the product from their Products tab, which removes remaining credits and keeps the purchase history
     - Issue refunds via Stripe

@@ -31,7 +31,10 @@ A team's season fee and a session's price are separate. A scheduler card showing
 
 The scheduler card reports the roster-booking result. **Roster booked** means the reported booking work completed. A partial result, such as **3 of 5 athletes booked**, needs attention.
 
-Open **Booking details** to see the sessions and athletes that still need bookings. Resolve the stated issue and use the available retry action. If capacity is the issue, only increase it when the real session can accommodate the larger group.
+Open **Booking details** to see the sessions and athletes that still need bookings. Resolve the stated issue and use **Retry roster booking** in the card's **...** menu. If capacity is the issue, only increase it when the real session can accommodate the larger group.
+
+- **Too little capacity.** The card and the Booking details window both say, for example, "Session capacity is 6. Raise it to 10 to fit the roster", with a **Set capacity** button that opens the scheduler's settings. After you raise **Max athletes per time slot**, the card shows **Updating roster...** while it books the roster again, then **Roster booked**, or the real reason if something still stops it.
+- **Time conflict.** If the session's time overlaps another session, the card shows the booking count and explains the conflict instead of spinning. Move the time or clear the conflict, then **Retry roster booking**. A season with no open times also shows a count.
 
 <Frame caption="Booking details identifies the sessions and athletes still missing bookings. Names shown here are testing records.">
   ![Booking details dialog listing sessions with athletes not yet booked](/images/teams/booking-details.png)

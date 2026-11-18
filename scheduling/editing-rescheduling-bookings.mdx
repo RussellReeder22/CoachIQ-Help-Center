@@ -3,7 +3,7 @@ title: 'Editing & Rescheduling Bookings'
 description: 'How to modify booking details or move sessions to a different time'
 sidebarTitle: "Edit & Reschedule"
 icon: "pen-to-square"
-keywords: ["edit booking", "reschedule", "change booking", "move session", "change time", "modify booking", "edit duration", "duration in minutes"]
+keywords: ["edit booking", "reschedule", "change booking", "move session", "change time", "modify booking", "change session length", "duration"]
 ---
 
 <Info>
@@ -14,7 +14,7 @@ keywords: ["edit booking", "reschedule", "change booking", "move session", "chan
 
 On **Scheduling → Calendar**, click a session. Its details show **When**, **Location**, **Coach**, **Resources**, **Note for athletes** and **Participants**.
 
-- **When** has a **Move** button to move the whole session (below), and an icon to edit the length.
+- **When** has a **Move** button to move the whole session or change its start and end time (below).
 - **Location** and **Coach** each have an edit button that changes this date only. Only one editor is open at a time; if you leave one with an unsaved change, you're asked whether to discard it.
 - When a session hands out one resource per booking from a pool, use **Change Resource** in an athlete's three-dot menu to switch theirs; see [Change a booked lesson's resource](/scheduling/resources#change-a-booked-lessons-resource).
 - **Message all** messages everyone booked.
@@ -25,25 +25,11 @@ On **Scheduling → Calendar**, click a session. Its details show **When**, **Lo
 
 To edit one client's booking, use the three-dot menu next to them and choose **Edit booking**. In **Edit booking**, the client's picture and name is a button that opens their profile over the calendar; the back arrow returns you to the booking. If you have unsaved changes you're asked "Discard your changes?" first.
 
-## Edit duration from the calendar
+The **Client** card in **Edit booking** also shows how to reach the family: each parent is listed under the athlete's name with their phone and email (tap the phone to call, or the email to write). The athlete's age shows there too when your client profiles have a birthday field (**Date of Birth**, **Birthday**, **Birthdate** or **DOB**) or an **Age** field. Staff only see what they could already see on that client's profile; a coach limited to their own clients sees just the name of a parent who isn't one of their clients.
 
-<Steps>
-  <Step title="Edit the length">
-    In the session's details, the **When** row shows the current length (for example **60 min**). Click the edit-length icon on that row.
-  </Step>
-  <Step title="Edit Duration">
-    That opens **Edit Duration**. The field is **Duration in minutes**.
+## Change a session's length
 
-    Helper: the end time is named, and the change does not change the session date or start time.
-  </Step>
-  <Step title="Save Duration or Cancel">
-    **Notify participants** starts off. Turn it on only if you want to notify booked athletes, choose the available channels, and review the message. Click **Save Duration** to save, or **Cancel** to leave it unchanged.
-
-    <Frame>
-      ![Edit Duration with Notify participants switched off](/images/release-guides-sep30/edit-duration.png)
-    </Frame>
-  </Step>
-</Steps>
+To make one date of a session longer or shorter, click **Move** on the **When** row and change the start or end time under **New date and time**. The window says "The duration follows the start and end time." Keep the same date to change only the length. Notifications work the same as for any move; see [Move an entire session](#move-an-entire-session).
 
 ---
 
@@ -62,7 +48,6 @@ The dialog shows the booked-athlete count and a suggested message. Choose **Anno
 | Change in the admin calendar | Notification choice |
 | --- | --- |
 | Location of a booked session | Review Notify participants and the chosen channels before saving |
-| Duration | Notify participants starts off |
 | Move Session | Notify participants is available; In-app is preselected, with Email also available |
 | One athlete's booking | **Email [athlete] about this change** starts unchecked |
 | Resources | No athlete notification from the resource change |
@@ -180,7 +165,7 @@ The announcement follows this pattern:
 When you move a booking:
 
 - **Selected notifications** — When enabled, communicate the original and new details through the channels you chose
-- **Portal update** — The updated session appears in their Athlete Portal immediately
+- **App update** — The updated session appears in your app immediately
 - **Calendar sync** — Check the connected Google calendar if you use [Google Calendar sync](/scheduling/google-calendar-sync)
 
 <Tip>
@@ -193,7 +178,7 @@ When you move a booking:
 
 You can configure athlete self-rescheduling on a per-scheduler basis in the scheduler’s **Advanced settings → Booking Rules**. There are two related toggles:
 
-**Allow athletes to reschedule** — When on, athletes can move their booking to a different available time slot from the Athlete Portal or app. An eligible reschedule retains its existing payment or credit arrangement; it does not collect a price difference. A differently priced length may require canceling and rebooking. Credit-paid sessions must still meet applicable expiration and session-date restrictions. When off, only coaches and admins can reschedule — athletes must contact you to make changes. This applies in the mobile app too, for single and recurring bookings.
+**Allow athletes to reschedule** — When on, athletes can move their booking to a different available time slot in your app, on the web or their phone. An eligible reschedule retains its existing payment or credit arrangement; it does not collect a price difference. A differently priced length may require canceling and rebooking. Credit-paid sessions must still meet applicable expiration and session-date restrictions. When off, only coaches and admins can reschedule — athletes must contact you to make changes. This applies in the mobile app too, for single and recurring bookings.
 
 Parents can reschedule or cancel a child's lesson that staff booked, within the same rules. For a weekly series, only the date they pick moves. When something blocks the change, they see the reason.
 

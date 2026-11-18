@@ -91,7 +91,7 @@ Checkout is powered by Stripe, so your clients can pay with more than a card. Th
 | Method | What the client sees | Works on |
 | --- | --- | --- |
 | **Card** | Credit or debit card form | Everything: products, subscriptions, scheduler bookings, guest checkout |
-| **Apple Pay / Google Pay** | Wallet button on a supported device or browser | Same as cards, including athlete portals on a custom domain |
+| **Apple Pay / Google Pay** | Wallet button on a supported device or browser | Same as cards, including apps on a custom domain |
 | **US Bank Account (ACH)** | "Bank" option; the client connects their bank account | One-time products and recurring memberships |
 | **Afterpay, Klarna, Cash App Pay** | Buy-now-pay-later or wallet option where Stripe offers it | One-time purchases only, where the method is enabled |
 
@@ -107,7 +107,7 @@ Once Stripe is connected, your admin settings include a **Payment Methods** list
 - Bank payments take 3–5 business days to clear. Until then the payment shows as **Processing**; wait for **Succeeded** before treating it as paid. The **How to enable** help next to ACH in **Settings → Payment Methods** explains this too.
 
 <Note>
-  Checkout follows your athlete portal's theme, so a dark-mode portal gets a dark checkout with matching contrast. Coupons, waivers, and processing fees behave the same whichever method the client picks.
+  Checkout follows your app's theme, so a dark-mode app gets a dark checkout with matching contrast. Coupons, waivers, and processing fees behave the same whichever method the client picks.
 </Note>
 
 ### What families see at checkout

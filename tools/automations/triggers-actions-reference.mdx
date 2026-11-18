@@ -133,7 +133,7 @@ The cancelled session's title and the occurrence date and time are available as 
 
 <Accordion title="Booking Rescheduled">
 
-Fires when a booking moves to a new time.
+Fires once for each booking that moves to a new time: when an athlete reschedules, when staff reschedule a booking, and when staff use **Move Session** on the calendar. It carries the booking and its session, the previous date and time, the new date and time, and who moved it. Use it with **Send to External Webhook** to keep another booking system (for example a facility's field calendar) in step. A matching **Booking Rescheduled** webhook event is available too.
 
 </Accordion>
 
@@ -232,6 +232,8 @@ Every schedule also has a **timezone**, set on the trigger itself, and a send mo
 | Days since last booking is > X | Number | User hasn't booked in X+ days |
 | Days until credits expire < X | Number | Credits expire within X days |
 | Credit count is X | Number | Less than, greater than, or equal to X |
+
+Number conditions take a number only. A value with words, such as "10 days", is refused when you save and you're asked for a number, so the automation can't quietly match nobody.
 | Has upcoming booking | Dropdown | Today, this week, or no upcoming bookings |
 
 <Warning>
@@ -587,8 +589,9 @@ Books a user into a [session](/scheduling/creating-your-first-scheduler). This i
 |-------|------|-------------|
 | Target User | Auto/Dropdown | User from trigger or select specific user |
 | Session | Dropdown | Session/scheduler to book |
-| Booking time | Radio | **Next available** slot, a **specific** slot, a **recurring** series, or **All future session times** |
+| Booking time | Radio | **Next available** slot, a **specific** slot, a **recurring** series, **All future session times**, or **Same Day as Triggering Booking** (on Booking Created, Booking Started and Booking Ended automations) |
 | Specific slot | Date, time, duration | When Booking time is Specific |
+| Same Day as Triggering Booking | Start time, days after | A start time such as 14:30, and how many days after the triggering booking (0 to 30; 0 is the same day). Books the session at that time on the triggering booking's date. If there's no open spot, the step stops with "Time slot is not available" in the log and nothing is booked |
 | Recurring | Various | Interval (daily, weekly, monthly) and how often; weekdays for weekly; how the series ends (never, after a number of occurrences, or on an end date); optional per-occurrence time or location changes |
 | All future session times | None | Books the person into every upcoming occurrence already on the selected session's calendar, in one action |
 | Redemption | Radio + number | Use the session's credit settings, or redeem a specific number of credits |
@@ -623,11 +626,17 @@ Closes a window on your availability so it can't be booked, the same as a block 
 | Start time, End time | 24-hour times like 14:30, or a webhook field. Times follow each availability's own time zone |
 | Apply to | **All availability**, or **By location** and choose the locations |
 
+If a block with the same name and times already exists and someone else made it (a person or another automation), **Block Time** leaves it as it is, creates nothing and says so in the run.
+
 </Accordion>
 
 <Accordion title="Unblock Time">
 
-Reopens a window closed by **Block Time**. Enter the same name, dates and times the block was made with. It removes the block with that name and times everywhere; if none matches, nothing happens.
+Reopens a window closed by **Block Time**. Enter the same name, dates and times the block was made with. It removes only blocks that this automation made. A block with the same name and times made by hand, or by another automation, is left alone and the run's Activity says so. If none matches, nothing happens.
+
+<Note>
+Blocks made before the November 2026 release have no record of who made them, so **Unblock Time** treats them as made by a person and leaves them alone. Remove those from [Block time](/scheduling/block-time), where an admin can still edit or delete any block.
+</Note>
 
 </Accordion>
 
