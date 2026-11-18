@@ -20,7 +20,7 @@ Once you have more than a handful of schedulers, the list and the athlete portal
 - **Archive** takes a finished scheduler out of the way without deleting its history
 
 <Frame>
-  ![Schedulers page with catalog type chips, the TAGS panel, and scheduler cards](/images/scheduling/schedulers-catalog-tags.png)
+  ![Schedulers page with the tags panel, Search schedulers, Category: All and scheduler cards showing type, length, price and next time](/images/schedulers-page-2026-11.png)
 </Frame>
 
 ## Catalog types
@@ -35,13 +35,20 @@ Every scheduler has a **Type**, set in its **Catalog** section ("Choose how this
 | **Rentals** | Booking a court, cage, or field without a coach |
 | **Other** | Anything that does not fit above |
 
-The **Schedulers** page shows these types as filter chips across the top (**All · Practices & games · Camps & events · Lessons · Rentals · Other**) next to a **Search schedulers** box, so you can jump straight to the schedulers you are looking for. Each card also shows its type, duration, price (or credits, or Free), and the next available occurrence. Customer-facing placement is configured separately in the [athlete portal or website](/scheduling/sharing-schedulers).
+On the **Schedulers** page, use **Category** next to **Search schedulers** to show one type at a time. Each card shows its type, length, price (or credits, a code, or Free) and the next time athletes can book, for example "Next Wed 4:00 PM". Click anywhere on a card to open the scheduler; the link icon only copies its link.
+
+The **Next** time uses the same rules as the booking calendar: weekly hours, specific dates, blocked time, every session length, buffers, start times and minimum notice. It looks 60 days ahead:
+
+- **Next: none in the next 60 days** means nothing is open in the next 60 days, but the scheduler's dates go on past that. Families can still book later times.
+- **No availability** means no availability is set up, or the scheduler's dates end within 60 days with nothing open.
+
+**Scheduler setup** at the top right opens **Scheduling → Setup**. Customer-facing placement is configured separately in the [athlete portal or website](/scheduling/sharing-schedulers).
 
 Schedulers created before types existed default to **Other**. Open each one and set its type once; it takes a few seconds per scheduler and the filters become useful immediately.
 
 ## Scheduler tags
 
-Tags are free-form labels you attach to a scheduler. Use the **TAGS** panel on the left of the Schedulers page (**Add tag**) or the optional **Tags** field in the scheduler's Catalog section, which groups the scheduler under one or more tags in the catalog. The panel shows a count next to each tag, so "Freehold Skills 4" means four schedulers carry it.
+Tags are free-form labels you attach to a scheduler. Use the tags panel on the left of the Schedulers page (**Create tag**) or the optional **Tags** field in the scheduler's Catalog section, which groups the scheduler under one or more tags in the catalog. The panel shows a count next to each tag, so "Freehold Skills 4" means four schedulers carry it.
 
 Good tag ideas:
 
@@ -66,7 +73,7 @@ An active scheduler still needs to be published on a page or shared by link. Tea
 Use this for team-only practices, a private training block for a specific squad, or make-up sessions for one group. Athletes outside the roster never see the scheduler in the portal, and the direct link will not let them book.
 
 <Tip>
-  Combine team visibility with [tag-based messaging](/inbox/using-tags-for-group-messages): tag the roster, restrict the scheduler to that tag, then message the same tag with the booking link. One tag runs the whole flow.
+  Combine team visibility with [tag-based messaging](/inbox/new-message#combining-tags): tag the roster, restrict the scheduler to that tag, then message the same tag with the booking link. One tag runs the whole flow.
 </Tip>
 
 ## Copying a scheduler link
@@ -82,7 +89,7 @@ When a season's clinics are over or a camp has run its course, archive the sched
     On **Scheduling → Schedulers**, open the scheduler you are finished with.
   </Step>
   <Step title="Click Archive">
-    In the builder's top bar, next to the **Active** status and the **Update** button, click **Archive**.
+    In the builder's top bar, next to the **Active** status and the **Save** button, click **Archive**.
   </Step>
 </Steps>
 
@@ -93,7 +100,7 @@ What archiving does:
 - Sessions already booked for future dates are not cancelled by archiving. Cancel them first if the sessions will not run; see [Canceling bookings](/scheduling/canceling-bookings#cancel-an-entire-session-from-the-calendar).
 - Availability templates, locations, resources, and coaches the scheduler used are untouched and stay available to other schedulers.
 
-An archived scheduler can be restored later. Filter the Schedulers page away from **Active** to find archived schedulers, open one, and reactivate it; its settings are retained. Review its dates, availability, pricing, and published placement before accepting new bookings.
+An archived scheduler can be restored later, with its settings kept. A repeating booking on an archived scheduler can still be ended or have dates skipped; see [Recurring bookings](/scheduling/recurring-bookings#series-on-an-archived-scheduler). Review its dates, availability, pricing, and published placement before accepting new bookings.
 
 <Warning>
   If the scheduler is credit-based, check the products that issue its credits before archiving. Credits that were only valid on this scheduler have nowhere to go until you add a replacement scheduler to the product's **Which schedulers accept these credits** list. See [Credits and schedulers](/scheduling/credits-and-schedulers).
@@ -114,7 +121,13 @@ Archiving is different from **Inactive**. An inactive scheduler is hidden from a
     Check that the athlete carries the exact tag selected in Team visibility, and that the scheduler is **Active** and not archived. Tag names must match; "Varsity" and "varsity " with a trailing space are different tags.
   </Accordion>
   <Accordion title="Should I archive or delete a scheduler I no longer use?">
-    Archive. Deleting removes the scheduler's configuration for good; archiving keeps every booking record, can be reversed, and still takes the scheduler off the portal. There is rarely a reason to delete a scheduler that has ever been booked.
+    Archive. Archiving keeps every booking record, can be reversed, and still takes the scheduler off your app and website.
+
+    A scheduler has to be archived before it can be deleted, and delete is permanent: it also erases the scheduler's past bookings and cancellations, with no credit return or notice. Delete is refused while:
+    - the scheduler still has upcoming bookings or repeating series. The message says how many, for example "This session has 2 upcoming bookings and 1 repeating series. Cancel them first, then delete."
+    - a credit product can only be used on this scheduler.
+
+    There's rarely a reason to delete a scheduler that has ever been booked.
   </Accordion>
 </AccordionGroup>
 

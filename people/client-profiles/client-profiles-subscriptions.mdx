@@ -14,21 +14,11 @@ keywords: ["subscriptions", "membership status", "recurring billing", "active su
 
 All recurring memberships for this client with real-time status:
 
-**Summary metrics** (top of tab):
+**Summary tiles** (top of the section): **Active**, **Paused**, **Canceled** and **Monthly revenue**. On a narrow screen they sit two by two.
 
-- **Active** - Number of currently active subscriptions
-- **Canceled** - Number of canceled subscriptions
-- **Monthly Revenue** - Total recurring revenue from this client
+**Filters:** **All**, with a **Products** filter at the right to narrow to one plan.
 
-**Status filter tabs:**
-
-- All
-- Active
-- Canceled
-- Past Due
-- Trialing
-- Scheduled
-- Select... (dropdown for more statuses)
+**The list:** one row per plan with its name, price per month and start date, its status, and a **Manage** button.
 
 <Frame>
   ![CoachIQ client Subscriptions tab with status filters and monthly revenue](/images/client-subscriptions.png)
@@ -179,7 +169,7 @@ Saving a card does not charge it and preserves the existing default. Cancelling 
 
 Staff can't remove a client's saved card from the profile. Clients remove their own cards from **Billing**, unless it's the only card paying for an active membership.
 
-The tab reads **No payment methods on file** when no cards have been saved. Clients can also manage cards from **Billing** in the athlete portal, or save one through a [card-on-file product](/payments/product-builder#section-2-payment-options). See [Updating client payment methods](/payments/manage-subscriptions#updating-client-payment-methods).
+The tab reads **No payment methods on file** when no cards have been saved. If the cards or subscriptions can't be loaded, it says so with **Try again** instead, so a failed load never looks like an empty account. Saved cards load for a managed child with no email of their own too. Clients can also manage cards from **Billing** in your app, or save one through a [card-on-file product](/payments/product-builder#section-2-payment-options). See [Updating client payment methods](/payments/manage-subscriptions#updating-client-payment-methods).
 
 ---
 

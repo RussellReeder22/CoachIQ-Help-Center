@@ -7,10 +7,12 @@ icon: "calendar-plus"
 
 Open **Scheduling → Setup → Availability**. Choose **New availability** to create a template, or open an existing template to edit it.
 
-Give the template a name that describes its hours or purpose, such as “Weekday afternoons.” Check the schedulers using an existing template before changing it.
+Give the template a name that describes its hours or purpose, such as “Weekday afternoons.” Each card shows its hours and **Used by N schedulers**, with their names. Check those before you change a template, because every scheduler that uses it changes too.
+
+Use the search box, the **Active** filter and the sort menu to find a template. The list keeps loading as you scroll until every template is shown.
 
 <Frame>
-  ![Availability templates with their connected schedulers](/images/scheduling-review-oct01/availability-templates.jpg)
+  ![Setup Availability with template cards showing their hours, the schedulers that use them, and Edit and Duplicate](/images/setup-availability-2026-11.png)
 </Frame>
 
 ## Weekly recurring availability
@@ -18,7 +20,7 @@ Give the template a name that describes its hours or purpose, such as “Weekday
 1. Select the days you work.
 2. Set each day's start and end times. Use separate ranges when you have a break in the day.
 3. Review AM/PM and the timezone shown in the editor.
-4. Choose **Update** to save the template.
+4. Click **Create availability** (or **Save** when you're editing one).
 
 <Frame>
   ![Weekly availability with selected days and time ranges](/images/scheduling-review-oct01/weekly-hours.jpg)
@@ -35,7 +37,7 @@ Use **Specific Dates** for irregular practices, clinics, or a limited run of ses
 1. Add a date or open an existing date.
 2. Enter its start and end times. Set **Type** to **Availability** to offer time or **Unavailability** to block it.
 3. Set a per-date location where needed.
-4. Finish the date editor with **Done**, then choose **Update** to save the availability. **Done** alone does not save the template.
+4. Click **Done** to close the date window, then **Save** (or **Create availability** for a new one). **Done** alone doesn't save anything; the window reminds you of this.
 
 <Frame>
   ![Specific-date editor showing hours, availability, location, and resources](/images/scheduling-review-oct01/specific-date.jpg)
@@ -43,21 +45,34 @@ Use **Specific Dates** for irregular practices, clinics, or a limited run of ses
 
 Review each date before saving. Incomplete entries must be completed or removed. Specific dates do not add later dates automatically.
 
+A specific date that spans several days is one continuous block, open from its start time on the first day to its end time on the last day. It isn't "these hours on each day". For "Mondays 5:30–7:30 until Dec 14", add one single-day date for each Monday.
+
 For a different length or resource assignment on one configured date, open the connected scheduler's **Specific Dates**. See [per-date settings](/scheduling/advanced-scheduler-settings#a-different-duration-on-one-date).
 
 ## Connect the template to a scheduler
 
 Open **Scheduling → Schedulers**, select the service, and open **Availability**. Select the saved template under **Current Availability**. Add start and end dates if this service should only use the hours during a particular period.
 
-Use **Additional Availability** for another block. Check both date ranges, review the preview, and choose **Update** on the scheduler.
+Use **Additional Availability** for another block. Check both date ranges, review the preview, and click **Save** on the scheduler.
 
 If the template is missing from the picker, confirm it was saved, then reopen the scheduler. See [seasonal transitions](/scheduling/seasonal-schedule-transition) for a dated example.
 
 <span id="method-3-using-copilot-to-generate-availability" />
 
-## Generate a pattern with Copilot
+<span id="generate-a-pattern-with-copilot" />
 
-The availability builder's **CoachIQ Copilot** can fill in a pattern from a description such as “Monday and Wednesday, 3 PM to 7 PM.” Review the generated days, hours, timezone, and exceptions before saving. Generation is not verification that every offered time matches your intended schedule.
+## Generate a pattern with the Assistant
+
+The **Assistant** in the availability builder can fill in a pattern from a description such as “Monday and Wednesday, 3 PM to 7 PM” or “November 2, 3, 5 and 6, 9:00 AM to 5:00 PM, leave November 4 off”. Click **Generate Availability**. A day you leave off is marked unavailable for the whole day, so the weekly hours don't open it. Dates already on the template stay as they are.
+
+If the Assistant can't do what you asked, a red note appears in its panel under **Generate Availability**. Edit your request or click **Generate Availability** again to clear it. Review the days, hours, time zone and exceptions before saving.
+
+## Duplicate, archive or delete a template
+
+- **Duplicate** on a card makes a copy named "(Copy)" with the same days, times, dates and time zone. The copy isn't used by any scheduler until you pick it.
+- One template can be your group's default. New schedulers start with it, and it can't be archived until another template is the default.
+- Archiving a template keeps it linked to its schedulers.
+- Deleting a template removes it from every scheduler that used it. A scheduler that had only that template falls back to the default, or has no bookable times. Check **Used by** first.
 
 ## Start dates and minimum notice
 
@@ -75,4 +90,4 @@ Preview a day that should be open and one that should be closed. Select each off
 
 Windows that touch or overlap on the same day, such as 3:30–5:30 and 4:30–6:30, act as one long window. The Preview and the athlete app both show them that way, and each start time appears once. To offer uneven start times, put the extra window in a second availability and add it under **Additional Availability** on the scheduler. There is no way to list exact start times one by one.
 
-If the times differ from what you expect, use [Troubleshooting](/scheduling/troubleshooting). For time off, add an [unavailable date or range](/scheduling/setting-black-out-dates). Existing bookings require a separate move or cancellation.
+If the times differ from what you expect, use [Troubleshooting](/scheduling/troubleshooting). For time off, add an [unavailable date or range](/scheduling/block-time). Existing bookings require a separate move or cancellation.

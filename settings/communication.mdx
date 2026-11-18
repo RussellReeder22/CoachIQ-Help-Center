@@ -12,36 +12,40 @@ keywords: ["notifications", "email alerts", "push notifications", "SMS number", 
 
 ## Notifications
 
-Control which alerts you receive via email and push notifications.
+**Settings → Notifications** has two tabs. **Notifications** lists the messages CoachIQ sends to clients (bookings, messages, purchases and memberships, accounts and staff); choose **View messages** on a row to see them. **My preferences** controls the alerts you and your staff receive by email and mobile push.
 
 ### Pause staff emails for your group
 
-As an admin, open **Settings → Notifications** in the group you want to manage and turn **Staff email notifications** off. The **Paused for all staff** status confirms that delivery is paused. Turn the setting back on to resume. Changes save automatically.
+As an admin, open **Settings → Notifications → My preferences** in the group you want to manage. The **Staff emails** card shows **Active** or paused. Choose **Pause staff emails** to stop routine staff emails for the group, and use the same card to resume them.
 
 The pause applies to every admin and coach in the selected group, including staff added later. It does not change another group's settings.
 
-Personal **Email** and **Push** preferences remain saved and editable while emails are paused. Resuming staff emails uses those saved preferences. Push preferences are preserved, and customer receipts and invitations remain deliverable, including when a staff member is the buyer or inviter.
+Personal **Email** and **Mobile push** preferences remain saved and editable while emails are paused. Resuming staff emails uses those saved preferences. Push preferences are preserved, and customer receipts and invitations remain deliverable, including when a staff member is the buyer or inviter.
 
-Coaches don't see the pause control. Their notification preferences show a one-line status (staff emails active or paused) with a **Delivery details** link, and their own Email and Push choices sit right below it.
+Coaches don't see the pause control. Their notification preferences show a one-line status (staff emails active or paused) with a **Delivery details** link, and their own Email and Mobile push choices sit right below it.
 
 Use the personal controls below to change only your own notifications.
 
 <Frame>
 
-  ![Staff email notifications paused for the selected testing group while personal preferences remain saved](/images/staff-email-notifications-paused.png)
+  ![My preferences tab with the Staff emails card (Active, Pause staff emails) and the Staff updates list with Email and Mobile push switches](/images/settings-notifications-2026-11.png)
 
 </Frame>
 
 ### Notification categories
 
-| Category | Triggers |
+**Staff updates** lists each alert you can receive:
+
+| Alert | When it's sent |
 |----------|----------|
-| **Bookings** | When a user makes or cancels a booking |
-| **Inbox** | When your group receives a new message |
-| **Payments** | When a user makes a purchase |
-| **Subscriptions** | When a user cancels a membership (email only) |
-| **People** | When a new user joins your group |
-| **Forms** | When a new form is submitted |
+| **New booking** | A client books a session |
+| **Booking canceled** | A booking is canceled |
+| **New message** | Your group receives a new message |
+| **New purchase** | A client makes a purchase |
+| **Membership canceled** | A client cancels a membership (email only) |
+| **New member joins** | A new client joins your group |
+| **Form submitted** | A form is submitted |
+| **Team rule needs review** | A team rule needs your review |
 
 ### Identify the session in a booking email
 
@@ -53,21 +57,21 @@ Changing an existing session has separate notification choices. See [Which edits
 
 Each category can be toggled independently for:
 
-- **Email** — Sent to your account email address
-- **Push** — Mobile notifications (if you have the CoachIQ app installed)
+- **Email**: sent to your account email address
+- **Mobile push**: notifications on your phone (if you have the CoachIQ app installed). Push also follows your phone's notification settings.
 
 <Steps>
 <Step title="Navigate to Notifications">
-Go to **Settings → Notifications**.
+Go to **Settings → Notifications** and open the **My preferences** tab.
 </Step>
 
 <Step title="Toggle your preferences">
-Check or uncheck the boxes under **EMAIL** and **PUSH** for each notification type.
+Turn the **Email** and **Mobile push** switches on or off for each alert under **Staff updates**, then click **Save**. **Reset** discards changes you haven't saved.
 </Step>
 </Steps>
 
 <Tip>
-We recommend keeping **Payments** and **People** notifications on so you're always aware of new revenue and new athletes joining your platform.
+We recommend keeping **New purchase** and **New member joins** on so you're always aware of new revenue and new athletes joining your platform.
 </Tip>
 
 ---
@@ -113,7 +117,7 @@ The 10DLC registration process typically takes 1-7 business days to complete. On
 </Info>
 
 <Note>
-**Policy pages are handled for you.** Carriers check a public Privacy Policy and Terms page as part of 10DLC review. CoachIQ auto-generates both on your athlete portal (`/privacy-policy` and `/terms-of-condition` under your portal address), keeps them public, and includes the SMS clauses carriers require. Nothing to write or upload; see [Setting up SMS messaging](/inbox/sms-messages#setting-up-sms-messaging) for what reviewers look at.
+**Policy pages are handled for you.** Carriers check a public Privacy Policy and Terms page as part of 10DLC review. CoachIQ auto-generates both on your athlete portal (`/privacy-policy` and `/terms-of-condition` under your portal address), keeps them public, and includes the SMS clauses carriers require. Nothing to write or upload; see [Get your business number](/inbox/sms-messages#get-your-business-number) for what reviewers look at.
 </Note>
 
 ### After your number is assigned
@@ -124,7 +128,7 @@ The page shows your **SMS Number** and lets you set a **Call Forwarding Number**
 
 ## Inbox Settings
 
-**Inbox Preferences** has one toggle today: **Show booking reminders in inbox**. It is **off by default**, which keeps the Inbox to conversations athletes started or you started; the reminders are still delivered to athletes, they just do not appear as threads in your Inbox or in the athlete's conversation with you. Turn it on to see the automated session reminders as threads in the **Automated** folder. See [Automated reminders](/inbox/inbox-overview#automated-reminders) in the Inbox overview.
+**Inbox Preferences** has one toggle today: **Show booking reminders in inbox**. It is **off by default**, which keeps the Inbox to conversations athletes started or you started; the reminders are still delivered to athletes, they just do not appear as threads in your Inbox or in the athlete's conversation with you. Turn it on to see the automated session reminders as threads in the **Automated** folder. See [Automated messages](/inbox/inbox-overview#automated-messages) in the Inbox overview.
 
 ---
 

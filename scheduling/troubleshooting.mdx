@@ -23,7 +23,10 @@ Work through these checks in order:
 | Check | What to inspect |
 | --- | --- |
 | Date and timezone | Confirm you and the athlete are looking at the same date and local time |
-| Availability | Correct template, weekday or specific date, start/end dates, and blackout intervals |
+| Availability | Correct template, weekday or specific date, start/end dates, and unavailable dates |
+| Blocked time | A [Block time](/scheduling/block-time) entry covering this scheduler, its coach or its resource |
+| Google busy time | The coach's connected [Google Calendar](/scheduling/google-calendar-sync#block-time-from-your-google-calendar) shows them busy |
+| Linked group | A [linked group](/scheduling/shared-calendar-across-groups) holds the space or time; it shows as **Busy** |
 | Session length | The selected duration must fit inside the available window; check date-specific length overrides |
 | Booking window | Minimum notice and how far ahead the scheduler accepts bookings |
 | Capacity and limits | Seats already booked, total limits, and the athlete's own daily or weekly limits |
@@ -56,7 +59,7 @@ Other common causes:
 
 - **The time was closed with Cancel Session.** You'll see **Reopen canceled time?** Reopen it to book or move a client there. Reopening works on the web only. See [Book a time closed with Cancel Session](/scheduling/manually-booking-athletes#book-a-time-closed-with-cancel-session).
 - **The scheduler is archived.** New bookings show "This scheduler is archived. Restore it to add bookings." You can still end a recurring series or skip dates. See [Series on an archived scheduler](/scheduling/recurring-bookings#series-on-an-archived-scheduler).
-- **The move target isn't offered.** Staff can move a booking into any time the booking builder offers. A time it doesn't offer is refused with "Timeslot is not available" unless you use **Allow custom date selection**.
+- **The move target isn't offered.** Staff can move a booking into any time the booking builder offers. A time it doesn't offer is refused with "Timeslot is not available" unless you tick **Book outside availability**.
 
 If the native app reports a generic error, try the web admin to review the specific refusal or conflict prompt. See [Manual bookings](/scheduling/manually-booking-athletes) and [Recurring bookings](/scheduling/recurring-bookings).
 
@@ -71,7 +74,7 @@ Check the athlete's booking history before creating a replacement. A failed mult
 Check [What schedule changes affect](/scheduling/changing-your-schedule). Common causes include:
 
 - A changed default applies only to newly created schedulers.
-- A blackout closes availability but leaves existing bookings in place.
+- Blocking time closes availability but leaves existing bookings in place.
 - A shared template affects several schedulers.
 - **Move Session** changes all participants in one occurrence.
 - Archiving stops new bookings but does not cancel future sessions already booked.
@@ -82,7 +85,7 @@ If an edit says the occurrence changed while it was open, refresh the calendar a
 
 Identify whether you expected a booking confirmation, scheduled reminder, change notification, or automation. Each has different controls.
 
-A booking staff create from **New Booking** sends no confirmation unless **Notify participants** was turned on. See [Send a booking confirmation](/scheduling/manually-booking-athletes#send-a-booking-confirmation).
+A booking staff create from **New booking** sends no confirmation unless **Notify participants** was turned on. See [Send a booking confirmation](/scheduling/manually-booking-athletes#send-a-booking-confirmation).
 
 For a move, duration change, or venue change, review the notification options you selected. For a scheduled reminder, check the scheduler's reminder rule, recipient, channel, and send time. See [Session reminders](/scheduling/session-reminders).
 

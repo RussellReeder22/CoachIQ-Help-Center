@@ -7,7 +7,7 @@ keywords: ["failed payment", "payment declined", "card declined", "retry payment
 ---
 
 <Info>
-  **Where to find this**: Payments → Transactions or Subscriptions → Filter by Past Due
+  **Where to find this**: **Payments → Subscriptions** or **Payments → Transactions**, status filter set to **Past due**
 </Info>
 
 ## Why payments fail
@@ -49,19 +49,18 @@ Common reasons for payment failures:
 
     - Status changes to "Past Due" (red)
     - Last attempted payment shows as failed
-    - Next retry date displayed
-    - Client may retain access during retry period
+    - The membership's credits are paused, so the athlete can't book with them until a payment goes through
 
     <Frame>
       ![CoachIQ subscription with Past Due status after failed payment](/images/past-due-sub.png)
     </Frame>
   </Tab>
   <Tab title="One-time payments">
-    **Transactions page shows Failed status**
+    **Transactions page shows the declined attempt**
 
-    When one-time payment fails:
+    When a one-time payment fails:
 
-    - Transaction appears with "Failed" status
+    - The attempt shows under **Past due** or **Blocked**, with the reason under the status, such as **Card declined**, and who tried to pay
     - No automatic retries for one-time payments
     - Client didn't receive product or credits
     - No access granted
@@ -69,21 +68,14 @@ Common reasons for payment failures:
   </Tab>
 </Tabs>
 
-## Stripe's automatic retry schedule
+## How Stripe retries membership payments
 
-**Subscription payments only** - Stripe retries automatically:
+**Memberships only.** Stripe retries a failed membership payment on the schedule set in your Stripe account (**Settings → Billing → Subscriptions and emails** in Stripe). Your Stripe settings also decide what happens when the retries run out: the subscription is canceled or marked unpaid.
 
-1. **3 days** after initial failure
-2. **5 days** after first retry
-3. **7 days** after second retry
-4. **10 days** after third retry
-
-**Total retry window:** Approximately 25 days
-
-**If all retries fail:** Subscription automatically cancels
+While it's past due, the membership's credits are paused. They come back when a payment goes through.
 
 <Warning>
-  Don't wait for automatic retries. Contact client immediately when payment fails to speed recovery.
+  Don't wait for the retries. Contact the client as soon as a payment fails.
 </Warning>
 
 ## Recovering failed subscription payments
@@ -155,7 +147,7 @@ One-time payments don't retry automatically. You must manually recover them.
 
 <Steps>
   <Step title="Find failed transaction">
-    Go to **Payments → Transactions** and filter by **Failed** status.
+    Go to **Payments → Transactions** and set the status filter to **Past due** or **Blocked**.
   </Step>
   <Step title="Contact client">
     **Message template:** "Hi [Name], your payment for [product] didn't process successfully. You can complete your purchase here: [new payment link]"
@@ -189,8 +181,8 @@ One-time payments don't retry automatically. You must manually recover them.
 
 - May receive email from Stripe about failed payment
 - May receive notification from you
-- Usually retain access during retry period
-- Risk losing access if not resolved
+- Their membership credits are paused until a payment goes through
+- They can change the card on that membership from **Billing** in your app
 
 **One-time payment failure:**
 
@@ -252,13 +244,6 @@ One-time payments don't retry automatically. You must manually recover them.
 
     Result: Gives clients heads-up and chance to update card if needed.
   </Accordion>
-  <Accordion title="Require backup payment method">
-    **Advanced:** Some coaches require two cards on file.
-
-    If primary fails, Stripe automatically tries backup card.
-
-    **Setup:** Configure in Stripe Dashboard (requires technical setup).
-  </Accordion>
 </AccordionGroup>
 
 ## When payment recovery fails
@@ -267,8 +252,7 @@ If client doesn't respond or can't/won't update payment:
 
 **Subscriptions:**
 
-- Stripe exhausts retries (25 days)
-- Subscription automatically cancels
+- Stripe runs out of retries, then cancels the subscription or marks it unpaid, depending on your Stripe settings
 - Client loses access and credits
 - Must resubscribe to resume service
 
@@ -328,12 +312,12 @@ If client doesn't respond or can't/won't update payment:
 ## Next steps
 
 1. [Issue refunds](/payments/issuing-refunds) - Process refunds for recovered payments if needed
-2. [Manage subscriptions](/payments/managing-subscriptions) - Handle subscription modifications
+2. [Manage subscriptions](/payments/manage-subscriptions) - Handle subscription modifications
 3. [View transactions](/payments/transactions) - Monitor all payment activity
 
 ## Related articles
 
-- [Managing Subscriptions](/payments/managing-subscriptions)
-- [Subscriptions Dashboard](/payments/subscriptions-dashboard)
-- [Issuing Refunds](/payments/issuing-refunds)
-- [Transactions Dashboard](/payments/transactions-dashboard)
+- [Manage a client's subscription](/payments/manage-subscriptions)
+- [The Subscriptions page](/payments/subscriptions-dashboard)
+- [Refunds and account credit](/payments/issuing-refunds)
+- [The Transactions page](/payments/transactions)

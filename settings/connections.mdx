@@ -1,53 +1,43 @@
 ---
 title: "Manage Your Connections"
-description: "Manage Stripe and Google Calendar, and find the separate setup guides for ChatGPT and Claude."
+description: "Connect Stripe and Google Calendar, connect ChatGPT or Claude, and see, review or disconnect the AI apps working in your business."
 sidebarTitle: "Manage Your Connections"
 icon: "link"
 ---
 
-Open **Settings → General → Connections**. Connected services appear first, and search helps you find an app.
+Open **Settings → General → Connections**. The **Apps** card lists the apps you can connect, with a count of how many are connected, and **Search** finds an app by name. Connected apps appear first; the rest are under **Explore**.
 
-## Use CoachIQ with ChatGPT or Claude
-
-Connect your preferred assistant to CoachIQ, verify its access, and create a Project with your business context and useful workflows. Choose your guide for the full setup and copyable prompts.
-
-<CardGroup cols={2}>
-  <Card title="Connect to ChatGPT" icon="plug" href="/settings/connect-chatgpt">
-    Connect CoachIQ, confirm live access, and prepare a ChatGPT Project for your business.
-  </Card>
-  <Card title="Connect to Claude" icon="plug" href="/settings/connect-claude">
-    Add the CoachIQ connector and build a Claude Project with your business brief and instructions.
-  </Card>
-</CardGroup>
-
-**Start the AI connection in ChatGPT or Claude.** You do not need a ChatGPT or Claude card in CoachIQ’s Connections directory. Use the guide for your assistant, then sign in to CoachIQ when its authorization page opens.
-
-## Available connections
-
-<Frame caption="Settings → Connections in a CoachIQ test organization. This account shows Stripe and Google Calendar; ChatGPT and Claude setup starts in the assistant.">
-  <img src="/images/connections-live-2026-09-28.jpg" alt="Live CoachIQ Connections settings with Stripe and Google Calendar Connect buttons" />
+<Frame caption="Settings → General → Connections, before anything is connected.">
+  <img src="/images/connections-2026-11.png" alt="Connections settings: the Apps card with Stripe and Google Calendar under Explore, each with a Connect button" />
 </Frame>
 
 | Connection | What you can do |
 | --- | --- |
-| Stripe | See payment and payout status. Choose **Manage** to open your existing Stripe integration settings. |
-| Google Calendar | See linked accounts and add another Google account. Use the Google permissions link to remove access. |
+| Stripe | Accept payments and manage payouts. Choose **Connect** to set it up, or **Manage** once it's connected. Only an Admin can connect or disconnect it. See [Stripe settings](/payments/connecting-stripe). |
+| Google Calendar | Keep coaching and personal schedules aligned. Link a Google account and add more. You remove access from your Google account's permissions, not from CoachIQ. See [Google Calendar sync](/scheduling/google-calendar-sync). |
 
-Opening ChatGPT is not confirmation that an assistant has connected to CoachIQ. Follow the connection and authorization flow in the client you use. Review the requested access before approving it. The CoachIQ approval screen shows who is connecting, which group, which app and what access, with IDs and addresses under **Technical details**. **Cancel** tells the app you declined and never grants access.
+A card or button alone doesn't confirm a connection. Finish the service's sign-in and approval, then check its status here.
 
-## If your directory looks different
+## Connect ChatGPT or Claude
 
-Follow the availability and access details shown in your account. A service card or an **Open** button alone does not confirm an active connection. Finish the service’s sign-in and approval flow, then check its status. For ChatGPT and Claude, confirm a small live CoachIQ read using the prompt in the relevant guide above.
+ChatGPT and Claude aren't in the Apps list. You start the connection in the assistant, then sign in to CoachIQ when its approval page opens. Any Admin or Coach can connect their own assistant.
 
-## Manage or remove access
+<CardGroup cols={2}>
+  <Card title="Connect to ChatGPT" icon="plug" href="/settings/connect-chatgpt">
+    Add CoachIQ in ChatGPT, approve access, and set up a Project for your business.
+  </Card>
+  <Card title="Connect to Claude" icon="plug" href="/settings/connect-claude">
+    Add the CoachIQ connector in Claude, approve access, and set up a Project.
+  </Card>
+</CardGroup>
 
-- For Stripe, use [Stripe settings](/payments/connecting-stripe). Only an Admin can connect or disconnect it.
-- For Google Calendar, manage linked accounts from its panel. Removal takes place through your Google account permissions, not a CoachIQ disconnect button. See [Google Calendar sync](/scheduling/google-calendar-sync).
-- For assistant connections, review the permissions in the client and the CoachIQ authorization screen. Read-only access does not permit changes. Supported writes require explicit write access; the connection does not grant unrestricted access to every feature. The assistant also follows your role and any Staff Access blocks; if those change mid-conversation, it's told that nothing changed and what to do next, such as reconnecting.
-- To check what an assistant did, open [Settings → Data → Logs](/settings/data#changes-from-connected-ai-assistants). Its changes carry an **Outside app** label, and requests CoachIQ refused are marked **Refused**.
+The CoachIQ approval page shows who is connecting, which group, which app and what access, with IDs and addresses under **Technical details**. Leave **I allow this assistant to make supported changes in this group** unticked for read-only access. **Cancel** tells the app you declined and grants nothing.
 
-If an older assistant connection remains read-only after reconnecting, remove and re-add the connector, then review the supported-write option on the authorization screen. Clients that support token renewal can maintain the connection without hourly sign-in; older connections may need one reconnect.
+## See what your AI apps did
 
-## After connecting
+Once you've connected an assistant, two more parts appear on this page:
 
-Start with [AI workflows](/settings/ai-workflows): copyable prompts for availability, booking changes, and media, with a verification step for each task.
+- **Connected apps** lists each AI app you approved for this group, whether it's **Read only** or **Can make changes**, when you approved it and last used it, and when it needs approving again. **Disconnect** ends its access. Each staff member sees only their own apps.
+- **App activity** appears once an app has changed something. **Review** lists what it did in each session, approves or declines removals waiting for you, and puts back removed items for 30 days. **Undo this session** takes a session's changes back.
+
+[Approvals, activity and limits](/settings/ai-approvals-and-activity) explains each of these. [What your connected assistant can do](/settings/ai-what-it-can-do) lists every supported change, and [AI workflows](/settings/ai-workflows) has prompts to get started.

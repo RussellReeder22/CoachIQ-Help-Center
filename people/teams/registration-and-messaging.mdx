@@ -7,7 +7,7 @@ icon: "clipboard-list"
 
 Use **Registration** to connect the products and forms families use to join a team. Use the team message action and **Automations** for ongoing communication.
 
-Open the team from **People → Teams**. Teams must be enabled for your organization.
+Open the team from **Teams** in the sidebar. Teams must be turned on for your organization.
 
 ## Connect registration products and forms
 
@@ -43,9 +43,15 @@ The **On roster** count belongs to a particular connection. The same athlete can
 
 Adding an athlete manually does not create a purchase. Likewise, a registration connection does not replace checking [roster-booking status](/people/teams/practices-and-games#confirm-the-roster-is-booked).
 
-## Use dedicated registration paths
+## Choose who joins from a form
 
-Choose a product or form that clearly represents the team families intend to join. Do not assume one form can route athletes among teams based on an answer. The current connected-registration workflow should be set up and checked for the intended team.
+One registration form can feed several teams. On a connected form, open **Who joins from this form** and set the answers that put an athlete on this team, for example "Age group is 12U". Families whose answers don't match aren't added. If a form's questions change, the connection shows a needs-review notice with **Update rule**.
+
+Each connected form shows its count of submissions, the same as the form's own Responses page: "5 responses" means five families submitted, however many questions the form has.
+
+## Waivers on a parent's registration
+
+When a parent ticks a waiver on a form they submit for their child, such as a team registration, the waiver is recorded as accepted for the child as well as the parent. The child's **Waivers** section and the waiver's compliance report show the child as accepted, with a link to the parent's answer so you can see who signed.
 
 After connecting an existing product or form, review the roster. If athletes who registered earlier are missing, add them through the Roster tab.
 
@@ -57,13 +63,13 @@ Payment changes also need their own review. Do not assume a refund or subscripti
 
 ## Message the team
 
-Use the message action in the team header. Review the audience before sending: team messages resolve eligible roster athletes and their linked guardians, with duplicate recipients removed. Check any reported unreachable families instead of assuming everyone received the message.
+Use **Message team** in the team header. Review the audience before sending: team messages go to the roster athletes and their linked guardians, with duplicate recipients removed. Children reached through a parent count as reached. The warning lists only team members nobody can reach, such as an athlete with no login and no guardian, and says when the recipient list was capped.
 
 Use [Inbox](/inbox/inbox-overview) for the normal composition and sending experience. Delivery still depends on valid contact details, channel availability, and messaging preferences. SMS can use [messaging credits](/inbox/sms-credits).
 
 ## Create a team automation
 
-Open **Automations** in the team, then choose **Create automation** or **Templates**. Starting from the team keeps its context in the existing automation builder. The current team flow includes an **Athlete joins team** trigger.
+Open **Automations** in the team, then choose **New automation** or **Templates**. Starting from the team keeps its context in the existing automation builder. The current team flow includes an **Athlete joins team** trigger.
 
 <Frame caption="Team automations show each rule's trigger and status. This testing example is Inactive; use the filters to find active, inactive, or archived rules.">
   ![Team Automations tab with status filters, Templates, Create automation, and an inactive athlete-joins rule](/images/teams/automations.png)

@@ -63,6 +63,7 @@
                 "group": "Website Builder",
                 "pages": [
                   "website/overview",
+                  "website/brand-kit",
                   "website/settings-and-design",
                   {
                     "group": "Pages & Navigation",
@@ -169,20 +170,16 @@
             "group": "Inbox",
             "pages": [
               "inbox/inbox-overview",
+              "inbox/work-as-a-team",
+              "inbox/client-profile-and-activity",
+              "inbox/new-message",
               "inbox/in-app-messages",
-              {
-                "group": "SMS",
-                "icon": "comment-sms",
-                "pages": [
-                  "inbox/sms-messages"
-                ]
-              },
               "inbox/announcements",
+              "inbox/sms-messages",
               "inbox/email",
-              "inbox/sms-credits",
-              "inbox/professional-email",
               "inbox/attaching-forms-schedulers-and-products",
-              "inbox/using-tags-for-group-messages"
+              "inbox/sms-credits",
+              "inbox/professional-email"
             ]
           },
           {
@@ -191,22 +188,22 @@
               "scheduling/overview",
               "scheduling/creating-your-first-scheduler",
               {
-                "group": "Availability & Setup",
+                "group": "Set Up",
                 "icon": "calendar-week",
                 "pages": [
-                  "scheduling/how-availability-works",
-                  "scheduling/create-your-availability",
-                  "scheduling/setting-black-out-dates",
-                  "scheduling/seasonal-schedule-transition",
-                  "scheduling/setup-coaches",
-                  "scheduling/managing-availability-for-multiple-coaches",
                   "scheduling/setup-locations",
                   "scheduling/resources",
-                  "scheduling/setup-defaults"
+                  "scheduling/setup-coaches",
+                  "scheduling/how-availability-works",
+                  "scheduling/create-your-availability",
+                  "scheduling/block-time",
+                  "scheduling/seasonal-schedule-transition",
+                  "scheduling/setup-defaults",
+                  "scheduling/shared-calendar-across-groups"
                 ]
               },
               {
-                "group": "Pricing & Booking Rules",
+                "group": "Schedulers",
                 "icon": "sliders",
                 "pages": [
                   "scheduling/setting-up-payment-options",
@@ -214,37 +211,43 @@
                   "scheduling/credits-and-schedulers",
                   "scheduling/scheduler-settings-limits-and-permissions",
                   "scheduling/overlapping-slots",
-                  "scheduling/advanced-scheduler-settings"
+                  "scheduling/advanced-scheduler-settings",
+                  "scheduling/session-reminders",
+                  "scheduling/google-calendar-sync",
+                  "scheduling/organizing-schedulers",
+                  "scheduling/sharing-schedulers"
                 ]
               },
               {
-                "group": "Manage Sessions",
+                "group": "Calendar",
                 "icon": "calendar-days",
                 "pages": [
                   "scheduling/calendar-overview-and-navigation",
                   "scheduling/saved-calendar-views",
+                  "scheduling/calendar-analytics"
+                ]
+              },
+              {
+                "group": "Bookings",
+                "icon": "calendar-check",
+                "pages": [
                   "scheduling/manually-booking-athletes",
                   "scheduling/booking-for-multiple-athletes",
                   "scheduling/recurring-bookings",
                   "scheduling/editing-rescheduling-bookings",
                   "scheduling/canceling-bookings",
                   "scheduling/checking-in-athletes",
-                  "scheduling/calendar-analytics",
                   "scheduling/changing-your-schedule"
                 ]
               },
-              {
-                "group": "Publish & Communicate",
-                "icon": "share-nodes",
-                "pages": [
-                  "scheduling/sharing-schedulers",
-                  "scheduling/organizing-schedulers",
-                  "scheduling/session-reminders",
-                  "scheduling/google-calendar-sync",
-                  "scheduling/shared-calendar-across-groups"
-                ]
-              },
               "scheduling/troubleshooting"
+            ]
+          },
+          {
+            "group": "Sales",
+            "icon": "chart-line",
+            "pages": [
+              "sales/pipeline"
             ]
           },
           {
@@ -257,8 +260,7 @@
                 "pages": [
                   "payments/connecting-stripe",
                   "payments/stripe-dashboard",
-                  "payments/disconnect-stripe",
-                  "payments/sharing-rev"
+                  "payments/disconnect-stripe"
                 ]
               },
               {
@@ -268,9 +270,10 @@
                   "payments/product-overview",
                   "payments/product-types",
                   "payments/product-builder",
-                  "payments/attach-products",
                   "payments/processing-fee",
-                  "payments/guest-checkout"
+                  "payments/attach-products",
+                  "payments/guest-checkout",
+                  "payments/sharing-rev"
                 ]
               },
               {
@@ -278,21 +281,9 @@
                 "icon": "coins",
                 "pages": [
                   "payments/credits/credit-system-overview",
+                  "payments/credits/recurring-credit-memberships",
                   "payments/credits/credit-usage-limits-restrictions",
-                  "payments/credits/managing-athlete-credits",
-                  "payments/credits/recurring-credit-memberships"
-                ]
-              },
-              {
-                "group": "Subscriptions",
-                "icon": "repeat",
-                "pages": [
-                  "payments/subscriptions-dashboard",
-                  "payments/manage-subscriptions",
-                  "payments/shared-family-memberships",
-                  "payments/upgrade-membership",
-                  "payments/grandfather-pricing",
-                  "payments/stripe-coachiq-reconciliation"
+                  "payments/credits/managing-athlete-credits"
                 ]
               },
               {
@@ -302,6 +293,18 @@
                   "payments/transactions",
                   "payments/issuing-refunds",
                   "payments/failed-payments"
+                ]
+              },
+              {
+                "group": "Subscriptions",
+                "icon": "repeat",
+                "pages": [
+                  "payments/subscriptions-dashboard",
+                  "payments/manage-subscriptions",
+                  "payments/upgrade-membership",
+                  "payments/shared-family-memberships",
+                  "payments/grandfather-pricing",
+                  "payments/stripe-coachiq-reconciliation"
                 ]
               },
               {
@@ -318,9 +321,7 @@
             "pages": [
               "people/overview",
               "people/adding-editing-clients",
-              "people/sign-up-and-profile",
               "people/tags-filters",
-              "people/block-and-remove-athletes",
               {
                 "group": "Client Profiles",
                 "icon": "id-card",
@@ -337,17 +338,21 @@
                   "people/client-profiles/client-profiles-waivers"
                 ]
               },
-              {
-                "group": "Teams",
-                "icon": "people-group",
-                "pages": [
-                  "people/teams/overview",
-                  "people/teams/roster-and-staff",
-                  "people/teams/practices-and-games",
-                  "people/teams/registration-and-messaging"
-                ]
-              },
-              "people/managing-staff"
+              "people/block-and-remove-athletes",
+              "people/managing-staff",
+              "people/staff-access",
+              "people/sign-up-and-profile",
+              "people/how-clients-sign-in"
+            ]
+          },
+          {
+            "group": "Teams",
+            "icon": "people-group",
+            "pages": [
+              "people/teams/overview",
+              "people/teams/roster-and-staff",
+              "people/teams/practices-and-games",
+              "people/teams/registration-and-messaging"
             ]
           },
           {
@@ -424,6 +429,8 @@
                   "settings/connections",
                   "settings/connect-chatgpt",
                   "settings/connect-claude",
+                  "settings/ai-what-it-can-do",
+                  "settings/ai-approvals-and-activity",
                   "settings/ai-workflows"
                 ]
               },
@@ -510,6 +517,10 @@
     "indexing": "all"
   },
   "redirects": [
+    {
+      "source": "/inbox/using-tags-for-group-messages",
+      "destination": "/inbox/new-message"
+    },
     {
       "source": "/introduction",
       "destination": "/"
@@ -784,11 +795,11 @@
     },
     {
       "source": "/scheduling/adding-and-managing-coaches",
-      "destination": "/scheduling/managing-availability-for-multiple-coaches"
+      "destination": "/scheduling/setup-coaches"
     },
     {
       "source": "/scheduling/black-out-dates",
-      "destination": "/scheduling/setting-black-out-dates"
+      "destination": "/scheduling/block-time"
     },
     {
       "source": "/scheduling/schedule-avaliability",
@@ -1376,7 +1387,7 @@
     },
     {
       "source": "/inbox/email-marketing",
-      "destination": "/inbox/inbox-overview#email"
+      "destination": "/inbox/email"
     },
     {
       "source": "/settings/billing-invoices",
@@ -1409,6 +1420,14 @@
     {
       "source": "/scheduling/understanding-booking-types",
       "destination": "/scheduling/manually-booking-athletes"
+    },
+    {
+      "source": "/scheduling/setting-black-out-dates",
+      "destination": "/scheduling/block-time"
+    },
+    {
+      "source": "/scheduling/managing-availability-for-multiple-coaches",
+      "destination": "/scheduling/setup-coaches"
     }
   ],
   "metadata": {

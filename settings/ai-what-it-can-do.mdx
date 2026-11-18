@@ -1,0 +1,163 @@
+---
+title: "What Your Connected Assistant Can Do"
+sidebarTitle: "What It Can Do"
+description: "Everything ChatGPT or Claude can read and change in CoachIQ through the connection, with the limits and what stays in CoachIQ."
+icon: "list-check"
+keywords: ["MCP", "ChatGPT", "Claude", "connected app", "write access", "group send", "bookings", "website", "tags", "credits", "automations", "Sheets", "limits"]
+---
+
+When ChatGPT or Claude is connected to CoachIQ, it can look things up across your business and, with your approval, make a set of supported changes. This page lists them by area, with the limits that apply. For how approvals, undo and pauses work, see [Approvals, activity and limits](/settings/ai-approvals-and-activity).
+
+## Before you start
+
+- **Read only or changes.** A read-only connection can look things up and draft. Changes need a connection where you ticked **I allow this assistant to make supported changes in this group** on the CoachIQ approval screen. See [Connect to ChatGPT](/settings/connect-chatgpt#choose-your-group-and-access) or [Connect to Claude](/settings/connect-claude#choose-your-group-and-access).
+- **You approve every change.** The assistant shows what it will change, and nothing is saved until you approve that exact change.
+- **It works as you.** Admins and Coaches with an accepted membership in the group can connect. The assistant can only reach what your role and [staff access](/people/managing-staff#managing-staff-access-blocking-pages) allow: a Coach whose access blocks a page, such as Forms, doesn't get the actions for that page. A Coach limited to selected clients can't send group messages, read Teams rosters or open the form answers on a booking.
+- **One group per connection.** To work in another group, add a second, separately named connection for it.
+
+<Note>
+  Group email and text, changing a scheduler's title and description, a page's search details, and some new reads (Teams rosters, a client's memberships, a booking's form answers) arrive with an update to CoachIQ's connector after the November 19 release. If your assistant doesn't list them yet, refresh or reconnect the CoachIQ connector and start a new chat. A chat keeps the tool list it started with.
+</Note>
+
+Ask the assistant to list its current CoachIQ tools before planning a bigger task. That list is the final word on what your connection can do today.
+
+## Clients and tags
+
+**It can read:** a client's profile (contact details, tags, custom fields, waiver status, family links, credit balances and history, transactions, subscriptions, staff notes and activity), search and count your People, your staff list and your tag list. After the connector update it can also read a client's memberships the way the client sees them on their Billing page, and your Teams: each team's current season and athlete count, and a season's roster. Guardians and payment details aren't shared from Teams.
+
+**With changes allowed, it can:**
+
+- Add an Athlete or Parent (Admins), and add children a parent manages.
+- Correct a client's first name, last name and phone number, and set custom field values (Admins). Admins can also create a new custom field.
+- Add and delete staff notes on a client.
+- Add or remove a tag for one person, or for **up to 100 people in one change**. The result lists who changed, who already had the tag and who was skipped. It can also create a tag and switch one off.
+
+<Warning>
+  Tags can start automations. Adding a tag to many people at once can trigger an automation that messages each of them. Check which automations use a tag before you approve a bulk tag change.
+</Warning>
+
+## Scheduling and bookings
+
+**It can read:** your schedulers and their settings, availability and date rules, locations, spaces and resources, a day or week of bookings, open times for a session on a day, a booking's history (including cancellations), and booking activity. After the connector update it can also open the form answers that came with a booking.
+
+**With changes allowed, it can:**
+
+- **Book one athlete into a time**, or move one booking. A booking made through the assistant **takes no payment and uses no credits**, so it works like a free booking you add by hand.
+- **Set up a weekly repeating booking** for up to 90 dates, and **move a whole session to a new time**. Repeating bookings count the athlete's daily and weekly limits. Moving a whole session doesn't send CoachIQ's session-change email to families, but automations and reminders still run, so tell families yourself.
+- **Cancel one booking, or one date of a repeating booking** (Admins only). The approval says whether credits go back. Cancelling never refunds a payment.
+- Mark attendance and set a booking's notes.
+- Set the coaches, the venue or the length for one date of a session. Only staff of your business can be a session's coach.
+- Change a scheduler's availability and date rules (for example, block a date without touching weekly hours), booking rules, setup defaults, locations and resources, and archive a scheduler.
+- Change how families pay for a scheduler (Price, Credit or Either), the product it charges, and which credit products can be used on it.
+- Create a free scheduler that only staff book.
+- Change a scheduler's title and description, and nothing else (after the connector update). If someone changed the text after the assistant read it, the change is refused and nothing is saved.
+
+**Pause after 20 bookings.** If the assistant makes **20 new bookings within 10 minutes**, CoachIQ pauses it and tells it to check with you first. It can continue after about three minutes. Nothing from the paused request is booked. Cancels and changes to existing bookings aren't paused.
+
+## Messages and Inbox
+
+**It can read:** in-app conversations and Inbox activity.
+
+**With changes allowed, it can:**
+
+- **Send one message to one person**, by in-app message, text or email, after you approve the exact message and recipient.
+- **Send one email or one text to a group of up to 100 clients** (after the connector update), picked by tag or by name. The preview names every person who will get it, says why anyone was left out (staff, no email address, no mobile number, texts turned off, or not in your business) and shows the cost in [messaging credits](/inbox/sms-credits). You approve that exact list, message and cost. Nobody can be added afterwards, and if anything changes before sending, the whole send is refused. Afterwards the assistant is told, person by person, whether it was sent, not sent (and why), or unknown. Admins can use it, and Coaches who can open both the Inbox and People › Clients.
+- Archive, reopen, and mark conversations read or unread. Archiving in the shared Inbox hides the conversation for your whole team.
+
+Limits that protect your families:
+
+- The same message can't go to the same person twice in one day.
+- Messages from connected apps are held to an hourly limit.
+- The same group message to the same people is refused for an hour after it's sent, or for a day if any delivery wasn't confirmed. To send it again on purpose, change the wording.
+- Messages you send yourself in CoachIQ, and CoachIQ's own Assistant, don't count toward these limits.
+
+## Forms and waivers
+
+**It can read:** your forms, their fields, CoachIQ's form templates, submitted answers, waivers and which products they're linked to, and who has signed.
+
+**With changes allowed, it can:** create an empty form, add or edit text and choice fields, remove fields or choices, archive a form, attach a form to a product, create or edit a waiver, and link a waiver to a product or unlink it.
+
+## Programs, lessons and media
+
+**It can read:** programs, lessons and their slides, Media Hub files and tags, and where a file is used in programs and lessons.
+
+**With changes allowed, it can:**
+
+- Create and edit programs and their checkpoints, lessons, slides and plain-text blocks.
+- Attach an existing file to a program step or a lesson slide.
+- Import a file from a public link (Admins): images and PDFs up to 25 MB, MP4 or MOV video up to 100 MB.
+- Rename files and add or remove media tags.
+- Remove a program, lesson, slide or lesson block. **Removals wait for you to approve them in CoachIQ** (see [Approvals waiting in CoachIQ](/settings/ai-approvals-and-activity#approvals-waiting-in-coachiq)).
+
+See [AI workflows](/settings/ai-workflows#find-and-organize-media) for media prompts.
+
+## Products, payments, credits and coupons
+
+**It can read:** products, payment records (a page at a time, so long histories come back complete), subscriptions, coupons (Admins), credit balances and history, and your messaging credit balance. If you search payments for someone who has left your business, it tells you to search by product or date instead, where their past payments still appear.
+
+**With changes allowed, it can:**
+
+- Create and edit products, set a product active or inactive, and attach a product to a form or program.
+- Set a client's credit balance, turn a client's use of a product's credits on or off, and add or remove the sessions where a credit product can be spent.
+- Create or remove a coupon (Admins).
+
+<Warning>
+  Detaching a product from a program removes access for everyone who bought it, with no refund. This waits for your approval in CoachIQ, so read the approval card before you approve it.
+</Warning>
+
+## Website
+
+From November 19, ChatGPT, Claude and other outside apps can make only two kinds of website change:
+
+1. **The text, image and link fields of a custom section** on a page.
+2. **One page's search details**: title, search description, keywords and share image (after the connector update).
+
+Every other website change stays in the [website builder](/website/overview): design and fonts, header and footer menus, adding, removing or reordering pages, redirects, publishing, domains and tracking. If an app tries one of these, nothing is saved and it's told to use the builder. CoachIQ's own Assistant isn't affected by this limit.
+
+Rules for the changes it can make:
+
+- The assistant shows a preview of the page and each value it will change, and nothing changes until you approve. If the page or section changes after the preview, for example you edit it in the builder, the approval is cancelled and the assistant has to read it again.
+- **Legal pages** such as the Privacy Policy and Terms can't be changed by an outside app, wording or search details.
+- **Images** must come from your own Media Hub. **Links** must be a web address, an email or phone link, or a page on your own website.
+- Color fields take a hex code (such as #1A2B3C) or rgb. Text keeps apostrophes, quotes, prices and line breaks. Anything that looks like code is saved as plain text.
+- If any value is refused, the message names the field to fix and nothing in that change is saved.
+- An Admin can undo a section edit from [App activity](/settings/ai-approvals-and-activity#app-activity-and-undo).
+
+<Note>
+  Text an app writes with an apostrophe or ampersand can show in the website builder in its saved form, for example `It&#39;s`. Visitors see `It's`. A later update fixes how the builder shows it.
+</Note>
+
+It can still read your website: pages and their sections, menus, design settings, redirects, and whether the site and domain are set up.
+
+## Automations
+
+**It can read:** your automations, CoachIQ's automation templates and (Admins) run history.
+
+**With changes allowed, it can:** create or edit an automation, from scratch or a template, **as a switched-off draft**, and archive one. It never turns an automation on. Review the draft in [Automations](/tools/automations/what-are-automations) and turn it on yourself.
+
+## Sheets
+
+Admins can let the assistant read and edit a Sheet. See [Sheets](/tools/sheets/overview).
+
+## Your own settings
+
+It can read and change your own admin notification preferences.
+
+## What it can't do
+
+These stay in CoachIQ, where you do them yourself:
+
+- **Money:** refund, charge a card, retry a failed payment, change, pause or cancel a subscription, or change Stripe settings. Bookings it makes take no payment.
+- **People and access:** change anyone's role (including between Athlete and Parent), remove or block a person, invite staff, change a login email, change sign-up fields, or import a CSV.
+- **Automations and integrations:** turn on an automation, connect Zapier, or change Google Calendar.
+- **Website:** anything beyond section fields and one page's search details (see [Website](#website)).
+- **Media:** delete Media Hub files, change their visibility, or run Video Analysis.
+- **Coupons and credits:** edit an existing coupon, or set one client's credit expiry.
+
+For anything it can't do, ask it for the steps and make the change in CoachIQ.
+
+## Related
+
+- [Approvals, activity and limits](/settings/ai-approvals-and-activity)
+- [AI workflows](/settings/ai-workflows)
+- [Use CoachIQ with AI](/getting-started/use-coachiq-with-ai)

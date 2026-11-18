@@ -25,9 +25,10 @@ Navigate to **Tools → Waivers** to see all your waivers at a glance.
 | **Waiver** | The waiver's name, and how many products require it |
 | **Signed** | How many clients have accepted it out of everyone it covers, for example **3 of 37**. This matches the waiver's report |
 | **Created** | When the waiver was made |
-| **Actions** | **View report** and **Edit** |
 
-Use **All statuses** to show active or archived waivers, and **Recent** to change the order. The buttons on each row open on the first click or tap.
+The report icon on a row opens its compliance report.
+
+Use the search box to find a waiver by name, the status filter (**All statuses**, active or archived) and the sort menu (**Recent**). Each row's **···** menu has **Edit**, **View report**, **Duplicate** and **Archive**.
 
 ---
 
@@ -43,7 +44,7 @@ Use **All statuses** to show active or archived waivers, and **Recent** to chang
     - **URL** — Link to the full waiver document. This can be a page on your CoachIQ website, a Google Drive link, a PDF, or any public URL.
 
     <Frame>
-      ![Edit Waiver modal showing label, URL, status, and linked products](/images/waivers-edit-waiver.png)
+      ![Edit Waiver window with Label, URL, Status, Linked products, Archive and Save Changes](/images/waivers-edit-2026-11.png)
     </Frame>
 
     <Tip>
@@ -52,7 +53,9 @@ Use **All statuses** to show active or archived waivers, and **Recent** to chang
   </Step>
 
   <Step title="Save the waiver">
-    Click **Save Changes**. Your waiver is now active and ready to attach to products or forms.
+    Click **Create Waiver**. Your waiver is now active and ready to attach to products or forms.
+
+    To change it later, open the waiver's **···** menu and choose **Edit**. The **Edit Waiver** window (above) also sets the status and the linked products. Click **Save Changes** when you're done.
   </Step>
 </Steps>
 
@@ -68,19 +71,19 @@ Attach a waiver to any product so clients must agree before purchasing.
   </Step>
 
   <Step title="Go to Advanced settings">
-    Click **Advanced** in the left sidebar of the product editor.
+    Click **Advanced** in the product builder's section list on the left.
   </Step>
 
   <Step title="Toggle on Require Agreement to Terms">
     Enable the toggle, then select your waiver from the dropdown. You can also search for existing waivers or create a new one directly from here.
 
     <Frame>
-      ![Product Advanced tab showing Require Agreement to Terms toggle with linked waiver](/images/waivers-product-terms.png)
+      ![Advanced section of the product builder with Require Agreement to Terms on and Liability Waiver selected](/images/waivers-product-terms-2026-11.png)
     </Frame>
   </Step>
 
   <Step title="Save the product">
-    Click **Update Subscription** (or **Create**) to save.
+    Click **Update** at the top right (or **Create** for a new product) to save.
 
     <Check>
       **Done!** Clients will now see a checkbox at checkout: "I agree to the [Waiver Name]." They must check it before they can purchase.
@@ -105,8 +108,12 @@ You can also require waiver acceptance on any form — useful for registration f
     Go to **Tools → Forms** and select the form you want to edit.
   </Step>
 
-  <Step title="Add a Waiver question">
-    In the form builder, click **Add question** and choose **Waiver** under **General**.
+  <Step title="Add a Waiver component">
+    In the form builder, click **Add question** at the bottom of the question list. Pick **Waiver** under **General**, or type "waiver" in **Search blocks** to find it.
+
+    <Frame>
+      ![Form builder Add question menu filtered to the Waiver block under General](/images/waivers-form-builder-2026-11.png)
+    </Frame>
   </Step>
 
   <Step title="Pick the waiver">
@@ -114,7 +121,7 @@ You can also require waiver acceptance on any form — useful for registration f
   </Step>
 
   <Step title="Save the form">
-    Click **Save**.
+    Click **Save** at the top right. The builder shows **All changes saved** once the form is saved.
 
     <Check>
       **Done!** Anyone submitting this form must accept the waiver first. If the question has more than one waiver, they must tick every one, and the message under the question names the one still to accept.
@@ -130,7 +137,7 @@ The compliance report shows exactly who has accepted each waiver and who hasn't 
 
 <Steps>
   <Step title="Open the compliance report">
-    Go to **Tools → Waivers** and click **View report** on the waiver's row.
+    Go to **Tools → Waivers**, open the waiver's **···** menu and choose **View report**.
   </Step>
 
   <Step title="Review acceptance status">
@@ -143,7 +150,7 @@ The compliance report shows exactly who has accepted each waiver and who hasn't 
     When a parent accepts a waiver while buying for their child, the child shows as signed, with the date the parent signed. The CoachIQ app's report shows the same list.
 
     <Frame>
-      ![Compliance Report showing accepted vs missing clients with filter tabs and export option](/images/waivers-compliance-report.png)
+      ![Compliance report for Liability Waiver showing 3 of 37 accepted, All, Accepted and Missing tabs, and Export CSV](/images/waivers-compliance-report-2026-11.png)
     </Frame>
   </Step>
 
