@@ -60,7 +60,7 @@ The most common credit confusion is changing a setting in the wrong place. Use t
     Under **Advanced settings → Booking Rules**, decide whether **Refund credits used on cancellation** is on. Pair it with your cancellation notice window. Details in [Cancellation and credit refunds](#cancellation-and-credit-refunds) below.
   </Step>
   <Step title="Save, then check the product">
-    Click **Create** or **Update**. Then open the product that issues the credits and confirm this scheduler is selected under **Which schedulers accept these credits**, or that the field is blank (which means all schedulers).
+    Click **Create scheduler** or **Save**. Then open the product that issues the credits and confirm this scheduler is selected under **Which schedulers accept these credits**, or that the field is blank (which means all schedulers).
   </Step>
 </Steps>
 
@@ -127,7 +127,7 @@ When you cancel a credit booking from the calendar, the confirmation dialog asks
     Fine. Payment type is per scheduler. A free trial scheduler and a 1-credit scheduler can sit side by side, and the trial scheduler will never touch a credit balance.
   </Accordion>
   <Accordion title="Athlete's subscription payment fails">
-    The subscription's credits stop renewing, but credits already granted stay until they expire (or until the subscription's own expiration rule removes them). Existing bookings are not cancelled automatically. See [Recurring credit memberships](/payments/credits/recurring-credit-memberships#payment-failure-involuntary-churn).
+    The membership's credits stop being usable at the first failed payment. While the payment is past due, the membership counts as inactive, so its credits can't book sessions, and they don't renew. Bookings already made are not canceled automatically. See [Recurring credit memberships](/payments/credits/recurring-credit-memberships#payment-failure-involuntary-churn).
   </Accordion>
 </AccordionGroup>
 

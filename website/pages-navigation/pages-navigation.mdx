@@ -7,146 +7,75 @@ keywords: ["website navigation", "coaching website pages", "sports website struc
 ---
 
 <Info>
-  **Where to find this**: Dashboard → Website Builder → Pages (left sidebar)
+  **Where to find this**: **Website & App** → **Website** → **Edit website**, then the page name at the top of the builder
 </Info>
 
-## Understanding your coaching website structure
+## How your pages are organized
 
-Your CoachIQ website uses a hierarchical page structure that makes it easy for athletes and parents to find information about your coaching services. Pages can be standalone or organized as parent pages with subpages, creating logical navigation paths.
+Every page has a title, an address (its slug), and an optional parent. A page with a parent is a sub-page: its address sits under the parent's, and menus can show it in a dropdown under the parent.
 
-<CardGroup cols={2}>
-  <Card title="Parent Pages" icon="folder">
-    Main categories like "Training Programs" or "Services"
-  </Card>
-  <Card title="Subpages" icon="file">
-    Specific offerings like "Basketball Skills" or "Group Training"
-  </Card>
-  <Card title="Templates" icon="album-collection-circle-plus">
-    Pre-built page layouts for different coaching content
-  </Card>
-</CardGroup>
+You can see every page at a glance on the [Website page](/website/overview#sitemap-and-hidden-pages), split into **Sitemap** and **Hidden** pages. Click any page there to open it in the builder.
 
-## Managing your website pages
+## Switch between pages
 
-### Accessing your pages
+1. In the builder, click the down arrow next to the page name at the top.
+2. The **Pages** list opens. Click a page to edit it. Your home page shows as **Home Page**.
+
+**Reorder** at the top of the list lets you drag pages into a new order.
+
+## Add a page
+
+<Frame>
+  ![The New Page window with Page Title, Page Slug, Parent Page, Template/Type and SEO Settings](/images/website-new-page-2026-11.png)
+</Frame>
 
 <Steps>
-  <Step title="Navigate to Website Builder">
-    From your CoachIQ dashboard, click \*\*Edit \*\*under the \*\*CoachIQ Site \*\*section to access your site management tools.
-
-    <Frame>
-      ![CoachIQ dashboard with Edit button under the CoachIQ Site section](/images/edit-site.png)
-    </Frame>
+  <Step title="Open New Page">
+    Click the down arrow next to the page name, then **Add New Page**.
   </Step>
-  <Step title="View your pages list">
-    In the left sidebar, you'll see **Pages** with a dropdown arrow. Click to expand and view all your current pages.
-
-    <Frame>
-      ![CoachIQ Website Builder left sidebar showing the Pages dropdown list](/images/pages.png)
-    </Frame>
-    <Note>
-      **Default pages**: Most coaching websites start with Home and About pages, which we create during your initial website build.
-    </Note>
+  <Step title="Fill in the page">
+    - **Page Title**: what visitors see, for example "Basketball Skills Training".
+    - **Page Slug**: the end of the page's address, filled in from the title. Spaces, capitals and slashes are turned into a valid address as you type, and the full **URL** shows underneath. If the address still isn't valid, for example it ends in a hyphen, the rule shows right away and **Create Page** stays off until you fix it.
+    - **Parent Page** (optional): pick a page to make this a sub-page, or leave **None (top-level)**.
+    - **Template/Type**: **Default** for a blank page, or a ready-made page. See [Page Templates](/website/pages-navigation/page-templates).
+    - **SEO Settings**: the title and description Google shows. See [Page metadata](/website/seo-marketing/meta-titles-descriptions#set-metadata-when-creating-a-page).
   </Step>
-  <Step title="Switch between pages">
-    Click any page name to switch to editing that page. The page name will appear at the top of the builder interface.
-
-    <Check>
-      **Success indicator**: You'll see the selected page name displayed prominently at the top of the interface.
-    </Check>
+  <Step title="Create it">
+    Click **Create Page**. The page opens in the builder, ready for sections. It's added to your sitemap, but it isn't in your menus until you add it to the [header or footer](/website/sections/header-footer-navigation).
   </Step>
 </Steps>
 
-## Creating new pages for your coaching website
+<Note>
+A few characters can't be saved in a page title or description yet, such as the ʻokina in Hawaiʻi. If you use one, a message names the character and asks you to remove or replace it. Nothing is saved until you do.
+</Note>
 
-### Adding a new page
+## Page Settings
 
-<Steps>
-  <Step title="Click Add New Page">
-    In the Pages section of the left sidebar, click the **Add New Page** button to open the page creation dialog.
+Click **⋯** next to the page name to open **Page Settings** for the page you're on:
 
-    <Frame>
-      ![CoachIQ Add New Page dialog with page title, slug, and template fields](/images/add-new-page.png)
-    </Frame>
-  </Step>
-  <Step title="Configure your new page">
-    Fill out the page creation form with your coaching content details:
+- **Title**, **Slug**, **Keywords**, **Featured Image** and **Description**
+- **Hide site header on this page** and **Hide site footer on this page**, for focused landing pages
 
-    Enter the page details below. You can also set **Meta Title** and **Meta Description** during creation; see [Page metadata](/website/seo-marketing/meta-titles-descriptions#set-metadata-when-creating-a-page).
+Publish to save changes. See [URL Slugs & Page Management](/website/pages-navigation/url-slugs-page-management) before you change a live page's slug.
 
-    **Page fields:**
+## Hide a page
 
-    - **Page Title**: What visitors see (e.g., "Basketball Skills Training")
-    - **Page Slug**: URL-friendly version (automatically generated). Spaces, capitals and slashes are turned into a valid address as you type. If the address still isn't valid, for example it ends in a hyphen, the rule shows right away and **Create** stays off until you fix it
-    - **Parent Page**: Select if this is a subpage, or leave blank for main page. Your home page is listed as **Home Page**, even if it has no title
-    - **Page Template**: Choose the layout that fits your content type
+To keep a page live but out of your sitemap and Google, so only people with the link reach it, use the [Sitemap Builder](/website/seo-marketing/sitemap-builder). It then shows under **Hidden (link only)** on the Website page.
 
-    <Tip>
-      **SEO tip**: Use descriptive page titles that include relevant coaching keywords like "Basketball Training," "Soccer Skills," or "Youth Sports Coaching."
-    </Tip>
-  </Step>
-  <Step title="Select the right template">
-    Choose from coaching-specific templates:
+## Delete a page
 
-    - **Default**: Basic page layout for general content
-    - **Training Programs**: Showcases your coaching services
-    - **About**: Perfect for coach biography and credentials
-    - **Contact**: Contact forms and location information
+Deleting a page removes it and its sections for good. Your home page can't be deleted. The confirmation lists any header or footer menu items and buttons that point at the page, and those are removed with it, so your menu never has a dead link.
 
-    <Warning>
-      **Template choice matters**: The template determines which sections are pre-loaded. You can always add or remove sections later.
-    </Warning>
-  </Step>
-  <Step title="Create and publish">
-    Click **Create New Page** to generate your page, then **Publish** to make it live on your coaching website.
+Before you delete:
 
-    <Check>
-      **Page created**: Your new page appears in the pages list and is ready for content editing.
-    </Check>
-  </Step>
-</Steps>
+- Check buttons inside your page sections that link to the page. The confirmation doesn't list those.
+- Add a [URL redirect](/website/seo-marketing/url-redirects) from the old address to another page, so visitors and Google links still land somewhere.
 
-## Setting up page hierarchy and templates for coaching services
+The Assistant and connected AI apps can't delete a page that a menu item or button points at.
 
-### Understanding page templates
+## Plan your pages
 
-Page templates provide pre-built layouts optimized for different types of coaching content. Each template includes relevant sections and structure for specific purposes:
-
-<Tabs>
-  <Tab title="Training Programs">
-    **Best for**: Service pages, program overviews, training offerings
-
-    - Hero section with program highlights
-    - Service description areas
-    - Pricing displays
-    - Call-to-action buttons for booking
-  </Tab>
-  <Tab title="About Templates">
-    **Best for**: Coach biography, credentials, philosophy
-
-    - Professional headshot section
-    - Background and experience
-    - Training philosophy
-    - Certifications and achievements
-  </Tab>
-  <Tab title="Contact Templates">
-    **Best for**: Contact information, location details
-
-    - Contact form integration
-    - Location and hours
-    - Map integration
-    - Social media links
-  </Tab>
-  <Tab title="Default Template">
-    **Best for**: Custom content, unique pages
-
-    - Flexible section structure
-    - Customizable layout
-    - Basic content blocks
-  </Tab>
-</Tabs>
-
-### Creating parent and subpages
+### Group pages under a parent
 
 Many coaches benefit from organizing services into logical groups. Here's how to structure your offerings:
 
@@ -184,10 +113,10 @@ Many coaches benefit from organizing services into logical groups. Here's how to
     Most successful coaching websites have 5-10 pages total. Start with essential pages (Home, About, Services, Contact) and add specialized pages as your business grows. Focus on quality content that serves your athletes and parents rather than creating many pages with thin content.
   </Accordion>
   <Accordion title="Can I delete pages after creating them?">
-    Yes, you can delete pages through the page management interface. However, be careful not to delete pages that are linked in your navigation menus, [scheduling system](/scheduling/overview), or [payment products](/payments/product-overview). Always update your navigation and remove internal links before deleting pages.
+    Yes. See [Delete a page](#delete-a-page). Menu items and header buttons that point at the page are removed with it; add a redirect for the old address.
   </Accordion>
   <Accordion title="What's the difference between page templates?">
-    Templates provide pre-built layouts optimized for different content types. "Training Programs" templates include sections for service descriptions, pricing, and booking buttons. "About" templates focus on coach credentials and philosophy. "Contact" templates emphasize forms and location information. Choose the template that best matches your page's purpose.
+    **Default** starts a blank page. A ready-made template starts the page with sections already in place, such as a booking page or a camp registration page. You can add, change or remove sections afterwards. See [Page Templates](/website/pages-navigation/page-templates).
   </Accordion>
 </AccordionGroup>
 

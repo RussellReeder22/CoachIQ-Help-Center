@@ -1,416 +1,148 @@
 ---
-title: "Client Profiles: Complete Activity Dashboard"
-description: "Everything you need to know about a client in one place—navigate the profile dashboard and understand each activity tab"
+title: "Client Profiles: Everything About One Client"
+description: "Open a client's profile, find their activity, bookings, credits, payments, family, notes, media and waivers, and edit their details."
 sidebarTitle: "Client Profiles"
 icon: "address-card"
-keywords: ["client profile", "athlete profile", "staff notes", "client notes", "private notes", "activity history", "profile tabs", "client dashboard", "view client", "client info"]
+keywords: ["client profile", "athlete profile", "family", "add child", "enable login", "staff notes", "log call", "client notes", "activity history", "client details", "profile sections"]
 ---
 
 <Info>
-  **Where to find this**: Dashboard → **People** → **Clients** → Click any client name
+  **Where to find this**: **People › Clients**, then click a client. The same profile opens from **People › Staff**, from a booking on the Calendar, and from a conversation in the Inbox.
 </Info>
 
-## What you'll accomplish
-
-Learn how to navigate a client's complete profile, understand what each activity tab shows you, and quickly find the exact information you need about bookings, credits, payments, messages, and more.
-
----
-
-## Opening a client profile
-
-<Steps>
-  <Step title="Navigate to People → Clients">
-    From your dashboard, click **People** in the main navigation, then ensure you're on the **Clients** tab.
-  </Step>
-  <Step title="Find the client">
-    Use any of these methods:
-
-    - Scroll through the list
-    - Type their name in the **Search people** bar
-    - Filter by role (Athletes, Parents, Customers tabs)
-    - Filter by tag (use the tag sidebar)
-  </Step>
-  <Step title="Click their name">
-    Click anywhere on the client's row to open their full profile.
-
-    <Frame>
-      ![CoachIQ Clients list page with search bar and role filter tabs](/images/clients-page.png)
-    </Frame>
-    <Check>
-      **You're in!** The profile dashboard opens, showing their complete activity history and user details.
-    </Check>
-  </Step>
-</Steps>
-
----
-
-## Understanding the profile header
-
-At the top of every client profile, you'll see key information and quick action buttons:
+A client's profile answers "what's going on with this person?" without opening five other pages: what they've booked, what they've paid for, how many credits they have, who's in their family and what your staff know about them.
 
 <Frame>
-  ![CoachIQ client profile header with name, role badges, and action buttons](/images/client-example.png)
+  ![Client profile with the header, the section list on the left, All activity in the middle and Client details on the right](/images/people-client-profile-2026-11.png)
 </Frame>
 
-**Profile header includes:**
+## The header
 
-| Element            | What it shows                    | How to use it                            |
-| ------------------ | -------------------------------- | ---------------------------------------- |
-| **Profile photo**  | Client's avatar or initials      | Click to upload/change photo             |
-| **Name**           | Full name and role badges        | Edit in User Details sidebar             |
-| **Last seen**      | When they last accessed your app | Helps gauge engagement                   |
-| **Message button** | Opens conversation               | Starts or continues chat in Inbox        |
-| **Book button**    | Manual booking                   | Quickly book them into a session         |
-| **Delete button**  | Remove client                    | Use with caution—cannot be easily undone |
+The top of the profile shows the back arrow, their photo or initials, their name, when they were last seen ("Last seen 2w 1d ago", or "Not seen yet"), their role, the date they joined, and markers such as **Managed athlete**.
 
-<Tip>
-  **Quick actions save time**: Instead of navigating to Calendar or Inbox, use the **Book** and **Message** buttons right from the profile to take immediate action.
-</Tip>
+- **Message** opens a conversation with them.
+- **Book** books them into a session. See [Book a client yourself](/scheduling/manually-booking-athletes).
 
----
+## The sections
 
-## The User Details sidebar
+The list on the left groups everything about the client. On a narrow screen the profile stacks into one column and the sections become a menu at the top.
 
-On the right side of every profile, the **User Details** panel shows editable information:
+| Group | Section | What it shows |
+|---|---|---|
+| **Activity** | [All activity](/people/client-profiles/client-profiles-activity) | Bookings, orders, forms, programs and profile changes, newest first. Filter with **All**, **Forms**, **Orders**, **Programs**, **Bookings** and **Profile**. |
+| | [Messages](/people/client-profiles/client-profiles-messages) | Your in-app and SMS conversation, with a reply box |
+| | [Bookings](/people/client-profiles/client-profiles-bookings) | **Upcoming**, **Canceled** and **Past** sessions, with a time zone choice |
+| **Payments** | [Credits](/people/client-profiles/client-profiles-credits) | Credit balances and every credit added, used or expired |
+| | [Products](/people/client-profiles/client-profiles-products) | What they've bought or been given |
+| | [Transactions](/people/client-profiles/client-profiles-transactions) | Payments and refunds, with a date range |
+| | [Subscriptions](/people/client-profiles/client-profiles-subscriptions) | Memberships and recurring billing |
+| | Invoice credits | Credit you've given toward their future membership invoices |
+| | Payment methods | **Saved cards** and **Active subscriptions** |
+| **Profile** | [Notes](#notes-and-calls) | Your staff's private notes and logged calls |
+| | [Family](#family) | The athletes a parent manages, or an athlete's parents |
+| | [Media](/people/client-profiles/client-profiles-media) | Videos and photos shared with this client |
+| | [Waivers](/people/client-profiles/client-profiles-waivers) | Which waivers they've accepted |
+| | [Block or remove](/people/block-and-remove-athletes) | Remove them from your business, or block them from rejoining |
 
-**What you can edit here:**
+Where a section has different views of the same thing (activity types, message channels, booking lists, credit logs), you switch them with the row of tabs at the top of the section. A section with nothing in it says so in one short line, for example "No activity yet".
 
-- **Role** (dropdown: Athlete, Coach, Admin, Parent, Customer)
-- **First name**
-- **Last name**
-- **Email** (their login credential)
-- **Phone** (for SMS messaging)
-- **Additional emails** (CC, up to 3) — extra addresses that receive copies of emails to this client
-- **Custom fields** (click **Add Field** for custom tracking; fields you created under [Sign-up & Profile](/people/sign-up-and-profile) appear here too)
-
-Coaches whose Clients page isn't blocked in Staff Access can see and edit a client's custom field values. Adding or deleting a field stays with Admins.
+When Stripe isn't connected, the **Products**, **Transactions**, **Subscriptions**, **Invoice credits** and **Payment methods** sections show one notice, "Stripe isn't connected", with a **Connect Stripe** button. Anything already recorded still shows.
 
 <Note>
-  **Changes save automatically**: Click into any field, make your edit, and it saves immediately. No separate "Save" button needed.
+  Coaches see only the sections their [staff access](/people/staff-access#what-a-blocked-page-also-hides) allows. Blocking **Products**, **Transactions** or **Subscriptions** hides the matching sections, and blocking **Media Hub** hides **Media**. **Credits** always stays visible.
 </Note>
 
-**Learn more**: See [Adding & Editing Client Information](/people/adding-editing-clients) for detailed editing instructions.
+## Client details
 
----
+The panel on the right holds the client's **Role**, **Tags**, name, **Email**, **Phone**, **Add CC email**, **Sign-in** and **Custom fields**. Edit a field and it saves. See [Edit a client's details](/people/adding-editing-clients#edit-a-clients-details) and [Custom fields](/people/adding-editing-clients#custom-fields).
 
-## The profile sections explained
+When you limit coaches with [access tags](/people/staff-access#limit-a-coach-to-certain-clients), the profile also shows a **Staff access** section with the client's access tags and the coaches who can see them.
 
-The client profile organizes everything into three groups of tabs: **ACTIVITY** (All Activity, Messages, Bookings), **PAYMENTS** (Credits, Products, Transactions, Subscriptions, Payment Methods), and **PROFILE** (Family, Notes, Media, Waivers, Block or Remove). Each tab answers a specific question about your relationship with this client.
+<a id="connect-children"></a>
 
-<Note>
-  If an Admin blocks a staff member's Payments pages in Staff Access, the matching **Products**, **Transactions**, **Subscriptions** and **Payment Methods** tabs hide on client profiles too. **Credits** always stays visible.
-</Note>
-
-<Frame>
-  ![CoachIQ client profile activity tabs navigation bar](/images/client-tabs.png)
-</Frame>
-
-**Here's what each tab shows you:**
-
-<CardGroup cols={2}>
-  <Card title="All Activity" icon="list-timeline" href="/people/client-profiles/client-profiles-activity">
-    **The unified timeline**
-
-    Everything in one place: bookings, purchases, program enrollments, form responses. Perfect for getting the complete picture quickly.
-
-    _Click to learn more →_
-  </Card>
-  <Card title="Messages" icon="message" href="/people/client-profiles/client-profiles-messages">
-    **Conversation history**
-
-    All In-App and SMS messages with this client. Send new messages, view attachments, review past conversations.
-
-    _Click to learn more →_
-  </Card>
-  <Card title="Bookings" icon="calendar-check" href="/people/client-profiles/client-profiles-bookings">
-    **Session history**
-
-    Upcoming sessions, past attendance, canceled bookings. Filter by status and time zone.
-
-    _Click to learn more →_
-  </Card>
-  <Card title="Credits" icon="coins" href="/people/client-profiles/client-profiles-credits">
-    **Credit transactions**
-
-    Current balance, purchase history, redemptions, expirations. See Master Credits and product-specific credits separately.
-
-    _Click to learn more →_
-  </Card>
-  <Card title="Products" icon="box" href="/people/client-profiles/client-profiles-products">
-    **Purchase history**
-
-    What they've bought: one-time products, subscriptions, access codes. Manually add products to their account.
-
-    _Click to learn more →_
-  </Card>
-  <Card title="Transactions" icon="receipt" href="/people/client-profiles/client-profiles-transactions">
-    **Payment history**
-
-    All payments, refunds, and failed charges. Track revenue over 7/30/90 days or all time.
-
-    _Click to learn more →_
-  </Card>
-  <Card title="Subscriptions" icon="rotate" href="/people/client-profiles/client-profiles-subscriptions">
-    **Recurring billing**
-
-    Active memberships, canceled subscriptions, trial periods, monthly revenue from this client.
-
-    _Click to learn more →_
-  </Card>
-  <Card title="Family" icon="users" href="#connect-children">
-    **Connect children**
-
-    Choose an active athlete account, or create a managed child.
-  </Card>
-  <Card title="Notes" icon="note-sticky" href="#staff-notes">
-    **Private staff notes**
-
-    What your staff knows about this family, with who wrote each note and when. Athletes and parents never see notes.
-  </Card>
-  <Card title="Media" icon="photo-film" href="/people/client-profiles/client-profiles-media">
-    **Shared content**
-
-    Media that clients have uploaded to CoachIQ. Filter by tag, toggle list/grid view.
-
-    _Click to learn more →_
-  </Card>
-  <Card title="Waivers" icon="file-signature" href="/people/client-profiles/client-profiles-waivers">
-    **Signed or missing**
-
-    Which waivers this client has accepted, when, and through which product or form.
-
-    _Click to learn more →_
-  </Card>
-  <Card title="Payment Methods" icon="credit-card">
-    **Cards on file**
-
-    The saved payment methods this client uses at checkout and for subscriptions. Reads "No payment methods on file" until they have paid once.
-  </Card>
-  <Card title="Block or Remove" icon="user-slash" href="/people/block-and-remove-athletes">
-    **Restrict access**
-
-    Block a client from booking or messaging, or remove them from your group.
-  </Card>
-</CardGroup>
-
-<Tip>
-  **Most-used tabs**: Coaches spend 80% of their time in five tabs: All Activity (quick overview), Bookings (attendance), Credits (balance checks), Messages (communication), and Subscriptions (membership status).
-</Tip>
-
----
-
-
-## Connect children
+## Family
 
 <Info>
-**Where to find this**: **People** → open the client → **PROFILE** → **Family**
+  **Where to find this**: open a parent or athlete › **Profile** › **Family**
 </Info>
 
-**Connect children** lets you choose an active athlete account, or create a managed child.
-
-Use **+** (**Create new child**) to open **New child**. The child is added without a login. You can enable login later. Fill ****First name** (required)** and **Last name**, then **Create child** (or **Cancel**).
-
-A managed child can show **Managed — no login** with **Enable login**.
+On a parent's profile, **Family** is titled **Children**, "Athletes [name] manages". Each child shows their name and whether they have their own login, for example **Managed · no login**.
 
 <Frame>
-  ![Connect children on the client Family section](/images/people-client-family-connect-children.png)
+  ![Family section of a parent with one managed child, Enable login, Add child and Connect athlete](/images/people-client-family-2026-11.png)
 </Frame>
 
-<Frame>
-  ![New child form](/images/people-client-family-new-child.png)
-</Frame>
+**Add a child to a parent:**
 
-## Staff notes
+- **Add child** creates a new managed athlete with no login. Enter **First name** (required) and **Last name**, then **Create child**. The parent books, pays and gets messages for them.
+- **Connect athlete** links an athlete who's already in your business.
+
+On an athlete's profile, **Family** lists their parents, and **Connect parent** links one.
+
+**Each family member** has **Enable login** (for a managed athlete) and a **...** menu for the other actions, with **Remove** or **Disconnect** last.
+
+### Give a managed athlete their own login
+
+Click **Enable login** next to the child and add the email they'll sign in with. They keep their history. From then on they can sign in to your app themselves, and the parent keeps managing them.
+
+If the athlete's sign-in is also used by another business or by a staff account, login can't be turned on here. The message reads: "This athlete's sign-in is also used for another organization or a staff account, so login can't be enabled here." It doesn't name the other business. Ask the family for a different email.
+
+See [Family accounts](/athlete-portal/family-accounts) for how parents add their own children in your app and who gets reminders for a managed child.
+
+<a id="staff-notes"></a>
+
+## Notes and calls
 
 <Info>
-**Where to find this**: **People** → **Clients** → open the client → **PROFILE** → **Notes**
+  **Where to find this**: open a client › **Profile** › **Notes**
 </Info>
 
-Use **Notes** to keep what you know about a family in one place: injuries, goals, who to call about payments, what you talked about at the last session. Notes are staff-only. Athletes and parents never see them, and they are never sent to families in emails or messages.
+Use **Notes** to keep what your staff know about a family in one place: injuries, goals, who to call about payments, what you talked about at the last session. Notes are staff-only. Clients never see them and they're never sent to families.
 
-- Notes are plain text, up to 50,000 characters each.
-- Each note shows who wrote it and when, newest first.
+- Type in the note box (up to 50,000 characters) and click **Add note**.
+- Each note shows who wrote it and when, newest first. **Load older** shows more.
+- Calls logged from the Inbox with **Log call** show here too, and can't be edited.
 - Notes can't be edited. To correct one, delete it and add it again.
-- Staff profiles (Coaches and Admins) have no Notes tab. Notes are for clients.
 
-**Who can do what**
-
-| | Read notes | Add notes | Delete notes |
-| --- | --- | --- | --- |
+| | Read | Add notes | Delete notes |
+|---|---|---|---|
 | **Admins** | Yes | Yes | Any note |
-| **Coaches** | Yes | Yes, while **Coaches can add notes** is on | Only their own |
+| **Coaches** | Yes | Yes, while **Coaches can add notes and log calls** is on | Only their own |
 
-Admins see a **Coaches can add notes** switch at the top of the Notes tab. It is on by default. When it is off, Coaches can still read notes but can't add or delete them.
+Admins see the **Coaches can add notes and log calls** switch at the top of Notes. It's on by default. When it's off, coaches can still read notes.
 
-<Tip>
-  If Copilot is available in your organization, it can read, add and delete notes with the same rules, after you approve its card. A note it adds shows **CoachIQ Assistant for** the staff member who asked. A connected AI assistant (ChatGPT or Claude) can do the same, and its notes name the app and the staff member who allowed it. For now, notes from a connected assistant are limited to 4,096 characters.
-</Tip>
-
----
-
-## How to use profiles effectively
-
-The client profile is your command center for answering common questions:
-
-<AccordionGroup>
-  <Accordion title='"When was their last session?"'>
-    **Go to: Bookings tab**
-
-    Filter by "Past" to see completed sessions in reverse chronological order. The most recent session appears first.
-
-    Faster shortcut: Check the "All Activity" tab—sessions appear in the unified timeline with timestamps.
-  </Accordion>
-  <Accordion title='"How many credits do they have left?"'>
-    **Go to: Credits tab**
-
-    Look at the tab badges at the top:
-
-    - **Logs** tab = Complete transaction history
-    - **Master Credits** tab = Universal credits (work for any scheduler)
-    - **[Product Name]** tabs = Credits from specific packages/subscriptions
-
-    Each tab shows the current balance prominently at the top.
-
-    [Learn more about credit notation →](/people/client-profiles/client-profiles-credits)
-  </Accordion>
-  <Accordion title='"Are they still on the monthly membership?"'>
-    **Go to: Subscriptions tab**
-
-    Check the status badge:
-
-    - **Green "Active"** = Currently subscribed and billing normally
-    - **Yellow "Past Due"** = Payment failed, needs attention
-    - **Gray "Canceled"** = No longer subscribing
-
-    The summary at the top shows total active subscriptions and monthly recurring revenue from this client.
-  </Accordion>
-  <Accordion title='"What have they purchased?"'>
-    **Go to: Products tab**
-
-    See everything they've ever bought: one-time products, credit packages, subscriptions, access codes. Filter by product type to narrow results.
-
-    For dollar amounts and payment status, switch to the **Transactions** tab.
-  </Accordion>
-  <Accordion title='"Did they get my message?"'>
-    **Go to: Messages tab**
-
-    View the conversation thread. Toggle between **In-App** (messages sent through your portal/app) and **SMS** (text messages) using the tabs.
-
-    Timestamps show when messages were sent. Look for their replies to confirm they saw your message.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Quick navigation between clients
-
-When reviewing multiple client profiles, use these shortcuts to move quickly:
-
-<Steps>
-  <Step title="Use the back arrow">
-    Click the **← back arrow** in the top-left to return to the Clients list without losing your place or filters.
-  </Step>
-  <Step title="Open in new tab">
-    **Right-click** (or Cmd+Click on Mac) a client name from the Clients list to open their profile in a new browser tab. Great for comparing multiple clients side-by-side.
-  </Step>
-  <Step title="Search from anywhere">
-    Use the global search bar to jump directly to any client by typing their name, even when you're deep in another section of CoachIQ.
-  </Step>
-</Steps>
-
-<Tip>
-  **Browser bookmarks**: Bookmark frequently-accessed client profiles (your top athletes, VIP clients, etc.) for instant access. Each profile has a unique URL you can save.
-</Tip>
-
----
+The Assistant and a connected ChatGPT or Claude can read, add and delete notes with the same rules, after you approve. A note they add names the staff member who asked.
 
 ## Common questions
 
 <AccordionGroup>
-  <Accordion title="Can clients see their own profile like I can?">
-    No. Clients see a simplified version through the Athlete Portal (mobile app or web) that shows:
-
-    - Their own bookings and schedule
-    - Their credit balance
-    - Programs and content you've shared with them
-    - Their subscription status
-    - Their messages with you
-
-    They **cannot** see transaction history, all activity timeline, staff notes, or the detailed information you see in the coaching dashboard.
+  <Accordion title="Can clients see their profile like I do?">
+    No. In your app, clients see their own bookings, purchases, credits, programs and messages. They never see your notes, tags, staff access or other clients.
   </Accordion>
-  <Accordion title="Why don't I see any data in some tabs?">
-    Tabs only populate with data after activity occurs:
-
-    - **Bookings**: Empty until they book or you book them into a session
-    - **Credits**: Empty until they purchase a credit package or you manually grant credits
-    - **Products**: Empty until they make a purchase
-    - **Transactions**: Empty until they complete a payment
-    - **Subscriptions**: Empty until they sign up for recurring billing
-    - **Family**: Empty until you connect children or create a managed child
-    - **Media**: Empty until you assign programs or lessons
-
-    **All Activity** will always have at least one entry: their account creation date.
+  <Accordion title="Why is a section empty or missing?">
+    An empty section means there's nothing to show yet, for example no bookings. A missing section usually means your staff access blocks the page it belongs to.
   </Accordion>
-  <Accordion title="Can I export a single client's complete history?">
-    Not directly from the profile, but you can:
-
-    1. **Bookings**: Filter the main Calendar by this client's name, then export
-    2. **Transactions**: Use Payments → Transactions, filter by client name, export
-    3. **Full profile**: Take screenshots of each tab for records (useful for disputes or documentation)
-
-    For regular reporting, consider using the main section exports (Calendar, Transactions, etc.) filtered by client name.
+  <Accordion title="I can't find the Family section for a parent">
+    Check the client's **Role** in **Client details**. If they're set to Athlete, change it to **Parent**.
   </Accordion>
-  <Accordion title="What happens to the profile if I delete the client?">
-    When you delete a client:
-
-    - Their profile is removed from the Clients list
-    - They lose access to your Athlete Portal immediately
-    - **Historical data is preserved** in your system for record-keeping
-    - Past bookings still show in Calendar (marked with deleted client's name)
-    - Past transactions remain in payment history
-    - Messages remain in Inbox
-
-    **Important**: You cannot restore a deleted profile easily. Use an "Inactive" tag instead if they might return.
-  </Accordion>
-  <Accordion title="How do I print a client profile?">
-    **To print or save as PDF:**
-
-    1. Open the client profile
-    2. Navigate to the tab you want to print (e.g., Bookings, Transactions)
-    3. Use your browser's print function (Cmd+P on Mac, Ctrl+P on Windows)
-    4. Select "Save as PDF" as the destination
-
-    **Tip**: Print the "All Activity" tab for a comprehensive timeline record, or print specific tabs (Credits, Transactions) for detailed financial records.
+  <Accordion title="What happens to the profile if I remove the client?">
+    Their bookings, purchases and payments stay on record. If you add them again later, their history comes back with them. See [Block or remove a client](/people/block-and-remove-athletes).
   </Accordion>
 </AccordionGroup>
 
----
-
 ## Related articles
 
-<CardGroup cols={3}>
-  <Card title="People Overview" icon="users" href="/people/overview">
-    Complete guide to People section
+<CardGroup cols={2}>
+  <Card title="Add and edit clients" icon="user-plus" href="/people/adding-editing-clients">
+    Client details, custom fields and set-password emails
   </Card>
-  <Card title="Adding Clients" icon="user-plus" href="/people/adding-editing-clients">
-    Create and edit client info
+  <Card title="Family accounts" icon="people-roof" href="/athlete-portal/family-accounts">
+    How parents and managed athletes use your app
   </Card>
-  <Card title="Tags & Filters" icon="tags" href="/people/tags-filters">
-    Organize your client base
+  <Card title="Credits" icon="coins" href="/people/client-profiles/client-profiles-credits">
+    Balances and adjustments
   </Card>
-  <Card title="Manual Booking" icon="calendar-plus" href="/scheduling/manually-booking-athletes">
-    Book clients from their profile
-  </Card>
-  <Card title="Sending Messages" icon="paper-plane" href="/inbox/inbox-overview">
-    Message clients individually
-  </Card>
-  <Card title="Managing Credits" icon="hand-holding-dollar" href="/payments/credits/managing-athlete-credits">
-    Full credit management guide
+  <Card title="Bookings" icon="calendar-check" href="/people/client-profiles/client-profiles-bookings">
+    A client's sessions
   </Card>
 </CardGroup>
-
----
-
-<Check>
-  **You now understand**: How to open and navigate client profiles, what each activity tab shows, and where to find specific information about any client's relationship with your business.
-</Check>
