@@ -1,27 +1,27 @@
 ---
-title: "Change your organization and group name"
-description: "Update your business name and group name in CoachIQ Settings, and understand how name changes affect your platform URLs."
-sidebarTitle: "Organization & Group Name"
+title: "Rename Your Organization or Group"
+description: "Change your business name, your group name or their web addresses in CoachIQ Settings, and know which links change when you do."
+sidebarTitle: "Rename Organization or Group"
 icon: "building"
 ---
 
-Update your organization's display name and active group name from the Settings area. Both names appear across your platform and affect the URLs tied to your account.
+Change your organization's name, your group's name, or the web address (**URL**) of either from **Settings → Organization**. The names show across CoachIQ and on your website. The URLs are part of your admin and app addresses, so changing one breaks links you've already shared.
 
 <Info>
-**Where to find this:** **Settings** (bottom-left of your dashboard) → **Organization**
+**Where to find this:** **Settings** (bottom of the sidebar) → **Organization**. Admins only.
 </Info>
 
 <Steps>
   <Step title="Open Organization settings">
-    Click **Settings** in the bottom-left corner of your dashboard, then select **Organization** from the settings menu.
+    Click **Settings** at the bottom of the sidebar, then **Organization** in the Settings menu.
 
     You'll see two editable sections: **Organization** at the top and **Active group** below it.
   </Step>
 
   <Step title="Update your organization name">
-    Under **Organization**, click the **Name** field and type your new organization name.
+    Under **Organization**, change **Name**.
 
-    The field directly below it shows your `admin.coachiq.io/` URL slug, which updates to match your organization name.
+    The **URL** field below it is your organization's part of the `admin.coachiq.io/` address. It doesn't change when you change the name. Change it only if you also want a new address.
 
     <Frame>
       ![Settings Organization page with the Organization section (logo, currency, name, URL, domain, welcome URL) and the Active group section (name, URL, reply-to email)](/images/settings-organization-2026-11.png)
@@ -29,20 +29,20 @@ Update your organization's display name and active group name from the Settings 
   </Step>
 
   <Step title="Update your group name">
-    Scroll down to the **Active group** section. Click the **Name** field and enter your new group name.
+    Scroll down to **Active group** and change **Name**.
 
-    The field below shows your group's URL path (`admin.coachiq.io/[GroupName]/`), which reflects the updated name.
+    The **URL** below it is your group's part of the address (`admin.coachiq.io/your-organization/your-group`). Like the organization URL, it stays as it is unless you change it yourself.
 
     You can also update the **Reply-to email** field here -- this is the email address replies go to when you send messages from CoachIQ.
   </Step>
 
   <Step title="Save your changes">
-    Click **Save** at the bottom of the page to apply both updates.
+    Click **Save** at the bottom of the page. **Reset** discards changes you haven't saved.
   </Step>
 </Steps>
 
 <Warning>
-Changing your organization or group name updates the associated URLs across your platform, including the public URL for your Athlete Portal. If you've shared any links with athletes or embedded them on your website, those links will break and will need to be updated.
+Changing a **URL** changes the addresses that use it, including the address of your app. Links you've already shared with families or put on your website stop working and need updating. Changing only a **Name** keeps your addresses as they are.
 </Warning>
 
 ## How these names appear on your website
@@ -53,25 +53,25 @@ If your group name is a generic word like "Athletes", or the same as your organi
 
 <AccordionGroup>
   <Accordion title="What's the difference between Organization and Active group?">
-    **Organization** represents your top-level CoachIQ account, including your business name and global settings like currency. The logo shown here is managed in **Brand kit** (choose **Edit in brand kit**).
+    **Organization** is your whole CoachIQ account, with your business name and settings that apply everywhere, such as currency. The logo shown here is managed in the [Brand kit](/website/brand-kit) (choose **Edit in brand kit**).
 
     **Active group** is the specific group you're currently managing within your organization. You can belong to multiple groups, and each has its own name and URL slug. The Active group section shows the one you're currently operating in.
   </Accordion>
 
   <Accordion title="Will my athletes lose access if I change the name?">
-    Athlete accounts and data are not affected by a name change. However, any direct URLs you've shared (for booking, the athlete portal, etc.) that include your old group slug will no longer work. Update any shared links after making a name change.
+    No. Accounts and data aren't affected. If you change a **URL**, links you've shared that use the old address (for booking or your app) stop working, so update them afterwards.
   </Accordion>
 
-  <Accordion title="Can I change my URL slug independently from my name?">
-    No. The URL slug is generated from your organization or group name and updates automatically when you change it. If you need a specific slug, set your name to match it.
+  <Accordion title="Can I change my URL without changing my name?">
+    Yes. The **Name** and **URL** fields are separate. Change either one on its own, then click **Save**.
   </Accordion>
 </AccordionGroup>
 
 <CardGroup cols={2}>
-  <Card title="Settings: Complete Guide" href="/settings/index">
+  <Card title="Settings overview" href="/settings/index">
     Overview of all settings sections, including billing, notifications, and API keys.
   </Card>
-  <Card title="Upload Your Logo" href="/settings/general#organization">
-    Add your business logo alongside your organization name.
+  <Card title="Brand kit" href="/website/brand-kit">
+    Upload your logos and set your brand colors.
   </Card>
 </CardGroup>

@@ -1,65 +1,69 @@
 ---
 title: "Manage Your CoachIQ Billing"
-description: "Manage the card on file for your CoachIQ subscription, download invoices, and recover access after a failed payment."
+description: "See your CoachIQ plan and what is due, change the card it is charged to, download invoices, and get access back after a failed payment."
 sidebarTitle: "Billing"
 icon: "credit-card"
-keywords: ["billing", "CoachIQ subscription", "invoices", "payment method", "Stripe portal", "cancel subscription"]
+keywords: ["billing", "CoachIQ plan", "CoachIQ subscription", "invoices", "payment method", "set as default", "remove card", "total due", "add-ons", "cancel subscription"]
 ---
 
 <Info>
 
-**Where to find this**: **Settings → Payments**, which holds **Billing** (what you pay CoachIQ) and **Stripe** (the account that processes your clients’ payments).
+**Where to find this**: **Settings → Billing**, in the **Payments** group of the Settings menu. Admins only.
 
 </Info>
 
-## Billing
+**Billing** is what your business pays CoachIQ: your plan, the card it's charged to, and your invoices. It's separate from [Stripe](/payments/connecting-stripe), the account your clients pay you through.
 
-Manage the payment method on file for your CoachIQ subscription, view invoices, and download receipts.
+When you open Billing, CoachIQ first shows **See your plan, payment methods and billing history.** Click **Continue** to load the page.
 
-<Frame>
-  ![CoachIQ billing page showing card on file, invoices, and billing history](/images/billing-update.png)
+<Frame caption="Settings → Billing in a test organization with no plan or card yet. Yours shows your plan, cards and invoices.">
+  ![Billing page with Plan (Request upgrade), Payment method (Add a card) and History](/images/settings-billing-2026-11.png)
 </Frame>
 
-### Update your card on file
+## Plan
+
+**Plan** shows your CoachIQ plan and any add-ons, such as a Personalized App, with the card each one bills to.
+
+On a membership plan, **Total due** adds up the plan price and each add-on that's turned on, including any usage over what the add-on includes. It uses list prices, so a discount on your plan isn't taken off this figure; your invoice shows what you're actually charged. Add-ons that are turned off aren't listed. Where an add-on's usage hasn't been recorded for this billing period, it shows **Not available**.
+
+To change your plan, click **Request upgrade**, or contact CoachIQ support from **Help** in the sidebar to change or cancel it.
+
+## Update your card on file
 
 <Steps>
   <Step title="Open Billing">
 
-    Open **Settings → Payments → Billing** in the organization whose CoachIQ plan you want to manage. An accepted Admin can update billing; this is not restricted to the owner.
+    Open **Settings → Billing** in the organization whose plan you want to manage, and click **Continue**.
 
   </Step>
   <Step title="Add a new card">
-    Under **Payment Method**, click **+ Add a card** (or **+ Add another card** when a card is already saved). Enter the required card details and click **Add Card**. Leave this screen open until the save succeeds.
+    Under **Payment method**, click **Add a card**, enter the card details and save. The form stays open until the card is saved. If it can't be saved, your details stay in the form with the reason, so you can fix it and try again.
   </Step>
-  <Step title="Set as default">
+  <Step title="Make it the default">
 
-    Click **Set as Default** next to the new card. After setting the new card as default, remove the old card if needed. You cannot remove the only saved card. If a save, default change, or removal fails, read the displayed error and retry. Saving a card does not by itself pay an overdue invoice.
+    Click **Set as default** on the new card. The card that's the default is the one your plan is charged to.
+
+  </Step>
+  <Step title="Remove the old card">
+
+    Click the remove button on the old card and confirm. **Keep card** leaves it in place. You can't remove the only card on file; the page tells you why.
 
   </Step>
 </Steps>
 
-<Frame>
+If the card processor refuses a change, the page says so, for example **We couldn't remove that card.** or **We couldn't set that card as the default.**, followed by what to do next. Nothing changed in that case: check the card and try again, or contact support.
 
-![Empty Add Card form for the CoachIQ subscription](/images/billing-add-card-2026-09.png)
+<Note>
+Saving a card doesn't pay an overdue invoice by itself. If a payment has failed, also complete the retry; see [Restore access after a failed payment](#restore-access-after-a-failed-payment).
+</Note>
 
-</Frame>
+## Invoices
 
-### Check your replacement card
+**History** lists every invoice with its **Date**, **Status**, **Amount** and **Source**, and a **Receipt** link to view or download it.
 
-1. Confirm the new card appears in **Payment Method**.
-2. Set it as the default and confirm that the default indicator moves to it.
-3. Remove the old card only after the replacement is saved and selected.
-4. If an invoice is overdue, complete the payment retry as well. A saved card and a paid invoice are separate results.
+## Who can manage billing
 
-### View and download invoices
-
-Below your cards, **Billing History** lists every past invoice with its billing date, status, amount, and the card it was charged to. Click any invoice to view or download it as a PDF for your records.
-
-The **Subscriptions** block shows your active CoachIQ plan and any add-ons, such as a Personalized App, with the card each one bills to.
-
-<Warning>
-To change or cancel your plan, click **Contact us** next to **Need an upgrade?** in the Subscriptions block. A team member will handle it with you.
-</Warning>
+Billing is for Admins. Coaches can't see or change the organization's cards, change the card your plan is charged to, or buy messaging credits. If a coach tries, nothing is charged or changed.
 
 ## Restore access after a failed payment
 
@@ -67,7 +71,7 @@ When your organization's CoachIQ membership payment fails, staff may see a billi
 
 | Your situation | Next step |
 | --- | --- |
-| You can open Settings and want to replace a card | Use **Billing → Payment Method**. |
+| You can open Settings and want to replace a card | Use **Settings → Billing → Payment method**. |
 | A failed-payment screen blocks the admin platform | An Admin must complete the payment retry there. |
 | You are a Coach | Ask an organization Admin to resolve membership billing. |
 | A parent cannot pay for training | Check that client's purchase and your connected Stripe account; this is separate from your CoachIQ plan. |
@@ -84,7 +88,7 @@ This concerns your business's CoachIQ subscription. It is separate from a parent
 
 ## Your connected Stripe account
 
-Use **Settings → Stripe** to view connected-account identity, payment and payout health, and which Stripe products are also configured in CoachIQ. Product management stays in **Payments → Products**. The former Products/Invoices tabs on Stripe settings have been replaced by the focused integration view.
+**Settings → Stripe** is the account your clients pay you through: whether it's connected, its payment and payout health, and which of your Stripe products are also set up in CoachIQ. If it isn't connected yet, click **Connect Stripe** and use an existing Stripe account or create one. Your products are managed in **Payments → Products**.
 
 See [Connect and manage Stripe](/payments/connecting-stripe) and [accepted payment methods](/settings/payment-methods).
 
@@ -102,7 +106,7 @@ Not currently. CoachIQ subscriptions support credit and debit cards only.
 
 <Accordion title="Where do I manage the Stripe connection?">
 
-Open **Settings → Stripe**, or choose Stripe in **Settings → Connections**. An Admin can connect the account if it is not connected.
+Open **Settings → Stripe**, or choose Stripe in **Settings → Connections**. Only an Admin can connect or disconnect it.
 
 </Accordion>
 </AccordionGroup>

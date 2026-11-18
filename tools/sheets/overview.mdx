@@ -8,7 +8,7 @@ icon: "table"
 Sheets gives you a flexible grid inside CoachIQ. Start with your own rows and columns, or connect a sheet to CoachIQ records and add the extra information your business needs beside them.
 
 <Info>
-  Open **Tools → Sheets**. Sheets is available to organization **Admins**. Coaches do not currently have access. If an Admin cannot see it, check staff access settings with your organization Admin or contact CoachIQ Support; availability can also be controlled for the organization.
+  Open **Tools → Sheets**. Sheets is for Admins: they create sheets and see all of them. A Coach sees only the sheets an Admin has [shared with them](#share-a-sheet-with-a-coach), and sees **Nothing is shared with you yet.** until then.
 </Info>
 
 ## Why we built Sheets
@@ -36,8 +36,48 @@ For example, connect **People** and add a **Follow-up status** column and a **Co
 - Read numeric sums and other column counts in the Totals row.
 - Export the current view or selected rows.
 - Open a linked record in CoachIQ and review eligible message recipients from selected rows.
+- Share a sheet with a coach as **Can view** or **Can edit**.
 
-The sheet library helps you find saved sheets by name and sort them. On desktop, its headings identify **Name**, **Source**, **Rows**, and **Last updated**. A live-data refresh can change Last updated; it isn't only the last time someone typed in a cell.
+## Your sheets
+
+**Tools → Sheets** lists your sheets with their **Source** (**Manual**, or the CoachIQ data they're connected to) and when each was **Updated**. Under each name you see how many rows and columns it has. A live-data refresh can change **Updated**, so it isn't only the last time someone typed in a cell.
+
+<Frame caption="The Sheets list.">
+  ![Sheets list with Search sheets, the All sources and Recent menus, the Create button and one sheet](/images/sheets-list-2026-11.png)
+</Frame>
+
+- **Search sheets** finds a sheet by name.
+- **All sources** shows only sheets with one source, such as **Manual**.
+- **Recent** sorts the list by most recently updated; switch it to **Name** to sort A to Z.
+- **Create** starts a new sheet. See [Create and edit a sheet](/tools/sheets/create-and-edit).
+
+Open a sheet's **⋯** menu on its row to **Open**, **Rename**, **Duplicate** or **Delete** it without loading the whole sheet, so even very large sheets are quick to manage. If someone changed the sheet while you had the window open, CoachIQ tells you instead of overwriting their change.
+
+## Share a sheet with a coach
+
+Admins can share one sheet at a time with chosen staff.
+
+<Steps>
+  <Step title="Open Share">
+    Open the sheet and click **Share** at the top.
+  </Step>
+  <Step title="Add staff">
+    Under **Add staff**, search by name or pick from the list. Set **Access** to **Can view** or **Can edit**, then click **Add** next to each person.
+  </Step>
+  <Step title="Check who has access">
+    **People with access** lists everyone the sheet is shared with. **Admins** always have access. Click **Done**.
+  </Step>
+</Steps>
+
+<Frame caption="The Share sheet window.">
+  ![Share sheet window with Add staff, the Access menu set to Can view, three staff with Add buttons, and Admins under People with access](/images/sheets-share-2026-11.png)
+</Frame>
+
+The coach then finds the sheet in their own Sheets list. With **Can view** they can read it but not add or change rows; with **Can edit** they can also add and change rows. Coaches don't get the **Share** button, so they can't share it further.
+
+If a coach is limited to clients with certain access tags, they see only the rows for their own clients. The Share window shows how many rows that coach will see and which tags give them access, for example **Coach · sees 21 rows (Pitching)**. See [Staff access](/people/staff-access).
+
+If you change a coach's role, sheets shared with them as a coach are no longer shared.
 
 ## Start with one useful sheet
 
@@ -63,7 +103,7 @@ The current Sheets release does not include spreadsheet formulas, CSV import, au
 
 <AccordionGroup>
   <Accordion title="Does everyone on my staff get Sheets?">
-    Sheets currently requires an organization Admin role. A Coach role does not have access. Staff restrictions and organization availability can also affect whether it appears.
+    Admins see every sheet. Coaches see only the sheets an Admin shares with them. If an Admin has blocked **Sheets** for a coach in [Staff access](/people/staff-access), they don't see it at all.
   </Accordion>
   <Accordion title="Can I edit a client's name in a connected sheet?">
     Live values are read-only in Sheets. Use the row's Open in CoachIQ action and edit the source record. Your custom columns remain editable in the sheet.
