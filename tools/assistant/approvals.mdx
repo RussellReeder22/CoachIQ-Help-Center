@@ -1,0 +1,72 @@
+---
+title: "Assistant Approvals, Undo and Limits"
+description: "How to read an Assistant approval card, what happens when you approve or decline, how to undo, and the limits that keep changes safe."
+sidebarTitle: "Approvals, undo and limits"
+icon: "circle-check"
+keywords: ["assistant", "copilot", "approval card", "approve", "decline", "was", "now", "undo", "ask again", "partly saved", "not done", "expired", "limits"]
+---
+
+Every change the Assistant makes goes through a card. It reads only while it answers; it can save only after you approve a card, and only the change that card shows.
+
+## Read the card
+
+A proposed change appears as a card marked **Needs your approval**.
+
+- **The headline says what changes**, for example "Update 4-Lesson Pack: price and description."
+- **Changed fields come first**, each with its current value (**Was**) and new value (**Now**). Everything that stays the same is folded under **View unchanged details**, which shows how many items are inside.
+- **A new record** (a new product, form or page) is shown as one list of its values, all new.
+- **Cards name every record involved**: the client and the pack, the form and the product, the page and the section. A card that removes something for good says "This cannot be undone."
+- **Cards tell you side effects**: a booking from chat takes no payment and uses no credits; a move to a time with a different location or coaches says so; unlinking a product from a program says who loses access; a cancel says how many credits really go back.
+
+If the card doesn't match what you asked for, don't approve it. Decline it, or reply with the correction ("No, the 10 Lesson Pack, not the 5"), and the Assistant replaces the card.
+
+## Approve or decline
+
+<Steps>
+  <Step title="Approve">
+    Choose **Approve** only if the card matches your request. The card becomes **Done** and says what was saved. Some Done cards have **Open**, to go to the record, or **Undo**.
+  </Step>
+  <Step title="Or decline">
+    Choose **Decline**, or type "never mind" or "leave it as it is". The card closes as "Declined, nothing was changed."
+  </Step>
+  <Step title="Check the record">
+    Open the record in CoachIQ to confirm the change, especially before asking for a second change that builds on the first.
+  </Step>
+</Steps>
+
+## When a change doesn't save
+
+| The card says | What it means |
+| --- | --- |
+| **Not done** | Nothing was saved. The card gives the reason, for example the session date was missing a year, or the change was already in place. |
+| **Partly saved** | Some changes saved and one didn't. The card names the one that didn't and why. |
+| **Nothing was changed** with **Ask again** | The card waited more than 15 minutes, or the record changed after the card was made (someone edited the form, or the client's credit balance moved). **Ask again** builds a fresh card from the current record. It never approves anything by itself. |
+| Couldn't confirm | The save may or may not have gone through. Open the record and check before asking again. |
+
+The Assistant never retries a change on its own. If a create couldn't be confirmed and you ask again, it checks first and tells you if the record already exists, so you don't get two.
+
+## Undo
+
+- **A booking made from chat:** the Done card has **Undo**. It opens a cancel card for that booking, which you approve like any other.
+- **A website design change:** the Done card has **Undo**, which offers a card that sets that one setting back.
+- **Anything else:** say "Undo that" or ask for the opposite change ("Put the price back to $160"). You'll get a new card to approve.
+- **Removing a lesson slide or item** can't be undone. The card says so.
+
+Declining or cancelling a card that's waiting never undoes something already saved.
+
+## Limits that keep changes safe
+
+- **One record per card.** Bulk requests ("cancel every booking on Thanksgiving", "delete all my forms") get a list so you can pick, one at a time. Tagging everyone who bought a product is the exception: up to 100 people on one card, all named.
+- **Two changes in one message** are done one after the other. The Assistant names both and says which one is still to do.
+- **No money moves.** No refunds, no charges. A booking from chat is free unless you charge for it elsewhere.
+- **No group sends.** Group messages are drafted for you to send from the Inbox.
+- **Automations are saved off.** You turn them on.
+- **Your access applies.** A coach only gets cards for what their [staff access](/people/staff-access) allows. A coach limited to certain clients only reaches those clients.
+- **Some writes need no card.** Adding a task to your own Tasks list happens straight away, because it changes nothing in your account and messages no one.
+- **Request limits.** If you hit one, **Try again** counts down until you can ask again. A daily limit resets at midnight UTC.
+
+## Related
+
+- [The Assistant](/tools/assistant/overview)
+- [What the Assistant can do](/tools/assistant/what-it-can-do)
+- [Approvals and activity for ChatGPT and Claude](/settings/ai-approvals-and-activity)

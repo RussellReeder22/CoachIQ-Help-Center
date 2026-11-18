@@ -1,251 +1,119 @@
 ---
-title: "Collecting Payments & Bookings"
-description: "Add products and schedulers to your forms so athletes can register, pay, and book — all in one seamless flow."
-sidebarTitle: "Payments & Bookings"
+title: "Guests, Payments and Bookings"
+description: "Choose who has to log in to fill in a form, take a payment for a product, or book a session as part of the form."
+sidebarTitle: "Guests, Payments & Bookings"
 icon: "credit-card"
-keywords: ["form payment", "collect payment", "registration fee", "form booking", "book from form", "payment on form", "checkout form"]
+keywords: ["form payment", "collect payment", "registration fee", "form booking", "book from form", "guest form", "log in to submit", "connections", "require form at checkout", "products page", "sessions page"]
 ---
 
-Forms become powerful when you connect them to payments and scheduling. Instead of collecting info, then sending a payment link, then asking them to book — do it all in one step.
+A form's **Connections** tab decides who fills it in and whether it takes a payment or books a session. Each choice adds a page to the form after your questions.
 
 <Info>
-  **Where to find connections**: Open any form in the builder → click **Connections** in the top bar
+  **Where to find this**: open a form in **Tools → Forms**, click **Form settings** at the top of the right panel, then **Connections**
 </Info>
 
-## How connections work
+<Frame>
+  ![The Connections tab with Who fills it in, Payment and Booking](/images/form-connections-2026-11.png)
+</Frame>
 
-When you add a Product, Scheduler, or Login/Signup to a form, each becomes a separate page in the submission flow:
+## Who fills it in
 
-```
-Form Fields → Login/Signup → Payment → Booking → Complete
-```
+Every form starts with **Guest or log in**: visitors enter their details before your questions. **Email** is always asked for, because the email identifies each response. Click **Guest or log in** at the top of the outline to choose whether to also ask for **First name**, **Last name** and **Phone**, and which of them are required.
 
-The athlete fills out your questions first, then proceeds through each connected page before finishing.
+**Allow guests to submit without logging in** decides what happens next:
+
+| Setting | What visitors do |
+| --- | --- |
+| **On** | Fill in their details and submit, without an account |
+| **Off** | Log in or sign up first. Use this for anything you want on a client's profile for sure: waivers, registrations, onboarding |
+
+When someone enters an email that already has an account with you, they're asked to sign in part-way through. That's expected; see [What returning visitors see](/tools/forms/returning-visitor-sign-in).
+
+## Take a payment
+
+Use this for camp fees, registration fees and trial sessions.
+
+<Steps>
+  <Step title="Turn on Take a payment">
+    In **Connections**, switch on **Take a payment**. A **Products** page is added after the questions, and **Guest or log in** shows **Always on**, because the payment adds the person to your clients.
+  </Step>
+  <Step title="Choose the products">
+    Click **2 · Products** above the form, then **Add products**. Search or filter by type, tick the products families can pick from, and click **Add products** (the button shows how many you picked). Only products you've already made in [Payments → Products](/payments/product-overview) are listed.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The product's real name and price show on the page straight away.
+  </Step>
+</Steps>
+
+On the live form, families answer your questions, pick a product, then pay. **Only show connected purchases** (on by default) means the form's Responses show only purchases made through this form.
+
+## Book a session
+
+Use this for evaluations, trial sessions and first lessons. Switch on **Book a session** in **Connections**. A **Sessions** page is added after the questions, where you pick the scheduler families book from. Only schedulers you've already made in [Schedulers](/scheduling/creating-your-first-scheduler) are listed.
+
+On the live form, families answer your questions, then choose a time.
 
 <Note>
-  You control which connections to add. A simple lead form might have none. A camp registration might have all three.
+  **A form takes a payment or books a session, not both.** You can't turn both on; the builder explains why if you try. To charge for a session, set the price on the scheduler itself (see [Payment options](/scheduling/setting-up-payment-options)) and share the scheduler's link. Older forms that were connected to both still open and save; their session page is marked as not shown to visitors.
 </Note>
 
 ## Require a form when someone buys a product
 
-To start registration from a product purchase, open **Payments → Products**, edit the product, and choose **Advanced → Add a form**. Select your form and save.
+You can also start from the product: open it in **Payments → Products**, go to **Advanced → Add a form**, pick the form and save. See [Attach a registration form to a product](/payments/product-builder#attach-a-registration-form-to-a-product).
 
-The buyer completes registration, reviews their details, and then purchases. A returning parent or athlete with completed registration on file for that product skips the form on a repeat purchase and sees a short note, for example: You already completed "Intake form". Any waiver is still required. The form is asked for each athlete: a parent buying or booking for a second child fills it in for that child, and each child's answers are saved under that child. Families who completed a form under the parent's account before this worked may be asked once more for their child. The product's recipient setting still controls whether the purchase and credits go to the buyer or a selected managed athlete.
+- The buyer fills in the form, reviews their details, then pays.
+- A parent or athlete who already completed the form for that product skips it on a repeat purchase and sees a note, for example: You already completed "Intake form". Any waiver is still required.
+- The form is asked for each athlete. A parent buying for a second child fills it in for that child, and each child's answers are saved under that child.
+- While a product on sale needs the form, the form can't be archived or deleted. The message names the product.
 
-See [Attach a registration form to a product](/payments/product-builder#attach-a-registration-form-to-a-product). Use the steps below when you want to start from the form instead.
+## When the response is saved
 
-## Adding a product (collect payment)
+For a booking that needs registration, answers are held while payment goes through. A declined or abandoned payment doesn't create a response. After a successful payment the booking and its response are saved together. A booking covered by credits or a membership saves the response when the booking is confirmed.
 
-Use this when you want to collect a fee during form submission — registration fees, deposits, camp payments, or trial session charges.
+If a payment is declined, the family can fix their card and try the same checkout again. Check whether the payment or booking went through before asking them to start over.
 
-<Steps>
-  <Step title="Open your form">
-    Go to **Tools → Forms** and click on the form you want to edit.
-  </Step>
-  <Step title="Click Connections">
-    In the top bar, click **Connections** to open the connections menu.
-  </Step>
-  <Step title="Select a product">
-    Choose the product you want to attach. This must be a product you've already created in [Payments → Products](/payments/product-overview).
+## Where the payment and booking show up
 
-    The product name, price, and description will display to the athlete during checkout.
-  </Step>
-  <Step title="Save your form">
-    Click **Update Form** to save. The payment page is now part of your form flow.
-  </Step>
-</Steps>
+- **Payments**: the purchase is in **Payments → Transactions** and on the client's profile.
+- **Bookings**: the session is on your **Calendar** and in the client's bookings. In the session's details, the participant's **Actions** menu has **View form response**.
+- **Responses**: every submission is in the form's **Responses**. A response on its own doesn't prove a payment or booking; check the purchase or the roster before confirming a spot to a family. See [Responses and automations](/tools/forms/responses-and-automations#check-the-connected-purchase-or-booking).
 
-<Frame>
-  ![Connected Products Forms](/images/connected-products-forms.png)
-</Frame>
+## Common setups
 
-### What the athlete sees
+| Form | Allow guests | Payment or booking |
+| --- | --- | --- |
+| Website lead form | On | Neither |
+| Waiver | Off | Neither |
+| New athlete onboarding | Off | **Book a session** (evaluation) |
+| Camp registration | Off (always on with a payment) | **Take a payment** (camp product) |
 
-After completing your form fields:
-
-1. They're taken to a payment page
-2. They see the product name, description, and price
-3. They enter payment details
-4. After payment, they continue to the next step (or completion)
-
-<Tip>
-  **Create a dedicated product for each form use case.** Instead of a generic "Registration Fee", create "Summer Camp 2025 Registration" — clearer for athletes and easier for you to track.
-</Tip>
-
-<Frame>
-  ![Form Payment Athlete View](/images/form-payment-athlete-view.png)
-</Frame>
-
-## Adding a scheduler (book a session)
-
-Use this when you want athletes to book a session as part of the form flow — common for evaluation bookings, trial sessions, or onboarding.
-
-<Steps>
-  <Step title="Open your form">
-    Go to **Tools → Forms** and click on the form you want to edit.
-  </Step>
-  <Step title="Click Connections">
-    In the top bar, click **Connections** to open the connections menu.
-  </Step>
-  <Step title="Select a scheduler">
-    Choose the scheduler you want to embed. This must be a scheduler you've already created in [Schedule → Schedulers](/scheduling/creating-your-first-scheduler).
-  </Step>
-  <Step title="Save your form">
-    Click **Update Form** to save. The booking calendar is now part of your form flow.
-  </Step>
-</Steps>
-
-### What the athlete sees
-
-After completing previous steps:
-
-1. They see an embedded calendar with your available times
-2. They select a date and time
-3. After booking, they continue to completion
-
-## Requiring login/signup
-
-Use this when you want form submissions tied to athlete profiles in your [People list](/people/overview).
-
-<Steps>
-  <Step title="Open Connections">
-    In your form builder, click **Connections** in the top bar.
-  </Step>
-  <Step title="Enable Login/Signup">
-    Toggle on the login/signup requirement.
-  </Step>
-  <Step title="Save your form">
-    Click **Update Form** to save.
-  </Step>
-</Steps>
-
-### What this enables
-
-| With Login/Signup OFF                   | With Login/Signup ON                   |
-| --------------------------------------- | -------------------------------------- |
-| Anyone can submit anonymously           | Athlete must create account or log in  |
-| Data captured but not linked            | Data syncs to their People profile     |
-| Can't see submission on athlete profile | Form appears in their activity history |
-| No identity verification                | You know exactly who submitted         |
-
-<Note>
-  **For waivers, always require login.** You want the signed waiver attached to a specific athlete's profile — not floating anonymously in your responses.
-</Note>
-
-## Common connection combinations
-
-### Lead capture form
-
-**Connections:** None
-
-Just collect info. No payment, no booking, no account required. Keep the barrier low for first contact.
-
-### Trial session registration
-
-**Connections:** Login/Signup + Product (trial fee) + Scheduler
-
-Athlete creates account → pays trial fee → books their session. You get a qualified lead with payment commitment and a booking on your calendar.
-
-### Camp registration
-
-**Connections:** Login/Signup + Product (camp fee)
-
-Athlete creates account → pays camp fee. No scheduling needed since camp dates are fixed. Their registration is tied to their profile.
-
-### New athlete onboarding
-
-**Connections:** Login/Signup + Scheduler
-
-Athlete creates account → books first evaluation. No payment at this stage — you'll charge after the eval or via a separate product.
-
-### Waiver collection
-
-**Connections:** Login/Signup only
-
-Athlete creates account → completes waiver. The signed waiver attaches to their profile. No payment or booking needed.
-
-## Viewing connected transactions and bookings
-
-### Payments
-
-When an athlete pays via a form:
-
-- Transaction appears in **Payments → Transactions**
-- Shows the product, amount, athlete, and timestamp
-- Links to the form submission
-
-### Bookings
-
-When an athlete books via a form:
-
-- Session appears on your **Calendar**
-- Shows in the athlete's booking history
-- Links to the form submission
-
-### Form responses
-
-All submissions (with or without connections) appear in your form's **Responses** tab.
-
-Use the response's activity to confirm a completed purchase or booking, its date, and the session details. A form response alone does not prove payment or a reservation. See [Check the connected purchase or booking](/tools/forms/responses-and-automations#check-the-connected-purchase-or-booking).
-
-## Tips for connected forms
+## Tips
 
 <AccordionGroup>
-  <Accordion title="Create products before building the form">
-    You can only connect existing products. Build your registration fee or camp product first in [Payments → Products](/payments/product-overview), then add it to your form.
+  <Accordion title="Make the product or scheduler first">
+    The pickers only list products and schedulers that already exist.
   </Accordion>
-  <Accordion title="Create schedulers before building the form">
-    Same logic — you can only connect existing schedulers. Set up your availability and scheduler first.
+  <Accordion title="Go through it yourself">
+    Open the form's link and go through every page, including the payment or booking, before you share it.
   </Accordion>
-  <Accordion title="Test the full flow yourself">
-    Before sharing, submit your own form. Go through every page — fields, login, payment (use test mode if available), and booking. Experience what your athletes will experience.
-  </Accordion>
-  <Accordion title="Keep form fields minimal when adding connections">
-    Each connection adds a page. If your form already has 15 fields plus payment plus booking, that's a lot of steps. Consider what's truly essential.
-  </Accordion>
-  <Accordion title="Use login for any form you want tracked">
-    Anonymous submissions work, but you lose the profile connection. For anything beyond casual lead capture, require login.
+  <Accordion title="Keep the questions short">
+    The payment or booking page adds a step. Ask only what you need before it.
   </Accordion>
 </AccordionGroup>
-
-## What you can't do
-
-- **Make payment optional** — If a product is connected, payment is required to submit
-- **Add multiple products** — One product per form
-- **Add multiple schedulers** — One scheduler per form
-- **Skip connection pages** — Athletes must complete each connected step in order
-
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="Share Your Forms" icon="share" href="/tools/forms/sharing-forms">
-    Get your link, embed on your website, and configure what happens after submission
-  </Card>
-  <Card title="Responses & Automations" icon="bolt" href="/tools/forms/responses-and-automations">
-    View submissions, export data, and trigger automated actions
-  </Card>
-</CardGroup>
 
 ## Related articles
 
 <CardGroup cols={2}>
-  <Card title="Product Overview" icon="credit-card" href="/payments/product-overview">
-    Learn about the products you can connect to forms for payment
+  <Card title="Build a form" icon="hammer" href="/tools/forms/creating-forms">
+    Questions, design and settings
   </Card>
-  <Card title="Product Builder" icon="credit-card" href="/payments/product-builder">
-    Create a product to attach to your registration or camp form
+  <Card title="Share a form" icon="share" href="/tools/forms/sharing-forms">
+    The ready check, the link, sending it and embedding it
   </Card>
-  <Card title="Creating Your First Scheduler" icon="calendar" href="/scheduling/creating-your-first-scheduler">
-    Set up a scheduler to embed in your form booking flow
+  <Card title="Product builder" icon="box" href="/payments/product-builder">
+    Make the product a form charges for
   </Card>
-  <Card title="People Overview" icon="users" href="/people/overview">
-    See how login/signup connects form data to athlete profiles
+  <Card title="Create your first scheduler" icon="calendar" href="/scheduling/creating-your-first-scheduler">
+    Make the scheduler a form books from
   </Card>
-
 </CardGroup>
-
-## When required booking answers become a response
-
-For a session booking that requires registration, answers are held during payment review. A declined or abandoned payment does not create a submitted response. After a successful payment, the confirmed booking and its registration response are saved. For a booking covered by credits or a membership, registration completes when the booking is confirmed.
-
-If a payment is declined, correct the payment method and retry the same checkout. Review whether payment or booking completed before starting over.

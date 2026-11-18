@@ -63,7 +63,7 @@ If you want supported changes, select **I allow this assistant to make supported
   Verify the access actually granted in the next step. A connected badge does not prove write access, and approval does not make every CoachIQ feature available through ChatGPT. Read-only access is enough for the business-brief setup below.
 </Info>
 
-Every change the assistant makes is recorded in [Settings → Data → Logs](/settings/data#changes-from-connected-ai-assistants) with an **Outside app** label, and requests CoachIQ refused are marked **Refused**.
+ChatGPT shows you each change before it runs, and nothing is saved until you approve it. Everything it changes is listed in **Settings → General → Connections → App activity**, where you can review or undo a session's work. See [Approvals, activity and limits](/settings/ai-approvals-and-activity) and [What your connected assistant can do](/settings/ai-what-it-can-do).
 
 ## 2. Confirm the connection
 
@@ -129,8 +129,13 @@ Use the same Project for ongoing work. The Help Center explains features; the MC
   <Accordion title="The prompt says CoachIQ is not available">
     Finish adding and installing the connection, then select it in the current chat. If you are using Work, try invoking the installed CoachIQ plugin with @. The prompt cannot substitute for sign-in or tool selection.
   </Accordion>
-  <Accordion title="I approved changes, but ChatGPT still says read-only">
-    Ask it to inspect the live connection's access rather than assume permissions from the approval screen. Reauthorize and check the changes option. If an older connection has no write choice, remove and add it again. If verification still fails, contact CoachIQ Support with the platform, group, redacted access screenshot, and the verification result. Continue with reads and drafts while it is investigated.
+  <Accordion title="ChatGPT asks me to reconnect, or Connect CoachIQ shows an error">
+    ChatGPT asks you to approve CoachIQ again about once a month. Choose **Reconnect** when it asks, sign in to CoachIQ and approve, and the connection keeps working. If CoachIQ can't accept the request, it opens a page with the steps to reconnect. If reconnecting still fails, remove CoachIQ from ChatGPT's app settings and add it again with the steps above, then start a new chat.
+  </Accordion>
+  <Accordion title="I approved changes, but ChatGPT still says read-only or has no change tool">
+    First check that the connection really allows changes: ask ChatGPT to check its live access, or look for **Can make changes** next to ChatGPT under **Connected apps** in **Settings → General → Connections**. If it's read only, reconnect and tick the changes option. If the approval page shows no changes option, remove CoachIQ from ChatGPT and add it again.
+
+    If the connection allows changes but ChatGPT says it has no tool to make them, it's using the tool list it saved while the connection was read only. Refresh the CoachIQ app in ChatGPT's app settings, or disconnect and connect it again, then **start a new chat**. An open chat keeps the tools it started with. In a ChatGPT Business or Enterprise workspace, an admin may need to refresh the app and allow its changes.
   </Accordion>
   <Accordion title="A browser error appears at the MCP URL">
     Enter the full address in the MCP connection form, not as an ordinary webpage or a link for ChatGPT to browse. CoachIQ uses the authorization flow to grant access; opening the address directly is not a connection test.
@@ -146,16 +151,17 @@ Use the same Project for ongoing work. The Help Center explains features; the MC
   </Accordion>
 </AccordionGroup>
 
-To stop using the connection, disconnect or remove CoachIQ from ChatGPT's app/plugin management. Previously saved files and conversations need to be managed separately.
+To stop using the connection, choose **Disconnect** next to ChatGPT under **Connected apps** in **Settings → General → Connections**, or remove CoachIQ from ChatGPT's app settings. [More about disconnecting](/settings/ai-approvals-and-activity#see-and-disconnect-your-connected-apps). Files and conversations you saved in ChatGPT stay there until you delete them.
 
 ## Put the connection to work
 
-Use [CoachIQ AI workflows](/settings/ai-workflows) for prompts to check availability, make a reviewed booking change, organize media, and verify what the assistant changed. Keep using the Project setup above to supply your business context.
+Use [AI workflows](/settings/ai-workflows) for prompts to check availability, change a booking, message a group, update website text and organize media, each with a step to check the result. [What your connected assistant can do](/settings/ai-what-it-can-do) lists every supported change.
 
 ## Related guides
 
 - [Use CoachIQ with AI](/getting-started/use-coachiq-with-ai)
-
+- [What your connected assistant can do](/settings/ai-what-it-can-do)
+- [Approvals, activity and limits](/settings/ai-approvals-and-activity)
 - [Manage your connections](/settings/connections)
 - [Connect CoachIQ to Claude](/settings/connect-claude)
 - [Messaging credits](/inbox/sms-credits)
