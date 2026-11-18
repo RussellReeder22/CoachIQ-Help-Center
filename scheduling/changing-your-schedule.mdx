@@ -11,7 +11,7 @@ Before changing a schedule, identify the scope: **new schedulers**, **a shared s
 | --- | --- | --- |
 | [Scheduler defaults](/scheduling/setup-defaults) | Starting settings for schedulers created afterward | Existing schedulers keep their settings |
 | [Shared availability](/scheduling/how-availability-works) | Available times on schedulers using that template | Existing bookings do not move or cancel automatically |
-| [Blackout dates](/scheduling/setting-black-out-dates) | New availability during the blocked interval | Handle any bookings already on those dates |
+| [Block time](/scheduling/block-time) | New bookings during the blocked time | Handle any bookings already on those dates |
 | [Seasonal start/end dates](/scheduling/seasonal-schedule-transition) | When each availability block offers times | Check both sides of the transition and existing bookings |
 | Scheduler pricing, duration choices, or booking rules | What new bookings can select or must satisfy | Do not assume existing bookings were repriced, moved, or refunded |
 | Scheduler's default location | The service's default venue | Review already-booked dates and any per-date venue overrides |
@@ -31,7 +31,7 @@ Before changing a schedule, identify the scope: **new schedulers**, **a shared s
 4. Move or cancel the affected sessions and review credit/payment handling.
 5. Choose the notification channels and verify the calendar afterward.
 
-The blackout closes future booking options. It does not do the rest of the steps for you.
+Blocking time closes future booking options. It does not do the rest of the steps for you.
 
 ## Example: change one class venue
 

@@ -5,7 +5,7 @@ description: "Set capacity, booking limits, notice windows, and athlete cancella
 icon: "sliders"
 ---
 
-Open a scheduler under **Scheduling → Schedulers → Advanced settings**. These rules apply to that scheduler. [Defaults](/scheduling/setup-defaults) supply starting values for new schedulers; changing defaults does not update existing ones.
+Open a scheduler from **Scheduling → Schedulers** and go to **Advanced settings**. Click **Save** when you're done. These rules apply to that scheduler. [Defaults](/scheduling/setup-defaults) supply starting values for new schedulers; changing defaults does not update existing ones.
 
 <span id="setting-2-booking-limits" />
 
@@ -21,13 +21,19 @@ Open a scheduler under **Scheduling → Schedulers → Advanced settings**. Thes
 | **Max bookings per athlete per day** | One athlete across this scheduler's times | Each athlete can book twice daily |
 | **Max bookings per athlete per week** | One athlete on this scheduler in its weekly limit period | Each athlete can book five times weekly |
 
-The weekly scheduler limits use a rolling seven-day period. They differ from product billing-cycle credit restrictions. A booking must satisfy each applicable limit.
+The weekly limits count the calendar week, Sunday to Saturday, that holds the session date. They are not a rolling seven days, and they're separate from a product's credit rules. A booking must satisfy each applicable limit.
 
 With a total daily limit of 10 and an athlete limit of 2, one athlete reaches their limit after two bookings even if the scheduler has capacity left. The tenth total booking uses the scheduler-wide allowance for that day.
 
 Leaving **Max athletes per time slot** unchecked allows unlimited capacity. Preview then shows the number booked, rather than a one-athlete cap.
 
-A group slot stays open until its capacity or another rule stops booking. Staff actions can show override confirmations; read the specific warning rather than assuming every limit can be bypassed.
+A group slot stays open until its capacity or another rule stops booking. When staff book past a limit they're asked **Book anyway?** first; see [Book past a scheduler's rules](/scheduling/manually-booking-athletes#book-past-a-schedulers-rules). Automations that create bookings, including repeating ones, follow the daily and weekly limits and book nothing if any date would go over.
+
+After you turn on or change **Max athletes per time slot**, the preview says "Save to update the preview." until you save.
+
+### Waitlist for full times
+
+Under **Max athletes per time slot**, **Allow a waitlist** lets families join a waitlist when a time is full. When a spot opens, everyone on the waitlist is told, and the first to book gets it; nobody's place is held. The switch shows only when **Max athletes per time slot** is set.
 
 ## Timing and booking windows
 
@@ -36,8 +42,9 @@ A group slot stays open until its capacity or another rule stops booking. Staff 
 | **Duration / Session lengths** | How long an occurrence lasts or which lengths families can choose |
 | **New sessions can start** | Spacing between offered starts |
 | **Buffer before / after** | Time around a session used for preparation, cleanup, or travel |
-| **Minimum notice** | How close to the start time an athlete can book |
-| **Book up to / future booking window** | How far ahead self-booking is offered |
+| **Minimum Notice** (hours) | How close to the start time an athlete can book |
+| **Future Limit** (days) | How far ahead self-booking is offered |
+| **Minimum Cancellation Notice** (hours) | How close to the start an athlete can still cancel |
 
 Shortening the start interval does not shorten sessions or automatically allow overlap. See [Start times and overlap](/scheduling/overlapping-slots). Preview the result before extending hours or reducing buffers.
 
@@ -61,11 +68,15 @@ The credit refund setting does not create a tiered refund policy or issue a card
 
 <span id="setting-7-booking-rules-athlete-permissions" />
 
+## Staff-only schedulers
+
+Tick **Don't allow clients to self-book** under **Booking Rules** when only staff should book this scheduler. Families can't pick a time or check out, but staff can still book clients into it, and existing bookings stay. This is different from turning the scheduler off or archiving it; see [Organize schedulers](/scheduling/organizing-schedulers).
+
 ## Rescheduling permissions
 
 **Allow athletes to reschedule** lets athletes move an eligible booking to another available time. **Block rescheduling within cancellation window** separately prevents moves inside the cancellation notice window.
 
-A reschedule does not automatically collect a price difference. A different session length must satisfy the [length-pricing rules](/scheduling/pricing-by-session-length#existing-bookings-and-rescheduling), and credit-paid sessions remain subject to applicable credit restrictions.
+A reschedule doesn't collect a price difference. If a family tries to move to a session length that's priced differently, they see "That session length is priced differently. Cancel this booking and book the new length instead." A different session length must satisfy the [length-pricing rules](/scheduling/pricing-by-session-length#existing-bookings-and-rescheduling), and credit-paid sessions remain subject to applicable credit restrictions.
 
 ## Repeat bookings and participant visibility
 

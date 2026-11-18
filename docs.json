@@ -187,22 +187,22 @@
               "scheduling/overview",
               "scheduling/creating-your-first-scheduler",
               {
-                "group": "Availability & Setup",
+                "group": "Set Up",
                 "icon": "calendar-week",
                 "pages": [
-                  "scheduling/how-availability-works",
-                  "scheduling/create-your-availability",
-                  "scheduling/setting-black-out-dates",
-                  "scheduling/seasonal-schedule-transition",
-                  "scheduling/setup-coaches",
-                  "scheduling/managing-availability-for-multiple-coaches",
                   "scheduling/setup-locations",
                   "scheduling/resources",
-                  "scheduling/setup-defaults"
+                  "scheduling/setup-coaches",
+                  "scheduling/how-availability-works",
+                  "scheduling/create-your-availability",
+                  "scheduling/block-time",
+                  "scheduling/seasonal-schedule-transition",
+                  "scheduling/setup-defaults",
+                  "scheduling/shared-calendar-across-groups"
                 ]
               },
               {
-                "group": "Pricing & Booking Rules",
+                "group": "Schedulers",
                 "icon": "sliders",
                 "pages": [
                   "scheduling/setting-up-payment-options",
@@ -210,34 +210,33 @@
                   "scheduling/credits-and-schedulers",
                   "scheduling/scheduler-settings-limits-and-permissions",
                   "scheduling/overlapping-slots",
-                  "scheduling/advanced-scheduler-settings"
+                  "scheduling/advanced-scheduler-settings",
+                  "scheduling/session-reminders",
+                  "scheduling/google-calendar-sync",
+                  "scheduling/organizing-schedulers",
+                  "scheduling/sharing-schedulers"
                 ]
               },
               {
-                "group": "Manage Sessions",
+                "group": "Calendar",
                 "icon": "calendar-days",
                 "pages": [
                   "scheduling/calendar-overview-and-navigation",
                   "scheduling/saved-calendar-views",
+                  "scheduling/calendar-analytics"
+                ]
+              },
+              {
+                "group": "Bookings",
+                "icon": "calendar-check",
+                "pages": [
                   "scheduling/manually-booking-athletes",
                   "scheduling/booking-for-multiple-athletes",
                   "scheduling/recurring-bookings",
                   "scheduling/editing-rescheduling-bookings",
                   "scheduling/canceling-bookings",
                   "scheduling/checking-in-athletes",
-                  "scheduling/calendar-analytics",
                   "scheduling/changing-your-schedule"
-                ]
-              },
-              {
-                "group": "Publish & Communicate",
-                "icon": "share-nodes",
-                "pages": [
-                  "scheduling/sharing-schedulers",
-                  "scheduling/organizing-schedulers",
-                  "scheduling/session-reminders",
-                  "scheduling/google-calendar-sync",
-                  "scheduling/shared-calendar-across-groups"
                 ]
               },
               "scheduling/troubleshooting"
@@ -793,11 +792,11 @@
     },
     {
       "source": "/scheduling/adding-and-managing-coaches",
-      "destination": "/scheduling/managing-availability-for-multiple-coaches"
+      "destination": "/scheduling/setup-coaches"
     },
     {
       "source": "/scheduling/black-out-dates",
-      "destination": "/scheduling/setting-black-out-dates"
+      "destination": "/scheduling/block-time"
     },
     {
       "source": "/scheduling/schedule-avaliability",
@@ -1418,6 +1417,14 @@
     {
       "source": "/scheduling/understanding-booking-types",
       "destination": "/scheduling/manually-booking-athletes"
+    },
+    {
+      "source": "/scheduling/setting-black-out-dates",
+      "destination": "/scheduling/block-time"
+    },
+    {
+      "source": "/scheduling/managing-availability-for-multiple-coaches",
+      "destination": "/scheduling/setup-coaches"
     }
   ],
   "metadata": {

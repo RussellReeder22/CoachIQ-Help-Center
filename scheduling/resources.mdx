@@ -15,12 +15,12 @@ Resources are physical assets your facility uses to run sessions — courts, bat
 </Note>
 
 <Frame>
-  ![Setup Resources tab showing list of resources](/images/scheduling/set-up-resources.png)
+  ![Setup Resources tab with resource cards, the schedulers each is used by, Assign schedulers and Add resource](/images/setup-resources-2026-11.png)
 </Frame>
 
 ## Creating a resource
 
-Go to **Scheduling → Setup → Resources** and click **Add setup**. Fill in:
+Go to **Scheduling → Setup → Resources** and click **Add resource**. Fill in:
 
 - **Title** (required) — e.g. "Half Court A"
 - **Description** (optional) — internal notes for staff
@@ -36,7 +36,7 @@ Go to **Scheduling → Setup → Resources** and click **Add setup**. Fill in:
 
 Two paths, same result:
 
-- **From Setup → Resources**: click **Attach to scheduler** on the resource card
+- **From Setup → Resources**: click **Assign schedulers** on the resource card, pick the schedulers, and click **Assign**
 - **From inside a scheduler**: open the **Resources** section and pick a resource under **Add a resource**
 
 <Frame>
@@ -45,7 +45,17 @@ Two paths, same result:
 
 A resource can be attached to multiple schedulers at once. When a resource is exclusive to one scheduler, you'll see "Not shared with other schedulers" in the scheduler view. To remove it, click **Detach**.
 
-You can also add a resource to a single booked session from the calendar: click the session and use the resource control in the click view. That reserves the resource for that occurrence only and does not change the scheduler. See [Calendar overview](/scheduling/calendar-overview-and-navigation#manage-a-session).
+You can also add a resource to a single booked session from the calendar: click the session and use the resource control in the click view. That reserves the resource for that occurrence only and does not change the scheduler. See [Use the Calendar](/scheduling/calendar-overview-and-navigation#open-a-session).
+
+## See every space's day
+
+On **Scheduling → Calendar**, switch to **Day** and click **Resources** to see one column per resource, with its bookings, open time and blocked time. See [Day view by space](/scheduling/calendar-overview-and-navigation#day-view-by-space).
+
+To take one resource out of use for a while, for example while a cage is repaired, use [Block time](/scheduling/block-time#block-one-coach-or-one-resource) with **Resource**.
+
+## Delete a resource
+
+Deleting a resource is permanent. It's taken off every scheduler that used it at once; the schedulers stay.
 
 ## Attach multiple resources to one scheduler
 
@@ -65,6 +75,8 @@ Once more than one resource is attached, the **Resources** section asks how a bo
 | **Use first available** — *Assign one open resource at booking* | Takes one free resource from the attached list and reserves only that one. The rest of the pool stays open for other bookings. | Interchangeable spaces: two hitting lessons at 4:00 that each need *a* cage, not a specific one |
 
 **Reserve all** is the default and matches how resources worked before this option existed. Existing schedulers with several resources attached are unchanged. **Use first available** can only be chosen once at least one resource is attached; a scheduler with no resources books normally.
+
+A repeating booking on a **Use first available** scheduler takes one free resource on each date, so the other resources stay bookable. If no resource is free on a date, the review lists it under "No free space" before anything is booked. A blocked resource is skipped.
 
 ### One per booking or one per session
 
