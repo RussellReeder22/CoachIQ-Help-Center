@@ -1,0 +1,79 @@
+---
+title: "Run a Camp: Registration to Camp Day"
+sidebarTitle: "Run a camp"
+description: "Set up a camp or clinic in CoachIQ: the camp product, a registration form that takes payment, a page on your website, confirmation and reminder messages, and your roster for camp day."
+icon: "campground"
+keywords: ["camps", "camp registration", "running camps", "summer camp", "clinic", "camp setup", "camp payment", "camp roster", "sports camp", "event registration"]
+---
+
+Camps are open to anyone, not just your members, so your website is the storefront. Most camps need four things: a product for the fee, a form for registration, a page to send people to, and an automation for the messages. You don't need a scheduler if everyone shows up at the same time.
+
+<Note>
+  **Families pick days or time slots?** Then set the camp up as a scheduler instead. Choose **Camps & events** as its catalog type, charge per booking, and set **Max athletes per time slot** to your capacity. See [Create and publish a scheduler](/scheduling/creating-your-first-scheduler) and [Organize schedulers](/scheduling/organizing-schedulers).
+</Note>
+
+## 1. Create the camp product
+
+<Steps>
+  <Step title="Create a One-Time product">
+    Go to **Payments → Products**, click **+ Create** and choose **One-Time**. Name it with the dates, for example "Summer Skills Camp, June 14–16", and put the times and what to bring in the description.
+
+    [Create a product](/payments/product-overview) · [Product types](/payments/product-types)
+  </Step>
+  <Step title="Cap the spots and add your waiver">
+    In **Advanced**, turn on **Add a purchase limit for this product** and enter your number of spots. The camp shows **Sold out** when it's full. A per-user limit of 1 stops a family registering the same child twice. Turn on **Require Agreement to Terms** and pick your waiver so every parent agrees at checkout.
+
+    [Advanced settings](/payments/product-builder#advanced) · [Require a waiver at checkout](/tools/waivers/waivers#require-a-waiver-at-checkout)
+  </Step>
+  <Step title="Click Create">
+    Save the product. Offering an early-bird price? Make a [coupon](/payments/coupon-overview) instead of a second product.
+  </Step>
+</Steps>
+
+## 2. Build the registration form
+
+<Steps>
+  <Step title="Create the form">
+    Go to **Tools → Forms** and click **Create form**. Ask only what you need on camp day: age or grade, emergency contact, shirt size, medical or allergy notes.
+
+    [Create a form](/tools/forms/creating-forms)
+  </Step>
+  <Step title="Take the payment on the form">
+    Open **Form settings → Connections** and switch on **Take a payment**. Click **2 · Products**, then **Add products**, and pick your camp product. Click **Save**.
+
+    Families answer your questions, then pay. The payment adds them to your clients.
+
+    [Take a payment on a form](/tools/forms/payments-and-bookings#take-a-payment)
+  </Step>
+</Steps>
+
+## 3. Put it on your website
+
+Go to **Website & App → Website**, click **Edit website** and add a page for the camp: dates, what athletes will work on, the price, and one **Register** call to action. Add a **Form** section and pick your registration form, then publish.
+
+You can also share the form's own link from **Share** in the form's top bar, in texts, emails and social posts.
+
+[Add a page](/website/pages-navigation/pages-navigation) · [Form section](/website/section-types/forms) · [Share a form](/tools/forms/sharing-forms)
+
+## 4. Send the messages automatically
+
+Go to **Tools → Automations** and click **Create**. A typical camp automation:
+
+1. **When:** **Purchase Made**, with **Only if** set to **Is a specific product** and your camp product.
+2. **Add a Tag to a User**, for example `Summer Camp 2026`. You'll use the tag to message everyone registered.
+3. **Send an Email** with the confirmation: dates, times, address, what to bring.
+4. **Wait/Delay** until the day before camp, then **Send an SMS Message** or **Send an Email** with the reminder.
+
+[Build your first automation](/tools/automations/build-your-first-automation) · [Triggers and actions](/tools/automations/triggers-actions-reference)
+
+## 5. Camp day
+
+- **Your roster:** open the form and click **Responses** for every registration and its answers, or **Export CSV** for a printable list. Search **People → Clients** by the camp tag for who's registered.
+- **Last-minute updates:** go to **Inbox → New message → Announcement** and send it to your camp tag. Parents of tagged athletes get it too.
+- **Payments:** every camp payment is in **Payments → Transactions**.
+
+[Form responses](/tools/forms/responses-and-automations) · [Announcements](/inbox/announcements) · [Transactions](/payments/transactions)
+
+## After camp
+
+Camp families are your best leads for memberships. Message the camp tag with your trial offer, or add them to your [Pipeline](/sales/pipeline) to follow up one by one. For what to charge for camps and clinics, see [Pricing Your Services](/guides/pricing-your-services#camps-clinics-and-team-training).
