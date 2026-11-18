@@ -1,0 +1,86 @@
+---
+title: "Approvals, Activity and Limits"
+sidebarTitle: "Approvals & Activity"
+description: "How you approve what ChatGPT or Claude changes in CoachIQ, where to see and undo its work, how to disconnect it, and the limits that pause it."
+icon: "shield-check"
+keywords: ["MCP", "ChatGPT", "Claude", "approval", "App activity", "undo", "disconnect", "connected apps", "logs", "outside app", "pause", "limits"]
+---
+
+A connected assistant never changes CoachIQ on its own. You approve each change, you can see everything it did in **Settings › General › Connections**, and you can undo a session's work or disconnect the app there.
+
+## How approvals work
+
+1. You ask for a change in ChatGPT or Claude.
+2. The assistant reads the current record and shows you a preview: what will change, for whom, and anything it costs (such as messaging credits).
+3. You approve it in the assistant. CoachIQ makes exactly that change, once.
+
+An approval only covers the change it showed. If the record changes between the preview and your approval, for example someone edits the same scheduler or website section in CoachIQ, the change is refused and the assistant has to read it again. Approving the same thing twice doesn't save it twice.
+
+In Claude, the approval card opens with a plain-English line saying what will change. For a set of related changes, such as a tag clean-up, ask the assistant to plan the whole set first and choose **Allow for this task** once.
+
+<Tip>
+  If the assistant says a change is done but you don't see it in CoachIQ, it probably stopped at the approval step. Ask it to repeat the request and approve the change when it shows it.
+</Tip>
+
+## Approvals waiting in CoachIQ
+
+Some changes from an outside app wait for you in CoachIQ instead of running after the approval in the chat:
+
+- Removing a program, a lesson, slides or lesson content, items or people from a program, a product from a program, media placed in a program or lesson, or a media tag.
+- Renaming, once your connected apps have renamed 10 items within 24 hours.
+
+To approve or decline one:
+
+1. Go to **Settings → General → Connections**.
+2. In **App activity**, open **Review** for that session.
+3. Read the approval card, including what the removal takes with it, and approve or decline.
+
+Removals you make yourself in CoachIQ, or approve through CoachIQ's own Assistant, work as before.
+
+## App activity and undo
+
+The **App activity** card appears in **Settings → General → Connections** once a connected app has changed something in your account. It groups the app's work by session.
+
+- **Review** lists everything the app did in that session.
+- **Undo this session** shows each step first, then takes the session's changes back. It keeps anything someone else changed since, rather than overwriting newer work. Files the app uploaded stay in your Media Hub.
+- Anything an app **removed** is kept for **30 days** and can be put back from **Review**.
+- Website section edits put the whole section back exactly as it was. Only Admins can undo website edits; Coaches can see their own app activity.
+
+## See and disconnect your connected apps
+
+The **Connected apps** section in **Settings → General → Connections** lists each AI app you approved for this group, whether it's **Read only** or **Can make changes**, when you approved it and last used it, and when you'll need to approve it again.
+
+To disconnect one, choose **Disconnect** and confirm. The app loses access to the group straight away, including every chat using it. To use it again, connect from the app. Each staff member sees and disconnects only their own apps. Signing out of the app's connection or changing your CoachIQ password also ends it.
+
+You can also remove CoachIQ from the app's side: **Customize → Connectors** in Claude, or ChatGPT's app or plugin settings. Removing the connection doesn't delete chats or Project files you saved in the assistant.
+
+## Limits and pauses
+
+| What | Limit |
+| --- | --- |
+| New bookings | Paused after **20 new bookings within 10 minutes**. It can continue after about three minutes; nothing from the paused request is booked. |
+| Tags | Up to **100 people** in one tag change. |
+| Group email or text | Up to **100 clients** per approved send. The same group message to the same people is refused for an hour, or a day if any delivery wasn't confirmed. |
+| One-to-one messages | The same message can't go to the same person twice in one day, and connected apps are held to an hourly number of messages. |
+| Renames | After 10 renames within 24 hours, each rename waits for approval in App activity. |
+| Text messages | Use your [messaging credits](/inbox/sms-credits), like texts you send yourself. |
+
+Messages and bookings you make yourself in CoachIQ aren't counted toward these limits.
+
+## When a change fails
+
+- **"Nothing was changed" or "Nothing was sent."** CoachIQ stopped it before anything happened, and says why (for example, the person has no mobile number, texts are turned off, or your role can't make that change). Fix the cause and ask again.
+- **The outcome is unknown.** Something may have gone through, for example a text the provider didn't confirm. CoachIQ never retries on its own. Check the record in CoachIQ before you ask again, so nothing happens twice.
+- **"Not found in this club."** The assistant used an ID that isn't in this group or that your connection can't read. It's told which search to use to find the right one.
+
+If something keeps going wrong, ask the assistant to **report a problem** to CoachIQ. It gets a reference number and can check the report's status later.
+
+## Logs
+
+Changes from a connected app also appear in [Settings → Data → Logs](/settings/data#changes-from-connected-ai-assistants), under the staff member who approved them, with an **Outside app** label. Requests CoachIQ refused are marked **Refused**. If the app stopped an attempt itself, for example because the approval didn't match the preview, nothing reached CoachIQ and no Logs line is written.
+
+## Related
+
+- [What your connected assistant can do](/settings/ai-what-it-can-do)
+- [Connect to ChatGPT](/settings/connect-chatgpt) · [Connect to Claude](/settings/connect-claude)
+- [Manage your connections](/settings/connections)

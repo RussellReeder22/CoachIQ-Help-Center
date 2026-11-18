@@ -71,11 +71,11 @@ Choose the access you want:
 
 Read the access summary and the final button before connecting. For supported changes, the approval button should reflect that choice. If it still says **Connect with read-only access**, you are approving reads only.
 
-Supported changes have limits. The connector is not permission to do everything available in the admin app. For example, automation drafts remain off for you to review in CoachIQ, and the assistant cannot use this connection to charge or refund a client. Ask it to check its current tools before planning a task.
+Supported changes have limits. The connector isn't permission to do everything in the admin app: for example, automations are saved as switched-off drafts for you to review, and Claude can't charge or refund a client. See [What your connected assistant can do](/settings/ai-what-it-can-do), and ask Claude to list its current tools before planning a task.
 
 When Claude asks to approve a change, its approval card opens with a plain-English line saying what will change. For a set of related changes, such as tagging a group of people, the assistant plans the whole set up front and suggests **Allow for this task** once instead of asking for every change. On Team and Enterprise plans, **Allow for all tasks** stays unavailable unless your Claude organization admin turns on always-allow for connector tools.
 
-Every change the assistant makes is recorded in [Settings → Data → Logs](/settings/data#changes-from-connected-ai-assistants) with an **Outside app** label, and requests CoachIQ refused are marked **Refused**.
+Everything Claude changes is listed in **Settings → General → Connections → App activity**, where you can review or undo a session's work. Some changes, such as removing a program or lesson, wait for you to approve them there. See [Approvals, activity and limits](/settings/ai-approvals-and-activity).
 
 ## 2. Confirm the connection
 
@@ -140,7 +140,7 @@ Use the same Project for ongoing work. The Help Center explains features; the MC
     Check **+ → Connectors** in this conversation. Turn CoachIQ on, then ask it to check the connection again. Repeat this check in a new Project chat.
   </Accordion>
   <Accordion title="Claude can read, but cannot make changes">
-    Reconnect and review the CoachIQ access choice. If the approval page offers the changes checkbox, select it when you want supported writes. If an older connector offers no write choice, remove that connector and add it again, then authorize the new connection. Rerun verification. If it still reports read-only, send Support the access summary and a screenshot with sign-in details and the browser URL hidden; do not send tokens or passwords.
+    Check the connection under **Connected apps** in **Settings → General → Connections**: it should say **Can make changes**. If it says **Read only**, reconnect and tick the changes checkbox on the approval page. If the approval page offers no changes choice, remove the connector and add it again. If the connection allows changes but Claude still has no tool to make them, start a new chat: a chat keeps the tools it started with. If it still reports read only, send Support the access summary and a screenshot with sign-in details and the browser address hidden. Never send tokens or passwords.
   </Accordion>
   <Accordion title="I cannot find Add custom connector">
     In a managed Claude workspace, ask its owner to add CoachIQ. Check your account's current connector limits and whether you are in the intended workspace. Start in the web app using the current connector instructions linked above.
@@ -156,16 +156,17 @@ Use the same Project for ongoing work. The Help Center explains features; the MC
   </Accordion>
 </AccordionGroup>
 
-To stop future connector access from Claude, disconnect or remove CoachIQ in **Customize → Connectors**. Removing a connector does not remove previously saved Project files or chat content. Manage those separately if needed.
+To stop Claude's access, choose **Disconnect** next to Claude under **Connected apps** in **Settings → General → Connections**, or remove CoachIQ in **Customize → Connectors**. [More about disconnecting](/settings/ai-approvals-and-activity#see-and-disconnect-your-connected-apps). Project files and chats you saved in Claude stay there until you delete them.
 
 ## Put the connection to work
 
-Use [CoachIQ AI workflows](/settings/ai-workflows) for prompts to check availability, make a reviewed booking change, organize media, and verify what the assistant changed. Keep using the Project setup above to supply your business context.
+Use [AI workflows](/settings/ai-workflows) for prompts to check availability, change a booking, message a group, update website text and organize media, each with a step to check the result. [What your connected assistant can do](/settings/ai-what-it-can-do) lists every supported change.
 
 ## Related guides
 
 - [Use CoachIQ with AI](/getting-started/use-coachiq-with-ai)
-
+- [What your connected assistant can do](/settings/ai-what-it-can-do)
+- [Approvals, activity and limits](/settings/ai-approvals-and-activity)
 - [Manage your connections](/settings/connections)
 - [Connect CoachIQ to ChatGPT](/settings/connect-chatgpt)
 - [Messaging credits](/inbox/sms-credits)
