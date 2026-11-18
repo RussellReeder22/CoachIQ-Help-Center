@@ -17,18 +17,18 @@ CoachIQ's waiver system lets you create waivers, attach them to products and for
 Navigate to **Tools → Waivers** to see all your waivers at a glance.
 
 <Frame>
-  ![Waivers dashboard showing waiver list with status, linked products, and acceptance count](/images/waivers-dashboard.png)
+  ![Waivers page listing Liability Waiver with 1 product, 3 of 37 signed, and its created date](/images/waivers-list-2026-11.png)
 </Frame>
 
 The dashboard shows:
 
 | Column | What it shows |
 |--------|---------------|
-| **Waiver** | The waiver name |
-| **Status** | Active or Archived |
-| **Products** | Number of products requiring this waiver |
-| **Acceptance** | How many clients have accepted vs. total |
+| **Waiver** | The waiver name, with how many products require it |
+| **Signed** | How many clients have accepted, out of the total (for example **3 of 37**) |
 | **Created** | Date the waiver was created |
+
+Use the search box to find a waiver by name, the status filter (**All statuses**, active or archived) and the sort menu (**Recent**). Each row's **···** menu has **Edit**, **View report**, **Duplicate** and **Archive**.
 
 ---
 
@@ -36,7 +36,7 @@ The dashboard shows:
 
 <Steps>
   <Step title="Go to Tools → Waivers">
-    Click **+ Create Waiver** in the top-right corner.
+    Click **Create** in the top-right corner.
   </Step>
 
   <Step title="Fill in the waiver details">
@@ -44,7 +44,7 @@ The dashboard shows:
     - **URL** — Link to the full waiver document. This can be a page on your CoachIQ website, a Google Drive link, a PDF, or any public URL.
 
     <Frame>
-      ![Edit Waiver modal showing label, URL, status, and linked products](/images/waivers-edit-waiver.png)
+      ![Edit Waiver window with Label, URL, Status, Linked products, Archive and Save Changes](/images/waivers-edit-2026-11.png)
     </Frame>
 
     <Tip>
@@ -53,7 +53,9 @@ The dashboard shows:
   </Step>
 
   <Step title="Save the waiver">
-    Click **Save Changes**. Your waiver is now active and ready to attach to products or forms.
+    Click **Create Waiver**. Your waiver is now active and ready to attach to products or forms.
+
+    To change it later, open the waiver's **···** menu and choose **Edit**. The **Edit Waiver** window (above) also sets the status and the linked products. Click **Save Changes** when you're done.
   </Step>
 </Steps>
 
@@ -69,19 +71,19 @@ Attach a waiver to any product so clients must agree before purchasing.
   </Step>
 
   <Step title="Go to Advanced settings">
-    Click **Advanced** in the left sidebar of the product editor.
+    Click **Advanced** in the product builder's section list on the left.
   </Step>
 
   <Step title="Toggle on Require Agreement to Terms">
     Enable the toggle, then select your waiver from the dropdown. You can also search for existing waivers or create a new one directly from here.
 
     <Frame>
-      ![Product Advanced tab showing Require Agreement to Terms toggle with linked waiver](/images/waivers-product-terms.png)
+      ![Advanced section of the product builder with Require Agreement to Terms on and Liability Waiver selected](/images/waivers-product-terms-2026-11.png)
     </Frame>
   </Step>
 
   <Step title="Save the product">
-    Click **Update Subscription** (or **Create**) to save.
+    Click **Update** at the top right (or **Create** for a new product) to save.
 
     <Check>
       **Done!** Clients will now see a checkbox at checkout: "I agree to the [Waiver Name]." They must check it before they can purchase.
@@ -107,10 +109,10 @@ You can also require waiver acceptance on any form — useful for registration f
   </Step>
 
   <Step title="Add a Waiver component">
-    In the form builder, click the **General** section in the left panel and select **Waiver** from the component list.
+    In the form builder, click **Add question** at the bottom of the question list. Pick **Waiver** under **General**, or type "waiver" in **Search blocks** to find it.
 
     <Frame>
-      ![Form builder showing the Waiver component option in the General section](/images/waivers-form-builder.png)
+      ![Form builder Add question menu filtered to the Waiver block under General](/images/waivers-form-builder-2026-11.png)
     </Frame>
   </Step>
 
@@ -121,7 +123,7 @@ You can also require waiver acceptance on any form — useful for registration f
   </Step>
 
   <Step title="Save the form">
-    Click **Update Form** to save.
+    Click **Save** at the top right. The builder shows **All changes saved** once the form is saved.
 
     <Check>
       **Done!** Anyone submitting this form must accept the waiver before completing it.
@@ -137,7 +139,7 @@ The compliance report shows exactly who has accepted each waiver and who hasn't 
 
 <Steps>
   <Step title="Open the compliance report">
-    Go to **Tools → Waivers** and click on the acceptance count (e.g., "1/200") for any waiver.
+    Go to **Tools → Waivers**, open the waiver's **···** menu and choose **View report**.
   </Step>
 
   <Step title="Review acceptance status">
@@ -148,7 +150,7 @@ The compliance report shows exactly who has accepted each waiver and who hasn't 
     - **Missing** — Clients who have not yet accepted
 
     <Frame>
-      ![Compliance Report showing accepted vs missing clients with filter tabs and export option](/images/waivers-compliance-report.png)
+      ![Compliance report for Liability Waiver showing 3 of 37 accepted, All, Accepted and Missing tabs, and Export CSV](/images/waivers-compliance-report-2026-11.png)
     </Frame>
   </Step>
 
