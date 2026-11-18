@@ -1,315 +1,114 @@
 ---
-title: "Managing Schedulers in Your Athlete Portal"
-description: "Learn how to add, organize, and customize schedulers in your Athlete Portal so athletes can book sessions directly from their app."
-sidebarTitle: "Scheduling"
+title: "Schedule page in your app"
+description: "Choose which schedulers families can book from in your app, group them into sections, and set the title and description on each card."
+sidebarTitle: "Schedule"
 icon: "calendar-check"
-keywords: ["scheduling in portal", "athlete booking", "session scheduling", "credit booking", "book sessions", "schedule display"]
+keywords: ["schedule page", "sessions page", "book sessions", "schedulers in app", "app builder schedule", "learn more", "calendar subscription", "add to calendar"]
 ---
 
 <Info>
-  **Where to find this**: Dashboard → App Builder → Schedule tab
+  **Where to find this:** **Website & App › App**, click **Edit app**, then **Schedule** in the builder's left menu. The page is titled **Schedule page** in the builder; families see it as **Sessions** unless you rename it.
 </Info>
 
-## What you'll accomplish
+The Schedule page is where families pick something to book. You create schedulers in **Scheduling › Schedulers** (see [Creating your first scheduler](/scheduling/creating-your-first-scheduler)); this page decides which of them families see, in what order, and with what title and description.
 
-Set up and organize your schedulers so athletes can view available sessions and book directly from their mobile app or web portal. You'll learn how to select which schedulers appear, organize them into sections, and customize how they're displayed to your athletes.
+<Frame>
+  ![The Schedule page in the App builder with one scheduler in a section](/images/app-builder-schedule-2026-11.png)
+</Frame>
 
-## Before you begin
-
-![CoachIQ Athlete Portal Schedule page showing available sessions to book](/images/schedulerahtleteportal.png)
-
-<Note>
-  **Required setup**: You must have at least one scheduler created before adding it to the Athlete Portal. If you haven't created any schedulers yet, go to **Schedule → Schedulers** to set up your first one.
-</Note>
-
-## Understanding the Schedule page
-
-The Schedule page in your Athlete Portal is where athletes view and book available sessions. As a coach, you have complete control over:
-
-- Which schedulers athletes can see
-- How schedulers are organized into sections
-- The titles and descriptions athletes see
-- Whether the scheduling feature is available at all
-
-Each scheduler displays its cost (like "1 Credit") which you set when creating the scheduler. This helps athletes understand the booking cost before they select a session.
-
-![Athlete view of available sessions with credit costs displayed](/images/athletesidesessions.png)
-
-## Accessing your Schedule settings
+## Add schedulers to the page
 
 <Steps>
-  <Step title="Navigate to App Builder">
-    From your dashboard, click **App** in the left navigation menu, then select **Schedule**.
+  <Step title="Open the Schedule page">
+    In the builder, click **Schedule** in the left menu.
   </Step>
-  <Step title="Locate the Schedule page">
-    You'll see any existing sections and schedulers already added to your athlete portal.
-  </Step>
-  <Step title="Activate the Schedule page">
-    Toggle the **Active** switch to control whether athletes can see the Schedule page. When off, the entire scheduling section is hidden from athletes.
-
-    ![CoachIQ App Builder Active toggle for the Schedule page](/images/setpageasactiveathleteportal.png)
-
-    <Check>
-      Always hit update page to ensure the updates go live!
-    </Check>
-  </Step>
-</Steps>
-
-## Adding schedulers to your portal
-
-<Steps>
   <Step title="Click Add Schedule">
-    Within any section, click the **\+ Add Schedule** button to add a scheduler.
+    Inside a section, click **+ Add Schedule**. The **Schedulers** window lists every scheduler with its duration, price and location. Search with **Search for sessions** or change the order with **Sort**.
 
-    ![CoachIQ App Builder Add Schedule button for adding schedulers](/images/Addschedulertoathleteapp.png)
+    <Frame>
+      ![Schedulers window with duration, price and location for each scheduler](/images/app-builder-add-schedulers-2026-11.png)
+    </Frame>
   </Step>
-  <Step title="Select from available schedulers">
-    A modal will appear showing all schedulers you've created in the system. Select the scheduler(s) you want to add.
-
-    ![CoachIQ scheduler selection modal showing available schedulers to add](/images/selectschedulertoaddtoathleteportal.png)
-
-    <Tip>
-      You can select multiple schedulers at once or add them one at a time.
-    </Tip>
+  <Step title="Pick schedulers">
+    Tick one or more schedulers, then click **Add Selected**.
   </Step>
-  <Step title="Confirm your selection">
-    Click **Add Selected** to add the chosen schedulers to your section. They'll appear immediately with their title, description, and credit cost.
+  <Step title="Set the card's title and description">
+    Each scheduler shows as a card with its price (for example **1 Credit**), a title box and a description box. They start with the scheduler's own name and description. Change them to whatever families should read on this page.
+  </Step>
+  <Step title="Save">
+    Click **Update** at the top right. Nothing changes in your app until you do.
   </Step>
 </Steps>
 
 <Note>
-  Adding an inactive scheduler to the Schedule page doesn't switch it on. It keeps a grey **Inactive** badge in the builder ("Hidden from athletes until the scheduler is active.") and athletes don't see it until you turn the scheduler on in **Schedule → Schedulers**.
+  Adding an inactive scheduler doesn't switch it on. It shows a grey **Inactive** badge in the builder, and families don't see it until you turn the scheduler on in **Scheduling › Schedulers**.
 </Note>
 
-## Creating and organizing sections
+## Sections
 
-Sections help you organize schedulers into logical groups like "Elite Program", "Rising Stars", or by location. Athletes always see sections expanded - they cannot collapse them.
+Sections are the headings families see, such as "Private Lessons" or "Cage Rentals".
 
-<Steps>
-  <Step title="Add a new section">
-    Click **\+ Add Section** at the bottom of your scheduler list.
+- **Add a section:** click **+ Add section** under the last section, then type its name in **Section Title**.
+- **Reorder:** drag a section or a scheduler card by its handle (the six dots, named "Reorder" plus the name for screen readers). Cards only move from the handle, so the title and description boxes stay easy to click.
+- **Remove:** click the trash icon. This only takes it off the page; the scheduler itself isn't changed.
 
-    ![CoachIQ App Builder Add Section button for organizing schedulers](/images/AddsectioninschedulerstoAthleteapp.png)
-  </Step>
-  <Step title="Name your section">
-    Enter a clear, descriptive title for the section (e.g., "Beginner Classes", "Advanced Training", "Summer Programs").
-  </Step>
-  <Step title="Add schedulers to the section">
-    Click **\+ Add Schedule** within your new section to start adding schedulers.
+The list on the left of the page jumps to each section.
 
-    <Check>
-      Your section is created and ready for schedulers!
-    </Check>
-  </Step>
-</Steps>
+## Turn the page on or off
 
-## Customizing scheduler display
-
-Each scheduler can have a custom title and description that athletes see, regardless of the scheduler's original name.
-
-<Steps>
-  <Step title="Click on a scheduler">
-    Select any scheduler in your list to open its editing panel.
-
-    ![CoachIQ scheduler edit panel for customizing title and description](/images/Editdescriptionandtitleforschedulersonathleteportal.png)
-  </Step>
-  <Step title="Edit the title">
-    Update the scheduler name that athletes will see. Make it clear and action-oriented. A custom title on a newly added scheduler is kept on the first **Update Page**.
-  </Step>
-  <Step title="Edit the description">
-    Add helpful context about the session type, skill level, or what athletes should expect. Keep it concise but informative.
-  </Step>
-</Steps>
-
-## Reordering and managing sections
-
-<Steps>
-  <Step title="Access section controls">
-    Click the dots menu (⋮) next to any section to see management options.
-
-    ![CoachIQ section management menu with move and delete options](/images/Move&Deletesectionswithinschedulersonathleteportal.png)
-  </Step>
-  <Step title="Reorder sections">
-    Drag sections up or down to change their display order. Place your most popular or important sections at the top.
-  </Step>
-  <Step title="Delete sections">
-    Select the delete option to remove an entire section and all its schedulers from the athlete view.
-
-    <Warning>
-      Deleting a section from the Athlete Portal doesn't delete the actual schedulers - it just removes them from athlete view.
-    </Warning>
-  </Step>
-</Steps>
-
-## What athletes and parents see after booking
-
-Athletes and parents manage their sessions from **Bookings** in your app.
-
-- **Upcoming and Past:** **Upcoming** lists every future booking, including later dates in a monthly series and, in a parent's **All** view, each child's later sessions. A session moves to **Past** once it ends in the session's time zone, and a booking never shows in both tabs.
-- **View details and location** shows that booking's date, time, time zone, who it's for and the location.
-- **Reschedule** appears only when the scheduler has **Allow athletes to reschedule** turned on. This applies to single and recurring bookings, in the app and on the web. When a move is blocked, the athlete sees the reason instead of nothing happening.
-- **Cancel:** the confirmation lists the session, date, time zone and athlete, and says whether the credit will be returned under the scheduler's refund setting. Inside the cancellation notice window, Cancel isn't offered; the booking explains why and suggests contacting you.
-
-Parents can also reschedule or cancel a lesson staff booked for their child. See [Family Accounts](/athlete-portal/family-accounts#changing-a-childs-booking).
-
-<Tip>
-  If a family says a booking is in the wrong tab, ask for a screenshot showing the booking's date and time and their device's time zone.
-</Tip>
-
-## Paywalling the Schedule page
-
-To limit the Schedule page to members, turn on the **Schedulers** paywall in **Pages Paywall**. Parents can book their children from a paywalled Schedule page when either the parent or that child holds a qualifying product. See [Page Paywalls](/athlete-portal/paywall-settings#how-paywalls-work-for-parents-and-children).
-
-## Add one session to a personal calendar
-
-After booking in the athlete portal, select **Add to Calendar** on the confirmation screen and choose **Google Calendar**, **Apple Calendar**, **Outlook.com**, or the calendar file download. Each option includes the session name, date, time, and location. Apple Calendar downloads a file to open in Calendar.
-
-This adds the selected session. To subscribe to a feed of bookings, use the calendar subscription below.
-
-## Subscribe to bookings in Google, Apple, or Outlook
-
-Parents and athletes can open **Settings → Calendar** in the athlete portal, turn on their calendar subscription, and choose **Google**, **Apple**, or **Outlook**. The subscription is a private, read-only feed of bookings; manage bookings in CoachIQ.
-
-Use **Reset private link** to replace the subscription link, or **Turn off** to disable it. After resetting, subscribe again using the new link. Keep the private link to yourself.
-
-This is separate from a coach's Admin Google Calendar sync. If you receive both a Google guest invitation and the CoachIQ calendar subscription, the same session can appear twice.
-
-## Previewing the athlete experience
-
-Always preview your changes to ensure athletes see exactly what you intend.
-
-<Steps>
-  <Step title="Click the preview button">
-    Select the preview icon in the top toolbar to see the athlete view.
-
-    ![CoachIQ preview of the live Schedule page as athletes see it](/images/Previewliveschedulerpageinathleteportal.png)
-  </Step>
-  <Step title="Review the layout">
-    Check that:
-
-    - Sections appear in the correct order
-    - Scheduler titles and descriptions are clear
-    - Credit costs display correctly
-    - The overall organization makes sense for athletes
-  </Step>
-  <Step title="Test navigation">
-    Click through different schedulers to ensure they're properly configured and available for booking.
-  </Step>
-</Steps>
+The **Active** switch at the top turns the page on or off for families. In [Menu & Links](/athlete-portal/menu-and-links) you can also hide the page while still letting families see their bookings (**Keep Bookings visible**). To limit booking to members, turn on **Schedulers** in [Pages Paywall](/athlete-portal/paywall-settings). Parents can book a child from a paywalled Schedule page when either the parent or that child holds a paywall product.
 
 ## Page settings
 
-Use the Settings panel to rename the Schedule tab and update the page URL.
+Click the gear icon (**Page settings**) at the top right.
 
-<Steps>
-  <Step title="Open the Settings panel">
-    Click the **gear icon** in the top right of the Schedule page to open the Settings panel.
+- **Page name** (the first box): what families see as the page title and in the menu, for example "Book a Lesson". Leave it blank and families see **Sessions**.
+- **Slug:** the end of the page's web address, for example `/sessions`. The buttons beside it copy the link and open the page.
+- **Page Meta (SEO):** the image, title, keywords and description that show when someone shares a link to the page.
 
-    ![CoachIQ Schedule page advanced settings with SEO and sharing options](/images/settingsshotforschedulersinathleteportal.png)
-  </Step>
-  <Step title="Rename the page">
-    The first field at the top of the Settings panel is the **page display name** — this is what athletes see as the tab name in their portal. Update it to whatever fits your program (e.g., "Book Training", "Reserve a Spot").
-  </Step>
-  <Step title="Update the URL slug">
-    The **Slug** field controls the URL path for this page (e.g., `/sessions`, `/schedule`). Update it to match your new name if needed.
-  </Step>
-  <Step title="Configure Page Meta (SEO)">
-    Edit the SEO metadata fields (title, keywords, description) that appear when someone shares your schedule page link.
-  </Step>
-  <Step title="Save changes">
-    Click **Update Page** to apply all settings.
-  </Step>
-</Steps>
+Click **Update** to save.
+
+## What families see
+
+- **Cards:** each card shows the title and description you set on this page, its price and **Book Now** or **Learn More**.
+- **Learn More** opens the card's own title and description, so the words you wrote for this page show there too. Where you left the card's title or description blank, the scheduler's own text fills in that part.
+- **Session details** show the session length. **Read More** shows only when the description is cut short.
+- **After booking,** families manage their sessions from **Bookings**. See [Bookings, billing and orders](/athlete-portal/bookings-billing-orders#bookings).
+
+In the mobile app, **Learn More** shows the card's title and description with the next app update.
+
+## Add one session to a personal calendar
+
+After booking, families can select **Add to Calendar** on the confirmation screen and choose **Google Calendar**, **Apple Calendar**, **Outlook.com** or the calendar file. Each option includes the session name, date, time and location. Apple Calendar downloads a file to open in Calendar.
+
+## Subscribe to bookings in Google, Apple, or Outlook
+
+Families can open **Settings › Calendar** in your app, turn on their calendar subscription and choose **Google**, **Apple** or **Outlook**. It's a private, read-only feed of their bookings; they still book and cancel in your app.
+
+**Reset private link** replaces the link (they then subscribe again with the new one), and **Turn off** stops it. This is separate from your own Google Calendar sync. If a family gets both a Google invitation and the subscription, the same session can show twice.
 
 ## Common questions
 
 <AccordionGroup>
-  <Accordion title="Where do I create new schedulers?">
-    Schedulers are created in **Schedule → Schedulers** in your main dashboard. The Athlete Portal only controls which existing schedulers are visible to athletes. [Learn how to create schedulers →](/scheduling/creating-your-first-scheduler)
+  <Accordion title="Where do I create a scheduler or change its price?">
+    In **Scheduling › Schedulers**. The price, duration, availability and booking rules all come from the scheduler. See [Creating your first scheduler](/scheduling/creating-your-first-scheduler).
   </Accordion>
-  <Accordion title="Why can't my athletes see certain schedulers?">
-    Check that:
-
-    1. The Schedule page is set to **Active**
-    2. The scheduler is added to a section in the Athlete Portal
-    3. The scheduler itself is active (an inactive one shows an **Inactive** badge in the builder)
-    4. The scheduler has available time slots configured
-    5. The athlete has the required credits or payment method
-    6. If the Schedule page is paywalled, the athlete (or their parent) holds a qualifying product
+  <Accordion title="A family can't see a scheduler. What should I check?">
+    1. The Schedule page's **Active** switch is on and you clicked **Update**.
+    2. The page isn't hidden in [Menu & Links](/athlete-portal/menu-and-links).
+    3. The scheduler is on this page and isn't marked **Inactive**.
+    4. The scheduler has open times, and the family can book it (for example, it isn't limited to a tag they don't have).
+    5. If the page is paywalled, they or their parent hold a paywall product.
   </Accordion>
-  <Accordion title="How do credits work with bookings?">
-    The credit amount shown (e.g., "1 Credit") is the cost to book that session. Athletes must have sufficient credits in their account to book. Credits are set when creating the scheduler, not in the Athlete Portal.
-  </Accordion>
-  <Accordion title="Can I show different schedulers to different athlete groups?">
-    Currently, all athletes see the same schedulers. To control access, use the scheduler's internal settings for prerequisites or eligibility requirements.
-  </Accordion>
-  <Accordion title="Do changes appear immediately?">
-    Yes! All changes to the Athlete Portal update instantly. There's no draft mode or publish button - athletes see updates as soon as you make them.
+  <Accordion title="Can I show different schedulers to different families?">
+    Everyone sees the same Schedule page. To limit who can book, use the scheduler's own settings, such as limiting it to a tag. See [Scheduling overview](/scheduling/overview).
   </Accordion>
 </AccordionGroup>
 
-## Troubleshooting
-
-<Warning>
-  **Schedulers not appearing in selection modal?** Make sure you've created schedulers in **Schedule → Schedulers** first. The Athlete Portal can only display schedulers that already exist in your system.
-</Warning>
-
-### Common issues and solutions
-
-**Athletes can't see the Schedule page:**
-
-- Verify the Active toggle is turned on
-- Check that at least one scheduler is added
-- Ensure athletes are logged into their accounts
-
-**Credit amounts showing incorrectly:**
-
-- Credits are set in the scheduler configuration, not in the Athlete Portal
-- Go to **Schedule → Schedulers** to update credit costs
-
-**Sections appearing in wrong order:**
-
-- Use the dots menu (⋮) to drag and reorder sections
-- Changes save automatically
-
-**Scheduler descriptions not updating:**
-
-- Click directly on the scheduler to open edit mode
-- Make sure to click outside the field to save changes
-
-## Pro tips
-
-<Tip>
-  **Organization best practices:**
-
-  - Group schedulers by program level (Beginner, Intermediate, Advanced)
-  - Or organize by location if you have multiple facilities
-  - Keep section titles short and clear
-  - Place your most popular schedulers at the top
-</Tip>
-
-<Tip>
-  **Writing effective descriptions:**
-
-  - Include skill level requirements
-  - Mention any equipment needed
-  - Specify age groups if relevant
-  - Keep descriptions under 2 sentences
-</Tip>
-
-<Tip>
-  **Testing your setup:**
-
-  - Always preview after making changes
-  - Test with a demo athlete account if possible
-  - Check mobile and desktop views
-  - Verify credit requirements are clear
-</Tip>
-
 ## Related articles
 
-- [Creating Your First Scheduler](/scheduling/creating-your-first-scheduler)
-- [Setting Credit Prices for Sessions](/payments/credits/credit-system-overview)
-- [Managing Scheduler Availability](/scheduling/create-your-availability)
-- [Understanding the Athlete Portal](/athlete-portal/understanding-your-athlete-portal)
-- [Athlete Portal Access Control](/athlete-portal/paywall-settings)
+- [Creating your first scheduler](/scheduling/creating-your-first-scheduler)
+- [Credits overview](/payments/credits/credit-system-overview)
+- [Bookings, billing and orders](/athlete-portal/bookings-billing-orders)
+- [Menu & Links](/athlete-portal/menu-and-links)
+- [Pages Paywall](/athlete-portal/paywall-settings)

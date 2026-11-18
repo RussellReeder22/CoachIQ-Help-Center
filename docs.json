@@ -146,21 +146,21 @@
                 "icon": "browser"
               },
               {
-                "group": "Athlete Portal",
+                "group": "App",
                 "pages": [
                   "athlete-portal/understanding-your-athlete-portal",
                   "athlete-portal/app-builder-navigation-and-interface",
-                  "athlete-portal/design-settings",
-                  "athlete-portal/menu-and-links",
                   "athlete-portal/channels",
                   "athlete-portal/schedule",
                   "athlete-portal/content",
                   "athlete-portal/products",
+                  "athlete-portal/design-settings",
                   "athlete-portal/paywall-settings",
-                  "athlete-portal/hidden-products-paywall",
+                  "athlete-portal/menu-and-links",
+                  "athlete-portal/scripts-and-analytics",
                   "athlete-portal/family-accounts",
-                  "athlete-portal/native-app-booking",
-                  "athlete-portal/scripts-and-analytics"
+                  "athlete-portal/bookings-billing-orders",
+                  "athlete-portal/native-app-booking"
                 ],
                 "icon": "mobile-screen"
               }
@@ -517,6 +517,10 @@
     "indexing": "all"
   },
   "redirects": [
+    {
+      "source": "/athlete-portal/hidden-products-paywall",
+      "destination": "/athlete-portal/paywall-settings"
+    },
     {
       "source": "/inbox/using-tags-for-group-messages",
       "destination": "/inbox/new-message"
