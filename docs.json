@@ -1241,11 +1241,11 @@
     },
     {
       "source": "/help-center/helping-your-athlete/untitled-page-1",
-      "destination": "/quick-guides/athletes/sessions-not-showing"
+      "destination": "/scheduling/how-availability-works"
     },
     {
       "source": "/help-center/helping-your-athlete/untitled-page",
-      "destination": "/quick-guides/athletes/video-upload-issues"
+      "destination": "/content/media-overview"
     },
     {
       "source": "/guides/growing-your-coaching-business",
@@ -1321,27 +1321,27 @@
     },
     {
       "source": "/help-center/helping-your-athlete/sessions-not-showing",
-      "destination": "/quick-guides/athletes/sessions-not-showing"
+      "destination": "/scheduling/how-availability-works"
     },
     {
       "source": "/help-center/helping-your-athlete/video-upload-issues",
-      "destination": "/quick-guides/athletes/video-upload-issues"
+      "destination": "/content/media-overview"
     },
     {
       "source": "/help-center/helping-your-athlete/cancel-subscription",
-      "destination": "/quick-guides/athletes/cancel-subscription"
+      "destination": "/payments/manage-subscriptions"
     },
     {
       "source": "/help-center/helping-your-athlete/login-issues",
-      "destination": "/quick-guides/athletes/login-issues"
+      "destination": "/app/overview"
     },
     {
       "source": "/help-center/helping-your-athlete/new-athlete-password-email",
-      "destination": "/quick-guides/athletes/new-athlete-password-email"
+      "destination": "/people/adding-editing-clients"
     },
     {
       "source": "/help-center/helping-your-athlete/credit-issues",
-      "destination": "/quick-guides/athletes/credit-issues"
+      "destination": "/payments/credits/managing-athlete-credits"
     },
     {
       "source": "/forms/overview",
