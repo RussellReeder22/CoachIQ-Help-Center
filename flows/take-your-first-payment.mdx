@@ -1,0 +1,88 @@
+---
+title: "Take Your First Payment"
+sidebarTitle: "Take your first payment"
+description: "Connect Stripe, make a product, put it where families can buy it, and find the payment in Transactions. Plus how to refund one."
+icon: "credit-card"
+keywords: ["first payment", "get paid", "take payments", "accept payments", "charge clients", "sell a session", "payment setup", "stripe setup", "refund a payment", "where is my money"]
+---
+
+Every payment in CoachIQ goes through a product. You connect Stripe once, make a product for what you sell, and then put that product where families buy: on a scheduler, on a form, or behind a link. The money goes to your Stripe account and shows in **Payments → Transactions**.
+
+This walkthrough takes one product from nothing to a paid order. For a monthly membership that gives credits, follow [Sell a membership with credits](/flows/sell-a-membership-with-credits) instead.
+
+## 1. Connect Stripe
+
+<Steps>
+  <Step title="Open Stripe settings as an Admin">
+    Go to **Settings → Stripe** and click **Connect Stripe**. Only Admins can connect Stripe; coaches see a note to ask an admin.
+  </Step>
+  <Step title="Sign in to Stripe and come back">
+    Sign in to the Stripe account you want paid into, or create one in Stripe's flow. When you're back in CoachIQ, check the business name and the live or test label, and that payments and payouts are enabled.
+
+    [Connect Stripe](/payments/connecting-stripe)
+  </Step>
+</Steps>
+
+<Warning>
+  Connect Stripe before you create paid products. Without it, a product saves as a free, code-only product even if you enter a price.
+</Warning>
+
+## 2. Make a product
+
+<Steps>
+  <Step title="Create it">
+    Go to **Payments → Products**, click **+ Create** and choose **One-Time** for a single session, a pack or a camp, or **Subscription** for something billed on a schedule.
+  </Step>
+  <Step title="Name it and set the price">
+    Add a name and a description families will understand at checkout, then the price. Add credits if the purchase should pay for sessions later.
+  </Step>
+  <Step title="Save">
+    Click **Create** at the top right. Saving doesn't show the product to anyone yet.
+
+    [Create a product](/payments/product-overview) · [Product types](/payments/product-types) · [Every product setting](/payments/product-builder)
+  </Step>
+</Steps>
+
+## 3. Put it where families buy
+
+Pick the place that matches how you sell:
+
+| You're selling | Do this | Guide |
+| --- | --- | --- |
+| A session families pay for when they book | Open the scheduler under **Scheduling → Schedulers**, go to **Payment**, choose **Paywalled**, then **Price**, and pick the product | [Set booking payments](/scheduling/setting-up-payment-options) |
+| A registration (camp, team tryout, intake) | Open the form under **Tools → Forms**, then **Form settings → Connections**, turn on **Take a payment** and add the product | [Take a payment on a form](/tools/forms/payments-and-bookings#take-a-payment) |
+| A pack, membership or anything else | Add it to the Products page of your app, or copy the link from the product's **Product Link** section and send it | [Products page in your app](/app/products) · [Where families find a product](/payments/product-overview#where-families-find-a-product) |
+
+Saving a scheduler or form doesn't publish it. Add the scheduler to your app or website, and share the form, so families can reach it. [Use products in schedulers, programs, and forms](/payments/attach-products) covers every option.
+
+## 4. A family pays
+
+The family checks out with a saved card or a new one. If you've turned on other payment methods in **Settings → Payment methods**, they can pick those too. A coupon, if you gave them one, comes off before they pay.
+
+Check it yourself before you send the link to everyone. A paid checkout is a real payment, so only use test cards if your Stripe account is in test mode.
+
+[What families see at checkout](/payments/getting-started#what-families-see-at-checkout) · [Payment methods](/settings/payment-methods) · [Coupons](/payments/coupon-overview)
+
+## 5. See the payment
+
+Go to **Payments → Transactions**. The payment shows with its date, status, amount, who paid and the product. **Success** means it's paid. A bank payment shows **Processing** for 3–5 business days before it clears.
+
+- To see the card, the Stripe fee and the net amount, click **Open** on the row.
+- Payment in Stripe but not in the list? Click **Resync Stripe** and wait a few minutes.
+- The same payment shows on the client's profile under **People → Clients → Transactions**.
+
+[Transactions](/payments/transactions) · [Stripe Dashboard](/payments/stripe-dashboard)
+
+## 6. If you need to refund it
+
+Open the client in **People**, go to their **Transactions**, find the payment and click **Refund payment**. Leave the full amount or enter less, choose a reason, and confirm. The money goes back to their card, usually within 5–10 business days.
+
+A refund doesn't cancel a membership, remove credits or cancel bookings. Do those separately if you need to.
+
+[Refunds and invoice credit](/payments/issuing-refunds) · [Failed payments](/payments/failed-payments)
+
+## Next
+
+- [Sell a membership with credits](/flows/sell-a-membership-with-credits): monthly billing with credits families spend on sessions.
+- [Processing fees](/payments/processing-fee): pass the card fee on to families.
+- [Run a camp](/flows/run-a-camp): a paid registration form from start to camp day.

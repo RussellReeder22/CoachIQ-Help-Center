@@ -59,7 +59,9 @@
                 "pages": [
                   "flows/set-up-your-business",
                   "flows/bring-in-new-families",
-                  "flows/run-a-camp"
+                  "flows/run-a-camp",
+                  "flows/take-your-first-payment",
+                  "flows/sell-a-membership-with-credits"
                 ]
               }
             ]
@@ -162,19 +164,19 @@
               {
                 "group": "App",
                 "pages": [
-                  "athlete-portal/understanding-your-athlete-portal",
-                  "athlete-portal/app-builder-navigation-and-interface",
-                  "athlete-portal/channels",
-                  "athlete-portal/schedule",
-                  "athlete-portal/content",
-                  "athlete-portal/products",
-                  "athlete-portal/design-settings",
-                  "athlete-portal/paywall-settings",
-                  "athlete-portal/menu-and-links",
-                  "athlete-portal/scripts-and-analytics",
-                  "athlete-portal/family-accounts",
-                  "athlete-portal/bookings-billing-orders",
-                  "athlete-portal/native-app-booking"
+                  "app/overview",
+                  "app/builder",
+                  "app/channels",
+                  "app/schedule",
+                  "app/content",
+                  "app/products",
+                  "app/design-settings",
+                  "app/paywall-settings",
+                  "app/menu-and-links",
+                  "app/scripts-and-analytics",
+                  "app/family-accounts",
+                  "app/bookings-billing-orders",
+                  "app/native-app-booking"
                 ],
                 "icon": "mobile-screen"
               }
@@ -325,7 +327,10 @@
                 "group": "Coupons",
                 "icon": "tag",
                 "pages": [
-                  "payments/coupon-overview"
+                  "payments/coupon-overview",
+                  "payments/create-coupons",
+                  "payments/coupon-sharing-and-limits",
+                  "payments/coupon-troubleshooting"
                 ]
               }
             ]
@@ -568,7 +573,7 @@
     },
     {
       "source": "/athlete-portal/hidden-products-paywall",
-      "destination": "/athlete-portal/paywall-settings"
+      "destination": "/app/paywall-settings"
     },
     {
       "source": "/inbox/using-tags-for-group-messages",
@@ -712,35 +717,35 @@
     },
     {
       "source": "/athlete-portal/add-sessions",
-      "destination": "/athlete-portal/schedule"
+      "destination": "/app/schedule"
     },
     {
       "source": "/athlete-portal/add-products",
-      "destination": "/athlete-portal/products"
+      "destination": "/app/products"
     },
     {
       "source": "/athlete-portal/add-programs",
-      "destination": "/athlete-portal/content"
+      "destination": "/app/content"
     },
     {
       "source": "/athlete-portal/paywalling-specific-pages",
-      "destination": "/athlete-portal/paywall-settings"
+      "destination": "/app/paywall-settings"
     },
     {
       "source": "/athlete-portal/design-your-portal",
-      "destination": "/athlete-portal/design-settings"
+      "destination": "/app/design-settings"
     },
     {
       "source": "/athlete-portal/personalized-athlete-portal-url",
-      "destination": "/athlete-portal/understanding-your-athlete-portal"
+      "destination": "/app/overview"
     },
     {
       "source": "/athlete-portal/edit-share-link",
-      "destination": "/athlete-portal/understanding-your-athlete-portal"
+      "destination": "/app/overview"
     },
     {
       "source": "/athlete-portal/athlete-notifications",
-      "destination": "/athlete-portal/channels"
+      "destination": "/app/channels"
     },
     {
       "source": "/sales/payment-overview",
@@ -1204,19 +1209,19 @@
     },
     {
       "source": "/athlete-portal/overview",
-      "destination": "/athlete-portal/understanding-your-athlete-portal"
+      "destination": "/app/overview"
     },
     {
       "source": "/athlete-portal/access-control",
-      "destination": "/athlete-portal/paywall-settings"
+      "destination": "/app/paywall-settings"
     },
     {
       "source": "/athlete-portal/initial-setup",
-      "destination": "/athlete-portal/understanding-your-athlete-portal"
+      "destination": "/app/overview"
     },
     {
       "source": "/athlete-portal/design",
-      "destination": "/athlete-portal/design-settings"
+      "destination": "/app/design-settings"
     },
     {
       "source": "/guides/grandfather-pricing",
@@ -1420,7 +1425,7 @@
     },
     {
       "source": "/quick-guides/athletes/login-issues",
-      "destination": "/athlete-portal/understanding-your-athlete-portal"
+      "destination": "/app/overview"
     },
     {
       "source": "/quick-guides/athletes/new-athlete-password-email",
@@ -1485,6 +1490,58 @@
     {
       "source": "/getting-started/dashboard",
       "destination": "/getting-started/find-your-way-around"
+    },
+    {
+      "source": "/athlete-portal/app-builder-navigation-and-interface",
+      "destination": "/app/builder"
+    },
+    {
+      "source": "/athlete-portal/bookings-billing-orders",
+      "destination": "/app/bookings-billing-orders"
+    },
+    {
+      "source": "/athlete-portal/channels",
+      "destination": "/app/channels"
+    },
+    {
+      "source": "/athlete-portal/content",
+      "destination": "/app/content"
+    },
+    {
+      "source": "/athlete-portal/design-settings",
+      "destination": "/app/design-settings"
+    },
+    {
+      "source": "/athlete-portal/family-accounts",
+      "destination": "/app/family-accounts"
+    },
+    {
+      "source": "/athlete-portal/menu-and-links",
+      "destination": "/app/menu-and-links"
+    },
+    {
+      "source": "/athlete-portal/native-app-booking",
+      "destination": "/app/native-app-booking"
+    },
+    {
+      "source": "/athlete-portal/paywall-settings",
+      "destination": "/app/paywall-settings"
+    },
+    {
+      "source": "/athlete-portal/products",
+      "destination": "/app/products"
+    },
+    {
+      "source": "/athlete-portal/schedule",
+      "destination": "/app/schedule"
+    },
+    {
+      "source": "/athlete-portal/scripts-and-analytics",
+      "destination": "/app/scripts-and-analytics"
+    },
+    {
+      "source": "/athlete-portal/understanding-your-athlete-portal",
+      "destination": "/app/overview"
     }
   ],
   "metadata": {
