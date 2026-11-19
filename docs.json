@@ -53,16 +53,21 @@
             "pages": [
               "index",
               "getting-started/find-your-way-around",
-              "getting-started/use-coachiq-with-ai",
               {
                 "group": "Walkthroughs",
-              "icon": "route",
+                "icon": "route",
                 "pages": [
                   "flows/set-up-your-business",
                   "flows/bring-in-new-families",
                   "flows/run-a-camp"
                 ]
               }
+            ]
+          },
+          {
+            "group": "Home",
+            "pages": [
+              "home/overview"
             ]
           },
           {
@@ -380,15 +385,6 @@
             "group": "Tools",
             "pages": [
               {
-                "group": "Assistant",
-                "pages": [
-                  "tools/assistant/overview",
-                  "tools/assistant/what-it-can-do",
-                  "tools/assistant/approvals"
-                ],
-                "icon": "robot"
-              },
-              {
                 "group": "Forms",
                 "pages": [
                   "tools/forms/overview",
@@ -435,23 +431,39 @@
             ]
           },
           {
-            "group": "Settings",
+            "group": "AI",
             "pages": [
-              "settings/index",
-              "settings/general",
-              "settings/change-organization-group-name",
+              "ai/overview",
               {
-                "group": "Connections",
-                "icon": "link",
+                "group": "Assistant in CoachIQ",
+                "icon": "robot",
                 "pages": [
-                  "settings/connections",
+                  "tools/assistant/overview",
+                  "tools/assistant/what-it-can-do",
+                  "tools/assistant/approvals"
+                ]
+              },
+              {
+                "group": "ChatGPT and Claude",
+                "icon": "plug",
+                "pages": [
+                  "getting-started/use-coachiq-with-ai",
                   "settings/connect-chatgpt",
                   "settings/connect-claude",
                   "settings/ai-what-it-can-do",
                   "settings/ai-approvals-and-activity",
                   "settings/ai-workflows"
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "settings/index",
+              "settings/general",
+              "settings/change-organization-group-name",
+              "settings/connections",
               "settings/developer",
               "settings/communication",
               "settings/billing",
