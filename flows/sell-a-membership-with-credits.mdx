@@ -1,0 +1,111 @@
+---
+title: "Sell a Membership With Credits"
+sidebarTitle: "Sell a membership"
+description: "Set up a monthly membership that gives credits, let families spend them on your schedulers, and handle renewals, leftover credits and failed payments."
+icon: "repeat"
+keywords: ["membership", "credit membership", "monthly membership", "recurring credits", "subscription with credits", "sell membership", "rollover credits", "unused credits", "credits expire", "failed membership payment", "past due"]
+---
+
+A credit membership bills a family on a schedule, usually monthly, and adds credits with each payment. Families spend the credits to book sessions on the schedulers you choose. Two settings have to agree: the **product** says how many credits each payment adds and where they work, and the **scheduler** says that its sessions cost credits.
+
+Connect Stripe first. If you haven't taken a payment yet, start with [Take your first payment](/flows/take-your-first-payment).
+
+## 1. Create the membership
+
+<Steps>
+  <Step title="Start a Subscription product">
+    Go to **Payments → Products**, click **+ Create** and choose **Subscription**. You can't change the type later, so check it before you continue.
+  </Step>
+  <Step title="Set the price and how often it bills">
+    Name it so families know what they get, such as "8 Sessions a Month", then enter the price and the billing frequency.
+  </Step>
+  <Step title="Add the credits">
+    Turn on **Add Credits once Purchased** and set **Number of Credits** for each payment, or choose **Unlimited Credits** (families see **∞**).
+  </Step>
+  <Step title="Choose what happens to leftover credits">
+    In the same **Credits** section, choose one: unused credits expire at each renewal, they carry over, or they carry over and each payment's credits expire a set number of days later. See [step 4](#4-renewals-rollover-and-expiry).
+  </Step>
+  <Step title="Choose where the credits work">
+    Under **Credit Limits**, pick the schedulers in **Credits can be redeemed for these schedulers**. Leave it blank and they work on every scheduler that takes credits. For an unlimited membership, set a **Weekly booking allowance** so nobody books 30 sessions in week one.
+  </Step>
+  <Step title="Save">
+    Click **Create** at the top right. If every member must agree to your waiver, turn on **Require Agreement to Terms** under **Advanced** first.
+
+    [Membership credits](/payments/credits/recurring-credit-memberships) · [Credit Limits](/payments/credits/credit-usage-limits-restrictions) · [Product builder: Credits](/payments/product-builder#credits)
+  </Step>
+</Steps>
+
+## 2. Let families spend the credits
+
+<Steps>
+  <Step title="Set the scheduler to Credit">
+    Open the scheduler under **Scheduling → Schedulers** and go to **Payment**. Choose **Paywalled**, then **Credit** (or **Either**, so families can pay the price or use a credit). Enter how many credits one booking costs.
+  </Step>
+  <Step title="Add a Buy more credits link">
+    Paste your membership's link into **Buy more credits**. A family without enough credits is sent there instead of hitting a dead end.
+  </Step>
+  <Step title="Decide what a cancellation does">
+    Under **Advanced settings → Booking Rules**, turn **Refund credits used on cancellation** on or off, and pair it with your cancellation notice window.
+  </Step>
+  <Step title="Save and check both sides">
+    Save the scheduler. Then open the membership and check this scheduler is picked under **Credits can be redeemed for these schedulers**, or that the field is blank.
+
+    [Credits and schedulers](/scheduling/credits-and-schedulers) · [Set booking payments](/scheduling/setting-up-payment-options)
+  </Step>
+</Steps>
+
+To make sessions members-only, use **Paywalled → Credit** and only sell those credits through the membership.
+
+## 3. Sell it
+
+Put the membership on the Products page of your app, link it from your website, or send the link from the product's **Product Link** section. A family who buys it gets the first payment's credits straight away, and sees the balance in your app under **Settings → Billing**.
+
+Already have members paying you another way? Give them the membership from their profile: **People → Clients**, open the client, **Products**, **+ Add Product**. Paste their Stripe Subscription ID to link real billing, or leave it blank for a free grant. See [Manually adding products](/people/client-profiles/client-profiles-products#manually-adding-products) and [Bring new families into CoachIQ](/flows/bring-in-new-families).
+
+[Products page in your app](/app/products) · [Where families find a product](/payments/product-overview#where-families-find-a-product)
+
+## 4. Renewals, rollover and expiry
+
+On each renewal Stripe charges the saved card. If it goes through, the membership stays active and the new period's credits are added. The client's **Credits** tab logs a **Renewal** row, and an **Expiration** row for any leftover credits that ended.
+
+What happens to leftover credits depends on the choice you made in step 1. With 12 credits a month and 4 left:
+
+| Option | After renewal |
+| --- | --- |
+| **Unused Credits Expire upon Subscription Frequency** | 12 |
+| **Carry over unused credits** | 16 |
+| **Carry over, and expire each payment's credits after a set number of days** | 16, and last month's 4 expire on their own date |
+| **Unlimited Credits** | ∞ |
+
+Credits stay usable through the end of their last day in your organization's time zone. To make sure a cycle's credits only cover sessions in that cycle, turn on **Sessions must occur by expiration** in the product.
+
+[Unused credit behavior at renewal](/payments/credits/recurring-credit-memberships#unused-credit-behavior-at-renewal) · [When credits expire](/payments/credits/credit-system-overview#when-credits-expire)
+
+## 5. When a payment fails
+
+At the first failed charge the membership goes **Past due** and its credits pause. The balance is kept, but it can't be used to book until a payment goes through. The family can still sign in and book with Master Credits or by paying per session.
+
+1. Go to **Payments → Subscriptions** and filter to **Past Due**.
+2. Message the family. They update the card on that membership from **Billing** in your app.
+3. Stripe retries on the schedule set in your Stripe account. When a payment succeeds, the credits work again. If the retries run out, Stripe cancels the subscription or marks it unpaid, depending on your Stripe settings.
+
+[Failed payments](/payments/failed-payments)
+
+## 6. Manage a member
+
+Everything about one member is on their profile in **People → Clients**:
+
+- **Products**: the membership, and **Cancel membership**. Choose **At end of billing period** to keep access through what they've paid for, or **Immediately**. Neither one refunds a payment.
+- **Subscriptions**: the status, the price and **Manage**, which shows who pays, the card, the next payment and the latest invoice.
+- **Credits**: the balance, the log, and **Adjust balance** to add or remove credits.
+- **Transactions**: each payment, and **Refund payment**.
+
+To see every membership at once, with past-due, paused and canceled ones, use **Payments → Subscriptions**.
+
+[Cancel a membership](/payments/manage-subscriptions) · [Client profile: Subscriptions](/people/client-profiles/client-profiles-subscriptions) · [Client profile: Credits](/people/client-profiles/client-profiles-credits) · [Subscriptions dashboard](/payments/subscriptions-dashboard)
+
+## Next
+
+- [Change a member's plan](/payments/upgrade-membership)
+- [Shared family memberships](/payments/shared-family-memberships)
+- [Member discounts](/payments/coupon-sharing-and-limits#member-discounts): give members a lower price on camps and clinics.

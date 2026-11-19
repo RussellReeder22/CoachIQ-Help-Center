@@ -1,0 +1,58 @@
+---
+title: "Coupon Troubleshooting and FAQ"
+description: "Why a coupon code was refused at checkout, why a member discount stopped a booking, and answers to common coupon questions."
+sidebarTitle: "Troubleshooting"
+icon: "wrench"
+keywords: ["coupon not working", "code not valid", "coupon refused", "redemption limit", "coupon does not apply", "member discount error", "edit coupon", "reuse coupon code", "no coupon box"]
+---
+
+## When a code is refused
+
+If a code can't be used, checkout says why and the total doesn't change:
+
+| Message | What it means |
+| --- | --- |
+| "This coupon has reached its redemption limit." | The code's total use limit is used up |
+| "This coupon does not apply to this product." | The product isn't one of the coupon's selected products, or it's left out of an All products coupon |
+| "That code isn't valid for this order." | The code doesn't exist or can't be used on this order; check the spelling with the client |
+| "We couldn't check that code. Please try again." | A passing connection problem. Selecting **Apply** again checks it |
+
+A code that's turned down is never sent with the payment, so the price on the **Pay** button is the price charged. If one code is applied and a second is turned down, the first discount stays. When the real problem is the payment method or the athlete chosen, checkout shows only that message and doesn't call the code invalid; fix it and select **Apply** again.
+
+A visitor who enters a code and then signs in during checkout has the code checked again for their account, so a member price or a code meant for them shows before they pay. A guest asked to set a password partway through keeps the code they entered.
+
+## A member discount stopped a booking
+
+Member discounts need an active **recurring** membership; a pass or credit pack doesn't qualify. If someone who doesn't qualify books a session with a member discount, the booking stops with "This member discount needs an active recurring membership." and nothing is booked. If their payment had already gone through, it's refunded and the notice gives the same reason.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Why is there no coupon box at checkout?">
+    \$0 products that only save a card on file don't show a coupon box.
+  </Accordion>
+  <Accordion title="Why can't I save a percentage member discount?">
+    If a percentage member discount can't be saved because one of the qualifying memberships has a down payment, the message names the memberships to remove (up to three, then "and N more").
+  </Accordion>
+  <Accordion title="Can I edit a coupon?">
+    Apart from the products an All products coupon leaves out (**Edit products** on its row), coupons can't be edited. To change the discount, duration, limits or qualifying memberships, delete the coupon and create a new one with a different code. See [Leave products out of an All products coupon](/payments/coupon-sharing-and-limits#leave-products-out-of-an-all-products-coupon).
+  </Accordion>
+  <Accordion title="Can I reuse a deleted coupon's code?">
+    No. A deleted coupon's code can't be used again. If you try, you'll be asked to choose a different code. This stops a new coupon from picking up the old one's uses.
+  </Accordion>
+  <Accordion title="A coupon's amount looks too large">
+    Amount fields keep cents as typed: 0.50 saves as \$0.50. Before the October 19, 2026 release, a typed decimal point could be dropped, so a discount could save much larger than intended (0.50 became \$50). If one of yours looks too large, delete it and create a new one with a different code.
+  </Accordion>
+  <Accordion title="The code expired. Does the member still get the discount?">
+    An expiration date controls when a code can be redeemed. It's separate from how long a discount already applied to a membership lasts, which follows the coupon's duration. See [Coupons and subscriptions](/payments/create-coupons#coupons-and-subscriptions).
+  </Accordion>
+  <Accordion title="Why is the charged amount different from the product price?">
+    A coupon, a processing fee, an account credit, or a partial refund changes the amount. On **Payments → Transactions**, select **Open** to see the breakdown in Stripe. See [Transactions](/payments/transactions).
+  </Accordion>
+</AccordionGroup>
+
+## Related articles
+
+- [Coupons overview](/payments/coupon-overview)
+- [Create a coupon](/payments/create-coupons)
+- [Share and limit a coupon](/payments/coupon-sharing-and-limits)
