@@ -226,6 +226,7 @@
                   "scheduling/pricing-by-session-length",
                   "scheduling/credits-and-schedulers",
                   "scheduling/scheduler-settings-limits-and-permissions",
+                  "scheduling/waitlist",
                   "scheduling/overlapping-slots",
                   "scheduling/advanced-scheduler-settings",
                   "scheduling/session-reminders",
